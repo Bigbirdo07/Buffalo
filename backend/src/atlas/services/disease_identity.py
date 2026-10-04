@@ -27,6 +27,7 @@ from atlas.domain.cross_disease import (
     DiseaseIdentityRelationship,
     IdentityRelation,
     ReviewStatus,
+    ScopedIdentity,
 )
 from atlas.services.hpo_similarity import PhenotypeSimilarity
 
@@ -181,6 +182,56 @@ def classify_identity(signals: IdentitySignals) -> tuple[IdentityRelation, str]:
     )
 
 
+def scoped_identities(
+    left: dict, right: dict, signals: IdentitySignals
+) -> tuple[ScopedIdentity, ...]:
+    """Identity verdicts that hold within a single shared causal gene.
+
+    General rule: if restricting the broader entity to one shared gene leaves
+    the same causal basis as the narrower entity, then *within that gene* the
+    two labels describe one allelic spectrum, even though the entities differ
+    overall. This is how a genetically heterogeneous syndrome relates to the
+    single-gene disorder nested inside it.
+
+    The scoped verdict never overrides the top-level one. Both are kept, because
+    each answers a different question: are these different diseases, and are
+    they different diseases *for this gene*.
+    """
+    if not signals.shared_genes or signals.gene_sets_identical:
+        return ()
+    narrow_is_left = not signals.only_genes_a
+    narrow_is_right = not signals.only_genes_b
+    if not (narrow_is_left or narrow_is_right):
+        return ()
+    narrow = left if narrow_is_left else right
+    broad = right if narrow_is_left else left
+
+    scoped: list[ScopedIdentity] = []
+    for gene in signals.shared_genes:
+        relation = (
+            IdentityRelation.ALLELIC_SPECTRUM
+            if signals.phenotype_overlap >= MODERATE_PHENOTYPE_OVERLAP
+            else IdentityRelation.PHENOTYPIC_SUBTYPE
+        )
+        scoped.append(
+            ScopedIdentity(
+                scope_feature=gene,
+                scope_label=f"{gene}-associated presentation",
+                relation=relation,
+                rationale=(
+                    f"Restricted to {gene}, the causal basis of "
+                    f"{broad['disease_name']} is the same as that of "
+                    f"{narrow['disease_name']}, which has no other cause. Within "
+                    "this scope the two labels describe one entity, so a "
+                    "relationship between them is not an independent "
+                    "cross-disease discovery. The broader entity has additional "
+                    "causes and remains distinct outside this scope."
+                ),
+            )
+        )
+    return tuple(scoped)
+
+
 def assess_identity(
     left: dict,
     right: dict,
@@ -201,6 +252,9 @@ def assess_identity(
         if relation is IdentityRelation.DISTINCT_DISEASE
         else ReviewStatus.AWAITING_EXPERT_SIGNOFF
     )
+    scoped = scoped_identities(left, right, signals)
+    if scoped:
+        review = ReviewStatus.AWAITING_EXPERT_SIGNOFF
     return DiseaseIdentityRelationship(
         identity_id=str(uuid5(NAMESPACE_URL, f"identity|{left_id}|{right_id}")),
         disease_a=left_id,
@@ -208,5 +262,6 @@ def assess_identity(
         relation=relation,
         shared_gene_ids=signals.shared_genes,
         rationale=rationale,
+        scoped=scoped,
         review_status=review,
     )

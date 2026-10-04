@@ -217,6 +217,25 @@ class RetrievalReason(BaseModel):
         return False
 
 
+class ScopedIdentity(BaseModel):
+    """An identity verdict that holds only within one causal scope.
+
+    Disease identity is not always a single answer. A genetically heterogeneous
+    entity can be a distinct disease from a narrow one overall, while being the
+    *same* entity when restricted to the gene they share. Collapsing that to one
+    label loses whichever half is inconvenient: call it distinct and a subtype
+    relationship is counted as a cross-disease discovery; call it the same and a
+    real relationship to the rest of the broad entity disappears.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    scope_feature: str
+    scope_label: str
+    relation: IdentityRelation
+    rationale: str
+
+
 class DiseaseIdentityRelationship(BaseModel):
     """Whether two disease labels are independent entities.
 
@@ -233,16 +252,43 @@ class DiseaseIdentityRelationship(BaseModel):
     relation: IdentityRelation
     shared_gene_ids: tuple[str, ...] = ()
     rationale: str
+    # Verdicts that hold only within a narrower causal scope. The top-level
+    # relation describes the entities as upstream defines them; these describe
+    # them restricted to a shared cause.
+    scoped: tuple[ScopedIdentity, ...] = ()
     evidence_ids: tuple[str, ...] = ()
     review_status: ReviewStatus = ReviewStatus.NOT_REVIEWED
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     @property
+    def has_same_entity_scope(self) -> bool:
+        """True when some scope makes these one entity, whatever the top relation.
+
+        A pair with such a scope must not be counted as an independent
+        cross-disease discovery for that scope, even when the broad entities
+        differ.
+        """
+        return any(
+            item.relation
+            in {
+                IdentityRelation.SAME_DISEASE,
+                IdentityRelation.ALLELIC_SPECTRUM,
+                IdentityRelation.PHENOTYPIC_SUBTYPE,
+                IdentityRelation.HISTORICAL_SYNONYM,
+            }
+            for item in self.scoped
+        )
+
+    @property
     def is_independent_pair(self) -> bool:
-        return self.relation in {
-            IdentityRelation.DISTINCT_DISEASE,
-            IdentityRelation.PARTIALLY_OVERLAPPING_ENTITY,
-        }
+        return (
+            self.relation
+            in {
+                IdentityRelation.DISTINCT_DISEASE,
+                IdentityRelation.PARTIALLY_OVERLAPPING_ENTITY,
+            }
+            and not self.has_same_entity_scope
+        )
 
 
 class ValidatedRelationship(BaseModel):
@@ -275,6 +321,11 @@ class ValidatedRelationship(BaseModel):
     directionality_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
     model_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
     identity_relation: IdentityRelation | None = None
+    # True when some causal scope makes these one entity, even if the broad
+    # entities differ. Such a pair is a subtype relationship within that scope
+    # and must not be counted as an independent cross-disease discovery.
+    identity_has_same_entity_scope: bool = False
+    scoped_identities: tuple[str, ...] = ()
     caveats: tuple[str, ...] = ()
     alternative_explanations: tuple[str, ...] = ()
     deterministic_status: str | None = None
@@ -306,6 +357,8 @@ class ValidatedRelationship(BaseModel):
     @property
     def is_independent_discovery(self) -> bool:
         """True only for a genuine relationship between two distinct diseases."""
+        if self.identity_has_same_entity_scope:
+            return False
         return (
             self.relationship_class in MECHANISTIC_CLASSES
             and self.relationship_class not in IDENTITY_CLASSES

@@ -324,3 +324,178 @@ class TestNoSpecialCaseLogic:
             "allowlist is stale; remove entries that no longer contain "
             f"disease-specific code: {set(self.KNOWN_DISEASE_SPECIFIC) - still_needed}"
         )
+
+
+class TestCrossDiseaseSynthesis:
+    """A gap must rest on evidence; an experiment must be able to fail."""
+
+    @staticmethod
+    def _inputs(**overrides):
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import SynthesisInputs
+
+        relationship = overrides.pop("relationship", None) or ValidatedRelationship(
+            relationship_id="r:test", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+            mechanistic_statement="linked", evidence_ids=("PMID:1", "PMID:2"),
+            source_version="v1",
+        )
+        from datetime import UTC, datetime
+
+        from atlas.domain.gaps import CoverageStatus, SearchCoverage, SearchSourceCoverage
+
+        coverage = SearchCoverage(
+            coverage_id="coverage:test",
+            sources=(
+                SearchSourceCoverage(
+                    source="PubMed", status=CoverageStatus.CHECKED,
+                    queries=("test query",), result_count=2,
+                    checked_at=datetime.now(UTC),
+                ),
+            ),
+            search_started_at=datetime.now(UTC),
+            scope="test",
+            language_limitations=(),
+            geographic_limitations=(),
+            interpretation_caveat="test",
+        )
+        base = dict(
+            relationship=relationship, comparison=None, coverage=coverage,
+            disease_a_name="Disease A", disease_b_name="Disease B",
+            shared_process_label="a shared process",
+            shared_readout="a functional assay",
+            model_system="cellular models",
+            supporting_evidence=("PMID:1", "PMID:2"),
+            contradicting_evidence=(),
+        )
+        base.update(overrides)
+        return SynthesisInputs(**base)
+
+    def test_gap_requires_a_mechanistic_relationship(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import build_cross_disease_gap
+
+        weak = ValidatedRelationship(
+            relationship_id="r:weak", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_PHENOTYPE_ONLY,
+            mechanistic_statement="symptoms only", source_version="v1",
+        )
+        with pytest.raises(ValueError, match="no open"):
+            build_cross_disease_gap(self._inputs(relationship=weak))
+
+    def test_gap_requires_evidence_not_annotation(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+
+        # A mechanistic class cannot exist without evidence, so this constructs
+        # the nearest thing: a class that is gap-worthy with empty evidence.
+        with pytest.raises(ValueError):
+            ValidatedRelationship(
+                relationship_id="r:none", disease_a="a", disease_b="b",
+                relationship_class=RelationshipClass.SHARED_PATHWAY,
+                mechanistic_statement="", source_version="v1",
+            )
+
+    def test_generated_experiment_is_falsifiable(self) -> None:
+        from atlas.services.cross_disease_synthesis import (
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        inputs = self._inputs()
+        gap = build_cross_disease_gap(inputs)
+        experiment = build_cross_disease_experiment(gap, inputs)
+        assert experiment.expected_result_if_refuted
+        assert (
+            experiment.expected_result_if_refuted
+            != experiment.expected_result_if_supported
+        )
+        assert experiment.human_review_required
+
+    def test_experiment_without_refutation_is_rejected(self) -> None:
+        from atlas.services.cross_disease_synthesis import (
+            NotFalsifiable,
+            assert_falsifiable,
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        inputs = self._inputs()
+        gap = build_cross_disease_gap(inputs)
+        good = build_cross_disease_experiment(gap, inputs)
+        # An experiment that cannot fail must raise, not warn.
+        with pytest.raises(NotFalsifiable, match="cannot fail"):
+            assert_falsifiable(good.model_copy(update={"expected_result_if_refuted": ""}))
+
+    def test_indistinguishable_outcomes_are_rejected(self) -> None:
+        from atlas.services.cross_disease_synthesis import (
+            NotFalsifiable,
+            assert_falsifiable,
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        inputs = self._inputs()
+        gap = build_cross_disease_gap(inputs)
+        good = build_cross_disease_experiment(gap, inputs)
+        same = good.model_copy(
+            update={"expected_result_if_refuted": good.expected_result_if_supported}
+        )
+        with pytest.raises(NotFalsifiable, match="distinguish"):
+            assert_falsifiable(same)
+
+    def test_experiment_declares_its_own_requirements(self) -> None:
+        # The requirement extractor reads what the experiment states, so a
+        # proposal that declares nothing yields no capabilities and the action
+        # pathway silently produces nothing.
+        from atlas.services.cross_disease_synthesis import (
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+        from atlas.services.requirement_extraction import extract_experiment_requirements
+
+        inputs = self._inputs()
+        gap = build_cross_disease_gap(inputs)
+        experiment = build_cross_disease_experiment(gap, inputs)
+        capabilities, assets = extract_experiment_requirements(experiment)
+        assert capabilities
+        assert assets
+
+
+class TestLayeredIdentity:
+    def test_contained_gene_set_yields_a_scoped_same_entity_verdict(self) -> None:
+        from atlas.services.disease_identity import IdentitySignals, scoped_identities
+
+        narrow = {"disease_name": "Narrow", "disease_id": "n"}
+        broad = {"disease_name": "Broad", "disease_id": "b"}
+        signals = IdentitySignals(
+            shared_genes=("HGNC:1",), only_genes_a=(), only_genes_b=("HGNC:2", "HGNC:3"),
+            phenotype_overlap=0.4, shared_phenotype_count=4,
+            name_core_match=False, same_mondo=False,
+        )
+        scoped = scoped_identities(narrow, broad, signals)
+        assert len(scoped) == 1
+        assert scoped[0].relation is IdentityRelation.ALLELIC_SPECTRUM
+        assert "not an independent" in scoped[0].rationale
+
+    def test_scoped_same_entity_blocks_independent_discovery(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+
+        relationship = ValidatedRelationship(
+            relationship_id="r:scoped", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+            mechanistic_statement="linked", evidence_ids=("PMID:1",),
+            identity_relation=IdentityRelation.PARTIALLY_OVERLAPPING_ENTITY,
+            identity_has_same_entity_scope=True,
+            source_version="v1",
+        )
+        assert not relationship.is_independent_discovery
+
+    def test_identical_gene_sets_produce_no_scope(self) -> None:
+        from atlas.services.disease_identity import IdentitySignals, scoped_identities
+
+        signals = IdentitySignals(
+            shared_genes=("HGNC:1",), only_genes_a=(), only_genes_b=(),
+            phenotype_overlap=0.8, shared_phenotype_count=8,
+            name_core_match=True, same_mondo=False,
+        )
+        assert scoped_identities({"disease_name": "A"}, {"disease_name": "B"}, signals) == ()

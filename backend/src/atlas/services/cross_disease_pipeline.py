@@ -406,6 +406,8 @@ def run_pipeline(
     comparison: DiseaseComparison,
     identity_relation: IdentityRelation,
     identity_rationale: str,
+    identity_same_entity_scope: bool = False,
+    scoped_identity_notes: tuple[str, ...] = (),
     evidence: tuple[MechanisticEvidence, ...],
     retrieval_reasons: tuple[RetrievalReason, ...],
     source_version: str,
@@ -421,7 +423,15 @@ def run_pipeline(
 
     # 1. Identity, before any mechanism claim.
     trace.identity_relation = identity_relation
-    trace.record("DiseaseIdentityCheck", f"{identity_relation.value}: {identity_rationale}")
+    scope_note = (
+        " | scoped: " + "; ".join(scoped_identity_notes)
+        if scoped_identity_notes
+        else ""
+    )
+    trace.record(
+        "DiseaseIdentityCheck",
+        f"{identity_relation.value}: {identity_rationale}{scope_note}",
+    )
 
     # 2. Why the pair was retrieved, recorded without judgement.
     reasons = ", ".join(
@@ -537,6 +547,8 @@ def run_pipeline(
         contradictory_evidence_ids=refuting,
         variant_compatibility=trace.variant_compatibility,
         identity_relation=identity_relation,
+        identity_has_same_entity_scope=identity_same_entity_scope,
+        scoped_identities=scoped_identity_notes,
         caveats=comparison.caveats,
         alternative_explanations=tuple(
             f"{item.code}: {item.description}" for item in alternatives if item.applies

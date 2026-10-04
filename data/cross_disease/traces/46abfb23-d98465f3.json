@@ -5,7 +5,7 @@
   "stages": [
     {
       "stage": "DiseaseIdentityCheck",
-      "finding": "PARTIALLY_OVERLAPPING_ENTITY: One disease's complete causal gene set (HGNC:11427) is contained in the other's, which also has additional causes. The narrower label is most likely a genetic subtype of the broader entity rather than an independent disease, so a relationship between them is not a cross-disease discovery without expert review.",
+      "finding": "PARTIALLY_OVERLAPPING_ENTITY: One disease's complete causal gene set (HGNC:11427) is contained in the other's, which also has additional causes. The narrower label is most likely a genetic subtype of the broader entity rather than an independent disease, so a relationship between them is not a cross-disease discovery without expert review. | scoped: HGNC:11427-associated presentation -> ALLELIC_SPECTRUM",
       "assessable": true
     },
     {
@@ -65,6 +65,13 @@
     }
   ],
   "identity_relation": "PARTIALLY_OVERLAPPING_ENTITY",
+  "scoped_identities": [
+    {
+      "scope": "HGNC:11427-associated presentation",
+      "relation": "ALLELIC_SPECTRUM",
+      "rationale": "Restricted to HGNC:11427, the causal basis of Cerebellar Ataxia-Hypogonadism Syndrome is the same as that of Autosomal Recessive Spinocerebellar Ataxia 16, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+    }
+  ],
   "retrieval_reasons": [
     {
       "type": "SHARED_CELLULAR_PROCESS",
@@ -163,7 +170,7 @@
     "snapshot": "0937383c816f025ed626a5c9c825d0cbb4fdd0295243cc4549e8e44507ae484a"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-  "software_commit": "549895c16b56d5bab8ef661858872e11a8a652be",
+  "software_commit": "d8b28500de29fd39746785eed7581004de3d3972",
   "pipeline_version": "cross-disease-pipeline-v1",
   "review_status": "AWAITING_EXPERT_SIGNOFF"
 }

@@ -326,6 +326,10 @@ def main() -> int:
             comparison=comparison,
             identity_relation=identity.relation,
             identity_rationale=identity.rationale,
+            identity_same_entity_scope=identity.has_same_entity_scope,
+            scoped_identity_notes=tuple(
+                f"{item.scope_label} -> {item.relation.value}" for item in identity.scoped
+            ),
             evidence=tuple(evidence),
             retrieval_reasons=reasons,
             source_version=anchor["source_version"],
@@ -341,6 +345,14 @@ def main() -> int:
                 for s in trace.stages
             ],
             "identity_relation": identity.relation.value,
+            "scoped_identities": [
+                {
+                    "scope": item.scope_label,
+                    "relation": item.relation.value,
+                    "rationale": item.rationale,
+                }
+                for item in identity.scoped
+            ],
             "retrieval_reasons": [
                 {
                     "type": r.reason_type.value,

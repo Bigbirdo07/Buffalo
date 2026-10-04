@@ -65,6 +65,7 @@
     }
   ],
   "identity_relation": "DISTINCT_DISEASE",
+  "scoped_identities": [],
   "retrieval_reasons": [
     {
       "type": "SHARED_CELLULAR_PROCESS",
@@ -141,7 +142,7 @@
     "snapshot": "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-  "software_commit": "549895c16b56d5bab8ef661858872e11a8a652be",
+  "software_commit": "d8b28500de29fd39746785eed7581004de3d3972",
   "pipeline_version": "cross-disease-pipeline-v1",
   "review_status": "AWAITING_EXPERT_SIGNOFF"
 }
