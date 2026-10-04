@@ -1,0 +1,178 @@
+{
+  "schema_version": "bridge-refinement-v1",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "generated_at": "2026-10-04T10:37:56.695432+00:00",
+  "parent_bridge": {
+    "bridge_id": "bridge:bf70f76f-91ee62a2",
+    "terms": [
+      "HLA",
+      "ERAP1",
+      "TNFAIP3",
+      "MHC"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: HLA, ERAP1, TNFAIP3, MHC. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:36477533",
+      "PMID:25405820",
+      "PMID:33499153",
+      "PMID:23452840",
+      "PMID:30069262",
+      "PMID:33864943",
+      "PMID:25488777",
+      "PMID:26310161"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "T-helper 17 type immune response",
+      "T-helper 17 cell",
+      "ERAP1",
+      "Uveitis"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "full_text_retrieval": [
+    {
+      "source_id": "PMID:36477533",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 148,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)",
+        "unknown"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:25405820",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 100,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:33499153",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 132,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Acknowledgments (http://purl.org/orb/Acknowledgments)",
+        "Article (http://semanticscience.org/resource/SIO_001029)",
+        "Conclusion (http://purl.obolibrary.org/obo/IAO_0000615)",
+        "Introduction (http://purl.org/orb/Introduction)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": true,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:23452840",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 39,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:30069262",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 288,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Article (http://semanticscience.org/resource/SIO_001029)",
+        "Conclusion (http://purl.obolibrary.org/obo/IAO_0000615)",
+        "Introduction (http://purl.org/orb/Introduction)",
+        "References (http://purl.org/orb/References)",
+        "Table (http://semanticscience.org/resource/SIO_000419)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": true,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:33864943",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 14,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:25488777",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 65,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    },
+    {
+      "source_id": "PMID:26310161",
+      "retrieved": true,
+      "failure_reason": null,
+      "annotations": 59,
+      "sections_seen": [
+        "Abstract (http://purl.org/dc/terms/abstract)",
+        "Title (http://purl.org/dc/elements/1.1/title)"
+      ],
+      "full_text_sections_present": false,
+      "mechanistic_primary_findings": 0
+    }
+  ],
+  "full_text_obtained": true,
+  "mechanistic_annotation_types_considered": [
+    "Gene Disease Relationship",
+    "Gene Function",
+    "Gene Ontology",
+    "Pathway"
+  ],
+  "result": "NO_ADDITIONAL_BRIDGE_SPECIFICITY_SUPPORTED",
+  "canonical_bridge": {
+    "bridge_id": "bridge:bf70f76f-91ee62a2",
+    "terms": [
+      "HLA",
+      "ERAP1",
+      "TNFAIP3",
+      "MHC"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: HLA, ERAP1, TNFAIP3, MHC. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:36477533",
+      "PMID:25405820",
+      "PMID:33499153",
+      "PMID:23452840",
+      "PMID:30069262",
+      "PMID:33864943",
+      "PMID:25488777",
+      "PMID:26310161"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "T-helper 17 type immune response",
+      "T-helper 17 cell",
+      "ERAP1",
+      "Uveitis"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "note": "No statement claimed as a primary finding by its own paper contributed a term the v1 bridge did not already carry. v1 remains canonical."
+}

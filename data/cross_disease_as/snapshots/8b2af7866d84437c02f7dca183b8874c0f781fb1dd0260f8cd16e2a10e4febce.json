@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SATB1%5Btiab%5D+OR+%22DNA-binding+protein+SATB1%22%5Btiab%5D+OR+%22Special+AT-rich+sequence-binding+protein+1%22%5Btiab%5D+OR+STAT3%5Btiab%5D+OR+%22Signal+transducer+and+activator+of+transcription+3%22%5Btiab%5D+OR+%22Acute-phase+response+factor%22%5Btiab%5D+OR+TNFAIP3%5Btiab%5D+OR+%22TNF+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Tumor+necrosis+factor+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Ankylosing+Spondylitis%22%5Btiab%5D%29+AND+%28SATB1%5Btiab%5D+OR+%22DNA-binding+protein+SATB1%22%5Btiab%5D+OR+%22Special+AT-rich+sequence-binding+protein+1%22%5Btiab%5D+OR+STAT3%5Btiab%5D+OR+%22Signal+transducer+and+activator+of+transcription+3%22%5Btiab%5D+OR+%22Acute-phase+response+factor%22%5Btiab%5D+OR+TNFAIP3%5Btiab%5D+OR+%22TNF+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Tumor+necrosis+factor+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Ulcerative+Colitis%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:29.559919+00:00",
+  "sha256": "adc4cb72aa9f846795554106bbacccb4eff5daf59264a510ef0f0bb81871a330"
+}

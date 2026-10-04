@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ATNF%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:06.565521+00:00",
+  "sha256": "1349cb7325d24198bb20bb7d79a235532d70d9ad7fe4f7b400247af90121cb1b"
+}

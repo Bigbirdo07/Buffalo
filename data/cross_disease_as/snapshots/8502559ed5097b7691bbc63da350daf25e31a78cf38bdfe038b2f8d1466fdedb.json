@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ACASP1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:35.480746+00:00",
+  "sha256": "600cecad23b3516f6bff3e24619990be4aae987a45a68b7214cda5c9dcf196c3"
+}

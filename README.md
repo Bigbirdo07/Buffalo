@@ -44,8 +44,11 @@ Architecture and scientific boundaries are documented in [`docs/`](docs/).
 
 ## Hackathon UI
 
-The five-screen demo reads the frozen contracts in `data/demo/` at build time;
-it does not require the backend or external APIs during presentation.
+The seven-stage parent-first demo reads frozen contracts in `data/demo/` at
+build time; it does not require the backend or external APIs during
+presentation. It moves from a plain-language SCAR16 introduction through
+research connections, evidence review, the open question, a falsifiable test,
+existing research capacity, and a printable discussion summary.
 
 ```bash
 cd frontend
@@ -53,7 +56,7 @@ npm install
 npm run dev
 ```
 
-Open `http://127.0.0.1:4173/#/discover`. Run the complete frontend verification
+Open `http://127.0.0.1:4173/#/disease`. Run the complete frontend verification
 with `npm run check` (contract/route tests, ESLint, TypeScript, and production
 build).
 
@@ -93,6 +96,7 @@ conclusion carries `EXTRACTED` provenance and requires named expert review.
 
 The hackathon UI is implemented in `frontend/` with family and scientist
 presentation modes. It consumes `data/demo/flagship_story.json` and
-`data/demo/goals_summary.json` as authoritative frozen contracts and performs no
-scientific inference client-side. Production Postgres/Neo4j deployment and live
-web enrichment remain separate from the offline demo.
+`data/demo/goals_summary.json` as authoritative scientific contracts, plus the
+source-linked `data/demo/parent_story.json` presentation contract, and performs
+no scientific inference client-side. Production Postgres/Neo4j deployment and
+live web enrichment remain separate from the offline demo.

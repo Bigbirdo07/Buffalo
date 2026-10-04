@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AIKZF1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:22.769393+00:00",
+  "sha256": "ff0af44a720da0c0994e9386fa9832aa2866217a9d431ec8a37a8c0eaf889dd7"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28PEX26%5Btiab%5D+OR+%22Peroxisome+assembly+protein+26%22%5Btiab%5D+OR+Peroxin-26%5Btiab%5D+OR+PEX1%5Btiab%5D+OR+%22Peroxisomal+ATPase+PEX1%22%5Btiab%5D+OR+Peroxin-1%5Btiab%5D+OR+PEX10%5Btiab%5D+OR+%22Peroxisome+biogenesis+factor+10%22%5Btiab%5D+OR+Peroxin-10%5Btiab%5D+OR+%22Zellweger+Spectrum+Disorders%22%5Btiab%5D%29+AND+%28PEX6%5Btiab%5D+OR+%22Peroxisomal+ATPase+PEX6%22%5Btiab%5D+OR+Peroxin-6%5Btiab%5D+OR+%22Peroxisome+Biogenesis+Disorder+4B%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:38:15.842985+00:00",
+  "sha256": "4d85afc53563a955f0244063db8ea8c6d26d2d00eb4cc6cfde724f72701238ce"
+}

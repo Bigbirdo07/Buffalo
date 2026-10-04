@@ -1,0 +1,216 @@
+{
+  "pair_id": "3eb8d334-87595a03",
+  "disease_a": "Zellweger Spectrum Disorders",
+  "disease_b": "Rhizomelic Chondrodysplasia Punctata Type 1",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "PARTIALLY_OVERLAPPING_ENTITY: One disease's complete causal gene set (HGNC:8860) is contained in the other's, which also has additional causes. The narrower label is most likely a genetic subtype of the broader entity rather than an independent disease, so a relationship between them is not a cross-disease discovery without expert review. | scoped: HGNC:8860-associated presentation -> ALLELIC_SPECTRUM",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELLULAR_PROCESS(protein targeting to peroxisome), SAME_GENE(PEX7), SHARED_GO_TERM(phytanic acid), PHENOTYPE_SIMILARITY(Epiphyseal Stippling)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=MODERATE]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No variant effect recorded upstream for Zellweger Spectrum Disorders, so compatibility cannot be assessed. The shared gene alone does not establish a shared mechanism.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "STRONG: protein targeting to peroxisome, fatty acid alpha-oxidation, ether lipid biosynthetic process, peroxisome",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "MODERATE: Epiphyseal Stippling, Cataract",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "20 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "12 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 8 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "0 of 7 alternatives apply: none",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes monoubiquitination, ubiquitination. Regulators named across the evidence: PEX7, PEX1, PEX5, PEX6. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 12 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "PARTIALLY_OVERLAPPING_ENTITY",
+  "scoped_identities": [
+    {
+      "scope": "HGNC:8860-associated presentation",
+      "relation": "ALLELIC_SPECTRUM",
+      "rationale": "Restricted to HGNC:8860, the causal basis of Zellweger Spectrum Disorders is the same as that of Rhizomelic Chondrodysplasia Punctata Type 1, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+    }
+  ],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "protein targeting to peroxisome",
+      "corpus_frequency": 4
+    },
+    {
+      "type": "SAME_GENE",
+      "feature": "PEX7",
+      "corpus_frequency": 4
+    },
+    {
+      "type": "SHARED_GO_TERM",
+      "feature": "phytanic acid",
+      "corpus_frequency": 8
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Epiphyseal Stippling",
+      "corpus_frequency": 16
+    }
+  ],
+  "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=MODERATE",
+  "supporting_evidence_ids": [
+    "PMID:27650450",
+    "PMID:30375424",
+    "PMID:17921697",
+    "PMID:19903887",
+    "PMID:38753762",
+    "PMID:29307785",
+    "PMID:18785921",
+    "PMID:17478547",
+    "PMID:27831570",
+    "PMID:11405337",
+    "PMID:23344950",
+    "PMID:16314507"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [
+    "PMID:34780573",
+    "PMID:10212151",
+    "PMID:17608706",
+    "PMID:39359950",
+    "PMID:12794690",
+    "PMID:26220973",
+    "PMID:28566232",
+    "PMID:41594547"
+  ],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": false,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:3eb8d334-87595a03",
+    "terms": [
+      "monoubiquitination",
+      "ubiquitination",
+      "PEX7",
+      "PEX1",
+      "PEX5",
+      "PEX6"
+    ],
+    "statement": "Evidence establishing a direct link describes monoubiquitination, ubiquitination. Regulators named across the evidence: PEX7, PEX1, PEX5, PEX6. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:27650450",
+      "PMID:30375424",
+      "PMID:17921697",
+      "PMID:19903887",
+      "PMID:38753762",
+      "PMID:29307785",
+      "PMID:18785921",
+      "PMID:17478547",
+      "PMID:27831570",
+      "PMID:11405337",
+      "PMID:23344950",
+      "PMID:16314507"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "protein targeting to peroxisome",
+      "PEX7",
+      "phytanic acid",
+      "Epiphyseal Stippling"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+  "final_rationale": "12 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "actionable": true,
+  "search_coverage": {
+    "query": "(PEX26[tiab] OR \"Peroxisome assembly protein 26\"[tiab] OR Peroxin-26[tiab] OR PEX1[tiab] OR \"Peroxisomal ATPase PEX1\"[tiab] OR Peroxin-1[tiab] OR PEX10[tiab] OR \"Peroxisome biogenesis factor 10\"[tiab] OR Peroxin-10[tiab] OR \"Zellweger Spectrum Disorders\"[tiab]) AND (PEX7[tiab] OR \"PTS2 receptor\"[tiab] OR \"Peroxisomal targeting signal 2 receptor\"[tiab] OR \"Rhizomelic Chondrodysplasia Punctata Type 1\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 23,
+    "snapshot": "c387c2804ce26368f857ccb42f690037c219ef773bd2025c51936aa07f3a781f",
+    "note": null
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

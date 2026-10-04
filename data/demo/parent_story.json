@@ -1,0 +1,127 @@
+{
+  "schema_version": "parent-story-v1",
+  "case": {
+    "short_name": "SCAR16",
+    "full_name": "Autosomal Recessive Spinocerebellar Ataxia 16",
+    "case_label": "A full example",
+    "case_subtitle": "See how the Atlas goes from a rare disease to a research question and next steps.",
+    "cause_summary": "SCAR16 is associated with changes in both copies of the STUB1 gene. STUB1 provides instructions for making CHIP, a protein that helps cells manage damaged or misfolded proteins.",
+    "research_goal": "We are looking for other diseases that affect some of the same cellular systems, because research from those diseases may help answer questions that have not yet been studied directly in SCAR16.",
+    "phenotype_groups": [
+      {
+        "label": "Movement and balance",
+        "detail": "Progressive difficulty with balance, walking, coordination and speech is central to SCAR16."
+      },
+      {
+        "label": "Nervous system",
+        "detail": "Some people also have stiffness, brisk reflexes, seizures or other movement symptoms."
+      },
+      {
+        "label": "Thinking and learning",
+        "detail": "Cognitive changes occur in some people, but are not present in everyone."
+      },
+      {
+        "label": "Hormone-related features",
+        "detail": "A subset of people have hypogonadotropic hypogonadism; it is not required for a SCAR16 diagnosis."
+      }
+    ],
+    "variation_note": "SCAR16 can look different from one person to another, and age at onset ranges from infancy to adulthood in reported series."
+  },
+  "case_choices": [
+    {
+      "id": "scar16",
+      "name": "SCAR16",
+      "entity_type": "DISEASE",
+      "label": "A full example",
+      "subtitle": "Follow the complete path from disease to a research question and next steps.",
+      "availability": "FULL"
+    },
+    {
+      "id": "lafora",
+      "name": "Lafora Disease",
+      "entity_type": "DISEASE",
+      "label": "A connection seen from the other side",
+      "subtitle": "A reverse-direction worked case exists, but this journey remains centered on SCAR16.",
+      "availability": "PREVIEW"
+    },
+    {
+      "id": "stub1",
+      "name": "STUB1",
+      "entity_type": "GENE",
+      "label": "Gene view",
+      "subtitle": "Explore how one gene can be associated with multiple disease presentations. This is not a disease case.",
+      "availability": "CONTEXT_ONLY"
+    },
+    {
+      "id": "scar20",
+      "name": "SCAR20",
+      "entity_type": "DISEASE",
+      "label": "A negative example",
+      "subtitle": "The searched similarities did not support a shared molecular mechanism.",
+      "availability": "PREVIEW"
+    }
+  ],
+  "guided_path": [
+    {
+      "id": "scar16",
+      "label": "SCAR16",
+      "entity_type": "DISEASE",
+      "meaning": "A rare neurological disease affecting movement and balance."
+    },
+    {
+      "id": "stub1",
+      "label": "STUB1",
+      "entity_type": "GENE",
+      "meaning": "Provides instructions for making the CHIP protein."
+    },
+    {
+      "id": "chip",
+      "label": "CHIP",
+      "entity_type": "PROTEIN",
+      "meaning": "Helps cells manage damaged or misfolded proteins."
+    },
+    {
+      "id": "stress-response",
+      "label": "Cellular stress response",
+      "entity_type": "PROCESS",
+      "meaning": "Protective systems cells use when proteins or other cell functions are under stress."
+    },
+    {
+      "id": "lafora",
+      "label": "Lafora Disease",
+      "entity_type": "DISEASE",
+      "meaning": "A rare neurological disease connected here through evidence about downstream stress-response biology."
+    }
+  ],
+  "parent_certainty": {
+    "label": "Promising but unconfirmed",
+    "explanation": "Evidence supports a specific downstream biological connection, but the same functional defect has not been directly compared across both diseases.",
+    "expert_review": "This interpretation has not yet been approved by a disease specialist."
+  },
+  "parent_gap": "We still do not know whether SCAR16 and Lafora Disease produce the same type of cellular stress-response failure.",
+  "parent_gap_importance": "If both diseases fail at the same cellular step, researchers may be able to reuse some of the same assays or experimental approaches.",
+  "discussion_questions": [
+    "Is my child's specific genetic variant consistent with the mechanism described here?",
+    "Is our clinic connected to any natural-history or research studies for SCAR16?",
+    "Are disease-specific cell models or research assays available?",
+    "Has this stress-response pathway been tested in people with this condition?",
+    "Would a SCAR16 specialist interpret this research connection differently?"
+  ],
+  "sources": [
+    {
+      "field": "case summary and phenotype groups",
+      "reference": "data/upstream/dismech-checkout/kb/disorders/Autosomal_Recessive_Spinocerebellar_Ataxia_16.yaml",
+      "upstream_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904"
+    },
+    {
+      "field": "relationship, gap, experiment and capabilities",
+      "reference": "data/demo/flagship_story.json",
+      "upstream_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c"
+    },
+    {
+      "field": "case availability and negative example",
+      "reference": "data/demo/cases.json",
+      "upstream_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65"
+    }
+  ]
+}

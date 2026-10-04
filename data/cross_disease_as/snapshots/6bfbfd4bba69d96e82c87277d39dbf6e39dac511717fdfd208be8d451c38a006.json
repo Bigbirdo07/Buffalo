@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AIL21%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:40.962965+00:00",
+  "sha256": "df680dab159c80a3a6935812a75b680e19ea4d0c47c074bfb6d97df0b437a290"
+}

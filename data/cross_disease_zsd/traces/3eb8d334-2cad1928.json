@@ -1,0 +1,210 @@
+{
+  "pair_id": "3eb8d334-2cad1928",
+  "disease_a": "Zellweger Spectrum Disorders",
+  "disease_b": "Peroxisome Biogenesis Disorder 5B",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "PARTIALLY_OVERLAPPING_ENTITY: One disease's complete causal gene set (HGNC:9717) is contained in the other's, which also has additional causes. The narrower label is most likely a genetic subtype of the broader entity rather than an independent disease, so a relationship between them is not a cross-disease discovery without expert review. | scoped: HGNC:9717-associated presentation -> ALLELIC_SPECTRUM",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELLULAR_PROCESS(peroxisomal membrane), SAME_GENE(PEX2), SHARED_GO_TERM(pristanic acid), PHENOTYPE_SIMILARITY(Amelogenesis imperfecta)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=STRONG]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No variant effect recorded upstream for Zellweger Spectrum Disorders, so compatibility cannot be assessed. The shared gene alone does not establish a shared mechanism.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "STRONG: peroxisomal membrane, fatty acid alpha-oxidation, peroxisome organization, ether lipid biosynthetic process, protein import into peroxisome matrix",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "STRONG: Amelogenesis imperfecta, Adrenal insufficiency, Leukodystrophy, Osteopenia, Cataract",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "18 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "7 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 11 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "0 of 7 alternatives apply: none",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes ubiquitin ligase, monoubiquitination, ubiquitination. Regulators named across the evidence: RING, PEX10, PEX2, PEX1. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval CORRECT): 7 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "PARTIALLY_OVERLAPPING_ENTITY",
+  "scoped_identities": [
+    {
+      "scope": "HGNC:9717-associated presentation",
+      "relation": "ALLELIC_SPECTRUM",
+      "rationale": "Restricted to HGNC:9717, the causal basis of Zellweger Spectrum Disorders is the same as that of Peroxisome Biogenesis Disorder 5B, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+    }
+  ],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "peroxisomal membrane",
+      "corpus_frequency": 9
+    },
+    {
+      "type": "SAME_GENE",
+      "feature": "PEX2",
+      "corpus_frequency": 3
+    },
+    {
+      "type": "SHARED_GO_TERM",
+      "feature": "pristanic acid",
+      "corpus_frequency": 4
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Amelogenesis imperfecta",
+      "corpus_frequency": 16
+    }
+  ],
+  "retrieval_validity": "CORRECT",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=STRONG",
+  "supporting_evidence_ids": [
+    "PMID:35768507",
+    "PMID:27650450",
+    "PMID:40498764",
+    "PMID:30366024",
+    "PMID:36421406",
+    "PMID:38746221",
+    "PMID:19687296"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [
+    "PMID:26367802",
+    "PMID:10212151",
+    "PMID:29924881",
+    "PMID:27230853",
+    "PMID:35235794",
+    "PMID:21392394",
+    "PMID:23430938",
+    "PMID:17608706",
+    "PMID:11330042",
+    "PMID:36616260",
+    "PMID:26644511"
+  ],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": false,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:3eb8d334-2cad1928",
+    "terms": [
+      "ubiquitin ligase",
+      "monoubiquitination",
+      "ubiquitination",
+      "RING",
+      "PEX10",
+      "PEX2",
+      "PEX1"
+    ],
+    "statement": "Evidence establishing a direct link describes ubiquitin ligase, monoubiquitination, ubiquitination. Regulators named across the evidence: RING, PEX10, PEX2, PEX1. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:35768507",
+      "PMID:27650450",
+      "PMID:40498764",
+      "PMID:30366024",
+      "PMID:36421406",
+      "PMID:38746221",
+      "PMID:19687296"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "peroxisomal membrane",
+      "PEX2",
+      "pristanic acid",
+      "Amelogenesis imperfecta"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+  "final_rationale": "7 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "actionable": true,
+  "search_coverage": {
+    "query": "(PEX26[tiab] OR \"Peroxisome assembly protein 26\"[tiab] OR Peroxin-26[tiab] OR PEX1[tiab] OR \"Peroxisomal ATPase PEX1\"[tiab] OR Peroxin-1[tiab] OR PEX10[tiab] OR \"Peroxisome biogenesis factor 10\"[tiab] OR Peroxin-10[tiab] OR \"Zellweger Spectrum Disorders\"[tiab]) AND (PEX2[tiab] OR \"Peroxisome biogenesis factor 2\"[tiab] OR \"35 kDa peroxisomal membrane protein\"[tiab] OR \"Peroxisome Biogenesis Disorder 5B\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 49,
+    "snapshot": "54ea67c4237c28efdb667a6cbb21891cc2c259619779616b43a5813bd1b82669",
+    "note": null
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

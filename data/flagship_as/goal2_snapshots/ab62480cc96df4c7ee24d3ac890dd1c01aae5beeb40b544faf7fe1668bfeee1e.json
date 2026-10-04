@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22Ankylosing+Spondylitis%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:37:57.673135+00:00",
+  "sha256": "4e745f16ed433561c36ff091877196efca8d500c2d74f63cc8b784dedc2904be"
+}

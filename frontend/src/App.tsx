@@ -1,40 +1,71 @@
 import { useEffect, useState } from "react";
-import { ContractUnavailable, GoalProgress, ModeToggle, navigate } from "./components";
-import type { PresentationMode } from "./contract";
 import { CasesScreen } from "./cases";
-import { loadContracts } from "./data";
+import { ContractUnavailable, EntityLegend, JourneyProgress, ModeToggle, navigate } from "./components";
+import type { PresentationMode } from "./contract";
+import { loadCases, loadContracts, selectCase } from "./data";
 import {
-  BiologyScreen,
+  ConnectionsScreen,
+  DiseaseScreen,
+  EvidenceScreen,
+  ExperimentScreen,
   ExistingWorkScreen,
-  QuestionScreen,
-  SearchScreen,
-  ValidateScreen,
+  NextStepsScreen,
+  UnknownScreen,
 } from "./screens";
+import { SearchScreen } from "./search";
 
 const contract = loadContracts();
+const cases = loadCases();
 const validRoutes = new Set([
-  "/discover",
-  "/biology",
-  "/validate",
-  "/question",
+  "/search",
+  "/disease",
+  "/connections",
+  "/evidence",
+  "/unknown",
+  "/experiment",
   "/existing-work",
+  "/next-steps",
   "/cases",
 ]);
 
-function routeFromHash() {
-  const route = window.location.hash.replace(/^#/, "") || "/discover";
-  return validRoutes.has(route) ? route : "/discover";
+/**
+ * Split the hash into a route and an optional case id.
+ *
+ * The case travels in the URL (`#/disease?case=lafora`) so a demo can be deep
+ * linked and reloaded without losing which disease is being shown.
+ */
+function parseHash(): { route: string; caseId: string | null } {
+  const raw = window.location.hash.replace(/^#/, "");
+  const [path, rest] = raw.split("?");
+  const caseId = rest ? new URLSearchParams(rest).get("case") : null;
+  return {
+    route: validRoutes.has(path) ? path : "/search",
+    caseId,
+  };
 }
 
 export default function App() {
-  const [route, setRoute] = useState(routeFromHash);
+  const initial = parseHash();
+  const [route, setRoute] = useState(initial.route);
+  const [caseId, setCaseId] = useState<string | null>(() => {
+    return initial.caseId ?? window.localStorage.getItem("atlas-case");
+  });
   const [mode, setMode] = useState<PresentationMode>(() => {
     return window.localStorage.getItem("atlas-mode") === "scientist" ? "scientist" : "family";
   });
 
   useEffect(() => {
-    if (!window.location.hash) navigate("/discover");
-    const update = () => setRoute(routeFromHash());
+    if (!window.location.hash) navigate("/search");
+    const update = () => {
+      const next = parseHash();
+      setRoute(next.route);
+      // Only a hash that names a case changes the selection, so moving between
+      // journey screens keeps the disease the visitor chose.
+      if (next.caseId) {
+        setCaseId(next.caseId);
+        window.localStorage.setItem("atlas-case", next.caseId);
+      }
+    };
     window.addEventListener("hashchange", update);
     return () => window.removeEventListener("hashchange", update);
   }, []);
@@ -45,34 +76,46 @@ export default function App() {
   }
 
   if (!contract.ok) return <ContractUnavailable errors={contract.errors} />;
-  const { story, goals } = contract;
-  const props = { story, goals, mode };
+  const { story, goals, parent } = contract;
+
+  // The journey's narrative contract is written for one disease. Other cases
+  // supply their own data; `activeCase` is what screens read to know which.
+  const activeCase = cases.ok ? selectCase(cases.cases, caseId) : null;
+  const props = { story, goals, parent, mode, activeCase };
+
+  const journeyRoute = route !== "/search" && route !== "/cases";
 
   return (
     <div className={`app mode-${mode}`}>
       <header className="app-header">
-        <button className="brand" onClick={() => navigate("/discover")} aria-label="Rare Disease Atlas home">
+        <button className="brand" onClick={() => navigate("/search")} aria-label="Rare Disease Atlas home">
           <span className="brand-mark">RA</span>
-          <span><b>Rare Disease Atlas</b><small>Evidence refinement → research action</small></span>
+          <span><b>Rare Disease Atlas</b><small>Understand the science. Find the next question.</small></span>
         </button>
-        <GoalProgress active={route} />
-        <button
-          type="button"
-          className={route === "/cases" ? "cases-link active" : "cases-link"}
-          onClick={() => navigate("/cases")}
-        >
-          3 worked cases
-        </button>
-        <ModeToggle mode={mode} onChange={updateMode} />
+        {journeyRoute ? <JourneyProgress active={route} mode={mode} /> : <span className="header-spacer" />}
+        <div className="header-actions">
+          <button
+            type="button"
+            className={route === "/cases" ? "cases-link active" : "cases-link"}
+            onClick={() => navigate("/cases")}
+          >
+            {cases.ok ? `${cases.cases.case_count} worked cases` : "Worked cases"}
+          </button>
+          <ModeToggle mode={mode} onChange={updateMode} />
+        </div>
       </header>
-      {route === "/discover" && <SearchScreen {...props} />}
-      {route === "/biology" && <BiologyScreen {...props} />}
-      {route === "/validate" && <ValidateScreen {...props} />}
-      {route === "/question" && <QuestionScreen {...props} />}
-      {route === "/existing-work" && <ExistingWorkScreen {...props} />}
+      {route === "/search" && <SearchScreen mode={mode} />}
       {route === "/cases" && <CasesScreen />}
+      {route === "/disease" && <DiseaseScreen {...props} />}
+      {route === "/connections" && <ConnectionsScreen {...props} />}
+      {route === "/evidence" && <EvidenceScreen {...props} />}
+      {route === "/unknown" && <UnknownScreen {...props} />}
+      {route === "/experiment" && <ExperimentScreen {...props} />}
+      {route === "/existing-work" && <ExistingWorkScreen {...props} />}
+      {route === "/next-steps" && <NextStepsScreen {...props} />}
+      {journeyRoute && route !== "/disease" && <EntityLegend />}
       <div className="global-disclaimer" role="note">
-        Research-support prototype · Not a medical recommendation · Expert review pending
+        Research-support prototype. Not medical advice, diagnosis, or treatment recommendation. Discuss medical decisions with a qualified healthcare professional.
       </div>
     </div>
   );

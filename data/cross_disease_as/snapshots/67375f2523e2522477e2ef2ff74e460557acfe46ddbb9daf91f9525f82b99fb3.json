@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AICAM1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:23.737734+00:00",
+  "sha256": "8526c7f4be6e597a30eca9b3d5c2607dc61fb4e9ae5eaabdf6152845193f3145"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AIL6R%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:10.754705+00:00",
+  "sha256": "a40ecb9c8c97e14535ca7399a982a99b0d9bc6775a1769faa80a2101f2aa20bd"
+}

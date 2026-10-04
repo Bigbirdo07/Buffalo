@@ -1,0 +1,846 @@
+{
+  "schema_version": "flagship-journey-v1",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "flagship": {
+    "pair_id": "bf70f76f-91ee62a2",
+    "retrieval_rank": 5,
+    "retrieval_axes": 4,
+    "retrieval_information": 27.694,
+    "disease_a_id": "bf70f76f-b4d5-5a82-ba68-55fc3f831984",
+    "disease_a": "Ankylosing Spondylitis",
+    "disease_b_id": "91ee62a2-b39d-54ea-9d2f-d455b0734511",
+    "disease_b": "Uveitis",
+    "retrieval_reason": [
+      "SHARED_CELLULAR_PROCESS",
+      "SHARED_CELL_TYPE",
+      "SAME_GENE",
+      "PHENOTYPE_SIMILARITY"
+    ],
+    "retrieval_primary_feature": "T-helper 17 type immune response",
+    "identity_class": "DISTINCT_DISEASE",
+    "retrieval_validity": "CORRECT",
+    "final_relationship": "SHARED_DOWNSTREAM_MECHANISM",
+    "evidence_ids": [
+      "PMID:36477533",
+      "PMID:25405820",
+      "PMID:33499153",
+      "PMID:23452840",
+      "PMID:30069262",
+      "PMID:33864943",
+      "PMID:25488777",
+      "PMID:26310161"
+    ],
+    "contradiction_ids": [],
+    "variant_compatibility": "UNKNOWN",
+    "decision_trace_id": "bf70f76f-91ee62a2",
+    "actionable": true,
+    "is_independent_discovery": true,
+    "review_status": "AWAITING_EXPERT_SIGNOFF",
+    "algorithm_version": "cross-disease-pipeline-v1",
+    "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81"
+  },
+  "selection_decision": {
+    "schema_version": "flagship-selection-decision-v1",
+    "algorithm_version": "flagship-selection-v2",
+    "starting_disease": "Ankylosing Spondylitis",
+    "candidates_assessed": 8,
+    "excluded_candidates": [
+      {
+        "disease": "Multiple Sclerosis",
+        "reason": "shared process without demonstrated equivalence"
+      },
+      {
+        "disease": "Psoriasis",
+        "reason": "shared process without demonstrated equivalence"
+      },
+      {
+        "disease": "Ulcerative Colitis",
+        "reason": "shared process without demonstrated equivalence"
+      },
+      {
+        "disease": "Rheumatoid Arthritis",
+        "reason": "shared process without demonstrated equivalence"
+      },
+      {
+        "disease": "Crohn Disease",
+        "reason": "shared process without demonstrated equivalence"
+      }
+    ],
+    "eligible_candidates": [
+      {
+        "disease": "Uveitis",
+        "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+        "total": 0.885,
+        "components": [
+          {
+            "name": "mechanistic_specificity",
+            "value": 1.0,
+            "weight": 0.3,
+            "contribution": 0.3,
+            "rationale": "0 specific process term(s), 4 named regulator(s), 0 generic"
+          },
+          {
+            "name": "evidence_directness",
+            "value": 1.0,
+            "weight": 0.22,
+            "contribution": 0.22,
+            "rationale": "8 of 8 supporting items establish a direct link"
+          },
+          {
+            "name": "evidence_role_quality",
+            "value": 0.5,
+            "weight": 0.18,
+            "contribution": 0.09,
+            "rationale": "no per-term roles recorded; treated as neutral"
+          },
+          {
+            "name": "context_compatibility",
+            "value": 1.0,
+            "weight": 0.12,
+            "contribution": 0.12,
+            "rationale": "molecular anchor present, cell/tissue axis comparable"
+          },
+          {
+            "name": "experimental_tractability",
+            "value": 1.0,
+            "weight": 0.1,
+            "contribution": 0.1,
+            "rationale": "a named regulator gives an assay a target"
+          },
+          {
+            "name": "variant_compatibility",
+            "value": 0.5,
+            "weight": 0.05,
+            "contribution": 0.025,
+            "rationale": "variant compatibility UNKNOWN"
+          },
+          {
+            "name": "independent_corroboration",
+            "value": 1.0,
+            "weight": 0.03,
+            "contribution": 0.03,
+            "rationale": "8 supporting source(s), weak factor only"
+          }
+        ],
+        "penalties": [
+          {
+            "name": "contradiction_burden",
+            "value": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "rationale": "no contradicting evidence retrieved"
+          },
+          {
+            "name": "generic_overlap",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "rationale": "0 of 4 bridge terms are generic"
+          }
+        ]
+      },
+      {
+        "disease": "Kawasaki Disease",
+        "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+        "total": 0.855,
+        "components": [
+          {
+            "name": "mechanistic_specificity",
+            "value": 1.0,
+            "weight": 0.3,
+            "contribution": 0.3,
+            "rationale": "0 specific process term(s), 4 named regulator(s), 1 generic"
+          },
+          {
+            "name": "evidence_directness",
+            "value": 1.0,
+            "weight": 0.22,
+            "contribution": 0.22,
+            "rationale": "11 of 11 supporting items establish a direct link"
+          },
+          {
+            "name": "evidence_role_quality",
+            "value": 0.5,
+            "weight": 0.18,
+            "contribution": 0.09,
+            "rationale": "no per-term roles recorded; treated as neutral"
+          },
+          {
+            "name": "context_compatibility",
+            "value": 1.0,
+            "weight": 0.12,
+            "contribution": 0.12,
+            "rationale": "molecular anchor present, cell/tissue axis comparable"
+          },
+          {
+            "name": "experimental_tractability",
+            "value": 1.0,
+            "weight": 0.1,
+            "contribution": 0.1,
+            "rationale": "a named regulator gives an assay a target"
+          },
+          {
+            "name": "variant_compatibility",
+            "value": 0.5,
+            "weight": 0.05,
+            "contribution": 0.025,
+            "rationale": "variant compatibility UNKNOWN"
+          },
+          {
+            "name": "independent_corroboration",
+            "value": 1.0,
+            "weight": 0.03,
+            "contribution": 0.03,
+            "rationale": "11 supporting source(s), weak factor only"
+          }
+        ],
+        "penalties": [
+          {
+            "name": "contradiction_burden",
+            "value": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "rationale": "no contradicting evidence retrieved"
+          },
+          {
+            "name": "generic_overlap",
+            "value": 0.2,
+            "weight": 0.15,
+            "contribution": 0.03,
+            "rationale": "1 of 5 bridge terms are generic"
+          }
+        ]
+      },
+      {
+        "disease": "Celiac Disease",
+        "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+        "total": 0.762,
+        "components": [
+          {
+            "name": "mechanistic_specificity",
+            "value": 0.75,
+            "weight": 0.3,
+            "contribution": 0.225,
+            "rationale": "0 specific process term(s), 3 named regulator(s), 0 generic"
+          },
+          {
+            "name": "evidence_directness",
+            "value": 1.0,
+            "weight": 0.22,
+            "contribution": 0.22,
+            "rationale": "8 of 8 supporting items establish a direct link"
+          },
+          {
+            "name": "evidence_role_quality",
+            "value": 0.5,
+            "weight": 0.18,
+            "contribution": 0.09,
+            "rationale": "no per-term roles recorded; treated as neutral"
+          },
+          {
+            "name": "context_compatibility",
+            "value": 0.6,
+            "weight": 0.12,
+            "contribution": 0.072,
+            "rationale": "molecular anchor present, cell/tissue axis unassessed"
+          },
+          {
+            "name": "experimental_tractability",
+            "value": 1.0,
+            "weight": 0.1,
+            "contribution": 0.1,
+            "rationale": "a named regulator gives an assay a target"
+          },
+          {
+            "name": "variant_compatibility",
+            "value": 0.5,
+            "weight": 0.05,
+            "contribution": 0.025,
+            "rationale": "variant compatibility UNKNOWN"
+          },
+          {
+            "name": "independent_corroboration",
+            "value": 1.0,
+            "weight": 0.03,
+            "contribution": 0.03,
+            "rationale": "8 supporting source(s), weak factor only"
+          }
+        ],
+        "penalties": [
+          {
+            "name": "contradiction_burden",
+            "value": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "rationale": "no contradicting evidence retrieved"
+          },
+          {
+            "name": "generic_overlap",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "rationale": "0 of 3 bridge terms are generic"
+          }
+        ]
+      }
+    ],
+    "automated_choice": "Uveitis",
+    "ranking_basis": "Interpretable components, mechanistic specificity weighted highest. Corroboration count is a weak tie-break at weight 0.03, because the number of papers co-mentioning two diseases measures attention, not mechanistic understanding.",
+    "operator_override": false,
+    "override_reason": null,
+    "selected_candidate": "Uveitis",
+    "selection_rationale": "mechanistic_specificity 1.00; evidence_directness 1.00; evidence_role_quality 0.50; context_compatibility 1.00; experimental_tractability 1.00; variant_compatibility 0.50; independent_corroboration 1.00"
+  },
+  "retrieval_level_feature": "T-helper 17 type immune response",
+  "validated_mechanistic_bridge": {
+    "bridge_id": "bridge:bf70f76f-91ee62a2",
+    "terms": [
+      "HLA",
+      "ERAP1",
+      "TNFAIP3",
+      "MHC"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: HLA, ERAP1, TNFAIP3, MHC. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:36477533",
+      "PMID:25405820",
+      "PMID:33499153",
+      "PMID:23452840",
+      "PMID:30069262",
+      "PMID:33864943",
+      "PMID:25488777",
+      "PMID:26310161"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "T-helper 17 type immune response",
+      "T-helper 17 cell",
+      "ERAP1",
+      "Uveitis"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "bridge_version": 1,
+  "bridge_supersedes": null,
+  "bridge_refinement_reason": null,
+  "bridge_display_label": "HLA, ERAP1, TNFAIP3, MHC",
+  "full_text_obtained": true,
+  "knowledge_gap": {
+    "gap_id": "323f8ac5-31d6-5e3e-b9a4-7983382ef74d",
+    "question": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+    "gap_type": "missing_assay",
+    "related_claims": [],
+    "related_edges": [],
+    "scope": "Ankylosing Spondylitis and Uveitis, restricted to HLA, ERAP1, TNFAIP3, MHC. The pair was retrieved on 'T-helper 17 type immune response', which is broader and is NOT what is being tested: the question follows the evidence, not the annotation. The question is equivalence of functional consequence, not whether either disease involves the process, which the cited evidence already supports.",
+    "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+    "current_evidence_summary": "8 corroborating primary findings (PMID:36477533, PMID:25405820, PMID:33499153, PMID:23452840, PMID:30069262, PMID:33864943, PMID:25488777, PMID:26310161) establish a direct molecular link. Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: HLA, ERAP1, TNFAIP3, MHC. This is what the literature supports, and it is not the same as the annotation that retrieved the pair. They do not establish that the downstream functional consequence is the same in both diseases, and the supporting reports are limited in number and experimental context.",
+    "contradictory_evidence_summary": "No contradicting evidence was retrieved by the recorded searches.",
+    "search_coverage": {
+      "coverage_id": "coverage:bf70f76f-91ee62a2",
+      "sources": [
+        {
+          "source": "PubMed (cross-disease co-mention)",
+          "status": "CHECKED",
+          "queries": [
+            "(SATB1[tiab] OR \"DNA-binding protein SATB1\"[tiab] OR \"Special AT-rich sequence-binding protein 1\"[tiab] OR STAT3[tiab] OR \"Signal transducer and activator of transcription 3\"[tiab] OR \"Acute-phase response factor\"[tiab] OR TNFAIP3[tiab] OR \"TNF alpha-induced protein 3\"[tiab] OR \"Tumor necrosis factor alpha-induced protein 3\"[tiab] OR \"Ankylosing Spondylitis\"[tiab]) AND (ERAP1[tiab] OR A-LAP[tiab] OR PILS[tiab] OR HLA-B[tiab] OR \"HLA class I histocompatibility antigen, B alpha chain\"[tiab] OR \"Human leukocyte antigen B\"[tiab] OR Uveitis[tiab])"
+          ],
+          "checked_at": "2026-10-04T10:37:57.205089Z",
+          "result_count": 1613,
+          "error": null,
+          "pages_checked": 0,
+          "pagination_limit": null,
+          "languages": [
+            "eng"
+          ],
+          "geographic_regions": [],
+          "cache_hits": 0,
+          "snapshot_references": [
+            "cf4a1e7b76465c8e9d90aaba023f17b2cd2898ce11d909ca9f2cc943c1acb404"
+          ],
+          "estimated_cost": 0.0
+        },
+        {
+          "source": "Full-text corpora",
+          "status": "NOT_STARTED",
+          "queries": [],
+          "checked_at": null,
+          "result_count": 0,
+          "error": "Not searched. A relationship discussed only in full text would be invisible to this run.",
+          "pages_checked": 0,
+          "pagination_limit": null,
+          "languages": [],
+          "geographic_regions": [],
+          "cache_hits": 0,
+          "snapshot_references": [],
+          "estimated_cost": 0.0
+        }
+      ],
+      "search_started_at": "2026-10-04T10:37:57.205122Z",
+      "search_completed_at": null,
+      "scope": "Cross-disease evidence for pair bf70f76f-91ee62a2",
+      "language_limitations": [
+        "English-language indexing only."
+      ],
+      "geographic_limitations": [],
+      "interpretation_caveat": "Absence of retrieved evidence is absence of indexed co-mention, not evidence that no relationship exists."
+    },
+    "missing_evidence_type": [
+      "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+      "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+    ],
+    "required_context": [
+      "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "a readout capturing HLA, ERAP1, TNFAIP3, MHC",
+      "matched isogenic or otherwise background-comparable controls",
+      "both diseases assayed in the same experiment"
+    ],
+    "priority_reason": {
+      "causal_centrality": "The gap sits exactly where the relationship was established: evidence shows the molecular link, nothing shows the functional consequence is shared.",
+      "downstream_dependence": "Every transfer decision depends on it -- whether a model, assay or therapeutic strategy from one disease informs the other.",
+      "evidence_conflict": "Known differences between the diseases (Vitreous floaters, Ocular pain, Blurred vision, Macular edema) mean equivalence cannot be assumed from the molecular link alone.",
+      "translational_relevance": "If equivalence holds, research infrastructure built for one disease becomes testable in the other, which is the scarcest resource in both communities. If it fails, effort is saved.",
+      "experimental_tractability": "One assay, two disease arms and a shared control in a single experiment. No new method is required; the readout already exists in the field.",
+      "available_assets": "Requires a model of each disease and one readout able to report the shared process. Whether these exist for both diseases is established by discovery, not assumed here.",
+      "discriminates_competing_hypotheses": "Yes. Equivalent disruption supports shared mechanism; opposite direction, absent effect in one arm, or magnitudes beyond the within-genotype range support non-equivalence. The two outcomes are distinguishable by the same measurement."
+    },
+    "resolvability": "Experimentally resolvable. The discriminating measurement is diGly assay reporting T-helper 17 type immune response applied to models of both diseases and a shared control in one experiment.",
+    "proposed_discriminating_test": "Apply one assay to models of both diseases and a shared control in the same experiment, and compare the direction and magnitude of the effect.",
+    "status": "OPEN"
+  },
+  "experiment": {
+    "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+    "knowledge_gap_id": "323f8ac5-31d6-5e3e-b9a4-7983382ef74d",
+    "scientific_question": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+    "hypothesis": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+    "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+    "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+    "sample_type": "Patient-derived or engineered models representing each disease, plus a shared control of the same genetic background.",
+    "patient_stratification": [
+      "Genotypes representative of each disease",
+      "Neither arm represented solely by a variant of uncertain significance"
+    ],
+    "perturbation": "A standardised cellular stress applied identically to every arm. The bridge describes stress-responsive biology, so a baseline-only comparison could miss a defect that appears only when the pathway is challenged, and a null result would then be uninterpretable.",
+    "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
+    "controls": [
+      "Isogenic or background-matched control",
+      "Replicate clones per genotype, to establish the within-genotype range the between-disease comparison must exceed",
+      "A positive control that perturbs the readout by a known route"
+    ],
+    "readouts": [
+      "Functional response of HLA activity to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+      "diGly assay reporting T-helper 17 type immune response as a supporting molecular profile, interpreted only alongside the primary functional readout",
+      "Recovery of the challenged cells after the stress is withdrawn"
+    ],
+    "primary_readout": "Functional response of HLA activity to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+    "secondary_readouts": [
+      "diGly assay reporting T-helper 17 type immune response as a supporting molecular profile, interpreted only alongside the primary functional readout",
+      "Recovery of the challenged cells after the stress is withdrawn"
+    ],
+    "primary_endpoint": "Direction and magnitude of the HLA, ERAP1, TNFAIP3, MHC response to stress in each disease arm relative to the shared control, by the primary readout alone.",
+    "secondary_endpoints": [
+      "Concordance between the functional response and the supporting molecular profile within each arm."
+    ],
+    "expected_result_if_supported": "Both disease models show disruption of HLA, ERAP1, TNFAIP3, MHC in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
+    "expected_result_if_refuted": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of HLA, ERAP1, TNFAIP3, MHC while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
+    "confounders": [
+      "Clone-to-clone variation can exceed the between-disease difference; the replicate-clone control exists to bound it.",
+      "Differing model maturity or culture age between arms can produce a difference unrelated to genotype.",
+      "If the two diseases' models cannot be cultured identically, any difference is confounded by protocol rather than biology."
+    ],
+    "known_limitations": [
+      "A single readout at one timepoint cannot exclude equivalence that emerges, or disappears, over time.",
+      "A negative result constrains equivalence at the measured step only and does not exclude shared biology elsewhere.",
+      "Model systems may not reproduce the cell type where the diseases actually diverge."
+    ],
+    "required_assets": [
+      "Cellular model of Ankylosing Spondylitis",
+      "Cellular model of Uveitis",
+      "Background-matched control line shared by both arms",
+      "Assay reagents for diGly assay reporting T-helper 17 type immune response"
+    ],
+    "required_capabilities": [
+      "Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "Cellular stress / heat-shock challenge applied identically across arms",
+      "iPSC maintenance and differentiation to the disease-relevant cell type",
+      "Clone-aware statistical analysis establishing the within-genotype range",
+      "diGly assay reporting T-helper 17 type immune response for supporting molecular profiling"
+    ],
+    "safety_or_ethics_flags": [],
+    "unjustified_interpretations": [
+      "That equivalence at this step implies a shared treatment response.",
+      "That a difference here means the diseases are mechanistically unrelated; it means they are not equivalent at this step.",
+      "That any result establishes causation in patients, since the measurement is made in models."
+    ],
+    "human_review_required": true,
+    "label": "Research proposal requiring expert review."
+  },
+  "required_capabilities": [
+    {
+      "capability_id": "required-capability:571a0269-8f1f-5e65-94a7-5ce4dffab577",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "canonical_name": "Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "description": "Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "capability_category": "other",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "mechanism_context": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_capabilities[0]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:132b44a6-b317-5b53-86e0-981070bbebe5",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "canonical_name": "iPSC maintenance",
+      "description": "iPSC maintenance and differentiation to the disease-relevant cell type",
+      "capability_category": "cell_culture",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: iPSC maintenance and differentiation to the disease-relevant cell type",
+      "mechanism_context": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_capabilities[2]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:8d70e75a-00f4-5e29-b52d-ef042b4ed50e",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "canonical_name": "clone-aware statistical analysis",
+      "description": "Clone-aware statistical analysis establishing the within-genotype range",
+      "capability_category": "statistical_analysis",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: Clone-aware statistical analysis establishing the within-genotype range",
+      "mechanism_context": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_capabilities[3]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:d6628c68-9ed1-560c-856d-5de00e4cccd7",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "canonical_name": "diGly enrichment proteomics",
+      "description": "diGly assay reporting T-helper 17 type immune response for supporting molecular profiling",
+      "capability_category": "proteomics",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: diGly assay reporting T-helper 17 type immune response for supporting molecular profiling",
+      "mechanism_context": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_capabilities[4]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    }
+  ],
+  "required_assets": [
+    {
+      "required_asset_id": "required-asset:5b198de5-116c-5452-8193-1dacf65e82bb",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "asset_type": "other",
+      "description": "Cellular model of Ankylosing Spondylitis",
+      "required_characteristics": [
+        "Cellular model of Ankylosing Spondylitis"
+      ],
+      "biological_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "reason_required": "The experiment explicitly lists this required asset: Cellular model of Ankylosing Spondylitis",
+      "alternatives": [],
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_assets[0]",
+      "human_review_status": "PENDING"
+    },
+    {
+      "required_asset_id": "required-asset:28985075-4aef-556a-b421-eea4b96effb0",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "asset_type": "other",
+      "description": "Cellular model of Uveitis",
+      "required_characteristics": [
+        "Cellular model of Uveitis"
+      ],
+      "biological_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "reason_required": "The experiment explicitly lists this required asset: Cellular model of Uveitis",
+      "alternatives": [],
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_assets[1]",
+      "human_review_status": "PENDING"
+    },
+    {
+      "required_asset_id": "required-asset:510fab5c-d592-593e-bf7a-f2cb48b1eb7c",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "asset_type": "other",
+      "description": "Background-matched control line shared by both arms",
+      "required_characteristics": [
+        "Background-matched control line shared by both arms"
+      ],
+      "biological_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "reason_required": "The experiment explicitly lists this required asset: Background-matched control line shared by both arms",
+      "alternatives": [],
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_assets[2]",
+      "human_review_status": "PENDING"
+    },
+    {
+      "required_asset_id": "required-asset:3a052d4a-b7dc-5eb2-ae84-aebb82e50a92",
+      "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+      "asset_type": "assay",
+      "description": "Assay reagents for diGly assay reporting T-helper 17 type immune response",
+      "required_characteristics": [
+        "Assay reagents for diGly assay reporting T-helper 17 type immune response"
+      ],
+      "biological_context": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "reason_required": "The experiment explicitly lists this required asset: Assay reagents for diGly assay reporting T-helper 17 type immune response",
+      "alternatives": [],
+      "evidence_source": "c7ec377a-c69e-5215-a320-103b291ce6b7#required_assets[3]",
+      "human_review_status": "PENDING"
+    }
+  ],
+  "capability_coverage_map": [
+    {
+      "required_capability": "Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "category": "other",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "iPSC maintenance",
+      "category": "cell_culture",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "clone-aware statistical analysis",
+      "category": "statistical_analysis",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "diGly enrichment proteomics",
+      "category": "proteomics",
+      "candidate_source": "Baoxin Li (PMID:41500472, 2026)",
+      "evidence_scope": "Publication shows the technique was performed by this team at this date. Not current activity, availability or willingness.",
+      "status": "CANDIDATE_IDENTIFIED",
+      "missing_verification": "Confirm the group still runs this assay, and that it can be applied to models of both diseases."
+    }
+  ],
+  "collaboration_opportunity": {
+    "knowledge_gap_id": "323f8ac5-31d6-5e3e-b9a4-7983382ef74d",
+    "experiment_id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+    "required_capabilities": [
+      "Functional assay reporting HLA, ERAP1, TNFAIP3, MHC under standardised stress",
+      "iPSC maintenance",
+      "clone-aware statistical analysis",
+      "diGly enrichment proteomics"
+    ],
+    "capabilities_with_candidates": 1,
+    "capabilities_missing": 3,
+    "execution_topology": "MULTI_PARTY_EXECUTABLE",
+    "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+    "uncertainty": "Supporting evidence for the relationship is limited in number and experimental context. Expert review should establish whether it justifies the experiment before anyone is contacted.",
+    "suggested_first_step": "Approach a group with a demonstrated functional assay for HLA, ERAP1, TNFAIP3, MHC and ask whether it can be applied in parallel to models of Ankylosing Spondylitis and Uveitis against a shared control.",
+    "review_status": "AWAITING_EXPERT_SIGNOFF"
+  },
+  "discovery": {
+    "queries": [
+      {
+        "category": "crispr_editing",
+        "tier": "A_disease_anchored",
+        "query": "(SATB1[tiab] OR STAT3[tiab] OR ERAP1[tiab] OR \"HLA-B\"[tiab]) AND (\"knock-in\"[tiab] OR \"knockin\"[tiab] OR isogenic[tiab] OR CRISPR[tiab]) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab])"
+      },
+      {
+        "category": "crispr_editing",
+        "tier": "B_capability_anchored",
+        "query": "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR \"base editing\"[tiab] OR \"prime editing\"[tiab])) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (osteoblast[tiab] OR osteoclast[tiab])"
+      },
+      {
+        "category": "isogenic_line_generation",
+        "tier": "B_capability_anchored",
+        "query": "isogenic[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"point mutation\"[tiab] OR \"single nucleotide\"[tiab] OR variant*[tiab]) AND (osteoblast[tiab] OR osteoclast[tiab])"
+      },
+      {
+        "category": "proteomics",
+        "tier": "A_disease_anchored",
+        "query": "(SATB1[tiab] OR STAT3[tiab] OR ERAP1[tiab] OR \"HLA-B\"[tiab]) AND (diGly[tiab] OR ubiquitinome[tiab] OR immunoblot[tiab] OR \"co-immunoprecipitation\"[tiab])"
+      },
+      {
+        "category": "proteomics",
+        "tier": "B_capability_anchored",
+        "query": "(diGly[tiab] OR ubiquitinome[tiab] OR immunoblot[tiab] OR \"co-immunoprecipitation\"[tiab]) AND ((osteoblast[tiab] OR osteoclast[tiab]) OR iPSC[tiab] OR \"induced pluripotent\"[tiab])"
+      },
+      {
+        "category": "ipsc_neuronal_differentiation",
+        "tier": "B_capability_anchored",
+        "query": "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (osteoblast[tiab] OR osteoclast[tiab]) AND (differentiat*[tiab] OR organoid[tiab])"
+      },
+      {
+        "category": "statistical_analysis",
+        "tier": "B_capability_anchored",
+        "query": "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (clone*[tiab] AND (\"mixed model\"[tiab] OR \"random effect*\"[tiab] OR \"variance component*\"[tiab]))"
+      }
+    ],
+    "skipped": [],
+    "failures": [],
+    "candidates": [
+      {
+        "candidate_id": "capability-candidate:crispr_editing:PMID-42051306",
+        "capability": "crispr_editing",
+        "pmid": "42051306",
+        "title": "STING-STAT3-SOX18 Axis Drives EndMT and Epigenetic Reprogramming in SAVI Lung Fibrosis.",
+        "year": 2026,
+        "last_author": "Raphaela Goldbach-Mansky",
+        "affiliation": "Translational Autoinflammatory Diseases Section (TADS), Laboratory of Clinical Immunology and Microbiology, National Institute of Allergy and Infectious Diseases, National Institutes of Health, Bethesda, MD, 20892, USA.",
+        "disease_involvement": "SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis named in the title or abstract",
+        "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification."
+      },
+      {
+        "candidate_id": "capability-candidate:crispr_editing:PMID-39661729",
+        "capability": "crispr_editing",
+        "pmid": "39661729",
+        "title": "MAM-STAT3-Driven Mitochondrial Ca+2 Upregulation Contributes to Immunosenescence in Type A Mandibuloacral Dysplasia Patients.",
+        "year": 2025,
+        "last_author": "Guangqian Zhou",
+        "affiliation": "Guangdong Key Laboratory of Genomic Stability and Disease Prevention, Shenzhen Key Laboratory of Anti-Aging and Regenerative Medicine, Shenzhen Engineering Laboratory of Regenerative Technologies for Orthopedic Diseases, Department of Medical Cell Biology and Genetics, Health Science Center, Shenzhen University, Shenzhen, 518060, China.",
+        "disease_involvement": "SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis named in the title or abstract",
+        "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification."
+      },
+      {
+        "candidate_id": "capability-candidate:crispr_editing:PMID-40766660",
+        "capability": "crispr_editing",
+        "pmid": "40766660",
+        "title": "STAT3 regulates basal cell identity and morphogenesis during early esophageal development.",
+        "year": 2025,
+        "last_author": "Ricardo Cruz-Acu\u00f1a",
+        "affiliation": "Herbert Irving Comprehensive Cancer Center, Division of Digestive and Liver Diseases, Columbia University Irving Medical Center, New York, NY, USA.",
+        "disease_involvement": "SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis named in the title or abstract",
+        "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification."
+      },
+      {
+        "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-34901540",
+        "capability": "ipsc_neuronal_differentiation",
+        "pmid": "34901540",
+        "title": "A bone-targeted engineered exosome platform delivering siRNA to treat osteoporosis.",
+        "year": 2022,
+        "last_author": "Dehao Fu",
+        "affiliation": "Department of Orthopedics, Shanghai General Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, 200080, PR China.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-31793059",
+        "capability": "ipsc_neuronal_differentiation",
+        "pmid": "31793059",
+        "title": "Direct Reprogramming of Mouse Fibroblasts into Functional Osteoblasts.",
+        "year": 2020,
+        "last_author": "Joy Y Wu",
+        "affiliation": "Division of Endocrinology, Stanford University School of Medicine, Stanford, CA, USA.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-31904196",
+        "capability": "ipsc_neuronal_differentiation",
+        "pmid": "31904196",
+        "title": "Reprogramming of human fibroblasts into osteoblasts by insulin-like growth factor-binding protein 7.",
+        "year": 2020,
+        "last_author": "Hala Zreiqat",
+        "affiliation": "Tissue Engineering & Biomaterials Research Unit, School of Biomedical Engineering, The University of Sydney, Camperdown, New South Wales, Australia.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:isogenic_line_generation:PMID-41831016",
+        "capability": "isogenic_line_generation",
+        "pmid": "41831016",
+        "title": "NEFL is associated with inhibition of odontoblastic process in odontohypophosphatasia.",
+        "year": 2026,
+        "last_author": "Keiichi Ozono",
+        "affiliation": "Department of Pediatrics, Graduate School of Medicine, The University of Osaka, Osaka, Japan. [email removed]",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:isogenic_line_generation:PMID-40925496",
+        "capability": "isogenic_line_generation",
+        "pmid": "40925496",
+        "title": "Involvement of impaired phosphate production and aberrant extracellular ATP signaling in the pathogenesis of hypophosphatasia: Analysis of ALPL-Knockout human i",
+        "year": 2025,
+        "last_author": "Toshimi Michigami",
+        "affiliation": "Department of Bone and Mineral Research, Research Institute, Osaka Women's and Children's Hospital, Osaka Prefectural Hospital Organization, Izumi, Osaka, 594-1101, Japan.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:isogenic_line_generation:PMID-38331306",
+        "capability": "isogenic_line_generation",
+        "pmid": "38331306",
+        "title": "Complex intrinsic abnormalities in osteoblast lineage cells of X-linked hypophosphatemia: Analysis of human iPS cell models generated by CRISPR/Cas9-mediated ge",
+        "year": 2024,
+        "last_author": "Toshimi Michigami",
+        "affiliation": "Department of Bone and Mineral Research, Research Institute, Osaka Women's and Children's Hospital, Osaka Prefectural Hospital Organization, Izumi, Osaka 594-1101, Japan.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:proteomics:PMID-41500472",
+        "capability": "proteomics",
+        "pmid": "41500472",
+        "title": "Lumacaftor and fexofenadine prevent donepezil-induced LQTS via PHE656-mediated hERG chaperoning.",
+        "year": 2026,
+        "last_author": "Baoxin Li",
+        "affiliation": "Department of Pharmacology, College of Pharmacy, Harbin Medical University, Harbin, Heilongjiang, China.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:proteomics:PMID-39826612",
+        "capability": "proteomics",
+        "pmid": "39826612",
+        "title": "Transcriptional regulation of Rankl by Txnip-Ecd in aging and diabetic related osteoporosis.",
+        "year": 2025,
+        "last_author": "An Qin",
+        "affiliation": "Shanghai Key Laboratory of Orthopedic Implants, Department of Orthopedic Surgery, Shanghai Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai 200011, China.",
+        "disease_involvement": "no SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis involvement established by this search",
+        "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate."
+      },
+      {
+        "candidate_id": "capability-candidate:proteomics:PMID-40192103",
+        "capability": "proteomics",
+        "pmid": "40192103",
+        "title": "Cardiomyocyte-Enriched USP20 Ameliorates Pathological Cardiac Hypertrophy by Targeting STAT3 Deubiquitination.",
+        "year": 2025,
+        "last_author": "Deling Yin",
+        "affiliation": "Department of Cardiology of the Second Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou, 310009, China.",
+        "disease_involvement": "SATB1 or STAT3 or ERAP1 or HLA-B or Ankylosing Spondylitis or Uveitis named in the title or abstract",
+        "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification."
+      }
+    ],
+    "signal_count": {
+      "capability-candidate:crispr_editing:PMID-42051306": 1,
+      "capability-candidate:crispr_editing:PMID-39661729": 1,
+      "capability-candidate:crispr_editing:PMID-40766660": 1,
+      "capability-candidate:ipsc_neuronal_differentiation:PMID-34901540": 1,
+      "capability-candidate:ipsc_neuronal_differentiation:PMID-31793059": 1,
+      "capability-candidate:ipsc_neuronal_differentiation:PMID-31904196": 1,
+      "capability-candidate:isogenic_line_generation:PMID-41831016": 1,
+      "capability-candidate:isogenic_line_generation:PMID-40925496": 1,
+      "capability-candidate:isogenic_line_generation:PMID-38331306": 1,
+      "capability-candidate:proteomics:PMID-41500472": 1,
+      "capability-candidate:proteomics:PMID-39826612": 1,
+      "capability-candidate:proteomics:PMID-40192103": 1
+    }
+  }
+}

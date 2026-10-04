@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AVCAM1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:16.875947+00:00",
+  "sha256": "09aabf29b7d625dde3345d38d5ef6933b118d9230658cea45beaa70c85ce3940"
+}

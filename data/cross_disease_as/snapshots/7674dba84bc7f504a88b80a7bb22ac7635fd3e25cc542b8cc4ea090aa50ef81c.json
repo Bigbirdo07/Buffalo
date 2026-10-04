@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SATB1%5Btiab%5D+OR+%22DNA-binding+protein+SATB1%22%5Btiab%5D+OR+%22Special+AT-rich+sequence-binding+protein+1%22%5Btiab%5D+OR+STAT3%5Btiab%5D+OR+%22Signal+transducer+and+activator+of+transcription+3%22%5Btiab%5D+OR+%22Acute-phase+response+factor%22%5Btiab%5D+OR+TNFAIP3%5Btiab%5D+OR+%22TNF+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Tumor+necrosis+factor+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Ankylosing+Spondylitis%22%5Btiab%5D%29+AND+%28ERAP1%5Btiab%5D+OR+A-LAP%5Btiab%5D+OR+PILS%5Btiab%5D+OR+HLA-B%5Btiab%5D+OR+%22HLA+class+I+histocompatibility+antigen%2C+B+alpha+chain%22%5Btiab%5D+OR+%22Human+leukocyte+antigen+B%22%5Btiab%5D+OR+Uveitis%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:27.958780+00:00",
+  "sha256": "cf4a1e7b76465c8e9d90aaba023f17b2cd2898ce11d909ca9f2cc943c1acb404"
+}

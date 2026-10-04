@@ -1,0 +1,196 @@
+{
+  "pair_id": "bf70f76f-3b5508d3",
+  "disease_a": "Ankylosing Spondylitis",
+  "disease_b": "Celiac Disease",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "DISTINCT_DISEASE: Shared gene (HGNC:11896, HGNC:14078, HGNC:1653, HGNC:3239, HGNC:3488, HGNC:6769, HGNC:9652) but each disease also has distinct causal genes and phenotype overlap is limited. Independent diseases that happen to involve a common gene.",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELLULAR_PROCESS(interleukin-17 production), SAME_GENE(CD28), PHENOTYPE_SIMILARITY(Arthritis)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=STRONG]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No variant effect recorded upstream for Ankylosing Spondylitis, so compatibility cannot be assessed. The shared gene alone does not establish a shared mechanism.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "MODERATE: interleukin-17 production, bone resorption",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "WEAK: Arthritis",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "19 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "8 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 11 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "1 of 7 alternatives apply: BROAD_ONTOLOGY_ANNOTATION",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: TNFAIP3, TNF, A20. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval CORRECT): 8 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "DISTINCT_DISEASE",
+  "scoped_identities": [],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "interleukin-17 production",
+      "corpus_frequency": 13
+    },
+    {
+      "type": "SAME_GENE",
+      "feature": "CD28",
+      "corpus_frequency": 9
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Arthritis",
+      "corpus_frequency": 53
+    }
+  ],
+  "retrieval_validity": "CORRECT",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=STRONG",
+  "supporting_evidence_ids": [
+    "PMID:28465464",
+    "PMID:34557201",
+    "PMID:33499153",
+    "PMID:19439038",
+    "PMID:32958016",
+    "PMID:29367528",
+    "PMID:27175295",
+    "PMID:42476359"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [
+    "PMID:30258889",
+    "PMID:27779104",
+    "PMID:36162004",
+    "PMID:33446651",
+    "PMID:26135958",
+    "PMID:29859964",
+    "PMID:40825157",
+    "PMID:22661644",
+    "PMID:32719680",
+    "PMID:32961552",
+    "PMID:23566912"
+  ],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": true,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:bf70f76f-3b5508d3",
+    "terms": [
+      "TNFAIP3",
+      "TNF",
+      "A20"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: TNFAIP3, TNF, A20. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:28465464",
+      "PMID:34557201",
+      "PMID:33499153",
+      "PMID:19439038",
+      "PMID:32958016",
+      "PMID:29367528",
+      "PMID:27175295",
+      "PMID:42476359"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "interleukin-17 production",
+      "CD28",
+      "Arthritis"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+  "final_rationale": "8 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "actionable": true,
+  "search_coverage": {
+    "query": "(SATB1[tiab] OR \"DNA-binding protein SATB1\"[tiab] OR \"Special AT-rich sequence-binding protein 1\"[tiab] OR STAT3[tiab] OR \"Signal transducer and activator of transcription 3\"[tiab] OR \"Acute-phase response factor\"[tiab] OR TNFAIP3[tiab] OR \"TNF alpha-induced protein 3\"[tiab] OR \"Tumor necrosis factor alpha-induced protein 3\"[tiab] OR \"Ankylosing Spondylitis\"[tiab]) AND (TNFAIP3[tiab] OR \"TNF alpha-induced protein 3\"[tiab] OR \"Tumor necrosis factor alpha-induced protein 3\"[tiab] OR BACH2[tiab] OR \"Transcription regulator protein BACH2\"[tiab] OR \"BTB and CNC homolog 2\"[tiab] OR CD28[tiab] OR \"T-cell-specific surface glycoprotein CD28\"[tiab] OR TP44[tiab] OR \"Celiac Disease\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 1838,
+    "snapshot": "b807c8ef6b481efa3a8fb488bb52e3ba4cbcc609f989886c33780b050faa1024",
+    "note": null
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

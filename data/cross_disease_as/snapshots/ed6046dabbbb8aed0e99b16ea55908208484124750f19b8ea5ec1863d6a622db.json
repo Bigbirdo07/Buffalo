@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AIRF8%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:29.754357+00:00",
+  "sha256": "36a3e00f81ecb314874161a91780b537c14ac084bae53cfe53688e975239644a"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ASATB1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:19.195511+00:00",
+  "sha256": "8f3a33cec6b9a8c956ce0944661b366abd45399c1d008041d45576b76308639f"
+}

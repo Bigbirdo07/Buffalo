@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AHLA-B%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:28.950717+00:00",
+  "sha256": "6b27be93dc696393f0b2910d9b82215b888856e920f3be2c2de2d86f5c056de2"
+}

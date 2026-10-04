@@ -1,0 +1,161 @@
+{
+  "schema_version": "flagship-goal2-map-v1",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "generated_at": "2026-10-04T10:37:59.163191+00:00",
+  "scientific_question": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+  "frozen_bridge": {
+    "bridge_id": "bridge:bf70f76f-91ee62a2",
+    "version": null,
+    "terms": [
+      "HLA",
+      "ERAP1",
+      "TNFAIP3",
+      "MHC"
+    ],
+    "evidence_depth": null,
+    "full_text_review_completed": null
+  },
+  "primary_readout": "Functional response of HLA activity to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+  "capability_coverage": [
+    {
+      "requirement_id": "cap:model-a",
+      "capability": "Ankylosing Spondylitis disease-relevant cellular model",
+      "why_required": "The experiment needs one arm representing this disease.",
+      "search_terms": [
+        "Ankylosing Spondylitis"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(\"Ankylosing Spondylitis\"[tiab])",
+          "status": "TOO_BROAD_TO_IDENTIFY",
+          "total_hits": 19207,
+          "snapshot": "4e745f16ed433561c36ff091877196efca8d500c2d74f63cc8b784dedc2904be",
+          "note": "19207 hits exceeds 2000: this query cannot identify a capability, so no candidate is drawn from it."
+        }
+      ],
+      "candidate_teams": [],
+      "status": "UNKNOWN",
+      "missing_verification": "Every query was too broad to identify a capability. This needs a narrower, expert-supplied search term."
+    },
+    {
+      "requirement_id": "cap:model-b",
+      "capability": "Uveitis disease-relevant cellular model",
+      "why_required": "The experiment needs the comparison arm.",
+      "search_terms": [
+        "Uveitis"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [],
+      "candidate_teams": [],
+      "status": "UNKNOWN",
+      "missing_verification": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+    },
+    {
+      "requirement_id": "cap:stress-challenge",
+      "capability": "Standardised cellular stress challenge",
+      "why_required": "The bridge describes stress-responsive biology, so the comparison is made under challenge rather than at baseline.",
+      "search_terms": [
+        "heat shock response"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(\"heat shock response\"[tiab]) AND (proteostasis[tiab] OR \"protein quality control\"[tiab] OR neuron[tiab])",
+          "status": "CHECKED",
+          "total_hits": 338,
+          "snapshot": "9253dd5303bc616b13fbc1105b8219e96058c64eb9656cc3bedf8fe30f5f311d",
+          "note": null
+        }
+      ],
+      "candidate_teams": [
+        {
+          "name": "Xi Chen",
+          "source": "PMID:37676964",
+          "year": 2023,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Adam K Walker",
+          "source": "PMID:35101542",
+          "year": 2022,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Reut Shalgi",
+          "source": "PMID:33434530",
+          "year": 2021,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        }
+      ],
+      "status": "COVERED_SUPPORTED",
+      "missing_verification": "Confirm the group still performs this and would consider applying it to both disease contexts."
+    },
+    {
+      "requirement_id": "cap:primary-assay",
+      "capability": "Functional assay reporting HLA",
+      "why_required": "This is the primary readout; it decides the hypothesis.",
+      "search_terms": [
+        "HLA",
+        "ERAP1",
+        "TNFAIP3",
+        "MHC"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [],
+      "candidate_teams": [],
+      "status": "UNKNOWN",
+      "missing_verification": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+    },
+    {
+      "requirement_id": "cap:secondary-profiling",
+      "capability": "Secondary molecular profiling",
+      "why_required": "Supporting context only. Cannot decide the hypothesis.",
+      "search_terms": [
+        "diGly",
+        "ubiquitinome",
+        "ubiquitylome"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [],
+      "candidate_teams": [],
+      "status": "UNKNOWN",
+      "missing_verification": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+    }
+  ],
+  "research_assets": [],
+  "asset_status": "NO_RELEVANT_ASSET_IDENTIFIED",
+  "potential_coordination_opportunities": [],
+  "collaboration_topology": "MULTI_PARTY_EXECUTABLE",
+  "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+  "capabilities_total": 5,
+  "capabilities_covered": 1,
+  "capabilities_missing": 0,
+  "first_contact": {
+    "target": null,
+    "question": null,
+    "caveat": "No candidate has current-activity evidence for the primary assay."
+  }
+}

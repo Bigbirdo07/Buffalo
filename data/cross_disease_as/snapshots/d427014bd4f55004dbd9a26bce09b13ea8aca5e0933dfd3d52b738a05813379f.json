@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AERAP1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:25.319452+00:00",
+  "sha256": "2554f1a4f7fc2456f141670452855bd3b645d52f7b15232760ca53fdcfccdb75"
+}

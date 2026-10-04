@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3APYCARD%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:36.191746+00:00",
+  "sha256": "da0f2cbfed6e782fdee17813b9affb06239bc64593afce7c1e3479b2a5516899"
+}

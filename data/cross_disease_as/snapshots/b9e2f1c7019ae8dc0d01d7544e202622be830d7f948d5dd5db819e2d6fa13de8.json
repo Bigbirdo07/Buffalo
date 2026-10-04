@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AITPKC%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:17.687630+00:00",
+  "sha256": "6cc5fd9744dff4e5702ec57dcaa9004a6fe8596d04a37b1d4afdbe60aeb57012"
+}

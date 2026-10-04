@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3APEX12%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:38:04.660402+00:00",
+  "sha256": "98c59a091759285d19604cbcaf1ceb5e5342c2d5cbb2bc81c47aed181bc68438"
+}

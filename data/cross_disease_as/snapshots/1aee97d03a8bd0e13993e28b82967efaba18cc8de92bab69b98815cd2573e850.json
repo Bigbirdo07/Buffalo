@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3APADI2%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:07.429230+00:00",
+  "sha256": "3d6e6bb06e9aa4fca1727a640b179c78dca67c5358d42553c319eb029d2c3b7f"
+}

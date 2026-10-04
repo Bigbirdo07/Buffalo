@@ -1,0 +1,202 @@
+{
+  "pair_id": "3eb8d334-6037f97c",
+  "disease_a": "Zellweger Spectrum Disorders",
+  "disease_b": "Peroxisome Biogenesis Disorder",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "ALLELIC_SPECTRUM: Identical causal gene set (HGNC:22965, HGNC:8850, HGNC:8851, HGNC:8853, HGNC:8854, HGNC:8855, HGNC:8856, HGNC:8857, HGNC:8858, HGNC:8859, HGNC:8860, HGNC:9713, HGNC:9717, HGNC:9719) and 50% phenotype overlap. These labels most likely describe one allelic spectrum rather than two diseases; a relationship between them is not a cross-disease discovery.",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELLULAR_PROCESS(very long-chain fatty acid metabolic process), SAME_GENE(PEX26), SHARED_GO_TERM(bile acid), PHENOTYPE_SIMILARITY(Epiphyseal Stippling)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=STRONG; SHARED_MOLECULAR_FUNCTION=STRONG]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No variant effect recorded upstream for Zellweger Spectrum Disorders, so compatibility cannot be assessed. The shared gene alone does not establish a shared mechanism.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "STRONG: very long-chain fatty acid metabolic process, peroxisome organization, ether lipid biosynthetic process, protein import into peroxisome matrix, peroxisome",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "STRONG: Epiphyseal Stippling, Adrenal insufficiency, Leukodystrophy, Hepatomegaly",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "19 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "7 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 12 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "1 of 7 alternatives apply: SAME_ENTITY_TWO_LABELS",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: AAA, PEX10, PEX5, PEX26. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SAME_ALLELIC_SPECTRUM (retrieval PARTIALLY_CORRECT): Shared causal gene with overlapping presentation: these labels describe one allelic spectrum, so any shared biology is expected and this is not an independent cross-disease relationship.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "ALLELIC_SPECTRUM",
+  "scoped_identities": [],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "very long-chain fatty acid metabolic process",
+      "corpus_frequency": 5
+    },
+    {
+      "type": "SAME_GENE",
+      "feature": "PEX26",
+      "corpus_frequency": 2
+    },
+    {
+      "type": "SHARED_GO_TERM",
+      "feature": "bile acid",
+      "corpus_frequency": 2
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Epiphyseal Stippling",
+      "corpus_frequency": 16
+    }
+  ],
+  "retrieval_validity": "PARTIALLY_CORRECT",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=STRONG; SHARED_MOLECULAR_FUNCTION=STRONG",
+  "supporting_evidence_ids": [
+    "PMID:34383492",
+    "PMID:12717447",
+    "PMID:28146471",
+    "PMID:38510966",
+    "PMID:24843043",
+    "PMID:39696397",
+    "PMID:31871537"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [
+    "PMID:33417209",
+    "PMID:33926089",
+    "PMID:27090541",
+    "PMID:26387595",
+    "PMID:17336976",
+    "PMID:34780573",
+    "PMID:30863997",
+    "PMID:20695019",
+    "PMID:28122914",
+    "PMID:40302296",
+    "PMID:26367802",
+    "PMID:26932690"
+  ],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": false,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": true,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:3eb8d334-6037f97c",
+    "terms": [
+      "AAA",
+      "PEX10",
+      "PEX5",
+      "PEX26"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: AAA, PEX10, PEX5, PEX26. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:34383492",
+      "PMID:12717447",
+      "PMID:28146471",
+      "PMID:38510966",
+      "PMID:24843043",
+      "PMID:39696397",
+      "PMID:31871537"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "very long-chain fatty acid metabolic process",
+      "PEX26",
+      "bile acid",
+      "Epiphyseal Stippling"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SAME_ALLELIC_SPECTRUM",
+  "final_rationale": "Shared causal gene with overlapping presentation: these labels describe one allelic spectrum, so any shared biology is expected and this is not an independent cross-disease relationship.",
+  "actionable": false,
+  "search_coverage": {
+    "query": "(PEX26[tiab] OR \"Peroxisome assembly protein 26\"[tiab] OR Peroxin-26[tiab] OR PEX1[tiab] OR \"Peroxisomal ATPase PEX1\"[tiab] OR Peroxin-1[tiab] OR PEX10[tiab] OR \"Peroxisome biogenesis factor 10\"[tiab] OR Peroxin-10[tiab] OR \"Zellweger Spectrum Disorders\"[tiab]) AND (PEX26[tiab] OR \"Peroxisome assembly protein 26\"[tiab] OR Peroxin-26[tiab] OR PEX1[tiab] OR \"Peroxisomal ATPase PEX1\"[tiab] OR Peroxin-1[tiab] OR PEX10[tiab] OR \"Peroxisome biogenesis factor 10\"[tiab] OR Peroxin-10[tiab] OR \"Peroxisome Biogenesis Disorder\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 401,
+    "snapshot": "12a7633169ae31330f21ee4f38ae03feb7506793efc065a674ac04543ca8a20a",
+    "note": null
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

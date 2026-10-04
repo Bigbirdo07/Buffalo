@@ -1,7 +1,7 @@
 {
   "schema_version": "demo-cases-v1",
-  "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
-  "case_count": 3,
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "case_count": 5,
   "default_case": "scar16",
   "cases": [
     {
@@ -592,7 +592,7 @@
         }
       },
       "provenance": {
-        "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
         "candidates_from": "data/cross_disease"
       },
       "disclaimer": {
@@ -1071,7 +1071,7 @@
         }
       },
       "provenance": {
-        "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
         "candidates_from": "data/cross_disease_lafora"
       },
       "disclaimer": {
@@ -1081,6 +1081,686 @@
         "review_state": "PROVISIONAL_MACHINE_SYNTHESIS",
         "expert_signoff": "AWAITING_EXPERT_SIGNOFF"
       }
+    },
+    {
+      "case_id": "ankylosing",
+      "label": "The same method outside neurology",
+      "why_included": "An immune disease, to answer whether this only works for one disease area. Five of eight candidates were rejected because their co-mention searches returned tens of thousands of papers -- a measure of how much each disease is studied, not of a relationship. What survived is specific.",
+      "outcome": "FULL_CHAIN",
+      "starting_disease": {
+        "id": "bf70f76f-b4d5-5a82-ba68-55fc3f831984",
+        "name": "Ankylosing Spondylitis"
+      },
+      "goal1": {
+        "candidates_retrieved": 60,
+        "candidates_evaluated": 8,
+        "candidate_neighbors": [
+          {
+            "rank": 1,
+            "name": "Crohn Disease",
+            "retrieval_reason": "T-helper 17 type immune response",
+            "identity": "DISTINCT_DISEASE",
+            "independent": false,
+            "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "retrieval_validity": "INCOMPLETE",
+            "has_bridge": false
+          },
+          {
+            "rank": 2,
+            "name": "Psoriasis",
+            "retrieval_reason": "T-helper 17 type immune response",
+            "identity": "DISTINCT_DISEASE",
+            "independent": false,
+            "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "retrieval_validity": "INCOMPLETE",
+            "has_bridge": false
+          },
+          {
+            "rank": 3,
+            "name": "Rheumatoid Arthritis",
+            "retrieval_reason": "T-helper 17 type immune response",
+            "identity": "DISTINCT_DISEASE",
+            "independent": false,
+            "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "retrieval_validity": "INCOMPLETE",
+            "has_bridge": false
+          },
+          {
+            "rank": 4,
+            "name": "Kawasaki Disease",
+            "retrieval_reason": "interleukin-17 production",
+            "identity": "DISTINCT_DISEASE",
+            "independent": true,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 5,
+            "name": "Uveitis",
+            "retrieval_reason": "T-helper 17 type immune response",
+            "identity": "DISTINCT_DISEASE",
+            "independent": true,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 6,
+            "name": "Ulcerative Colitis",
+            "retrieval_reason": "response to oxidative stress",
+            "identity": "DISTINCT_DISEASE",
+            "independent": false,
+            "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "retrieval_validity": "INCOMPLETE",
+            "has_bridge": false
+          },
+          {
+            "rank": 7,
+            "name": "Multiple Sclerosis",
+            "retrieval_reason": "T-helper 17 type immune response",
+            "identity": "DISTINCT_DISEASE",
+            "independent": false,
+            "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "retrieval_validity": "INCOMPLETE",
+            "has_bridge": false
+          },
+          {
+            "rank": 8,
+            "name": "Celiac Disease",
+            "retrieval_reason": "interleukin-17 production",
+            "identity": "DISTINCT_DISEASE",
+            "independent": true,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          }
+        ],
+        "excluded_as_same_entity": [],
+        "rejected_examples": [
+          {
+            "name": "Crohn Disease",
+            "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+          },
+          {
+            "name": "Psoriasis",
+            "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+          },
+          {
+            "name": "Rheumatoid Arthritis",
+            "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+          },
+          {
+            "name": "Ulcerative Colitis",
+            "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+          },
+          {
+            "name": "Multiple Sclerosis",
+            "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+            "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+          }
+        ],
+        "selected_neighbor": {
+          "id": "91ee62a2-b39d-54ea-9d2f-d455b0734511",
+          "name": "Uveitis"
+        },
+        "selection": {
+          "schema_version": "flagship-selection-decision-v1",
+          "algorithm_version": "flagship-selection-v2",
+          "starting_disease": "Ankylosing Spondylitis",
+          "candidates_assessed": 8,
+          "excluded_candidates": [
+            {
+              "disease": "Multiple Sclerosis",
+              "reason": "shared process without demonstrated equivalence"
+            },
+            {
+              "disease": "Psoriasis",
+              "reason": "shared process without demonstrated equivalence"
+            },
+            {
+              "disease": "Ulcerative Colitis",
+              "reason": "shared process without demonstrated equivalence"
+            },
+            {
+              "disease": "Rheumatoid Arthritis",
+              "reason": "shared process without demonstrated equivalence"
+            },
+            {
+              "disease": "Crohn Disease",
+              "reason": "shared process without demonstrated equivalence"
+            }
+          ],
+          "eligible_candidates": [
+            {
+              "disease": "Uveitis",
+              "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+              "total": 0.885,
+              "components": [
+                {
+                  "name": "mechanistic_specificity",
+                  "value": 1.0,
+                  "weight": 0.3,
+                  "contribution": 0.3,
+                  "rationale": "0 specific process term(s), 4 named regulator(s), 0 generic"
+                },
+                {
+                  "name": "evidence_directness",
+                  "value": 1.0,
+                  "weight": 0.22,
+                  "contribution": 0.22,
+                  "rationale": "8 of 8 supporting items establish a direct link"
+                },
+                {
+                  "name": "evidence_role_quality",
+                  "value": 0.5,
+                  "weight": 0.18,
+                  "contribution": 0.09,
+                  "rationale": "no per-term roles recorded; treated as neutral"
+                },
+                {
+                  "name": "context_compatibility",
+                  "value": 1.0,
+                  "weight": 0.12,
+                  "contribution": 0.12,
+                  "rationale": "molecular anchor present, cell/tissue axis comparable"
+                },
+                {
+                  "name": "experimental_tractability",
+                  "value": 1.0,
+                  "weight": 0.1,
+                  "contribution": 0.1,
+                  "rationale": "a named regulator gives an assay a target"
+                },
+                {
+                  "name": "variant_compatibility",
+                  "value": 0.5,
+                  "weight": 0.05,
+                  "contribution": 0.025,
+                  "rationale": "variant compatibility UNKNOWN"
+                },
+                {
+                  "name": "independent_corroboration",
+                  "value": 1.0,
+                  "weight": 0.03,
+                  "contribution": 0.03,
+                  "rationale": "8 supporting source(s), weak factor only"
+                }
+              ],
+              "penalties": [
+                {
+                  "name": "contradiction_burden",
+                  "value": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0,
+                  "rationale": "no contradicting evidence retrieved"
+                },
+                {
+                  "name": "generic_overlap",
+                  "value": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0,
+                  "rationale": "0 of 4 bridge terms are generic"
+                }
+              ]
+            },
+            {
+              "disease": "Kawasaki Disease",
+              "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+              "total": 0.855,
+              "components": [
+                {
+                  "name": "mechanistic_specificity",
+                  "value": 1.0,
+                  "weight": 0.3,
+                  "contribution": 0.3,
+                  "rationale": "0 specific process term(s), 4 named regulator(s), 1 generic"
+                },
+                {
+                  "name": "evidence_directness",
+                  "value": 1.0,
+                  "weight": 0.22,
+                  "contribution": 0.22,
+                  "rationale": "11 of 11 supporting items establish a direct link"
+                },
+                {
+                  "name": "evidence_role_quality",
+                  "value": 0.5,
+                  "weight": 0.18,
+                  "contribution": 0.09,
+                  "rationale": "no per-term roles recorded; treated as neutral"
+                },
+                {
+                  "name": "context_compatibility",
+                  "value": 1.0,
+                  "weight": 0.12,
+                  "contribution": 0.12,
+                  "rationale": "molecular anchor present, cell/tissue axis comparable"
+                },
+                {
+                  "name": "experimental_tractability",
+                  "value": 1.0,
+                  "weight": 0.1,
+                  "contribution": 0.1,
+                  "rationale": "a named regulator gives an assay a target"
+                },
+                {
+                  "name": "variant_compatibility",
+                  "value": 0.5,
+                  "weight": 0.05,
+                  "contribution": 0.025,
+                  "rationale": "variant compatibility UNKNOWN"
+                },
+                {
+                  "name": "independent_corroboration",
+                  "value": 1.0,
+                  "weight": 0.03,
+                  "contribution": 0.03,
+                  "rationale": "11 supporting source(s), weak factor only"
+                }
+              ],
+              "penalties": [
+                {
+                  "name": "contradiction_burden",
+                  "value": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0,
+                  "rationale": "no contradicting evidence retrieved"
+                },
+                {
+                  "name": "generic_overlap",
+                  "value": 0.2,
+                  "weight": 0.15,
+                  "contribution": 0.03,
+                  "rationale": "1 of 5 bridge terms are generic"
+                }
+              ]
+            },
+            {
+              "disease": "Celiac Disease",
+              "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+              "total": 0.762,
+              "components": [
+                {
+                  "name": "mechanistic_specificity",
+                  "value": 0.75,
+                  "weight": 0.3,
+                  "contribution": 0.225,
+                  "rationale": "0 specific process term(s), 3 named regulator(s), 0 generic"
+                },
+                {
+                  "name": "evidence_directness",
+                  "value": 1.0,
+                  "weight": 0.22,
+                  "contribution": 0.22,
+                  "rationale": "8 of 8 supporting items establish a direct link"
+                },
+                {
+                  "name": "evidence_role_quality",
+                  "value": 0.5,
+                  "weight": 0.18,
+                  "contribution": 0.09,
+                  "rationale": "no per-term roles recorded; treated as neutral"
+                },
+                {
+                  "name": "context_compatibility",
+                  "value": 0.6,
+                  "weight": 0.12,
+                  "contribution": 0.072,
+                  "rationale": "molecular anchor present, cell/tissue axis unassessed"
+                },
+                {
+                  "name": "experimental_tractability",
+                  "value": 1.0,
+                  "weight": 0.1,
+                  "contribution": 0.1,
+                  "rationale": "a named regulator gives an assay a target"
+                },
+                {
+                  "name": "variant_compatibility",
+                  "value": 0.5,
+                  "weight": 0.05,
+                  "contribution": 0.025,
+                  "rationale": "variant compatibility UNKNOWN"
+                },
+                {
+                  "name": "independent_corroboration",
+                  "value": 1.0,
+                  "weight": 0.03,
+                  "contribution": 0.03,
+                  "rationale": "8 supporting source(s), weak factor only"
+                }
+              ],
+              "penalties": [
+                {
+                  "name": "contradiction_burden",
+                  "value": 0.0,
+                  "weight": 0.2,
+                  "contribution": 0.0,
+                  "rationale": "no contradicting evidence retrieved"
+                },
+                {
+                  "name": "generic_overlap",
+                  "value": 0.0,
+                  "weight": 0.15,
+                  "contribution": 0.0,
+                  "rationale": "0 of 3 bridge terms are generic"
+                }
+              ]
+            }
+          ],
+          "automated_choice": "Uveitis",
+          "ranking_basis": "Interpretable components, mechanistic specificity weighted highest. Corroboration count is a weak tie-break at weight 0.03, because the number of papers co-mentioning two diseases measures attention, not mechanistic understanding.",
+          "operator_override": false,
+          "override_reason": null,
+          "selected_candidate": "Uveitis",
+          "selection_rationale": "mechanistic_specificity 1.00; evidence_directness 1.00; evidence_role_quality 0.50; context_compatibility 1.00; experimental_tractability 1.00; variant_compatibility 0.50; independent_corroboration 1.00"
+        },
+        "retrieval_reason": {
+          "types": [
+            "SHARED_CELLULAR_PROCESS",
+            "SHARED_CELL_TYPE",
+            "SAME_GENE",
+            "PHENOTYPE_SIMILARITY"
+          ],
+          "feature": "T-helper 17 type immune response"
+        },
+        "identity_result": {
+          "relation": "DISTINCT_DISEASE",
+          "scoped": []
+        },
+        "validated_relationship": {
+          "class": "SHARED_DOWNSTREAM_MECHANISM",
+          "retrieval_validity": "CORRECT",
+          "rationale": "7 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+          "evidence_ids": [
+            "PMID:36477533",
+            "PMID:25405820",
+            "PMID:33499153",
+            "PMID:23452840",
+            "PMID:30069262",
+            "PMID:33864943",
+            "PMID:25488777",
+            "PMID:26310161"
+          ]
+        }
+      },
+      "goal3": {
+        "mechanistic_bridge": {
+          "id": "bridge:bf70f76f-91ee62a2",
+          "version": 1,
+          "supersedes": null,
+          "terms": [
+            "HLA",
+            "ERAP1",
+            "TNFAIP3",
+            "MHC"
+          ],
+          "display_label": "HLA, ERAP1, TNFAIP3, MHC",
+          "derived_from": [
+            "PMID:36477533",
+            "PMID:25405820",
+            "PMID:33499153",
+            "PMID:23452840",
+            "PMID:30069262",
+            "PMID:33864943",
+            "PMID:25488777",
+            "PMID:26310161"
+          ],
+          "evidence_depth": null,
+          "full_text_review_completed": null
+        },
+        "knowledge_gap": {
+          "id": "323f8ac5-31d6-5e3e-b9a4-7983382ef74d",
+          "question": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross."
+        },
+        "experiment": {
+          "id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
+          "hypothesis": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
+          "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+          "primary_readout": "Functional response of HLA activity to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+          "secondary_readouts": [
+            "diGly assay reporting T-helper 17 type immune response as a supporting molecular profile, interpreted only alongside the primary functional readout",
+            "Recovery of the challenged cells after the stress is withdrawn"
+          ],
+          "limitations": [
+            "A single readout at one timepoint cannot exclude equivalence that emerges, or disappears, over time.",
+            "A negative result constrains equivalence at the measured step only and does not exclude shared biology elsewhere.",
+            "Model systems may not reproduce the cell type where the diseases actually diverge."
+          ]
+        },
+        "supports_if": "Both disease models show disruption of HLA, ERAP1, TNFAIP3, MHC in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
+        "refutes_if": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of HLA, ERAP1, TNFAIP3, MHC while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
+        "evidence_limitations": [
+          "Full text was not obtained for the supporting papers.",
+          "The bridge rests on typed literature annotations covering title and abstract, not the full articles.",
+          "No direct cross-disease functional experiment has been located."
+        ],
+        "review_status": "AWAITING_EXPERT_SIGNOFF",
+        "evidence_status": "PROVISIONALLY_SUPPORTED"
+      },
+      "goal2": {
+        "required_capabilities": [
+          {
+            "id": "cap:model-a",
+            "capability": "Ankylosing Spondylitis disease-relevant cellular model",
+            "why": "The experiment needs one arm representing this disease.",
+            "status": "UNKNOWN"
+          },
+          {
+            "id": "cap:model-b",
+            "capability": "Uveitis disease-relevant cellular model",
+            "why": "The experiment needs the comparison arm.",
+            "status": "UNKNOWN"
+          },
+          {
+            "id": "cap:stress-challenge",
+            "capability": "Standardised cellular stress challenge",
+            "why": "The bridge describes stress-responsive biology, so the comparison is made under challenge rather than at baseline.",
+            "status": "COVERED_SUPPORTED"
+          },
+          {
+            "id": "cap:primary-assay",
+            "capability": "Functional assay reporting HLA",
+            "why": "This is the primary readout; it decides the hypothesis.",
+            "status": "UNKNOWN"
+          },
+          {
+            "id": "cap:secondary-profiling",
+            "capability": "Secondary molecular profiling",
+            "why": "Supporting context only. Cannot decide the hypothesis.",
+            "status": "UNKNOWN"
+          }
+        ],
+        "existing_work": [
+          {
+            "capability": "Standardised cellular stress challenge",
+            "status": "COVERED_SUPPORTED",
+            "candidates": [
+              {
+                "name": "Xi Chen",
+                "source": "PMID:37676964",
+                "year": 2023,
+                "recency": "CURRENT",
+                "evidence_scope": "TEAM_LEVEL",
+                "capability_verified": false,
+                "current_activity_supported": true,
+                "collaboration_willingness": "UNKNOWN"
+              },
+              {
+                "name": "Adam K Walker",
+                "source": "PMID:35101542",
+                "year": 2022,
+                "recency": "RECENT",
+                "evidence_scope": "TEAM_LEVEL",
+                "capability_verified": false,
+                "current_activity_supported": false,
+                "collaboration_willingness": "UNKNOWN"
+              },
+              {
+                "name": "Reut Shalgi",
+                "source": "PMID:33434530",
+                "year": 2021,
+                "recency": "RECENT",
+                "evidence_scope": "TEAM_LEVEL",
+                "capability_verified": false,
+                "current_activity_supported": false,
+                "collaboration_willingness": "UNKNOWN"
+              }
+            ],
+            "verification_gap": "Confirm the group still performs this and would consider applying it to both disease contexts."
+          }
+        ],
+        "assets": [],
+        "asset_status": "NO_RELEVANT_ASSET_IDENTIFIED",
+        "missing_capabilities": [
+          {
+            "capability": "Ankylosing Spondylitis disease-relevant cellular model",
+            "status": "UNKNOWN",
+            "note": "Every query was too broad to identify a capability. This needs a narrower, expert-supplied search term."
+          },
+          {
+            "capability": "Uveitis disease-relevant cellular model",
+            "status": "UNKNOWN",
+            "note": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+          },
+          {
+            "capability": "Functional assay reporting HLA",
+            "status": "UNKNOWN",
+            "note": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+          },
+          {
+            "capability": "Secondary molecular profiling",
+            "status": "UNKNOWN",
+            "note": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+          }
+        ],
+        "coordination_opportunities": [],
+        "execution_topology": "MULTI_PARTY_EXECUTABLE",
+        "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+        "first_contact": {
+          "target": null,
+          "question": null,
+          "caveat": "No candidate has current-activity evidence for the primary assay."
+        }
+      },
+      "provenance": {
+        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "candidates_from": "data/cross_disease_as"
+      },
+      "disclaimer": {
+        "headline": "Machine-generated research hypothesis based on available evidence; expert review required before scientific or financial action.",
+        "not_a_medical_recommendation": true,
+        "not_an_established_mechanism": true,
+        "review_state": "PROVISIONAL_MACHINE_SYNTHESIS",
+        "expert_signoff": "AWAITING_EXPERT_SIGNOFF"
+      }
+    },
+    {
+      "case_id": "zellweger",
+      "label": "Six strong candidates, all the same disease",
+      "why_included": "Every retrieved neighbour is the same entity under another name, so none is an independent cross-disease finding. A different kind of empty result from a disease with no evidence: here the evidence is strong and the identity layer is what stops it being reported as a discovery.",
+      "outcome": "NO_DEFENSIBLE_CONNECTION",
+      "starting_disease": {
+        "id": "3eb8d334-8628-5e98-8052-cb84781318d7",
+        "name": "Zellweger Spectrum Disorders"
+      },
+      "goal1": {
+        "candidates_retrieved": 60,
+        "candidates_evaluated": 6,
+        "candidate_neighbors": [
+          {
+            "rank": 1,
+            "name": "Peroxisome Biogenesis Disorder",
+            "retrieval_reason": "very long-chain fatty acid metabolic process",
+            "identity": "ALLELIC_SPECTRUM",
+            "independent": false,
+            "relationship": "SAME_ALLELIC_SPECTRUM",
+            "retrieval_validity": "PARTIALLY_CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 2,
+            "name": "Peroxisome Biogenesis Disorder 1B",
+            "retrieval_reason": "bile acid metabolic process",
+            "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+            "independent": false,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 3,
+            "name": "Peroxisome Biogenesis Disorder 4B",
+            "retrieval_reason": "bile acid metabolic process",
+            "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+            "independent": false,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 4,
+            "name": "Peroxisome Biogenesis Disorder 5B",
+            "retrieval_reason": "peroxisomal membrane",
+            "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+            "independent": false,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "CORRECT",
+            "has_bridge": true
+          },
+          {
+            "rank": 5,
+            "name": "Peroxisome Biogenesis Disorder 4A (Zellweger)",
+            "retrieval_reason": "peroxisomal membrane",
+            "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+            "independent": false,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+            "has_bridge": true
+          },
+          {
+            "rank": 6,
+            "name": "Rhizomelic Chondrodysplasia Punctata Type 1",
+            "retrieval_reason": "protein targeting to peroxisome",
+            "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+            "independent": false,
+            "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+            "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+            "has_bridge": true
+          }
+        ],
+        "excluded_as_same_entity": [
+          "Peroxisome Biogenesis Disorder",
+          "Peroxisome Biogenesis Disorder 1B",
+          "Peroxisome Biogenesis Disorder 4B",
+          "Peroxisome Biogenesis Disorder 5B",
+          "Peroxisome Biogenesis Disorder 4A (Zellweger)",
+          "Rhizomelic Chondrodysplasia Punctata Type 1"
+        ],
+        "rejected_examples": [],
+        "selected_neighbor": null
+      },
+      "goal3": null,
+      "goal2": null,
+      "provenance": {
+        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "candidates_from": "data/cross_disease_zsd"
+      },
+      "disclaimer": {
+        "headline": "Machine-generated research hypothesis based on available evidence; expert review required before scientific or financial action.",
+        "not_a_medical_recommendation": true,
+        "not_an_established_mechanism": true,
+        "review_state": "PROVISIONAL_MACHINE_SYNTHESIS",
+        "expert_signoff": "AWAITING_EXPERT_SIGNOFF"
+      },
+      "no_connection_reason": "ALL_CANDIDATES_ARE_THE_SAME_ENTITY",
+      "no_connection_statement": "6 of 6 retrieved neighbours of Zellweger Spectrum Disorders are the same disease entity under a different name, so none is an independent cross-disease finding. The evidence here is not weak -- the identity check is what stops it being reported as a discovery."
     },
     {
       "case_id": "scar20",
@@ -1179,7 +1859,7 @@
       "goal3": null,
       "goal2": null,
       "provenance": {
-        "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
         "candidates_from": "data/cross_disease_scar20"
       },
       "disclaimer": {
@@ -1189,6 +1869,7 @@
         "review_state": "PROVISIONAL_MACHINE_SYNTHESIS",
         "expert_signoff": "AWAITING_EXPERT_SIGNOFF"
       },
+      "no_connection_reason": "NO_SUPPORTING_EVIDENCE",
       "no_connection_statement": "No candidate neighbour of Autosomal Recessive Spinocerebellar Ataxia 20 survived evidence refinement. Every retrieved candidate was supported only by shared phenotype, with no evidence establishing a molecular link. The system reports this rather than selecting the least-weak candidate."
     }
   ]

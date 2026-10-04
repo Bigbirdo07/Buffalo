@@ -1,237 +1,215 @@
 import { useMemo, useState } from "react";
-import type { Candidate, FlagshipStory, GoalsSummary, PresentationMode } from "./contract";
-import {
-  EvidenceDrawer,
-  EvidenceLineage,
-  Icon,
-  NextButton,
-  ScientificReviewStatus,
-  SectionHeading,
-  StatusPill,
-  humanize,
-  navigate,
-  relationshipCopy,
-} from "./components";
+import type { Candidate, DemoCase, FlagshipStory, GoalsSummary, ParentStory, PresentationMode } from "./contract";
+import { loadCases } from "./data";
+import { EntityLegend, EntityNode, EvidenceDrawer, EvidenceLineage, GuidePanel, Icon, NextButton, ReviewStatus, StatusPill, humanize, navigate } from "./components";
 
-type ScreenProps = { story: FlagshipStory; goals: GoalsSummary; mode: PresentationMode };
+type ScreenProps = {
+  story: FlagshipStory;
+  goals: GoalsSummary;
+  parent: ParentStory;
+  mode: PresentationMode;
+  /** The disease the visitor selected. Null only if the case contract failed. */
+  activeCase: DemoCase | null;
+};
 
-export function SearchScreen({ story, goals }: ScreenProps) {
-  const [query, setQuery] = useState("SCAR16");
-  const [message, setMessage] = useState("");
-  function submit(event: React.FormEvent) {
-    event.preventDefault();
-    const normalized = query.trim().toLowerCase();
-    if (["scar16", "stub1", story.starting_disease.name.toLowerCase()].includes(normalized)) {
-      navigate("/biology");
-    } else {
-      setMessage("The frozen hackathon fixture is available for SCAR16. No result was synthesized for this query.");
-    }
+function PageIntro({ step, title, description }: { step: string; title: string; description: string }) {
+  return <header className="parent-page-intro"><span>{step}</span><h1>{title}</h1><p>{description}</p></header>;
+}
+
+/**
+ * What to say about a disease on the opening screen.
+ *
+ * The hand-written family prose in parent_story.json covers one disease. The
+ * other cases get a summary assembled from their own contract: thinner, but
+ * drawn from the same pipeline output rather than invented. The screen says
+ * which it is showing instead of letting the two look alike.
+ */
+function caseSummary(activeCase: DemoCase | null, parent: ParentStory) {
+  const isNarrated = !activeCase || activeCase.case_id === "scar16";
+  if (isNarrated) {
+    return {
+      narrated: true,
+      shortName: parent.case.short_name,
+      fullName: parent.case.full_name,
+      cause: parent.case.cause_summary,
+      goal: parent.case.research_goal,
+      groups: parent.case.phenotype_groups,
+      variation: parent.case.variation_note,
+    };
   }
-  return (
-    <main className="screen search-screen">
-      <section className="hero">
-        <div className="hero-copy">
-          <span className="eyebrow">Mechanism-first rare-disease discovery and research action</span>
-          <h1>Rare diseases should not have to solve the same biology alone.</h1>
-          <p>Discover related disorders, test whether those connections survive evidence review, identify what remains unknown, and see what research capacity already exists to answer it.</p>
-          <form className="search-form" onSubmit={submit}>
-            <label htmlFor="disease-search">Which rare disease are you working on?</label>
-            <div>
-              <input id="disease-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search disease, gene, symptom or mechanism…" />
-              <button type="submit">Explore related biology <Icon name="arrow" /></button>
-            </div>
-            {message && <p className="form-message" role="status">{message}</p>}
-          </form>
-          <div className="examples"><span>Demo examples</span><button onClick={() => setQuery("SCAR16")}>SCAR16</button><button onClick={() => setQuery("STUB1")}>STUB1</button><button onClick={() => setQuery(story.goal1.selected_neighbor.name)}>Lafora Disease</button></div>
-          <p className="hero-note"><span /> The Atlas distinguishes computational similarity from evidence-supported biology.</p>
-        </div>
-        <aside className="hero-figure" aria-label="Atlas workflow">
-          <span className="figure-index">01—05</span>
-          {[
-            ["Discover", "candidate biology"],
-            ["Validate", "the connection"],
-            ["Question", "what remains unknown"],
-            ["Test", "a falsifiable experiment"],
-            ["Act", "existing capacity"],
-          ].map(([title, detail], index) => <div key={title}><b>0{index + 1}</b><span><strong>{title}</strong><small>{detail}</small></span></div>)}
-        </aside>
-      </section>
-      <section className="goal-overview" aria-label="Goal status">
-        {(["goal1", "goal3", "goal2"] as const).map((goalKey) => {
-          const goal = goals[goalKey];
-          return <article key={goalKey}><span>{goalKey.replace("goal", "Goal ")}</span><h2>{goal.question}</h2><StatusPill value={goal.technical_status} label="Technically demonstrated" /><p>{goal.evidence}</p></article>;
-        })}
-      </section>
-      <footer className="attribution">Built on integrated biomedical knowledge from upstream sources including <strong>DisMech</strong> and <strong>Monarch</strong>, with an added evidence-refinement and research-action layer.</footer>
-    </main>
-  );
+  const name = activeCase.starting_disease.name;
+  const found = activeCase.goal1.candidates_evaluated;
+  const independent = activeCase.goal1.candidate_neighbors.filter((c) => c.independent).length;
+  return {
+    narrated: false,
+    shortName: name,
+    fullName: activeCase.label,
+    cause: activeCase.why_included,
+    goal:
+      activeCase.outcome === "FULL_CHAIN"
+        ? `Of ${found} candidate diseases examined, ${independent} survived evidence refinement as independent connections. The strongest is followed through to an experiment and the capability needed to run it.`
+        : activeCase.no_connection_statement ??
+          "No candidate connection survived evidence refinement for this disease.",
+    groups: [],
+    variation: "",
+  };
 }
 
-function graphTone(candidate: Candidate) {
-  if (!candidate.independent && candidate.identity !== "DISTINCT_DISEASE") return "identity";
-  if (candidate.relationship.includes("INSUFFICIENT")) return "rejected";
-  if (candidate.relationship.includes("NON_EQUIVALENT") || candidate.relationship.includes("TISSUE")) return "warning";
-  if (candidate.independent) return "supported";
-  return "neutral";
-}
+export function DiseaseScreen({ story, parent, mode, activeCase }: ScreenProps) {
+  // Synchronous: the case contract is bundled, so there is nothing to await.
+  const casesResult = loadCases();
+  const cases = casesResult.ok ? casesResult.cases.cases : [];
+  const summary = caseSummary(activeCase, parent);
 
-function CandidateGraph({ story, onSelect }: { story: FlagshipStory; onSelect: (candidate: Candidate) => void }) {
-  return (
-    <div className="neighbor-graph" aria-label="Candidate relationship overview">
-      <div className="graph-center"><span>Starting disease</span><strong>SCAR16</strong><small>STUB1</small></div>
-      {story.goal1.candidate_neighbors.map((candidate, index) => (
-        <button
-          key={candidate.name}
-          className={`graph-node node-${index + 1} ${graphTone(candidate)}`}
-          onClick={() => onSelect(candidate)}
-          aria-label={`${candidate.name}: ${humanize(candidate.relationship)}`}
+  return <main className="screen parent-screen">
+    <section className="case-start">
+      <div><span className="eyebrow">Rare Disease Atlas · research navigation</span><h1>Help me understand my child’s disease—and what researchers could ask next.</h1><p>The Atlas checks related research, keeps uncertainty visible, and turns an unanswered biological question into a testable research path.</p></div>
+      <GuidePanel question="What am I looking at?"><p>A guided research summary for one disease. It is not a diagnosis or treatment recommendation.</p></GuidePanel>
+    </section>
+    <section className="case-picker" aria-label="Worked cases">
+      {cases.map((choice) => {
+        const active = choice.case_id === (activeCase?.case_id ?? "scar16");
+        return <button
+          key={choice.case_id}
+          className={`case-choice disease ${active ? "active" : ""}`}
+          aria-pressed={active}
+          onClick={() => navigate(`/disease?case=${choice.case_id}`)}
         >
-          <i aria-hidden="true" />
-          <span>{candidate.name.length > 25 ? candidate.name.split(" ").slice(0, 3).join(" ") + "…" : candidate.name}</span>
-        </button>
-      ))}
-    </div>
-  );
+          <i className="entity-shape disease" />
+          <span>
+            <small>{choice.outcome === "FULL_CHAIN" ? "Full analysis" : "No connection found"}</small>
+            <b>{choice.starting_disease.name}</b>
+            <em>{choice.label}</em>
+          </span>
+          {active && <strong>Selected</strong>}
+        </button>;
+      })}
+    </section>
+    <p className="case-notice" role="status">
+      Five diseases have been through full evidence refinement.{" "}
+      <button type="button" className="text-button" onClick={() => navigate("/search")}>
+        Search all {story.goal1.candidates_retrieved > 0 ? "3,289" : ""} diseases
+      </button>
+    </p>
+    <section className="disease-summary">
+      <div className="disease-title"><span className="entity-shape disease" /><div><small>Your selected disease</small><h2>{summary.shortName}</h2><p>{summary.fullName}</p></div></div>
+      <article className="cause-card"><span>{summary.narrated ? "What causes it?" : "Why this case is here"}</span><p>{summary.cause}</p>{mode === "scientist" && <code>disease_id: {(activeCase ?? { starting_disease: story.starting_disease }).starting_disease.id}</code>}</article>
+      {summary.groups.length > 0 && <article className="systems-card"><span>What body systems are commonly affected?</span><div>{summary.groups.map((group) => <section key={group.label}><h3>{group.label}</h3><p>{group.detail}</p></section>)}</div><small>{summary.variation}</small></article>}
+      <article className="research-doorway"><span>What are we trying to understand?</span><p>{summary.goal}</p></article>
+      {!summary.narrated && <p className="case-notice">
+        The plain-language walkthrough was written for {parent.case.short_name}. This
+        case shows the same pipeline output without that narration — switch to
+        scientist mode for its full detail.
+      </p>}
+    </section>
+    {mode === "scientist" && <details className="source-note"><summary>Presentation-source provenance</summary><ul>{parent.sources.map((source) => <li key={source.field}><b>{source.field}:</b> <code>{source.reference}</code> at <code>{source.upstream_commit}</code></li>)}</ul></details>}
+    <div className="page-action"><NextButton to="/connections">See what other diseases may teach us</NextButton></div>
+  </main>;
 }
 
-export function BiologyScreen({ story, goals, mode }: ScreenProps) {
-  const [filter, setFilter] = useState("ALL");
-  const [selected, setSelected] = useState<Candidate | null>(null);
-  const neighbors = useMemo(() => story.goal1.candidate_neighbors.filter((candidate) => {
-    if (filter === "ALL") return true;
-    if (filter === "INDEPENDENT") return candidate.independent;
-    if (filter === "SPECTRUM") return candidate.identity !== "DISTINCT_DISEASE";
-    if (filter === "DOWNGRADED") return story.goal1.rejected_examples.some((item) => item.name === candidate.name);
-    return true;
-  }), [filter, story]);
-  const sameSpectrum = story.goal1.candidate_neighbors.filter((candidate) => candidate.identity !== "DISTINCT_DISEASE").length;
-  const independent = story.goal1.candidate_neighbors.filter((candidate) => candidate.independent).length;
-  const sharedProcess = story.goal1.candidate_neighbors.filter((candidate) => candidate.relationship === "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT").length;
-  return (
-    <main className="screen">
-      <SectionHeading eyebrow="Goal 1 · Candidate discovery" title="Who shares relevant biology with SCAR16?" description="The graph proposes candidates. Evidence review decides what kind of relationship—if any—survives." />
-      <ScientificReviewStatus story={story} compact />
-      <section className="summary-bar">
-        <div><strong>{story.goal1.candidates_evaluated}</strong><span>candidates examined</span><small>from {story.goal1.candidates_retrieved} retrieved</small></div>
-        <div><strong>{sameSpectrum}</strong><span>same-spectrum</span><small>not novel discoveries</small></div>
-        <div><strong>{story.goal1.rejected_examples.length}</strong><span>rejected / downgraded</span><small>after evidence review</small></div>
-        <div><strong>{sharedProcess}</strong><span>shared process only</span><small>not equivalent mechanism</small></div>
-        <div><strong>{independent}</strong><span>independent survivors</span><small>provisional</small></div>
-      </section>
-      <section className="discovery-layout">
-        <div>
-          <CandidateGraph story={story} onSelect={setSelected} />
-          <p className="graph-legend"><span className="supported" /> Independent survivor <span className="identity" /> Same spectrum <span className="warning" /> Shared context <span className="rejected" /> Insufficient</p>
-        </div>
-        <aside className="goal-callout"><span className="eyebrow">Retrieval is a starting point</span><h2>Failure is useful here.</h2><p>Rejected and downgraded candidates stay visible. The Atlas is designed to show where similarity does not justify a mechanistic claim.</p><blockquote>{goals.goal1.evidence}</blockquote></aside>
-      </section>
-      <div className="filter-row" role="group" aria-label="Filter candidates">
-        {["ALL", "INDEPENDENT", "SPECTRUM", "DOWNGRADED"].map((item) => <button key={item} onClick={() => setFilter(item)} className={filter === item ? "active" : ""}>{humanize(item)}</button>)}
-      </div>
-      <section className="candidate-grid">
-        {neighbors.map((candidate) => {
-          const isFlagship = candidate.name === story.goal1.selected_neighbor.name;
-          const rejection = story.goal1.rejected_examples.find((item) => item.name === candidate.name);
-          return (
-            <article className={`candidate-card ${isFlagship ? "flagship" : ""}`} key={candidate.name}>
-              <header><span>Rank {candidate.rank}</span>{isFlagship && <b>Worked demonstration case</b>}</header>
-              <h2>{candidate.name}</h2>
-              <p className="found-by"><span>Found through</span>{candidate.retrieval_reason}</p>
-              <div className="candidate-status"><StatusPill value={candidate.relationship} /><StatusPill value={candidate.retrieval_validity} /></div>
-              <p>{rejection?.why || relationshipCopy(candidate.relationship)}</p>
-              <dl><div><dt>Independent discovery</dt><dd>{candidate.independent ? "Yes" : "No"}</dd></div><div><dt>Review</dt><dd>Awaiting expert signoff</dd></div></dl>
-              {mode === "scientist" && <code>{candidate.identity} · {candidate.relationship} · {candidate.retrieval_validity}</code>}
-              {isFlagship && <button className="text-button" onClick={() => navigate("/validate")}>Open evidence refinement <Icon name="arrow" /></button>}
-            </article>
-          );
-        })}
-      </section>
-      {selected && <aside className="selection-toast" role="status"><span><b>{selected.name}</b>{relationshipCopy(selected.relationship)}</span><button onClick={() => setSelected(null)}>Close</button></aside>}
-      <section className="override-note"><div><span className="eyebrow">Transparent selection</span><h2>Lafora is the worked demonstration—not the automated winner.</h2></div><p>{story.goal1.selection.override_reason}</p></section>
-      <div className="page-action"><NextButton to="/validate">See why the connection survived</NextButton></div>
-    </main>
-  );
+function relationshipMeaning(candidate: Candidate) {
+  if (candidate.identity !== "DISTINCT_DISEASE") return { evidence: "These labels overlap with the same STUB1-related disease spectrum.", matters: "This helps explain the range of the disease, but it is not a new independent research connection." };
+  if (candidate.relationship === "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT") return { evidence: "The diseases affect some of the same cellular machinery, but probably in different ways.", matters: "Research tools may still be informative, but researchers should not assume the diseases work the same way." };
+  if (candidate.relationship === "SHARED_DOWNSTREAM_MECHANISM") return { evidence: "Evidence suggests the diseases may reach a related downstream cellular problem through different starting points.", matters: "A matched experiment could test whether tools or assays from one disease can help study the other." };
+  if (candidate.relationship === "SHARED_TISSUE_CONTEXT") return { evidence: "The diseases affect similar tissue, but a shared molecular mechanism was not demonstrated.", matters: "Similar symptoms or affected tissue alone are not enough to transfer a research approach." };
+  return { evidence: "The available evidence did not support a specific biological connection strongly enough.", matters: "Rejecting a weak lead helps avoid spending time on a relationship the evidence does not justify." };
 }
 
-export function ValidateScreen({ story, mode }: ScreenProps) {
-  const goal1 = story.goal1;
-  const goal3 = story.goal3;
-  return (
-    <main className="screen signature-screen">
-      <SectionHeading eyebrow="Evidence refinement · Signature view" title="Why did the Atlas connect these diseases?" description="Candidate retrieval and biological validation are different operations. This pair demonstrates why that distinction matters." />
-      <ScientificReviewStatus story={story} />
-      <section className="versus-grid">
-        <article className="retrieval-panel">
-          <span className="panel-index">01</span><span className="eyebrow">Candidate-generation signal</span>
-          <h2>Why the graph found this</h2>
-          <div className="mechanism-token muted"><small>Broad annotation</small><strong>{goal1.retrieval_reason.feature}</strong></div>
-          <p>The graph retrieved SCAR16 and Lafora because both were associated with this broad biological process.</p>
-          <div className="panel-verdict"><Icon name="alert" /><span><b>Useful for retrieval</b>Not sufficient evidence of a shared mechanism.</span></div>
-          {mode === "scientist" && <div className="scientist-data"><code>{goal1.retrieval_reason.types.join(" · ")}</code><p>Identity: {goal1.identity_result.relation}</p></div>}
-        </article>
-        <div className="versus-mark" aria-hidden="true">≠</div>
-        <article className="evidence-panel">
-          <span className="panel-index">02</span><span className="eyebrow">Evidence-supported interpretation</span>
-          <h2>What the evidence supports</h2>
-          <div className="mechanism-token"><small>More specific bridge</small><strong>{goal3.mechanistic_bridge.display_label}</strong></div>
-          <p>{goal1.validated_relationship.rationale}</p>
-          <div className="panel-verdict positive"><Icon name="check" /><span><b>The connection remains</b>The original explanation was incomplete.</span></div>
-          {mode === "scientist" && <div className="scientist-data"><code>{goal1.validated_relationship.class}</code><p>Bridge method: {goal3.mechanistic_bridge.derivation_method}</p><p>Variant compatibility: not supplied by contract</p></div>}
-        </article>
-      </section>
-      <section className="signature-statement"><span>{humanize(goal1.validated_relationship.retrieval_validity)}</span><h2>The Atlas found a real connection, but not for the reason the graph originally suggested.</h2><p>{goal1.why_this_matters}</p></section>
-      <section className="bridge-row"><div><span className="eyebrow">MechanisticBridge</span><h2>{goal3.mechanistic_bridge.display_label}</h2><div className="term-list">{goal3.mechanistic_bridge.terms.map((term) => <span key={term}>{term}</span>)}</div></div><EvidenceDrawer story={story} ids={goal1.validated_relationship.evidence_ids} mode={mode} title="Relationship evidence" /></section>
-      <blockquote className="differentiation">Knowledge graphs tell us what is connected. The Atlas asks whether the connection survives evidence review—and what to do with the uncertainty that remains.</blockquote>
-      {mode === "scientist" && <section className="scientist-section"><h2>Evidence lineage</h2><EvidenceLineage story={story} /><dl className="provenance-grid"><div><dt>DisMech commit</dt><dd><code>{story.provenance.dismech_commit}</code></dd></div><div><dt>HPO release</dt><dd><code>{story.provenance.hpo_release}</code></dd></div><div><dt>Pipeline</dt><dd><code>{story.provenance.pipeline_version}</code></dd></div><div><dt>Software</dt><dd><code>{story.provenance.software_commit}</code></dd></div></dl></section>}
-      <div className="page-action"><NextButton to="/question">Turn the surviving uncertainty into a test</NextButton></div>
-    </main>
-  );
+export function ConnectionsScreen({ story, parent, mode }: ScreenProps) {
+  const visible = useMemo(() => {
+    // Every candidate the contract holds, flagship first. An earlier version
+    // listed five by name and silently dropped three -- including both identity
+    // exclusions, which are the clearest demonstration that retrieval is
+    // filtered rather than trusted.
+    const flagship = story.goal1.selected_neighbor?.name;
+    return [...story.goal1.candidate_neighbors].sort((a, b) => {
+      if (a.name === flagship) return -1;
+      if (b.name === flagship) return 1;
+      return a.rank - b.rank;
+    });
+  }, [story]);
+  const [showPath, setShowPath] = useState(false);
+  return <main className="screen parent-screen">
+    <PageIntro step="Research connections" title="What other diseases may help us understand this one?" description="The Atlas found several research connections, then checked whether each one meant what the original search suggested." />
+    <ReviewStatus story={story} />
+    <div className="content-with-guide"><section><h2>We found a few research connections worth checking</h2><p className="lede">These are not treatment matches. They are possible research comparisons—and some did not survive closer review.</p></section><GuidePanel question="Why is another disease here?"><p>Because it shared a biological annotation, affected tissue, or downstream process with SCAR16. That is only a reason to investigate, not proof of a meaningful connection.</p></GuidePanel></div>
+    <section className="connection-cards">{visible.map((candidate) => {
+      const copy = relationshipMeaning(candidate); const flagship = candidate.name === story.goal1.selected_neighbor.name;
+      return <article key={candidate.name} className={`connection-card ${flagship ? "flagship" : ""}`}>
+        <header><span className="entity-shape disease" /><small>Rare disease</small>{flagship && <b>Worked demonstration case</b>}</header><h2>{candidate.name}</h2>
+        <dl><div><dt>Why it caught our attention</dt><dd>Both disease records mention <strong>{candidate.retrieval_reason}</strong>.</dd></div><div><dt>What the evidence says</dt><dd>{copy.evidence}</dd></div><div><dt>Why it may matter</dt><dd>{copy.matters}</dd></div></dl>
+        <StatusPill value={candidate.identity !== "DISTINCT_DISEASE" ? "SAME_ALLELIC_SPECTRUM" : candidate.relationship} />
+        {mode === "scientist" && <code>rank {candidate.rank} · {candidate.identity} · {candidate.relationship} · {candidate.retrieval_validity}</code>}
+        {flagship && <button className="text-button" onClick={() => navigate("/evidence")}>Follow this worked example <Icon name="arrow" /></button>}
+      </article>;
+    })}</section>
+    <section className="negative-case"><Icon name="check" /><div><h2>A negative result is useful</h2><p>The separate SCAR20 case found similarities, but none were strong enough to support a shared molecular mechanism. The Atlas reports that rather than promoting the least-weak lead.</p></div></section>
+    <section className="guided-biology"><header><div><span className="eyebrow">Optional biology view</span><h2>How might SCAR16 and Lafora Disease be connected?</h2></div><button onClick={() => setShowPath(!showPath)}>{showPath ? "Hide the biology" : "See the biology"}</button></header>{showPath && <><EntityLegend /><div className="guided-path">{parent.guided_path.map((node, index) => <div key={node.id} className="path-step"><EntityNode node={node} active={index === 2 || index === 3} />{index < parent.guided_path.length - 1 && <span className="path-arrow">↓</span>}</div>)}</div><p className="path-caption">This highlights one evidence-supported route. It does not mean the two diseases are the same.</p></>}</section>
+    <div className="page-action"><NextButton to="/evidence">See what changed after evidence review</NextButton></div>
+  </main>;
 }
 
-export function QuestionScreen({ story, mode }: ScreenProps) {
-  const goal = story.goal3;
-  return (
-    <main className="screen">
-      <SectionHeading eyebrow="Goal 3 · Knowledge gap and experiment" title="What do we still need to learn?" description="A useful connection creates a sharper question—not an automatic conclusion." />
-      <ScientificReviewStatus story={story} compact />
-      <section className="gap-card"><div><span className="eyebrow">Critical unanswered question</span><StatusPill value={goal.evidence_status} /></div><h2>{goal.knowledge_gap.question}</h2><div className="known-unknown"><article><span>What we know</span><p>The current evidence supports a downstream bridge involving {goal.mechanistic_bridge.display_label}.</p></article><article><span>What we do not know</span><p>{goal.knowledge_gap.missing_evidence[0]}</p></article><article><span>Why it matters</span><p>{goal.knowledge_gap.why_it_matters}</p></article></div>{mode === "scientist" && <code>gap_id: {goal.knowledge_gap.id}</code>}</section>
-      <section className="experiment-section">
-        <div className="experiment-title"><span className="eyebrow">Falsifiable experiment</span><h2>How could we test the uncertainty?</h2></div>
-        <div className="experiment-flow">
-          <div className="model-arms"><article><span>Disease arm A</span><b>SCAR16 model</b></article><article><span>Disease arm B</span><b>Lafora model</b></article><article><span>Shared comparator</span><b>Matched control</b></article></div>
-          <div className="flow-arrow"><Icon name="arrow" /><span>same conditions</span></div>
-          <article className="flow-stage"><span>Model system</span><b>{goal.experiment.model_system}</b></article>
-          <div className="flow-arrow"><Icon name="arrow" /><span>one assay</span></div>
-          <article className="flow-stage primary"><span>Primary readout</span><b>{goal.experiment.primary_readout}</b></article>
-        </div>
-      </section>
-      <section className="falsification-grid"><article className="supports"><span><Icon name="check" /> Would support the hypothesis</span><p>{goal.supports_if}</p></article><article className="refutes"><span><Icon name="alert" /> Would weaken or refute it</span><p>{goal.refutes_if}</p></article></section>
-      <details className="experiment-details"><summary>Experiment details <span>Scientific protocol view</span></summary><div className="details-grid"><article><h3>Hypothesis</h3><p>{goal.experiment.hypothesis}</p></article><article><h3>Competing hypothesis</h3><p>{goal.experiment.competing_hypothesis}</p></article><article><h3>Shared comparator</h3><p>{goal.experiment.comparator}</p></article><article><h3>Secondary readouts</h3><ul>{goal.experiment.secondary_readouts.map((item) => <li key={item}>{item}</li>)}</ul></article><article><h3>Limitations</h3><ul>{goal.experiment.limitations.map((item) => <li key={item}>{item}</li>)}</ul></article><article><h3>Evidence limitations</h3><ul>{goal.evidence_limitations.map((item) => <li key={item}>{item}</li>)}</ul></article></div>{mode === "scientist" && <EvidenceLineage story={story} />}</details>
-      <div className="page-action"><NextButton to="/existing-work">Map what already exists</NextButton></div>
-    </main>
-  );
+export function EvidenceScreen({ story, parent, mode }: ScreenProps) {
+  return <main className="screen parent-screen">
+    <PageIntro step="Evidence review" title="The first connection was not the whole story" description="The search found a useful relationship, but closer review changed the explanation for why it may matter." />
+    <ReviewStatus story={story} />
+    <div className="content-with-guide"><section className="three-step-evidence"><article><b>1</b><span>What first connected them</span><p>Both diseases were tagged with the broad process <strong>{story.goal1.retrieval_reason.feature}</strong>.</p></article><article><b>2</b><span>What we checked</span><p>We reviewed whether that broad tag was actually the biological reason the diseases should be compared.</p></article><article><b>3</b><span>What appears more important</span><p>The evidence points to a more specific link involving CHIP-associated chaperone and stress-response biology.</p></article></section><GuidePanel question="How do we know this?"><p>Two independent primary findings support the refined relationship. The frozen demo has abstract-level evidence and has not completed full-text review.</p></GuidePanel></div>
+    <section className="changed-conclusion"><span>Why this matters</span><h2>The Atlas found a real connection, but not for the reason the original search suggested.</h2><p>The search was useful for finding the pair. Evidence review made the proposed biological explanation more specific—and kept the original explanation from being overstated.</p></section>
+    <section className="certainty-card"><div><span>How sure are we?</span><h2>{parent.parent_certainty.label}</h2><p>{parent.parent_certainty.explanation}</p></div><aside><b>Expert review status</b><p>{parent.parent_certainty.expert_review}</p></aside></section>
+    <EvidenceDrawer story={story} mode={mode} />
+    {mode === "scientist" && <section className="scientist-details"><h2>Scientific details</h2><dl><div><dt>RetrievalReason</dt><dd><code>{story.goal1.retrieval_reason.feature}</code></dd></div><div><dt>RetrievalValidity</dt><dd><code>{story.goal1.validated_relationship.retrieval_validity}</code></dd></div><div><dt>Relationship class</dt><dd><code>{story.goal1.validated_relationship.class}</code></dd></div><div><dt>MechanisticBridge</dt><dd>{story.goal3.mechanistic_bridge.display_label}</dd></div></dl><EvidenceLineage story={story} /></section>}
+    <div className="page-action"><NextButton to="/unknown">See what researchers still need to know</NextButton></div>
+  </main>;
 }
 
-function workForCapability(story: FlagshipStory, capability: string) {
-  return story.goal2.existing_work.find((work) => work.capability === capability);
+export function UnknownScreen({ story, parent, mode }: ScreenProps) {
+  return <main className="screen parent-screen">
+    <PageIntro step="The open question" title="What do researchers still need to know?" description="A promising biological link is useful only if we are clear about what the evidence has not yet shown." />
+    <div className="content-with-guide"><section className="big-question"><span>Critical unanswered question</span><h2>{parent.parent_gap}</h2><h3>Why that question matters</h3><p>{parent.parent_gap_importance}</p></section><GuidePanel question="What is still uncertain?"><p>Whether the shared downstream biology produces the same measurable functional failure in both disease models.</p></GuidePanel></div>
+    <section className="know-grid"><article><span>What we know</span><p>Evidence supports a downstream connection involving CHIP, chaperones and cellular stress response.</p></article><article><span>What we do not know</span><p>The two diseases have not been compared with the same functional readout under matched conditions.</p></article><article><span>What would resolve it</span><p>A direct, side-by-side experiment using both disease models and a shared control.</p></article></section>
+    <section className="child-today"><Icon name="alert" /><div><h2>What does this mean for my child today?</h2><p><strong>This does not identify a treatment or change your child’s medical care today.</strong></p><p>It identifies a research question that may help scientists understand the disease more clearly and potentially reuse work from a related condition.</p></div></section>
+    <section className="questions-list"><span>Questions you could bring to a care or research team</span><ol>{parent.discussion_questions.map((question) => <li key={question}>{question}</li>)}</ol><small>These are discussion prompts, not medical recommendations.</small></section>
+    {mode === "scientist" && <details className="scientist-details"><summary>Canonical KnowledgeGap</summary><p>{story.goal3.knowledge_gap.question}</p><code>{story.goal3.knowledge_gap.id}</code><ul>{story.goal3.knowledge_gap.missing_evidence.map((item) => <li key={item}>{item}</li>)}</ul></details>}
+    <div className="page-action"><NextButton to="/experiment">See how researchers could test it</NextButton></div>
+  </main>;
 }
 
-export function ExistingWorkScreen({ story, goals, mode }: ScreenProps) {
-  const goal = story.goal2;
-  return (
-    <main className="screen">
-      <SectionHeading eyebrow="Goal 2 · Research action" title="What already exists to run this experiment?" description="The Atlas works backward from the experiment to the capabilities and assets it requires." />
-      <ScientificReviewStatus story={story} compact />
-      <section className="readiness-strip"><div><span>Execution readiness</span><StatusPill value={goal.execution_readiness} /></div><p>{goals.goal2.evidence}</p><code>{goal.execution_topology}</code></section>
-      <section className="capability-board"><header><span>Capability</span><span>Status & evidence</span><span>What remains to verify</span></header>{goal.required_capabilities.map((capability) => {
-        const work = workForCapability(story, capability.capability);
-        return <article key={capability.id} className={capability.status === "UNKNOWN" ? "missing" : ""}><div><small>{capability.id}</small><h2>{capability.capability}</h2><p>{capability.why}</p></div><div><StatusPill value={capability.status} />{work ? <p>{work.candidates.length} publication-linked team candidates</p> : <p>No candidate met the current search definition.</p>}</div><div><p>{work?.verification_gap || goal.missing_capabilities.find((item) => item.capability === capability.capability)?.note || "Verification detail unavailable."}</p>{work && <details><summary>View candidate evidence</summary><ul className="candidate-evidence">{work.candidates.map((candidate) => <li key={`${candidate.name}-${candidate.source}`}><b>{candidate.name}</b><span>{candidate.source} · {candidate.year}</span><small>{humanize(candidate.evidence_scope)} · {humanize(candidate.recency)}</small><em>Willingness: {humanize(candidate.collaboration_willingness)}</em></li>)}</ul></details>}</div>{mode === "scientist" && <code>{capability.status} · capability_verified: {work?.candidates.every((candidate) => candidate.capability_verified) ? "true" : "false"}</code>}</article>;
-      })}</section>
-      <section className="asset-coordination-grid"><article className="empty-state"><span className="eyebrow">Existing assets</span><h2>No verified reusable asset identified</h2><p>A model or assay appearing in a paper does not automatically mean it is currently available for reuse.</p><StatusPill value={goal.asset_status} /></article><article className="empty-state"><span className="eyebrow">Coordination</span><h2>No supported overlap flagged</h2><p>{goal.coordination_note}</p><small>This is a scoped search result, not proof that no overlapping program exists.</small></article></section>
-      <section className="topology"><div><span className="eyebrow">Execution topology</span><h2>{humanize(goal.execution_topology)}</h2><p>The experiment requires several capability blocks. Publication evidence suggests some exist, but no single verified collaborator covers the full design.</p></div><div className="topology-diagram">{goal.required_capabilities.map((capability) => <div key={capability.id} className={capability.status === "UNKNOWN" ? "unknown" : "covered"}><span>{capability.status === "UNKNOWN" ? "?" : "✓"}</span><b>{capability.capability}</b></div>)}<Icon name="arrow" /><article><span>Flagship experiment</span><b>Shared, matched functional comparison</b></article></div></section>
-      <section className="milestone"><span className="eyebrow">Proposed next research milestone</span><h2>{story.goal3.experiment.primary_readout}</h2><div><article><span>What is available</span><p>{goal.required_capabilities.filter((item) => item.status !== "UNKNOWN").length} of {goal.required_capabilities.length} capability areas have publication-linked candidates.</p></article><article><span>What is still missing</span><p>{goal.missing_capabilities.map((item) => item.capability).join(", ")}. Candidate capability and willingness remain unverified.</p></article><article><span>Scientific review</span><p>Awaiting expert signoff before scientific or financial action.</p></article></div><StatusPill value={goal.collaborator_status} /><p className="contact-note"><b>Potential verification target: {goal.first_contact.target}</b>{goal.first_contact.caveat}</p></section>
-      {mode === "scientist" && <section className="scientist-section"><h2>Full lineage and provenance</h2><EvidenceLineage story={story} /><p className="integrity-note"><Icon name="alert" /> The interface displays stored conclusions only. Candidate willingness, asset availability, and mechanistic equivalence are not inferred.</p></section>}
-      <footer className="closing"><p>We don’t just find connections. We determine which ones survive evidence review and turn the surviving uncertainty into a research plan.</p><button onClick={() => navigate("/discover")}>Restart demo</button></footer>
-    </main>
-  );
+export function ExperimentScreen({ story, mode }: ScreenProps) {
+  const experiment = story.goal3.experiment;
+  return <main className="screen parent-screen">
+    <PageIntro step="A falsifiable test" title="How could researchers test this?" description="Use the same stress test and the same primary readout across both disease models and healthy comparison cells." />
+    <div className="content-with-guide"><section className="simple-experiment"><div className="experiment-inputs"><article><span className="entity-shape disease" /><b>SCAR16 cells</b></article><article><span className="entity-shape disease" /><b>Lafora cells</b></article><article><i className="control-shape" /><b>Healthy comparison cells</b></article></div><div className="experiment-test"><Icon name="flask" /><b>Same standardized stress test</b></div><div className="experiment-output"><b>Compare the same cellular response</b><small>{experiment.primary_readout}</small></div></section><GuidePanel question="What would this test tell us?"><p>Whether the two disease models show the same kind of failure at the proposed stress-response step—or only look related at a broad level.</p></GuidePanel></div>
+    <section className="outcome-grid"><article className="supports"><span>If the responses look similar</span><p>That would strengthen the idea that the diseases share part of the same downstream biology.</p><details><summary>Exact support rule</summary><p>{story.goal3.supports_if}</p></details></article><article className="refutes"><span>If the responses look different</span><p>That would tell researchers the diseases may only look similar at a broad level and should not be treated as functionally equivalent.</p><details><summary>Exact weakening/refutation rule</summary><p>{story.goal3.refutes_if}</p></details></article></section>
+    <section className="falsifiable-note"><Icon name="check" /><p><strong>This experiment is allowed to fail.</strong> A different response across the models would be useful evidence against the shared-function hypothesis.</p></section>
+    {mode === "scientist" && <details className="experiment-details" open><summary>Scientist protocol view</summary><div className="details-grid"><article><h3>Hypothesis</h3><p>{experiment.hypothesis}</p></article><article><h3>Competing hypothesis</h3><p>{experiment.competing_hypothesis}</p></article><article><h3>Model system</h3><p>{experiment.model_system}</p></article><article><h3>Comparator</h3><p>{experiment.comparator}</p></article><article><h3>Secondary readouts</h3><ul>{experiment.secondary_readouts.map((item) => <li key={item}>{item}</li>)}</ul></article><article><h3>Limitations</h3><ul>{experiment.limitations.map((item) => <li key={item}>{item}</li>)}</ul></article></div><EvidenceLineage story={story} /></details>}
+    <div className="page-action"><NextButton to="/existing-work">See what work already exists</NextButton></div>
+  </main>;
+}
+
+function workForCapability(story: FlagshipStory, capability: string) { return story.goal2.existing_work.find((item) => item.capability === capability); }
+
+export function ExistingWorkScreen({ story, mode }: ScreenProps) {
+  return <main className="screen parent-screen">
+    <PageIntro step="Research landscape" title="What work already exists?" description="We looked at what the proposed experiment would require and searched for teams that have already demonstrated parts of those capabilities." />
+    <div className="content-with-guide"><section><h2>What the experiment needs</h2><p className="lede">This is organized around research capability—not around famous people or a directory of possible collaborators.</p></section><GuidePanel question="What already exists?"><p>Published work provides evidence that several parts of the experiment have been done somewhere. Availability and willingness were not verified.</p></GuidePanel></div>
+    <section className="parent-capability-board">{story.goal2.required_capabilities.map((capability) => {
+      const work = workForCapability(story, capability.capability); const found = capability.status !== "UNKNOWN";
+      return <article key={capability.id} className={found ? "found" : "missing"}><header><span>{found ? "Found in published work" : "Not yet found"}</span><StatusPill value={capability.status} /></header><h2>{capability.capability}</h2><p>{capability.why}</p><div><b>What still needs confirmation</b><p>{work?.verification_gap ?? story.goal2.missing_capabilities.find((item) => item.capability === capability.capability)?.note ?? "Current access and exact experimental fit remain unverified."}</p></div>{work && <details><summary>See the research-team evidence</summary><ul>{work.candidates.map((candidate) => <li key={`${candidate.name}-${candidate.source}`}><b>{candidate.name}</b><span>{candidate.source} · {candidate.year}</span><small>Publication-linked evidence; willingness {humanize(candidate.collaboration_willingness)}</small></li>)}</ul></details>}{mode === "scientist" && <code>{capability.id} · {capability.status}</code>}</article>;
+    })}</section>
+    <section className="landscape-notes"><article><span>Existing assets</span><h2>No verified reusable asset identified</h2><p>A model or assay appearing in a paper does not automatically mean it is currently available for reuse.</p></article><article><span>Where has related research been done?</span><h2>No verified geographic map in this contract</h2><p>The frozen data names publication-linked teams but does not provide verified location records. The UI does not place unverified map pins.</p></article><article><span>Research coordination</span><h2>No supported overlap flagged</h2><p>{story.goal2.coordination_note}</p></article></section>
+    <section className="execution-story"><div><span>Execution model</span><h2>{humanize(story.goal2.execution_topology)}</h2><p>The proposed experiment would need several research teams or capability areas to work together. This does not imply anyone has agreed to participate.</p></div><div>{story.goal2.required_capabilities.map((item) => <span key={item.id} className={item.status === "UNKNOWN" ? "missing" : "found"}>{item.status === "UNKNOWN" ? "?" : "✓"} {item.capability}</span>)}<Icon name="arrow" /><b>Proposed experiment</b></div></section>
+    <div className="page-action"><NextButton to="/next-steps">Build a research discussion summary</NextButton></div>
+  </main>;
+}
+
+export function NextStepsScreen({ story, parent, mode }: ScreenProps) {
+  const covered = story.goal2.required_capabilities.filter((item) => item.status !== "UNKNOWN").length;
+  return <main className="screen parent-screen next-steps-screen">
+    <PageIntro step="Research discussion" title="What could happen next?" description="A careful next step begins with expert review, tests the unanswered question, and reuses existing work only where the evidence supports it." />
+    <section className="three-next-steps"><article><b>1</b><h2>Confirm the biology</h2><p>A disease expert should review whether this proposed connection is scientifically reasonable for your child’s condition.</p></article><article><b>2</b><h2>Test the unanswered question</h2><p>Researchers could compare the two disease models using the same functional stress-response assay.</p></article><article><b>3</b><h2>Reuse what already exists</h2><p>If relevant models or assays are available, researchers may be able to build on them instead of starting from zero.</p></article></section>
+    <section className="does-not-mean"><h2>What this does not mean</h2><ul><li>It does not mean the diseases are the same.</li><li>It does not identify a treatment.</li><li>It does not replace your child’s medical team.</li><li>It does not mean a research team has agreed to participate.</li></ul></section>
+    <section className="discussion-summary" id="research-discussion-summary"><header><div><span>Research discussion summary</span><h2>SCAR16</h2></div><button onClick={() => window.print()}><Icon name="print" /> Print / save PDF</button></header><dl><div><dt>Research connection worth asking about</dt><dd>Lafora Disease</dd></div><div><dt>Why</dt><dd>Evidence suggests a possible shared downstream stress-response mechanism involving CHIP and chaperone biology.</dd></div><div><dt>Important uncertainty</dt><dd>{parent.parent_gap}</dd></div><div><dt>Research test</dt><dd>Compare both disease models under the same stress conditions using the same primary functional readout and a shared control.</dd></div><div><dt>What already exists</dt><dd>{covered} of {story.goal2.required_capabilities.length} capability areas have publication-linked evidence.</dd></div><div><dt>What remains uncertain</dt><dd>Expert review, reusable asset availability, research-team willingness, and functional equivalence.</dd></div></dl><h3>Questions to ask</h3><ol>{parent.discussion_questions.map((question) => <li key={question}>{question}</li>)}</ol><footer>Research-support prototype. This is not a treatment plan or medical recommendation.</footer></section>
+    {mode === "scientist" && <section className="scientist-details"><h2>Complete machine-readable lineage</h2><EvidenceLineage story={story} /><p><code>{story.provenance.pipeline_version}</code> · <code>{story.provenance.software_commit}</code></p></section>}
+    <footer className="closing"><p>The Atlas does not just find a link. It checks the reason, preserves what remains uncertain, proposes a test that can fail, and shows which research pieces may already exist.</p><button onClick={() => navigate("/disease")}>Restart the journey</button></footer>
+  </main>;
 }

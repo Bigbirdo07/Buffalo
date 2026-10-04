@@ -1,0 +1,1047 @@
+{
+  "anchor": "Ankylosing Spondylitis",
+  "anchor_id": "bf70f76f-b4d5-5a82-ba68-55fc3f831984",
+  "candidates_retrieved": 60,
+  "candidates_evaluated": 8,
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "ranked": [
+    {
+      "rank": 1,
+      "disease_id": "9b8c195e-6180-5c7f-abe5-257b6218b0ef",
+      "disease_name": "Crohn Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 109.897,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 8.829,
+        "SHARED_GENE_OR_PROTEIN": 79.374,
+        "SHARED_PHENOTYPE": 15.994
+      },
+      "top_features": [
+        {
+          "label": "IL23R",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "Anterior uveitis",
+          "class": "phenotype",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PRDM1",
+          "class": "genetic",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "disease_id": "cc127192-d1f3-50cb-b609-618ee47aa93f",
+      "disease_name": "Psoriasis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 100.903,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 8.829,
+        "SHARED_GENE_OR_PROTEIN": 79.374,
+        "SHARED_PHENOTYPE": 7.0
+      },
+      "top_features": [
+        {
+          "label": "Enthesitis",
+          "class": "phenotype",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "IL23R",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PRDM1",
+          "class": "genetic",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "disease_id": "f2f2b293-b624-526d-81f6-bc11504a0ddc",
+      "disease_name": "Rheumatoid Arthritis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 88.327,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 4.515,
+        "SHARED_GENE_OR_PROTEIN": 67.272,
+        "SHARED_PHENOTYPE": 10.84
+      },
+      "top_features": [
+        {
+          "label": "Scleritis",
+          "class": "phenotype",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PRDM1",
+          "class": "genetic",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "IRF8",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "disease_id": "c086c653-9894-5c81-bd3b-3e63347c0f2d",
+      "disease_name": "Kawasaki Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 47.515,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 10.741,
+        "SHARED_CELL_OR_TISSUE": 12.533,
+        "SHARED_GENE_OR_PROTEIN": 11.003,
+        "SHARED_PHENOTYPE": 13.238
+      },
+      "top_features": [
+        {
+          "label": "HLA-B",
+          "class": "genetic",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "interleukin-17 production",
+          "class": "cellular",
+          "corpus_frequency": 13,
+          "information_content": 5.533
+        },
+        {
+          "label": "SMAD3",
+          "class": "genetic",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "tumor necrosis factor production",
+          "class": "cellular",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "Conjunctivitis",
+          "class": "phenotype",
+          "corpus_frequency": 23,
+          "information_content": 4.963
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "disease_id": "91ee62a2-b39d-54ea-9d2f-d455b0734511",
+      "disease_name": "Uveitis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 27.694,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 4.515,
+        "SHARED_GENE_OR_PROTEIN": 12.325,
+        "SHARED_PHENOTYPE": 5.154
+      },
+      "top_features": [
+        {
+          "label": "ERAP1",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "T-helper 17 type immune response",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "HLA-B",
+          "class": "genetic",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "Uveitis",
+          "class": "phenotype",
+          "corpus_frequency": 19,
+          "information_content": 5.154
+        },
+        {
+          "label": "T-helper 17 cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "disease_id": "29753392-e8a9-5106-ac6f-3aadcdd78207",
+      "disease_name": "Ulcerative Colitis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 93.237,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 3.023,
+        "SHARED_GENE_OR_PROTEIN": 79.374,
+        "SHARED_PHENOTYPE": 10.84
+      },
+      "top_features": [
+        {
+          "label": "IL23R",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "Anterior uveitis",
+          "class": "phenotype",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PRDM1",
+          "class": "genetic",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "disease_id": "12915695-14be-5fb1-89d6-ef5d2103c9ce",
+      "disease_name": "Multiple Sclerosis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 71.335,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 4.515,
+        "SHARED_GENE_OR_PROTEIN": 61.12
+      },
+      "top_features": [
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "IRF8",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "IL10",
+          "class": "genetic",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "T-helper 17 type immune response",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "disease_id": "3b5508d3-621a-5382-95dd-1c3f8314b7f1",
+      "disease_name": "Celiac Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 52.27,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 9.76,
+        "SHARED_GENE_OR_PROTEIN": 38.382,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "CD28",
+          "class": "genetic",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "ETS1",
+          "class": "genetic",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "interleukin-17 production",
+          "class": "cellular",
+          "corpus_frequency": 13,
+          "information_content": 5.533
+        },
+        {
+          "label": "BACH2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        },
+        {
+          "label": "EGR2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "disease_id": "947d7251-bdc5-5a9d-a0c9-c7351c27d5a9",
+      "disease_name": "Atopic Dermatitis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 48.386,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 4.515,
+        "SHARED_GENE_OR_PROTEIN": 38.171
+      },
+      "top_features": [
+        {
+          "label": "SATB1",
+          "class": "genetic",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "T-helper 17 type immune response",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "ETS1",
+          "class": "genetic",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "BACH2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        },
+        {
+          "label": "EGR2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "disease_id": "2fb0210d-c4a6-5f3d-b874-c2eb02e8b0c6",
+      "disease_name": "Type I Diabetes",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 41.359,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 10.121,
+        "SHARED_CELL_OR_TISSUE": 4.314,
+        "SHARED_GENE_OR_PROTEIN": 26.924
+      },
+      "top_features": [
+        {
+          "label": "IKZF1",
+          "class": "genetic",
+          "corpus_frequency": 13,
+          "information_content": 5.533
+        },
+        {
+          "label": "BACH2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        },
+        {
+          "label": "EGR2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        },
+        {
+          "label": "antigen processing and presentation of peptide antigen via MHC class I",
+          "class": "cellular",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "TNFAIP3",
+          "class": "genetic",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "disease_id": "548d757a-00d8-536d-b651-197e7443eaf1",
+      "disease_name": "Vitiligo",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 23.839,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 8.018,
+        "SHARED_GENE_OR_PROTEIN": 10.667,
+        "SHARED_PHENOTYPE": 5.154
+      },
+      "top_features": [
+        {
+          "label": "BACH2",
+          "class": "genetic",
+          "corpus_frequency": 14,
+          "information_content": 5.459
+        },
+        {
+          "label": "PTPN22",
+          "class": "genetic",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "Uveitis",
+          "class": "phenotype",
+          "corpus_frequency": 19,
+          "information_content": 5.154
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        },
+        {
+          "label": "CD8-positive, alpha-beta T cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 81,
+          "information_content": 3.704
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "disease_id": "9497256b-a0bf-54c5-a836-5b2a8ff97c7c",
+      "disease_name": "Takayasu Arteritis",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 22.274,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 12.533,
+        "SHARED_GENE_OR_PROTEIN": 5.613,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "HLA-B",
+          "class": "genetic",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "T-helper 17 cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        },
+        {
+          "label": "Arthritis",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "CD8-positive, alpha-beta T cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 81,
+          "information_content": 3.704
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "disease_id": "0fae14af-a536-5a24-9461-3b77c7a00f4c",
+      "disease_name": "Stevens-Johnson Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.499,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.39,
+        "SHARED_GENE_OR_PROTEIN": 11.146,
+        "SHARED_PHENOTYPE": 4.963
+      },
+      "top_features": [
+        {
+          "label": "HLA-B",
+          "class": "genetic",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "IKZF1",
+          "class": "genetic",
+          "corpus_frequency": 13,
+          "information_content": 5.533
+        },
+        {
+          "label": "antigen processing and presentation of peptide antigen via MHC class I",
+          "class": "cellular",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "Conjunctivitis",
+          "class": "phenotype",
+          "corpus_frequency": 23,
+          "information_content": 4.963
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "disease_id": "3e7eeb32-f55b-5fba-835a-3e965a06cefd",
+      "disease_name": "Hashimoto's Thyroiditis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 20.764,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 3.023,
+        "SHARED_CELL_OR_TISSUE": 12.533,
+        "SHARED_GENE_OR_PROTEIN": 5.208
+      },
+      "top_features": [
+        {
+          "label": "PTPN22",
+          "class": "genetic",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "T-helper 17 cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        },
+        {
+          "label": "CD8-positive, alpha-beta T cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 81,
+          "information_content": 3.704
+        },
+        {
+          "label": "response to oxidative stress",
+          "class": "cellular",
+          "corpus_frequency": 160,
+          "information_content": 3.023
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "disease_id": "0d0f4dff-e957-512b-a45f-5fe82e2d8c7b",
+      "disease_name": "Otosclerosis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 20.589,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.182,
+        "SHARED_CELL_OR_TISSUE": 7.017,
+        "SHARED_GENE_OR_PROTEIN": 5.39
+      },
+      "top_features": [
+        {
+          "label": "SMAD3",
+          "class": "genetic",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "bone resorption",
+          "class": "cellular",
+          "corpus_frequency": 48,
+          "information_content": 4.227
+        },
+        {
+          "label": "ossification",
+          "class": "cellular",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "osteoclast",
+          "class": "cell_tissue",
+          "corpus_frequency": 66,
+          "information_content": 3.909
+        },
+        {
+          "label": "osteoblast",
+          "class": "cell_tissue",
+          "corpus_frequency": 147,
+          "information_content": 3.108
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "disease_id": "4db3c374-7d21-55b5-b44a-c7bf3edd8044",
+      "disease_name": "Kummell Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 20.039,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.182,
+        "SHARED_CELL_OR_TISSUE": 7.017,
+        "SHARED_PHENOTYPE": 4.84
+      },
+      "top_features": [
+        {
+          "label": "Back pain",
+          "class": "phenotype",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "bone resorption",
+          "class": "cellular",
+          "corpus_frequency": 48,
+          "information_content": 4.227
+        },
+        {
+          "label": "ossification",
+          "class": "cellular",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "osteoclast",
+          "class": "cell_tissue",
+          "corpus_frequency": 66,
+          "information_content": 3.909
+        },
+        {
+          "label": "osteoblast",
+          "class": "cell_tissue",
+          "corpus_frequency": 147,
+          "information_content": 3.108
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "disease_id": "18d081d1-251a-59a5-85b4-09c070f89ae8",
+      "disease_name": "Coccidioidomycosis",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 19.408,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.7,
+        "SHARED_CELL_OR_TISSUE": 8.829,
+        "SHARED_GENE_OR_PROTEIN": 4.879
+      },
+      "top_features": [
+        {
+          "label": "T-helper 17 type immune response",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "STAT3",
+          "class": "genetic",
+          "corpus_frequency": 25,
+          "information_content": 4.879
+        },
+        {
+          "label": "T-helper 17 cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "disease_id": "cffd0b28-c6c2-5240-b281-0497d9efb4cf",
+      "disease_name": "Giant Cell Arteritis",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 19.263,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 4.314,
+        "SHARED_GENE_OR_PROTEIN": 10.821,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "HLA-B",
+          "class": "genetic",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "PTPN22",
+          "class": "genetic",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        },
+        {
+          "label": "Arthritis",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "disease_id": "bc60863e-a8b8-5118-b41f-68ac91408af3",
+      "disease_name": "Autosomal Dominant Hyper-IgE Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN"
+      ],
+      "total_information": 18.836,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.533,
+        "SHARED_CELL_OR_TISSUE": 8.424,
+        "SHARED_GENE_OR_PROTEIN": 4.879
+      },
+      "top_features": [
+        {
+          "label": "interleukin-17 production",
+          "class": "cellular",
+          "corpus_frequency": 13,
+          "information_content": 5.533
+        },
+        {
+          "label": "STAT3",
+          "class": "genetic",
+          "corpus_frequency": 25,
+          "information_content": 4.879
+        },
+        {
+          "label": "T-helper 17 cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "osteoclast",
+          "class": "cell_tissue",
+          "corpus_frequency": 66,
+          "information_content": 3.909
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "disease_id": "12cb7207-91d9-5403-868d-5083227342c6",
+      "disease_name": "Antisynthetase Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 17.536,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.39,
+        "SHARED_CELL_OR_TISSUE": 8.018,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "antigen processing and presentation of peptide antigen via MHC class I",
+          "class": "cellular",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "dendritic cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 44,
+          "information_content": 4.314
+        },
+        {
+          "label": "Arthritis",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "CD8-positive, alpha-beta T cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 81,
+          "information_content": 3.704
+        }
+      ]
+    }
+  ],
+  "evaluated": [
+    {
+      "rank": 1,
+      "pair": "Crohn Disease",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 2,
+      "pair": "Psoriasis",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 3,
+      "pair": "Rheumatoid Arthritis",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 4,
+      "pair": "Kawasaki Disease",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 20,
+      "direct_primary": 11,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 5,
+      "pair": "Uveitis",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 20,
+      "direct_primary": 7,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 6,
+      "pair": "Ulcerative Colitis",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 7,
+      "pair": "Multiple Sclerosis",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 8,
+      "pair": "Celiac Disease",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 8,
+      "independent_discovery": true,
+      "identity_excluded": false
+    }
+  ]
+}

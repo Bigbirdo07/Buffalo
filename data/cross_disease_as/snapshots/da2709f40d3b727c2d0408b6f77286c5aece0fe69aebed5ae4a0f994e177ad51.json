@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AETS1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:28.024156+00:00",
+  "sha256": "0ea6c1a02cf99ef9c696de2aec518dd819564e45bca4730e1e4af8f58b59f445"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ABACH2%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:23.632855+00:00",
+  "sha256": "f0aaded37f0910d9eee357fb6120f90aad9427258880cd0035a6b39909f99a9e"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ACTLA4%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:09.137125+00:00",
+  "sha256": "891ae8fb89d2d317ac92c20f948ae722c41dfed9f4e1a1657ecf17545fc8b4b1"
+}

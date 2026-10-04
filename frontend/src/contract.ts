@@ -182,6 +182,52 @@ export type Candidate = z.infer<typeof CandidateSchema>;
 export type RequiredCapability = z.infer<typeof RequiredCapabilitySchema>;
 export type PresentationMode = "family" | "scientist";
 
+const ParentEntityTypeSchema = z.enum(["DISEASE", "GENE", "PROTEIN", "PROCESS"]);
+
+export const ParentStorySchema = z.object({
+  schema_version: z.literal("parent-story-v1"),
+  case: z.object({
+    short_name: z.string(),
+    full_name: z.string(),
+    case_label: z.string(),
+    case_subtitle: z.string(),
+    cause_summary: z.string(),
+    research_goal: z.string(),
+    phenotype_groups: z.array(z.object({ label: z.string(), detail: z.string() })).min(3).max(5),
+    variation_note: z.string(),
+  }),
+  case_choices: z.array(z.object({
+    id: z.string(),
+    name: z.string(),
+    entity_type: z.enum(["DISEASE", "GENE"]),
+    label: z.string(),
+    subtitle: z.string(),
+    availability: z.enum(["FULL", "PREVIEW", "CONTEXT_ONLY"]),
+  })),
+  guided_path: z.array(z.object({
+    id: z.string(),
+    label: z.string(),
+    entity_type: ParentEntityTypeSchema,
+    meaning: z.string(),
+  })).min(3),
+  parent_certainty: z.object({
+    label: z.string(),
+    explanation: z.string(),
+    expert_review: z.string(),
+  }),
+  parent_gap: z.string(),
+  parent_gap_importance: z.string(),
+  discussion_questions: z.array(z.string()).min(3).max(5),
+  sources: z.array(z.object({
+    field: z.string(),
+    reference: z.string(),
+    upstream_commit: z.string(),
+  })),
+});
+
+export type ParentStory = z.infer<typeof ParentStorySchema>;
+export type ParentPathNode = ParentStory["guided_path"][number];
+
 // --- Multi-case demo contract -------------------------------------------
 //
 // Three worked cases with deliberately different outcomes. goal3 and goal2 are
@@ -307,3 +353,41 @@ export const DemoCasesSchema = z.object({
 
 export type DemoCase = z.infer<typeof DemoCaseSchema>;
 export type DemoCases = z.infer<typeof DemoCasesSchema>;
+
+// --- Browse index --------------------------------------------------------
+//
+// Every disease in the corpus, with the neighbours retrieval returns. It holds
+// no relationship claims: `case_id` is the only marker of which diseases have
+// been through evidence refinement, and the UI uses it to decide what it is
+// entitled to show.
+
+const NeighbourSchema = z.object({
+  name: z.string().min(1),
+  axes: z.number().int().nonnegative(),
+  information: z.number(),
+  features: z.array(z.string()),
+});
+
+export const BrowseDiseaseSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  genes: z.array(z.string()),
+  phenotype_count: z.number().int().nonnegative(),
+  neighbours: z.array(NeighbourSchema),
+  // Present only for diseases that have been refined. Null is the common case
+  // and must stay renderable.
+  case_id: z.string().nullable().optional(),
+});
+
+export const BrowseIndexSchema = z.object({
+  schema_version: z.literal("browse-index-v1"),
+  software_commit: z.string(),
+  disease_count: z.number().int().positive(),
+  analysed_case_count: z.number().int().nonnegative(),
+  neighbours_per_disease: z.number().int().positive(),
+  limitation: z.string().min(1),
+  diseases: z.array(BrowseDiseaseSchema).min(1),
+});
+
+export type BrowseDisease = z.infer<typeof BrowseDiseaseSchema>;
+export type BrowseIndex = z.infer<typeof BrowseIndexSchema>;

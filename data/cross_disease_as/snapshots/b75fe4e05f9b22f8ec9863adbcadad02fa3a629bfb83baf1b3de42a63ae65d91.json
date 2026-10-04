@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ATRAF3IP2%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:43.910202+00:00",
+  "sha256": "2e2719abc57417127559dbc700d4b56c75ff14e0650e925648c579704f7777bf"
+}

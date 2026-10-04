@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ACARD14%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:35:45.544995+00:00",
+  "sha256": "f406d3265d70e4d6ac3a36cd353abb437525b2e965f5d3fb6788f697bd683638"
+}

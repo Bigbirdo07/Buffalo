@@ -1,0 +1,1039 @@
+{
+  "anchor": "Zellweger Spectrum Disorders",
+  "anchor_id": "3eb8d334-8628-5e98-8052-cb84781318d7",
+  "candidates_retrieved": 60,
+  "candidates_evaluated": 6,
+  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "ranked": [
+    {
+      "rank": 1,
+      "disease_id": "6037f97c-e65c-5760-9664-1bb0156cdfb5",
+      "disease_name": "Peroxisome Biogenesis Disorder",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 174.614,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 32.534,
+        "SHARED_GENE_OR_PROTEIN": 97.957,
+        "SHARED_MOLECULAR_FUNCTION": 26.065,
+        "SHARED_PHENOTYPE": 18.058
+      },
+      "top_features": [
+        {
+          "label": "bile acid",
+          "class": "molecular",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "PEX26",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "PEX11B",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "PEX14",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "PEX3",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "disease_id": "0f7f6cbd-ea1d-5b73-a14c-be988121d618",
+      "disease_name": "Peroxisome Biogenesis Disorder 1B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 86.69,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 32.477,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_MOLECULAR_FUNCTION": 17.695,
+        "SHARED_PHENOTYPE": 29.518
+      },
+      "top_features": [
+        {
+          "label": "PEX1",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "ether lipid",
+          "class": "molecular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "very long-chain fatty acid",
+          "class": "molecular",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "bile acid metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "Polyneuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "disease_id": "83ee4af3-95a3-5219-b0d1-6f214533baaf",
+      "disease_name": "Peroxisome Biogenesis Disorder 4B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 86.179,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 32.477,
+        "SHARED_GENE_OR_PROTEIN": 6.489,
+        "SHARED_MOLECULAR_FUNCTION": 17.695,
+        "SHARED_PHENOTYPE": 29.518
+      },
+      "top_features": [
+        {
+          "label": "ether lipid",
+          "class": "molecular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "PEX6",
+          "class": "genetic",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "very long-chain fatty acid",
+          "class": "molecular",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "bile acid metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "Polyneuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "disease_id": "2cad1928-c779-552e-ab04-908aca223711",
+      "disease_name": "Peroxisome Biogenesis Disorder 5B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 70.109,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 27.962,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_MOLECULAR_FUNCTION": 12.731,
+        "SHARED_PHENOTYPE": 22.416
+      },
+      "top_features": [
+        {
+          "label": "PEX2",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "pristanic acid",
+          "class": "molecular",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "phytanic acid",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "disease_id": "9b3e398b-ae50-59ea-aed3-24210190ae06",
+      "disease_name": "Peroxisome Biogenesis Disorder 4A (Zellweger)",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 66.506,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 38.378,
+        "SHARED_GENE_OR_PROTEIN": 6.489,
+        "SHARED_MOLECULAR_FUNCTION": 5.054,
+        "SHARED_PHENOTYPE": 16.585
+      },
+      "top_features": [
+        {
+          "label": "PEX6",
+          "class": "genetic",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "bile acid metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "disease_id": "87595a03-632f-5c16-acde-0431e49b9d5d",
+      "disease_name": "Rhizomelic Chondrodysplasia Punctata Type 1",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 44.527,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 23.099,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_MOLECULAR_FUNCTION": 6.019,
+        "SHARED_PHENOTYPE": 8.697
+      },
+      "top_features": [
+        {
+          "label": "protein targeting to peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PEX7",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "phytanic acid",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "disease_id": "45de5646-182e-5045-9747-fe02adc5c5eb",
+      "disease_name": "Adult Refsum Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 32.489,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 16.387,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_MOLECULAR_FUNCTION": 6.019,
+        "SHARED_PHENOTYPE": 3.371
+      },
+      "top_features": [
+        {
+          "label": "PEX7",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "phytanic acid",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "disease_id": "7ef39abc-1f4c-5c13-8840-e1e976476eef",
+      "disease_name": "Peroxisome Biogenesis Disorder 11A (Zellweger)",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 61.781,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 35.367,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 19.702
+      },
+      "top_features": [
+        {
+          "label": "protein import into peroxisome matrix, docking",
+          "class": "cellular",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "PEX13",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "disease_id": "7042d420-02d7-59fd-aff4-cfc9bc863280",
+      "disease_name": "Peroxisome Biogenesis Disorder 2B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 58.109,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 21.879,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 29.518
+      },
+      "top_features": [
+        {
+          "label": "protein targeting to peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PEX5",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "Polyneuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "disease_id": "ffa772c7-90e7-5c18-9ca6-fedbacb3857b",
+      "disease_name": "Peroxisome Biogenesis Disorder 11B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 52.147,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 15.917,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 29.518
+      },
+      "top_features": [
+        {
+          "label": "PEX13",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "Polyneuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "Amelogenesis imperfecta",
+          "class": "phenotype",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "disease_id": "22c2efb9-c420-53a7-be33-a508a5694cc8",
+      "disease_name": "Peroxisome Biogenesis Disorder 3A (Zellweger)",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 47.508,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 22.166,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_PHENOTYPE": 18.342
+      },
+      "top_features": [
+        {
+          "label": "PEX12",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "disease_id": "a7d81e54-f109-585d-ab47-c59d6402a246",
+      "disease_name": "Peroxisome Biogenesis Disorder 8B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 45.711,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 30.609,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_PHENOTYPE": 8.102
+      },
+      "top_features": [
+        {
+          "label": "peroxisome membrane biogenesis",
+          "class": "cellular",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "protein import into peroxisome membrane",
+          "class": "cellular",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "PEX16",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "disease_id": "3fe07a9b-11e9-5334-aa83-cfa9e33228cd",
+      "disease_name": "Rhizomelic Chondrodysplasia Punctata Type 5",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 43.834,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 28.425,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 8.697
+      },
+      "top_features": [
+        {
+          "label": "protein targeting to peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "PEX5",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "disease_id": "12f0ff3f-ac00-5e49-ba80-3c26e2c9724d",
+      "disease_name": "Peroxisome Biogenesis Disorder 12A (Zellweger)",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 41.52,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 29.754,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_PHENOTYPE": 4.766
+      },
+      "top_features": [
+        {
+          "label": "protein import into peroxisome membrane",
+          "class": "cellular",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "PEX19",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "very long-chain fatty acid metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "disease_id": "6bd764c0-3778-5f37-8eef-10cbfb0ce8cc",
+      "disease_name": "Rhizomelic Chondrodysplasia Punctata, Plasmalogen-Synthesis Defect",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 37.592,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 16.387,
+        "SHARED_MOLECULAR_FUNCTION": 12.508,
+        "SHARED_PHENOTYPE": 8.697
+      },
+      "top_features": [
+        {
+          "label": "ether lipid",
+          "class": "molecular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "phytanic acid",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "fatty acid alpha-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "ether lipid biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "Epiphyseal Stippling",
+          "class": "phenotype",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "disease_id": "adfde255-99d3-5d9c-b88d-381787e08a11",
+      "disease_name": "Peroxisome Biogenesis Disorder 6A (Zellweger)",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 33.644,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 16.84,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 10.092
+      },
+      "top_features": [
+        {
+          "label": "PEX10",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "peroxisome organization",
+          "class": "cellular",
+          "corpus_frequency": 12,
+          "information_content": 5.613
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "Epiphyseal Stippling",
+          "class": "phenotype",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "disease_id": "90daa6e0-c60a-5733-987a-1b14b0b08143",
+      "disease_name": "Peroxisome Biogenesis Disorder 6B",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 32.121,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 11.227,
+        "SHARED_GENE_OR_PROTEIN": 6.712,
+        "SHARED_PHENOTYPE": 14.182
+      },
+      "top_features": [
+        {
+          "label": "PEX10",
+          "class": "genetic",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "peroxisomal membrane",
+          "class": "cellular",
+          "corpus_frequency": 9,
+          "information_content": 5.901
+        },
+        {
+          "label": "protein import into peroxisome matrix",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "Adrenal insufficiency",
+          "class": "phenotype",
+          "corpus_frequency": 25,
+          "information_content": 4.879
+        },
+        {
+          "label": "Leukodystrophy",
+          "class": "phenotype",
+          "corpus_frequency": 29,
+          "information_content": 4.731
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "disease_id": "c9f6b76f-e61a-562c-818c-0a41094de3f1",
+      "disease_name": "adrenoleukodystrophy",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 27.3,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 16.269,
+        "SHARED_MOLECULAR_FUNCTION": 6.152,
+        "SHARED_PHENOTYPE": 4.879
+      },
+      "top_features": [
+        {
+          "label": "very long-chain fatty acid metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "very long-chain fatty acid",
+          "class": "molecular",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Adrenal insufficiency",
+          "class": "phenotype",
+          "corpus_frequency": 25,
+          "information_content": 4.879
+        },
+        {
+          "label": "fatty acid beta-oxidation",
+          "class": "cellular",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "disease_id": "9cda7897-63ec-5511-8b13-c175025e8774",
+      "disease_name": "Peroxisomal Acyl-CoA Oxidase Deficiency",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.027,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.265,
+        "SHARED_MOLECULAR_FUNCTION": 6.152,
+        "SHARED_PHENOTYPE": 9.61
+      },
+      "top_features": [
+        {
+          "label": "very long-chain fatty acid",
+          "class": "molecular",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Adrenal insufficiency",
+          "class": "phenotype",
+          "corpus_frequency": 25,
+          "information_content": 4.879
+        },
+        {
+          "label": "Leukodystrophy",
+          "class": "phenotype",
+          "corpus_frequency": 29,
+          "information_content": 4.731
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "disease_id": "655396a0-0989-5ebf-b1f1-d237e70bb273",
+      "disease_name": "D-Bifunctional Protein Deficiency",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 16.148,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.265,
+        "SHARED_MOLECULAR_FUNCTION": 6.152,
+        "SHARED_PHENOTYPE": 4.731
+      },
+      "top_features": [
+        {
+          "label": "very long-chain fatty acid",
+          "class": "molecular",
+          "corpus_frequency": 7,
+          "information_content": 6.152
+        },
+        {
+          "label": "peroxisome",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Leukodystrophy",
+          "class": "phenotype",
+          "corpus_frequency": 29,
+          "information_content": 4.731
+        }
+      ]
+    }
+  ],
+  "evaluated": [
+    {
+      "rank": 1,
+      "pair": "Peroxisome Biogenesis Disorder",
+      "identity": "ALLELIC_SPECTRUM",
+      "relationship": "SAME_ALLELIC_SPECTRUM",
+      "retrieval_validity": "PARTIALLY_CORRECT",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 7,
+      "independent_discovery": false,
+      "identity_excluded": true
+    },
+    {
+      "rank": 2,
+      "pair": "Peroxisome Biogenesis Disorder 1B",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 10,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 3,
+      "pair": "Peroxisome Biogenesis Disorder 4B",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 10,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 4,
+      "pair": "Peroxisome Biogenesis Disorder 5B",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 18,
+      "direct_primary": 7,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 5,
+      "pair": "Peroxisome Biogenesis Disorder 4A (Zellweger)",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 10,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 6,
+      "pair": "Rhizomelic Chondrodysplasia Punctata Type 1",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 20,
+      "direct_primary": 12,
+      "independent_discovery": false,
+      "identity_excluded": false
+    }
+  ]
+}

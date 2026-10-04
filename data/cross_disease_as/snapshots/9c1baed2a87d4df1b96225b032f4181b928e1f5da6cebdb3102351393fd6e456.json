@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AHLA-DRB1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:09.944153+00:00",
+  "sha256": "45dd2b5be66769b4d2d35e7de6db17f3bbd4dd738b9e0419b48caf8c9d16543d"
+}

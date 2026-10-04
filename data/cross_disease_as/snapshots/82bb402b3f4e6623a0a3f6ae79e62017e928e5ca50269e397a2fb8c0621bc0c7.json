@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SATB1%5Btiab%5D+OR+%22DNA-binding+protein+SATB1%22%5Btiab%5D+OR+%22Special+AT-rich+sequence-binding+protein+1%22%5Btiab%5D+OR+STAT3%5Btiab%5D+OR+%22Signal+transducer+and+activator+of+transcription+3%22%5Btiab%5D+OR+%22Acute-phase+response+factor%22%5Btiab%5D+OR+TNFAIP3%5Btiab%5D+OR+%22TNF+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Tumor+necrosis+factor+alpha-induced+protein+3%22%5Btiab%5D+OR+%22Ankylosing+Spondylitis%22%5Btiab%5D%29+AND+%28BLK%5Btiab%5D+OR+%22Tyrosine-protein+kinase+Blk%22%5Btiab%5D+OR+%22B+lymphocyte+kinase%22%5Btiab%5D+OR+STIM1%5Btiab%5D+OR+%22Stromal+interaction+molecule+1%22%5Btiab%5D+OR+TGFB2%5Btiab%5D+OR+G-TSF%5Btiab%5D+OR+%22Transforming+growth+factor+beta-2+proprotein%22%5Btiab%5D+OR+%22Kawasaki+Disease%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T10:36:13.783982+00:00",
+  "sha256": "3ae7714bebecf505f1fd6125cca74de6e3b85d2749947f0de874ac4e4180d523"
+}

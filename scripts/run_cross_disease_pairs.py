@@ -46,6 +46,20 @@ from atlas.services.hpo_similarity import (
 ROOT = Path(__file__).resolve().parents[1]
 SEALED = "data/validation/cross_disease_round1.json"
 
+# A co-mention search returning more than this cannot establish a specific link.
+#
+# Measured, not assumed. A genuine, specific pair returns a handful of papers:
+# the flagship pair returns 3. Running the pipeline on a well-studied immune
+# disease returned 46,000-50,000 co-mentions for every candidate and marked all
+# eight a shared downstream mechanism, with bridges made of "phosphorylation",
+# "TNF" and "STAT3" -- terms the flagship selector already penalises as generic.
+#
+# At that scale the query measures how much each disease is written about, not
+# whether they are related. The Goal 2 capability search already applies this
+# rule; the evidence pipeline did not inherit it, and a disease area with a large
+# literature is what exposed the gap.
+MAX_INFORMATIVE_COMENTION = 2000
+
 # Publication types that are not primary experimental findings. A review stating
 # a link reports someone else's result, which the evidence rules treat as
 # background rather than as a demonstration.
@@ -329,12 +343,24 @@ def main() -> int:
         coverage: dict[str, object] = {"query": query}
         try:
             total, pmids, digest = client.search(query, retmax=args.retmax)
-            coverage.update({"status": "CHECKED", "total_hits": total, "snapshot": digest})
-            records = client.records(tuple(pmids))
-            for pmid in pmids:
-                record = records.get(pmid)
-                if record is not None:
-                    evidence.append(assess_record(record, anchor, other, uniprot))
+            informative = total <= MAX_INFORMATIVE_COMENTION
+            coverage.update({
+                "status": "CHECKED" if informative else "TOO_BROAD_TO_ESTABLISH_LINK",
+                "total_hits": total,
+                "snapshot": digest,
+                "note": None if informative else (
+                    f"{total} co-mentioning papers exceeds {MAX_INFORMATIVE_COMENTION}. "
+                    "At this scale the query reflects how much each disease is "
+                    "studied, not a specific relationship between them, so no "
+                    "evidence is drawn from it."
+                ),
+            })
+            if informative:
+                records = client.records(tuple(pmids))
+                for pmid in pmids:
+                    record = records.get(pmid)
+                    if record is not None:
+                        evidence.append(assess_record(record, anchor, other, uniprot))
         except Exception as error:  # noqa: BLE001 - a failed search is data
             coverage.update({"status": "FAILED", "error": str(error)[:200]})
 

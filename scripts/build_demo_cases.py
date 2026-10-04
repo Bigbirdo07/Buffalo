@@ -140,12 +140,31 @@ def build_case(spec: CaseSpec) -> dict:
 
     if journey is None:
         # The honest null. Stated as a finding rather than an empty screen.
-        case["no_connection_statement"] = (
-            f"No candidate neighbour of {case['starting_disease']['name']} survived "
-            "evidence refinement. Every retrieved candidate was supported only by "
-            "shared phenotype, with no evidence establishing a molecular link. The "
-            "system reports this rather than selecting the least-weak candidate."
-        )
+        # Say which kind of empty result this is. "Nothing found" has more than
+        # one cause, and collapsing them would hide the identity layer's work.
+        evaluated = candidates["evaluated"]
+        identity_excluded = [
+            row for row in evaluated
+            if not row["independent_discovery"] and row["identity"] != "DISTINCT_DISEASE"
+        ]
+        if len(identity_excluded) >= max(1, len(evaluated) // 2):
+            case["no_connection_reason"] = "ALL_CANDIDATES_ARE_THE_SAME_ENTITY"
+            case["no_connection_statement"] = (
+                f"{len(identity_excluded)} of {len(evaluated)} retrieved neighbours "
+                f"of {case['starting_disease']['name']} are the same disease entity "
+                "under a different name, so none is an independent cross-disease "
+                "finding. The evidence here is not weak -- the identity check is "
+                "what stops it being reported as a discovery."
+            )
+        else:
+            case["no_connection_reason"] = "NO_SUPPORTING_EVIDENCE"
+            case["no_connection_statement"] = (
+                f"No candidate neighbour of {case['starting_disease']['name']} "
+                "survived evidence refinement. Every retrieved candidate was "
+                "supported only by shared phenotype, with no evidence establishing "
+                "a molecular link. The system reports this rather than selecting "
+                "the least-weak candidate."
+            )
         return case
 
     bridge = journey["validated_mechanistic_bridge"]
@@ -261,6 +280,32 @@ def main() -> int:
             ),
             candidates_dir=ROOT / "data/cross_disease_lafora",
             flagship_dir=ROOT / "data/flagship_lafora",
+        ),
+        CaseSpec(
+            case_id="ankylosing",
+            label="The same method outside neurology",
+            why_included=(
+                "An immune disease, to answer whether this only works for one "
+                "disease area. Five of eight candidates were rejected because "
+                "their co-mention searches returned tens of thousands of papers "
+                "-- a measure of how much each disease is studied, not of a "
+                "relationship. What survived is specific."
+            ),
+            candidates_dir=ROOT / "data/cross_disease_as",
+            flagship_dir=ROOT / "data/flagship_as",
+        ),
+        CaseSpec(
+            case_id="zellweger",
+            label="Six strong candidates, all the same disease",
+            why_included=(
+                "Every retrieved neighbour is the same entity under another "
+                "name, so none is an independent cross-disease finding. A "
+                "different kind of empty result from a disease with no evidence: "
+                "here the evidence is strong and the identity layer is what "
+                "stops it being reported as a discovery."
+            ),
+            candidates_dir=ROOT / "data/cross_disease_zsd",
+            flagship_dir=None,
         ),
         CaseSpec(
             case_id="scar20",
