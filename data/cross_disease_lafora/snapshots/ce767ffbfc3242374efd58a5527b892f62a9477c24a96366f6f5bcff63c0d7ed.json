@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AEPM2A%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:16.762010+00:00",
+  "sha256": "83f7f90b1955def6dcb18cb3448f12ed1efa75d12601e72c339e664a33997c7a"
+}

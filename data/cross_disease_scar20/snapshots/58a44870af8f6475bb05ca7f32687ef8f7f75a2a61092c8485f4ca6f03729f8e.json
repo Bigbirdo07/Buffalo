@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SNX14%5Btiab%5D+OR+%22Sorting+nexin-14%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+20%22%5Btiab%5D%29+AND+%28KAT5%5Btiab%5D+OR+HTATIP%5Btiab%5D+OR+%22Histone+acetyltransferase+KAT5%22%5Btiab%5D+OR+%22Neurodevelopmental+Disorder+With+Dysmorphic+Facies%2C+Sleep+Disturbance%2C+and+Brain+Abnormalities%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:01:58.130718+00:00",
+  "sha256": "1ae145ac8cbb0a40e6dcf2a0644d637b67033fe2bfb877ad8113ce5d1a748930"
+}

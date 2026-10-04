@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28interneuron%5Btiab%5D+OR+%22Purkinje+cell%22%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:07:58.260713+00:00",
+  "sha256": "7728fc0a3a626cbf96613803fc3e6eb26e3a384af7464a6356ceeb240697ad4d"
+}

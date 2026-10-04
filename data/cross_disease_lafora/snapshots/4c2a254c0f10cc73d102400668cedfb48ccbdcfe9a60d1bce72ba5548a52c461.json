@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AACSL1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:50.703258+00:00",
+  "sha256": "b0eda1907ca2e97ff9875bb195cfb6e8cdde424d17bb81cb1944d823bc74462d"
+}

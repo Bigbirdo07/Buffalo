@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AKCNQ3%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:36.829622+00:00",
+  "sha256": "cc92e3ebcfbcb9577a0a4a7aed49febf3d3857c30c233d5733a1e83bede959eb"
+}

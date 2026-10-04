@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ABAIAP2%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:03:00.007280+00:00",
+  "sha256": "14b33dd6bb41c3ede01219be40e2cdb112d9bc826c98f30ed0013af24340482e"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=32327570%2C39843636%2C25784053%2C32640524%2C37137307%2C36384951%2C37676964%2C29035972%2C32759342%2C28028237%2C32653364%2C25510338&retmode=xml",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:08:09.850646+00:00",
+  "sha256": "b2cbc2ae4cb4ad7d1b3888aa45650cc60ce29528e28833636a6307b92894fa79"
+}

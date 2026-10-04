@@ -1,0 +1,172 @@
+{
+  "schema_version": "flagship-selection-decision-v1",
+  "algorithm_version": "flagship-selection-v2",
+  "starting_disease": "Lafora_Disease",
+  "candidates_assessed": 5,
+  "excluded_candidates": [
+    {
+      "disease": "Alzheimer Disease",
+      "reason": "the evidence does not establish a relationship"
+    },
+    {
+      "disease": "Epilepsy",
+      "reason": "shared process without demonstrated equivalence"
+    },
+    {
+      "disease": "Progressive Myoclonus Epilepsy",
+      "reason": "not an independent cross-disease pair: identity checking places these labels within one entity (HGNC:21576-associated presentation -> ALLELIC_SPECTRUM)"
+    }
+  ],
+  "eligible_candidates": [
+    {
+      "disease": "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+      "total": 0.82,
+      "components": [
+        {
+          "name": "mechanistic_specificity",
+          "value": 0.85,
+          "weight": 0.3,
+          "contribution": 0.255,
+          "rationale": "3 specific process term(s), 1 named regulator(s), 0 generic"
+        },
+        {
+          "name": "evidence_directness",
+          "value": 1.0,
+          "weight": 0.22,
+          "contribution": 0.22,
+          "rationale": "2 of 2 supporting items establish a direct link"
+        },
+        {
+          "name": "evidence_role_quality",
+          "value": 0.5,
+          "weight": 0.18,
+          "contribution": 0.09,
+          "rationale": "no per-term roles recorded; treated as neutral"
+        },
+        {
+          "name": "context_compatibility",
+          "value": 1.0,
+          "weight": 0.12,
+          "contribution": 0.12,
+          "rationale": "molecular anchor present, cell/tissue axis comparable"
+        },
+        {
+          "name": "experimental_tractability",
+          "value": 1.0,
+          "weight": 0.1,
+          "contribution": 0.1,
+          "rationale": "a named regulator gives an assay a target"
+        },
+        {
+          "name": "variant_compatibility",
+          "value": 0.5,
+          "weight": 0.05,
+          "contribution": 0.025,
+          "rationale": "variant compatibility UNKNOWN"
+        },
+        {
+          "name": "independent_corroboration",
+          "value": 0.333,
+          "weight": 0.03,
+          "contribution": 0.01,
+          "rationale": "2 supporting source(s), weak factor only"
+        }
+      ],
+      "penalties": [
+        {
+          "name": "contradiction_burden",
+          "value": 0.0,
+          "weight": 0.2,
+          "contribution": 0.0,
+          "rationale": "no contradicting evidence retrieved"
+        },
+        {
+          "name": "generic_overlap",
+          "value": 0.0,
+          "weight": 0.15,
+          "contribution": 0.0,
+          "rationale": "0 of 4 bridge terms are generic"
+        }
+      ]
+    },
+    {
+      "disease": "Spinocerebellar Ataxia 48",
+      "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+      "total": 0.82,
+      "components": [
+        {
+          "name": "mechanistic_specificity",
+          "value": 0.85,
+          "weight": 0.3,
+          "contribution": 0.255,
+          "rationale": "3 specific process term(s), 1 named regulator(s), 0 generic"
+        },
+        {
+          "name": "evidence_directness",
+          "value": 1.0,
+          "weight": 0.22,
+          "contribution": 0.22,
+          "rationale": "2 of 2 supporting items establish a direct link"
+        },
+        {
+          "name": "evidence_role_quality",
+          "value": 0.5,
+          "weight": 0.18,
+          "contribution": 0.09,
+          "rationale": "no per-term roles recorded; treated as neutral"
+        },
+        {
+          "name": "context_compatibility",
+          "value": 1.0,
+          "weight": 0.12,
+          "contribution": 0.12,
+          "rationale": "molecular anchor present, cell/tissue axis comparable"
+        },
+        {
+          "name": "experimental_tractability",
+          "value": 1.0,
+          "weight": 0.1,
+          "contribution": 0.1,
+          "rationale": "a named regulator gives an assay a target"
+        },
+        {
+          "name": "variant_compatibility",
+          "value": 0.5,
+          "weight": 0.05,
+          "contribution": 0.025,
+          "rationale": "variant compatibility UNKNOWN"
+        },
+        {
+          "name": "independent_corroboration",
+          "value": 0.333,
+          "weight": 0.03,
+          "contribution": 0.01,
+          "rationale": "2 supporting source(s), weak factor only"
+        }
+      ],
+      "penalties": [
+        {
+          "name": "contradiction_burden",
+          "value": 0.0,
+          "weight": 0.2,
+          "contribution": 0.0,
+          "rationale": "no contradicting evidence retrieved"
+        },
+        {
+          "name": "generic_overlap",
+          "value": 0.0,
+          "weight": 0.15,
+          "contribution": 0.0,
+          "rationale": "0 of 4 bridge terms are generic"
+        }
+      ]
+    }
+  ],
+  "automated_choice": "Cerebellar Ataxia-Hypogonadism Syndrome",
+  "ranking_basis": "Interpretable components, mechanistic specificity weighted highest. Corroboration count is a weak tie-break at weight 0.03, because the number of papers co-mentioning two diseases measures attention, not mechanistic understanding.",
+  "operator_override": false,
+  "override_reason": null,
+  "selected_candidate": "Cerebellar Ataxia-Hypogonadism Syndrome",
+  "selection_rationale": "mechanistic_specificity 0.85; evidence_directness 1.00; evidence_role_quality 0.50; context_compatibility 1.00; experimental_tractability 1.00; variant_compatibility 0.50; independent_corroboration 0.33"
+}

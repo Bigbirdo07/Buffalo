@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AGABRA1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:32.360944+00:00",
+  "sha256": "b83ec44a65d61047e020585cc99528d5e45930e6752972304a65e1752e1e3441"
+}

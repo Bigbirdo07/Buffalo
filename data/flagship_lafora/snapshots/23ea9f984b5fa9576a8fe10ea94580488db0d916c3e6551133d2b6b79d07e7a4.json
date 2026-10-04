@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28NHLRC1%5Btiab%5D+OR+EPM2A%5Btiab%5D+OR+STUB1%5Btiab%5D+OR+PNPLA6%5Btiab%5D%29+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:07:54.729147+00:00",
+  "sha256": "385591209ab16e63227ba1a5d82c7859ef55c5d5fd1c8bb43ceac123b85818d5"
+}

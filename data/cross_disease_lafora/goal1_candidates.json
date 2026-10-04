@@ -1,0 +1,1037 @@
+{
+  "anchor": "Lafora_Disease",
+  "anchor_id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
+  "candidates_retrieved": 60,
+  "candidates_evaluated": 5,
+  "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+  "ranked": [
+    {
+      "rank": 1,
+      "disease_id": "df73fe37-dbe8-52c0-9192-004c39aa6da4",
+      "disease_name": "Progressive Myoclonus Epilepsy",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 42.366,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 9.392,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_GENE_OR_PROTEIN": 14.81,
+        "SHARED_PHENOTYPE": 14.532
+      },
+      "top_features": [
+        {
+          "label": "NHLRC1",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "EPM2A",
+          "class": "genetic",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "Progressive neurologic deterioration",
+          "class": "phenotype",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "glycogen metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "Bilateral Tonic-Clonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 41,
+          "information_content": 4.385
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "disease_id": "d98465f3-1239-5044-8e4e-17509ab8200e",
+      "disease_name": "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 27.525,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 4.337,
+        "SHARED_CELL_OR_TISSUE": 7.187,
+        "SHARED_MOLECULAR_FUNCTION": 5.265,
+        "SHARED_PHENOTYPE": 10.736
+      },
+      "top_features": [
+        {
+          "label": "ubiquitin protein ligase activity",
+          "class": "molecular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "disease_id": "b2859439-e59b-51dc-95a0-981316afad73",
+      "disease_name": "Spinocerebellar Ataxia 48",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 26.53,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.029,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_MOLECULAR_FUNCTION": 5.265,
+        "SHARED_PHENOTYPE": 9.604
+      },
+      "top_features": [
+        {
+          "label": "ubiquitin protein ligase activity",
+          "class": "molecular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Atypical behavior",
+          "class": "phenotype",
+          "corpus_frequency": 121,
+          "information_content": 3.303
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "disease_id": "e4d6fb72-8bcd-5b19-b230-5a2e3592b750",
+      "disease_name": "Epilepsy",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 42.154,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 17.289,
+        "SHARED_CELL_OR_TISSUE": 10.837,
+        "SHARED_PHENOTYPE": 14.028
+      },
+      "top_features": [
+        {
+          "label": "transmission of nerve impulse",
+          "class": "cellular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Juvenile absence seizures",
+          "class": "phenotype",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "Status Epilepticus",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Bilateral Tonic-Clonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 41,
+          "information_content": 4.385
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "disease_id": "d1a28e27-8410-54bd-8674-ffe41a862418",
+      "disease_name": "Alzheimer Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 37.448,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 16.596,
+        "SHARED_CELL_OR_TISSUE": 10.837,
+        "SHARED_PHENOTYPE": 10.015
+      },
+      "top_features": [
+        {
+          "label": "Apraxia",
+          "class": "phenotype",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "autophagy of mitochondrion",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "pyramidal neuron",
+          "class": "cell_tissue",
+          "corpus_frequency": 60,
+          "information_content": 4.004
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "disease_id": "046a7514-600c-51b3-9beb-0e8ab084ae35",
+      "disease_name": "Adult Polyglucosan Body Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 34.98,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 21.852,
+        "SHARED_MOLECULAR_FUNCTION": 5.39,
+        "SHARED_PHENOTYPE": 7.738
+      },
+      "top_features": [
+        {
+          "label": "transmission of nerve impulse",
+          "class": "cellular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "glycogen biosynthetic process",
+          "class": "cellular",
+          "corpus_frequency": 10,
+          "information_content": 5.796
+        },
+        {
+          "label": "glycogen metabolic process",
+          "class": "cellular",
+          "corpus_frequency": 11,
+          "information_content": 5.7
+        },
+        {
+          "label": "glycogen",
+          "class": "molecular",
+          "corpus_frequency": 15,
+          "information_content": 5.39
+        },
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "disease_id": "b108f8c7-6081-559c-abbb-bdf57333f368",
+      "disease_name": "Early-Onset Autosomal Dominant Alzheimer Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 34.879,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.532,
+        "SHARED_CELL_OR_TISSUE": 10.837,
+        "SHARED_PHENOTYPE": 15.51
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "pyramidal neuron",
+          "class": "cell_tissue",
+          "corpus_frequency": 60,
+          "information_content": 4.004
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "disease_id": "46269793-da06-5a28-a9cf-c04548903d5b",
+      "disease_name": "Gerstmann-Straussler-Scheinker Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 29.021,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 3.692,
+        "SHARED_CELL_OR_TISSUE": 10.465,
+        "SHARED_PHENOTYPE": 14.864
+      },
+      "top_features": [
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "disease_id": "97f9b2e6-4540-5285-910d-287559a38002",
+      "disease_name": "Tay-Sachs Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 28.795,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.247,
+        "SHARED_CELL_OR_TISSUE": 6.833,
+        "SHARED_PHENOTYPE": 13.715
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        },
+        {
+          "label": "autophagy",
+          "class": "cellular",
+          "corpus_frequency": 109,
+          "information_content": 3.407
+        },
+        {
+          "label": "Visual impairment",
+          "class": "phenotype",
+          "corpus_frequency": 123,
+          "information_content": 3.286
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "disease_id": "a450fec0-e92f-5204-a211-7e25210a7de2",
+      "disease_name": "Unverricht-Lundborg Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 28.596,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 6.715,
+        "SHARED_CELL_OR_TISSUE": 3.555,
+        "SHARED_PHENOTYPE": 18.326
+      },
+      "top_features": [
+        {
+          "label": "Photosensitive Myoclonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 4,
+          "information_content": 6.712
+        },
+        {
+          "label": "Bilateral Tonic-Clonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 41,
+          "information_content": 4.385
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "disease_id": "7626eb62-96f1-5830-a30e-295b500a501a",
+      "disease_name": "Fatal Familial Insomnia",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 28.235,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 3.692,
+        "SHARED_CELL_OR_TISSUE": 6.91,
+        "SHARED_PHENOTYPE": 17.633
+      },
+      "top_features": [
+        {
+          "label": "Progressive neurologic deterioration",
+          "class": "phenotype",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Bilateral Tonic-Clonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 41,
+          "information_content": 4.385
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "disease_id": "185f9b54-b21a-54bc-aa90-8b155c096c96",
+      "disease_name": "CACNA1A-Related Disorder",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.589,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 8.349,
+        "SHARED_CELL_OR_TISSUE": 7.636,
+        "SHARED_PHENOTYPE": 9.604
+      },
+      "top_features": [
+        {
+          "label": "autophagy of mitochondrion",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "pyramidal neuron",
+          "class": "cell_tissue",
+          "corpus_frequency": 60,
+          "information_content": 4.004
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Atypical behavior",
+          "class": "phenotype",
+          "corpus_frequency": 121,
+          "information_content": 3.303
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "disease_id": "28697417-3de3-54a5-8590-83f41c5c6649",
+      "disease_name": "MELAS Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 24.318,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.326,
+        "SHARED_CELL_OR_TISSUE": 3.278,
+        "SHARED_PHENOTYPE": 15.714
+      },
+      "top_features": [
+        {
+          "label": "autophagy of mitochondrion",
+          "class": "cellular",
+          "corpus_frequency": 16,
+          "information_content": 5.326
+        },
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Status Epilepticus",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Cerebral atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 86,
+          "information_content": 3.644
+        },
+        {
+          "label": "astrocyte",
+          "class": "cell_tissue",
+          "corpus_frequency": 124,
+          "information_content": 3.278
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "disease_id": "c3e2f3d0-6995-53b5-b268-6e51e6ed10dd",
+      "disease_name": "Microcephaly-Capillary Malformation Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 23.266,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 11.939,
+        "SHARED_CELL_OR_TISSUE": 3.555,
+        "SHARED_PHENOTYPE": 7.772
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "Cerebral atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 86,
+          "information_content": 3.644
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "disease_id": "11026bd7-39cb-59ac-8ed8-10b02f58fa05",
+      "disease_name": "Huntington Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 22.127,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 7.863,
+        "SHARED_CELL_OR_TISSUE": 6.833,
+        "SHARED_PHENOTYPE": 7.431
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        },
+        {
+          "label": "Atypical behavior",
+          "class": "phenotype",
+          "corpus_frequency": 121,
+          "information_content": 3.303
+        },
+        {
+          "label": "astrocyte",
+          "class": "cell_tissue",
+          "corpus_frequency": 124,
+          "information_content": 3.278
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "disease_id": "2f4e1378-2813-503c-b4b6-94eedb805e97",
+      "disease_name": "Neurodevelopmental Disorder with Epilepsy, Spasticity, and Brain Atrophy",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.974,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 7.099,
+        "SHARED_CELL_OR_TISSUE": 4.004,
+        "SHARED_PHENOTYPE": 10.871
+      },
+      "top_features": [
+        {
+          "label": "Bilateral Tonic-Clonic Seizures",
+          "class": "phenotype",
+          "corpus_frequency": 41,
+          "information_content": 4.385
+        },
+        {
+          "label": "pyramidal neuron",
+          "class": "cell_tissue",
+          "corpus_frequency": 60,
+          "information_content": 4.004
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "autophagy",
+          "class": "cellular",
+          "corpus_frequency": 109,
+          "information_content": 3.407
+        },
+        {
+          "label": "Visual impairment",
+          "class": "phenotype",
+          "corpus_frequency": 123,
+          "information_content": 3.286
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "disease_id": "b64ba224-ec30-5428-9b4f-61cb62a4dee4",
+      "disease_name": "Spinocerebellar ataxia type 17",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.545,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 7.099,
+        "SHARED_CELL_OR_TISSUE": 6.91,
+        "SHARED_PHENOTYPE": 7.536
+      },
+      "top_features": [
+        {
+          "label": "Dementia",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "autophagy",
+          "class": "cellular",
+          "corpus_frequency": 109,
+          "information_content": 3.407
+        },
+        {
+          "label": "astrocyte",
+          "class": "cell_tissue",
+          "corpus_frequency": 124,
+          "information_content": 3.278
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "disease_id": "f7d021c2-f70f-5eb3-b6dc-c70ea664807d",
+      "disease_name": "Autosomal Recessive Ataxia Due to Ubiquinone Deficiency",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.519,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 3.023,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 14.864
+      },
+      "top_features": [
+        {
+          "label": "Status Epilepticus",
+          "class": "phenotype",
+          "corpus_frequency": 39,
+          "information_content": 4.435
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "disease_id": "5e0b57d1-390f-58f6-ad2e-865dbefbe1a9",
+      "disease_name": "Wilson Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.489,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 11.555,
+        "SHARED_CELL_OR_TISSUE": 6.833,
+        "SHARED_PHENOTYPE": 3.101
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "neuron apoptotic process",
+          "class": "cellular",
+          "corpus_frequency": 82,
+          "information_content": 3.692
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        },
+        {
+          "label": "astrocyte",
+          "class": "cell_tissue",
+          "corpus_frequency": 124,
+          "information_content": 3.278
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "disease_id": "1f461bf3-779e-5e5a-8f52-37ac8eef8330",
+      "disease_name": "Cerebral Palsy",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.108,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 7.863,
+        "SHARED_CELL_OR_TISSUE": 3.555,
+        "SHARED_PHENOTYPE": 9.69
+      },
+      "top_features": [
+        {
+          "label": "neuroinflammatory response",
+          "class": "cellular",
+          "corpus_frequency": 26,
+          "information_content": 4.84
+        },
+        {
+          "label": "microglial cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 94,
+          "information_content": 3.555
+        },
+        {
+          "label": "Atypical behavior",
+          "class": "phenotype",
+          "corpus_frequency": 121,
+          "information_content": 3.303
+        },
+        {
+          "label": "Visual impairment",
+          "class": "phenotype",
+          "corpus_frequency": 123,
+          "information_content": 3.286
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        }
+      ]
+    }
+  ],
+  "evaluated": [
+    {
+      "rank": 1,
+      "pair": "Progressive Myoclonus Epilepsy",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 5,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 2,
+      "pair": "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 3,
+      "direct_primary": 2,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 3,
+      "pair": "Spinocerebellar Ataxia 48",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 3,
+      "direct_primary": 2,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 4,
+      "pair": "Epilepsy",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 19,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 5,
+      "pair": "Alzheimer Disease",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "INSUFFICIENT_EVIDENCE",
+      "retrieval_validity": "UNRESOLVED",
+      "anchored": true,
+      "evidence": 8,
+      "direct_primary": 1,
+      "independent_discovery": false,
+      "identity_excluded": false
+    }
+  ]
+}

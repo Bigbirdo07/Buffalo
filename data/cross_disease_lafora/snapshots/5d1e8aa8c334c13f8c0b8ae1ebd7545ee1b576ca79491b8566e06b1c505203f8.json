@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AGSK3B%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:51.701903+00:00",
+  "sha256": "2cf25e4168c1911358f60ceda1cfb0d19e075c0aa493c47296071af260df4779"
+}

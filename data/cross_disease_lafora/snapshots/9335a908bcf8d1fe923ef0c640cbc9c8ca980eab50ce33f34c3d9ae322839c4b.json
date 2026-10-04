@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ASYNGAP1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:28.138183+00:00",
+  "sha256": "74e1659c5f5eaba8c87ac8990bee679465d22bf6aa68a7cb2f8bc3631609b972"
+}

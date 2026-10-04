@@ -42,6 +42,21 @@ Import a DisMech entry without changing it:
 
 Architecture and scientific boundaries are documented in [`docs/`](docs/).
 
+## Hackathon UI
+
+The five-screen demo reads the frozen contracts in `data/demo/` at build time;
+it does not require the backend or external APIs during presentation.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://127.0.0.1:4173/#/discover`. Run the complete frontend verification
+with `npm run check` (contract/route tests, ESLint, TypeScript, and production
+build).
+
 ## Status
 
 Implemented: Phase 0 analysis, Phase 1 importer, Phase 2 core scientific models,
@@ -76,7 +91,8 @@ The evidence critic is a deterministic rule set, not an LLM and not human
 review: no model API key is configured in this environment. Every scientific
 conclusion carries `EXTRACTED` provenance and requires named expert review.
 
-Still planned and not represented as complete: production persistence and the
-Neo4j projection, structured model-based claim decomposition, model-to-mechanism
-linking for the preserved `modeled_mechanisms` data, collaborator/asset
-discovery, and the patient/scientist UI.
+The hackathon UI is implemented in `frontend/` with family and scientist
+presentation modes. It consumes `data/demo/flagship_story.json` and
+`data/demo/goals_summary.json` as authoritative frozen contracts and performs no
+scientific inference client-side. Production Postgres/Neo4j deployment and live
+web enrichment remain separate from the offline demo.

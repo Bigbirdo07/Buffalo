@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ACHRM1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:48.122730+00:00",
+  "sha256": "3f50043ffd5bd20f28d3b464dc15474c6f12c59ad13fb6259407a175df124260"
+}

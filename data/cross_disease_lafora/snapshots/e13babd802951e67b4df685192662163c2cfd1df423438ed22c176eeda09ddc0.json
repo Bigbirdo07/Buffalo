@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ARIPK1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:37.610312+00:00",
+  "sha256": "1ad597d9b12b830f57caff4cc721becc39c4eecb351c31689800ac32fe8bf050"
+}

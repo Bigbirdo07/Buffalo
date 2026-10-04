@@ -1,0 +1,208 @@
+{
+  "pair_id": "533a8d87-df73fe37",
+  "disease_a": "Lafora_Disease",
+  "disease_b": "Progressive Myoclonus Epilepsy",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "PARTIALLY_OVERLAPPING_ENTITY: One disease's complete causal gene set (HGNC:21576, HGNC:3413) is contained in the other's, which also has additional causes. The narrower label is most likely a genetic subtype of the broader entity rather than an independent disease, so a relationship between them is not a cross-disease discovery without expert review. | scoped: HGNC:21576-associated presentation -> ALLELIC_SPECTRUM; HGNC:3413-associated presentation -> ALLELIC_SPECTRUM",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELLULAR_PROCESS(glycogen metabolic process), SHARED_CELL_TYPE(Purkinje cell), SAME_GENE(NHLRC1), PHENOTYPE_SIMILARITY(Progressive neurologic deterioration)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=STRONG]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No variant effect recorded upstream for Progressive Myoclonus Epilepsy, so compatibility cannot be assessed. The shared gene alone does not establish a shared mechanism.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "MODERATE: glycogen metabolic process, neuron apoptotic process",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "WEAK: Purkinje cell",
+      "assessable": true
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "STRONG: Progressive neurologic deterioration, Bilateral Tonic-Clonic Seizures, Myoclonus",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "19 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "5 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 14 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "2 of 7 alternatives apply: BROAD_ONTOLOGY_ANNOTATION, CURATION_DEPTH_ARTIFACT",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: EPM2A, EPM2B. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval CORRECT): 5 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "PARTIALLY_OVERLAPPING_ENTITY",
+  "scoped_identities": [
+    {
+      "scope": "HGNC:21576-associated presentation",
+      "relation": "ALLELIC_SPECTRUM",
+      "rationale": "Restricted to HGNC:21576, the causal basis of Progressive Myoclonus Epilepsy is the same as that of Lafora_Disease, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+    },
+    {
+      "scope": "HGNC:3413-associated presentation",
+      "relation": "ALLELIC_SPECTRUM",
+      "rationale": "Restricted to HGNC:3413, the causal basis of Progressive Myoclonus Epilepsy is the same as that of Lafora_Disease, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+    }
+  ],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "glycogen metabolic process",
+      "corpus_frequency": 11
+    },
+    {
+      "type": "SHARED_CELL_TYPE",
+      "feature": "Purkinje cell",
+      "corpus_frequency": 87
+    },
+    {
+      "type": "SAME_GENE",
+      "feature": "NHLRC1",
+      "corpus_frequency": 2
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Progressive neurologic deterioration",
+      "corpus_frequency": 8
+    }
+  ],
+  "retrieval_validity": "CORRECT",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=STRONG",
+  "supporting_evidence_ids": [
+    "PMID:27702709",
+    "PMID:18824542",
+    "PMID:30050012",
+    "PMID:30143794",
+    "PMID:34329319"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [
+    "PMID:36265182",
+    "PMID:38397161",
+    "PMID:26278982",
+    "PMID:17047580",
+    "PMID:38233235",
+    "PMID:26732717",
+    "PMID:28755831",
+    "PMID:6137352",
+    "PMID:17304172",
+    "PMID:28342558",
+    "PMID:32653252",
+    "PMID:23622396",
+    "PMID:16959610",
+    "PMID:27133378"
+  ],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": true,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": true,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:533a8d87-df73fe37",
+    "terms": [
+      "EPM2A",
+      "EPM2B"
+    ],
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: EPM2A, EPM2B. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:27702709",
+      "PMID:18824542",
+      "PMID:30050012",
+      "PMID:30143794",
+      "PMID:34329319"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "glycogen metabolic process",
+      "Purkinje cell",
+      "NHLRC1",
+      "Progressive neurologic deterioration"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+  "final_rationale": "5 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "actionable": true,
+  "search_coverage": {
+    "query": "(NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR CSTB[tiab] OR CPI-B[tiab] OR Cystatin-B[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Progressive Myoclonus Epilepsy\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 570,
+    "snapshot": "ccc614a50f462a874706e6f3d2bbc3e8532a24e56ee75b6ceb3c5fee44d330f7"
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

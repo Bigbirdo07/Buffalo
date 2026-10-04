@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SNX14%5Btiab%5D+OR+%22Sorting+nexin-14%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+20%22%5Btiab%5D%29+AND+%28SEMA5A%5Btiab%5D+OR+Semaphorin-5A%5Btiab%5D+OR+Semaphorin-F%5Btiab%5D+OR+TERT%5Btiab%5D+OR+HEST2%5Btiab%5D+OR+TP2%5Btiab%5D+OR+CTNND2%5Btiab%5D+OR+NPRAP%5Btiab%5D+OR+%22Catenin+delta-2%22%5Btiab%5D+OR+%22Cri-du-Chat+Syndrome%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:00.647822+00:00",
+  "sha256": "d2c6400c86fbefdb9563aafa5d043abf58e5a4d4d050f2104be1939b9cf2d3ec"
+}

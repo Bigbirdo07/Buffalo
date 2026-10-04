@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AKPNA7%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:31.556866+00:00",
+  "sha256": "2d6212e76fbfcedf0750a58de5f63eafb4786ee315458d05d2bc450788ab6f6c"
+}

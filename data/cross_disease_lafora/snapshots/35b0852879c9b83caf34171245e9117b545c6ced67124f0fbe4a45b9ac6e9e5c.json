@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ARORB%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:39.299038+00:00",
+  "sha256": "ae93ec131dde685d4c827db281e7ad72588fc5b1ddbeeb13535858c53e6dbe77"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SNX14%5Btiab%5D+OR+%22Sorting+nexin-14%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+20%22%5Btiab%5D%29+AND+%28TRAPPC4%5Btiab%5D+OR+%22Trafficking+protein+particle+complex+subunit+4%22%5Btiab%5D+OR+%22Hematopoietic+stem%2Fprogenitor+cell+protein+172%22%5Btiab%5D+OR+%22Neurodevelopmental+Disorder+with+Epilepsy%2C+Spasticity%2C+and+Brain+Atrophy%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:03.118578+00:00",
+  "sha256": "71dc4f706bd192fdbabd007d038c25ed3ed79e808c5f87822f0ef594eeb4ee36"
+}

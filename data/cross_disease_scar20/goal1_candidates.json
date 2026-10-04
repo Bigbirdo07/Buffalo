@@ -1,0 +1,937 @@
+{
+  "anchor": "Autosomal Recessive Spinocerebellar Ataxia 20",
+  "anchor_id": "6646c36e-8961-5533-9d33-01fcf1869963",
+  "candidates_retrieved": 60,
+  "candidates_evaluated": 5,
+  "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+  "ranked": [
+    {
+      "rank": 1,
+      "disease_id": "1a643583-8bc5-5ffc-a079-e644921e2c4c",
+      "disease_name": "Neurodevelopmental Disorder With Dysmorphic Facies, Sleep Disturbance, and Brain Abnormalities",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 28.751,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 25.141
+      },
+      "top_features": [
+        {
+          "label": "Thick lower lip vermilion",
+          "class": "phenotype",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Stereotypy",
+          "class": "phenotype",
+          "corpus_frequency": 33,
+          "information_content": 4.602
+        },
+        {
+          "label": "Epicanthus",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Brachydactyly",
+          "class": "phenotype",
+          "corpus_frequency": 93,
+          "information_content": 3.566
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "disease_id": "0420bdfa-17d4-5658-8d66-5d156f5f2937",
+      "disease_name": "Cri-du-Chat Syndrome",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 23.477,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 19.867
+      },
+      "top_features": [
+        {
+          "label": "Wide nasal bridge",
+          "class": "phenotype",
+          "corpus_frequency": 28,
+          "information_content": 4.766
+        },
+        {
+          "label": "Epicanthus",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "Aggressive Behavior",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Hypertelorism",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "disease_id": "ff897cce-7ddd-596f-b9fc-7b62a0454897",
+      "disease_name": "MICPCH Syndrome",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 23.2,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 15.958
+      },
+      "top_features": [
+        {
+          "label": "Wide nasal bridge",
+          "class": "phenotype",
+          "corpus_frequency": 28,
+          "information_content": 4.766
+        },
+        {
+          "label": "Long philtrum",
+          "class": "phenotype",
+          "corpus_frequency": 45,
+          "information_content": 4.292
+        },
+        {
+          "label": "Absent speech",
+          "class": "phenotype",
+          "corpus_frequency": 69,
+          "information_content": 3.864
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "disease_id": "1784474d-01e7-5807-9d8b-9f2999823248",
+      "disease_name": "Autosomal Recessive Ataxia Beauce Type",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 22.415,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 15.173
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "Talipes Equinovarus",
+          "class": "phenotype",
+          "corpus_frequency": 65,
+          "information_content": 3.924
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "disease_id": "2f4e1378-2813-503c-b4b6-94eedb805e97",
+      "disease_name": "Neurodevelopmental Disorder with Epilepsy, Spasticity, and Brain Atrophy",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 21.044,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 17.434
+      },
+      "top_features": [
+        {
+          "label": "Long philtrum",
+          "class": "phenotype",
+          "corpus_frequency": 45,
+          "information_content": 4.292
+        },
+        {
+          "label": "Absent speech",
+          "class": "phenotype",
+          "corpus_frequency": 69,
+          "information_content": 3.864
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "disease_id": "6bbc5fc2-cf09-5f71-8dce-7dbd82f50498",
+      "disease_name": "Autosomal Dominant Cerebellar Ataxia",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 20.981,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 13.739
+      },
+      "top_features": [
+        {
+          "label": "Hyporeflexia",
+          "class": "phenotype",
+          "corpus_frequency": 38,
+          "information_content": 4.461
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "disease_id": "95086a37-0f2b-537e-ba41-b4ab442f4ed0",
+      "disease_name": "Fontaine Progeroid Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 18.162,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 7.405,
+        "SHARED_PHENOTYPE": 10.757
+      },
+      "top_features": [
+        {
+          "label": "mitochondrial transport",
+          "class": "cellular",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "Epicanthus",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "Hypertelorism",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "disease_id": "4ec824c4-6e98-539c-a2ff-c899b077c3f2",
+      "disease_name": "Spinocerebellar Ataxia Type 1",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 17.371,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 13.739
+      },
+      "top_features": [
+        {
+          "label": "Hyporeflexia",
+          "class": "phenotype",
+          "corpus_frequency": 38,
+          "information_content": 4.461
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "disease_id": "69af68ad-3e5f-5d06-aee3-62d41c51c1d5",
+      "disease_name": "Autosomal Recessive Spinocerebellar Ataxia 15",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 17.349,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 13.739
+      },
+      "top_features": [
+        {
+          "label": "Hyporeflexia",
+          "class": "phenotype",
+          "corpus_frequency": 38,
+          "information_content": 4.461
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "disease_id": "fba645d7-b320-57be-acdc-c7f73b550302",
+      "disease_name": "ADPRS-Related Stress-Induced Neurodegeneration",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 16.532,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 12.922
+      },
+      "top_features": [
+        {
+          "label": "Cerebral atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 86,
+          "information_content": 3.644
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "disease_id": "eb62303e-7afe-5ea4-9c79-e897cecadf52",
+      "disease_name": "SQSTM1-Related Childhood-Onset Neurodegeneration",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 16.52,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 9.278
+      },
+      "top_features": [
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "disease_id": "fc41af62-ed9c-5eaf-9c58-28f5d68af2e1",
+      "disease_name": "Machado-Joseph Disease",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 16.52,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 9.278
+      },
+      "top_features": [
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "disease_id": "3e462607-e7e2-5919-bb49-21a6ea4bbccd",
+      "disease_name": "Intellectual Disability Autosomal Dominant 34",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 15.598,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 11.988
+      },
+      "top_features": [
+        {
+          "label": "Stereotypy",
+          "class": "phenotype",
+          "corpus_frequency": 33,
+          "information_content": 4.602
+        },
+        {
+          "label": "Aggressive Behavior",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "disease_id": "5e84ccb7-a8d8-54b2-af6c-2cfe635584e3",
+      "disease_name": "Autosomal Recessive Spastic Ataxia 9",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 15.449,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 8.207
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "disease_id": "52866571-4538-5699-b2ba-1d9cb4b95891",
+      "disease_name": "LETM1-Related Childhood-Onset Neurodegeneration",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.881,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 11.249
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "disease_id": "625d8e5d-4d8b-5ecf-8b83-0e3829dd2c25",
+      "disease_name": "Spinocerebellar Ataxia Type 6",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.875,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 11.243
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "disease_id": "7fe6e3a8-6afb-5366-a2a2-0d62ac1230df",
+      "disease_name": "Intellectual Disability, X-linked, Syndromic 33",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.773,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 7.531
+      },
+      "top_features": [
+        {
+          "label": "Long philtrum",
+          "class": "phenotype",
+          "corpus_frequency": 45,
+          "information_content": 4.292
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Autistic Behavior",
+          "class": "phenotype",
+          "corpus_frequency": 129,
+          "information_content": 3.239
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "disease_id": "62330293-a436-5f4a-9503-2341af81656f",
+      "disease_name": "Spinocerebellar Ataxia Type 2",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.745,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 7.503
+      },
+      "top_features": [
+        {
+          "label": "Hyporeflexia",
+          "class": "phenotype",
+          "corpus_frequency": 38,
+          "information_content": 4.461
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "disease_id": "0266f3ad-59a3-5998-8321-a78c5cf479b0",
+      "disease_name": "Familial Isolated Vitamin E Deficiency",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.717,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 11.085
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "disease_id": "1b41e161-3b5b-5079-bdd4-52e1942d1dd7",
+      "disease_name": "Cerebrotendinous xanthomatosis",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 14.695,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 11.085
+      },
+      "top_features": [
+        {
+          "label": "Babinski Sign",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        },
+        {
+          "label": "Dystonia",
+          "class": "phenotype",
+          "corpus_frequency": 158,
+          "information_content": 3.036
+        }
+      ]
+    }
+  ],
+  "evaluated": [
+    {
+      "rank": 1,
+      "pair": "Neurodevelopmental Disorder With Dysmorphic Facies, Sleep Disturbance, and Brain Abnormalities",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_PHENOTYPE_ONLY",
+      "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+      "anchored": false,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 2,
+      "pair": "Cri-du-Chat Syndrome",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_PHENOTYPE_ONLY",
+      "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+      "anchored": false,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 3,
+      "pair": "MICPCH Syndrome",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_PHENOTYPE_ONLY",
+      "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+      "anchored": false,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 4,
+      "pair": "Autosomal Recessive Ataxia Beauce Type",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_PHENOTYPE_ONLY",
+      "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+      "anchored": false,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 5,
+      "pair": "Neurodevelopmental Disorder with Epilepsy, Spasticity, and Brain Atrophy",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_PHENOTYPE_ONLY",
+      "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+      "anchored": false,
+      "evidence": 0,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    }
+  ]
+}

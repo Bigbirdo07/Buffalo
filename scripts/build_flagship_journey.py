@@ -104,7 +104,9 @@ def commit() -> str:
         return "unknown"
 
 
-def select_flagship(rows: list[dict], override: str | None = None) -> tuple[dict, dict]:
+def select_flagship(
+    rows: list[dict], override: str | None = None, traces_dir: Path | None = None
+) -> tuple[dict, dict]:
     """Pick the flagship by interpretable components, and record the decision.
 
     Returns the chosen row and a FlagshipSelectionDecision. The automated
@@ -112,7 +114,8 @@ def select_flagship(rows: list[dict], override: str | None = None) -> tuple[dict
     a curated demo choice can never be presented as having ranked first.
     """
     traces = {}
-    for path in (ROOT / "data/cross_disease/traces").glob("*.json"):
+    traces_dir = traces_dir or (ROOT / "data/cross_disease/traces")
+    for path in traces_dir.glob("*.json"):
         trace = json.loads(path.read_text())
         traces[trace["disease_b"]] = trace
     classes = {name: t["final_relationship_class"] for name, t in traces.items()}
@@ -202,15 +205,14 @@ def main() -> int:
     args = parser.parse_args()
 
     rows = [json.loads(line) for line in args.relationships.read_text().splitlines() if line]
-    flagship, selection_decision = select_flagship(rows, args.pair)
-    (ROOT / "data/flagship/selection_decision.json").parent.mkdir(
-        parents=True, exist_ok=True
-    )
-    (ROOT / "data/flagship/selection_decision.json").write_text(
+    traces_dir = args.relationships.parent / "traces"
+    flagship, selection_decision = select_flagship(rows, args.pair, traces_dir)
+    args.out.mkdir(parents=True, exist_ok=True)
+    (args.out / "selection_decision.json").write_text(
         json.dumps(selection_decision, indent=2) + "\n", encoding="utf-8"
     )
     trace = json.loads(
-        (ROOT / f"data/cross_disease/traces/{flagship['decision_trace_id']}.json").read_text()
+        (traces_dir / f"{flagship['decision_trace_id']}.json").read_text()
     )
 
     fingerprints = [
@@ -258,7 +260,7 @@ def main() -> int:
 
     # A refinement run, when present, supplies the canonical bridge. The trace's
     # v1 is never edited: refinement supersedes, it does not overwrite.
-    refinement_path = ROOT / "data/flagship/bridge_refinement.json"
+    refinement_path = args.out / "bridge_refinement.json"
     refinement = (
         json.loads(refinement_path.read_text()) if refinement_path.exists() else None
     )

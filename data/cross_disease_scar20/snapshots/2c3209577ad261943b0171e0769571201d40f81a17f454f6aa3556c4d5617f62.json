@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SNX14%5Btiab%5D+OR+%22Sorting+nexin-14%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+20%22%5Btiab%5D%29+AND+%28CASK%5Btiab%5D+OR+Kappa-casein%5Btiab%5D+OR+%22MICPCH+Syndrome%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:01.451099+00:00",
+  "sha256": "b3418219fe6f3790d90f13a01f1e9b58690674dbf2606cd150b2020517f59e23"
+}

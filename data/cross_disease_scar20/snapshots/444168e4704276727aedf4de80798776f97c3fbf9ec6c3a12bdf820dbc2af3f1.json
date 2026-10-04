@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28SNX14%5Btiab%5D+OR+%22Sorting+nexin-14%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+20%22%5Btiab%5D%29+AND+%28SYNE1%5Btiab%5D+OR+KASH1%5Btiab%5D+OR+Nesprin-1%5Btiab%5D+OR+%22Autosomal+Recessive+Ataxia+Beauce+Type%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T09:02:02.337426+00:00",
+  "sha256": "3b36ad61fc83306e80324c3fa35ba41d23302cd059baa0790787860abacee8b8"
+}

@@ -1,0 +1,144 @@
+{
+  "pair_id": "6646c36e-0420bdfa",
+  "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 20",
+  "disease_b": "Cri-du-Chat Syndrome",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "DISTINCT_DISEASE: No shared causal gene, so these are independent disease entities and any relationship between them must be argued biologically.",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELL_TYPE(cerebellum), PHENOTYPE_SIMILARITY(Wide nasal bridge)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=False [none]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No shared gene, so variant effects describe different proteins and are not comparable. Any shared mechanism must be argued at the process level instead.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "WEAK: cerebellum",
+      "assessable": true
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "STRONG: Wide nasal bridge, Epicanthus, Aggressive Behavior, Hypertelorism, Cerebellar atrophy",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "no evidence retrieved",
+      "assessable": false
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "0 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 0 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "2 of 7 alternatives apply: GENERIC_PHENOTYPE_OVERLAP, SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "no direct evidence, so no bridge derived",
+      "assessable": false
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "SHARED_PHENOTYPE_ONLY (retrieval INCORRECT_AND_CONNECTION_FALSE): Overlap is confined to phenotype and anatomy, with no molecular or process-level anchor and no evidence of a direct link.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "DISTINCT_DISEASE",
+  "scoped_identities": [],
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELL_TYPE",
+      "feature": "cerebellum",
+      "corpus_frequency": 89
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Wide nasal bridge",
+      "corpus_frequency": 28
+    }
+  ],
+  "retrieval_validity": "INCORRECT_AND_CONNECTION_FALSE",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": false,
+  "molecular_anchor_description": "none",
+  "supporting_evidence_ids": [],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": true,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": true,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": false,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "mechanistic_bridge": null,
+  "final_relationship_class": "SHARED_PHENOTYPE_ONLY",
+  "final_rationale": "Overlap is confined to phenotype and anatomy, with no molecular or process-level anchor and no evidence of a direct link.",
+  "actionable": false,
+  "search_coverage": {
+    "query": "(SNX14[tiab] OR \"Sorting nexin-14\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 20\"[tiab]) AND (SEMA5A[tiab] OR Semaphorin-5A[tiab] OR Semaphorin-F[tiab] OR TERT[tiab] OR HEST2[tiab] OR TP2[tiab] OR CTNND2[tiab] OR NPRAP[tiab] OR \"Catenin delta-2\"[tiab] OR \"Cri-du-Chat Syndrome\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 0,
+    "snapshot": "d2c6400c86fbefdb9563aafa5d043abf58e5a4d4d050f2104be1939b9cf2d3ec"
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "dd2accee55eeb0061f2da3acecb6cac09d328c65",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}
