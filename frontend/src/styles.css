@@ -601,3 +601,85 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
   .goal-table { display: block; overflow-x: auto; white-space: nowrap; }
   .goal-counts { gap: 20px; }
 }
+
+/* ===== Lineage canvas ================================================== */
+.lineage { padding: 20px 0 110px; }
+.narration { max-width: 70ch; margin: 0 0 18px; font-family: Georgia, serif; font-size: 20px; line-height: 1.45; color: var(--forest); }
+.lineage-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, .62fr); gap: 46px; align-items: start; }
+
+.canvas { min-height: 520px; padding: 18px 10px; background:
+  radial-gradient(circle at 50% 96%, #eef2ec 0%, transparent 62%); }
+.tree { width: 100%; height: auto; overflow: visible; }
+
+.tree .edge { fill: none; stroke: var(--forest); stroke-width: 2; }
+.tree .edge.pending { stroke-dasharray: 5 5; stroke: var(--amber); }
+.tree .edge.retrieval { stroke: var(--muted); stroke-width: 2; stroke-dasharray: 4 4; }
+/* The original path is dimmed, never deleted: the system keeps why it looked. */
+.tree .edge.retrieval.superseded { opacity: .28; }
+.tree .edge-label { fill: var(--muted); font-size: 11px; }
+.tree .superseded-label { opacity: .5; font-style: italic; }
+
+.tree .node { cursor: pointer; }
+.tree .node .shape { fill: white; stroke: var(--forest); stroke-width: 2; transition: fill .2s; }
+.tree .node.gene .shape { stroke: var(--teal); }
+.tree .node.protein .shape { stroke: var(--blue); }
+.tree .node.process .shape { fill: var(--sage); stroke: var(--teal); }
+.tree .node.question .shape { fill: none; stroke: var(--amber); stroke-width: 2; stroke-dasharray: 4 3; }
+.tree .node.question .mark { fill: var(--amber); font: 700 17px/1 Georgia, serif; }
+.tree .node.selected .shape { fill: var(--sage); stroke-width: 3; }
+.tree .node:focus { outline: none; }
+.tree .node:focus .shape { stroke-width: 3; }
+.tree .label { fill: var(--ink); font: 500 17px/1 Georgia, serif; }
+.tree .kind { fill: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.tree .meaning { fill: var(--muted); font-size: 11.5px; }
+
+.story-panel { position: sticky; top: 92px; padding: 26px 28px; background: white; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.story h2 { margin: 0 0 6px; font-size: 24px; line-height: 1.2; }
+.story h3 { margin: 18px 0 5px; font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--teal); }
+.story p { margin: 0; font-size: 14px; line-height: 1.62; }
+.story blockquote { margin: 10px 0 0; padding: 14px 18px; background: var(--sage); border-left: 3px solid var(--forest); font-family: Georgia, serif; font-size: 16px; line-height: 1.45; }
+.story .entity-kind { color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.story .caution { margin-top: 14px; padding: 12px 15px; background: var(--amber-bg); border-left: 3px solid var(--amber); font-size: 13px; }
+.story .mono { margin-top: 12px; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 11px; color: var(--muted); }
+.story details { margin-top: 14px; font-size: 13px; }
+.story details summary { cursor: pointer; color: var(--forest); font-weight: 700; }
+.story details p { margin: 8px 0 0; }
+.story-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+.experiment-diagram { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+.experiment-diagram .arms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.experiment-diagram .arms span { padding: 13px 15px; background: white; border: 1px solid var(--line); font-size: 13px; text-align: center; }
+.experiment-diagram .converge { position: relative; margin: 30px auto 0; padding: 12px 20px; max-width: 320px; background: var(--sage); border: 1px solid #c3d6c8; font-size: 13px; text-align: center; }
+.experiment-diagram .converge::before { content: "↓"; position: absolute; top: -26px; left: 50%; transform: translateX(-50%); color: var(--teal); }
+/* Equal weight: the refuting outcome is not styled as a failure. */
+.experiment-diagram .outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
+.experiment-diagram .outcomes article { padding: 15px 17px; border: 1px solid var(--line); }
+.experiment-diagram .outcomes b { display: block; margin-bottom: 5px; font-family: Georgia, serif; font-size: 15px; }
+.experiment-diagram .outcomes p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.5; }
+
+.capability-strip { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+.capability-strip h3 { margin: 0 0 14px; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--teal); }
+.capability-strip ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.capability-strip li { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: space-between; padding: 12px 15px; border: 1px solid var(--line); font-size: 13px; }
+.capability-strip li.found { border-left: 3px solid var(--forest); }
+.capability-strip li.missing { border-left: 3px solid var(--amber); background: #fdfbf5; }
+.capability-strip li span { color: var(--muted); font-size: 12px; }
+.map-note { max-width: 70ch; margin: 16px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+
+.untraced { max-width: 60ch; padding: 50px 0; }
+.untraced h1 { font-size: 40px; margin-bottom: 6px; }
+.untraced .lede { color: var(--muted); margin-bottom: 18px; }
+.untraced p { line-height: 1.65; margin-bottom: 24px; }
+
+.journey-bar { position: fixed; z-index: 20; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; gap: 2px; padding: 9px 16px 15px; background: rgb(251 250 246 / 94%); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+.journey-bar button { display: flex; align-items: center; gap: 7px; border: 0; padding: 6px 13px; background: transparent; color: var(--muted); font-size: 11px; cursor: pointer; }
+.journey-bar button b { display: grid; place-items: center; width: 19px; height: 19px; border: 1px solid var(--line); border-radius: 50%; font-size: 10px; }
+.journey-bar button.done { color: var(--ink); }
+.journey-bar button.done b { color: white; background: var(--forest); border-color: var(--forest); }
+.journey-bar button[aria-current="step"] { font-weight: 700; color: var(--forest); }
+
+@media (max-width: 1000px) {
+  .lineage-body { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .story-panel { position: static; }
+  .journey-bar button span { display: none; }
+}

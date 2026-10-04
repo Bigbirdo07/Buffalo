@@ -59,12 +59,11 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
     <section className={searching ? "search-screen searching" : "search-screen"}>
       <div className="hero">
         <div className="hero-copy">
-          <h1>Which diseases share our biology?</h1>
+          <h1>Follow the biology behind a rare disease.</h1>
           <p>
-            Search {index ? index.disease_count.toLocaleString() : "3,289"} curated
-            rare disease mechanisms. The atlas shows why a connection was found,
-            whether the evidence supports it, what is still unknown, and who
-            already has the capability to test it.
+            Start with a disease or gene and trace how its biology connects to
+            other conditions, what the evidence really supports, what researchers
+            still do not know, and what research could happen next.
           </p>
 
           <form
@@ -80,7 +79,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
                 id="disease-search"
                 type="search"
                 autoComplete="off"
-                placeholder={index ? "e.g. Lafora Disease, or STUB1" : "Loading corpus…"}
+                placeholder={index ? "Search a disease or gene" : "Loading corpus…"}
                 value={query}
                 disabled={!index}
                 onChange={(event) => {
@@ -104,7 +103,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
 
           {examples.length > 0 && !submitted ? (
             <div className="examples">
-              <span>Worked cases</span>
+              <span>Explore a demo story</span>
               {examples.map((item) => (
                 <button key={item.id} type="button" onClick={() => runSearch(item.name)}>
                   {item.name}
@@ -166,7 +165,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
             query={submitted}
             results={results}
             onSelect={(disease) => {
-              if (disease.case_id) navigate(`/atlas?case=${disease.case_id}`);
+              if (disease.case_id) navigate(`/trace?case=${disease.case_id}`);
               else setSelected(disease);
             }}
           />
