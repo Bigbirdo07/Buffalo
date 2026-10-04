@@ -28,6 +28,8 @@
     "CHIP-HSP70/HSC70 co-immunoprecipitation to separate co-chaperone from ligase function",
     "substrate turnover rate by cycloheximide chase"
   ],
+  "primary_readout": null,
+  "secondary_readouts": [],
   "primary_endpoint": "Difference in site-level ubiquitination of CHIP client proteins between each knock-in genotype and the isogenic wild type, at 37 C and after stress, with a pre-registered substrate-subset analysis",
   "secondary_endpoints": [
     "CHIP abundance and thermal stability per genotype",

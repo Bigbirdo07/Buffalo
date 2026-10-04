@@ -159,6 +159,82 @@ class ReviewStatus(StrEnum):
     REJECTED = "REJECTED"
 
 
+# Words that assert a stronger relationship than a term list supports. A display
+# label is a rendering, not a claim, so introducing any of these would smuggle a
+# conclusion into what is meant to be a name.
+_CAUSAL_ESCALATION = frozenset(
+    {
+        "causes", "caused", "causing", "drives", "driven", "leads to",
+        "results in", "responsible for", "equivalent", "identical", "same as",
+        "proves", "proven", "establishes", "confirms", "demonstrates",
+        "shared mechanism", "mechanistically equivalent",
+    }
+)
+# Split on hyphens too: "CHIP-associated" is the word "CHIP" joined to the
+# connective "associated", and treating it as one unknown token would
+# reject a rendering that adds nothing.
+_WORD_PATTERN = __import__("re").compile(r"[a-z0-9]+")
+
+
+def validate_display_label(label: str, terms: tuple[str, ...]) -> None:
+    """Refuse a label that claims more than its canonical terms.
+
+    A display label exists so a reader is not handed a comma-separated list. It
+    must stay replaceable without changing the scientific object, which means it
+    may simplify wording and may not introduce an entity, a direction or a
+    causal claim the terms do not carry.
+
+    Checked rather than trusted, because a nicer label is exactly the kind of
+    change that gets made late and reviewed lightly.
+    """
+    lowered = label.casefold()
+    for phrase in _CAUSAL_ESCALATION:
+        if phrase in lowered:
+            raise ValueError(
+                f"display label asserts {phrase!r}, which the canonical terms do "
+                "not support. A label may rename, not conclude."
+            )
+    allowed: set[str] = set()
+    for term in terms:
+        allowed.update(_WORD_PATTERN.findall(term.casefold()))
+    # Connective vocabulary a readable phrase needs, carrying no claim.
+    allowed.update(
+        {
+            "and", "or", "of", "the", "a", "an", "in", "with", "associated",
+            "related", "biology", "axis", "pathway", "process", "node",
+            "machinery", "system", "activity", "function", "control", "quality",
+        }
+    )
+    unsupported = [
+        word for word in _WORD_PATTERN.findall(lowered) if word not in allowed
+    ]
+    if unsupported:
+        raise ValueError(
+            f"display label introduces {unsupported!r}, which no canonical term "
+            "supports. Entities may not be added by a rendering."
+        )
+
+
+class BridgeTermProvenance(BaseModel):
+    """Where one bridge term came from and what kind of statement supported it."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    term: str
+    source_id: str
+    # The sentence the term was read from, kept verbatim so a reviewer can
+    # disagree with the reading rather than only with the conclusion.
+    span: str
+    annotation_type: str
+    finding_role: str
+    section: str
+    snapshot_sha256: str | None = None
+
+    @property
+    def is_primary(self) -> bool:
+        return self.finding_role == "PRIMARY_EXPERIMENTAL_RESULT"
+
+
 class MechanisticBridge(BaseModel):
     """What the EVIDENCE says connects two diseases, in the evidence's own terms.
 
@@ -181,13 +257,26 @@ class MechanisticBridge(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     bridge_id: str
-    # Mechanistic vocabulary shared across the supporting evidence.
+    # Monotonic within a pair. A refinement never edits an earlier version: it
+    # creates a new one naming its parent, so the reasoning that produced the
+    # original answer stays inspectable after the answer changes.
+    version: int = 1
+    supersedes_bridge_id: str | None = None
+    refinement_reason: str | None = None
+    # Source-faithful terms, exactly as the evidence supports them. This layer is
+    # never edited for readability.
     terms: tuple[str, ...]
     # The evidence the bridge was read from. Never empty: a bridge with no
     # evidence is a retrieval reason wearing a different name.
     derived_from_evidence_ids: tuple[str, ...]
     statement: str
     derivation_method: str
+    # Per-term provenance: which source, which span, what role that statement
+    # played in its paper.
+    term_provenance: tuple[BridgeTermProvenance, ...] = ()
+    # Optional human-readable rendering. It may simplify wording; it may not
+    # change what is claimed. validate_display_label enforces that.
+    display_label_override: str | None = None
     # Retrieval features this bridge is distinct from, recorded so the
     # separation is visible rather than asserted.
     distinct_from_retrieval_features: tuple[str, ...] = ()
@@ -198,6 +287,20 @@ class MechanisticBridge(BaseModel):
                 "a mechanistic bridge must be derived from evidence; without it "
                 "this is a retrieval reason under another name"
             )
+
+    @property
+    def primary_terms(self) -> tuple[str, ...]:
+        """Terms backed by a statement the paper claims as its own finding."""
+        primary = {item.term for item in self.term_provenance if item.is_primary}
+        return tuple(term for term in self.terms if term in primary)
+
+    @property
+    def display_label(self) -> str:
+        """Readable rendering, validated before use."""
+        if self.display_label_override:
+            validate_display_label(self.display_label_override, self.terms)
+            return self.display_label_override
+        return self.axis_label
 
     @property
     def axis_label(self) -> str:

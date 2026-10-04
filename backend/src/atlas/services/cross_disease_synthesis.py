@@ -111,7 +111,8 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
     question = (
         f"Do {inputs.disease_a_name} and {inputs.disease_b_name} converge on a "
         f"shared functional defect in {tested_node} in disease-relevant models, "
-        "measured with a single shared readout under matched conditions?"
+        "measured by at least one identical primary functional readout applied "
+        "to both disease models and matched controls under the same conditions?"
     )
 
     differences = ", ".join(relationship.differing_features[:4]) or "none recorded"
@@ -247,6 +248,20 @@ def build_cross_disease_experiment(
     make it more informative and less likely to be done.
     """
     tested_node = tested_node_for(inputs)
+    # One identical primary functional readout across every arm. Everything else
+    # is supporting: a secondary measurement may add mechanistic context but may
+    # not decide the hypothesis, because an experiment whose conclusion can rest
+    # on any of several readouts has no single thing that could refute it.
+    primary_readout = (
+        f"Functional response of {tested_node} to the standardised stress, "
+        "measured with one identical assay, timing and analysis framework across "
+        "both disease arms and the shared control"
+    )
+    secondary_readouts = (
+        f"{inputs.shared_readout} as a supporting molecular profile, interpreted "
+        "only alongside the primary functional readout",
+        "Recovery of the challenged cells after the stress is withdrawn",
+    )
     supported = (
         f"Both disease models show disruption of {tested_node} "
         "in the same direction, of comparable magnitude, relative to the shared "
@@ -305,19 +320,13 @@ def build_cross_disease_experiment(
             "range the between-disease comparison must exceed",
             "A positive control that perturbs the readout by a known route",
         ),
-        readouts=(
-            # Primary: the functional behaviour of the bridged node itself.
-            f"Functional response of {tested_node} to the standardised stress, "
-            "measured identically in every arm",
-            # Supporting: molecular profiling. Retained because it is useful,
-            # demoted because it defines a broad process rather than the node
-            # the evidence actually supports.
-            f"{inputs.shared_readout} as a supporting molecular profile, "
-            "interpreted only alongside the primary functional readout",
-        ),
+        readouts=(primary_readout, *secondary_readouts),
+        primary_readout=primary_readout,
+        secondary_readouts=secondary_readouts,
         primary_endpoint=(
             f"Direction and magnitude of the {tested_node} response to stress in "
-            "each disease arm relative to the shared control."
+            "each disease arm relative to the shared control, by the primary "
+            "readout alone."
         ),
         secondary_endpoints=(
             "Concordance between the functional response and the supporting "
@@ -394,6 +403,12 @@ def assert_falsifiable(proposal: ExperimentProposal) -> None:
         raise NotFalsifiable(
             f"{proposal.experiment_id} gives the same text for the supporting and "
             "refuting outcomes, so no result could distinguish them."
+        )
+    if proposal.primary_readout is not None and not proposal.primary_readout.strip():
+        raise NotFalsifiable(
+            f"{proposal.experiment_id} declares an empty primary readout. "
+            "Secondary measurements cannot carry falsifiability: a hypothesis "
+            "that any readout could rescue has nothing that could refute it."
         )
     if not proposal.comparator.strip() or not proposal.readouts:
         raise NotFalsifiable(

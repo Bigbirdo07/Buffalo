@@ -627,9 +627,14 @@ class TestGapDerivesFromBridgeNotRetrieval:
         bridge = payload["validated_mechanistic_bridge"]
         question = payload["knowledge_gap"]["question"]
 
+        from atlas.domain.cross_disease import MechanisticBridge
+
         assert bridge is not None, "flagship lost its mechanistic bridge"
-        assert bridge["derived_from_evidence_ids"], "bridge not evidence-derived"
-        assert bridge["is_narrower_than_retrieval"], (
+        # Validate rather than read raw keys: computed properties are not in the
+        # serialised form, and the invariant belongs to the model.
+        model = MechanisticBridge.model_validate(bridge)
+        assert model.derived_from_evidence_ids, "bridge not evidence-derived"
+        assert model.is_narrower_than_retrieval, (
             "bridge collapsed to the retrieval feature"
         )
         assert retrieval.casefold() not in question.casefold(), (
@@ -639,3 +644,119 @@ class TestGapDerivesFromBridgeNotRetrieval:
         assert any(
             term.casefold() in question.casefold() for term in bridge["terms"]
         ), "flagship gap does not reference the validated bridge"
+
+
+class TestBridgeVersioningAndDisplayLabels:
+    """Refinement must supersede, never overwrite; labels must not conclude."""
+
+    @staticmethod
+    def _bridge(**kw):
+        from atlas.domain.cross_disease import MechanisticBridge
+
+        base = dict(
+            bridge_id="bridge:v1", terms=("axis one",),
+            derived_from_evidence_ids=("PMID:1",), statement="s",
+            derivation_method="m",
+        )
+        base.update(kw)
+        return MechanisticBridge(**base)
+
+    def test_bridge_versions_are_immutable(self) -> None:
+        # Frozen: a refinement cannot edit the version that preceded it.
+        from pydantic import ValidationError
+
+        v1 = self._bridge()
+        with pytest.raises(ValidationError):
+            v1.terms = ("something else",)  # type: ignore[misc]
+
+    def test_refinement_names_its_parent(self) -> None:
+        v2 = self._bridge(
+            bridge_id="bridge:v2", version=2, supersedes_bridge_id="bridge:v1",
+            terms=("axis one", "axis two"), refinement_reason="new primary finding",
+        )
+        assert v2.supersedes_bridge_id == "bridge:v1"
+        assert v2.version > 1
+        assert v2.refinement_reason
+
+    def test_refined_bridge_still_requires_evidence(self) -> None:
+        with pytest.raises(ValueError, match="derived from evidence"):
+            self._bridge(bridge_id="b:v2", version=2, derived_from_evidence_ids=())
+
+    def test_primary_terms_exclude_background_supported_ones(self) -> None:
+        from atlas.domain.cross_disease import BridgeTermProvenance
+
+        bridge = self._bridge(
+            terms=("axis one", "axis two"),
+            term_provenance=(
+                BridgeTermProvenance(
+                    term="axis one", source_id="PMID:1", span="we demonstrate",
+                    annotation_type="Gene Function",
+                    finding_role="PRIMARY_EXPERIMENTAL_RESULT", section="Abstract",
+                ),
+                BridgeTermProvenance(
+                    term="axis two", source_id="PMID:1", span="previously shown",
+                    annotation_type="Gene Function",
+                    finding_role="BACKGROUND_STATEMENT", section="Abstract",
+                ),
+            ),
+        )
+        assert bridge.primary_terms == ("axis one",)
+
+    def test_display_label_cannot_add_entities(self) -> None:
+        from atlas.domain.cross_disease import validate_display_label
+
+        with pytest.raises(ValueError, match="introduces"):
+            validate_display_label("axis one and some other factor", ("axis one",))
+
+    def test_display_label_cannot_escalate_causality(self) -> None:
+        from atlas.domain.cross_disease import validate_display_label
+
+        with pytest.raises(ValueError, match="asserts"):
+            validate_display_label("axis one causes the disease", ("axis one",))
+
+    def test_display_label_may_simplify_wording(self) -> None:
+        from atlas.domain.cross_disease import validate_display_label
+
+        validate_display_label(
+            "chaperone and ligase associated biology", ("chaperone", "ligase")
+        )
+
+    def test_override_label_is_validated_on_use(self) -> None:
+        bad = self._bridge(display_label_override="axis one proves equivalence")
+        with pytest.raises(ValueError):
+            _ = bad.display_label
+
+
+class TestPrimaryReadoutRules:
+    def test_secondary_readouts_cannot_carry_falsifiability(self) -> None:
+        from atlas.services.cross_disease_synthesis import (
+            NotFalsifiable,
+            assert_falsifiable,
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        inputs = TestCrossDiseaseSynthesis._inputs()
+        gap = build_cross_disease_gap(inputs)
+        experiment = build_cross_disease_experiment(gap, inputs)
+        assert experiment.primary_readout
+        assert experiment.secondary_readouts
+        # Emptying the primary readout must fail even though secondaries remain.
+        with pytest.raises(NotFalsifiable, match="primary readout"):
+            assert_falsifiable(experiment.model_copy(update={"primary_readout": "  "}))
+
+    def test_primary_readout_measures_the_bridge(self) -> None:
+        from atlas.services.cross_disease_synthesis import (
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        inputs = TestCrossDiseaseSynthesis._inputs()
+        gap = build_cross_disease_gap(inputs)
+        experiment = build_cross_disease_experiment(gap, inputs)
+        bridge = inputs.relationship.mechanistic_bridge
+        assert bridge is not None
+        assert any(
+            term.casefold() in (experiment.primary_readout or "").casefold()
+            for term in bridge.terms
+        )

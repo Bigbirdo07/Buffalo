@@ -388,9 +388,9 @@
   "phase3_inputs_sha256": {
     "claim_lineage.json": "14d5498bda1e807bc30ccac143f61dc25187ac14ad0c493a8b652b455b455f31",
     "edge_refinement.json": "ca11288068c423399fdaa1912916c04a87acd0e1235404897d7f483dbc7e685b",
-    "experiment_proposal.json": "8d8b0a616a2081be2382ed29f0b96a9a03f40dfe018b6987fac618ad4e11b640",
+    "experiment_proposal.json": "35d384381cdad5d679953a90ed782aabc6e11429732bef49f36435de1cf1b7c5",
     "knowledge_gap.json": "504e11fd7716ba8815decd746de8372779195eca157d3509adb2ead54c9b3bde",
-    "reproducibility_manifest.json": "3ab744726c8e17515788bfba33834a1a4701faa8320070c8860e467501f7a7c9"
+    "reproducibility_manifest.json": "12250b951e3244e64b5681d493e26b1f0cd50532e970756b28d9bf6e2fa14f69"
   },
   "schema_version": "phase4-reproducibility-v1",
   "source_coverage_summary": [

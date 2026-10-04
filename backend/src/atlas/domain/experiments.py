@@ -53,6 +53,11 @@ class ExperimentProposal(BaseModel):
     comparator: str
     controls: tuple[str, ...]
     readouts: tuple[str, ...]
+    # The one readout that tests the hypothesis. Separated from the list
+    # because a proposal whose primary and supporting measurements are
+    # interchangeable cannot be falsified by either.
+    primary_readout: str | None = None
+    secondary_readouts: tuple[str, ...] = ()
     primary_endpoint: str
     secondary_endpoints: tuple[str, ...] = ()
     expected_result_if_supported: str

@@ -1,135 +1,115 @@
-# Flagship journey — one candidate connection to one next action
+# Flagship journey — from a broad annotation to one concrete action
 
-Every step is an object with an id, produced by the pipeline. The pair was
-selected by evidence: it is the only retrieved relationship that is both an
-independent cross-disease pair and corroborated by two primary findings.
+Every step is an object with an id. Status is `AWAITING_EXPERT_SIGNOFF`
+throughout; nothing here is a finding.
 
-**Status: `AWAITING_EXPERT_SIGNOFF` at every step.** Nothing here is a finding.
+- Commit `46771e2a93f2` · [`data/flagship/flagship_journey.json`](../data/flagship/flagship_journey.json)
 
-- Commit `f2561322748c` · pipeline `cross-disease-pipeline-v1` · synthesis `cross-disease-synthesis-v1`
-- Machine-readable: [`data/flagship/flagship_journey.json`](../data/flagship/flagship_journey.json)
+## The chain
 
-## The three levels, kept separate
+```
+retrieval feature:      protein ubiquitination
+        ↓  judged, not trusted
+retrieval validity:     INCORRECT_BUT_CONNECTION_REAL
+        ↓  evidence read independently
+MechanisticBridge v1:   chaperone, co-chaperone, ubiquitin ligase, CHIP
+        ↓  targeted enrichment of the SAME evidence
+MechanisticBridge v2:   chaperone, co-chaperone, ubiquitin ligase, CHIP, stress response, HSF1
+        ↓
+KnowledgeGap → Experiment → primary readout (+2 secondary)
+        ↓
+capabilities → coverage map → topology → next action
+```
 
-This is the distinction the whole system turns on. Collapsing any two of these
-is how a system ends up testing the wrong thing.
+## 1 · Three levels, never collapsed
 
-| Level | Content | Where it comes from |
+| Level | Content | Source |
 | --- | --- | --- |
 | **Found by** | `protein ubiquitination` | the annotation that surfaced the pair |
-| **Supported by** | chaperone, co-chaperone, ubiquitin ligase, CHIP | the retrieved literature |
-| **Tested** | functional convergence at that node under stress | the experiment below |
+| **Supported by** | chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) | the evidence itself |
+| **Tested** | functional convergence at that node under stress | the experiment |
 
-The first explains why the graph found the pair. The second explains why it
-survived refinement. **They are not the same, and the experiment follows the
-second.** A test built on the first would measure a process both diseases touch
-while missing the step where they actually meet.
+Retrieval explains why the graph found the pair; the bridge explains why it
+survived refinement. **The experiment follows the bridge.**
 
-## 1 · Retrieval
+## 2 · Bridge refinement — v1 preserved, v2 supersedes
 
-**Autosomal Recessive Spinocerebellar Ataxia 16** → **Lafora Disease**
+**Full text was NOT obtained: `false`.** One source is in
+Europe PMC but not open access; the other has no PMC record. What was retrieved
+is Europe PMC's *typed, section-tagged text-mined annotations* — a derived
+source, not the article.
 
-Retrieved on `SHARED_CELLULAR_PROCESS, SHARED_CELL_TYPE, PHENOTYPE_SIMILARITY`, strongest feature
-*protein ubiquitination*. Trace `46abfb23-533a8d87`.
+| | v1 | v2 |
+| --- | --- | --- |
+| Terms | chaperone, co-chaperone, ubiquitin ligase, CHIP | chaperone, co-chaperone, ubiquitin ligase, CHIP, stress response, HSF1 |
+| Method | `mechanism-vocabulary-over-direct-evidence-v1` | `europepmc-typed-annotations-primary-role-v1` |
 
-## 2 · Identity — checked before any mechanism claim
+**Why v1 missed the new terms.** 2 additional term(s) supported by statements their own papers claim as primary findings, which the v1 derivation missed because it required a term to appear in more than one source. A single paper's demonstrated result is stronger evidence than a term repeated as background across two.
 
-`DISTINCT_DISEASE`: two independent disease entities, so this is a real
-cross-disease question rather than two names for one thing.
+New terms and the exact spans that justify them:
+- **stress response** — PMID:21652633 (Gene Disease Relationship, `PRIMARY_EXPERIMENTAL_RESULT`)
+  > This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie some of the pathological symp
+- **HSF1** — PMID:21652633 (Gene Disease Relationship, `PRIMARY_EXPERIMENTAL_RESULT`)
+  > This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie some of the pathological symp
 
-## 3 · The retrieval reason is judged, not trusted
+v1 is not edited. It is superseded by `bridge:46abfb23-533a8d87:v2`, which names
+`bridge:46abfb23-533a8d87` as its parent.
 
-`INCORRECT_BUT_CONNECTION_REAL`
+## 3 · Knowledge gap — `9e74e79e`
 
-The pair is real **and** the annotation that found it is not the explanation.
-Both facts are recorded; neither overwrites the other.
-
-## 4 · Validated mechanistic bridge — `bridge:46abfb23-533a8d87`
-
-> Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.
-
-Derived from PMID:21652633, PMID:19892702 by
-`mechanism-vocabulary-over-direct-evidence-v1` — read out of the evidence text, not inherited from
-the annotation. Narrower than the retrieval feature: **True**.
-
-## 5 · Knowledge gap — `e939ac76`
-
-> **Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?**
-
-*Type* `missing_assay` · experimentally resolvable
-
-**Why it matters.** The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.
-
-**What is known.** 2 corroborating primary findings (PMID:21652633, PMID:19892702) establish a direct molecular link. Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair. They do not establish that the downstream functional consequence is the same in both diseases, and the supporting reports are limited in number and experimental context.
+> **Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?**
 
 **What is missing.** A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.
 
-**Search coverage.** Title/abstract co-mention only; full-text corpora
-`NOT_STARTED`. Absence of retrieved evidence is absence of indexed co-mention,
-not evidence that no relationship exists.
+**Search coverage.** Title/abstract co-mention; full-text corpora `NOT_STARTED`.
+Absence of retrieved evidence is absence of indexed co-mention, not evidence
+that no relationship exists.
 
-## 6 · Experiment — `d3261c4d`
+## 4 · Experiment — `3c4fd926`
 
 *Research proposal requiring expert review.*
 
-**Hypothesis A.** Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.
+**Hypothesis A.** Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.
 
-**Hypothesis B (competing).** The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.
+**Hypothesis B.** The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.
 
-| | |
-| --- | --- |
-| Model system | Patient-derived or engineered cellular models of each disease in a shared genetic background |
-| Perturbation | A standardised cellular stress applied identically to every arm. The bridge describes stress-responsive biology, so a baseline-only comparison could miss a defect that appears only when the pathway is challenged, and a null result would then be uninterpretable. |
-| Comparator | A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid. |
-| Primary endpoint | Direction and magnitude of the chaperone, co-chaperone and ubiquitin ligase biology (CHIP) response to stress in each disease arm relative to the shared control. |
+**Primary readout** — the one thing that decides the hypothesis:
+> Functional response of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control
 
-**Readouts** — primary functional, supporting molecular:
-1. Functional response of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) to the standardised stress, measured identically in every arm
-2. diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout
+**Secondary readouts** — context only, cannot decide the hypothesis:
+1. diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout
+2. Recovery of the challenged cells after the stress is withdrawn
 
-**If supported.** Both disease models show disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.
+**If refuted.** The two disease models differ in the direction of the effect, or one shows no detectable disruption of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.
 
-**If refuted.** The two disease models differ in the direction of the effect, or one shows no detectable disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.
+`assert_falsifiable` rejects a proposal with no refuting result, with
+indistinguishable outcomes, or with an empty primary readout — a hypothesis that
+any readout could rescue has nothing that could refute it.
 
-The refutation clause is enforced: `assert_falsifiable` raises if a proposal
-states no refuting result, if the two outcomes cannot be distinguished, or if it
-lacks a comparator or readout. A result can therefore downgrade the relationship
-rather than only confirm it.
+## 5 · Capability coverage — 1 of 4 covered
 
-## 7 · Capability coverage — 1 covered, 3 missing
+| Required capability | Candidate | Status | To verify |
+| --- | --- | --- | --- |
+| Functional assay reporting chaperone, co-chaperone,  | — | `MISSING` | A group demonstrating this capability. Absence h |
+| iPSC maintenance | — | `MISSING` | A group demonstrating this capability. Absence h |
+| clone-aware statistical analysis | — | `MISSING` | A group demonstrating this capability. Absence h |
+| diGly enrichment proteomics | Angelo Poletti (PMID:41664196, 2026) | `CANDIDATE_IDENTIFIED` | Confirm the group still runs this assay, and tha |
 
-| Required capability | Candidate | Evidence scope | Status | To verify |
-| --- | --- | --- | --- | --- |
-| Functional assay reporting chaperone, co-chaperone and ubi | — | No candidate retrieved by the recorded searches. | `MISSING` | A group demonstrating this capability. Absence here means  |
-| iPSC maintenance | — | No candidate retrieved by the recorded searches. | `MISSING` | A group demonstrating this capability. Absence here means  |
-| clone-aware statistical analysis | — | No candidate retrieved by the recorded searches. | `MISSING` | A group demonstrating this capability. Absence here means  |
-| diGly enrichment proteomics | Angelo Poletti (PMID:41664196, 2026) | Publication shows the technique was performed by this team a | `CANDIDATE_IDENTIFIED` | Confirm the group still runs this assay, and that it can b |
+Topology **`MULTI_PARTY_EXECUTABLE`** — no single group is expected to hold a
+model of each disease *and* the assay. Multi-party is a topology, not a failure.
 
-Topology: **`MULTI_PARTY_EXECUTABLE`**. No single group is expected to hold a
-model of each disease *and* the assay; multi-party is a topology, not a failure.
+## 6 · Next action
 
-## 8 · What a patient organization should do next
+**`NO_VERIFIED_COLLABORATOR_IDENTIFIED`.** Candidates are publication-derived leads;
+their claims are `PLAUSIBLE` or `SUPPORTED`, never `VERIFIED`.
 
-**`NO_VERIFIED_COLLABORATOR_IDENTIFIED`.** The candidates are leads from publications;
-their capability claims are `PLAUSIBLE` or `SUPPORTED`, never `VERIFIED`.
+> Approach a group with a demonstrated functional assay for chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) and ask whether it can be applied in parallel to models of Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease against a shared control.
 
-> Approach a group with a demonstrated functional assay for chaperone, co-chaperone and ubiquitin ligase biology (CHIP) and ask whether it can be applied in parallel to models of Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease against a shared control.
+**To verify first.** That a cellular model exists for both diseases; that any
+candidate still runs the assay; that both models can be cultured identically —
+if they cannot, a difference is confounded by protocol rather than biology.
 
-**The specific unresolved question.** Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?
-
-**What would answer it.** The experiment above: both disease models and one
-shared control, challenged identically, one functional readout.
-
-**What appears useful already.** One of four required capabilities has a
-published candidate. Three do not.
-
-**What to verify first.** That a cellular model exists for both diseases; that
-any candidate group still runs the assay; and that both models can be cultured
-identically — if they cannot, a difference is confounded by protocol.
-
-**Who to approach.** No named party is sufficiently supported. The category to
-approach is a group with a demonstrated functional assay for
-chaperone, co-chaperone, ubiquitin ligase, able to run it across both diseases.
-
-**Remaining uncertainty.** Supporting evidence for the relationship is limited in number and experimental context. Expert review should establish whether it justifies the experiment before anyone is contacted.
+**Remaining uncertainty.** Supporting evidence for the relationship is limited in number and experimental context. Expert review should establish whether it justifies the experiment before anyone is contacted. The refinement rests on
+abstract-level annotations, not full text, so a reviewer with journal access may
+reach a more specific bridge than this run could.
 

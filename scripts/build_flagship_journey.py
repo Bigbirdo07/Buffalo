@@ -184,7 +184,15 @@ def main() -> int:
 
     from atlas.domain.cross_disease import ValidatedRelationship
 
+    # A refinement run, when present, supplies the canonical bridge. The trace's
+    # v1 is never edited: refinement supersedes, it does not overwrite.
+    refinement_path = ROOT / "data/flagship/bridge_refinement.json"
+    refinement = (
+        json.loads(refinement_path.read_text()) if refinement_path.exists() else None
+    )
     bridge_raw = trace.get("mechanistic_bridge")
+    if refinement and refinement.get("result") == "BRIDGE_REFINED":
+        bridge_raw = refinement["canonical_bridge"]
     if not bridge_raw:
         raise SystemExit(
             "flagship has no mechanistic bridge: the gap would be built from the "
@@ -192,16 +200,7 @@ def main() -> int:
         )
     from atlas.domain.cross_disease import MechanisticBridge
 
-    bridge = MechanisticBridge(
-        bridge_id=bridge_raw["bridge_id"],
-        terms=tuple(bridge_raw["terms"]),
-        derived_from_evidence_ids=tuple(bridge_raw["derived_from_evidence_ids"]),
-        statement=bridge_raw["statement"],
-        derivation_method=bridge_raw["derivation_method"],
-        distinct_from_retrieval_features=tuple(
-            bridge_raw["distinct_from_retrieval_features"]
-        ),
-    )
+    bridge = MechanisticBridge.model_validate(bridge_raw)
 
     relationship = ValidatedRelationship(
         relationship_id=f"relationship:{flagship['pair_id']}",
@@ -336,6 +335,11 @@ def main() -> int:
         "flagship": flagship,
         "retrieval_level_feature": shared_process,
         "validated_mechanistic_bridge": bridge_raw,
+        "bridge_version": bridge.version,
+        "bridge_supersedes": bridge.supersedes_bridge_id,
+        "bridge_refinement_reason": bridge.refinement_reason,
+        "bridge_display_label": bridge.display_label,
+        "full_text_obtained": bool(refinement and refinement.get("full_text_obtained")),
         "knowledge_gap": gap.model_dump(mode="json"),
         "experiment": experiment.model_dump(mode="json"),
         "required_capabilities": [c.model_dump(mode="json") for c in capabilities],
@@ -366,6 +370,7 @@ def main() -> int:
         "relationship": flagship["final_relationship"],
         "evidence": flagship["evidence_ids"],
         "retrieval_feature": shared_process,
+        "bridge_version": bridge.version,
         "bridge_terms": list(bridge.terms),
         "gap_id": gap.gap_id, "experiment_id": experiment.experiment_id,
         "capabilities": len(capabilities), "assets": len(assets),

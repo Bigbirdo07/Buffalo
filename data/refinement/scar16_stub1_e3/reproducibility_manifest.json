@@ -6,7 +6,7 @@
     "data/fixtures/real/MANIFEST.json": "d5551f4c2b5407ee6d050cedb6ac6dec20a1d31e0dbefdf5083120bc18a96ed5",
     "data/refinement/scar16_stub1_e3/claim_lineage.json": "14d5498bda1e807bc30ccac143f61dc25187ac14ad0c493a8b652b455b455f31",
     "data/refinement/scar16_stub1_e3/edge_refinement.json": "ca11288068c423399fdaa1912916c04a87acd0e1235404897d7f483dbc7e685b",
-    "data/refinement/scar16_stub1_e3/experiment_proposal.json": "8d8b0a616a2081be2382ed29f0b96a9a03f40dfe018b6987fac618ad4e11b640",
+    "data/refinement/scar16_stub1_e3/experiment_proposal.json": "35d384381cdad5d679953a90ed782aabc6e11429732bef49f36435de1cf1b7c5",
     "data/refinement/scar16_stub1_e3/knowledge_gap.json": "504e11fd7716ba8815decd746de8372779195eca157d3509adb2ead54c9b3bde",
     "data/refinement/scar16_stub1_e3/observation_plan.json": "e04ad66c1cab88ae83a8f27d5e39e3cf289a506eff9a09b14bded310d89ca1dd",
     "data/refinement/scar16_stub1_e3/observations.json": "79ed41b429f2049ba450f360800e3df9cc3c3c32d0e8944f872f98b8132f00c8",
@@ -369,7 +369,7 @@
     "backend/src/atlas/domain/claims.py": "7f80bb89a9bf387123b5ee584fa57d798e6467a20ed4224e89b8984c551d67fa",
     "backend/src/atlas/domain/entities.py": "0440808b523cb3580fe5270cf29cc5859d19389bf304751e601011b333956be9",
     "backend/src/atlas/domain/evidence.py": "26c7011ade1911a1d92e9a12c7d8cf0da6c404dbfeed6ef49be049c16964ffbb",
-    "backend/src/atlas/domain/experiments.py": "15cd6cb0accdb584e31aa52199fd932f8d925fc1da36620ea04ef6f40cbb3a1f",
+    "backend/src/atlas/domain/experiments.py": "c8252bd0e369c54f68398ec935eb1f5aad77b0677c6138d1f9da1422335aadf0",
     "backend/src/atlas/domain/gaps.py": "5357d258e4109b8cb6fec6c1f7ce362c546a694a59bc7b962576e5a607279a8f",
     "backend/src/atlas/domain/mechanism.py": "e4ecc1bbeb23ad9fb91c5447a562f14bc602ef04306faed20e32ca283018f11d",
     "backend/src/atlas/domain/provenance.py": "f90227a3e7ae9a03f3bbfdbeb1d5256d868f34a311e9c1cdc4ea79f52dd9e162",
@@ -407,9 +407,9 @@
         "regenerated_canonical_sha256": "b5af6b85f395935197e7f99989b4d04b0cc46e1abd09079ab98344058b3cdc41"
       },
       "experiment_proposal": {
-        "committed_canonical_sha256": "69162740a3170ccaf4899d718e0b2a403c35864f63251212c61e3c1cbf9dda7d",
+        "committed_canonical_sha256": "1c51e90c46c01d2d22b9925758df6b033bc52e62e7014f213407e4ee900fa957",
         "matches": true,
-        "regenerated_canonical_sha256": "69162740a3170ccaf4899d718e0b2a403c35864f63251212c61e3c1cbf9dda7d"
+        "regenerated_canonical_sha256": "1c51e90c46c01d2d22b9925758df6b033bc52e62e7014f213407e4ee900fa957"
       },
       "knowledge_gap": {
         "committed_canonical_sha256": "c203d3596f1dd692263caca914c571c0cd29c7d08486d9bf7b6bec70b62c6268",
