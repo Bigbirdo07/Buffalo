@@ -1,3 +1,9 @@
+> **SUPERSEDED.** This records the verdict taken before the flagship selector
+> was replaced. The current verdict is in
+> [`GOALS_AUDIT_FINAL.md`](GOALS_AUDIT_FINAL.md); where the two differ, that one
+> is correct. Kept because the defects it describes, and the reasoning that
+> found them, are the reason the selector changed.
+
 # Goals audit — does the scientific chain actually work?
 
 Run end to end on real data, from one disease to one next action. No goal is
