@@ -1,0 +1,60 @@
+{
+  "schema_version": "cross-disease-validation-v1",
+  "round": "round-1",
+  "query_disease": "Autosomal Recessive Spinocerebellar Ataxia 16",
+  "query_gene": "STUB1 (CHIP)",
+  "method": "Literature validation of system-generated candidate neighbours. PubMed/PMC via NCBI E-utilities and Europe PMC, including deliberate null searches. Verdicts are the reviewing agent's; every substantive claim carries a PMID or DOI so a curator can check it.",
+  "status": "AWAITING_EXPERT_SIGNOFF",
+  "verdicts": [
+    {
+      "neighbour": "Lafora Disease",
+      "retrieval_basis": "protein ubiquitination (GO, weak), Purkinje cell, cerebellar atrophy",
+      "system_assessment": "NOT molecularly anchored; phenotype-dominant",
+      "literature_verdict": "SHARED_MECHANISM_SUPPORTED",
+      "critical_finding": "The retrieval hit is right for the wrong reason. The GO match is weak and arguably wrong: malin is a RING ligase acting on glycogen-metabolic enzymes, CHIP a U-box ligase triaging Hsp70/Hsp90 clients. But independent wet-lab evidence shows CHIP physically binds and stabilises malin, and laforin+malin+CHIP have been reported as one heat-shock-responsive complex required for HSF1 activation.",
+      "key_citations": ["PMID:19892702", "PMID:21652633", "PMID:19036738", "PMID:20858601"],
+      "caveats": [
+        "Core evidence is 2009-2011, overexpression-based, essentially one laboratory.",
+        "No in vivo genetic epistasis; no endogenous-stoichiometry confirmation in Purkinje cells.",
+        "No shared substrate demonstrated. The strongest extension (laforin/malin ubiquitinating Hsp70/Hsp90/Hop) exists ONLY as a 2026 preprint, doi:10.21203/rs.3.rs-10069748/v1, and must not be cited as established.",
+        "Cerebellar phenotypes differ in route: polyglucosan Lafora-body deposition versus primary proteotoxic Purkinje degeneration."
+      ],
+      "recommended_framing": "Shared chaperone/HSF1 stress-response node, NOT 'both have cerebellar atrophy'."
+    },
+    {
+      "neighbour": "Peroxisome Biogenesis Disorder 5B",
+      "retrieval_basis": "ubiquitin-protein transferase activity (GO molecular function), Purkinje cell, cerebellum",
+      "system_assessment": "retrieved on 3 axes",
+      "literature_verdict": "SHARED_PROCESS_ONLY_SUPERFICIAL, shading to CONTRADICTED",
+      "critical_finding": "A GO molecular-function artefact with near-opposite biochemistry. PEX2/10/12 monoubiquitinate PEX5 on a cysteine via a labile thioester bond, deliberately reversible and explicitly NON-degradative, as a retrotranslocation signal for receptor recycling. CHIP does canonical K48 polyubiquitination of a lysine on a chaperone-bound misfolded client, committing it to destruction. Mono versus poly, Cys/thioester versus Lys/isopeptide, recycling versus destruction, chaperone-independent versus chaperone-obligate.",
+      "key_citations": ["PMID:22371489", "PMID:38470934", "PMID:27597759", "PMID:12456682"],
+      "null_search": "(PEX2 OR PEX10 OR PEX12 OR peroxin) AND (CHIP OR STUB1 OR chaperone-assisted OR Hsp70): 10 hits, none linking peroxisomal E3s to CHIP or chaperone-assisted degradation.",
+      "recommended_action": "Remove or hard-flag as GO-annotation-level only."
+    },
+    {
+      "neighbour": "Rabies",
+      "retrieval_basis": "mitophagy (GO), Purkinje cell, myoclonus",
+      "system_assessment": "NOT anchored, no strong axis, caveated",
+      "literature_verdict": "SHARED_PROCESS_ONLY_SUPERFICIAL -- confirmed false positive",
+      "critical_finding": "Negri bodies are liquid-liquid phase-separated viral replication factories nucleated by the viral P protein, not misfolded-protein aggregates: spherical, fusing, FRAP-mobile, dissolved by hypotonic shock. Biophysically the opposite of an amyloid or aggresome lesion. Rabies shows neuronal dysfunction with preserved structure and minimal death, unlike frank Purkinje degeneration.",
+      "key_citations": ["PMID:28680102", "PMID:25698500", "PMID:39117117"],
+      "honest_nuance": "Both diseases genuinely touch mitophagy, but in opposite directions and with no shared molecule: rabies via P protein binding Complex I and raising ROS; CHIP as a negative regulator of PINK1/Parkin mitophagy.",
+      "null_search": "(rabies) AND (spinocerebellar ataxia OR proteostasis OR STUB1 OR chaperone-assisted): 8 hits, all RVG-peptide brain-delivery papers. Likely text-mining contaminant.",
+      "recommended_action": "Confirmed counterexample. Retain as the worked negative case."
+    },
+    {
+      "neighbour": "Cerebellar Ataxia-Hypogonadism Syndrome (Gordon Holmes)",
+      "retrieval_basis": "STUB1, hypogonadotropic hypogonadism",
+      "system_assessment": "4 axes, STUB1 shared, variant COMPATIBLE",
+      "literature_verdict": "SHARED_MECHANISM_SUPPORTED (same gene)",
+      "critical_finding": "The literature treats Gordon Holmes syndrome and SCAR16 as ONE allelic entity, not two diseases. Hypogonadism is a variably penetrant feature embedded in multisystemic neurodegeneration, not a separate disorder. This is a data-model merge task, not a research collaboration.",
+      "key_citations": ["PMID:24312598", "PMID:24113144", "PMID:25258038", "PMID:28193273", "PMID:30381368"],
+      "open_question_for_expert": "SCA48 is the dominant STUB1 disorder, but the dominant/recessive split is muddied: a large fraction of apparently dominant STUB1 families carry intermediate TBP CAG/CAA repeats (41-49), and in one series 30 of 31 index cases with TBP41-46 also carried a heterozygous pathogenic STUB1 variant. Digenic inheritance (PMID:34906452) versus TBP-as-modifier is unresolved. How the system represents SCA48 versus SCA17 needs expert sign-off."
+    }
+  ],
+  "systems_level_finding": {
+    "observation": "Three of four candidates were driven by high-level GO terms (protein ubiquitination, ubiquitin-protein transferase activity, mitophagy) plus a shared cell type. In the single case where a genuine mechanism exists, the GO term was NOT what made it genuine.",
+    "consequence_for_this_system": "Annotation-based anchoring is necessary but not sufficient. The CHIP-malin interaction is not in DisMech's annotations at all, so the atlas retrieved its best lead for the wrong reason and the anchor rule classified that lead as NOT molecularly anchored. Retrieval and ranking are therefore not interchangeable with validation, and the system must not present an anchor score as evidence of mechanism.",
+    "recommendation": "Weight edges by evidence of direct physical or genetic interaction where such evidence can be retrieved, rather than by shared high-level annotation alone."
+  }
+}

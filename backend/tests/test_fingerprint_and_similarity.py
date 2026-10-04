@@ -418,3 +418,86 @@ class TestVariantCompatibilityRules:
             self._disease("A", ("nonsense",)), self._disease("B", ("missense",)), ()
         )
         assert result.status.value == "NOT_ASSESSABLE"
+
+
+@pytest.mark.skipif(not FINGERPRINTS.exists(), reason="fingerprints not generated")
+class TestMechanismClustering:
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def built():
+        from atlas.services.candidate_generation import FeatureIndex
+        from atlas.services.mechanism_clustering import build_mechanism_graph
+
+        records = [json.loads(line) for line in FINGERPRINTS.read_text().splitlines()]
+        index = FeatureIndex(records)
+        graph, stats = build_mechanism_graph(index)
+        return index, graph, stats
+
+    def test_most_retrieved_pairs_are_rejected_as_unanchored(self, built) -> None:
+        # The filter is doing the work: a pair linked only by phenotype and
+        # anatomy must not be allowed to form a mechanism cluster.
+        _index, _graph, stats = built
+        assert stats["rejected_no_molecular_anchor"] > stats["edges"]
+
+    def test_hub_genes_cannot_anchor_an_edge(self, built) -> None:
+        # TP53 spans 98 diseases. "Both involve TP53" is not a mechanism claim,
+        # and letting it anchor produced a 2,710-node giant component.
+        from atlas.services.candidate_generation import SharedFeature
+        from atlas.services.mechanism_clustering import Candidate, anchor_axes
+
+        hub = SharedFeature(
+            feature_id="HGNC:11998", label="TP53", feature_class="genetic",
+            corpus_frequency=98, information_content=3.51,
+            evidence_left=1, evidence_right=1,
+        )
+        candidate = Candidate(disease_id="x", disease_name="X", source_file="x.yaml")
+        candidate.methods["SHARED_GENE_OR_PROTEIN"] = [hub]
+        assert anchor_axes(candidate) == ()
+
+    def test_specific_gene_does_anchor(self, built) -> None:
+        from atlas.services.candidate_generation import SharedFeature
+        from atlas.services.mechanism_clustering import Candidate, anchor_axes
+
+        specific = SharedFeature(
+            feature_id="HGNC:11427", label="STUB1", feature_class="genetic",
+            corpus_frequency=3, information_content=7.0,
+            evidence_left=1, evidence_right=1,
+        )
+        candidate = Candidate(disease_id="x", disease_name="X", source_file="x.yaml")
+        candidate.methods["SHARED_GENE_OR_PROTEIN"] = [specific]
+        assert anchor_axes(candidate) == ("SHARED_GENE_OR_PROTEIN",)
+
+    def test_clusters_declare_when_they_have_no_statable_core(self, built) -> None:
+        from atlas.services.mechanism_clustering import ClusterMethod, cluster_corpus
+
+        index, graph, _stats = built
+        clusters, _unclustered = cluster_corpus(index, graph, ClusterMethod.LOUVAIN)
+        for cluster in clusters:
+            if not cluster.has_statable_core:
+                assert cluster.canonical_label == "NO_DEFENSIBLE_CLUSTER"
+                assert cluster.caveats
+
+    def test_stub1_disorders_cluster_together(self, built) -> None:
+        from atlas.services.mechanism_clustering import ClusterMethod, cluster_corpus
+
+        index, graph, _stats = built
+        clusters, _unclustered = cluster_corpus(index, graph, ClusterMethod.LOUVAIN)
+        query = next(
+            r["disease_id"]
+            for r in index.fingerprints
+            if r["disease_name"] == "Autosomal Recessive Spinocerebellar Ataxia 16"
+        )
+        cluster = next(c for c in clusters if query in c.member_ids)
+        # All three STUB1 disorders land together, found through shared biology
+        # rather than through the gene symbol in the disease name.
+        assert "Spinocerebellar Ataxia 48" in cluster.member_names
+        assert "Cerebellar Ataxia-Hypogonadism Syndrome" in cluster.member_names
+        assert cluster.has_statable_core
+
+    def test_clustering_is_reproducible(self, built) -> None:
+        from atlas.services.mechanism_clustering import ClusterMethod, cluster_corpus
+
+        index, graph, _stats = built
+        first, _ = cluster_corpus(index, graph, ClusterMethod.LOUVAIN)
+        second, _ = cluster_corpus(index, graph, ClusterMethod.LOUVAIN)
+        assert [c.member_ids for c in first] == [c.member_ids for c in second]

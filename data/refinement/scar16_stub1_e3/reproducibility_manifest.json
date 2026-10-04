@@ -356,7 +356,7 @@
   },
   "implementation_scope": "Phase 3 entry-point scripts, the atlas modules reachable from their import graph, and the package build file. Modules not imported by the Phase 3 pipeline are deliberately excluded so later development cannot invalidate this scientific record.",
   "implementation_sha256": {
-    "backend/pyproject.toml": "aae147121ae386ed6e3513862e2c68c7e70eacd88495ad98a693d5cf44293b92",
+    "backend/pyproject.toml": "f754aa05fc15df6d7756d09fc2d40efad2c96134674fc1a0a46302cc5101da0d",
     "backend/src/atlas/__init__.py": "d064cbc3703d2fa3cca33c703bb2376ab17c657a054a4e584ff45f2b261537e5",
     "backend/src/atlas/adapters/__init__.py": "b19537099e63db5c4519c433262150913513fb125fbdf5e88e8252e8bd3a8baf",
     "backend/src/atlas/adapters/dismech/__init__.py": "58e8bf1ca1dc0f9ec666557059c29af11aaf84c58eace2dfa3f685054814303c",

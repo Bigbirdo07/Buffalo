@@ -10,6 +10,11 @@ requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.115",
   "httpx>=0.27",
+  # Pure-Python graph algorithms for mechanism clustering. Chosen over igraph or
+  # scikit-learn because it needs no compiled extension and carries several
+  # community-detection methods, which the clustering audit compares rather than
+  # committing to one blindly.
+  "networkx>=3.4",
   "pydantic>=2.10",
   "pydantic-settings>=2.6",
   "pyyaml>=6.0",
@@ -22,6 +27,9 @@ dev = ["mypy>=1.13", "pytest>=8.3", "ruff>=0.8"]
 # Postgres is the intended canonical store. It is an extra because the test suite
 # runs against SQLite and must not require a database server.
 postgres = ["psycopg[binary]>=3.2"]
+# The mechanism critic is advisory and the pipeline runs without it, so the SDK
+# is optional. Provider is selected by ATLAS_CRITIC_PROVIDER.
+critic = ["anthropic>=0.40", "python-dotenv>=1.0"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/atlas"]
