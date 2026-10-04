@@ -296,3 +296,125 @@ class TestCandidateRetrieval:
         from atlas.services.candidate_generation import generate_candidates
 
         assert generate_candidates(index, "no-such-disease") == []
+
+
+@pytest.mark.skipif(not FINGERPRINTS.exists(), reason="fingerprints not generated")
+@pytest.mark.skipif(not HPO_PATH.exists(), reason="HPO snapshot not present")
+class TestPairwiseComparison:
+    """The comparison must separate a real neighbour from a phenotype-only one
+    on grounds it can state, without deciding whether the relationship holds."""
+
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def setup():
+        from atlas.services.candidate_generation import FeatureIndex, generate_candidates
+        from atlas.services.disease_comparison import compare_diseases
+
+        records = [json.loads(line) for line in FINGERPRINTS.read_text().splitlines()]
+        index = FeatureIndex(records)
+        ontology = HpoOntology.from_obo(HPO_PATH)
+        sets = load_annotation_sets(ontology, [r["phenotype_ids"] for r in records])
+        similarity = PhenotypeSimilarity(ontology, sets)
+        phenotypes = {r["disease_id"]: s for r, s in zip(records, sets, strict=True)}
+        query = next(
+            r["disease_id"]
+            for r in records
+            if r["disease_name"] == "Autosomal Recessive Spinocerebellar Ataxia 16"
+        )
+        candidates = generate_candidates(index, query, limit=25)
+
+        def build(name: str):
+            candidate = next(c for c in candidates if c.disease_name == name)
+            return compare_diseases(
+                index, candidate, query, similarity,
+                phenotypes[query], phenotypes[candidate.disease_id],
+            )
+
+        return build
+
+    def test_same_gene_neighbour_is_molecularly_anchored(self, setup) -> None:
+        comparison = setup("Spinocerebellar Ataxia 48")
+        assert comparison.has_molecular_anchor
+        assert "STUB1" in comparison.variant_compatibility.shared_genes
+
+    def test_phenotype_only_neighbour_is_not_anchored(self, setup) -> None:
+        # Lafora disease shares cerebellar phenotypes and a weak ubiquitination
+        # term with SCAR16, but no gene and no strong process overlap.
+        comparison = setup("Lafora_Disease")
+        assert not comparison.has_molecular_anchor
+        assert comparison.variant_compatibility.status.value == "NOT_ASSESSABLE"
+
+    def test_implausible_neighbour_is_not_anchored_and_is_caveated(self, setup) -> None:
+        # The counterexample: an acute viral encephalitis retrieved on mitophagy,
+        # Purkinje cell and myoclonus. It must fail the anchor test and say why.
+        comparison = setup("Rabies")
+        assert not comparison.has_molecular_anchor
+        assert comparison.strong_axes == ()
+        assert any("phenotype and anatomy" in note for note in comparison.caveats)
+
+    def test_unassessed_dimensions_are_declared_not_assumed_absent(self, setup) -> None:
+        comparison = setup("Rabies")
+        assert any(
+            "unassessed rather than absent" in note for note in comparison.caveats
+        )
+
+    def test_shared_gene_with_same_direction_is_compatible(self, setup) -> None:
+        comparison = setup("Spinocerebellar Ataxia 48")
+        assert comparison.variant_compatibility.status.value == "COMPATIBLE"
+
+    def test_no_shared_gene_blocks_variant_assessment(self, setup) -> None:
+        comparison = setup("Rabies")
+        assert comparison.variant_compatibility.status.value == "NOT_ASSESSABLE"
+        assert "different proteins" in comparison.variant_compatibility.reason
+
+    def test_comparison_states_no_verdict(self, setup) -> None:
+        # The comparison describes; the refinement engine decides. If a status
+        # field ever appears here, that separation has been lost.
+        comparison = setup("Spinocerebellar Ataxia 48")
+        assert not hasattr(comparison, "status")
+        assert not hasattr(comparison, "refined_status")
+
+
+class TestVariantCompatibilityRules:
+    """The mandatory check: a shared gene symbol does not imply shared mechanism."""
+
+    @staticmethod
+    def _disease(name: str, effects: tuple[str, ...]) -> dict:
+        return {"disease_name": name, "variant_effects": list(effects)}
+
+    def test_opposite_directions_are_incompatible(self) -> None:
+        from atlas.services.disease_comparison import assess_variant_compatibility
+
+        result = assess_variant_compatibility(
+            self._disease("A", ("loss_of_function", "nonsense")),
+            self._disease("B", ("gain_of_function",)),
+            ("GENEX",),
+        )
+        assert result.status.value == "INCOMPATIBLE"
+        assert result.is_blocking
+
+    def test_same_direction_is_compatible(self) -> None:
+        from atlas.services.disease_comparison import assess_variant_compatibility
+
+        result = assess_variant_compatibility(
+            self._disease("A", ("nonsense",)),
+            self._disease("B", ("frameshift",)),
+            ("GENEX",),
+        )
+        assert result.status.value == "COMPATIBLE"
+
+    def test_missing_annotation_is_not_assessable_rather_than_compatible(self) -> None:
+        from atlas.services.disease_comparison import assess_variant_compatibility
+
+        result = assess_variant_compatibility(
+            self._disease("A", ("nonsense",)), self._disease("B", ()), ("GENEX",)
+        )
+        assert result.status.value == "NOT_ASSESSABLE"
+
+    def test_no_shared_gene_is_not_assessable(self) -> None:
+        from atlas.services.disease_comparison import assess_variant_compatibility
+
+        result = assess_variant_compatibility(
+            self._disease("A", ("nonsense",)), self._disease("B", ("missense",)), ()
+        )
+        assert result.status.value == "NOT_ASSESSABLE"
