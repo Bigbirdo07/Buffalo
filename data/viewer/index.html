@@ -1,0 +1,1132 @@
+<title>Evidence Ledger</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a claim ledger. Verdict first, then each claim openable to its raw evidence. */
+:root {
+  --bg: #f4f6f7;
+  --surface: #ffffff;
+  --surface-2: #eceff1;
+  --fg: #16212b;
+  --fg-dim: #5a6b78;
+  --line: #d3dbe0;
+  --accent: #0f6e7a;
+  --accent-soft: #d7eaec;
+  --ok: #1f6b45;
+  --ok-soft: #dcefe3;
+  --warn: #8a5a00;
+  --warn-soft: #f7ebd3;
+  --mid: #4a5c8a;
+  --mid-soft: #e0e5f2;
+  --bad: #9b2c2c;
+  --bad-soft: #f6e0e0;
+  --neutral: #55636e;
+  --neutral-soft: #e4e9ec;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1418;
+    --surface: #151d23;
+    --surface-2: #1d262d;
+    --fg: #e5ecf0;
+    --fg-dim: #94a6b2;
+    --line: #2a353d;
+    --accent: #4bb8c4;
+    --accent-soft: #10353a;
+    --ok: #68c795;
+    --ok-soft: #12301f;
+    --warn: #e0b060;
+    --warn-soft: #33260d;
+    --mid: #9aacdd;
+    --mid-soft: #1a2138;
+    --bad: #e68a8a;
+    --bad-soft: #351a1a;
+    --neutral: #9aa8b3;
+    --neutral-soft: #1e272e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1418; --surface: #151d23; --surface-2: #1d262d;
+  --fg: #e5ecf0; --fg-dim: #94a6b2; --line: #2a353d;
+  --accent: #4bb8c4; --accent-soft: #10353a;
+  --ok: #68c795; --ok-soft: #12301f;
+  --warn: #e0b060; --warn-soft: #33260d;
+  --mid: #9aacdd; --mid-soft: #1a2138;
+  --bad: #e68a8a; --bad-soft: #351a1a;
+  --neutral: #9aa8b3; --neutral-soft: #1e272e;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); line-height: 1.5; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 56px; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.75rem, 4.5vw, 2.5rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.12rem; }
+h4 { font-size: 0.82rem; font-family: var(--ui); text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--fg-dim); margin-block: 14px 6px; }
+p { margin: 0 0 10px; }
+code { font-family: var(--mono); font-size: 0.86em; }
+.lede { max-width: 64ch; color: var(--fg-dim); font-size: 1.02rem; }
+.muted { color: var(--fg-dim); font-size: 0.9rem; }
+
+.banner { border: 1px solid var(--line); border-left: 3px solid var(--warn);
+  background: var(--warn-soft); color: var(--fg); padding: 12px 14px;
+  border-radius: 4px; margin-block: 18px; font-size: 0.9rem; }
+.banner strong { font-weight: 600; }
+
+.statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px; margin-block: 20px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.snum { font-family: var(--mono); font-size: 1.3rem; font-variant-numeric: tabular-nums;
+  color: var(--accent); }
+.slab { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--fg-dim); }
+
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  margin-block: 24px 14px; padding-block: 10px; border-block: 1px solid var(--line); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 4px;
+  overflow: hidden; }
+.seg button { font: inherit; font-size: 0.86rem; padding: 7px 14px; border: 0;
+  background: var(--surface); color: var(--fg-dim); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+@media (prefers-color-scheme: dark) { }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { font: inherit; font-size: 0.86rem; padding: 7px 13px; cursor: pointer;
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line);
+  border-radius: 4px; }
+.tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft);
+  color: var(--fg); }
+.tgene { font-family: var(--mono); font-size: 0.78em; color: var(--fg-dim); }
+
+.dhead { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between;
+  align-items: flex-start; margin-block: 22px 12px; }
+.dhead > div { min-width: 0; }
+.gene { font-family: var(--mono); font-size: 0.72em; color: var(--accent);
+  border: 1px solid var(--line); border-radius: 3px; padding: 2px 6px; vertical-align: 3px; }
+.upstream { color: var(--fg-dim); font-size: 0.92rem; max-width: 60ch; margin-top: 6px; }
+.claimq { font-family: var(--display); font-style: italic; color: var(--fg); }
+.verdict { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.vlabel { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg-dim); }
+
+.pill { display: inline-block; font-size: 0.8rem; font-weight: 500; padding: 3px 10px;
+  border-radius: 999px; border: 1px solid transparent; }
+.s-supported { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.s-partially_supported { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.s-context_dependent { background: var(--mid-soft); color: var(--mid); border-color: var(--mid); }
+.s-insufficient_evidence { background: var(--neutral-soft); color: var(--neutral); border-color: var(--neutral); }
+.s-contradicted { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); }
+.s-missing_capability { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.chip { font-size: 0.75rem; padding: 2px 8px; border-radius: 3px;
+  background: var(--surface-2); color: var(--fg-dim); border: 1px solid var(--line); }
+.chip.s-supported { color: var(--ok); }
+.chip.c-verified { color: var(--ok); }
+.chip.c-upstream_attested { color: var(--warn); }
+.chip.c-span_not_located { color: var(--bad); }
+
+.claims { display: flex; flex-direction: column; gap: 8px; }
+.claim { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.claim > summary { cursor: pointer; padding: 12px 14px; display: flex; flex-wrap: wrap;
+  gap: 8px; justify-content: space-between; align-items: baseline; list-style: none; }
+.claim > summary::-webkit-details-marker { display: none; }
+.claim > summary::before { content: "+"; font-family: var(--mono); color: var(--accent);
+  margin-right: 8px; }
+.claim[open] > summary::before { content: "\2212"; }
+.claim-text { font-family: var(--display); font-size: 1.02rem; flex: 1 1 320px;
+  min-width: 0; }
+.claim-tags { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.rule { font-family: var(--mono); font-size: 0.74rem; color: var(--fg-dim);
+  border: 1px dashed var(--line); border-radius: 3px; padding: 1px 6px; }
+.claim > *:not(summary) { margin-inline: 14px; }
+.claim > *:last-child { margin-bottom: 14px; }
+.plain { color: var(--fg-dim); font-size: 0.92rem; }
+.scope { font-family: var(--mono); font-size: 0.74rem; color: var(--fg-dim);
+  padding: 6px 0; border-top: 1px solid var(--line); }
+
+.ev-list { list-style: none; padding: 0; margin: 8px 0 0; display: flex;
+  flex-direction: column; gap: 10px; }
+.ev { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px;
+  padding: 10px 12px; min-width: 0; }
+.ev-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  justify-content: space-between; }
+.src { color: var(--accent); }
+.cite { font-size: 0.72rem; padding: 2px 7px; border-radius: 3px;
+  border: 1px solid var(--line); }
+.c-verified { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.c-upstream_attested { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.c-span_not_located { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); }
+.c-not_checkable, .c-unresolved { background: var(--neutral-soft); color: var(--neutral); }
+blockquote { margin: 8px 0; padding-left: 12px; border-left: 2px solid var(--accent);
+  font-family: var(--display); font-size: 0.97rem; color: var(--fg); }
+.ev-meta { font-size: 0.78rem; color: var(--fg-dim); }
+.ev-meta.loc { font-family: var(--mono); font-size: 0.72rem; }
+.ev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px 14px; margin-top: 8px; }
+.ev-grid .wide { grid-column: 1 / -1; }
+.ev-grid dt { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--fg-dim); }
+.ev-grid dd { margin: 0; font-size: 0.85rem; }
+.limits { margin: 8px 0 0; padding-left: 18px; font-size: 0.8rem; color: var(--fg-dim); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  padding: 16px; margin-top: 16px; }
+.panel.thin { background: transparent; border-style: dashed; }
+.panel.action { border-left: 3px solid var(--accent); }
+.q { font-family: var(--display); font-size: 1.05rem; max-width: 66ch; }
+.kv { display: grid; grid-template-columns: minmax(110px, auto) 1fr; gap: 6px 14px;
+  margin: 10px 0 0; }
+.kv dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--fg-dim); }
+.kv dd { margin: 0; font-size: 0.9rem; min-width: 0; }
+.bullets { margin: 0; padding-left: 18px; font-size: 0.9rem; }
+.bullets li { margin-bottom: 5px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 24px; }
+.two > div { min-width: 0; }
+.tag { display: inline-block; font-size: 0.74rem; font-family: var(--mono);
+  padding: 2px 7px; border-radius: 3px; background: var(--neutral-soft);
+  color: var(--neutral); border: 1px solid var(--line); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.verdictline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.tablewrap { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.84rem; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line);
+  vertical-align: top; }
+th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--fg-dim); font-weight: 500; }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.cov { font-family: var(--mono); font-size: 0.72rem; padding: 1px 6px; border-radius: 3px; }
+.v-checked { background: var(--ok-soft); color: var(--ok); }
+.v-failed { background: var(--bad-soft); color: var(--bad); }
+.v-not_started { background: var(--neutral-soft); color: var(--neutral); }
+
+.prov { font-family: var(--mono); font-size: 0.72rem; color: var(--fg-dim);
+  margin-top: 14px; }
+footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line);
+  font-size: 0.84rem; color: var(--fg-dim); }
+footer ul { padding-left: 18px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <h1>Evidence Ledger</h1>
+  <p class="lede">What the published evidence actually supports for one mechanism
+  claim in two rare diseases &mdash; claim by claim, with every verdict traceable to a
+  quoted passage and the rule that produced it. No confidence scores: the engine
+  does not compute one.</p>
+
+  <div class="statrow"><div class="stat"><span class="snum">3,289</span><span class="slab">disease files imported</span></div><div class="stat"><span class="snum">0</span><span class="slab">silently dropped fields</span></div><div class="stat"><span class="snum">117,842</span><span class="slab">evidence items parsed</span></div><div class="stat"><span class="snum">46,555</span><span class="slab">causal edges</span></div></div>
+
+  <div class="banner">
+    <strong>Read this first.</strong> Every verdict here is software output.
+    A deterministic rule set did the criticism &mdash; not a language model, and not a
+    scientist. Three classification decisions have expert sign-off; the claim
+    decompositions and both study proposals have not been reviewed. Two diseases
+    is not a validated sample.
+  </div>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Level of detail">
+      <button id="v-sci" aria-pressed="true">Scientist</button>
+      <button id="v-pat" aria-pressed="false">Plain language</button>
+    </div>
+    <div class="tabs" role="tablist"><button class="tab" data-target="SCAR16" aria-selected="true">SCAR16 <span class="tgene">STUB1</span></button><button class="tab" data-target="SCAR20">SCAR20 <span class="tgene">SNX14</span></button></div>
+  </div>
+
+  <div class="dpanel" data-disease="SCAR16"><div class="v-scientist"><div class="disease" data-disease="SCAR16">
+  <header class="dhead">
+    <div>
+      <h2>SCAR16 <span class="gene">STUB1</span></h2>
+      <p class="upstream">Curated claim under test:
+        <span class="claimq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+    </div>
+    <div class="verdict">
+      <span class="vlabel">Engine verdict</span>
+      <span class="pill s-context_dependent">Depends on context</span>
+      <span class="rule">rule E2</span>
+    </div>
+  </header>
+  <div class="chips"><span class="chip s-supported">2 supported</span><span class="chip s-context_dependent">2 depends on context</span><span class="chip s-insufficient_evidence">1 not enough evidence</span><span class="chip c-verified">18 quote found in the paper</span></div>
+  <div class="claims"><details class="claim">
+  <summary>
+    <span class="claim-text">STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span><span class="rule" title="the rule that produced this status">rule A2</span></span>
+  </summary>
+  
+  <div class="scope">allele class: U-box missense: p.Thr246Met · alleles: p.Thr246Met</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:24113144</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>abolished</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant protein and cell culture models</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:30222779</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>abolished</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>biophysical and cellular assays; knock-in mouse and rat models in the same study</dd></div></div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div><div><dt>effect</dt><dd>abolished</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span><span class="rule" title="the rule that produced this status">rule A2</span></span>
+  </summary>
+  
+  <div class="scope">allele class: pre-U-box truncation · alleles: p.Gln118*</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:41851873</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div><div><dt>effect</dt><dd>decreased</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>HEK293T transient overexpression with immunoprecipitation</dd></div></div>
+  <ul class="limits"><li>Overexpression system; endogenous dosage and cell type not modeled.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-context_dependent">Depends on context</span><span class="rule" title="the rule that produced this status">rule A5</span></span>
+  </summary>
+  
+  <div class="scope">allele class: TPR-domain missense · alleles: p.Glu28Lys, p.Asn65Ser</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div><div><dt>effect</dt><dd>processivity_defect</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>REFUTES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25258038</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>We show that the p.Asn65Ser substitution impairs CHIP&#x27;s ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div><div><dt>effect</dt><dd>processivity_defect</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>in vitro ubiquitination of HSC70</dd></div></div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>partially_retained</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div><div><dt>effect</dt><dd>partially_retained</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>polyubiquitin_chain_formation</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>REFUTES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP panel, E2-dependent chain formation</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:42567515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>substrate_selective</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant protein biochemistry and cellular models, 13 variants</dd></div></div>
+  <ul class="limits"><li>Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease.</li><li>Class-level statement; individual alleles not named in the text.</li><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:35398354</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>biophysical, biochemical and cellular assays; C. elegans model</dd></div></div>
+  <ul class="limits"><li>Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-insufficient_evidence">Not enough evidence</span><span class="rule" title="the rule that produced this status">rule A6</span></span>
+  </summary>
+  
+  <div class="scope">allele class: inter-domain/linker-region missense · alleles: p.Lys145Gln, p.Met211Ile</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:41851873</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>In addition, the STUB1 missense mutation p.(Lys145Gln) has been found to impair the ubiquitin ligase activity of CHIP [ 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>decreased</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / BACKGROUND_ONLY</dd></div><div><dt>origin</dt><dd>BACKGROUND_CITATION</dd></div><div class="wide"><dt>system</dt><dd>not tested in this paper; introduction sentence citing an earlier study</dd></div></div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>REFUTES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>partially_retained</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div><div><dt>effect</dt><dd>partially_retained</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>polyubiquitin_chain_formation</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>REFUTES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP panel, E2-dependent chain formation</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-context_dependent">Depends on context</span><span class="rule" title="the rule that produced this status">rule A3</span></span>
+  </summary>
+  
+  <div class="scope">allele class: U-box missense · alleles: p.Ser236Thr, p.Met240Thr</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>REFUTES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>partially_retained</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div><div><dt>effect</dt><dd>abolished</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div></div>
+  <ul class="limits"><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:42567515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>e3_ligase_activity</dd></div><div><dt>effect</dt><dd>abolished</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / INDIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>recombinant protein biochemistry and cellular models, 13 variants</dd></div></div>
+  <ul class="limits"><li>Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease.</li><li>Class-level statement; individual alleles not named in the text.</li><li>Purified recombinant protein; cellular abundance and context absent.</li></ul>
+</li></ul>
+</details></div>
+  <section class="panel">
+  <h3>Open question</h3>
+  <p class="q">Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?</p>
+  <dl class="kv">
+    <dt>type</dt><dd><code>untested_variant_class</code></dd>
+    <dt>why it matters</dt><dd>This transition is the first molecular step of the upstream SCAR16 mechanism, and every downstream node in the imported pathograph depends on it. Four of the six alleles assayed in PMID:28396517 were not overtly different from wild type, so the upstream edge as worded does not hold allele-wide. Whether these patients&#x27; disease runs through reduced ligase output at all determines (a) whether the edge wording can be retained, (b) whether bulk ubiquitination is a valid assay for allele interpretation, and (c) whether strategies aimed at restoring ligase activity are even addressed at the right defect for these genotypes.</dd>
+    <dt>what is missing</dt><dd>Substrate-resolved ubiquitination measurement (e.g. diGly ubiquitinome or a defined CHIP client panel) for these specific alleles, rather than bulk HSC70/self-ubiquitination.; Measurement at endogenous expression level in a human neuronal cell type, rather than purified protein or overexpression.; Assays spanning physiological and proteotoxic-stress conditions, given the reported temperature dependence of SCAR16 mutant activity.; Measurement in the patients&#x27; actual compound-heterozygous configuration, not only homozygous single-allele constructs.</dd>
+    <dt>resolvable</dt><dd>Experimentally resolvable. The discriminating measurement is substrate-level ubiquitination in isogenic human neurons carrying these alleles at endogenous dosage, assayed at 37 C and under proteotoxic stress.</dd>
+  </dl>
+</section>
+  <section class="panel">
+  <h3>Proposed experiment <span class="tag warn">Research proposal requiring expert review.</span></h3>
+  <dl class="kv">
+    <dt>hypothesis</dt><dd>STUB1 p.Lys145Gln and p.Met211Ile reduce CHIP-dependent ubiquitination of a restricted subset of CHIP client proteins in human neurons at endogenous dosage, and/or lose activity under proteotoxic stress, despite retaining bulk HSC70 and self-ubiquitination activity in purified recombinant assays.</dd>
+    <dt>competing</dt><dd>These alleles do not measurably reduce CHIP-dependent substrate ubiquitination in neurons under any tested condition, and their pathogenicity arises from a non-ligase CHIP function (chaperone client handling or complex assembly) or from reduced protein stability in the compound-heterozygous state.</dd>
+    <dt>model system</dt><dd>Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)</dd>
+    <dt>primary endpoint</dt><dd>Difference in site-level ubiquitination of CHIP client proteins between each knock-in genotype and the isogenic wild type, at 37 C and after stress, with a pre-registered substrate-subset analysis</dd>
+    <dt>would refute it</dt><dd>p.Lys145Gln and p.Met211Ile neurons are indistinguishable from isogenic wild type in site-level client ubiquitination, substrate turnover and stress response, while p.Thr246Met shows the expected deficit. That outcome refutes the substrate-selective ligase hypothesis and redirects the mechanism to non-ligase CHIP function or to allele-specific protein instability, and the upstream edge wording would need revision rather than narrowing.</dd>
+  </dl>
+  <p class="muted">6 controls · 5 readouts ·
+  7 confounders · 4 stated limitations</p>
+</section>
+  <section class="panel">
+  <h3>Expert review on record</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>target</th><th>decision</th><th>what changed</th></tr></thead>
+    <tbody><tr><td><code>ac4-interdomain-missense</code></td><td>APPROVED_WITH_MODIFICATION</td><td>Use inter-domain/linker-region as the canonical classification for p.Lys145Gln and p.Met211Ile.</td></tr><tr><td><code>o07</code></td><td>APPROVED_WITH_MODIFICATION</td><td>Classify p.Asn65Ser as a processivity/chain-elongation defect rather than substrate_selective.</td></tr><tr><td><code>disease-entity-scope:SCAR16-vs-SCA48</code></td><td>APPROVED</td><td>Retain SCA48 as a separate disease entity. Its evidence may qualify SCAR16 mechanism claims but remains INDIRECT/QUALIFIES.</td></tr></tbody>
+  </table></div>
+</section>
+  <p class="prov">Source: <code>Autosomal_Recessive_Spinocerebellar_Ataxia_16.yaml</code> ·
+  edge <code>pathophysiology[0].downstream[1]</code> ·
+  DisMech <code>b923d18f1c96</code></p>
+</div></div><div class="v-patient" hidden><div class="disease" data-disease="SCAR16">
+  <header class="dhead">
+    <div>
+      <h2>SCAR16 <span class="gene">STUB1</span></h2>
+      <p class="upstream">Curated claim under test:
+        <span class="claimq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+    </div>
+    <div class="verdict">
+      <span class="vlabel">Engine verdict</span>
+      <span class="pill s-context_dependent">Depends on context</span>
+      
+    </div>
+  </header>
+  <div class="chips"><span class="chip s-supported">2 supported</span><span class="chip s-context_dependent">2 depends on context</span><span class="chip s-insufficient_evidence">1 not enough evidence</span><span class="chip c-verified">18 quote found in the paper</span></div>
+  <div class="claims"><details class="claim">
+  <summary>
+    <span class="claim-text">STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span></span>
+  </summary>
+  <p class="plain">The evidence backs this up.</p>
+  <div class="scope">allele class: U-box missense: p.Thr246Met · alleles: p.Thr246Met</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:24113144</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant protein and cell culture models.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:30222779</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in biophysical and cellular assays; knock-in mouse and rat models in the same study.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span></span>
+  </summary>
+  <p class="plain">The evidence backs this up.</p>
+  <div class="scope">allele class: pre-U-box truncation · alleles: p.Gln118*</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:41851873</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in HEK293T transient overexpression with immunoprecipitation.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-context_dependent">Depends on context</span></span>
+  </summary>
+  <p class="plain">True in some situations and not others.</p>
+  <div class="scope">allele class: TPR-domain missense · alleles: p.Glu28Lys, p.Asn65Ser</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25258038</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>We show that the p.Asn65Ser substitution impairs CHIP&#x27;s ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in in vitro ubiquitination of HSC70.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP assayed below the mutants&#x27; melting temperature.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP panel across SCAR16 alleles.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP panel, E2-dependent chain formation.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:42567515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant protein biochemistry and cellular models, 13 variants.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:35398354</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in biophysical, biochemical and cellular assays; C. elegans model.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-insufficient_evidence">Not enough evidence</span></span>
+  </summary>
+  <p class="plain">Nobody has shown this either way yet.</p>
+  <div class="scope">allele class: inter-domain/linker-region missense · alleles: p.Lys145Gln, p.Met211Ile</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:41851873</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>In addition, the STUB1 missense mutation p.(Lys145Gln) has been found to impair the ubiquitin ligase activity of CHIP [ 9 ].</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is background claim citing someone else, measured in not tested in this paper; introduction sentence citing an earlier study.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP assayed below the mutants&#x27; melting temperature.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP panel across SCAR16 alleles.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP panel, E2-dependent chain formation.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.</span>
+    <span class="claim-tags"><span class="pill s-context_dependent">Depends on context</span></span>
+  </summary>
+  <p class="plain">True in some situations and not others.</p>
+  <div class="scope">allele class: U-box missense · alleles: p.Ser236Thr, p.Met240Thr</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:28396517</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29317501</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP assayed below the mutants&#x27; melting temperature.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:31619515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant CHIP panel across SCAR16 alleles.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:42567515</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.</blockquote>
+  <div class="ev-meta loc">found in: abstract</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in recombinant protein biochemistry and cellular models, 13 variants.</div>
+  
+</li></ul>
+</details></div>
+  <section class="panel">
+  <h3>What is still unknown</h3>
+  <p class="q">Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?</p>
+  <p>This transition is the first molecular step of the upstream SCAR16 mechanism, and every downstream node in the imported pathograph depends on it. Four of the six alleles assayed in PMID:28396517 were not overtly different from wild type, so the upstream edge as worded does not hold allele-wide. Whether these patients&#x27; disease runs through reduced ligase output at all determines (a) whether the edge wording can be retained, (b) whether bulk ubiquitination is a valid assay for allele interpretation, and (c) whether strategies aimed at restoring ligase activity are even addressed at the right defect for these genotypes.</p>
+</section>
+  <section class="panel">
+  <h3>The study that could answer it</h3>
+  <p>STUB1 p.Lys145Gln and p.Met211Ile reduce CHIP-dependent ubiquitination of a restricted subset of CHIP client proteins in human neurons at endogenous dosage, and/or lose activity under proteotoxic stress, despite retaining bulk HSC70 and self-ubiquitination activity in purified recombinant assays.</p>
+  <p class="muted">A result that would show the idea is wrong:
+  p.Lys145Gln and p.Met211Ile neurons are indistinguishable from isogenic wild type in site-level client ubiquitination, substrate turnover and stress response, while p.Thr246Met shows the expected deficit. That outcome refutes the substrate-selective ligase hypothesis and redirects the mechanism to non-ligase CHIP function or to allele-specific protein instability, and the upstream edge wording would need revision rather than narrowing.</p>
+  <p class="tag warn">Research proposal requiring expert review.</p>
+</section>
+  
+  <p class="prov">Source: <code>Autosomal_Recessive_Spinocerebellar_Ataxia_16.yaml</code> ·
+  edge <code>pathophysiology[0].downstream[1]</code> ·
+  DisMech <code>b923d18f1c96</code></p>
+</div></div></div><div class="dpanel" data-disease="SCAR20" hidden><div class="v-scientist"><div class="disease" data-disease="SCAR20">
+  <header class="dhead">
+    <div>
+      <h2>SCAR20 <span class="gene">SNX14</span></h2>
+      <p class="upstream">Curated claim under test:
+        <span class="claimq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+    </div>
+    <div class="verdict">
+      <span class="vlabel">Engine verdict</span>
+      <span class="pill s-context_dependent">Depends on context</span>
+      <span class="rule">rule E2</span>
+    </div>
+  </header>
+  <div class="chips"><span class="chip s-supported">1 supported</span><span class="chip s-partially_supported">3 partly supported</span><span class="chip c-upstream_attested">3 paper identified, text not readable</span><span class="chip c-verified">4 quote found in the paper</span></div>
+  <div class="claims"><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span><span class="rule" title="the rule that produced this status">rule A2</span></span>
+  </summary>
+  
+  <div class="scope">allele class: biallelic loss-of-function · alleles: biallelic SNX14 loss-of-function · cell types: patient neural progenitor cells</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25848753</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>By LC3 flux analysis in nutrient deprived conditions, where LC3II ratios in the presence and absence of lysosomal inhibitors (Leupeptin and NH 4 Cl) were calculated 20 , we identified slower LC3 flux in patient cells compared to controls.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>lc3_flux</dd></div><div><dt>effect</dt><dd>decreased</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block</dd></div><div class="wide"><dt>cell type</dt><dd>patient neural progenitor cells</dd></div></div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25848753</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Importantly, the increased LC3 II levels were recovered to basal rates by forced expression of tagged SNX14 into patient cells ( Fig. 4a ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>lc3_ii_level</dd></div><div><dt>effect</dt><dd>decreased</dd></div><div><dt>critic fit</dt><dd>SUPPORTS / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>patient cells with genetic complementation by tagged SNX14</dd></div><div class="wide"><dt>cell type</dt><dd>patient neural progenitor cells</dd></div></div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss blocks autophagosome-lysosome fusion.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span><span class="rule" title="the rule that produced this status">rule A7</span></span>
+  </summary>
+  
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>indicating that loss of SNX14 did not impact autophagosome-lysosome fusion</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>autophagosome_lysosome_fusion</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>HEK293 SNX14 knockout, tandem fluorescent LC3 reporter</dd></div><div class="wide"><dt>cell type</dt><dd>HEK293</dd></div></div>
+  <ul class="limits"><li>Span not independently located: source text was not retrievable. Weight capped at QUALIFIES.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss impairs autolysosome formation.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span><span class="rule" title="the rule that produced this status">rule A7</span></span>
+  </summary>
+  
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>autolysosome_formation</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>SCAR20 patient fibroblasts, marker colocalisation and p62 degradation</dd></div><div class="wide"><dt>cell type</dt><dd>patient fibroblasts</dd></div></div>
+  <ul class="limits"><li>Span not independently located: source text was not retrievable. Weight capped at QUALIFIES.</li></ul>
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss impairs autophagosome clearance in non-neural patient cells.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span><span class="rule" title="the rule that produced this status">rule A7</span></span>
+  </summary>
+  
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function · cell types: patient fibroblasts, HEK293</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-grid"><div><dt>readout</dt><dd>autolysosome_formation</dd></div><div><dt>effect</dt><dd>unchanged</dd></div><div><dt>critic fit</dt><dd>QUALIFIES / DIRECT</dd></div><div><dt>origin</dt><dd>PRIMARY_RESULT</dd></div><div class="wide"><dt>system</dt><dd>SCAR20 patient fibroblasts, marker colocalisation and p62 degradation</dd></div><div class="wide"><dt>cell type</dt><dd>patient fibroblasts</dd></div></div>
+  <ul class="limits"><li>Span not independently located: source text was not retrievable. Weight capped at QUALIFIES.</li></ul>
+</li></ul>
+</details></div>
+  <section class="panel thin">
+  <h3>Open question</h3>
+  <p class="muted">Not generated for this disease yet. The refinement above is
+  complete; the gap and experiment generator currently runs for SCAR16 only.</p>
+</section>
+  
+  
+  <p class="prov">Source: <code>Autosomal_Recessive_Spinocerebellar_Ataxia_20.yaml</code> ·
+  edge <code>pathophysiology[1].downstream[0]</code> ·
+  DisMech <code>b923d18f1c96</code></p>
+</div></div><div class="v-patient" hidden><div class="disease" data-disease="SCAR20">
+  <header class="dhead">
+    <div>
+      <h2>SCAR20 <span class="gene">SNX14</span></h2>
+      <p class="upstream">Curated claim under test:
+        <span class="claimq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+    </div>
+    <div class="verdict">
+      <span class="vlabel">Engine verdict</span>
+      <span class="pill s-context_dependent">Depends on context</span>
+      
+    </div>
+  </header>
+  <div class="chips"><span class="chip s-supported">1 supported</span><span class="chip s-partially_supported">3 partly supported</span><span class="chip c-upstream_attested">3 paper identified, text not readable</span><span class="chip c-verified">4 quote found in the paper</span></div>
+  <div class="claims"><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.</span>
+    <span class="claim-tags"><span class="pill s-supported">Supported</span></span>
+  </summary>
+  <p class="plain">The evidence backs this up.</p>
+  <div class="scope">allele class: biallelic loss-of-function · alleles: biallelic SNX14 loss-of-function · cell types: patient neural progenitor cells</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25848753</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>By LC3 flux analysis in nutrient deprived conditions, where LC3II ratios in the presence and absence of lysosomal inhibitors (Leupeptin and NH 4 Cl) were calculated 20 , we identified slower LC3 flux in patient cells compared to controls.</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block.</div>
+  
+</li><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:25848753</code>
+    <span class="cite c-verified">quote found in the paper</span>
+  </div>
+  
+  <blockquote>Importantly, the increased LC3 II levels were recovered to basal rates by forced expression of tagged SNX14 into patient cells ( Fig. 4a ).</blockquote>
+  <div class="ev-meta loc">found in: full text</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in patient cells with genetic complementation by tagged SNX14.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss blocks autophagosome-lysosome fusion.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span></span>
+  </summary>
+  <p class="plain">Some evidence backs this up, but only partly.</p>
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>indicating that loss of SNX14 did not impact autophagosome-lysosome fusion</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in HEK293 SNX14 knockout, tandem fluorescent LC3 reporter.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss impairs autolysosome formation.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span></span>
+  </summary>
+  <p class="plain">Some evidence backs this up, but only partly.</p>
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in SCAR20 patient fibroblasts, marker colocalisation and p62 degradation.</div>
+  
+</li></ul>
+</details><details class="claim">
+  <summary>
+    <span class="claim-text">SNX14 loss impairs autophagosome clearance in non-neural patient cells.</span>
+    <span class="claim-tags"><span class="pill s-partially_supported">Partly supported</span></span>
+  </summary>
+  <p class="plain">Some evidence backs this up, but only partly.</p>
+  <div class="scope">allele class: biallelic loss-of-function or knockout · alleles: SNX14 knockout, biallelic SNX14 loss-of-function · cell types: patient fibroblasts, HEK293</div>
+  <ul class="ev-list"><li class="ev">
+  <div class="ev-head">
+    <code class="src">PMID:29635513</code>
+    <span class="cite c-upstream_attested">paper identified, text not readable</span>
+  </div>
+  <div class="ev-meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <div class="ev-meta loc">found in: upstream curated snippet</div>
+  <div class="ev-meta">This is the paper&#x27;s own result, measured in SCAR20 patient fibroblasts, marker colocalisation and p62 degradation.</div>
+  
+</li></ul>
+</details></div>
+  <section class="panel thin">
+  <h3>Open question</h3>
+  <p class="muted">Not generated for this disease yet. The refinement above is
+  complete; the gap and experiment generator currently runs for SCAR16 only.</p>
+</section>
+  
+  
+  <p class="prov">Source: <code>Autosomal_Recessive_Spinocerebellar_Ataxia_20.yaml</code> ·
+  edge <code>pathophysiology[1].downstream[0]</code> ·
+  DisMech <code>b923d18f1c96</code></p>
+</div></div></div>
+
+  <div class="v-scientist"><section class="panel action">
+  <h3>Can this experiment be run?</h3>
+  <p class="verdictline"><span class="pill s-missing_capability">MISSING_CAPABILITY</span>
+    <span class="muted">14 candidate groups examined</span></p>
+  <div class="two">
+    <div>
+      <h4>Still missing</h4>
+      <ul class="bullets"><li>iPSC maintenance</li><li>clone-aware statistical analysis</li></ul>
+      <h4>Evidenced</h4>
+      <ul class="bullets"><li>STUB1 CRISPR editing</li><li>diGly enrichment proteomics</li><li>iPSC neuronal differentiation</li><li>isogenic line generation</li><li>protein thermal-stability assay</li><li>quantitative ubiquitination analysis</li></ul>
+    </div>
+    <div>
+      <h4>What is unverified</h4>
+      <ul class="bullets"><li>Current affiliations were not verified: institution strings are publication affiliations at time of publication only.</li><li>No evidence was found that either group performs STUB1 allele-specific endogenous knock-in editing.</li><li>No evidence was found for diGly-enriched ubiquitinome proteomics access.</li><li>The published patient iPSC genotype is not a substitute for K145Q/M211I isogenic lines, and its availability is unknown.</li><li>NIH RePORTER returned no active grant for STUB1 mechanism work; the only topically related award ended in 2011.</li><li>Institutional pages, repositories and patient-organization sites were not searched in this run.</li><li>Willingness to collaborate was not assessed for any person or group.</li></ul>
+    </div>
+  </div>
+  <h4>Assets found</h4>
+  <ul class="bullets"><li><strong>ipsc_line</strong> &mdash; Establishment of STUB1/CHIP mutant induced pluripotent stem cells (iPSCs) from a patient with Gordon Holmes syndrome/SCAR16.<br><span class="muted">Unknown: no repository deposit or availability statement was located</span><br><span class="tag">REQUIRES_VALIDATION</span></li><li><strong>assay</strong> &mdash; Published CHIP variant functional-assay methods<br><span class="muted">Methods published; materials, transferability and neuronal applicability unverified</span><br><span class="tag">REQUIRES_VALIDATION</span></li><li><strong>registry</strong> &mdash; Rare Disease Patient Registry &amp; Natural History Study - Coordination of Rare Diseases at Sanford<br><span class="muted">Registry status RECRUITING as recorded in the cached ClinicalTrials.gov record; enrolment terms not verified</span><br><span class="tag">REQUIRES_VALIDATION</span></li></ul>
+  <h4>Where we looked</h4>
+  <div class="tablewrap"><table>
+    <thead><tr><th>source</th><th>status</th><th>hits</th><th>why not</th></tr></thead>
+    <tbody><tr><td>PubMed</td><td><span class="cov v-checked">CHECKED</span></td><td class="num">48</td><td></td></tr><tr><td>NIH RePORTER</td><td><span class="cov v-checked">CHECKED</span></td><td class="num">214</td><td></td></tr><tr><td>ClinicalTrials.gov</td><td><span class="cov v-checked">CHECKED</span></td><td class="num">23</td><td></td></tr><tr><td>PubMed (targeted capability queries)</td><td><span class="cov v-checked">CHECKED</span></td><td class="num">254</td><td></td></tr><tr><td>Bright Data</td><td><span class="cov v-failed">FAILED</span></td><td class="num">&mdash;</td><td>BRIGHTDATA_API_TOKEN and BRIGHTDATA_DATASET_ID are not configured.</td></tr><tr><td>Institutional web pages</td><td><span class="cov v-not_started">NOT_STARTED</span></td><td class="num">&mdash;</td><td></td></tr><tr><td>NORD / Global Genes / Orphanet</td><td><span class="cov v-not_started">NOT_STARTED</span></td><td class="num">&mdash;</td><td></td></tr><tr><td>Cell-line and plasmid repositories</td><td><span class="cov v-not_started">NOT_STARTED</span></td><td class="num">&mdash;</td><td></td></tr></tbody>
+  </table></div>
+  <p class="muted">NOT ASSESSED: no ResearchProgram records were built, because institutional, foundation and company program sources were not searched.</p>
+  <p><strong>Next step:</strong> Obtain expert review of the experiment, then verify current affiliation and activity for both author groups, ask whether the published iPSC line is available, and identify a collaborator for STUB1 knock-in editing and diGly ubiquitinome proteomics, which no candidate currently evidences.</p>
+</section></div>
+  <div class="v-patient" hidden><section class="panel action">
+  <h3>Could anyone run this study?</h3>
+  <p class="verdictline"><span class="pill s-missing_capability">Not yet</span></p>
+  <p>Researchers have shown that different STUB1 gene changes affect the CHIP protein in different ways. For two changes in the middle of the protein, it is still unknown whether they harm CHIP&#x27;s job inside nerve cells. The proposed study would test exactly that, using nerve cells grown from stem cells.
+
+We looked for groups who could help. One group has previously made stem cells from a person with this condition and turned them into nerve cells. Another group has studied how CHIP protein changes behave in the test tube. Both published that work, so we know it happened, but we could not confirm that they are still doing it today, or that they would be able or willing to take this on.
+
+Two things nobody we found can currently show they can do are: making the exact gene changes in stem cells, and the specialised protein measurement the study needs. There is also a rare-disease patient registry that lists this condition, which may help identify affected families.
+
+This is a starting point, not a plan. A qualified scientist needs to review the study first, and the groups would need to be contacted to confirm what they can actually do. Where we could not search a source, that means we do not know - not that nothing is out there.</p>
+  <h4>Still needed</h4>
+  <ul class="bullets"><li>iPSC maintenance</li><li>clone-aware statistical analysis</li></ul>
+</section></div>
+
+  <footer>
+    <h4>What this does and does not show</h4>
+    <ul>
+      <li>Upstream claims come from DisMech read-only; nothing upstream was edited.</li>
+      <li>A quoted passage marked <em>quote found in the paper</em> was located in text
+      retrieved from the source. <em>Text not readable</em> means the paper was
+      identified but could not be read, so the quote is neither confirmed nor
+      disproved &mdash; such evidence can qualify a claim but never settle one.</li>
+      <li>Evidence extraction is done by hand. It is the least validated step.</li>
+      <li>No researcher, laboratory or organisation named in the action section has
+      been contacted, and none has confirmed any capability.</li>
+    </ul>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var sci = document.getElementById("v-sci");
+  var pat = document.getElementById("v-pat");
+  function setView(view) {
+    var isSci = view === "scientist";
+    sci.setAttribute("aria-pressed", String(isSci));
+    pat.setAttribute("aria-pressed", String(!isSci));
+    document.querySelectorAll(".v-scientist").forEach(function (el) { el.hidden = !isSci; });
+    document.querySelectorAll(".v-patient").forEach(function (el) { el.hidden = isSci; });
+    try { localStorage.setItem("ledger.view", view); } catch (e) { }
+  }
+  sci.addEventListener("click", function () { setView("scientist"); });
+  pat.addEventListener("click", function () { setView("patient"); });
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function setDisease(name) {
+    tabs.forEach(function (tab) {
+      tab.setAttribute("aria-selected", String(tab.dataset.target === name));
+    });
+    document.querySelectorAll(".dpanel").forEach(function (panel) {
+      panel.hidden = panel.dataset.disease !== name;
+    });
+    try { localStorage.setItem("ledger.disease", name); } catch (e) { }
+  }
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () { setDisease(tab.dataset.target); });
+  });
+
+  try {
+    var v = localStorage.getItem("ledger.view");
+    if (v) { setView(v); }
+    var d = localStorage.getItem("ledger.disease");
+    if (d && tabs.some(function (t) { return t.dataset.target === d; })) { setDisease(d); }
+  } catch (e) { }
+})();
+</script>
