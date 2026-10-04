@@ -1,6 +1,7 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
+import App from "./App";
 import { CasesScreen } from "./cases";
 import { loadCases } from "./data";
 
@@ -70,5 +71,59 @@ describe("three worked cases", () => {
         }
       }
     }
+  });
+});
+
+describe("every case is walkable end to end", () => {
+  const JOURNEY = [
+    "/disease", "/connections", "/evidence", "/unknown",
+    "/experiment", "/existing-work", "/next-steps",
+  ];
+
+  function renderCase(route: string, caseId: string) {
+    window.location.hash = `${route}?case=${caseId}`;
+    return render(<App />);
+  }
+
+  it("shows the selected disease, not a different one", () => {
+    // The bug this guards: only the opening screen followed the selection, so
+    // choosing any case and clicking through silently showed the first case's
+    // connection, bridge and experiment.
+    const result = loadCases();
+    if (!result.ok) throw new Error("cases unavailable");
+    for (const item of result.cases.cases) {
+      cleanup();
+      renderCase("/disease", item.case_id);
+      // The narrated case shows a short friendly name, so match on a
+      // distinctive fragment rather than the full label.
+      const fragment = item.starting_disease.name.split(" ").slice(-2).join(" ");
+      expect(
+        screen.getAllByText(new RegExp(fragment, "i")).length,
+      ).toBeGreaterThan(0);
+    }
+  });
+
+  it("renders every screen for every case without crashing", () => {
+    const result = loadCases();
+    if (!result.ok) throw new Error("cases unavailable");
+    for (const item of result.cases.cases) {
+      for (const route of JOURNEY) {
+        cleanup();
+        expect(() => renderCase(route, item.case_id)).not.toThrow();
+        // Something must render: a case with no connection shows why, rather
+        // than an empty shell.
+        expect(screen.getAllByRole("heading").length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("says so rather than showing an empty journey where no connection held", () => {
+    const result = loadCases();
+    if (!result.ok) throw new Error("cases unavailable");
+    const empty = result.cases.cases.find((c) => c.outcome === "NO_DEFENSIBLE_CONNECTION");
+    if (!empty) throw new Error("expected a case with no connection");
+    cleanup();
+    renderCase("/experiment", empty.case_id);
+    expect(screen.getByText(/No connection found/i)).toBeTruthy();
   });
 });

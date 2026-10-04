@@ -245,6 +245,7 @@ const CaseGoal1Schema = z.object({
   ),
   selected_neighbor: z.object({ id: z.string(), name: z.string() }).nullable(),
   selection: z.unknown().optional(),
+  why_this_matters: z.string().optional(),
   identity_result: z
     .object({ relation: z.string().nullable(), scoped: z.array(z.unknown()) })
     .optional(),
@@ -276,11 +277,14 @@ const CaseGoal3Schema = z.object({
     id: z.string(),
     question: z.string(),
     why_it_matters: z.string(),
+    missing_evidence: z.array(z.string()),
   }),
   experiment: z.object({
     id: z.string(),
     hypothesis: z.string(),
     competing_hypothesis: z.string(),
+    model_system: z.string(),
+    comparator: z.string(),
     primary_readout: z.string(),
     secondary_readouts: z.array(z.string()),
     limitations: z.array(z.string()),
@@ -315,6 +319,7 @@ const CaseGoal2Schema = z.object({
     z.object({ capability: z.string(), status: z.string(), note: z.string() }),
   ),
   coordination_opportunities: z.array(z.unknown()),
+  coordination_note: z.string(),
   execution_topology: z.string(),
   collaborator_status: z.string(),
   first_contact: z.unknown(),

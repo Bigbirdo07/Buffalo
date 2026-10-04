@@ -171,6 +171,10 @@ def build_case(spec: CaseSpec) -> dict:
     flagship = journey["flagship"]
     trace = traces.get(flagship["disease_b"], {})
     case["goal1"].update({
+        "why_this_matters": (
+            "The pair was retrieved on a broad annotation. Whether that annotation "
+            "is why the pair is real is decided by evidence, separately."
+        ),
         "selection": journey.get("selection_decision", {}),
         "retrieval_reason": {
             "types": flagship["retrieval_reason"],
@@ -201,11 +205,17 @@ def build_case(spec: CaseSpec) -> dict:
             "id": journey["knowledge_gap"]["gap_id"],
             "question": journey["knowledge_gap"]["question"],
             "why_it_matters": journey["knowledge_gap"]["why_it_matters"],
+            "missing_evidence": list(journey["knowledge_gap"]["missing_evidence_type"]),
         },
+        # Every field the journey screens read. A case that carries less than
+        # this renders another case's data in its place, which is worse than
+        # rendering nothing.
         "experiment": {
             "id": journey["experiment"]["experiment_id"],
             "hypothesis": journey["experiment"]["hypothesis"],
             "competing_hypothesis": journey["experiment"]["competing_hypothesis"],
+            "model_system": journey["experiment"]["model_system"],
+            "comparator": journey["experiment"]["comparator"],
             "primary_readout": journey["experiment"]["primary_readout"],
             "secondary_readouts": list(journey["experiment"]["secondary_readouts"]),
             "limitations": list(journey["experiment"]["known_limitations"]),
@@ -245,6 +255,10 @@ def build_case(spec: CaseSpec) -> dict:
                 if c["status"] in {"MISSING", "UNKNOWN"}
             ],
             "coordination_opportunities": goal2["potential_coordination_opportunities"],
+            "coordination_note": (
+                "No sufficiently supported evidence of overlapping or duplicative "
+                "programs was found in the searched evidence."
+            ),
             "execution_topology": goal2["collaboration_topology"],
             "collaborator_status": goal2["collaborator_status"],
             "first_contact": goal2["first_contact"],

@@ -1,6 +1,6 @@
 {
   "schema_version": "demo-cases-v1",
-  "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+  "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
   "case_count": 5,
   "default_case": "scar16",
   "cases": [
@@ -128,6 +128,7 @@
           "id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
           "name": "Lafora Disease"
         },
+        "why_this_matters": "The pair was retrieved on a broad annotation. Whether that annotation is why the pair is real is decided by evidence, separately.",
         "selection": {
           "schema_version": "flagship-selection-decision-v1",
           "algorithm_version": "flagship-selection-v2",
@@ -362,12 +363,18 @@
         "knowledge_gap": {
           "id": "9e74e79e-f1cb-51cc-8ee4-5021eeebaccb",
           "question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
-          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross."
+          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+          "missing_evidence": [
+            "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+            "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+          ]
         },
         "experiment": {
           "id": "3c4fd926-6d41-59e0-837a-e6194a657787",
           "hypothesis": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
           "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+          "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+          "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
           "primary_readout": "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
           "secondary_readouts": [
             "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
@@ -582,6 +589,7 @@
           }
         ],
         "coordination_opportunities": [],
+        "coordination_note": "No sufficiently supported evidence of overlapping or duplicative programs was found in the searched evidence.",
         "execution_topology": "MULTI_PARTY_EXECUTABLE",
         "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
         "first_contact": {
@@ -592,7 +600,7 @@
         }
       },
       "provenance": {
-        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
         "candidates_from": "data/cross_disease"
       },
       "disclaimer": {
@@ -686,6 +694,7 @@
           "id": "d98465f3-1239-5044-8e4e-17509ab8200e",
           "name": "Cerebellar Ataxia-Hypogonadism Syndrome"
         },
+        "why_this_matters": "The pair was retrieved on a broad annotation. Whether that annotation is why the pair is real is decided by evidence, separately.",
         "selection": {
           "schema_version": "flagship-selection-decision-v1",
           "algorithm_version": "flagship-selection-v2",
@@ -905,12 +914,18 @@
         "knowledge_gap": {
           "id": "ea6bff34-89f5-5cf2-a2d2-e8f20f9fd1a6",
           "question": "Do Lafora_Disease and Cerebellar Ataxia-Hypogonadism Syndrome converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
-          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross."
+          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+          "missing_evidence": [
+            "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+            "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+          ]
         },
         "experiment": {
           "id": "1f45d38f-cb87-5f1f-9bc9-c39482d1e03a",
           "hypothesis": "Lafora_Disease and Cerebellar Ataxia-Hypogonadism Syndrome disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
           "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+          "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+          "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
           "primary_readout": "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
           "secondary_readouts": [
             "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
@@ -1061,6 +1076,7 @@
           }
         ],
         "coordination_opportunities": [],
+        "coordination_note": "No sufficiently supported evidence of overlapping or duplicative programs was found in the searched evidence.",
         "execution_topology": "PARTIALLY_EXECUTABLE",
         "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
         "first_contact": {
@@ -1071,7 +1087,7 @@
         }
       },
       "provenance": {
-        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
         "candidates_from": "data/cross_disease_lafora"
       },
       "disclaimer": {
@@ -1208,6 +1224,7 @@
           "id": "91ee62a2-b39d-54ea-9d2f-d455b0734511",
           "name": "Uveitis"
         },
+        "why_this_matters": "The pair was retrieved on a broad annotation. Whether that annotation is why the pair is real is decided by evidence, separately.",
         "selection": {
           "schema_version": "flagship-selection-decision-v1",
           "algorithm_version": "flagship-selection-v2",
@@ -1517,12 +1534,18 @@
         "knowledge_gap": {
           "id": "323f8ac5-31d6-5e3e-b9a4-7983382ef74d",
           "question": "Do Ankylosing Spondylitis and Uveitis converge on a shared functional defect in HLA, ERAP1, TNFAIP3, MHC in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
-          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross."
+          "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+          "missing_evidence": [
+            "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+            "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+          ]
         },
         "experiment": {
           "id": "c7ec377a-c69e-5215-a320-103b291ce6b7",
           "hypothesis": "Ankylosing Spondylitis and Uveitis disrupt HLA, ERAP1, TNFAIP3, MHC equivalently, so the same functional readout reports the same defect in both.",
           "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+          "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+          "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
           "primary_readout": "Functional response of HLA activity to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
           "secondary_readouts": [
             "diGly assay reporting T-helper 17 type immune response as a supporting molecular profile, interpreted only alongside the primary functional readout",
@@ -1641,6 +1664,7 @@
           }
         ],
         "coordination_opportunities": [],
+        "coordination_note": "No sufficiently supported evidence of overlapping or duplicative programs was found in the searched evidence.",
         "execution_topology": "MULTI_PARTY_EXECUTABLE",
         "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
         "first_contact": {
@@ -1650,7 +1674,7 @@
         }
       },
       "provenance": {
-        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
         "candidates_from": "data/cross_disease_as"
       },
       "disclaimer": {
@@ -1749,7 +1773,7 @@
       "goal3": null,
       "goal2": null,
       "provenance": {
-        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
         "candidates_from": "data/cross_disease_zsd"
       },
       "disclaimer": {
@@ -1859,7 +1883,7 @@
       "goal3": null,
       "goal2": null,
       "provenance": {
-        "software_commit": "393b84a97960baaa0a2d429bad0a6d0790e6ff81",
+        "software_commit": "3d04adc605ebdd94caa6d6d03aad0999eff228fc",
         "candidates_from": "data/cross_disease_scar20"
       },
       "disclaimer": {
