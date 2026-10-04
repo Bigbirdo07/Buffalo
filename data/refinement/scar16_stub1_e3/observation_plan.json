@@ -116,5 +116,12 @@
       "pmcid": "PMC9097460",
       "found_by": "pm_negative"
     }
+  },
+  "coverage_queries": {
+    "pm_allele": "(STUB1[tiab] OR CHIP[tiab]) AND (E28K[tiab] OR K145Q[tiab] OR M211I[tiab] OR S236T[tiab] OR N65S[tiab] OR T246M[tiab] OR Lys145Gln[tiab] OR Met211Ile[tiab] OR Glu28Lys[tiab] OR Ser236Thr[tiab])",
+    "pm_function": "STUB1[tiab] AND (SCAR16[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"Gordon Holmes\"[tiab]) AND (ubiquitin*[tiab] OR \"E3 ligase\"[tiab] OR \"ligase activity\"[tiab])",
+    "pm_sca48": "STUB1[tiab] AND (SCA48[tiab] OR \"spinocerebellar ataxia 48\"[tiab] OR \"spinocerebellar ataxia type 48\"[tiab])",
+    "pm_models": "STUB1[tiab] AND ataxia[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab] OR neurons[tiab] OR fibroblasts[tiab] OR mice[tiab] OR rats[tiab] OR zebrafish[tiab])",
+    "pm_negative": "(STUB1[tiab] OR CHIP[tiab]) AND (SCAR16[tiab] OR SCA48[tiab]) AND (\"retain*\"[tiab] OR \"preserved\"[tiab] OR \"not affect*\"[tiab] OR \"dominant negative\"[tiab] OR \"gain of function\"[tiab] OR \"toxic\"[tiab])"
   }
 }

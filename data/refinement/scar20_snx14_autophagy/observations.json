@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "note": "Each observation names a source, a locator and the classification the extractor assigns. Locators resolve to the verbatim sentence in the cached snapshot; a locator that matches nothing fails the build. Effect labels follow the reviewer decision that a sub-step defect must not be called selectivity.",
+  "observations": [
+    {
+      "id": "s01",
+      "source": "upstream:pathophysiology[2].evidence[0]",
+      "claims": [
+        "ac1-lc3-flux-npc"
+      ],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "biallelic SNX14 loss-of-function (patient NPC)"
+      ],
+      "readout": "lc3_flux",
+      "effect": "decreased",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block",
+      "location": "full_text",
+      "locator": "we identified slower LC3 flux",
+      "note": "Genuine flux measurement with lysosomal inhibitors, not inferred from steady-state LC3-II. This is the strongest support for the edge and it is specific to neural progenitors.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Patient-derived cells from individuals with biallelic SNX14 variants."
+        },
+        {
+          "field": "cell_type",
+          "value": "patient neural progenitor cells",
+          "locator": "lysosomes appeared increased in size in patient NPCs"
+        },
+        {
+          "field": "experimental_system",
+          "value": "nutrient deprivation with lysosomal inhibitors (leupeptin, NH4Cl)",
+          "locator": "in the presence and absence of lysosomal inhibitors"
+        },
+        {
+          "field": "assay",
+          "value": "LC3-II flux ratio",
+          "locator": "By LC3 flux analysis in nutrient deprived conditions"
+        },
+        {
+          "field": "readout",
+          "value": "LC3 flux",
+          "locator": "we identified slower LC3 flux"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "source": "upstream:pathophysiology[2].evidence[1]",
+      "claims": [
+        "ac1-lc3-flux-npc"
+      ],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "biallelic SNX14 loss-of-function (patient NPC)"
+      ],
+      "readout": "lc3_ii_level",
+      "effect": "decreased",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "patient cells with genetic complementation by tagged SNX14",
+      "location": "full_text",
+      "locator": "recovered to basal rates by forced expression of tagged SNX14",
+      "note": "Genetic complementation: re-expression of SNX14 normalised elevated LC3-II, establishing SNX14 dependence of the readout. Same publication as s01, so not an independent source.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Patient-derived cells; complementation performed in the same cells."
+        },
+        {
+          "field": "intervention",
+          "value": "forced expression of tagged SNX14 in patient cells",
+          "locator": "forced expression of tagged SNX14 into patient cells"
+        },
+        {
+          "field": "readout",
+          "value": "LC3-II level",
+          "locator": "the increased LC3 II levels were recovered to basal rates"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "source": "upstream:pathophysiology[2].evidence[2]",
+      "claims": [
+        "ac2-fusion-block"
+      ],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "SNX14 knockout"
+      ],
+      "readout": "autophagosome_lysosome_fusion",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "HEK293 SNX14 knockout, tandem fluorescent LC3 reporter",
+      "location": "upstream_curated_snippet",
+      "note": "Refutes a general fusion block. Measured in HEK293, a non-neural line, so it constrains the fusion sub-step rather than the neural-progenitor clearance finding. Full text is not open access, so the results-section span cannot be located.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human HEK293 line and human patient fibroblasts."
+        },
+        {
+          "field": "cell_type",
+          "value": "HEK293 (non-neural)",
+          "locator": "SNX14"
+        },
+        {
+          "field": "readout",
+          "value": "autophagosome-lysosome fusion by tandem fluorescent LC3",
+          "locator": "autophagosome|autophag"
+        }
+      ],
+      "span_from": "upstream_snippet"
+    },
+    {
+      "id": "s04",
+      "source": "upstream:pathophysiology[2].evidence[3]",
+      "claims": [
+        "ac3-autolysosome-formation",
+        "ac4-nonneural-clearance"
+      ],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "biallelic SNX14 loss-of-function (fibroblast)"
+      ],
+      "readout": "autolysosome_formation",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "SCAR20 patient fibroblasts, marker colocalisation and p62 degradation",
+      "location": "upstream_curated_snippet",
+      "note": "Preserved autolysosome formation in patient fibroblasts under the tested conditions. Patient cells, but a non-neural cell type. Full text is not open access.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "SNX14"
+        },
+        {
+          "field": "cell_type",
+          "value": "patient fibroblasts (non-neural)",
+          "locator": "fibroblast"
+        },
+        {
+          "field": "readout",
+          "value": "autophagosome/lysosome marker colocalisation and p62 degradation",
+          "locator": "lipid|autophag"
+        }
+      ],
+      "span_from": "upstream_snippet"
+    },
+    {
+      "id": "s05",
+      "source": "upstream:pathophysiology[1].evidence[2]",
+      "claims": [],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "p.Ala603_Gly632del"
+      ],
+      "readout": "autophagic_cargo_degradation",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "patient fibroblasts carrying a PX-domain in-frame deletion, Torin1 stimulation",
+      "location": "upstream_curated_snippet",
+      "note": "Allele-dependent context, reviewed against no claim here: the PX-domain in-frame deletion retains a normal Torin1 response, so allele identity may drive the discordance as much as cell type. Recorded as gap context.",
+      "context": [
+        {
+          "field": "variant",
+          "value": "p.Ala603_Gly632del (PX-domain in-frame deletion)",
+          "locator": "SNX14"
+        },
+        {
+          "field": "cell_type",
+          "value": "patient fibroblasts",
+          "locator": "SNX14|lipid"
+        },
+        {
+          "field": "intervention",
+          "value": "Torin1 stimulation",
+          "locator": "SNX14|lipid"
+        }
+      ],
+      "span_from": "upstream_snippet"
+    },
+    {
+      "id": "s06",
+      "source": "upstream:pathophysiology[2].evidence[0]",
+      "claims": [],
+      "disease_entity": "SCAR20",
+      "variants": [
+        "biallelic SNX14 loss-of-function (patient NPC)"
+      ],
+      "readout": "autophagosome_formation",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "patient-derived neural progenitor cells",
+      "location": "full_text",
+      "locator": "no differences observed in autophagosome formation",
+      "note": "The supporting publication itself reports that autophagosome FORMATION is unchanged while flux is slowed. Recorded against no claim: it localises the defect to a clearance step rather than to initiation, and is required gap context.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Same patient neural progenitors as s01."
+        },
+        {
+          "field": "cell_type",
+          "value": "patient neural progenitor cells",
+          "locator": "lysosomes appeared increased in size in patient NPCs"
+        },
+        {
+          "field": "readout",
+          "value": "autophagosome formation",
+          "locator": "no differences observed in autophagosome formation"
+        }
+      ]
+    }
+  ]
+}

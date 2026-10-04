@@ -154,11 +154,62 @@ def build_observation(
     gene: str,
     sources: Sequence[SourceText],
     uniprot_features: Sequence[tuple[str, int, int, str]],
+    upstream_snippet: str | None = None,
 ) -> EvidenceObservation:
+    """Build one observation.
+
+    An entry normally supplies a ``locator`` resolved against retrieved source
+    text. When the source text is not retrievable at all -- a results section
+    behind a paywall, for instance -- the entry may instead set
+    ``span_from: "upstream_snippet"``, which takes the span from the upstream
+    curator's own verbatim quotation. That is weaker evidence and must stay
+    visibly weaker: the span was never independently located, so the citation
+    check reports it as unverified rather than accepting it. Fabricating a span
+    by loosening a locator until it matches some unrelated sentence would be far
+    worse, so that path is closed.
+    """
     location = str(entry["location"])
-    resolved = resolve_locator(str(entry["locator"]), sources, expected_location=location)
+    if entry.get("span_from") == "upstream_snippet":
+        if not upstream_snippet:
+            raise ExtractionError(
+                f"observation {entry['id']!r} requests the upstream snippet but the "
+                "imported evidence item has none"
+            )
+        resolved = ResolvedSpan(span=upstream_snippet, location="upstream_curated_snippet")
+    else:
+        resolved = resolve_locator(
+            str(entry["locator"]), sources, expected_location=location
+        )
     variants = tuple(str(item) for item in entry.get("variants") or ())
-    context = build_context(entry.get("context") or (), sources, expected_location=location)
+    if entry.get("span_from") == "upstream_snippet":
+        # Context cannot be STATED against text we could not retrieve.
+        context = build_context(
+            tuple(
+                {
+                    key: value
+                    for key, value in item.items()
+                    if key != "locator"
+                }
+                | (
+                    {
+                        "derivation": item.get("derivation")
+                        or (
+                            "taken from the upstream curated record; the source text "
+                            "was not retrievable for independent location"
+                        )
+                    }
+                    if not item.get("derivation")
+                    else {}
+                )
+                for item in (entry.get("context") or ())
+            ),
+            sources,
+            expected_location=location,
+        )
+    else:
+        context = build_context(
+            entry.get("context") or (), sources, expected_location=location
+        )
     context = (*context, *derive_protein_domains(variants, uniprot_features))
     return EvidenceObservation(
         observation_id=str(entry["id"]),

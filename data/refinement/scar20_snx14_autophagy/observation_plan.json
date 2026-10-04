@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "extractor": "claude-opus-5 (Claude Code session)",
+    "extraction_date": "2026-10-03",
+    "status": "EXTRACTED",
+    "human_verified": false,
+    "note": "Second disease, run to test whether the Phase 3 rules generalize without modification. Locators are short regular expressions; build-time resolution copies the verbatim sentence out of the cached snapshot so no span is retyped.",
+    "reviewer_decisions_applied": [
+      "review:scar16:n65s-effect-classification (effect labels must distinguish a sub-step defect from selectivity)"
+    ]
+  },
+  "target": {
+    "disease_file": "data/upstream/dismech-checkout/kb/disorders/Autosomal_Recessive_Spinocerebellar_Ataxia_20.yaml",
+    "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "edge_path": "pathophysiology[1].downstream[0]",
+    "gene": "SNX14",
+    "uniprot": "Q9Y5W7",
+    "disease_scope": [
+      "SCAR20"
+    ]
+  },
+  "readout_family": [
+    "lc3_flux",
+    "lc3_ii_level",
+    "autophagosome_lysosome_fusion",
+    "autolysosome_formation",
+    "autophagic_cargo_degradation"
+  ],
+  "atomic_claims": [
+    {
+      "claim_id": "ac1-lc3-flux-npc",
+      "statement": "SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.",
+      "variant_scope": [
+        "biallelic SNX14 loss-of-function (patient NPC)"
+      ],
+      "scope_class": "patient-derived neural progenitor cells"
+    },
+    {
+      "claim_id": "ac2-fusion-block",
+      "statement": "SNX14 loss blocks autophagosome-lysosome fusion.",
+      "variant_scope": [
+        "SNX14 knockout",
+        "biallelic SNX14 loss-of-function"
+      ],
+      "scope_class": "autophagosome-lysosome fusion step"
+    },
+    {
+      "claim_id": "ac3-autolysosome-formation",
+      "statement": "SNX14 loss impairs autolysosome formation.",
+      "variant_scope": [
+        "SNX14 knockout",
+        "biallelic SNX14 loss-of-function"
+      ],
+      "scope_class": "autolysosome formation step"
+    },
+    {
+      "claim_id": "ac4-nonneural-clearance",
+      "statement": "SNX14 loss impairs autophagosome clearance in non-neural patient cells.",
+      "variant_scope": [
+        "biallelic SNX14 loss-of-function (fibroblast)",
+        "SNX14 knockout (HEK293)"
+      ],
+      "scope_class": "non-neural cells"
+    }
+  ],
+  "coverage_queries": {
+    "pm_gene_autophagy": "SNX14[tiab] AND (autophag*[tiab] OR LC3[tiab] OR lysosom*[tiab])",
+    "pm_gene_disease": "SNX14[tiab] AND (SCAR20[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"cerebellar atrophy\"[tiab])",
+    "pm_negative": "SNX14[tiab] AND (\"did not\"[tiab] OR unaffected[tiab] OR preserved[tiab] OR normal[tiab] OR \"no change\"[tiab])",
+    "pm_models": "SNX14[tiab] AND (fibroblast*[tiab] OR HEK293[tiab] OR \"neural progenitor\"[tiab] OR iPSC[tiab] OR mice[tiab] OR zebrafish[tiab])",
+    "pm_lipid": "SNX14[tiab] AND (lipid[tiab] OR \"fatty acid\"[tiab] OR cholesterol[tiab] OR \"lipid droplet\"[tiab])"
+  },
+  "sources": {
+    "upstream:pathophysiology[1].downstream[0].evidence[0]": {
+      "pmid": "25848753",
+      "pmcid": "PMC4414867"
+    },
+    "upstream:pathophysiology[2].evidence[0]": {
+      "pmid": "25848753",
+      "pmcid": "PMC4414867"
+    },
+    "upstream:pathophysiology[2].evidence[1]": {
+      "pmid": "25848753",
+      "pmcid": "PMC4414867"
+    },
+    "upstream:pathophysiology[2].evidence[2]": {
+      "pmid": null,
+      "resolved_pmid": "29635513",
+      "pmcid": null,
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "resolution_note": "PMC5961352 maps to PMID:29635513 via the NCBI ID converter. The upstream entry wrote a URL, so the reference itself is not deterministically resolvable and the citation check must report that."
+    },
+    "upstream:pathophysiology[2].evidence[3]": {
+      "pmid": null,
+      "resolved_pmid": "29635513",
+      "pmcid": null,
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "resolution_note": "PMC5961352 maps to PMID:29635513 via the NCBI ID converter. The upstream entry wrote a URL, so the reference itself is not deterministically resolvable and the citation check must report that."
+    },
+    "upstream:pathophysiology[1].evidence[2]": {
+      "pmid": null,
+      "resolved_pmid": "29635513",
+      "pmcid": null,
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "resolution_note": "PMC5961352 maps to PMID:29635513 via the NCBI ID converter. The upstream entry wrote a URL, so the reference itself is not deterministically resolvable and the citation check must report that."
+    }
+  },
+  "known_limitations": [
+    "PMID:29635513 is deposited in PMC but is not open access, so its full text cannot be retrieved. Its results-section spans are therefore not deterministically verifiable, and the pipeline must say so rather than accept them.",
+    "The same publication is referenced two ways inside this single upstream entry: as PMID:29635513 and as url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/. The url form is not resolvable by the deterministic citation validator.",
+    "The refuting evidence sits on the target node (pathophysiology[2]) rather than on the edge, so an edge-only refinement would miss it entirely."
+  ]
+}

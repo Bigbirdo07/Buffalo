@@ -341,7 +341,7 @@
     "edge_refinement.json": "056c316123a05b3d15dba6e5bbe1ee152fabf38aae86b33b4757ed34547218c7",
     "experiment_proposal.json": "8d8b0a616a2081be2382ed29f0b96a9a03f40dfe018b6987fac618ad4e11b640",
     "knowledge_gap.json": "3c5ccd621f747d3e84f8e6162c48de8c9c129a64d9d37cb805d6283cd996c1eb",
-    "reproducibility_manifest.json": "b5e018e005046f5a00a265920ef73ae4f5957bffe506e17ea934f91454d7656c"
+    "reproducibility_manifest.json": "726dfaebff25c410309efc0ee0dab96b15933de8d550d581ca77a88ba1bba332"
   },
   "schema_version": "phase4-reproducibility-v1",
   "source_coverage_summary": [

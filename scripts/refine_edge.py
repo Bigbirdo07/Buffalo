@@ -56,35 +56,15 @@ from atlas.services.refinement import (
     synthesize_edge,
 )
 
-UNIPROT_URL = "https://rest.uniprot.org/uniprotkb/Q9UNE7.json"
+UNIPROT_BASE = "https://rest.uniprot.org/uniprotkb"
 
-# Literature queries executed for this edge. Kept here so coverage records the
-# exact query text that produced the retrieved evidence.
-QUERIES: dict[str, str] = {
-    "pm_allele": (
-        "(STUB1[tiab] OR CHIP[tiab]) AND (E28K[tiab] OR K145Q[tiab] OR M211I[tiab] OR "
-        "S236T[tiab] OR N65S[tiab] OR T246M[tiab] OR Lys145Gln[tiab] OR Met211Ile[tiab] OR "
-        "Glu28Lys[tiab] OR Ser236Thr[tiab])"
-    ),
-    "pm_function": (
-        'STUB1[tiab] AND (SCAR16[tiab] OR "spinocerebellar ataxia"[tiab] OR '
-        '"Gordon Holmes"[tiab]) AND (ubiquitin*[tiab] OR "E3 ligase"[tiab] OR '
-        '"ligase activity"[tiab])'
-    ),
-    "pm_sca48": (
-        'STUB1[tiab] AND (SCA48[tiab] OR "spinocerebellar ataxia 48"[tiab] OR '
-        '"spinocerebellar ataxia type 48"[tiab])'
-    ),
-    "pm_models": (
-        'STUB1[tiab] AND ataxia[tiab] AND (iPSC[tiab] OR "induced pluripotent"[tiab] OR '
-        "neurons[tiab] OR fibroblasts[tiab] OR mice[tiab] OR rats[tiab] OR zebrafish[tiab])"
-    ),
-    "pm_negative": (
-        '(STUB1[tiab] OR CHIP[tiab]) AND (SCAR16[tiab] OR SCA48[tiab]) AND ("retain*"[tiab] '
-        'OR "preserved"[tiab] OR "not affect*"[tiab] OR "dominant negative"[tiab] OR '
-        '"gain of function"[tiab] OR "toxic"[tiab])'
-    ),
-}
+# Disease-specific settings come from the plan, not from this module: the runner
+# must work for any DisMech edge. A plan supplies target.uniprot and a
+# coverage_queries map; the SCAR16 plan's values are not defaults for others.
+
+
+def uniprot_url(accession: str) -> str:
+    return f"{UNIPROT_BASE}/{accession}.json"
 
 
 def _edge_index(path: str) -> tuple[int, int]:
@@ -98,8 +78,19 @@ def _evidence_by_path(imported: ImportedDisease) -> dict[str, EvidenceItem]:
     return {item.provenance.source_object_path: item for item in imported.evidence}
 
 
-def _uniprot_features(fetcher: SnapshotFetcher) -> tuple[tuple[str, int, int, str], ...]:
-    payload, _ = fetch_json(fetcher, UNIPROT_URL)
+def _uniprot_features(
+    fetcher: SnapshotFetcher, accession: str
+) -> tuple[tuple[tuple[str, int, int, str], ...], str | None]:
+    """Return domain features and, on failure, the reason.
+
+    Protein-domain context is optional: it is derived context, not evidence. An
+    outage must therefore degrade to "no domains derived" and be recorded as a
+    failed source, never abort a refinement run or be silently replaced.
+    """
+    try:
+        payload, _ = fetch_json(fetcher, uniprot_url(accession))
+    except RetrievalError as error:
+        return (), str(error)
     features: list[tuple[str, int, int, str]] = []
     for feature in payload.get("features", []):
         location = feature.get("location", {})
@@ -109,7 +100,7 @@ def _uniprot_features(fetcher: SnapshotFetcher) -> tuple[tuple[str, int, int, st
             features.append(
                 (str(feature.get("type")), start, end, str(feature.get("description") or ""))
             )
-    return tuple(features)
+    return tuple(features), None
 
 
 def _source_texts(
@@ -156,7 +147,8 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
         item for item in imported.evidence if item.claim_id == edge.claim_id
     )
 
-    features = _uniprot_features(fetcher)
+    accession = str(target["uniprot"])
+    features, uniprot_error = _uniprot_features(fetcher, accession)
 
     # Resolve every source key to an imported EvidenceItem (upstream) or a
     # retrieved-only identifier, and collect its cached text.
@@ -166,22 +158,34 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     evidence_for_key: dict[str, EvidenceItem | None] = {}
     coverage_rows: list[SearchSourceCoverage] = []
     for key, meta in sources_meta.items():
-        pmid = str(meta["pmid"])
+        declared = meta.get("pmid")
+        # An upstream reference that is not a PMID (a bare PMC or publisher URL, an
+        # ORPHA code) cannot be deterministically resolved. The plan may record a
+        # resolved_pmid so the text can still be retrieved for context, but the
+        # declared identifier must match what upstream actually wrote.
+        resolved = meta.get("resolved_pmid")
         pmcid = meta.get("pmcid")
         if key.startswith("upstream:"):
             path = key.split(":", 1)[1]
             item = evidence_by_path.get(path)
             if item is None:
                 raise SystemExit(f"source key {key} does not match an imported evidence path")
-            if item.pmid != f"PMID:{pmid}":
+            expected = f"PMID:{declared}" if declared else None
+            if item.pmid != expected:
                 raise SystemExit(
-                    f"source key {key} declares PMID:{pmid} but upstream has {item.pmid}"
+                    f"source key {key} declares {expected} but upstream has {item.pmid}"
                 )
             evidence_for_key[key] = item
         else:
             evidence_for_key[key] = None
+        fetch_pmid = declared or resolved
+        if not fetch_pmid:
+            texts[key], titles[key] = (), None
+            continue
         try:
-            texts[key], titles[key] = _source_texts(pmid, pmcid, pubmed, europepmc)
+            texts[key], titles[key] = _source_texts(
+                str(fetch_pmid), pmcid, pubmed, europepmc
+            )
         except RetrievalError as exc:
             raise SystemExit(f"retrieval failed for {key}: {exc}") from exc
 
@@ -203,15 +207,25 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     for entry in observations_doc["observations"]:
         key = entry["source"]
         item = evidence_for_key[key]
-        pmid = str(sources_meta[key]["pmid"])
+        identifier = (
+            f"PMID:{sources_meta[key]['pmid']}"
+            if sources_meta[key].get("pmid")
+            else str(
+                sources_meta[key].get("upstream_reference_form")
+                or (item.other_reference if item is not None else "unknown-reference")
+            )
+        )
         observations.append(
             build_observation(
                 entry,
-                evidence_id=item.evidence_id if item is not None else f"retrieved:PMID:{pmid}",
-                source_identifier=f"PMID:{pmid}",
+                evidence_id=(
+                    item.evidence_id if item is not None else f"retrieved:{identifier}"
+                ),
+                source_identifier=identifier,
                 gene=target["gene"],
                 sources=texts[key],
                 uniprot_features=features,
+                upstream_snippet=item.exact_supported_span if item is not None else None,
             )
         )
 
@@ -234,7 +248,7 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     for observation, entry in zip(observations, observations_doc["observations"], strict=True):
         key = entry["source"]
         item = evidence_for_key[key]
-        pmid = str(sources_meta[key]["pmid"])
+        pmid = str(sources_meta[key].get("pmid") or "")
         if item is not None:
             probe = item.model_copy(
                 update={"exact_supported_span": observation.support_span}
@@ -243,7 +257,8 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
             probe = EvidenceItem(
                 evidence_id=observation.evidence_id,
                 claim_id=upstream_claim.claim_id,
-                pmid=pmid,
+                pmid=pmid or None,
+                other_reference=None if pmid else observation.source_identifier,
                 title=titles.get(key),
                 exact_supported_span=observation.support_span,
                 evidence_relation=EvidenceRelation.NEUTRAL,
@@ -284,7 +299,13 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     status, rule, rationale = synthesize_edge(atomic)
 
     now = datetime.now(UTC)
-    for name, query in QUERIES.items():
+    queries_to_run: dict[str, str] = dict(plan.get("coverage_queries") or {})
+    if not queries_to_run:
+        raise SystemExit(
+            "the plan must declare coverage_queries: literature coverage cannot be "
+            "inherited from another disease"
+        )
+    for name, query in queries_to_run.items():
         try:
             count, _ids, _ = pubmed.search(query, retmax=100)
             coverage_rows.append(
@@ -318,11 +339,14 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     )
     coverage_rows.append(
         SearchSourceCoverage(
-            source="UniProt Q9UNE7 (domain boundaries)",
-            status=CoverageStatus.CHECKED,
-            queries=(UNIPROT_URL,),
-            checked_at=now,
-            result_count=len(features),
+            source=f"UniProt {accession} (domain boundaries)",
+            status=(
+                CoverageStatus.FAILED if uniprot_error else CoverageStatus.CHECKED
+            ),
+            queries=(uniprot_url(accession),),
+            checked_at=None if uniprot_error else now,
+            result_count=None if uniprot_error else len(features),
+            error=uniprot_error,
         )
     )
     coverage = SearchCoverage(
