@@ -27,6 +27,11 @@ VOLATILE_KEYS = frozenset(
         "checked_at",
         "search_started_at",
         "search_completed_at",
+        # A failed source's reason is environmental: the same outage reads as a
+        # socket timeout online and as a cache miss offline. That a source failed
+        # is scientific content and is still compared, because `status` is not
+        # excluded; only the human-readable reason is.
+        "error",
     }
 )
 

@@ -383,7 +383,7 @@
     "scripts/audit_corpus.py": "3db05e95618e3f91daf10728b85f181327d1848fc1a8a26f2374cb3dc4be0c8e",
     "scripts/build_fixtures.py": "bb70faa81b37d64256770bf755845b9f3d9467bea0c739ab0f56957e99076577",
     "scripts/build_gap_and_experiment.py": "d638f9de49e67f5d87f351adae044aa0d6f2f8f2b85d37ccb7d670ac9e795e7e",
-    "scripts/build_phase3_assurance.py": "e42d7ff0a753730da40774fbc4e81bfa0e2dcaf305b5053c2ee3f9450716582b",
+    "scripts/build_phase3_assurance.py": "e67e0ee656e1959109c1be26c3462b36b3ef906d713e4d0695b3892a0249651a",
     "scripts/refine_edge.py": "49b8f10aa8dea7a6d94c38da11d4fa94ced57f71bdf52dc2e2797edc5a3525a5"
   },
   "offline_reproduction": {
@@ -391,6 +391,7 @@
       "excluded_keys": [
         "checked_at",
         "created_at",
+        "error",
         "last_reviewed_at",
         "search_completed_at",
         "search_started_at"
@@ -400,9 +401,9 @@
     "network_required": false,
     "results": {
       "edge_refinement": {
-        "committed_canonical_sha256": "1a4c90541bafef59825b323887dc30603c757e63995c5802acd79a4eafbc96ae",
+        "committed_canonical_sha256": "fa8bc24130bda2efc8a93aa31fcb0168c38ede94621a171bc0a672f2e388c51a",
         "matches": true,
-        "regenerated_canonical_sha256": "1a4c90541bafef59825b323887dc30603c757e63995c5802acd79a4eafbc96ae"
+        "regenerated_canonical_sha256": "fa8bc24130bda2efc8a93aa31fcb0168c38ede94621a171bc0a672f2e388c51a"
       },
       "experiment_proposal": {
         "committed_canonical_sha256": "69162740a3170ccaf4899d718e0b2a403c35864f63251212c61e3c1cbf9dda7d",
@@ -410,9 +411,9 @@
         "regenerated_canonical_sha256": "69162740a3170ccaf4899d718e0b2a403c35864f63251212c61e3c1cbf9dda7d"
       },
       "knowledge_gap": {
-        "committed_canonical_sha256": "2089f8412bbb1bd7367f31d731e0dd77705bdf29da0f1a6f2af3950651063340",
+        "committed_canonical_sha256": "c203d3596f1dd692263caca914c571c0cd29c7d08486d9bf7b6bec70b62c6268",
         "matches": true,
-        "regenerated_canonical_sha256": "2089f8412bbb1bd7367f31d731e0dd77705bdf29da0f1a6f2af3950651063340"
+        "regenerated_canonical_sha256": "c203d3596f1dd692263caca914c571c0cd29c7d08486d9bf7b6bec70b62c6268"
       }
     },
     "status": "PASS"

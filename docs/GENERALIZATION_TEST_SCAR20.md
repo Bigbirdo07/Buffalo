@@ -27,8 +27,8 @@ PYTHONPATH=backend/src .venv/bin/python scripts/refine_edge.py \
 **The scientific rules generalized unchanged. The plumbing did not.**
 
 Zero changes were made to the synthesis rules (A1–A7, E1–E5), the evidence
-critic, the importer, the field audit or the citation validator. Five
-infrastructure defects had to be fixed, four of them exposed by SCAR20 having
+critic, the importer, the field audit or the citation validator. Six
+infrastructure defects had to be fixed, five of them exposed by SCAR20 having
 properties SCAR16 happened not to have.
 
 Two rule paths that **never fired during SCAR16** fired here, which is the
@@ -153,7 +153,14 @@ Each was a case of SCAR16 having a convenient property that SCAR20 lacks.
    explicit `span_from: "upstream_snippet"` path that takes the span from the
    upstream curator's own quotation and is reported as never independently
    located.
-5. **The gap and experiment generator does not generalize at all.**
+5. **A failed source's reason broke byte-reproducibility.** The same UniProt
+   outage reads as a socket timeout online and as a cache miss offline, so the
+   coverage row's `error` text differed between runs while everything scientific
+   matched. The reason is environmental; the fact of failure is not. `error` now
+   joins the volatile keys excluded from the reproducibility comparison, while
+   `status` stays compared, so a source that starts failing — or fails for a
+   genuinely different reason class — is still caught.
+6. **The gap and experiment generator does not generalize at all.**
    `build_gap_and_experiment.py` hardcodes `TARGET_CLAIM = "ac4-interdomain-missense"`
    and contains bespoke SCAR16 prose for every field. It is a one-off writer, not
    an engine stage, and it was not run for SCAR20. This is the largest remaining
