@@ -6,7 +6,6 @@ that no disease, gene or pathway name appears in the application code.
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
 
@@ -14,7 +13,6 @@ import pytest
 
 from atlas.domain.cross_disease import (
     CompatibilityVerdict,
-    DiseaseIdentityRelationship,
     IdentityRelation,
     ReasonType,
     RejectedCrossDiseaseCandidate,
