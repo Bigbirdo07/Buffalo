@@ -1,14 +1,14 @@
 import { useState } from "react";
 
+import { navigate } from "./components";
 import { type DemoCase } from "./contract";
 import { loadCases, selectCase } from "./data";
 
 /**
- * Three worked cases, shown side by side.
+ * Three worked cases showcase screen (plus null case & extra case).
  *
- * The third case found nothing, and that is displayed as a result rather than
- * as an empty screen. A demo made only of successes cannot show that the system
- * is selective, which is the property the whole pipeline exists to have.
+ * Demonstrates the exact same pipeline run across different starting diseases
+ * to prove selectivity, bi-directional cluster recovery, and non-neurological generalizability.
  */
 export function CasesScreen() {
   const result = loadCases();
@@ -30,15 +30,33 @@ export function CasesScreen() {
   const current = selectCase(result.cases, active);
 
   return (
-    <section className="screen">
-      <header>
+    <section className="screen cases-screen">
+      <header className="cases-header">
+        <span className="eyebrow">Evidence-Refined Validation</span>
         <h2>Three worked cases</h2>
         <p className="lede">
-          The same pipeline, run from three different starting diseases. The
-          outcomes differ because the evidence differs — one of them finds
-          nothing.
+          The same pipeline, run from three primary starting diseases. The outcomes differ because the evidence differs — demonstrating that our system filters co-citation noise and rejects unsupported leads.
         </p>
       </header>
+
+      {/* Featured 3-Case Highlight Cards */}
+      <div className="cases-summary-bar">
+        <div className="summary-card-mini scar16">
+          <div className="mini-badge">SCAR16</div>
+          <strong>Full Chain</strong>
+          <small>Found for wrong reason, corrected to CHIP/HSF1</small>
+        </div>
+        <div className="summary-card-mini lafora">
+          <div className="mini-badge">Lafora</div>
+          <strong>Full Chain</strong>
+          <small>Recovers same cluster from reverse direction</small>
+        </div>
+        <div className="summary-card-mini ankylosing">
+          <div className="mini-badge">Ankylosing</div>
+          <strong>Full Chain</strong>
+          <small>Non-neurological, 5 of 8 candidates rejected</small>
+        </div>
+      </div>
 
       <nav className="case-tabs" aria-label="Worked cases">
         {result.cases.cases.map((item) => (
@@ -68,10 +86,38 @@ export function CasesScreen() {
 
 function CaseDetail({ item }: { item: DemoCase }) {
   const g1 = item.goal1;
+
+  // Highlights for the 3 core cases
+  const highlights: Record<string, string> = {
+    scar16: "SCAR16 Case Highlight: Broad 'protein ubiquitination' tag was rejected during evidence review and refined into a specific CHIP/HSF1 co-chaperone stress response bridge.",
+    lafora: "Lafora Case Highlight: Starting from Lafora Disease independently recovers the STUB1/SCAR16 cluster from the reverse direction, confirming bi-directional consistency.",
+    ankylosing: "Ankylosing Spondylitis Highlight: Demonstrates application to immunology. 5 of 8 candidates were rejected because massive paper volume masked true mechanistic relationships.",
+  };
+
   return (
     <article className="case-detail">
-      <h3>{item.label}</h3>
-      <p className="why">{item.why_included}</p>
+      <div className="case-title-row">
+        <div>
+          <h3>{item.label}</h3>
+          <p className="why">{item.why_included}</p>
+        </div>
+        {item.outcome === "FULL_CHAIN" && (
+          <button
+            type="button"
+            className="primary-button launch-journey-btn"
+            onClick={() => navigate(`/disease?case=${item.case_id}`)}
+          >
+            Launch Interactive Walkthrough →
+          </button>
+        )}
+      </div>
+
+      {highlights[item.case_id] && (
+        <div className="case-highlight-banner">
+          <span className="banner-icon">★</span>
+          <span>{highlights[item.case_id]}</span>
+        </div>
+      )}
 
       <dl className="case-stats">
         <div>
@@ -107,10 +153,10 @@ function CaseDetail({ item }: { item: DemoCase }) {
           {g1.candidate_neighbors.map((candidate) => (
             <tr key={candidate.name}>
               <td>{candidate.rank}</td>
-              <td>{candidate.name}</td>
+              <td><strong>{candidate.name}</strong></td>
               <td className="muted">{candidate.retrieval_reason}</td>
               <td>
-                <code>{candidate.relationship}</code>
+                <code className="relationship-code">{candidate.relationship}</code>
               </td>
               <td>{candidate.independent ? "yes" : "no"}</td>
             </tr>
@@ -149,7 +195,7 @@ function FullChain({ item }: { item: DemoCase }) {
       ) : null}
 
       <h4>The bridge actually tested</h4>
-      <p>
+      <p className="bridge-tested">
         <strong>{bridge.display_label ?? bridge.terms.join(", ")}</strong>
       </p>
       <p className="muted">

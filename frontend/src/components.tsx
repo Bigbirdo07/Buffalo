@@ -2,13 +2,10 @@ import type { ReactNode } from "react";
 import type { FlagshipStory, ParentPathNode, PresentationMode } from "./contract";
 
 export const ROUTES = [
-  { path: "/disease", family: "Your disease", scientist: "Case", short: "1" },
-  { path: "/connections", family: "Research connections", scientist: "Discover", short: "2" },
-  { path: "/evidence", family: "What evidence says", scientist: "Validate", short: "3" },
-  { path: "/unknown", family: "What’s unknown", scientist: "Knowledge gap", short: "4" },
-  { path: "/experiment", family: "How to test it", scientist: "Experiment", short: "5" },
-  { path: "/existing-work", family: "Existing work", scientist: "Capabilities", short: "6" },
-  { path: "/next-steps", family: "Next steps", scientist: "Action", short: "7" },
+  { path: "/disease", family: "1. Your Disease & Causes", scientist: "1. Disease Overview", short: "1" },
+  { path: "/connections", family: "2. Connections & Evidence", scientist: "2. Connections & Evidence", short: "2" },
+  { path: "/unknown", family: "3. What's Unknown", scientist: "3. What's Unknown & Test", short: "3" },
+  { path: "/existing-work", family: "4. Existing Work", scientist: "4. Existing Work & Action", short: "4" },
 ] as const;
 
 export function navigate(path: string) {
@@ -34,7 +31,27 @@ export function ModeToggle({ mode, onChange }: { mode: PresentationMode; onChang
 }
 
 export function JourneyProgress({ active, mode }: { active: string; mode: PresentationMode }) {
-  return <nav className="journey-progress" aria-label="Research journey">{ROUTES.map((route) => <button key={route.path} className={active === route.path ? "active" : ""} onClick={() => navigate(route.path)} aria-current={active === route.path ? "page" : undefined}><span>{route.short}</span><b>{mode === "family" ? route.family : route.scientist}</b></button>)}</nav>;
+  // Map secondary routes to the 4 main tabs if needed
+  let normalizedPath = active;
+  if (active === "/evidence") normalizedPath = "/connections";
+  if (active === "/experiment") normalizedPath = "/unknown";
+  if (active === "/next-steps") normalizedPath = "/existing-work";
+
+  return (
+    <nav className="journey-progress" aria-label="Research journey">
+      {ROUTES.map((route) => (
+        <button
+          key={route.path}
+          className={normalizedPath === route.path ? "active" : ""}
+          onClick={() => navigate(route.path)}
+          aria-current={normalizedPath === route.path ? "page" : undefined}
+        >
+          <span>{route.short}</span>
+          <b>{mode === "family" ? route.family : route.scientist}</b>
+        </button>
+      ))}
+    </nav>
+  );
 }
 
 export function GuidePanel({ question, children }: { question: string; children: ReactNode }) {

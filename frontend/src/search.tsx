@@ -5,16 +5,10 @@ import type { BrowseDisease, BrowseIndex, PresentationMode } from "./contract";
 import { loadBrowseIndex, searchDiseases } from "./data";
 
 /**
- * The entry point: search the whole corpus, not a shortlist.
- *
- * Five diseases have been through evidence refinement. Every other disease in
- * the corpus still returns something real -- its causal genes and the
- * neighbours retrieval actually finds -- followed by a plain statement that no
- * relationship has been validated for it.
- *
- * That boundary is the point of the screen. A search box that quietly returns
- * nothing for 3,284 of 3,289 diseases would be a worse lie than having no
- * search box at all.
+ * Clean, uncluttered Search Screen featuring the 3 core working cases:
+ * 1. SCAR16
+ * 2. Lafora Disease
+ * 3. Ankylosing Spondylitis
  */
 export function SearchScreen({ mode }: { mode: PresentationMode }) {
   const [index, setIndex] = useState<BrowseIndex | null>(null);
@@ -42,9 +36,33 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
   );
 
   const examples = useMemo(
-    () => (index ? index.diseases.filter((item) => item.case_id).slice(0, 5) : []),
+    () => (index ? index.diseases.filter((item) => item.case_id).slice(0, 3) : []),
     [index],
   );
+
+  const featuredCases = [
+    {
+      caseId: "scar16",
+      name: "Autosomal Recessive Spinocerebellar Ataxia 16 (SCAR16)",
+      cause: "Biallelic STUB1 variants affecting CHIP co-chaperone & E3 ligase activity.",
+      affected: "Movement, gait balance, cerebellum & pyramidal tract.",
+      tag: "Neurological · Corrected Chain",
+    },
+    {
+      caseId: "lafora",
+      name: "Lafora Disease",
+      cause: "EPM2A or NHLRC1 variants causing polyglucosan inclusion bodies.",
+      affected: "Central nervous system, motor control & severe epilepsy.",
+      tag: "Neurological · Reverse Cluster Recovery",
+    },
+    {
+      caseId: "ankylosing",
+      name: "Ankylosing Spondylitis",
+      cause: "HLA-B27 and ERAP1 antigen processing & immune pathway disruption.",
+      affected: "Spine, joints, eyes (uveitis) & systemic immune response.",
+      tag: "Immunology · 5 of 8 Leads Rejected",
+    },
+  ];
 
   function runSearch(text: string) {
     setQuery(text);
@@ -57,102 +75,93 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
 
   return (
     <section className={searching ? "search-screen searching" : "search-screen"}>
-      <div className="hero">
-        <div className="hero-copy">
-          <h1>Follow the biology behind a rare disease.</h1>
-          <p>
-            Start with a disease or gene and trace how its biology connects to
-            other conditions, what the evidence really supports, what researchers
-            still do not know, and what research could happen next.
-          </p>
+      {/* Hero Search */}
+      <div className="hero-clean">
+        <span className="eyebrow">Rare Disease Research Navigator</span>
+        <h1>Search a rare disease or gene</h1>
+        <p>
+          Select one of our 3 working cases or search a disease or gene to trace its biological causes, body system impacts, research connections, open questions, and existing work.
+        </p>
 
-          <form
-            className="search-form"
-            onSubmit={(event) => {
-              event.preventDefault();
-              runSearch(query);
-            }}
-          >
-            <label htmlFor="disease-search">Disease name or gene symbol</label>
-            <div>
-              <input
-                id="disease-search"
-                type="search"
-                autoComplete="off"
-                placeholder={index ? "Search a disease or gene" : "Loading corpus…"}
-                value={query}
-                disabled={!index}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setSubmitted(event.target.value);
-                  setSelected(null);
-                  setEmptyHint(false);
-                }}
-              />
-              <button type="submit" disabled={!index}>
-                Search
-              </button>
-            </div>
-            {loadError ? <p className="form-message">{loadError}</p> : null}
-            {emptyHint && !loadError ? (
-              <p className="form-message">
-                Type a disease name or a gene symbol to search the corpus.
-              </p>
-            ) : null}
-          </form>
-
-          {examples.length > 0 && !submitted ? (
-            <div className="examples">
-              <span>Explore a demo story</span>
-              {examples.map((item) => (
-                <button key={item.id} type="button" onClick={() => runSearch(item.name)}>
-                  {item.name}
-                </button>
-              ))}
-            </div>
+        <form
+          className="search-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            runSearch(query);
+          }}
+        >
+          <label htmlFor="disease-search">Disease name or gene symbol</label>
+          <div className="search-input-box">
+            <input
+              id="disease-search"
+              type="search"
+              autoComplete="off"
+              placeholder={index ? "Search a disease (e.g. SCAR16, Lafora, Ankylosing) or gene (STUB1)" : "Loading corpus…"}
+              value={query}
+              disabled={!index}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setSubmitted(event.target.value);
+                setSelected(null);
+                setEmptyHint(false);
+              }}
+            />
+            <button type="submit" disabled={!index}>
+              Search
+            </button>
+          </div>
+          {loadError ? <p className="form-message">{loadError}</p> : null}
+          {emptyHint && !loadError ? (
+            <p className="form-message">
+              Type a disease name or a gene symbol to search the corpus.
+            </p>
           ) : null}
+        </form>
 
-          <p className="hero-note">
-            <span />
-            {index
-              ? `${index.analysed_case_count} diseases have been through full evidence refinement. Every other disease returns candidate neighbours only.`
-              : "Loading the disease corpus…"}
-          </p>
-        </div>
+        {examples.length > 0 && !submitted ? (
+          <div className="examples">
+            <span>Explore a demo story</span>
+            {examples.map((item) => (
+              <button key={item.id} type="button" onClick={() => runSearch(item.name)}>
+                {item.name}
+              </button>
+            ))}
+          </div>
+        ) : null}
 
-        <aside className="hero-figure" hidden={searching}>
-          <span className="figure-index">What a result contains</span>
-          <div>
-            <b>1</b>
-            <span>
-              <strong>Why it was found</strong>
-              <small>The annotation that surfaced the pair</small>
-            </span>
-          </div>
-          <div>
-            <b>2</b>
-            <span>
-              <strong>What the evidence says</strong>
-              <small>Which may be a different answer</small>
-            </span>
-          </div>
-          <div>
-            <b>3</b>
-            <span>
-              <strong>What is still unknown</strong>
-              <small>And the experiment that would settle it</small>
-            </span>
-          </div>
-          <div>
-            <b>4</b>
-            <span>
-              <strong>Who could test it</strong>
-              <small>Capabilities and assets that already exist</small>
-            </span>
-          </div>
-        </aside>
+        <p className="hero-note">
+          <span className="status-dot-green" />
+          {index
+            ? `${index.analysed_case_count} diseases have been through full evidence refinement. Every other disease returns candidate neighbours only.`
+            : "Loading the disease corpus…"}
+        </p>
       </div>
 
+      {/* The 3 Featured Working Cases */}
+      {!searching && (
+        <section className="three-cases-section">
+          <h2>Our 3 Working Demonstration Cases</h2>
+          <div className="three-cases-grid">
+            {featuredCases.map((item) => (
+              <article key={item.caseId} className="case-selection-card">
+                <span className="case-tag-pill">{item.tag}</span>
+                <h3>{item.name}</h3>
+                <p><strong>Cause:</strong> {item.cause}</p>
+                <p><strong>Affected Systems:</strong> {item.affected}</p>
+                <button
+                  type="button"
+                  className="primary-button case-select-btn"
+                  onClick={() => navigate(`/disease?case=${item.caseId}`)}
+                >
+                  Explore {item.caseId.toUpperCase()} Journey →
+                </button>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Search Results Display */}
       {submitted && index ? (
         selected ? (
           <DiseaseBrief
@@ -165,7 +174,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
             query={submitted}
             results={results}
             onSelect={(disease) => {
-              if (disease.case_id) navigate(`/trace?case=${disease.case_id}`);
+              if (disease.case_id) navigate(`/disease?case=${disease.case_id}`);
               else setSelected(disease);
             }}
           />
@@ -228,13 +237,6 @@ function ResultList({
   );
 }
 
-/**
- * What a visitor sees for a disease that has not been refined.
- *
- * It shows real retrieval output, then states exactly what that output is not.
- * The limitation panel is as important as the results: this is where the
- * interface declines to imply a finding it has not earned.
- */
 function DiseaseBrief({
   disease,
   mode,
@@ -293,15 +295,11 @@ function DiseaseBrief({
       <aside className="depth-limit">
         <h4>What this is, and what it is not</h4>
         <p>
-          Candidate neighbours are computed for every disease in the corpus. They
-          record <strong>shared annotated features</strong> — not a validated
-          relationship.
+          Candidate neighbours record <strong>shared annotated features</strong> — not a validated relationship.
         </p>
         <p>
-          Evidence refinement, the knowledge gap and capability mapping have been
-          run for five diseases. <strong>{disease.name} is not one of them</strong>,
-          so no relationship is claimed here and none of these candidates has been
-          checked against the literature.
+          Evidence refinement and capability mapping have been run for five diseases. <strong>{disease.name} is not one of them</strong>,
+          so no relationship is claimed here and none of these candidates has been checked against the literature.
         </p>
         {mode === "scientist" ? (
           <p className="muted">
