@@ -21,7 +21,11 @@ from atlas.adapters.europepmc.annotations import (
     EuropePmcAnnotationClient,
 )
 from atlas.adapters.literature.client import SnapshotFetcher
-from atlas.domain.cross_disease import BridgeTermProvenance, MechanisticBridge
+from atlas.domain.cross_disease import (
+    BridgeTermProvenance,
+    EvidenceDepth,
+    MechanisticBridge,
+)
 from atlas.services.cross_disease_pipeline import _FACTOR, MECHANISM_VOCABULARY
 from atlas.services.cross_disease_pipeline import (
     _FACTOR_STOPWORDS as STOPWORDS,
@@ -150,6 +154,14 @@ def main() -> int:
             )
         ),
         derivation_method="europepmc-typed-annotations-primary-role-v1",
+        # The limitation is written onto the bridge, not patched on afterwards,
+        # so it survives every regeneration.
+        evidence_depth=(
+            EvidenceDepth.FULL_TEXT_REVIEWED
+            if any_full_text
+            else EvidenceDepth.ABSTRACT_OR_DERIVED_SOURCE
+        ),
+        full_text_review_completed=any_full_text,
         term_provenance=tuple(unique.values()),
         distinct_from_retrieval_features=tuple(
             v1["distinct_from_retrieval_features"]

@@ -200,3 +200,131 @@ class TestChainInvariants:
         one, _t, _tw = goals
         for row in one["evaluated"]:
             assert row.get("search_coverage"), f"{row['pair']} has no coverage record"
+
+
+STORY = ROOT / "data/demo/flagship_story.json"
+SUMMARY = ROOT / "data/demo/goals_summary.json"
+DECISION = ROOT / "data/flagship/selection_decision.json"
+
+
+@pytest.mark.skipif(not DECISION.exists(), reason="selection decision not generated")
+class TestFlagshipSelectionIsInterpretable:
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def decision() -> dict:
+        return json.loads(DECISION.read_text())
+
+    def test_allelic_spectrum_candidates_are_excluded(self, decision) -> None:
+        # Identity disqualifies regardless of how good the relationship looks.
+        reasons = " ".join(
+            item["reason"] or "" for item in decision["excluded_candidates"]
+        )
+        assert "not an independent cross-disease pair" in reasons
+
+    def test_selection_cannot_rank_on_paper_count_alone(self, decision) -> None:
+        for candidate in decision["eligible_candidates"]:
+            weights = {c["name"]: c["weight"] for c in candidate["components"]}
+            assert "independent_corroboration" in weights
+            # Corroboration must be the weakest factor: over-weighting it is the
+            # defect this selector replaced.
+            assert weights["independent_corroboration"] <= 0.05
+            assert weights["mechanistic_specificity"] > weights[
+                "independent_corroboration"
+            ]
+
+    def test_every_eligible_candidate_has_a_bridge(self, decision) -> None:
+        for candidate in decision["eligible_candidates"]:
+            specificity = next(
+                c for c in candidate["components"]
+                if c["name"] == "mechanistic_specificity"
+            )
+            assert specificity["value"] > 0, "eligible candidate has no bridge"
+
+    def test_components_are_persisted_not_just_a_score(self, decision) -> None:
+        for candidate in decision["eligible_candidates"]:
+            assert len(candidate["components"]) >= 5
+            for component in candidate["components"]:
+                assert component["rationale"]
+
+    def test_override_never_hides_the_automated_choice(self, decision) -> None:
+        if decision["operator_override"]:
+            assert decision["automated_choice"]
+            assert decision["override_reason"]
+            assert decision["automated_choice"] in decision["override_reason"] or (
+                decision["automated_choice"] != decision["selected_candidate"]
+            )
+
+
+@pytest.mark.skipif(not STORY.exists(), reason="story contract not generated")
+class TestUiContract:
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def story() -> dict:
+        return json.loads(STORY.read_text())
+
+    def test_contract_carries_provenance_and_limitations(self, story) -> None:
+        assert story["provenance"]["dismech_commit"]
+        assert story["provenance"]["software_commit"]
+        assert story["goal3"]["evidence_limitations"]
+
+    def test_disclaimer_is_unambiguous(self, story) -> None:
+        disclaimer = story["disclaimer"]
+        assert disclaimer["not_a_medical_recommendation"] is True
+        assert disclaimer["not_an_established_mechanism"] is True
+        assert disclaimer["review_state"] == "PROVISIONAL_MACHINE_SYNTHESIS"
+        assert "expert review required" in disclaimer["headline"].lower()
+
+    def test_no_willingness_is_ever_claimed(self, story) -> None:
+        for row in story["goal2"]["existing_work"]:
+            for candidate in row["candidates"]:
+                assert candidate["collaboration_willingness"] == "UNKNOWN"
+                assert candidate["capability_verified"] is False
+
+    def test_rejected_examples_are_shown_not_hidden(self, story) -> None:
+        # A demo that shows only successes is not demonstrating selectivity.
+        assert story["goal1"]["rejected_examples"]
+        assert story["goal1"]["excluded_as_same_entity"]
+
+    def test_missing_capabilities_are_present_in_the_contract(self, story) -> None:
+        assert "missing_capabilities" in story["goal2"]
+        assert story["goal2"]["asset_status"]
+
+    def test_full_text_limitation_survives_to_the_ui(self, story) -> None:
+        bridge = story["goal3"]["mechanistic_bridge"]
+        assert bridge["full_text_review_completed"] is False
+        assert bridge["evidence_depth"] == "ABSTRACT_OR_DERIVED_SOURCE"
+
+    def test_contract_makes_no_medical_recommendation(self, story) -> None:
+        blob = json.dumps(story).casefold()
+        for phrase in (
+            "we recommend treating", "should be treated with", "patients should take",
+            "cure for", "proven treatment",
+        ):
+            assert phrase not in blob
+
+
+@pytest.mark.skipif(not SUMMARY.exists(), reason="summary not generated")
+class TestGoalStatusSeparation:
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def summary() -> dict:
+        return json.loads(SUMMARY.read_text())
+
+    def test_technical_status_is_separate_from_scientific_review(self, summary) -> None:
+        # Conflating "the system did this" with "a scientist approved it" is the
+        # error this separation exists to prevent.
+        assert summary["goal3"]["technical_status"] == "DEMONSTRATED"
+        assert summary["goal3"]["scientific_review"] == "AWAITING_EXPERT_SIGNOFF"
+
+    def test_technical_status_is_separate_from_execution_readiness(self, summary) -> None:
+        assert summary["goal2"]["technical_status"] == "DEMONSTRATED"
+        assert summary["goal2"]["execution_readiness"] != "COMPLETE"
+
+    def test_ready_for_ui_may_be_true_while_signoff_pending(self, summary) -> None:
+        assert summary["ready_for_ui"] is True
+        assert summary["goal3"]["scientific_review"] == "AWAITING_EXPERT_SIGNOFF"
+        assert summary["ready_for_ui_basis"]
+
+    def test_every_goal_cites_its_evidence(self, summary) -> None:
+        for key in ("goal1", "goal2", "goal3"):
+            assert summary[key]["evidence"]

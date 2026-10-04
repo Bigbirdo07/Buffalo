@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28CHIP%5Btiab%5D%29+AND+%28chaperone%5Btiab%5D+OR+%22co-chaperone%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:13:41.940638+00:00",
+  "sha256": "e666e0f2de3c842522690f0ab94a3ce0976e537a772e27b1ba0d78dcde066f93"
+}

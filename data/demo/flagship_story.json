@@ -1,0 +1,575 @@
+{
+  "schema_version": "flagship-story-v1",
+  "software_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c",
+  "starting_disease": {
+    "id": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+    "name": "Autosomal Recessive Spinocerebellar Ataxia 16"
+  },
+  "goal1": {
+    "candidates_retrieved": 60,
+    "candidates_evaluated": 8,
+    "candidate_neighbors": [
+      {
+        "rank": 1,
+        "name": "Spinocerebellar Ataxia 48",
+        "retrieval_reason": "protein quality control for misfolded or incompletely synthesized proteins",
+        "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+        "independent": false,
+        "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+        "retrieval_validity": "CORRECT",
+        "has_bridge": true
+      },
+      {
+        "rank": 2,
+        "name": "Cerebellar Ataxia-Hypogonadism Syndrome",
+        "retrieval_reason": "ubiquitin-dependent protein catabolic process",
+        "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+        "independent": false,
+        "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+        "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+        "has_bridge": true
+      },
+      {
+        "rank": 3,
+        "name": "Autosomal Dominant Cerebellar Ataxia Type I",
+        "retrieval_reason": "protein quality control for misfolded or incompletely synthesized proteins",
+        "identity": "DISTINCT_DISEASE",
+        "independent": false,
+        "relationship": "INSUFFICIENT_EVIDENCE",
+        "retrieval_validity": "UNRESOLVED",
+        "has_bridge": true
+      },
+      {
+        "rank": 4,
+        "name": "Peroxisome Biogenesis Disorder 5B",
+        "retrieval_reason": "Purkinje cell",
+        "identity": "DISTINCT_DISEASE",
+        "independent": false,
+        "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+        "retrieval_validity": "INCOMPLETE",
+        "has_bridge": false
+      },
+      {
+        "rank": 5,
+        "name": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+        "retrieval_reason": "protein ubiquitination",
+        "identity": "DISTINCT_DISEASE",
+        "independent": true,
+        "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+        "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+        "has_bridge": true
+      },
+      {
+        "rank": 6,
+        "name": "Lafora Disease",
+        "retrieval_reason": "protein ubiquitination",
+        "identity": "DISTINCT_DISEASE",
+        "independent": true,
+        "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+        "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+        "has_bridge": true
+      },
+      {
+        "rank": 7,
+        "name": "Friedreich Ataxia",
+        "retrieval_reason": "mitophagy",
+        "identity": "DISTINCT_DISEASE",
+        "independent": false,
+        "relationship": "SHARED_TISSUE_CONTEXT",
+        "retrieval_validity": "INCOMPLETE",
+        "has_bridge": false
+      },
+      {
+        "rank": 8,
+        "name": "Fragile X-Associated Tremor Ataxia Syndrome",
+        "retrieval_reason": "ubiquitin-dependent protein catabolic process",
+        "identity": "DISTINCT_DISEASE",
+        "independent": false,
+        "relationship": "INSUFFICIENT_EVIDENCE",
+        "retrieval_validity": "UNRESOLVED",
+        "has_bridge": true
+      }
+    ],
+    "excluded_as_same_entity": [
+      "Spinocerebellar Ataxia 48",
+      "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "Autosomal Dominant Cerebellar Ataxia Type I",
+      "Peroxisome Biogenesis Disorder 5B",
+      "Friedreich Ataxia",
+      "Fragile X-Associated Tremor Ataxia Syndrome"
+    ],
+    "rejected_examples": [
+      {
+        "name": "Autosomal Dominant Cerebellar Ataxia Type I",
+        "outcome": "INSUFFICIENT_EVIDENCE",
+        "why": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an "
+      },
+      {
+        "name": "Peroxisome Biogenesis Disorder 5B",
+        "outcome": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+        "why": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed."
+      },
+      {
+        "name": "Friedreich Ataxia",
+        "outcome": "SHARED_TISSUE_CONTEXT",
+        "why": "The diseases affect comparable tissue without any demonstrated molecular relationship."
+      },
+      {
+        "name": "Fragile X-Associated Tremor Ataxia Syndrome",
+        "outcome": "INSUFFICIENT_EVIDENCE",
+        "why": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an "
+      }
+    ],
+    "selected_neighbor": {
+      "id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
+      "name": "Lafora Disease"
+    },
+    "selection": {
+      "automated_choice": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+      "selected": "Lafora_Disease",
+      "operator_override": true,
+      "override_reason": "Selected for demonstration: this pair shows the retrieval-correction behaviour end to end (found through a broad annotation, that explanation rejected, a different evidence-backed bridge derived), and its relationship has been checked against primary literature independently. The automated ranking placed Neurodevelopmental Disorder With or Without Autism or Seizures first at 0.8056 against 0.748; that ranking is recorded above and is not overwritten.",
+      "ranking_basis": "Interpretable components, mechanistic specificity weighted highest. Corroboration count is a weak tie-break at weight 0.03, because the number of papers co-mentioning two diseases measures attention, not mechanistic understanding.",
+      "components": [
+        {
+          "disease": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+          "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+          "total": 0.8056,
+          "components": [
+            {
+              "name": "mechanistic_specificity",
+              "value": 1.0,
+              "weight": 0.3,
+              "contribution": 0.3,
+              "rationale": "2 specific process term(s), 4 named regulator(s), 1 generic"
+            },
+            {
+              "name": "evidence_directness",
+              "value": 1.0,
+              "weight": 0.22,
+              "contribution": 0.22,
+              "rationale": "4 of 4 supporting items establish a direct link"
+            },
+            {
+              "name": "evidence_role_quality",
+              "value": 0.5,
+              "weight": 0.18,
+              "contribution": 0.09,
+              "rationale": "no per-term roles recorded; treated as neutral"
+            },
+            {
+              "name": "context_compatibility",
+              "value": 0.6,
+              "weight": 0.12,
+              "contribution": 0.072,
+              "rationale": "molecular anchor present, cell/tissue axis unassessed"
+            },
+            {
+              "name": "experimental_tractability",
+              "value": 1.0,
+              "weight": 0.1,
+              "contribution": 0.1,
+              "rationale": "a named regulator gives an assay a target"
+            },
+            {
+              "name": "variant_compatibility",
+              "value": 0.5,
+              "weight": 0.05,
+              "contribution": 0.025,
+              "rationale": "variant compatibility UNKNOWN"
+            },
+            {
+              "name": "independent_corroboration",
+              "value": 0.667,
+              "weight": 0.03,
+              "contribution": 0.02,
+              "rationale": "4 supporting source(s), weak factor only"
+            }
+          ],
+          "penalties": [
+            {
+              "name": "contradiction_burden",
+              "value": 0.0,
+              "weight": 0.2,
+              "contribution": 0.0,
+              "rationale": "no contradicting evidence retrieved"
+            },
+            {
+              "name": "generic_overlap",
+              "value": 0.143,
+              "weight": 0.15,
+              "contribution": 0.0214,
+              "rationale": "1 of 7 bridge terms are generic"
+            }
+          ]
+        },
+        {
+          "disease": "Lafora_Disease",
+          "relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+          "total": 0.748,
+          "components": [
+            {
+              "name": "mechanistic_specificity",
+              "value": 0.85,
+              "weight": 0.3,
+              "contribution": 0.255,
+              "rationale": "3 specific process term(s), 1 named regulator(s), 0 generic"
+            },
+            {
+              "name": "evidence_directness",
+              "value": 1.0,
+              "weight": 0.22,
+              "contribution": 0.22,
+              "rationale": "2 of 2 supporting items establish a direct link"
+            },
+            {
+              "name": "evidence_role_quality",
+              "value": 0.5,
+              "weight": 0.18,
+              "contribution": 0.09,
+              "rationale": "no per-term roles recorded; treated as neutral"
+            },
+            {
+              "name": "context_compatibility",
+              "value": 0.4,
+              "weight": 0.12,
+              "contribution": 0.048,
+              "rationale": "molecular anchor absent, cell/tissue axis comparable"
+            },
+            {
+              "name": "experimental_tractability",
+              "value": 1.0,
+              "weight": 0.1,
+              "contribution": 0.1,
+              "rationale": "a named regulator gives an assay a target"
+            },
+            {
+              "name": "variant_compatibility",
+              "value": 0.5,
+              "weight": 0.05,
+              "contribution": 0.025,
+              "rationale": "variant compatibility UNKNOWN"
+            },
+            {
+              "name": "independent_corroboration",
+              "value": 0.333,
+              "weight": 0.03,
+              "contribution": 0.01,
+              "rationale": "2 supporting source(s), weak factor only"
+            }
+          ],
+          "penalties": [
+            {
+              "name": "contradiction_burden",
+              "value": 0.0,
+              "weight": 0.2,
+              "contribution": 0.0,
+              "rationale": "no contradicting evidence retrieved"
+            },
+            {
+              "name": "generic_overlap",
+              "value": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "rationale": "0 of 4 bridge terms are generic"
+            }
+          ]
+        }
+      ]
+    },
+    "retrieval_reason": {
+      "types": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_TYPE",
+        "PHENOTYPE_SIMILARITY"
+      ],
+      "feature": "protein ubiquitination"
+    },
+    "identity_result": {
+      "relation": "DISTINCT_DISEASE",
+      "scoped": []
+    },
+    "validated_relationship": {
+      "class": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "rationale": "2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "evidence_ids": [
+        "PMID:21652633",
+        "PMID:19892702"
+      ]
+    },
+    "why_this_matters": "The pair was retrieved on a broad annotation; that annotation is not why it is real. The system recorded both facts: the connection holds, the stated reason for finding it did not."
+  },
+  "goal3": {
+    "mechanistic_bridge": {
+      "id": "bridge:46abfb23-533a8d87",
+      "version": 1,
+      "supersedes": null,
+      "terms": [
+        "chaperone",
+        "co-chaperone",
+        "ubiquitin ligase",
+        "CHIP",
+        "stress response",
+        "HSF1"
+      ],
+      "display_label": "chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1)",
+      "derived_from": [
+        "PMID:21652633",
+        "PMID:19892702"
+      ],
+      "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+      "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
+      "full_text_review_completed": false,
+      "refinement_reason": null
+    },
+    "knowledge_gap": {
+      "id": "e939ac76-8c21-51d4-932b-a2728723bd36",
+      "question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+      "missing_evidence": [
+        "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+        "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+      ]
+    },
+    "experiment": {
+      "id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
+      "hypothesis": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+      "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+      "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
+      "primary_readout": "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+      "secondary_readouts": [
+        "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
+        "Recovery of the challenged cells after the stress is withdrawn"
+      ],
+      "limitations": [
+        "A single readout at one timepoint cannot exclude equivalence that emerges, or disappears, over time.",
+        "A negative result constrains equivalence at the measured step only and does not exclude shared biology elsewhere.",
+        "Model systems may not reproduce the cell type where the diseases actually diverge."
+      ]
+    },
+    "supports_if": "Both disease models show disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
+    "refutes_if": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
+    "evidence_limitations": [
+      "Full text was not obtained for either supporting paper: one is in Europe PMC without open access, the other has no PMC record.",
+      "The bridge rests on typed, section-tagged literature annotations covering title and abstract, not the full articles.",
+      "No direct cross-disease functional experiment has been performed or located.",
+      "Supporting evidence is concentrated in a small number of reports."
+    ],
+    "review_status": "AWAITING_EXPERT_SIGNOFF",
+    "evidence_status": "PROVISIONALLY_SUPPORTED"
+  },
+  "goal2": {
+    "required_capabilities": [
+      {
+        "id": "cap:model-a",
+        "capability": "Autosomal Recessive Spinocerebellar Ataxia 16 disease-relevant cellular model",
+        "why": "The experiment needs one arm representing this disease.",
+        "status": "COVERED_SUPPORTED"
+      },
+      {
+        "id": "cap:model-b",
+        "capability": "Lafora Disease disease-relevant cellular model",
+        "why": "The experiment needs the comparison arm.",
+        "status": "COVERED_SUPPORTED"
+      },
+      {
+        "id": "cap:stress-challenge",
+        "capability": "Standardised cellular stress challenge",
+        "why": "The bridge describes stress-responsive biology, so the comparison is made under challenge rather than at baseline.",
+        "status": "COVERED_SUPPORTED"
+      },
+      {
+        "id": "cap:primary-assay",
+        "capability": "Functional assay reporting chaperone",
+        "why": "This is the primary readout; it decides the hypothesis.",
+        "status": "COVERED_SUPPORTED"
+      },
+      {
+        "id": "cap:secondary-profiling",
+        "capability": "Secondary molecular profiling",
+        "why": "Supporting context only. Cannot decide the hypothesis.",
+        "status": "UNKNOWN"
+      }
+    ],
+    "existing_work": [
+      {
+        "capability": "Autosomal Recessive Spinocerebellar Ataxia 16 disease-relevant cellular model",
+        "status": "COVERED_SUPPORTED",
+        "candidates": [
+          {
+            "name": "Bin Jiang",
+            "source": "PMID:41851873",
+            "year": 2026,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Antonio Feliciello",
+            "source": "PMID:31189917",
+            "year": 2019,
+            "recency": "RECENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Sehime G Temel",
+            "source": "PMID:30058754",
+            "year": 2018,
+            "recency": "RECENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          }
+        ],
+        "verification_gap": "Confirm the group still performs this and would consider applying it to both disease contexts."
+      },
+      {
+        "capability": "Lafora Disease disease-relevant cellular model",
+        "status": "COVERED_SUPPORTED",
+        "candidates": [
+          {
+            "name": "Robert G Gilbert",
+            "source": "PMID:39245499",
+            "year": 2024,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Berge Minassian",
+            "source": "PMID:38397161",
+            "year": 2024,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "B A Minassian",
+            "source": "PMID:34301405",
+            "year": 2022,
+            "recency": "RECENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          }
+        ],
+        "verification_gap": "Confirm the group still performs this and would consider applying it to both disease contexts."
+      },
+      {
+        "capability": "Standardised cellular stress challenge",
+        "status": "COVERED_SUPPORTED",
+        "candidates": [
+          {
+            "name": "Guideng Li",
+            "source": "PMID:41535474",
+            "year": 2026,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Ramanujan S Hegde",
+            "source": "PMID:39879985",
+            "year": 2025,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Martin Kampmann",
+            "source": "PMID:37398204",
+            "year": 2024,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          }
+        ],
+        "verification_gap": "Confirm the group still performs this and would consider applying it to both disease contexts."
+      },
+      {
+        "capability": "Functional assay reporting chaperone",
+        "status": "COVERED_SUPPORTED",
+        "candidates": [
+          {
+            "name": "Pengxu Qian",
+            "source": "PMID:39082681",
+            "year": 2024,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Huidong Zhang",
+            "source": "PMID:38836496",
+            "year": 2024,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          },
+          {
+            "name": "Angelo Poletti",
+            "source": "PMID:36594740",
+            "year": 2023,
+            "recency": "CURRENT",
+            "evidence_scope": "TEAM_LEVEL",
+            "capability_verified": false,
+            "collaboration_willingness": "UNKNOWN"
+          }
+        ],
+        "verification_gap": "Confirm the group still performs this and would consider applying it to both disease contexts."
+      }
+    ],
+    "assets": [],
+    "asset_status": "NO_RELEVANT_ASSET_IDENTIFIED",
+    "missing_capabilities": [
+      {
+        "capability": "Secondary molecular profiling",
+        "status": "UNKNOWN",
+        "note": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+      }
+    ],
+    "coordination_opportunities": [],
+    "coordination_note": "No sufficiently supported evidence of overlapping or duplicative programs was found in the searched evidence.",
+    "execution_topology": "MULTI_PARTY_EXECUTABLE",
+    "execution_readiness": "PARTIAL",
+    "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+    "first_contact": {
+      "target": "Pengxu Qian",
+      "basis": "PMID:PMID:39082681",
+      "question": "Your group has published work using the assay cited above. We are investigating whether Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared defect in chaperone, co-chaperone, ubiquitin ligase. Could your established assay be applied in parallel to both disease contexts under matched conditions, with a shared control?",
+      "caveat": "Capability is demonstrated by publication only. Willingness and current availability are unknown and must not be assumed."
+    }
+  },
+  "provenance": {
+    "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "hpo_release": "hp/releases/2026-09-01",
+    "pipeline_version": "cross-disease-pipeline-v1",
+    "selection_version": "flagship-selection-v2",
+    "software_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c",
+    "generated_from": [
+      "data/goals/goal1_scar16_neighbors.json",
+      "data/flagship/flagship_journey.json",
+      "data/action/flagship_goal2_map.json",
+      "data/flagship/selection_decision.json"
+    ]
+  },
+  "disclaimer": {
+    "headline": "Machine-generated research hypothesis based on available evidence; expert review required before scientific or financial action.",
+    "not_a_medical_recommendation": true,
+    "not_an_established_mechanism": true,
+    "review_state": "PROVISIONAL_MACHINE_SYNTHESIS",
+    "expert_signoff": "AWAITING_EXPERT_SIGNOFF"
+  }
+}

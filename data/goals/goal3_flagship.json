@@ -75,7 +75,7 @@
           "queries": [
             "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])"
           ],
-          "checked_at": "2026-10-04T08:03:31.827225Z",
+          "checked_at": "2026-10-04T08:15:33.620529Z",
           "result_count": 3,
           "error": null,
           "pages_checked": 0,
@@ -106,7 +106,7 @@
           "estimated_cost": 0.0
         }
       ],
-      "search_started_at": "2026-10-04T08:03:31.827286Z",
+      "search_started_at": "2026-10-04T08:15:33.620624Z",
       "search_completed_at": null,
       "scope": "Cross-disease evidence for pair 46abfb23-533a8d87",
       "language_limitations": [

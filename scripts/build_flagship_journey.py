@@ -33,6 +33,7 @@ from atlas.services.cross_disease_synthesis import (
     build_cross_disease_gap,
 )
 from atlas.services.disease_comparison import compare_diseases
+from atlas.services.flagship_selection import SELECTION_VERSION, rank_candidates
 from atlas.services.hpo_similarity import (
     HpoOntology,
     PhenotypeSimilarity,
@@ -103,44 +104,89 @@ def commit() -> str:
         return "unknown"
 
 
-def select_flagship(rows: list[dict]) -> dict:
-    """Pick the strongest genuinely independent relationship, by evidence.
+def select_flagship(rows: list[dict], override: str | None = None) -> tuple[dict, dict]:
+    """Pick the flagship by interpretable components, and record the decision.
 
-    Ordered by: independence first (a subtype relationship is not a discovery),
-    then corroboration, then whether the pair was molecularly anchored. No
-    disease is preferred; if nothing qualifies the caller is told, rather than
-    being handed a forced choice.
+    Returns the chosen row and a FlagshipSelectionDecision. The automated
+    ranking is always recorded, including when an operator override is used, so
+    a curated demo choice can never be presented as having ranked first.
     """
-    eligible = [
-        row
-        for row in rows
-        if row["final_relationship"] in GAP_WORTHY
-        and row["is_independent_discovery"]
-        and len(row["evidence_ids"]) >= 2
-    ]
+    traces = {}
+    for path in (ROOT / "data/cross_disease/traces").glob("*.json"):
+        trace = json.loads(path.read_text())
+        traces[trace["disease_b"]] = trace
+    classes = {name: t["final_relationship_class"] for name, t in traces.items()}
+    independent = {r["disease_b"]: r["is_independent_discovery"] for r in rows}
+    ranked = rank_candidates(list(traces.values()), classes, independent)
+    eligible = [item for item in ranked if item.eligible]
+
+    decision: dict = {
+        "schema_version": "flagship-selection-decision-v1",
+        "algorithm_version": SELECTION_VERSION,
+        "starting_disease": rows[0]["disease_a"] if rows else None,
+        "candidates_assessed": len(ranked),
+        "excluded_candidates": [
+            {"disease": item.disease_name, "reason": item.exclusion_reason}
+            for item in ranked
+            if not item.eligible
+        ],
+        "eligible_candidates": [
+            {
+                "disease": item.disease_name,
+                "relationship_class": item.relationship_class,
+                "total": item.total,
+                "components": [
+                    {"name": c.name, "value": c.value, "weight": c.weight,
+                     "contribution": c.contribution, "rationale": c.rationale}
+                    for c in item.components
+                ],
+                "penalties": [
+                    {"name": c.name, "value": c.value, "weight": c.weight,
+                     "contribution": c.contribution, "rationale": c.rationale}
+                    for c in item.penalties
+                ],
+            }
+            for item in eligible
+        ],
+        "automated_choice": eligible[0].disease_name if eligible else None,
+        "ranking_basis": (
+            "Interpretable components, mechanistic specificity weighted highest. "
+            "Corroboration count is a weak tie-break at weight 0.03, because the "
+            "number of papers co-mentioning two diseases measures attention, not "
+            "mechanistic understanding."
+        ),
+        "operator_override": False,
+        "override_reason": None,
+    }
     if not eligible:
         raise SystemExit(
-            "NO_DEFENSIBLE_FLAGSHIP: no relationship is both an independent "
-            "cross-disease pair and corroborated by two or more primary findings."
+            "NO_DEFENSIBLE_FLAGSHIP: no candidate is an independent cross-disease "
+            "pair with an evidence-backed mechanistic bridge."
         )
-    eligible.sort(key=lambda row: (-len(row["evidence_ids"]), row["disease_b"]))
-    # Record the runners-up and the criterion. Corroboration count is a
-    # defensible ordering but it is not a measure of quality: a pair with more
-    # co-occurring papers is not necessarily the better-understood relationship.
-    # Hiding the alternatives would present a ranking rule as a scientific
-    # judgement.
-    for position, row in enumerate(eligible):
-        row["flagship_rank"] = position + 1
-    eligible[0]["selection_criterion"] = (
-        "Most corroborating primary findings among independent cross-disease "
-        "pairs. This orders by evidence count, not by how well the mechanism is "
-        "understood, and expert review should confirm the choice."
+
+    chosen_name = eligible[0].disease_name
+    if override:
+        match = next((item for item in eligible if item.disease_name == override), None)
+        if match is None:
+            raise SystemExit(f"{override} is not an eligible flagship candidate")
+        decision["operator_override"] = True
+        decision["override_reason"] = (
+            "Selected for demonstration: this pair shows the retrieval-correction "
+            "behaviour end to end (found through a broad annotation, that "
+            "explanation rejected, a different evidence-backed bridge derived), "
+            "and its relationship has been checked against primary literature "
+            f"independently. The automated ranking placed {chosen_name} first at "
+            f"{eligible[0].total} against {match.total}; that ranking is recorded "
+            "above and is not overwritten."
+        )
+        chosen_name = override
+
+    row = next(r for r in rows if r["disease_b"] == chosen_name)
+    decision["selected_candidate"] = chosen_name
+    decision["selection_rationale"] = next(
+        item.explanation for item in eligible if item.disease_name == chosen_name
     )
-    eligible[0]["runners_up"] = [
-        {"disease": row["disease_b"], "evidence_count": len(row["evidence_ids"])}
-        for row in eligible[1:4]
-    ]
-    return eligible[0]
+    return row, decision
 
 
 def main() -> int:
@@ -156,19 +202,13 @@ def main() -> int:
     args = parser.parse_args()
 
     rows = [json.loads(line) for line in args.relationships.read_text().splitlines() if line]
-    flagship = select_flagship(rows)
-    if args.pair:
-        override = next((r for r in rows if r["disease_b"] == args.pair), None)
-        if override is None:
-            raise SystemExit(f"{args.pair} is not an eligible validated relationship")
-        override["selection_criterion"] = (
-            f"Operator override. The automated criterion selected "
-            f"{flagship['disease_b']}; this pair was chosen for external "
-            "validation reasons and the automated ranking is preserved above."
-        )
-        override["automated_selection_would_be"] = flagship["disease_b"]
-        override["runners_up"] = flagship.get("runners_up", [])
-        flagship = override
+    flagship, selection_decision = select_flagship(rows, args.pair)
+    (ROOT / "data/flagship/selection_decision.json").parent.mkdir(
+        parents=True, exist_ok=True
+    )
+    (ROOT / "data/flagship/selection_decision.json").write_text(
+        json.dumps(selection_decision, indent=2) + "\n", encoding="utf-8"
+    )
     trace = json.loads(
         (ROOT / f"data/cross_disease/traces/{flagship['decision_trace_id']}.json").read_text()
     )
@@ -232,7 +272,12 @@ def main() -> int:
         )
     from atlas.domain.cross_disease import MechanisticBridge
 
-    bridge = MechanisticBridge.model_validate(bridge_raw)
+    # The trace carries a computed property alongside the model fields;
+    # drop anything the model does not declare rather than loosening it.
+    bridge = MechanisticBridge.model_validate(
+        {k: v for k, v in bridge_raw.items()
+         if k in MechanisticBridge.model_fields}
+    )
 
     relationship = ValidatedRelationship(
         relationship_id=f"relationship:{flagship['pair_id']}",
@@ -365,6 +410,7 @@ def main() -> int:
         "schema_version": "flagship-journey-v1",
         "software_commit": commit(),
         "flagship": flagship,
+        "selection_decision": selection_decision,
         "retrieval_level_feature": shared_process,
         "validated_mechanistic_bridge": bridge_raw,
         "bridge_version": bridge.version,

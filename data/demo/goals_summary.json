@@ -1,0 +1,25 @@
+{
+  "schema_version": "goals-summary-v1",
+  "software_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c",
+  "goal1": {
+    "question": "Who genuinely shares relevant biology?",
+    "technical_status": "DEMONSTRATED",
+    "evidence": "8 of 60 retrieved neighbours evaluated; 6 excluded as the same entity under different names; 4 rejected or downgraded on evidence; 2 survived as independent corroborated relationships."
+  },
+  "goal3": {
+    "question": "What important biological uncertainty should be tested next?",
+    "technical_status": "DEMONSTRATED",
+    "scientific_review": "AWAITING_EXPERT_SIGNOFF",
+    "evidence_status": "PROVISIONALLY_SUPPORTED",
+    "evidence": "Gap derives from the evidence-backed bridge and cannot be built without one; experiment has one primary readout and an enforced refutation condition; lineage from source to experiment is machine-readable."
+  },
+  "goal2": {
+    "question": "What useful work and capabilities already exist?",
+    "technical_status": "DEMONSTRATED",
+    "execution_readiness": "PARTIAL",
+    "evidence": "5 atomic capabilities derived from the frozen experiment and searched independently; 4 have supported candidates; 1 unknown; NO_RELEVANT_ASSET_IDENTIFIED; topology MULTI_PARTY_EXECUTABLE; willingness never inferred."
+  },
+  "ready_for_ui": true,
+  "ready_for_ui_basis": "Goals 1-3 technically demonstrated on real data, expert review clearly labelled pending, missing information explicit, no medical recommendation, no willingness claimed, provenance and limitations present, UI contract stable and reproducible.",
+  "ui_contract": "data/demo/flagship_story.json"
+}

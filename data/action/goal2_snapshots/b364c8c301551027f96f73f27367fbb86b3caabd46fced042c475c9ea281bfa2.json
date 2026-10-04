@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22ubiquitin+ligase%22%5Btiab%5D+OR+%22heat+shock+response%22%5Btiab%5D%29+AND+%28proteostasis%5Btiab%5D+OR+%22protein+quality+control%22%5Btiab%5D+OR+neuron%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:13:39.126185+00:00",
+  "sha256": "6f0bc4c56f9bee5e0632f584afcd4989f483e855d879730186232ed526227e0f"
+}

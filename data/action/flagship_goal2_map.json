@@ -1,7 +1,7 @@
 {
   "schema_version": "flagship-goal2-map-v1",
-  "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
-  "generated_at": "2026-10-04T08:03:32.825502+00:00",
+  "software_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c",
+  "generated_at": "2026-10-04T08:15:33.826815+00:00",
   "scientific_question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
   "frozen_bridge": {
     "bridge_id": "bridge:46abfb23-533a8d87:v2",

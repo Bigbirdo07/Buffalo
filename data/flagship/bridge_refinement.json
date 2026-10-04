@@ -1,81 +1,27 @@
 {
   "schema_version": "bridge-refinement-v1",
-  "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
-  "generated_at": "2026-10-04T08:03:32.112743+00:00",
+  "software_commit": "d2ee675c2e2001a6d44174ad81b3888c02c1b97c",
+  "generated_at": "2026-10-04T08:15:33.115937+00:00",
   "parent_bridge": {
-    "bridge_id": "bridge:46abfb23-533a8d87:v2",
-    "version": 2,
-    "supersedes_bridge_id": "bridge:46abfb23-533a8d87",
-    "refinement_reason": "2 additional term(s) supported by statements their own papers claim as primary findings, which the v1 derivation missed because it required a term to appear in more than one source. A single paper's demonstrated result is stronger evidence than a term repeated as background across two.",
+    "bridge_id": "bridge:46abfb23-533a8d87",
     "terms": [
       "chaperone",
       "co-chaperone",
       "ubiquitin ligase",
-      "CHIP",
-      "stress response",
-      "HSF1"
+      "CHIP"
     ],
+    "statement": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
     "derived_from_evidence_ids": [
       "PMID:21652633",
       "PMID:19892702"
     ],
-    "statement": "Refined from the supporting evidence's own primary findings. PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\"",
-    "derivation_method": "europepmc-typed-annotations-primary-role-v1",
-    "term_provenance": [
-      {
-        "term": "stress response",
-        "source_id": "PMID:21652633",
-        "span": "This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie some of the pathological symptoms in LD.",
-        "annotation_type": "Gene Disease Relationship",
-        "finding_role": "PRIMARY_EXPERIMENTAL_RESULT",
-        "section": "Abstract (http://purl.org/dc/terms/abstract)",
-        "snapshot_sha256": "9a4270166d29e0f669bb358f2e7dc4929c79a7f415755d9c73fa9ed0119f6472"
-      },
-      {
-        "term": "HSF1",
-        "source_id": "PMID:21652633",
-        "span": "This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie some of the pathological symptoms in LD.",
-        "annotation_type": "Gene Disease Relationship",
-        "finding_role": "PRIMARY_EXPERIMENTAL_RESULT",
-        "section": "Abstract (http://purl.org/dc/terms/abstract)",
-        "snapshot_sha256": "9a4270166d29e0f669bb358f2e7dc4929c79a7f415755d9c73fa9ed0119f6472"
-      },
-      {
-        "term": "chaperone",
-        "source_id": "PMID:19892702",
-        "span": "Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of Hsp70.",
-        "annotation_type": "Gene Function",
-        "finding_role": "PRIMARY_EXPERIMENTAL_RESULT",
-        "section": "Abstract (http://purl.org/dc/terms/abstract)",
-        "snapshot_sha256": "2e32b0ffcf23162c1f470cba23b1da9f84c685bfb3105002ff01a430d3da7e23"
-      },
-      {
-        "term": "co-chaperone",
-        "source_id": "PMID:19892702",
-        "span": "Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of Hsp70.",
-        "annotation_type": "Gene Function",
-        "finding_role": "PRIMARY_EXPERIMENTAL_RESULT",
-        "section": "Abstract (http://purl.org/dc/terms/abstract)",
-        "snapshot_sha256": "2e32b0ffcf23162c1f470cba23b1da9f84c685bfb3105002ff01a430d3da7e23"
-      },
-      {
-        "term": "CHIP",
-        "source_id": "PMID:19892702",
-        "span": "Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of Hsp70.",
-        "annotation_type": "Gene Function",
-        "finding_role": "PRIMARY_EXPERIMENTAL_RESULT",
-        "section": "Abstract (http://purl.org/dc/terms/abstract)",
-        "snapshot_sha256": "2e32b0ffcf23162c1f470cba23b1da9f84c685bfb3105002ff01a430d3da7e23"
-      }
-    ],
-    "display_label_override": null,
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
     "distinct_from_retrieval_features": [
       "protein ubiquitination",
       "Purkinje cell",
       "Myoclonus"
     ],
-    "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
-    "full_text_review_completed": false
+    "is_narrower_than_retrieval": true
   },
   "full_text_retrieval": [
     {
@@ -111,7 +57,11 @@
     "Gene Ontology",
     "Pathway"
   ],
-  "result": "NO_ADDITIONAL_BRIDGE_SPECIFICITY_SUPPORTED",
+  "result": "BRIDGE_REFINED",
+  "new_terms": [
+    "stress response",
+    "HSF1"
+  ],
   "canonical_bridge": {
     "bridge_id": "bridge:46abfb23-533a8d87:v2",
     "version": 2,
@@ -131,6 +81,8 @@
     ],
     "statement": "Refined from the supporting evidence's own primary findings. PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\"",
     "derivation_method": "europepmc-typed-annotations-primary-role-v1",
+    "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
+    "full_text_review_completed": false,
     "term_provenance": [
       {
         "term": "stress response",
@@ -183,9 +135,6 @@
       "protein ubiquitination",
       "Purkinje cell",
       "Myoclonus"
-    ],
-    "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
-    "full_text_review_completed": false
-  },
-  "note": "No statement claimed as a primary finding by its own paper contributed a term the v1 bridge did not already carry. v1 remains canonical."
+    ]
+  }
 }
