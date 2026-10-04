@@ -1,0 +1,15 @@
+{
+  "schema_version": "ontology-manifest-v1",
+  "files": [
+    {
+      "path": "hp.obo",
+      "url": "https://purl.obolibrary.org/obo/hp.obo",
+      "data_version": "hp/releases/2026-09-01",
+      "sha256": "93dace952fcb3ec4728818857f6ba76bc2d5312f4d83266519b8694b8e798f22",
+      "bytes": 10863613,
+      "terms": 20482,
+      "retrieved_utc": "2026-10-04"
+    }
+  ],
+  "note": "Not tracked as a blob. Re-fetch with curl -sSL -o hp.obo <url> and verify the sha256 above; a different hash means the release moved and information-content values will shift with it."
+}

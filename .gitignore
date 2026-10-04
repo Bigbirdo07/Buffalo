@@ -29,3 +29,11 @@ data/upstream/dismech-checkout/
 #   data/*/snapshots/        hash-verified source snapshots; offline replay needs them
 #   data/fixtures/real/      regression fixtures derived from real upstream entries
 #   data/audit/*.json        generated audit evidence pinned by the manifests
+
+# Derived fingerprints (21MB): regenerable from the pinned DisMech commit via
+# scripts/build_fingerprints.py. The summary beside them IS tracked.
+data/fingerprints/*.jsonl
+
+# HPO release snapshot (10MB): an external download, pinned and verified by
+# data/upstream/ontology/MANIFEST.json rather than tracked as a blob.
+data/upstream/ontology/*.obo

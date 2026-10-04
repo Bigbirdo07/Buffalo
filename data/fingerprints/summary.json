@@ -1,0 +1,120 @@
+{
+  "schema_version": "fingerprint-summary-v1",
+  "fingerprint_version": "disease-mechanism-fingerprint-v1",
+  "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "diseases_examined": 3289,
+  "fingerprints_written": 3289,
+  "failures": [],
+  "totals": {
+    "features": 85448,
+    "ontology_grounded": 85448,
+    "free_text": 0,
+    "phenotypes": 41539,
+    "genes": 6841
+  },
+  "features_by_class": {
+    "phenotype": 41955,
+    "cellular": 17325,
+    "cell_tissue": 11426,
+    "genetic": 7992,
+    "molecular": 2923,
+    "model_organism": 2336,
+    "therapeutic": 1457,
+    "mechanism": 34
+  },
+  "distinct_features": 15598,
+  "features_shared_by_more_than_one_disease": 7633,
+  "most_common_features": [
+    {
+      "feature_id": "organism:Mus musculus",
+      "diseases": 1036
+    },
+    {
+      "feature_id": "organism:Rattus norvegicus",
+      "diseases": 940
+    },
+    {
+      "feature_id": "HP:0001250",
+      "diseases": 697
+    },
+    {
+      "feature_id": "HP:0001263",
+      "diseases": 624
+    },
+    {
+      "feature_id": "HP:0001249",
+      "diseases": 550
+    },
+    {
+      "feature_id": "CL:0000540",
+      "diseases": 548
+    },
+    {
+      "feature_id": "modality:transplant",
+      "diseases": 480
+    },
+    {
+      "feature_id": "modality:aso",
+      "diseases": 472
+    },
+    {
+      "feature_id": "HP:0001252",
+      "diseases": 433
+    },
+    {
+      "feature_id": "GO:0006954",
+      "diseases": 397
+    },
+    {
+      "feature_id": "HP:0004322",
+      "diseases": 336
+    },
+    {
+      "feature_id": "HP:0000407",
+      "diseases": 295
+    },
+    {
+      "feature_id": "CL:0000057",
+      "diseases": 282
+    },
+    {
+      "feature_id": "CL:0000235",
+      "diseases": 274
+    },
+    {
+      "feature_id": "HP:0001508",
+      "diseases": 273
+    },
+    {
+      "feature_id": "HP:0002650",
+      "diseases": 264
+    },
+    {
+      "feature_id": "HP:0000252",
+      "diseases": 261
+    },
+    {
+      "feature_id": "GO:0030198",
+      "diseases": 251
+    },
+    {
+      "feature_id": "HP:0011968",
+      "diseases": 250
+    },
+    {
+      "feature_id": "HP:0001251",
+      "diseases": 242
+    }
+  ],
+  "diseases_missing_dimension": {
+    "mechanism": 3273,
+    "therapeutic": 2195,
+    "model_organism": 2034,
+    "molecular": 1734,
+    "genetic": 389,
+    "cell_tissue": 263,
+    "cellular": 104,
+    "phenotype": 1
+  },
+  "note": "A fingerprint describes a disease; it asserts nothing about any other disease. Shared features make two diseases candidate neighbours only."
+}
