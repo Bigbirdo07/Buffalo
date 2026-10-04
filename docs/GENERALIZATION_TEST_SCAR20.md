@@ -22,7 +22,53 @@ PYTHONPATH=backend/src .venv/bin/python scripts/refine_edge.py \
   `PROVISIONAL` (SCAR16's were mostly unannotated) and whose negative evidence
   sits on nodes rather than edges.
 
-## Verdict
+## Update after refinement
+
+Four refinements were applied in response to this test, and the SCAR20 result
+moved from `PARTIALLY_SUPPORTED` to **`CONTEXT_DEPENDENT`** — the status a domain
+reviewer judged correct. SCAR16 re-ran byte-identically in its science: 18/18
+citations VERIFIED, every atomic status and the edge status unchanged.
+
+1. **A verifiability tier.** `UPSTREAM_ATTESTED` now sits between VERIFIED and
+   unresolvable: the identifier resolves and the curator recorded a verbatim
+   snippet, but the text was not retrievable. Such evidence may *qualify* a claim
+   and may be DIRECT, but a would-be SUPPORTS or REFUTES is capped at QUALIFIES
+   and it can never be CAUSAL. Reviewer decision, recorded as policy.
+2. **A distinction that was previously conflated.** A span missing from text we
+   *did* retrieve is now `SPAN_NOT_LOCATED` — a red flag for possible
+   misquotation — while a span we could not retrieve at all is
+   `UPSTREAM_ATTESTED`. Absence of evidence and absence of access are no longer
+   the same outcome.
+3. **Reference resolution.** PMC URLs resolve via the NCBI ID converter and DOIs
+   via Europe PMC, so one paper cited in two forms now collapses to a single
+   canonical identity. This closes a false-CONTRADICTED path: rule A4 requires two
+   *independent* publications, and SCAR20's `pathophysiology[1]` cites the same
+   paper as both `PMID:29635513` and a PMC URL. All three SCAR20 citations that
+   were NOT_CHECKABLE are now resolved and attested.
+4. **Cell type as a first-class scoping axis.** `AtomicClaimSpec.cell_type_scope`
+   and `EvidenceObservation.cell_types` are now separate from the allele strings,
+   and the critic downgrades cross-cell-type SUPPORTS/REFUTES to QUALIFIES exactly
+   as it does for a cross-entity mismatch. This fixed a real inconsistency: ac3
+   and ac4 rested on the *same* observation but disagreed, purely because
+   `"biallelic SNX14 loss-of-function (fibroblast)"` matched one claim's variant
+   string and not the other's. Exact-string matching degrades safely — always to
+   weaker, never stronger — but it degraded *silently*, which is the trap.
+
+Refined result:
+
+```
+ac1  LC3 flux slowed in patient neural progenitors   SUPPORTED             (A2)
+ac2  autophagosome-lysosome fusion blocked           PARTIALLY_SUPPORTED   (A7)
+ac3  autolysosome formation impaired                 PARTIALLY_SUPPORTED   (A7)
+ac4  clearance impaired in non-neural patient cells  PARTIALLY_SUPPORTED   (A7)
+Edge: CONTEXT_DEPENDENT (E2)
+Citations: 4 VERIFIED, 3 UPSTREAM_ATTESTED, 0 unresolvable
+```
+
+Still outstanding from this test: `build_gap_and_experiment.py` remains
+SCAR16-specific, and extraction remains manual.
+
+## Verdict (as first run, before refinement)
 
 **The scientific rules generalized unchanged. The plumbing did not.**
 

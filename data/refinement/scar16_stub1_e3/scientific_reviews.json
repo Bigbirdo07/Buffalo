@@ -10,7 +10,7 @@
           "p.Met211Ile"
         ]
       },
-      "derived_at": "2026-10-04T00:28:11.208601Z",
+      "derived_at": "2026-10-04T02:13:05.809322Z",
       "machine_value": {
         "basis": "Coiled-coil terminology was taken from the source publications (PMID:31619515 describes CC mutations).",
         "scope_class": "inter-domain missense",
@@ -30,7 +30,7 @@
         "evidence_required_to_upgrade": "side-by-side ubiquitination of two or more defined CHIP clients under matched conditions",
         "substrate_selectivity_claim": "not asserted; requires comparative substrate experiments that directly demonstrate selectivity between substrates"
       },
-      "derived_at": "2026-10-04T00:28:11.208605Z",
+      "derived_at": "2026-10-04T02:13:05.809326Z",
       "machine_value": {
         "basis": "Hsc70 was mono-ubiquitinated while CHIP self-ubiquitination was retained (PMID:28396517, PMID:25258038).",
         "effect": "substrate_selective",
@@ -58,7 +58,7 @@
         "open_question": "DisMech describes SCAR16 and SCA48 as a clinical continuum and PMID:34070858 reports biochemically indistinguishable defects, which could argue for pooling the entities.",
         "sca48_handling": "cross-entity; SUPPORTS/REFUTES downgraded to QUALIFIES and directness set to INDIRECT"
       },
-      "derived_at": "2026-10-04T00:28:11.208608Z",
+      "derived_at": "2026-10-04T02:13:05.809329Z",
       "machine_value": {
         "affected_observations": [
           "o14",
@@ -80,7 +80,7 @@
   "reviews": [
     {
       "comments": "Use inter-domain/linker-region as the canonical classification for p.Lys145Gln and p.Met211Ile.",
-      "created_at": "2026-10-04T00:28:11.208573Z",
+      "created_at": "2026-10-04T02:13:05.809296Z",
       "model_run_id": null,
       "original_value": {
         "basis": "Coiled-coil terminology was taken from the source publications (PMID:31619515 describes CC mutations).",
@@ -114,7 +114,7 @@
     },
     {
       "comments": "Classify p.Asn65Ser as a processivity/chain-elongation defect rather than substrate_selective.",
-      "created_at": "2026-10-04T00:28:11.208589Z",
+      "created_at": "2026-10-04T02:13:05.809312Z",
       "model_run_id": null,
       "original_value": {
         "basis": "Hsc70 was mono-ubiquitinated while CHIP self-ubiquitination was retained (PMID:28396517, PMID:25258038).",
@@ -145,7 +145,7 @@
     },
     {
       "comments": "Retain SCA48 as a separate disease entity. Its evidence may qualify SCAR16 mechanism claims but remains INDIRECT/QUALIFIES.",
-      "created_at": "2026-10-04T00:28:11.208595Z",
+      "created_at": "2026-10-04T02:13:05.809317Z",
       "model_run_id": null,
       "original_value": {
         "affected_observations": [

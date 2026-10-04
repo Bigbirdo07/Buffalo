@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fng.3259%22&resultType=lite&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T02:10:02.394837+00:00",
+  "sha256": "23a7fbb7a58bd38de32fbe817790c2953033807972403a835e2d66d078fbdb2d"
+}

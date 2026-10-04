@@ -22,7 +22,7 @@
     "source_claim_origin": "pathophysiology[1].downstream[0]",
     "extraction_method": "deterministic_dismech_edge_import",
     "derived_from_claim_ids": [],
-    "created_at": "2026-10-04T01:10:42.602437Z",
+    "created_at": "2026-10-04T02:11:49.641765Z",
     "last_reviewed_at": null,
     "refinement_status": "UNREVIEWED",
     "status_rationale": null,
@@ -34,7 +34,7 @@
       "source_object_path": "pathophysiology[1].downstream[0]",
       "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
       "extraction_method": "deterministic_dismech_adapter_v2",
-      "created_at": "2026-10-04T01:10:42.602432Z",
+      "created_at": "2026-10-04T02:11:49.641760Z",
       "source_payload": {
         "target": "Impaired Autophagosome Clearance in Neural Progenitors",
         "causal_link_type": "INDIRECT_UNKNOWN_INTERMEDIATES",
@@ -69,6 +69,8 @@
       "identifier": "PMID:25848753",
       "status": "VERIFIED",
       "identifier_resolved": true,
+      "canonical_identifier": "PMID:25848753",
+      "full_text_available": true,
       "title_matches": true,
       "span_location": "full_text",
       "texts_checked": [
@@ -88,6 +90,8 @@
       "identifier": "PMID:25848753",
       "status": "VERIFIED",
       "identifier_resolved": true,
+      "canonical_identifier": "PMID:25848753",
+      "full_text_available": true,
       "title_matches": true,
       "span_location": "full_text",
       "texts_checked": [
@@ -107,6 +111,8 @@
       "identifier": "PMID:25848753",
       "status": "VERIFIED",
       "identifier_resolved": true,
+      "canonical_identifier": "PMID:25848753",
+      "full_text_available": true,
       "title_matches": true,
       "span_location": "full_text",
       "texts_checked": [
@@ -124,41 +130,67 @@
     {
       "evidence_id": "c1fba935-7e5b-5b9f-b2cc-4126bfd4849f",
       "identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
-      "status": "NOT_CHECKABLE",
-      "identifier_resolved": false,
-      "title_matches": null,
+      "status": "UPSTREAM_ATTESTED",
+      "identifier_resolved": true,
+      "canonical_identifier": "PMID:29635513",
+      "full_text_available": false,
+      "title_matches": true,
       "span_location": null,
-      "texts_checked": [],
-      "source_snapshot_sha256": [],
-      "note": "Non-PubMed reference; no deterministic resolver configured in V1."
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1",
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1"
+      ],
+      "note": "Identifier resolves, but the source text could not be retrieved (available: title, abstract), so the upstream curator's verbatim snippet could not be independently located. The quotation is neither confirmed nor impugned; it may qualify a claim but cannot alone support or contradict one."
     },
     {
       "evidence_id": "96d0b3e0-3d44-553e-94eb-18b4b20d981c",
       "identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
-      "status": "NOT_CHECKABLE",
-      "identifier_resolved": false,
-      "title_matches": null,
+      "status": "UPSTREAM_ATTESTED",
+      "identifier_resolved": true,
+      "canonical_identifier": "PMID:29635513",
+      "full_text_available": false,
+      "title_matches": true,
       "span_location": null,
-      "texts_checked": [],
-      "source_snapshot_sha256": [],
-      "note": "Non-PubMed reference; no deterministic resolver configured in V1."
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1",
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1"
+      ],
+      "note": "Identifier resolves, but the source text could not be retrieved (available: title, abstract), so the upstream curator's verbatim snippet could not be independently located. The quotation is neither confirmed nor impugned; it may qualify a claim but cannot alone support or contradict one."
     },
     {
       "evidence_id": "df9af9f1-bb57-5307-ba5e-4670a687cd31",
       "identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
-      "status": "NOT_CHECKABLE",
-      "identifier_resolved": false,
-      "title_matches": null,
+      "status": "UPSTREAM_ATTESTED",
+      "identifier_resolved": true,
+      "canonical_identifier": "PMID:29635513",
+      "full_text_available": false,
+      "title_matches": true,
       "span_location": null,
-      "texts_checked": [],
-      "source_snapshot_sha256": [],
-      "note": "Non-PubMed reference; no deterministic resolver configured in V1."
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1",
+        "c866cb62629eb6fc31139ed7f155b4ce85dffeb79edfb9b6a737efcaefca1bc1"
+      ],
+      "note": "Identifier resolves, but the source text could not be retrieved (available: title, abstract), so the upstream curator's verbatim snippet could not be independently located. The quotation is neither confirmed nor impugned; it may qualify a claim but cannot alone support or contradict one."
     },
     {
       "evidence_id": "13cf8769-67f0-509f-8809-f0081a8d85a2",
       "identifier": "PMID:25848753",
       "status": "VERIFIED",
       "identifier_resolved": true,
+      "canonical_identifier": "PMID:25848753",
+      "full_text_available": true,
       "title_matches": true,
       "span_location": "full_text",
       "texts_checked": [
@@ -179,19 +211,23 @@
       "observation_id": "s01",
       "evidence_id": "13cf8769-67f0-509f-8809-f0081a8d85a2",
       "source_identifier": "PMID:25848753",
+      "upstream_reference_form": "PMID:25848753",
       "claim_ids": [
         "ac1-lc3-flux-npc"
       ],
       "gene": "SNX14",
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "variant_class": null,
       "readout": "lc3_flux",
       "effect": "decreased",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "patient neural progenitor cells"
+      ],
       "experimental_system": "patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block",
       "support_span": "By LC3 flux analysis in nutrient deprived conditions, where LC3II ratios in the presence and absence of lysosomal inhibitors (Leupeptin and NH 4 Cl) were calculated 20 , we identified slower LC3 flux in patient cells compared to controls.",
       "source_location": "full_text",
@@ -238,11 +274,11 @@
         },
         {
           "field": "protein_domain",
-          "value": "biallelic SNX14 loss-of-function (patient NPC): no annotated domain at this residue",
+          "value": "biallelic SNX14 loss-of-function: no annotated domain at this residue",
           "basis": "DERIVED",
           "support_span": null,
           "source_location": null,
-          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function (patient NPC)' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
         }
       ],
       "extraction_note": "Genuine flux measurement with lysosomal inhibitors, not inferred from steady-state LC3-II. This is the strongest support for the edge and it is specific to neural progenitors."
@@ -251,19 +287,23 @@
       "observation_id": "s02",
       "evidence_id": "fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1",
       "source_identifier": "PMID:25848753",
+      "upstream_reference_form": "PMID:25848753",
       "claim_ids": [
         "ac1-lc3-flux-npc"
       ],
       "gene": "SNX14",
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "variant_class": null,
       "readout": "lc3_ii_level",
       "effect": "decreased",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "patient neural progenitor cells"
+      ],
       "experimental_system": "patient cells with genetic complementation by tagged SNX14",
       "support_span": "Importantly, the increased LC3 II levels were recovered to basal rates by forced expression of tagged SNX14 into patient cells ( Fig. 4a ).",
       "source_location": "full_text",
@@ -294,11 +334,11 @@
         },
         {
           "field": "protein_domain",
-          "value": "biallelic SNX14 loss-of-function (patient NPC): no annotated domain at this residue",
+          "value": "biallelic SNX14 loss-of-function: no annotated domain at this residue",
           "basis": "DERIVED",
           "support_span": null,
           "source_location": null,
-          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function (patient NPC)' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
         }
       ],
       "extraction_note": "Genetic complementation: re-expression of SNX14 normalised elevated LC3-II, establishing SNX14 dependence of the readout. Same publication as s01, so not an independent source."
@@ -306,7 +346,8 @@
     {
       "observation_id": "s03",
       "evidence_id": "c1fba935-7e5b-5b9f-b2cc-4126bfd4849f",
-      "source_identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "source_identifier": "PMID:29635513",
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
       "claim_ids": [
         "ac2-fusion-block"
       ],
@@ -320,6 +361,9 @@
       "effect": "unchanged",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "HEK293"
+      ],
       "experimental_system": "HEK293 SNX14 knockout, tandem fluorescent LC3 reporter",
       "support_span": "indicating that loss of SNX14 did not impact autophagosome-lysosome fusion",
       "source_location": "upstream_curated_snippet",
@@ -362,7 +406,8 @@
     {
       "observation_id": "s04",
       "evidence_id": "96d0b3e0-3d44-553e-94eb-18b4b20d981c",
-      "source_identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "source_identifier": "PMID:29635513",
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
       "claim_ids": [
         "ac3-autolysosome-formation",
         "ac4-nonneural-clearance"
@@ -370,13 +415,16 @@
       "gene": "SNX14",
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (fibroblast)"
+        "biallelic SNX14 loss-of-function"
       ],
       "variant_class": null,
       "readout": "autolysosome_formation",
       "effect": "unchanged",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "patient fibroblasts"
+      ],
       "experimental_system": "SCAR20 patient fibroblasts, marker colocalisation and p62 degradation",
       "support_span": "we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts",
       "source_location": "upstream_curated_snippet",
@@ -407,11 +455,11 @@
         },
         {
           "field": "protein_domain",
-          "value": "biallelic SNX14 loss-of-function (fibroblast): no annotated domain at this residue",
+          "value": "biallelic SNX14 loss-of-function: no annotated domain at this residue",
           "basis": "DERIVED",
           "support_span": null,
           "source_location": null,
-          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function (fibroblast)' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
         }
       ],
       "extraction_note": "Preserved autolysosome formation in patient fibroblasts under the tested conditions. Patient cells, but a non-neural cell type. Full text is not open access."
@@ -419,7 +467,8 @@
     {
       "observation_id": "s05",
       "evidence_id": "df9af9f1-bb57-5307-ba5e-4670a687cd31",
-      "source_identifier": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+      "source_identifier": "PMID:29635513",
+      "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
       "claim_ids": [],
       "gene": "SNX14",
       "disease_entity": "SCAR20",
@@ -431,6 +480,9 @@
       "effect": "unchanged",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "patient fibroblasts"
+      ],
       "experimental_system": "patient fibroblasts carrying a PX-domain in-frame deletion, Torin1 stimulation",
       "support_span": "fibroblasts derived from a patient with a PX domain-specific SNX14 truncation (p.A603_G632del) responded to Torin1 treatment at similar levels to control cell lines",
       "source_location": "upstream_curated_snippet",
@@ -461,7 +513,7 @@
         },
         {
           "field": "protein_domain",
-          "value": "p.Ala603_Gly632del: no annotated domain at this residue",
+          "value": "p.Ala603_Gly632del: PX (570-690)",
           "basis": "DERIVED",
           "support_span": null,
           "source_location": null,
@@ -474,17 +526,21 @@
       "observation_id": "s06",
       "evidence_id": "13cf8769-67f0-509f-8809-f0081a8d85a2",
       "source_identifier": "PMID:25848753",
+      "upstream_reference_form": "PMID:25848753",
       "claim_ids": [],
       "gene": "SNX14",
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "variant_class": null,
       "readout": "autophagosome_formation",
       "effect": "unchanged",
       "origin": "PRIMARY_RESULT",
       "species": "Homo sapiens",
+      "cell_types": [
+        "patient neural progenitor cells"
+      ],
       "experimental_system": "patient-derived neural progenitor cells",
       "support_span": "This, together with no differences observed in autophagosome formation (assessed as the increase in LC3-II levels at two time points after inhibition of lysosomal proteolysis, Fig. 4b ), suggests that SNX14 mutant neural progenitors are defective in autophagosome clearance.",
       "source_location": "full_text",
@@ -515,11 +571,11 @@
         },
         {
           "field": "protein_domain",
-          "value": "biallelic SNX14 loss-of-function (patient NPC): no annotated domain at this residue",
+          "value": "biallelic SNX14 loss-of-function: no annotated domain at this residue",
           "basis": "DERIVED",
           "support_span": null,
           "source_location": null,
-          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function (patient NPC)' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+          "derivation": "Residue 14 parsed from 'biallelic SNX14 loss-of-function' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
         }
       ],
       "extraction_note": "The supporting publication itself reports that autophagosome FORMATION is unchanged while flux is slowed. Recorded against no claim: it localises the defect to a clearance step rather than to initiation, and is required gap context."
@@ -537,10 +593,10 @@
       "direction_match": true,
       "species_match": true,
       "tissue_match": null,
-      "cell_type_match": null,
+      "cell_type_match": true,
       "variant_match": true,
       "causal_support": "CAUSAL",
-      "recommended_claim_scope": "biallelic SNX14 loss-of-function (patient NPC): lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)",
+      "recommended_claim_scope": "biallelic SNX14 loss-of-function: lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)",
       "limitations": [],
       "rationale": "[deterministic-critic-v1] readout='lc3_flux' effect=decreased -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
     },
@@ -555,19 +611,19 @@
       "direction_match": true,
       "species_match": true,
       "tissue_match": null,
-      "cell_type_match": null,
+      "cell_type_match": true,
       "variant_match": true,
       "causal_support": "CAUSAL",
-      "recommended_claim_scope": "biallelic SNX14 loss-of-function (patient NPC): lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)",
+      "recommended_claim_scope": "biallelic SNX14 loss-of-function: lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)",
       "limitations": [],
       "rationale": "[deterministic-critic-v1] readout='lc3_ii_level' effect=decreased -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
     },
     {
       "claim_id": "ac2-fusion-block",
       "source_id": "s03",
-      "supports": "NEUTRAL",
-      "directness": "INDIRECT",
-      "paper_generated_finding": false,
+      "supports": "QUALIFIES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
       "disease_match": true,
       "gene_match": true,
       "direction_match": false,
@@ -575,39 +631,19 @@
       "tissue_match": null,
       "cell_type_match": null,
       "variant_match": true,
-      "causal_support": "NONE",
+      "causal_support": "ASSOCIATIONAL",
       "recommended_claim_scope": "SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)",
       "limitations": [
-        "Citation check: NOT_CHECKABLE (Non-PubMed reference; no deterministic resolver configured in V1.)"
+        "Span not independently located: source text was not retrievable. Weight capped at QUALIFIES."
       ],
-      "rationale": "[deterministic-critic-v1] readout='autophagosome_lysosome_fusion' effect=unchanged -> REFUTES; span check NOT_CHECKABLE -> NEUTRAL, cannot be DIRECT; not all DIRECT conditions met -> INDIRECT"
+      "rationale": "[deterministic-critic-v1] readout='autophagosome_lysosome_fusion' effect=unchanged -> REFUTES; citation UPSTREAM_ATTESTED -> REFUTES capped to QUALIFIES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
     },
     {
       "claim_id": "ac3-autolysosome-formation",
       "source_id": "s04",
-      "supports": "NEUTRAL",
-      "directness": "INDIRECT",
-      "paper_generated_finding": false,
-      "disease_match": true,
-      "gene_match": true,
-      "direction_match": false,
-      "species_match": true,
-      "tissue_match": null,
-      "cell_type_match": null,
-      "variant_match": false,
-      "causal_support": "NONE",
-      "recommended_claim_scope": "biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)",
-      "limitations": [
-        "Citation check: NOT_CHECKABLE (Non-PubMed reference; no deterministic resolver configured in V1.)"
-      ],
-      "rationale": "[deterministic-critic-v1] readout='autolysosome_formation' effect=unchanged -> REFUTES; span check NOT_CHECKABLE -> NEUTRAL, cannot be DIRECT; not all DIRECT conditions met -> INDIRECT"
-    },
-    {
-      "claim_id": "ac4-nonneural-clearance",
-      "source_id": "s04",
-      "supports": "NEUTRAL",
-      "directness": "INDIRECT",
-      "paper_generated_finding": false,
+      "supports": "QUALIFIES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
       "disease_match": true,
       "gene_match": true,
       "direction_match": false,
@@ -615,12 +651,32 @@
       "tissue_match": null,
       "cell_type_match": null,
       "variant_match": true,
-      "causal_support": "NONE",
-      "recommended_claim_scope": "biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)",
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)",
       "limitations": [
-        "Citation check: NOT_CHECKABLE (Non-PubMed reference; no deterministic resolver configured in V1.)"
+        "Span not independently located: source text was not retrievable. Weight capped at QUALIFIES."
       ],
-      "rationale": "[deterministic-critic-v1] readout='autolysosome_formation' effect=unchanged -> REFUTES; span check NOT_CHECKABLE -> NEUTRAL, cannot be DIRECT; not all DIRECT conditions met -> INDIRECT"
+      "rationale": "[deterministic-critic-v1] readout='autolysosome_formation' effect=unchanged -> REFUTES; citation UPSTREAM_ATTESTED -> REFUTES capped to QUALIFIES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac4-nonneural-clearance",
+      "source_id": "s04",
+      "supports": "QUALIFIES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": true,
+      "variant_match": true,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)",
+      "limitations": [
+        "Span not independently located: source text was not retrievable. Weight capped at QUALIFIES."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='autolysosome_formation' effect=unchanged -> REFUTES; citation UPSTREAM_ATTESTED -> REFUTES capped to QUALIFIES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
     }
   ],
   "atomic": [
@@ -637,7 +693,7 @@
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
         "variant_context": [
-          "biallelic SNX14 loss-of-function (patient NPC)"
+          "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
           "patient-derived neural progenitor cells"
@@ -653,10 +709,10 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T01:10:42.629275Z",
-        "last_reviewed_at": "2026-10-04T01:10:42.629271Z",
+        "created_at": "2026-10-04T02:11:49.669347Z",
+        "last_reviewed_at": "2026-10-04T02:11:49.669343Z",
         "refinement_status": "SUPPORTED",
-        "status_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function (patient NPC): lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function (patient NPC): lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none",
+        "status_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function: lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function: lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
           "13cf8769-67f0-509f-8809-f0081a8d85a2",
           "fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1"
@@ -668,7 +724,7 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T01:10:42.629250Z",
+          "created_at": "2026-10-04T02:11:49.669326Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
@@ -685,7 +741,7 @@
       "indirect": [],
       "background_only": [],
       "rule_applied": "A2",
-      "rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function (patient NPC): lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function (patient NPC): lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+      "rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function: lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function: lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
     },
     {
       "claim": {
@@ -717,10 +773,10 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T01:10:42.629341Z",
-        "last_reviewed_at": "2026-10-04T01:10:42.629338Z",
-        "refinement_status": "INSUFFICIENT_EVIDENCE",
-        "status_rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | background only (does not set status): none",
+        "created_at": "2026-10-04T02:11:49.669380Z",
+        "last_reviewed_at": "2026-10-04T02:11:49.669378Z",
+        "refinement_status": "PARTIALLY_SUPPORTED",
+        "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
           "c1fba935-7e5b-5b9f-b2cc-4126bfd4849f"
         ],
@@ -731,23 +787,23 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T01:10:42.629250Z",
+          "created_at": "2026-10-04T02:11:49.669326Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
           }
         }
       },
-      "status": "INSUFFICIENT_EVIDENCE",
+      "status": "PARTIALLY_SUPPORTED",
       "direct_supporting": [],
       "direct_refuting": [],
-      "direct_qualifying": [],
-      "indirect": [
+      "direct_qualifying": [
         "c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03"
       ],
+      "indirect": [],
       "background_only": [],
-      "rule_applied": "A1",
-      "rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | background only (does not set status): none"
+      "rule_applied": "A7",
+      "rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
     },
     {
       "claim": {
@@ -779,10 +835,10 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T01:10:42.629356Z",
-        "last_reviewed_at": "2026-10-04T01:10:42.629354Z",
-        "refinement_status": "INSUFFICIENT_EVIDENCE",
-        "status_rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | background only (does not set status): none",
+        "created_at": "2026-10-04T02:11:49.669395Z",
+        "last_reviewed_at": "2026-10-04T02:11:49.669393Z",
+        "refinement_status": "PARTIALLY_SUPPORTED",
+        "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
           "96d0b3e0-3d44-553e-94eb-18b4b20d981c"
         ],
@@ -793,23 +849,23 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T01:10:42.629250Z",
+          "created_at": "2026-10-04T02:11:49.669326Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
           }
         }
       },
-      "status": "INSUFFICIENT_EVIDENCE",
+      "status": "PARTIALLY_SUPPORTED",
       "direct_supporting": [],
       "direct_refuting": [],
-      "direct_qualifying": [],
-      "indirect": [
+      "direct_qualifying": [
         "96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04"
       ],
+      "indirect": [],
       "background_only": [],
-      "rule_applied": "A1",
-      "rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | background only (does not set status): none"
+      "rule_applied": "A7",
+      "rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
     },
     {
       "claim": {
@@ -824,8 +880,8 @@
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
         "variant_context": [
-          "biallelic SNX14 loss-of-function (fibroblast)",
-          "SNX14 knockout (HEK293)"
+          "SNX14 knockout",
+          "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
           "non-neural cells"
@@ -841,10 +897,10 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T01:10:42.629369Z",
-        "last_reviewed_at": "2026-10-04T01:10:42.629367Z",
-        "refinement_status": "INSUFFICIENT_EVIDENCE",
-        "status_rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | background only (does not set status): none",
+        "created_at": "2026-10-04T02:11:49.669407Z",
+        "last_reviewed_at": "2026-10-04T02:11:49.669405Z",
+        "refinement_status": "PARTIALLY_SUPPORTED",
+        "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
           "96d0b3e0-3d44-553e-94eb-18b4b20d981c"
         ],
@@ -855,29 +911,29 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T01:10:42.629250Z",
+          "created_at": "2026-10-04T02:11:49.669326Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
           }
         }
       },
-      "status": "INSUFFICIENT_EVIDENCE",
+      "status": "PARTIALLY_SUPPORTED",
       "direct_supporting": [],
       "direct_refuting": [],
-      "direct_qualifying": [],
-      "indirect": [
+      "direct_qualifying": [
         "96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04"
       ],
+      "indirect": [],
       "background_only": [],
-      "rule_applied": "A1",
-      "rationale": "[categorical-synthesis-v1 rule A1] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: none | direct qualification: none | indirect (does not set status): 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function (fibroblast): autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | background only (does not set status): none"
+      "rule_applied": "A7",
+      "rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
     }
   ],
-  "edge_status": "PARTIALLY_SUPPORTED",
-  "edge_rule_applied": "E3",
-  "edge_rationale": "[categorical-synthesis-v1 rule E3] PARTIALLY_SUPPORTED: SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells. -> SUPPORTED (rule A2; evidence 13cf8769-67f0-509f-8809-f0081a8d85a2, fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1); SNX14 loss blocks autophagosome-lysosome fusion. -> INSUFFICIENT_EVIDENCE (rule A1; evidence c1fba935-7e5b-5b9f-b2cc-4126bfd4849f); SNX14 loss impairs autolysosome formation. -> INSUFFICIENT_EVIDENCE (rule A1; evidence 96d0b3e0-3d44-553e-94eb-18b4b20d981c); SNX14 loss impairs autophagosome clearance in non-neural patient cells. -> INSUFFICIENT_EVIDENCE (rule A1; evidence 96d0b3e0-3d44-553e-94eb-18b4b20d981c)",
-  "recommended_scope": "Licensed by the evidence: SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells. || Not licensed as stated: SNX14 loss blocks autophagosome-lysosome fusion. [INSUFFICIENT_EVIDENCE]; SNX14 loss impairs autolysosome formation. [INSUFFICIENT_EVIDENCE]; SNX14 loss impairs autophagosome clearance in non-neural patient cells. [INSUFFICIENT_EVIDENCE]",
+  "edge_status": "CONTEXT_DEPENDENT",
+  "edge_rule_applied": "E2",
+  "edge_rationale": "[categorical-synthesis-v1 rule E2] CONTEXT_DEPENDENT: SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells. -> SUPPORTED (rule A2; evidence 13cf8769-67f0-509f-8809-f0081a8d85a2, fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1); SNX14 loss blocks autophagosome-lysosome fusion. -> PARTIALLY_SUPPORTED (rule A7; evidence c1fba935-7e5b-5b9f-b2cc-4126bfd4849f); SNX14 loss impairs autolysosome formation. -> PARTIALLY_SUPPORTED (rule A7; evidence 96d0b3e0-3d44-553e-94eb-18b4b20d981c); SNX14 loss impairs autophagosome clearance in non-neural patient cells. -> PARTIALLY_SUPPORTED (rule A7; evidence 96d0b3e0-3d44-553e-94eb-18b4b20d981c)",
+  "recommended_scope": "Licensed by the evidence: SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells. || Not licensed as stated: SNX14 loss blocks autophagosome-lysosome fusion. [PARTIALLY_SUPPORTED]; SNX14 loss impairs autolysosome formation. [PARTIALLY_SUPPORTED]; SNX14 loss impairs autophagosome clearance in non-neural patient cells. [PARTIALLY_SUPPORTED]",
   "search_coverage": {
     "coverage_id": "coverage:306f20c6-335c-5af8-ab30-a0c542bc8e9e",
     "sources": [
@@ -887,7 +943,7 @@
         "queries": [
           "SNX14[tiab] AND (autophag*[tiab] OR LC3[tiab] OR lysosom*[tiab])"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 13,
         "error": null,
         "pages_checked": 0,
@@ -904,7 +960,7 @@
         "queries": [
           "SNX14[tiab] AND (SCAR20[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"cerebellar atrophy\"[tiab])"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 18,
         "error": null,
         "pages_checked": 0,
@@ -921,7 +977,7 @@
         "queries": [
           "SNX14[tiab] AND (\"did not\"[tiab] OR unaffected[tiab] OR preserved[tiab] OR normal[tiab] OR \"no change\"[tiab])"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 5,
         "error": null,
         "pages_checked": 0,
@@ -938,7 +994,7 @@
         "queries": [
           "SNX14[tiab] AND (fibroblast*[tiab] OR HEK293[tiab] OR \"neural progenitor\"[tiab] OR iPSC[tiab] OR mice[tiab] OR zebrafish[tiab])"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 11,
         "error": null,
         "pages_checked": 0,
@@ -955,7 +1011,7 @@
         "queries": [
           "SNX14[tiab] AND (lipid[tiab] OR \"fatty acid\"[tiab] OR cholesterol[tiab] OR \"lipid droplet\"[tiab])"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 10,
         "error": null,
         "pages_checked": 0,
@@ -972,7 +1028,7 @@
         "queries": [
           "per-PMID open-access full text retrieval"
         ],
-        "checked_at": "2026-10-04T01:10:42.629383Z",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
         "result_count": 3,
         "error": null,
         "pages_checked": 0,
@@ -985,13 +1041,13 @@
       },
       {
         "source": "UniProt Q9Y5W7 (domain boundaries)",
-        "status": "FAILED",
+        "status": "CHECKED",
         "queries": [
           "https://rest.uniprot.org/uniprotkb/Q9Y5W7.json"
         ],
-        "checked_at": null,
-        "result_count": null,
-        "error": "offline mode and no cached snapshot for https://rest.uniprot.org/uniprotkb/Q9Y5W7.json",
+        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "result_count": 27,
+        "error": null,
         "pages_checked": 0,
         "pagination_limit": null,
         "languages": [],
@@ -1001,8 +1057,8 @@
         "estimated_cost": 0.0
       }
     ],
-    "search_started_at": "2026-10-04T01:10:42.631168Z",
-    "search_completed_at": "2026-10-04T01:10:42.629383Z",
+    "search_started_at": "2026-10-04T02:11:49.671397Z",
+    "search_completed_at": "2026-10-04T02:11:49.669420Z",
     "scope": "scientific_evidence",
     "language_limitations": [],
     "geographic_limitations": [],

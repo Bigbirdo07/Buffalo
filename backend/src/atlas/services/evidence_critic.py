@@ -77,6 +77,33 @@ def review(
             fit = EvidenceFit.QUALIFIES
             trace.append("cross-entity SUPPORTS/REFUTES downgraded to QUALIFIES")
 
+    cell_type_match: bool | None = None
+    if claim.cell_type_scope:
+        if not observation.cell_types:
+            cell_type_match = None
+            limitations.append(
+                "Observation does not state a cell type, so the claim's cell-type "
+                "scope could not be checked."
+            )
+        else:
+            cell_type_match = bool(
+                {item.lower() for item in observation.cell_types}
+                & {item.lower() for item in claim.cell_type_scope}
+            )
+            if not cell_type_match:
+                trace.append(
+                    f"cell type {observation.cell_types} outside scope "
+                    f"{claim.cell_type_scope}"
+                )
+                limitations.append(
+                    f"Measured in {', '.join(observation.cell_types)}, outside the "
+                    "claim's cell-type scope; informative about the protein but not a "
+                    "test in the claimed cell type."
+                )
+                if fit in {EvidenceFit.SUPPORTS, EvidenceFit.REFUTES}:
+                    fit = EvidenceFit.QUALIFIES
+                    trace.append("cross-cell-type SUPPORTS/REFUTES downgraded to QUALIFIES")
+
     named = set(observation.variants) & set(claim.variant_scope)
     class_level = not observation.variants and observation.variant_class == claim.scope_class
     variant_match: bool | None
@@ -97,9 +124,23 @@ def review(
 
     paper_generated = observation.origin is FindingOrigin.PRIMARY_RESULT
     citation_ok = citation.status is CitationStatus.VERIFIED
-    if not citation_ok:
+    attested = citation.status is CitationStatus.UPSTREAM_ATTESTED
+    if attested:
+        # The identifier resolves and a curator recorded the quotation, but the text
+        # was not retrievable. Such evidence may qualify a claim -- it is real
+        # curated observation -- but it may never on its own support or contradict
+        # one, so a would-be SUPPORTS or REFUTES is capped at QUALIFIES.
+        limitations.append(
+            "Span not independently located: source text was not retrievable. "
+            "Weight capped at QUALIFIES."
+        )
+        if fit in {EvidenceFit.SUPPORTS, EvidenceFit.REFUTES}:
+            trace.append(f"citation UPSTREAM_ATTESTED -> {fit.value} capped to QUALIFIES")
+            fit = EvidenceFit.QUALIFIES
+    elif not citation_ok:
         limitations.append(f"Citation check: {citation.status.value} ({citation.note})")
-        # A span that was not located in retrieved text cannot support or refute.
+        # A span absent from text we did retrieve, or an unresolvable reference,
+        # cannot support or refute.
         fit = EvidenceFit.NEUTRAL
         paper_generated = False
         trace.append(f"span check {citation.status.value} -> NEUTRAL, cannot be DIRECT")
@@ -109,10 +150,11 @@ def review(
         paper_generated = False
         trace.append("text attributes the finding to earlier work -> BACKGROUND_ONLY")
     elif (
-        citation_ok
+        (citation_ok or attested)
         and paper_generated
         and disease_match
         and variant_match is True
+        and cell_type_match is not False
         and fit is not EvidenceFit.UNRELATED
     ):
         directness = Directness.DIRECT
@@ -131,10 +173,18 @@ def review(
         EvidenceFit.UNRELATED,
     }:
         causal = CausalSupport.NONE
-    elif paper_generated and observation.variants and disease_match and variant_match is True:
+    elif (
+        paper_generated
+        and observation.variants
+        and disease_match
+        and variant_match is True
+        and cell_type_match is not False
+        and not attested
+    ):
         # An in-scope allele was introduced and the readout measured: interventional
         # design for *this* claim. Out-of-scope entities/alleles can be at most
-        # associational for the claim under review, however clean their own design.
+        # associational for the claim under review, however clean their own design,
+        # and so can evidence whose span we could not read for ourselves.
         causal = CausalSupport.CAUSAL
     else:
         causal = CausalSupport.ASSOCIATIONAL
@@ -154,6 +204,7 @@ def review(
         gene_match=observation.gene == claim.gene,
         direction_match=fit is EvidenceFit.SUPPORTS,
         species_match=species_match,
+        cell_type_match=cell_type_match,
         variant_match=variant_match,
         causal_support=causal,
         recommended_claim_scope=scope,

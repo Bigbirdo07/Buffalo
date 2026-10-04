@@ -10,7 +10,7 @@
       ],
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "readout": "lc3_flux",
       "effect": "decreased",
@@ -46,6 +46,9 @@
           "value": "LC3 flux",
           "locator": "we identified slower LC3 flux"
         }
+      ],
+      "cell_types": [
+        "patient neural progenitor cells"
       ]
     },
     {
@@ -56,7 +59,7 @@
       ],
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "readout": "lc3_ii_level",
       "effect": "decreased",
@@ -82,6 +85,9 @@
           "value": "LC3-II level",
           "locator": "the increased LC3 II levels were recovered to basal rates"
         }
+      ],
+      "cell_types": [
+        "patient neural progenitor cells"
       ]
     },
     {
@@ -118,7 +124,10 @@
           "locator": "autophagosome|autophag"
         }
       ],
-      "span_from": "upstream_snippet"
+      "span_from": "upstream_snippet",
+      "cell_types": [
+        "HEK293"
+      ]
     },
     {
       "id": "s04",
@@ -129,7 +138,7 @@
       ],
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (fibroblast)"
+        "biallelic SNX14 loss-of-function"
       ],
       "readout": "autolysosome_formation",
       "effect": "unchanged",
@@ -155,7 +164,10 @@
           "locator": "lipid|autophag"
         }
       ],
-      "span_from": "upstream_snippet"
+      "span_from": "upstream_snippet",
+      "cell_types": [
+        "patient fibroblasts"
+      ]
     },
     {
       "id": "s05",
@@ -189,7 +201,10 @@
           "locator": "SNX14|lipid"
         }
       ],
-      "span_from": "upstream_snippet"
+      "span_from": "upstream_snippet",
+      "cell_types": [
+        "patient fibroblasts"
+      ]
     },
     {
       "id": "s06",
@@ -197,7 +212,7 @@
       "claims": [],
       "disease_entity": "SCAR20",
       "variants": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
       "readout": "autophagosome_formation",
       "effect": "unchanged",
@@ -223,6 +238,9 @@
           "value": "autophagosome formation",
           "locator": "no differences observed in autophagosome formation"
         }
+      ],
+      "cell_types": [
+        "patient neural progenitor cells"
       ]
     }
   ]

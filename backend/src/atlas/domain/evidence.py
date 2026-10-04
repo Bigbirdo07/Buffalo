@@ -176,7 +176,24 @@ def split_reference(reference: str) -> dict[str, str]:
 
 
 class CitationStatus(StrEnum):
+    """Outcome of checking one evidence pointer against retrieved source text.
+
+    The three negative outcomes are deliberately distinct, because they carry
+    very different meanings:
+
+    * ``SPAN_NOT_LOCATED`` -- the text *was* retrieved and the quoted span is not
+      in it. That is a red flag: a possible misquotation or misattribution.
+    * ``UPSTREAM_ATTESTED`` -- the identifier resolves and the upstream curator
+      recorded a verbatim snippet, but the text could not be retrieved (a
+      paywalled results section). Absence of a located span is expected here and
+      implies nothing about the quotation's accuracy. Such evidence may qualify a
+      claim but may never, on its own, support or contradict one.
+    * ``UNRESOLVED`` / ``NOT_CHECKABLE`` -- the identifier does not resolve, or no
+      resolver exists for its form. No evidentiary weight.
+    """
+
     VERIFIED = "VERIFIED"
+    UPSTREAM_ATTESTED = "UPSTREAM_ATTESTED"
     SPAN_NOT_LOCATED = "SPAN_NOT_LOCATED"
     TITLE_MISMATCH = "TITLE_MISMATCH"
     UNRESOLVED = "UNRESOLVED"
@@ -192,6 +209,11 @@ class CitationVerification(BaseModel):
     identifier: str
     status: CitationStatus
     identifier_resolved: bool
+    # Set when the upstream reference form (a PMC URL, a DOI) was mapped to a
+    # canonical identifier, so independence counting can deduplicate one paper
+    # cited in two forms.
+    canonical_identifier: str | None = None
+    full_text_available: bool = False
     title_matches: bool | None
     span_location: str | None
     texts_checked: tuple[str, ...]

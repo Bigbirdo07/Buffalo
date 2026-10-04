@@ -102,15 +102,44 @@ class VerifyCitationTests(unittest.TestCase):
         self.assertEqual(result.span_location, "abstract")
         self.assertTrue(result.identifier_resolved)
 
-    def test_absent_span_is_reported_not_upgraded(self) -> None:
+    def test_span_absent_from_retrieved_full_text_is_a_red_flag(self) -> None:
+        """Text we did read, span not in it: possible misquotation."""
+        with_full_text = (
+            *sources(),
+            SourceText("full_text", ABSTRACT + " Methods and results follow.", "c" * 64),
+        )
+        result = verify_citation(
+            evidence("abolished Purkinje cell mitophagy in patients"),
+            resolved_title=TITLE,
+            sources=with_full_text,
+        )
+        self.assertEqual(result.status, CitationStatus.SPAN_NOT_LOCATED)
+        self.assertTrue(result.full_text_available)
+        self.assertIsNone(result.span_location)
+        self.assertIn("misquotation", result.note)
+
+    def test_span_absent_without_full_text_is_merely_unverified(self) -> None:
+        """Text we could not read: absence implies nothing about the quotation."""
         result = verify_citation(
             evidence("abolished Purkinje cell mitophagy in patients"),
             resolved_title=TITLE,
             sources=sources(),
         )
-        self.assertEqual(result.status, CitationStatus.SPAN_NOT_LOCATED)
-        self.assertIsNone(result.span_location)
-        self.assertIn("not found", result.note.lower() + " not found")
+        self.assertEqual(result.status, CitationStatus.UPSTREAM_ATTESTED)
+        self.assertFalse(result.full_text_available)
+        self.assertTrue(result.identifier_resolved)
+        self.assertIn("cannot alone", result.note)
+
+    def test_a_resolved_non_pmid_reference_becomes_checkable(self) -> None:
+        result = verify_citation(
+            evidence("a loss of ubiquitin ligase activity", pmid=None),
+            resolved_title=TITLE,
+            sources=sources(),
+            canonical_identifier="PMID:24113144",
+        )
+        self.assertNotEqual(result.status, CitationStatus.NOT_CHECKABLE)
+        self.assertTrue(result.identifier_resolved)
+        self.assertEqual(result.canonical_identifier, "PMID:24113144")
 
     def test_unresolved_identifier_is_not_verified(self) -> None:
         result = verify_citation(

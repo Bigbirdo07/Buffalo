@@ -55,20 +55,36 @@ def verify_citation(
     *,
     resolved_title: str | None,
     sources: tuple[SourceText, ...],
+    canonical_identifier: str | None = None,
 ) -> CitationVerification:
+    """Check one evidence pointer deterministically.
+
+    ``canonical_identifier`` is supplied when the upstream reference form was not
+    a PMID but was mapped to one (a PMC URL, a DOI). Resolution makes the pointer
+    checkable; it does not make the quoted span verified, because the text behind
+    a resolved identifier may still be unavailable.
+    """
     identifier = item.pmid or item.doi or item.pmcid or item.other_reference or ""
     checked = tuple(source.location for source in sources)
     hashes = tuple(source.snapshot_sha256 for source in sources)
-    if item.pmid is None:
+    full_text_available = any(source.location == "full_text" for source in sources)
+    effective = item.pmid or canonical_identifier
+
+    if effective is None:
         return CitationVerification(
             evidence_id=item.evidence_id,
             identifier=identifier,
             status=CitationStatus.NOT_CHECKABLE,
             identifier_resolved=False,
+            canonical_identifier=None,
+            full_text_available=full_text_available,
             title_matches=None,
             span_location=None,
             texts_checked=(),
-            note="Non-PubMed reference; no deterministic resolver configured in V1.",
+            note=(
+                "Reference form has no deterministic resolver in V1; it was neither "
+                "a PMID nor resolvable to one."
+            ),
         )
     if resolved_title is None:
         return CitationVerification(
@@ -76,30 +92,44 @@ def verify_citation(
             identifier=identifier,
             status=CitationStatus.UNRESOLVED,
             identifier_resolved=False,
+            canonical_identifier=canonical_identifier,
+            full_text_available=full_text_available,
             title_matches=None,
             span_location=None,
             texts_checked=checked,
-            note="PMID did not resolve in PubMed efetch.",
+            note="Identifier did not resolve in PubMed efetch.",
         )
+
     title_ok = titles_match(item.title, resolved_title)
     location = locate_span(item.exact_supported_span, sources)
     if title_ok is False:
         status = CitationStatus.TITLE_MISMATCH
-        note = f"Upstream title differs from PubMed title {resolved_title!r}."
-    elif location is None:
-        status = CitationStatus.SPAN_NOT_LOCATED
-        note = (
-            "Identifier resolves but the quoted span was not found in the text available "
-            f"({', '.join(checked) or 'none'}); full text may be unavailable."
-        )
-    else:
+        note = f"Upstream title differs from the resolved title {resolved_title!r}."
+    elif location is not None:
         status = CitationStatus.VERIFIED
         note = f"Span located verbatim (normalized) in {location}."
+    elif full_text_available:
+        status = CitationStatus.SPAN_NOT_LOCATED
+        note = (
+            "Full text was retrieved and the quoted span was not found in it. This "
+            "may indicate a misquotation or a misattributed source and needs review."
+        )
+    else:
+        status = CitationStatus.UPSTREAM_ATTESTED
+        note = (
+            "Identifier resolves, but the source text could not be retrieved "
+            f"(available: {', '.join(checked) or 'none'}), so the upstream curator's "
+            "verbatim snippet could not be independently located. The quotation is "
+            "neither confirmed nor impugned; it may qualify a claim but cannot alone "
+            "support or contradict one."
+        )
     return CitationVerification(
         evidence_id=item.evidence_id,
         identifier=identifier,
         status=status,
         identifier_resolved=True,
+        canonical_identifier=canonical_identifier,
+        full_text_available=full_text_available,
         title_matches=title_ok,
         span_location=location,
         texts_checked=checked,

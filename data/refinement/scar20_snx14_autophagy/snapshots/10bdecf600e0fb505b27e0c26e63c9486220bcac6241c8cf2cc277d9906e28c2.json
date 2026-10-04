@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1000%2Fnot-a-real-doi%22&resultType=lite&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T02:10:03.115381+00:00",
+  "sha256": "e483c142979dddd7b0b284c20cb492de4cb48c78f3d3045225fafbe1a0d88eaa"
+}

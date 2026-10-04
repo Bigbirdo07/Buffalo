@@ -32,9 +32,12 @@
       "claim_id": "ac1-lc3-flux-npc",
       "statement": "SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.",
       "variant_scope": [
-        "biallelic SNX14 loss-of-function (patient NPC)"
+        "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "patient-derived neural progenitor cells"
+      "scope_class": "patient-derived neural progenitor cells",
+      "cell_type_scope": [
+        "patient neural progenitor cells"
+      ]
     },
     {
       "claim_id": "ac2-fusion-block",
@@ -43,7 +46,8 @@
         "SNX14 knockout",
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "autophagosome-lysosome fusion step"
+      "scope_class": "autophagosome-lysosome fusion step",
+      "cell_type_scope": []
     },
     {
       "claim_id": "ac3-autolysosome-formation",
@@ -52,16 +56,21 @@
         "SNX14 knockout",
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "autolysosome formation step"
+      "scope_class": "autolysosome formation step",
+      "cell_type_scope": []
     },
     {
       "claim_id": "ac4-nonneural-clearance",
       "statement": "SNX14 loss impairs autophagosome clearance in non-neural patient cells.",
       "variant_scope": [
-        "biallelic SNX14 loss-of-function (fibroblast)",
-        "SNX14 knockout (HEK293)"
+        "SNX14 knockout",
+        "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "non-neural cells"
+      "scope_class": "non-neural cells",
+      "cell_type_scope": [
+        "patient fibroblasts",
+        "HEK293"
+      ]
     }
   ],
   "coverage_queries": {

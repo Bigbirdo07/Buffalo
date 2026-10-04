@@ -155,6 +155,7 @@ def build_observation(
     sources: Sequence[SourceText],
     uniprot_features: Sequence[tuple[str, int, int, str]],
     upstream_snippet: str | None = None,
+    upstream_reference_form: str | None = None,
 ) -> EvidenceObservation:
     """Build one observation.
 
@@ -215,6 +216,7 @@ def build_observation(
         observation_id=str(entry["id"]),
         evidence_id=evidence_id,
         source_identifier=source_identifier,
+        upstream_reference_form=upstream_reference_form,
         claim_ids=tuple(str(item) for item in entry.get("claims") or ()),
         gene=gene,
         disease_entity=str(entry["disease_entity"]),
@@ -226,6 +228,7 @@ def build_observation(
         effect=EffectDirection(str(entry["effect"])),
         origin=FindingOrigin(str(entry["origin"])),
         species=str(entry["species"]),
+        cell_types=tuple(str(item) for item in entry.get("cell_types") or ()),
         experimental_system=str(entry["system"]),
         support_span=resolved.span,
         source_location=resolved.location,

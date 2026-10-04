@@ -22,7 +22,7 @@
         "queries": [
           "(STUB1[tiab] OR CHIP[tiab]) AND (E28K[tiab] OR K145Q[tiab] OR M211I[tiab] OR S236T[tiab] OR N65S[tiab] OR T246M[tiab] OR Lys145Gln[tiab] OR Met211Ile[tiab] OR Glu28Lys[tiab] OR Ser236Thr[tiab])"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 7,
         "error": null,
         "pages_checked": 0,
@@ -39,7 +39,7 @@
         "queries": [
           "STUB1[tiab] AND (SCAR16[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"Gordon Holmes\"[tiab]) AND (ubiquitin*[tiab] OR \"E3 ligase\"[tiab] OR \"ligase activity\"[tiab])"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 22,
         "error": null,
         "pages_checked": 0,
@@ -56,7 +56,7 @@
         "queries": [
           "STUB1[tiab] AND (SCA48[tiab] OR \"spinocerebellar ataxia 48\"[tiab] OR \"spinocerebellar ataxia type 48\"[tiab])"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 34,
         "error": null,
         "pages_checked": 0,
@@ -73,7 +73,7 @@
         "queries": [
           "STUB1[tiab] AND ataxia[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab] OR neurons[tiab] OR fibroblasts[tiab] OR mice[tiab] OR rats[tiab] OR zebrafish[tiab])"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 8,
         "error": null,
         "pages_checked": 0,
@@ -90,7 +90,7 @@
         "queries": [
           "(STUB1[tiab] OR CHIP[tiab]) AND (SCAR16[tiab] OR SCA48[tiab]) AND (\"retain*\"[tiab] OR \"preserved\"[tiab] OR \"not affect*\"[tiab] OR \"dominant negative\"[tiab] OR \"gain of function\"[tiab] OR \"toxic\"[tiab])"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 4,
         "error": null,
         "pages_checked": 0,
@@ -107,7 +107,7 @@
         "queries": [
           "per-PMID open-access full text retrieval"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 7,
         "error": null,
         "pages_checked": 0,
@@ -124,7 +124,7 @@
         "queries": [
           "https://rest.uniprot.org/uniprotkb/Q9UNE7.json"
         ],
-        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "checked_at": "2026-10-04T02:12:51.511099Z",
         "result_count": 48,
         "error": null,
         "pages_checked": 0,
@@ -136,8 +136,8 @@
         "estimated_cost": 0.0
       }
     ],
-    "search_started_at": "2026-10-04T00:20:50.385808Z",
-    "search_completed_at": "2026-10-04T00:20:50.383594Z",
+    "search_started_at": "2026-10-04T02:12:51.512930Z",
+    "search_completed_at": "2026-10-04T02:12:51.511099Z",
     "scope": "scientific_evidence",
     "language_limitations": [],
     "geographic_limitations": [],

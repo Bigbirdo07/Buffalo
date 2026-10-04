@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1093%2Fhmg%2Fddy128%22&resultType=lite&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T02:10:01.654063+00:00",
+  "sha256": "4e38fc014621f1ff9c5f13e96b9dc519a74258938773a50f45a47951b180b1dd"
+}

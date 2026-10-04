@@ -33,6 +33,11 @@ from atlas.adapters.literature.client import (
     SnapshotFetcher,
     fetch_json,
 )
+from atlas.adapters.literature.resolver import (
+    Resolution,
+    canonical_identity,
+    resolve_reference,
+)
 from atlas.domain.claims import Claim, RefinementStatus
 from atlas.domain.evidence import (
     CitationStatus,
@@ -156,6 +161,8 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
     texts: dict[str, tuple[SourceText, ...]] = {}
     titles: dict[str, str | None] = {}
     evidence_for_key: dict[str, EvidenceItem | None] = {}
+    resolutions: dict[str, Resolution] = {}
+    canonical: dict[str, str | None] = {}
     coverage_rows: list[SearchSourceCoverage] = []
     for key, meta in sources_meta.items():
         declared = meta.get("pmid")
@@ -178,6 +185,20 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
             evidence_for_key[key] = item
         else:
             evidence_for_key[key] = None
+        # Canonical identity for independence counting. The upstream form is kept
+        # separately; resolution never rewrites what upstream wrote.
+        upstream_form = (
+            str(meta.get("upstream_reference_form"))
+            if meta.get("upstream_reference_form")
+            else (f"PMID:{declared}" if declared else "")
+        )
+        resolution = resolve_reference(upstream_form or f"PMID:{declared}", fetcher)
+        resolutions[key] = resolution
+        canonical[key] = (
+            resolution.canonical
+            or (f"PMID:{resolved}" if resolved else None)
+            or canonical_identity(upstream_form, resolution)
+        )
         fetch_pmid = declared or resolved
         if not fetch_pmid:
             texts[key], titles[key] = (), None
@@ -199,6 +220,7 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
             scope_class=spec["scope_class"],
             readout_family=tuple(plan["readout_family"]),
             expected_effect=(EffectDirection.ABOLISHED, EffectDirection.DECREASED),
+            cell_type_scope=tuple(spec.get("cell_type_scope") or ()),
         )
         for spec in plan["atomic_claims"]
     }
@@ -221,7 +243,8 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
                 evidence_id=(
                     item.evidence_id if item is not None else f"retrieved:{identifier}"
                 ),
-                source_identifier=identifier,
+                source_identifier=canonical.get(key) or identifier,
+                upstream_reference_form=identifier,
                 gene=target["gene"],
                 sources=texts[key],
                 uniprot_features=features,
@@ -243,7 +266,14 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
         )
         source_texts: tuple[SourceText, ...] = texts.get(match_key, ()) if match_key else ()
         resolved_title: str | None = titles.get(match_key) if match_key else None
-        checks.append(verify_citation(item, resolved_title=resolved_title, sources=source_texts))
+        checks.append(
+            verify_citation(
+                item,
+                resolved_title=resolved_title,
+                sources=source_texts,
+                canonical_identifier=canonical.get(match_key) if match_key else None,
+            )
+        )
     observation_checks: dict[str, Any] = {}
     for observation, entry in zip(observations, observations_doc["observations"], strict=True):
         key = entry["source"]
@@ -270,7 +300,10 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
                 ),
             )
         observation_checks[observation.observation_id] = verify_citation(
-            probe, resolved_title=titles.get(key), sources=texts[key]
+            probe,
+            resolved_title=titles.get(key),
+            sources=texts[key],
+            canonical_identifier=canonical.get(key),
         )
 
     reviews = []

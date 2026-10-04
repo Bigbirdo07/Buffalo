@@ -247,3 +247,122 @@ class ObservationContextTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def attested() -> CitationVerification:
+    return CitationVerification(
+        evidence_id="e",
+        identifier="url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+        status=CitationStatus.UPSTREAM_ATTESTED,
+        identifier_resolved=True,
+        canonical_identifier="PMID:29635513",
+        full_text_available=False,
+        title_matches=True,
+        span_location=None,
+        texts_checked=("title", "abstract"),
+        note="source text not retrievable; cannot alone support or contradict",
+    )
+
+
+class UpstreamAttestedTests(unittest.TestCase):
+    """Credible but unverifiable curated evidence may qualify, never decide."""
+
+    def test_would_be_support_is_capped_at_qualifies(self) -> None:
+        review = evidence_critic.review(CLAIM, observation(), attested())
+        self.assertEqual(review.supports, EvidenceFit.QUALIFIES)
+        self.assertIn("capped to QUALIFIES", review.rationale)
+
+    def test_would_be_refutation_is_capped_at_qualifies(self) -> None:
+        review = evidence_critic.review(
+            CLAIM, observation(effect=EffectDirection.UNCHANGED), attested()
+        )
+        self.assertEqual(review.supports, EvidenceFit.QUALIFIES)
+
+    def test_attested_evidence_may_still_be_direct(self) -> None:
+        """Otherwise it could never influence a status, which defeats the tier."""
+        review = evidence_critic.review(CLAIM, observation(), attested())
+        self.assertEqual(review.directness, Directness.DIRECT)
+
+    def test_attested_evidence_is_never_causal(self) -> None:
+        review = evidence_critic.review(CLAIM, observation(), attested())
+        self.assertNotEqual(review.causal_support, CausalSupport.CAUSAL)
+
+    def test_the_cap_is_recorded_as_a_limitation(self) -> None:
+        review = evidence_critic.review(CLAIM, observation(), attested())
+        self.assertTrue(
+            any("not independently located" in item for item in review.limitations)
+        )
+
+    def test_a_located_span_still_outranks_an_attested_one(self) -> None:
+        located = evidence_critic.review(CLAIM, observation(), verified())
+        unlocated = evidence_critic.review(CLAIM, observation(), attested())
+        self.assertEqual(located.supports, EvidenceFit.SUPPORTS)
+        self.assertEqual(unlocated.supports, EvidenceFit.QUALIFIES)
+
+    def test_span_not_located_remains_inert(self) -> None:
+        """A red-flag span must not be promoted by the new tier."""
+        review = evidence_critic.review(CLAIM, observation(), not_located())
+        self.assertEqual(review.supports, EvidenceFit.NEUTRAL)
+        self.assertNotEqual(review.directness, Directness.DIRECT)
+
+
+CELL_SCOPED = CLAIM.model_copy(
+    update={
+        "claim_id": "ac-cell",
+        "statement": "Loss slows clearance in patient neural progenitors.",
+        "cell_type_scope": ("patient neural progenitor cells",),
+    }
+)
+
+
+class CellTypeScopeTests(unittest.TestCase):
+    """Cell type is a scoping axis, not part of the allele string.
+
+    Conflating the two made two SCAR20 claims resting on identical evidence
+    disagree purely on how a variant string was spelled.
+    """
+
+    def test_in_scope_cell_type_supports_directly(self) -> None:
+        review = evidence_critic.review(
+            CELL_SCOPED,
+            observation(cell_types=("patient neural progenitor cells",)),
+            verified(),
+        )
+        self.assertTrue(review.cell_type_match)
+        self.assertEqual(review.supports, EvidenceFit.SUPPORTS)
+        self.assertEqual(review.directness, Directness.DIRECT)
+
+    def test_out_of_scope_cell_type_is_downgraded_to_qualifies(self) -> None:
+        review = evidence_critic.review(
+            CELL_SCOPED, observation(cell_types=("HEK293",)), verified()
+        )
+        self.assertFalse(review.cell_type_match)
+        self.assertEqual(review.supports, EvidenceFit.QUALIFIES)
+        self.assertEqual(review.directness, Directness.INDIRECT)
+        self.assertTrue(any("outside the claim" in item for item in review.limitations))
+
+    def test_out_of_scope_cell_type_is_never_causal(self) -> None:
+        review = evidence_critic.review(
+            CELL_SCOPED, observation(cell_types=("HEK293",)), verified()
+        )
+        self.assertNotEqual(review.causal_support, CausalSupport.CAUSAL)
+
+    def test_unstated_cell_type_is_unknown_not_a_mismatch(self) -> None:
+        review = evidence_critic.review(CELL_SCOPED, observation(), verified())
+        self.assertIsNone(review.cell_type_match)
+        self.assertTrue(any("does not state a cell type" in i for i in review.limitations))
+
+    def test_an_unscoped_claim_ignores_cell_type(self) -> None:
+        review = evidence_critic.review(
+            CLAIM, observation(cell_types=("HEK293",)), verified()
+        )
+        self.assertIsNone(review.cell_type_match)
+        self.assertEqual(review.supports, EvidenceFit.SUPPORTS)
+
+    def test_matching_is_case_insensitive(self) -> None:
+        review = evidence_critic.review(
+            CELL_SCOPED,
+            observation(cell_types=("Patient Neural Progenitor Cells",)),
+            verified(),
+        )
+        self.assertTrue(review.cell_type_match)

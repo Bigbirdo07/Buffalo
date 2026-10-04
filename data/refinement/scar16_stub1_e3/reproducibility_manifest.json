@@ -5,9 +5,9 @@
     "data/audit/pubmed_activity.json": "9d4f8c8c2c5ffe2d3a17dd5d5b7eeb0fe5f3bc15fb013c6d38e8eada65bf3e12",
     "data/fixtures/real/MANIFEST.json": "d5551f4c2b5407ee6d050cedb6ac6dec20a1d31e0dbefdf5083120bc18a96ed5",
     "data/refinement/scar16_stub1_e3/claim_lineage.json": "14d5498bda1e807bc30ccac143f61dc25187ac14ad0c493a8b652b455b455f31",
-    "data/refinement/scar16_stub1_e3/edge_refinement.json": "056c316123a05b3d15dba6e5bbe1ee152fabf38aae86b33b4757ed34547218c7",
+    "data/refinement/scar16_stub1_e3/edge_refinement.json": "ca11288068c423399fdaa1912916c04a87acd0e1235404897d7f483dbc7e685b",
     "data/refinement/scar16_stub1_e3/experiment_proposal.json": "8d8b0a616a2081be2382ed29f0b96a9a03f40dfe018b6987fac618ad4e11b640",
-    "data/refinement/scar16_stub1_e3/knowledge_gap.json": "3c5ccd621f747d3e84f8e6162c48de8c9c129a64d9d37cb805d6283cd996c1eb",
+    "data/refinement/scar16_stub1_e3/knowledge_gap.json": "504e11fd7716ba8815decd746de8372779195eca157d3509adb2ead54c9b3bde",
     "data/refinement/scar16_stub1_e3/observation_plan.json": "e04ad66c1cab88ae83a8f27d5e39e3cf289a506eff9a09b14bded310d89ca1dd",
     "data/refinement/scar16_stub1_e3/observations.json": "79ed41b429f2049ba450f360800e3df9cc3c3c32d0e8944f872f98b8132f00c8",
     "docs/DEMO_DISEASE_CANDIDATES.md": "7a914c26a957e20040e69685100a7e396d945fde3eba7764ac2c003363daee07",
@@ -364,27 +364,28 @@
     "backend/src/atlas/adapters/dismech/importer.py": "7b92a54da75c792dc4ee7cfb200aa2bf719aa601fe5a9f4fe4c55eb48d4f42bc",
     "backend/src/atlas/adapters/literature/__init__.py": "8ea39a8baaa49d83f5c078e3ff55b43a8ba22cc26be3ebd38dfcdd2ef4158924",
     "backend/src/atlas/adapters/literature/client.py": "966ceffb83a0981b4b8fad2b483e576b497d5a0dc528e9b0c27cf5e290202c68",
+    "backend/src/atlas/adapters/literature/resolver.py": "1256f8a1feaf09439cc45ea5989cb8b3782ec06d139c106bd6bc043f25642fcf",
     "backend/src/atlas/domain/__init__.py": "53030f3c67f94acb8b48579ae2a327401ef8d6b7c2f23b897482d1fafebbf1dc",
     "backend/src/atlas/domain/claims.py": "7f80bb89a9bf387123b5ee584fa57d798e6467a20ed4224e89b8984c551d67fa",
     "backend/src/atlas/domain/entities.py": "0440808b523cb3580fe5270cf29cc5859d19389bf304751e601011b333956be9",
-    "backend/src/atlas/domain/evidence.py": "f3aa9f0e0be6ae4d9de44865743b89083abcb2db9695a517d3e5de3568c25426",
+    "backend/src/atlas/domain/evidence.py": "26c7011ade1911a1d92e9a12c7d8cf0da6c404dbfeed6ef49be049c16964ffbb",
     "backend/src/atlas/domain/experiments.py": "15cd6cb0accdb584e31aa52199fd932f8d925fc1da36620ea04ef6f40cbb3a1f",
     "backend/src/atlas/domain/gaps.py": "5357d258e4109b8cb6fec6c1f7ce362c546a694a59bc7b962576e5a607279a8f",
     "backend/src/atlas/domain/mechanism.py": "e4ecc1bbeb23ad9fb91c5447a562f14bc602ef04306faed20e32ca283018f11d",
     "backend/src/atlas/domain/provenance.py": "f90227a3e7ae9a03f3bbfdbeb1d5256d868f34a311e9c1cdc4ea79f52dd9e162",
-    "backend/src/atlas/domain/refinement.py": "532336d4b43ca1cacdc9038670198824614a9049b02031e2ffa123807f73d4c9",
+    "backend/src/atlas/domain/refinement.py": "09d4ac31bf1b975456f7affd5764e886d88a40ef5ec5568cbebb0540f8fda83f",
     "backend/src/atlas/graph/__init__.py": "412b610bba4733f113f2589e3ba45479a695d3afebbb6fdbdf88085d13aad612",
     "backend/src/atlas/graph/algorithms.py": "a46443165d55e6b6da33cfab45c611b7309fed70d99bf2bb9b5cdb5a864f407d",
     "backend/src/atlas/services/__init__.py": "038c74814161b6700694a4c5f4027dd96b1fbff04af0b171018c81d207b4307c",
-    "backend/src/atlas/services/citation_validation.py": "2787341f2bcaa97fc827aa1d3469477f80d03b0fc7482136bfa67543459d47ec",
-    "backend/src/atlas/services/evidence_critic.py": "84a80bd66f155f275bcc0efa1ddb6bfe8e8dfde2ee2b64c17bc41bc799b65dcc",
-    "backend/src/atlas/services/extraction_build.py": "21de3aaf1918db9084894b794922b09c02dd7925c4279512badb9f6fac35f596",
+    "backend/src/atlas/services/citation_validation.py": "0abd7d05980751141b9347c16db526f11c7daf0381c619e9f7ec09894dd849ee",
+    "backend/src/atlas/services/evidence_critic.py": "31cbb0a243645184cb387167f1d321b0d00e496d78bafde5dc3e2c14283b61f0",
+    "backend/src/atlas/services/extraction_build.py": "d51af82c1c5057cc6752637b23c94ccd3d1376cdeb43671d9f1b056630a52f1f",
     "backend/src/atlas/services/refinement.py": "59c7e40d736bed733dd3113db21a0894428cb8b4b7767b437f8dc205f95eeabd",
     "scripts/audit_corpus.py": "3db05e95618e3f91daf10728b85f181327d1848fc1a8a26f2374cb3dc4be0c8e",
     "scripts/build_fixtures.py": "bb70faa81b37d64256770bf755845b9f3d9467bea0c739ab0f56957e99076577",
     "scripts/build_gap_and_experiment.py": "d638f9de49e67f5d87f351adae044aa0d6f2f8f2b85d37ccb7d670ac9e795e7e",
     "scripts/build_phase3_assurance.py": "e67e0ee656e1959109c1be26c3462b36b3ef906d713e4d0695b3892a0249651a",
-    "scripts/refine_edge.py": "49b8f10aa8dea7a6d94c38da11d4fa94ced57f71bdf52dc2e2797edc5a3525a5"
+    "scripts/refine_edge.py": "04ef741318f07cc3f8e1912136983b5888393b9ed9e9f7b14ae95ef7d3281f6a"
   },
   "offline_reproduction": {
     "canonicalization": {
@@ -401,9 +402,9 @@
     "network_required": false,
     "results": {
       "edge_refinement": {
-        "committed_canonical_sha256": "fa8bc24130bda2efc8a93aa31fcb0168c38ede94621a171bc0a672f2e388c51a",
+        "committed_canonical_sha256": "b5af6b85f395935197e7f99989b4d04b0cc46e1abd09079ab98344058b3cdc41",
         "matches": true,
-        "regenerated_canonical_sha256": "fa8bc24130bda2efc8a93aa31fcb0168c38ede94621a171bc0a672f2e388c51a"
+        "regenerated_canonical_sha256": "b5af6b85f395935197e7f99989b4d04b0cc46e1abd09079ab98344058b3cdc41"
       },
       "experiment_proposal": {
         "committed_canonical_sha256": "69162740a3170ccaf4899d718e0b2a403c35864f63251212c61e3c1cbf9dda7d",

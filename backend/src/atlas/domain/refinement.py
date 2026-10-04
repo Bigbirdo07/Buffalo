@@ -50,6 +50,12 @@ class AtomicClaimSpec(BaseModel):
     readout_family: tuple[str, ...]
     expected_effect: tuple[EffectDirection, ...]
     species_scope: tuple[str, ...] = ("Homo sapiens",)
+    # Cell type is a scoping axis in its own right, not part of the allele string.
+    # SCAR16's claims scoped by allele and disease entity; SCAR20's scope by cell
+    # type and sub-process, and conflating cell type into variant_scope made two
+    # claims resting on identical evidence disagree purely on string spelling.
+    # Empty means the claim is not cell-type scoped.
+    cell_type_scope: tuple[str, ...] = ()
 
 
 class EvidenceObservation(BaseModel):
@@ -59,7 +65,11 @@ class EvidenceObservation(BaseModel):
 
     observation_id: str
     evidence_id: str
+    # Canonical publication identity, used for independence counting so one paper
+    # cited in two upstream forms is not mistaken for two independent sources.
     source_identifier: str
+    # What upstream actually wrote, retained for provenance.
+    upstream_reference_form: str | None = None
     claim_ids: tuple[str, ...]
     gene: str
     disease_entity: str
@@ -69,6 +79,7 @@ class EvidenceObservation(BaseModel):
     effect: EffectDirection
     origin: FindingOrigin
     species: str
+    cell_types: tuple[str, ...] = ()
     experimental_system: str
     support_span: str
     source_location: str
