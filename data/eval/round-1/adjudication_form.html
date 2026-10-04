@@ -1,0 +1,1078 @@
+<title>Adjudication Form</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one claim per card, evidence above the verdict, progress pinned at top. */
+:root {
+  --bg: #f5f6f4; --surface: #fff; --surface-2: #ecefea; --fg: #1b2420;
+  --fg-dim: #5d6b64; --line: #d4dbd6; --accent: #2f6b4f; --accent-soft: #dceae2;
+  --ok: #1f6b45; --ok-soft: #dcefe3; --warn: #8a5a00; --warn-soft: #f7ebd3;
+  --bad: #9b2c2c; --bad-soft: #f6e0e0; --neutral: #55636e; --neutral-soft: #e4e9ec;
+  --display: "Newsreader", Georgia, serif;
+  --ui: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11150f; --surface: #181e18; --surface-2: #202820; --fg: #e8ede8;
+    --fg-dim: #9aaaa0; --line: #2d372f; --accent: #6fc49a; --accent-soft: #14301f;
+    --ok: #68c795; --ok-soft: #12301f; --warn: #e0b060; --warn-soft: #33260d;
+    --bad: #e68a8a; --bad-soft: #351a1a; --neutral: #9aa8b3; --neutral-soft: #1e272e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11150f; --surface: #181e18; --surface-2: #202820; --fg: #e8ede8;
+  --fg-dim: #9aaaa0; --line: #2d372f; --accent: #6fc49a; --accent-soft: #14301f;
+  --ok: #68c795; --ok-soft: #12301f; --warn: #e0b060; --warn-soft: #33260d;
+  --bad: #e68a8a; --bad-soft: #351a1a; --neutral: #9aa8b3; --neutral-soft: #1e272e;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); line-height: 1.5; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 64px; }
+h1 { font-family: var(--display); font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin: 0 0 8px;
+  text-wrap: balance; }
+h2 { font-family: var(--display); font-size: 1.22rem; margin: 10px 0; text-wrap: balance; }
+h3 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--fg-dim); margin: 16px 0 6px; font-weight: 600; }
+p { margin: 0 0 10px; }
+code { font-family: var(--mono); font-size: 0.85em; }
+.lede { color: var(--fg-dim); max-width: 62ch; }
+.note { background: var(--accent-soft); border: 1px solid var(--line);
+  border-left: 3px solid var(--accent); padding: 11px 13px; border-radius: 4px;
+  font-size: 0.88rem; margin-block: 14px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  padding-block: 10px; margin-bottom: 18px; display: flex; flex-wrap: wrap;
+  gap: 10px; align-items: center; justify-content: space-between; }
+.track { flex: 1 1 160px; height: 6px; background: var(--surface-2);
+  border-radius: 999px; overflow: hidden; min-width: 120px; }
+.fill { height: 100%; width: 0%; background: var(--accent); transition: width .2s; }
+.count { font-family: var(--mono); font-size: 0.82rem; font-variant-numeric: tabular-nums;
+  color: var(--fg-dim); }
+button { font: inherit; font-size: 0.86rem; padding: 8px 14px; border-radius: 4px;
+  border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; }
+button.ghost { background: var(--surface); color: var(--fg); border-color: var(--line); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 5px;
+  padding: 16px; margin-bottom: 18px; }
+.itemhead { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  justify-content: space-between; font-size: 0.78rem; color: var(--fg-dim); }
+.num { font-family: var(--mono); }
+.gene { font-family: var(--mono); color: var(--accent); }
+.done { color: var(--ok); font-weight: 500; }
+.context { font-size: 0.85rem; color: var(--fg-dim); margin-top: 8px; }
+.quietq { font-family: var(--display); font-style: italic; }
+dl.scope { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 4px 16px; margin: 0; padding: 10px 0; border-block: 1px solid var(--line); }
+dl.scope dt, .meta-grid dt { font-size: 0.66rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--fg-dim); }
+dl.scope dd, .meta-grid dd { margin: 0; font-size: 0.85rem; }
+
+.evlist { list-style: none; margin: 0; padding: 0; display: flex;
+  flex-direction: column; gap: 10px; }
+.ev { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px;
+  padding: 10px 12px; min-width: 0; }
+.evhead { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  justify-content: space-between; }
+.cite { font-family: var(--mono); font-size: 0.7rem; padding: 2px 7px; border-radius: 3px;
+  border: 1px solid var(--line); }
+.c-verified { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.c-upstream_attested { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.c-span_not_located { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); }
+.c-not_checkable, .c-unresolved { background: var(--neutral-soft); color: var(--neutral); }
+blockquote { margin: 8px 0; padding-left: 12px; border-left: 2px solid var(--accent);
+  font-family: var(--display); font-size: 0.98rem; }
+.meta { font-size: 0.76rem; color: var(--fg-dim); }
+.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 4px 14px; margin: 8px 0 0; }
+.meta-grid .wide { grid-column: 1 / -1; }
+
+fieldset.verdict { border: 1px solid var(--line); border-radius: 4px; margin: 16px 0 0;
+  padding: 12px 14px; }
+legend { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--fg-dim); padding-inline: 6px; }
+.opts { display: flex; flex-direction: column; gap: 4px; }
+.opt { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start;
+  padding: 7px 9px; border: 1px solid transparent; border-radius: 4px; cursor: pointer; }
+.opt:hover { background: var(--surface-2); }
+.opt input { margin-top: 3px; grid-row: span 2; }
+.optlabel { font-weight: 500; font-size: 0.92rem; }
+.opthelp { font-size: 0.78rem; color: var(--fg-dim); }
+.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.dispute { display: grid; grid-template-columns: auto 1fr; gap: 9px; align-items: start;
+  margin-top: 12px; font-size: 0.82rem; color: var(--fg-dim);
+  padding-top: 10px; border-top: 1px solid var(--line); }
+.notewrap { display: block; margin-top: 10px; font-size: 0.78rem; color: var(--fg-dim); }
+textarea { width: 100%; box-sizing: border-box; margin-top: 4px; font: inherit;
+  font-size: 0.86rem; padding: 7px 9px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--surface); color: var(--fg); resize: vertical; }
+
+.out { background: var(--surface); border: 1px solid var(--line); border-radius: 5px;
+  padding: 16px; }
+.out textarea { font-family: var(--mono); font-size: 0.74rem; min-height: 150px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.said { font-size: 0.82rem; color: var(--ok); }
+.muted { color: var(--fg-dim); font-size: 0.88rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <h1>Adjudication Form</h1>
+  <p class="lede">Nine atomic claims from two diseases. Assign a status to each
+  <strong>from the evidence shown</strong>. The engine's own verdicts, the rules it
+  applied and its per-evidence judgements are not in this page.</p>
+
+  <div class="note">
+    Answers stay in this browser until you copy them out; nothing is sent anywhere.
+    A reload will not lose your work. When you are done, copy the JSON at the
+    bottom and paste it back into the conversation for scoring.
+  </div>
+
+  <div class="bar">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <span class="count" id="count">0 of 9 answered</span>
+    <button class="ghost" id="jump">Next unanswered</button>
+  </div>
+
+  <section class="item" id="item-0" data-item="SCAR20:ac1-lc3-flux-npc">
+  <div class="itemhead">
+    <span class="num">1 / 9</span>
+    <span class="dis">SCAR20 <span class="gene">SNX14</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+  <h2>SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>biallelic SNX14 loss-of-function</dd></div><div><dt>allele class</dt><dd>biallelic loss-of-function</dd></div><div><dt>cell types</dt><dd>patient neural progenitor cells</dd></div><div><dt>disease</dt><dd>SCAR20</dd></div><div><dt>readouts in scope</dt><dd>lc3_flux, lc3_ii_level</dd></div></dl>
+  <h3>Evidence (2)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:25848753</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>By LC3 flux analysis in nutrient deprived conditions, where LC3II ratios in the presence and absence of lysosomal inhibitors (Leupeptin and NH 4 Cl) were calculated 20 , we identified slower LC3 flux in patient cells compared to controls.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>lc3_flux</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>decreased</strong></dd></div>
+    <div><dt>cell types</dt><dd>patient neural progenitor cells</dd></div>
+    <div class="wide"><dt>system</dt><dd>patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:25848753</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Importantly, the increased LC3 II levels were recovered to basal rates by forced expression of tagged SNX14 into patient cells ( Fig. 4a ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>lc3_ii_level</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>decreased</strong></dd></div>
+    <div><dt>cell types</dt><dd>patient neural progenitor cells</dd></div>
+    <div class="wide"><dt>system</dt><dd>patient cells with genetic complementation by tagged SNX14</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-0" value="SUPPORTED" data-item="SCAR20:ac1-lc3-flux-npc">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-0" value="PARTIALLY_SUPPORTED" data-item="SCAR20:ac1-lc3-flux-npc">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-0" value="CONTEXT_DEPENDENT" data-item="SCAR20:ac1-lc3-flux-npc">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-0" value="INSUFFICIENT_EVIDENCE" data-item="SCAR20:ac1-lc3-flux-npc">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-0" value="CONTRADICTED" data-item="SCAR20:ac1-lc3-flux-npc">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-0" data-item="SCAR20:ac1-lc3-flux-npc">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-0" rows="2" data-item="SCAR20:ac1-lc3-flux-npc"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-1" data-item="SCAR20:ac3-autolysosome-formation">
+  <div class="itemhead">
+    <span class="num">2 / 9</span>
+    <span class="dis">SCAR20 <span class="gene">SNX14</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+  <h2>SNX14 loss impairs autolysosome formation.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>SNX14 knockout, biallelic SNX14 loss-of-function</dd></div><div><dt>allele class</dt><dd>biallelic loss-of-function or knockout</dd></div><div><dt>disease</dt><dd>SCAR20</dd></div><div><dt>readouts in scope</dt><dd>autolysosome_formation</dd></div></dl>
+  <h3>Evidence (1)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:29635513</code>
+    <span class="cite c-upstream_attested" title="paper identified, text not retrievable, quote unconfirmed">
+      upstream attested</span>
+  </div>
+  <div class="meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>autolysosome_formation</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>patient fibroblasts</dd></div>
+    <div class="wide"><dt>system</dt><dd>SCAR20 patient fibroblasts, marker colocalisation and p62 degradation</dd></div>
+    <div class="wide"><dt>found in</dt><dd>upstream curated snippet</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-1" value="SUPPORTED" data-item="SCAR20:ac3-autolysosome-formation">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-1" value="PARTIALLY_SUPPORTED" data-item="SCAR20:ac3-autolysosome-formation">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-1" value="CONTEXT_DEPENDENT" data-item="SCAR20:ac3-autolysosome-formation">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-1" value="INSUFFICIENT_EVIDENCE" data-item="SCAR20:ac3-autolysosome-formation">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-1" value="CONTRADICTED" data-item="SCAR20:ac3-autolysosome-formation">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-1" data-item="SCAR20:ac3-autolysosome-formation">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-1" rows="2" data-item="SCAR20:ac3-autolysosome-formation"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-2" data-item="SCAR16:ac5-ubox-other-missense">
+  <div class="itemhead">
+    <span class="num">3 / 9</span>
+    <span class="dis">SCAR16 <span class="gene">STUB1</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+  <h2>SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>p.Ser236Thr, p.Met240Thr</dd></div><div><dt>allele class</dt><dd>U-box missense</dd></div><div><dt>disease</dt><dd>SCAR16</dd></div><div><dt>readouts in scope</dt><dd>e3_ligase_activity, hsc70_ubiquitination, hsp70_polyubiquitination, polyubiquitin_chain_formation</dd></div></dl>
+  <h3>Evidence (4)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:28396517</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:29317501</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>partially_retained</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:31619515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>abolished</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:42567515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>abolished</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant protein biochemistry and cellular models, 13 variants</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-2" value="SUPPORTED" data-item="SCAR16:ac5-ubox-other-missense">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-2" value="PARTIALLY_SUPPORTED" data-item="SCAR16:ac5-ubox-other-missense">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-2" value="CONTEXT_DEPENDENT" data-item="SCAR16:ac5-ubox-other-missense">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-2" value="INSUFFICIENT_EVIDENCE" data-item="SCAR16:ac5-ubox-other-missense">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-2" value="CONTRADICTED" data-item="SCAR16:ac5-ubox-other-missense">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-2" data-item="SCAR16:ac5-ubox-other-missense">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-2" rows="2" data-item="SCAR16:ac5-ubox-other-missense"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-3" data-item="SCAR20:ac2-fusion-block">
+  <div class="itemhead">
+    <span class="num">4 / 9</span>
+    <span class="dis">SCAR20 <span class="gene">SNX14</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+  <h2>SNX14 loss blocks autophagosome-lysosome fusion.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>SNX14 knockout, biallelic SNX14 loss-of-function</dd></div><div><dt>allele class</dt><dd>biallelic loss-of-function or knockout</dd></div><div><dt>disease</dt><dd>SCAR20</dd></div><div><dt>readouts in scope</dt><dd>autophagosome_lysosome_fusion</dd></div></dl>
+  <h3>Evidence (1)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:29635513</code>
+    <span class="cite c-upstream_attested" title="paper identified, text not retrievable, quote unconfirmed">
+      upstream attested</span>
+  </div>
+  <div class="meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>indicating that loss of SNX14 did not impact autophagosome-lysosome fusion</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>autophagosome_lysosome_fusion</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>HEK293</dd></div>
+    <div class="wide"><dt>system</dt><dd>HEK293 SNX14 knockout, tandem fluorescent LC3 reporter</dd></div>
+    <div class="wide"><dt>found in</dt><dd>upstream curated snippet</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-3" value="SUPPORTED" data-item="SCAR20:ac2-fusion-block">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-3" value="PARTIALLY_SUPPORTED" data-item="SCAR20:ac2-fusion-block">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-3" value="CONTEXT_DEPENDENT" data-item="SCAR20:ac2-fusion-block">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-3" value="INSUFFICIENT_EVIDENCE" data-item="SCAR20:ac2-fusion-block">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-3" value="CONTRADICTED" data-item="SCAR20:ac2-fusion-block">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-3" data-item="SCAR20:ac2-fusion-block">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-3" rows="2" data-item="SCAR20:ac2-fusion-block"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-4" data-item="SCAR16:ac4-interdomain-missense">
+  <div class="itemhead">
+    <span class="num">5 / 9</span>
+    <span class="dis">SCAR16 <span class="gene">STUB1</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+  <h2>SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>p.Lys145Gln, p.Met211Ile</dd></div><div><dt>allele class</dt><dd>inter-domain/linker-region missense</dd></div><div><dt>disease</dt><dd>SCAR16</dd></div><div><dt>readouts in scope</dt><dd>e3_ligase_activity, hsc70_ubiquitination, hsp70_polyubiquitination, polyubiquitin_chain_formation</dd></div></dl>
+  <h3>Evidence (5)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:41851873</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>In addition, the STUB1 missense mutation p.(Lys145Gln) has been found to impair the ubiquitin ligase activity of CHIP [ 9 ].</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>background citation</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>decreased</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>not tested in this paper; introduction sentence citing an earlier study</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:28396517</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:29317501</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>partially_retained</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:31619515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>partially_retained</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:31619515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>polyubiquitin_chain_formation</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP panel, E2-dependent chain formation</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-4" value="SUPPORTED" data-item="SCAR16:ac4-interdomain-missense">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-4" value="PARTIALLY_SUPPORTED" data-item="SCAR16:ac4-interdomain-missense">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-4" value="CONTEXT_DEPENDENT" data-item="SCAR16:ac4-interdomain-missense">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-4" value="INSUFFICIENT_EVIDENCE" data-item="SCAR16:ac4-interdomain-missense">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-4" value="CONTRADICTED" data-item="SCAR16:ac4-interdomain-missense">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-4" data-item="SCAR16:ac4-interdomain-missense">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-4" rows="2" data-item="SCAR16:ac4-interdomain-missense"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-5" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <div class="itemhead">
+    <span class="num">6 / 9</span>
+    <span class="dis">SCAR16 <span class="gene">STUB1</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+  <h2>The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>p.Gln118*</dd></div><div><dt>allele class</dt><dd>pre-U-box truncation</dd></div><div><dt>disease</dt><dd>SCAR16</dd></div><div><dt>readouts in scope</dt><dd>e3_ligase_activity, hsc70_ubiquitination, hsp70_polyubiquitination, polyubiquitin_chain_formation</dd></div></dl>
+  <h3>Evidence (1)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:41851873</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>decreased</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>HEK293T transient overexpression with immunoprecipitation</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-5" value="SUPPORTED" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-5" value="PARTIALLY_SUPPORTED" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-5" value="CONTEXT_DEPENDENT" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-5" value="INSUFFICIENT_EVIDENCE" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-5" value="CONTRADICTED" data-item="SCAR16:ac2-pre-ubox-truncation">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-5" data-item="SCAR16:ac2-pre-ubox-truncation">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-5" rows="2" data-item="SCAR16:ac2-pre-ubox-truncation"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-6" data-item="SCAR16:ac3-tpr-missense">
+  <div class="itemhead">
+    <span class="num">7 / 9</span>
+    <span class="dis">SCAR16 <span class="gene">STUB1</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+  <h2>SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>p.Glu28Lys, p.Asn65Ser</dd></div><div><dt>allele class</dt><dd>TPR-domain missense</dd></div><div><dt>disease</dt><dd>SCAR16</dd></div><div><dt>readouts in scope</dt><dd>e3_ligase_activity, hsc70_ubiquitination, hsp70_polyubiquitination, polyubiquitin_chain_formation</dd></div></dl>
+  <h3>Evidence (8)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:28396517</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>processivity_defect</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:28396517</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:25258038</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>We show that the p.Asn65Ser substitution impairs CHIP&#x27;s ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>processivity_defect</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>in vitro ubiquitination of HSC70</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:29317501</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants&#x27; melting temperature.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>partially_retained</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP assayed below the mutants&#x27; melting temperature</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:31619515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsp70_polyubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>partially_retained</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP panel across SCAR16 alleles</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:31619515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>polyubiquitin_chain_formation</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant CHIP panel, E2-dependent chain formation</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:42567515</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>substrate_selective</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant protein biochemistry and cellular models, 13 variants</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:35398354</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>biophysical, biochemical and cellular assays; C. elegans model</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-6" value="SUPPORTED" data-item="SCAR16:ac3-tpr-missense">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-6" value="PARTIALLY_SUPPORTED" data-item="SCAR16:ac3-tpr-missense">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-6" value="CONTEXT_DEPENDENT" data-item="SCAR16:ac3-tpr-missense">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-6" value="INSUFFICIENT_EVIDENCE" data-item="SCAR16:ac3-tpr-missense">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-6" value="CONTRADICTED" data-item="SCAR16:ac3-tpr-missense">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-6" data-item="SCAR16:ac3-tpr-missense">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-6" rows="2" data-item="SCAR16:ac3-tpr-missense"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-7" data-item="SCAR20:ac4-nonneural-clearance">
+  <div class="itemhead">
+    <span class="num">8 / 9</span>
+    <span class="dis">SCAR20 <span class="gene">SNX14</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.</span></p>
+  <h2>SNX14 loss impairs autophagosome clearance in non-neural patient cells.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>SNX14 knockout, biallelic SNX14 loss-of-function</dd></div><div><dt>allele class</dt><dd>biallelic loss-of-function or knockout</dd></div><div><dt>cell types</dt><dd>patient fibroblasts, HEK293</dd></div><div><dt>disease</dt><dd>SCAR20</dd></div><div><dt>readouts in scope</dt><dd>autolysosome_formation, autophagic_cargo_degradation, autophagosome_lysosome_fusion</dd></div></dl>
+  <h3>Evidence (1)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:29635513</code>
+    <span class="cite c-upstream_attested" title="paper identified, text not retrievable, quote unconfirmed">
+      upstream attested</span>
+  </div>
+  <div class="meta">upstream wrote <code>url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/</code></div>
+  <blockquote>we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>autolysosome_formation</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>unchanged</strong></dd></div>
+    <div><dt>cell types</dt><dd>patient fibroblasts</dd></div>
+    <div class="wide"><dt>system</dt><dd>SCAR20 patient fibroblasts, marker colocalisation and p62 degradation</dd></div>
+    <div class="wide"><dt>found in</dt><dd>upstream curated snippet</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-7" value="SUPPORTED" data-item="SCAR20:ac4-nonneural-clearance">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-7" value="PARTIALLY_SUPPORTED" data-item="SCAR20:ac4-nonneural-clearance">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-7" value="CONTEXT_DEPENDENT" data-item="SCAR20:ac4-nonneural-clearance">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-7" value="INSUFFICIENT_EVIDENCE" data-item="SCAR20:ac4-nonneural-clearance">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-7" value="CONTRADICTED" data-item="SCAR20:ac4-nonneural-clearance">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-7" data-item="SCAR20:ac4-nonneural-clearance">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-7" rows="2" data-item="SCAR20:ac4-nonneural-clearance"></textarea>
+    </label>
+  </fieldset>
+</section><section class="item" id="item-8" data-item="SCAR16:ac1-ubox-t246m">
+  <div class="itemhead">
+    <span class="num">9 / 9</span>
+    <span class="dis">SCAR16 <span class="gene">STUB1</span></span>
+    <span class="done" hidden>answered</span>
+  </div>
+  <p class="context">Curated claim under test:
+    <span class="quietq">Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.</span></p>
+  <h2>STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.</h2>
+  <dl class="scope"><div><dt>alleles</dt><dd>p.Thr246Met</dd></div><div><dt>allele class</dt><dd>U-box missense: p.Thr246Met</dd></div><div><dt>disease</dt><dd>SCAR16</dd></div><div><dt>readouts in scope</dt><dd>e3_ligase_activity, hsc70_ubiquitination, hsp70_polyubiquitination, polyubiquitin_chain_formation</dd></div></dl>
+  <h3>Evidence (3)</h3>
+  <ul class="evlist"><li class="ev">
+  <div class="evhead">
+    <code>PMID:24113144</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>abolished</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>recombinant protein and cell culture models</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:30222779</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>e3_ligase_activity</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>abolished</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>biophysical and cellular assays; knock-in mouse and rat models in the same study</dd></div>
+    <div class="wide"><dt>found in</dt><dd>abstract</dd></div>
+  </dl>
+</li><li class="ev">
+  <div class="evhead">
+    <code>PMID:28396517</code>
+    <span class="cite c-verified" title="quote located in retrieved text">
+      verified</span>
+  </div>
+  
+  <blockquote>Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].</blockquote>
+  <dl class="meta-grid">
+    <div><dt>origin</dt><dd>primary result</dd></div>
+    <div><dt>readout</dt><dd>hsc70_ubiquitination</dd></div>
+    <div><dt>effect as extracted</dt><dd><strong>abolished</strong></dd></div>
+    <div><dt>cell types</dt><dd>not stated</dd></div>
+    <div class="wide"><dt>system</dt><dd>purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h</dd></div>
+    <div class="wide"><dt>found in</dt><dd>full text</dd></div>
+  </dl>
+</li></ul>
+  <fieldset class="verdict">
+    <legend>Your verdict</legend>
+    <div class="opts"><label class="opt">
+  <input type="radio" name="st-8" value="SUPPORTED" data-item="SCAR16:ac1-ubox-t246m">
+  <span class="optlabel">Supported</span>
+  <span class="opthelp">Direct evidence supports it; nothing refutes or qualifies it.</span>
+</label><label class="opt">
+  <input type="radio" name="st-8" value="PARTIALLY_SUPPORTED" data-item="SCAR16:ac1-ubox-t246m">
+  <span class="optlabel">Partly supported</span>
+  <span class="opthelp">Only qualified or partial direct support.</span>
+</label><label class="opt">
+  <input type="radio" name="st-8" value="CONTEXT_DEPENDENT" data-item="SCAR16:ac1-ubox-t246m">
+  <span class="optlabel">Context-dependent</span>
+  <span class="opthelp">Direct evidence both supports and limits it: true in some contexts.</span>
+</label><label class="opt">
+  <input type="radio" name="st-8" value="INSUFFICIENT_EVIDENCE" data-item="SCAR16:ac1-ubox-t246m">
+  <span class="optlabel">Insufficient evidence</span>
+  <span class="opthelp">Not enough direct evidence to judge either way.</span>
+</label><label class="opt">
+  <input type="radio" name="st-8" value="CONTRADICTED" data-item="SCAR16:ac1-ubox-t246m">
+  <span class="optlabel">Contradicted</span>
+  <span class="opthelp">Direct evidence refutes it, from independent publications.</span>
+</label></div>
+    <label class="dispute">
+      <input type="checkbox" name="dx-8" data-item="SCAR16:ac1-ubox-t246m">
+      I reject how this evidence was characterised (an effect label, a system
+      description, the claim's scope) rather than disagreeing about the status
+    </label>
+    <label class="notewrap">
+      <span>Note (most useful when you disagree)</span>
+      <textarea name="nt-8" rows="2" data-item="SCAR16:ac1-ubox-t246m"></textarea>
+    </label>
+  </fieldset>
+</section>
+
+  <section class="out">
+    <h3>Your responses</h3>
+    <p class="muted">Copy this and paste it back to be scored. It fills in as you go.</p>
+    <textarea id="json" readonly></textarea>
+    <div class="row">
+      <button id="copy">Copy responses</button>
+      <button class="ghost" id="reset">Clear all answers</button>
+      <span class="said" id="said" hidden>Copied</span>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var IDS = ["SCAR20:ac1-lc3-flux-npc", "SCAR20:ac3-autolysosome-formation", "SCAR16:ac5-ubox-other-missense", "SCAR20:ac2-fusion-block", "SCAR16:ac4-interdomain-missense", "SCAR16:ac2-pre-ubox-truncation", "SCAR16:ac3-tpr-missense", "SCAR20:ac4-nonneural-clearance", "SCAR16:ac1-ubox-t246m"];
+  var KEY = "adjudication.round1";
+  var out = document.getElementById("json");
+  var fill = document.getElementById("fill");
+  var count = document.getElementById("count");
+  var said = document.getElementById("said");
+
+  function state() {
+    var rows = IDS.map(function (id, i) {
+      var picked = document.querySelector('input[name="st-' + i + '"]:checked');
+      var dx = document.querySelector('input[name="dx-' + i + '"]');
+      var nt = document.querySelector('textarea[name="nt-' + i + '"]');
+      return {
+        item_id: id,
+        reviewer_status: picked ? picked.value : "",
+        extraction_disputed: !!(dx && dx.checked),
+        note: nt ? nt.value : ""
+      };
+    });
+    return {
+      schema_version: "eval-responses-v1",
+      reviewer_name: "project domain reviewer",
+      reviewer_role: "biologist; rare-disease mechanism and evidence appraisal",
+      reviewed_on: new Date().toISOString().slice(0, 10),
+      responses: rows
+    };
+  }
+
+  function paint() {
+    var data = state();
+    var done = data.responses.filter(function (r) { return r.reviewer_status; }).length;
+    out.value = JSON.stringify(data, null, 2);
+    fill.style.width = (done / IDS.length * 100) + "%";
+    count.textContent = done + " of " + IDS.length + " answered";
+    data.responses.forEach(function (r, i) {
+      var section = document.getElementById("item-" + i);
+      if (section) { section.querySelector(".done").hidden = !r.reviewer_status; }
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) { }
+  }
+
+  function restore() {
+    var raw = null;
+    try { raw = localStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) { return; }
+    try {
+      var data = JSON.parse(raw);
+      (data.responses || []).forEach(function (r) {
+        var i = IDS.indexOf(r.item_id);
+        if (i < 0) { return; }
+        if (r.reviewer_status) {
+          var input = document.querySelector(
+            'input[name="st-' + i + '"][value="' + r.reviewer_status + '"]'
+          );
+          if (input) { input.checked = true; }
+        }
+        var dx = document.querySelector('input[name="dx-' + i + '"]');
+        if (dx) { dx.checked = !!r.extraction_disputed; }
+        var nt = document.querySelector('textarea[name="nt-' + i + '"]');
+        if (nt && r.note) { nt.value = r.note; }
+      });
+    } catch (e) { }
+  }
+
+  document.addEventListener("change", paint);
+  document.addEventListener("input", function (event) {
+    if (event.target.tagName === "TEXTAREA" && event.target.id !== "json") { paint(); }
+  });
+
+  document.getElementById("jump").addEventListener("click", function () {
+    for (var i = 0; i < IDS.length; i++) {
+      if (!document.querySelector('input[name="st-' + i + '"]:checked')) {
+        document.getElementById("item-" + i).scrollIntoView({ block: "start" });
+        return;
+      }
+    }
+    document.querySelector(".out").scrollIntoView({ block: "start" });
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var show = function () { said.hidden = false; setTimeout(function () { said.hidden = true; }, 2200); };
+    try {
+      navigator.clipboard.writeText(out.value).then(show, function () {
+        out.focus(); out.select(); show();
+      });
+    } catch (e) { out.focus(); out.select(); show(); }
+  });
+
+  document.getElementById("reset").addEventListener("click", function () {
+    document.querySelectorAll('input[type="radio"]').forEach(function (el) { el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function (el) { el.checked = false; });
+    document.querySelectorAll('textarea[name^="nt-"]').forEach(function (el) { el.value = ""; });
+    try { localStorage.removeItem(KEY); } catch (e) { }
+    paint();
+  });
+
+  restore();
+  paint();
+})();
+</script>
