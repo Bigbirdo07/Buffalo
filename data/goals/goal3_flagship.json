@@ -1,0 +1,270 @@
+{
+  "schema_version": "goal3-flagship-v1",
+  "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
+  "flagship": {
+    "pair_id": "46abfb23-533a8d87",
+    "retrieval_rank": 6,
+    "retrieval_axes": 3,
+    "retrieval_information": 18.398,
+    "disease_a_id": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+    "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
+    "disease_b_id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
+    "disease_b": "Lafora_Disease",
+    "retrieval_reason": [
+      "SHARED_CELLULAR_PROCESS",
+      "SHARED_CELL_TYPE",
+      "PHENOTYPE_SIMILARITY"
+    ],
+    "retrieval_primary_feature": "protein ubiquitination",
+    "identity_class": "DISTINCT_DISEASE",
+    "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+    "final_relationship": "SHARED_DOWNSTREAM_MECHANISM",
+    "evidence_ids": [
+      "PMID:21652633",
+      "PMID:19892702"
+    ],
+    "contradiction_ids": [],
+    "variant_compatibility": "UNKNOWN",
+    "decision_trace_id": "46abfb23-533a8d87",
+    "actionable": true,
+    "is_independent_discovery": true,
+    "review_status": "AWAITING_EXPERT_SIGNOFF",
+    "algorithm_version": "cross-disease-pipeline-v1",
+    "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
+    "flagship_rank": 2,
+    "selection_criterion": "Operator override. The automated criterion selected Neurodevelopmental Disorder With or Without Autism or Seizures; this pair was chosen for external validation reasons and the automated ranking is preserved above.",
+    "automated_selection_would_be": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+    "runners_up": [
+      {
+        "disease": "Lafora_Disease",
+        "evidence_count": 2
+      }
+    ]
+  },
+  "lineage": {
+    "sources": [
+      "PMID:21652633",
+      "PMID:19892702"
+    ],
+    "validated_relationship": "relationship:46abfb23-533a8d87",
+    "mechanistic_bridge": "bridge:46abfb23-533a8d87:v2",
+    "bridge_version": 2,
+    "bridge_supersedes": "bridge:46abfb23-533a8d87",
+    "knowledge_gap": "9e74e79e-f1cb-51cc-8ee4-5021eeebaccb",
+    "experiment": "3c4fd926-6d41-59e0-837a-e6194a657787"
+  },
+  "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
+  "full_text_review_completed": false,
+  "knowledge_gap": {
+    "gap_id": "9e74e79e-f1cb-51cc-8ee4-5021eeebaccb",
+    "question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+    "gap_type": "missing_assay",
+    "related_claims": [],
+    "related_edges": [],
+    "scope": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease, restricted to chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1). The pair was retrieved on 'protein ubiquitination', which is broader and is NOT what is being tested: the question follows the evidence, not the annotation. The question is equivalence of functional consequence, not whether either disease involves the process, which the cited evidence already supports.",
+    "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
+    "current_evidence_summary": "2 corroborating primary findings (PMID:21652633, PMID:19892702) establish a direct molecular link. Refined from the supporting evidence's own primary findings. PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:21652633: \"This study demonstrates that laforin and malin are key regulators of HSF1 and that defects in the HSF1-mediated stress response pathway might underlie\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" PMID:19892702: \"Finally, we demonstrate that the co-chaperone carboxyl terminus of the Hsc70-interacting protein (CHIP) stabilizes malin by modulating the activity of\" They do not establish that the downstream functional consequence is the same in both diseases, and the supporting reports are limited in number and experimental context.",
+    "contradictory_evidence_summary": "No contradicting evidence was retrieved by the recorded searches.",
+    "search_coverage": {
+      "coverage_id": "coverage:46abfb23-533a8d87",
+      "sources": [
+        {
+          "source": "PubMed (cross-disease co-mention)",
+          "status": "CHECKED",
+          "queries": [
+            "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])"
+          ],
+          "checked_at": "2026-10-04T08:03:31.827225Z",
+          "result_count": 3,
+          "error": null,
+          "pages_checked": 0,
+          "pagination_limit": null,
+          "languages": [
+            "eng"
+          ],
+          "geographic_regions": [],
+          "cache_hits": 0,
+          "snapshot_references": [
+            "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
+          ],
+          "estimated_cost": 0.0
+        },
+        {
+          "source": "Full-text corpora",
+          "status": "NOT_STARTED",
+          "queries": [],
+          "checked_at": null,
+          "result_count": 0,
+          "error": "Not searched. A relationship discussed only in full text would be invisible to this run.",
+          "pages_checked": 0,
+          "pagination_limit": null,
+          "languages": [],
+          "geographic_regions": [],
+          "cache_hits": 0,
+          "snapshot_references": [],
+          "estimated_cost": 0.0
+        }
+      ],
+      "search_started_at": "2026-10-04T08:03:31.827286Z",
+      "search_completed_at": null,
+      "scope": "Cross-disease evidence for pair 46abfb23-533a8d87",
+      "language_limitations": [
+        "English-language indexing only."
+      ],
+      "geographic_limitations": [],
+      "interpretation_caveat": "Absence of retrieved evidence is absence of indexed co-mention, not evidence that no relationship exists."
+    },
+    "missing_evidence_type": [
+      "A head-to-head functional comparison: both diseases' models assayed in parallel, same readout, same control, same laboratory.",
+      "Any measurement of the downstream consequence in both diseases, rather than the molecular interaction alone."
+    ],
+    "required_context": [
+      "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "a readout capturing chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1)",
+      "matched isogenic or otherwise background-comparable controls",
+      "both diseases assayed in the same experiment"
+    ],
+    "priority_reason": {
+      "causal_centrality": "The gap sits exactly where the relationship was established: evidence shows the molecular link, nothing shows the functional consequence is shared.",
+      "downstream_dependence": "Every transfer decision depends on it -- whether a model, assay or therapeutic strategy from one disease informs the other.",
+      "evidence_conflict": "Known differences between the diseases (Vegetative state, Visual hallucination, Photosensitive myoclonic seizure, Atonic seizure) mean equivalence cannot be assumed from the molecular link alone.",
+      "translational_relevance": "If equivalence holds, research infrastructure built for one disease becomes testable in the other, which is the scarcest resource in both communities. If it fails, effort is saved.",
+      "experimental_tractability": "One assay, two disease arms and a shared control in a single experiment. No new method is required; the readout already exists in the field.",
+      "available_assets": "Requires a model of each disease and one readout able to report the shared process. Whether these exist for both diseases is established by discovery, not assumed here.",
+      "discriminates_competing_hypotheses": "Yes. Equivalent disruption supports shared mechanism; opposite direction, absent effect in one arm, or magnitudes beyond the within-genotype range support non-equivalence. The two outcomes are distinguishable by the same measurement."
+    },
+    "resolvability": "Experimentally resolvable. The discriminating measurement is diGly assay reporting protein ubiquitination applied to models of both diseases and a shared control in one experiment.",
+    "proposed_discriminating_test": "Apply one assay to models of both diseases and a shared control in the same experiment, and compare the direction and magnitude of the effect.",
+    "status": "OPEN"
+  },
+  "experiment": {
+    "experiment_id": "3c4fd926-6d41-59e0-837a-e6194a657787",
+    "knowledge_gap_id": "9e74e79e-f1cb-51cc-8ee4-5021eeebaccb",
+    "scientific_question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+    "hypothesis": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
+    "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
+    "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+    "sample_type": "Patient-derived or engineered models representing each disease, plus a shared control of the same genetic background.",
+    "patient_stratification": [
+      "Genotypes representative of each disease",
+      "Neither arm represented solely by a variant of uncertain significance"
+    ],
+    "perturbation": "A standardised cellular stress applied identically to every arm. The bridge describes stress-responsive biology, so a baseline-only comparison could miss a defect that appears only when the pathway is challenged, and a null result would then be uninterpretable.",
+    "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
+    "controls": [
+      "Isogenic or background-matched control",
+      "Replicate clones per genotype, to establish the within-genotype range the between-disease comparison must exceed",
+      "A positive control that perturbs the readout by a known route"
+    ],
+    "readouts": [
+      "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+      "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
+      "Recovery of the challenged cells after the stress is withdrawn"
+    ],
+    "primary_readout": "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+    "secondary_readouts": [
+      "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
+      "Recovery of the challenged cells after the stress is withdrawn"
+    ],
+    "primary_endpoint": "Direction and magnitude of the chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) response to stress in each disease arm relative to the shared control, by the primary readout alone.",
+    "secondary_endpoints": [
+      "Concordance between the functional response and the supporting molecular profile within each arm."
+    ],
+    "expected_result_if_supported": "Both disease models show disruption of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
+    "expected_result_if_refuted": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
+    "confounders": [
+      "Clone-to-clone variation can exceed the between-disease difference; the replicate-clone control exists to bound it.",
+      "Differing model maturity or culture age between arms can produce a difference unrelated to genotype.",
+      "If the two diseases' models cannot be cultured identically, any difference is confounded by protocol rather than biology."
+    ],
+    "known_limitations": [
+      "A single readout at one timepoint cannot exclude equivalence that emerges, or disappears, over time.",
+      "A negative result constrains equivalence at the measured step only and does not exclude shared biology elsewhere.",
+      "Model systems may not reproduce the cell type where the diseases actually diverge."
+    ],
+    "required_assets": [
+      "Cellular model of Autosomal Recessive Spinocerebellar Ataxia 16",
+      "Cellular model of Lafora Disease",
+      "Background-matched control line shared by both arms",
+      "Assay reagents for diGly assay reporting protein ubiquitination"
+    ],
+    "required_capabilities": [
+      "Functional assay reporting chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) under standardised stress",
+      "Cellular stress / heat-shock challenge applied identically across arms",
+      "iPSC maintenance and differentiation to the disease-relevant cell type",
+      "Clone-aware statistical analysis establishing the within-genotype range",
+      "diGly assay reporting protein ubiquitination for supporting molecular profiling"
+    ],
+    "safety_or_ethics_flags": [],
+    "unjustified_interpretations": [
+      "That equivalence at this step implies a shared treatment response.",
+      "That a difference here means the diseases are mechanistically unrelated; it means they are not equivalent at this step.",
+      "That any result establishes causation in patients, since the measurement is made in models."
+    ],
+    "human_review_required": true,
+    "label": "Research proposal requiring expert review."
+  },
+  "required_capabilities": [
+    {
+      "capability_id": "required-capability:884fba5a-2708-5e5b-b63b-85b346181668",
+      "experiment_id": "3c4fd926-6d41-59e0-837a-e6194a657787",
+      "canonical_name": "Functional assay reporting chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) under standardised stress",
+      "description": "Functional assay reporting chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) under standardised stress",
+      "capability_category": "other",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: Functional assay reporting chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) under standardised stress",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "3c4fd926-6d41-59e0-837a-e6194a657787#required_capabilities[0]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:4c39c29b-f207-590f-a185-b44c3aedabd3",
+      "experiment_id": "3c4fd926-6d41-59e0-837a-e6194a657787",
+      "canonical_name": "iPSC maintenance",
+      "description": "iPSC maintenance and differentiation to the disease-relevant cell type",
+      "capability_category": "cell_culture",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: iPSC maintenance and differentiation to the disease-relevant cell type",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "3c4fd926-6d41-59e0-837a-e6194a657787#required_capabilities[2]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:2a7a1894-4d93-547b-b256-dc6902d95c73",
+      "experiment_id": "3c4fd926-6d41-59e0-837a-e6194a657787",
+      "canonical_name": "clone-aware statistical analysis",
+      "description": "Clone-aware statistical analysis establishing the within-genotype range",
+      "capability_category": "statistical_analysis",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: Clone-aware statistical analysis establishing the within-genotype range",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "3c4fd926-6d41-59e0-837a-e6194a657787#required_capabilities[3]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:0aa9168f-8025-5361-94a6-29e8b38e687e",
+      "experiment_id": "3c4fd926-6d41-59e0-837a-e6194a657787",
+      "canonical_name": "diGly enrichment proteomics",
+      "description": "diGly assay reporting protein ubiquitination for supporting molecular profiling",
+      "capability_category": "proteomics",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: diGly assay reporting protein ubiquitination for supporting molecular profiling",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "3c4fd926-6d41-59e0-837a-e6194a657787#required_capabilities[4]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    }
+  ]
+}

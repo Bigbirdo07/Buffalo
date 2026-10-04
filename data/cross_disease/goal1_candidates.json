@@ -1,0 +1,1017 @@
+{
+  "anchor": "Autosomal Recessive Spinocerebellar Ataxia 16",
+  "anchor_id": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+  "candidates_retrieved": 60,
+  "candidates_evaluated": 8,
+  "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
+  "ranked": [
+    {
+      "rank": 1,
+      "disease_id": "b2859439-e59b-51dc-95a0-981316afad73",
+      "disease_name": "Spinocerebellar Ataxia 48",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 61.432,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 15.564,
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_MOLECULAR_FUNCTION": 13.894,
+        "SHARED_PHENOTYPE": 17.732
+      },
+      "top_features": [
+        {
+          "label": "Hsp70 protein binding",
+          "class": "molecular",
+          "corpus_frequency": 2,
+          "information_content": 7.405
+        },
+        {
+          "label": "STUB1",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "protein-folding chaperone binding",
+          "class": "molecular",
+          "corpus_frequency": 5,
+          "information_content": 6.489
+        },
+        {
+          "label": "protein quality control for misfolded or incompletely synthesized proteins",
+          "class": "cellular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "mitophagy",
+          "class": "cellular",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "disease_id": "d98465f3-1239-5044-8e4e-17509ab8200e",
+      "disease_name": "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_GENE_OR_PROTEIN",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 46.388,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 9.602,
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_GENE_OR_PROTEIN": 7.0,
+        "SHARED_PHENOTYPE": 22.544
+      },
+      "top_features": [
+        {
+          "label": "STUB1",
+          "class": "genetic",
+          "corpus_frequency": 3,
+          "information_content": 7.0
+        },
+        {
+          "label": "ubiquitin-dependent protein catabolic process",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Hypogonadotropic hypogonadism",
+          "class": "phenotype",
+          "corpus_frequency": 29,
+          "information_content": 4.731
+        },
+        {
+          "label": "Chorea at Onset",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "disease_id": "a0810efd-a3a6-5617-ad16-eb4dfd64feb8",
+      "disease_name": "Autosomal Dominant Cerebellar Ataxia Type I",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 23.971,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 6.019,
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 10.71
+      },
+      "top_features": [
+        {
+          "label": "protein quality control for misfolded or incompletely synthesized proteins",
+          "class": "cellular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Progressive cerebellar ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 40,
+          "information_content": 4.409
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Peripheral neuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "disease_id": "2cad1928-c779-552e-ab04-908aca223711",
+      "disease_name": "Peroxisome Biogenesis Disorder 5B",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 22.604,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_MOLECULAR_FUNCTION": 6.019,
+        "SHARED_PHENOTYPE": 9.343
+      },
+      "top_features": [
+        {
+          "label": "ubiquitin-protein transferase activity",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "disease_id": "6b8e97d3-f8d8-52aa-980b-486565719591",
+      "disease_name": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_MOLECULAR_FUNCTION",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 19.079,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 4.337,
+        "SHARED_MOLECULAR_FUNCTION": 6.019,
+        "SHARED_PHENOTYPE": 8.723
+      },
+      "top_features": [
+        {
+          "label": "ubiquitin-protein transferase activity",
+          "class": "molecular",
+          "corpus_frequency": 8,
+          "information_content": 6.019
+        },
+        {
+          "label": "Delayed Gross Motor Development",
+          "class": "phenotype",
+          "corpus_frequency": 22,
+          "information_content": 5.007
+        },
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        },
+        {
+          "label": "Tremor",
+          "class": "phenotype",
+          "corpus_frequency": 80,
+          "information_content": 3.716
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "disease_id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
+      "disease_name": "Lafora_Disease",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 18.398,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 4.337,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 10.429
+      },
+      "top_features": [
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "disease_id": "8f57bc64-4ceb-5261-b4cb-b53f5d68408a",
+      "disease_name": "Friedreich Ataxia",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 18.161,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.208,
+        "SHARED_CELL_OR_TISSUE": 3.61,
+        "SHARED_PHENOTYPE": 9.343
+      },
+      "top_features": [
+        {
+          "label": "mitophagy",
+          "class": "cellular",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Peripheral neuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        },
+        {
+          "label": "Dysarthria",
+          "class": "phenotype",
+          "corpus_frequency": 148,
+          "information_content": 3.101
+        },
+        {
+          "label": "Nystagmus",
+          "class": "phenotype",
+          "corpus_frequency": 157,
+          "information_content": 3.042
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "disease_id": "5e9c01d1-0c15-5906-a6ad-1cabf14b6aba",
+      "disease_name": "Fragile X-Associated Tremor Ataxia Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 16.283,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.265,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 7.386
+      },
+      "top_features": [
+        {
+          "label": "ubiquitin-dependent protein catabolic process",
+          "class": "cellular",
+          "corpus_frequency": 17,
+          "information_content": 5.265
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Peripheral neuropathy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "disease_id": "f737150f-5e93-59ac-9ed1-f94bd71f30d2",
+      "disease_name": "Rabies",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 12.968,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 5.208,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "mitophagy",
+          "class": "cellular",
+          "corpus_frequency": 18,
+          "information_content": 5.208
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "disease_id": "fa75cf83-ae03-5d2e-8cae-66fefb2bce0a",
+      "disease_name": "Myoclonus-Dystonia Syndrome",
+      "axes": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 12.097,
+      "per_axis": {
+        "SHARED_CELLULAR_PROCESS": 4.337,
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 4.128
+      },
+      "top_features": [
+        {
+          "label": "protein ubiquitination",
+          "class": "cellular",
+          "corpus_frequency": 43,
+          "information_content": 4.337
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "disease_id": "eb62303e-7afe-5ea4-9c79-e897cecadf52",
+      "disease_name": "SQSTM1-Related Childhood-Onset Neurodegeneration",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 33.578,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 26.336
+      },
+      "top_features": [
+        {
+          "label": "Progressive cognitive decline",
+          "class": "phenotype",
+          "corpus_frequency": 23,
+          "information_content": 4.963
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Tremor",
+          "class": "phenotype",
+          "corpus_frequency": 80,
+          "information_content": 3.716
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "disease_id": "48ae00ea-bd74-51b7-ad3c-880a884dd801",
+      "disease_name": "Ataxia With Oculomotor Apraxia Type 2",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 26.653,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 19.411
+      },
+      "top_features": [
+        {
+          "label": "Chorea at Onset",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "Progressive cerebellar ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 40,
+          "information_content": 4.409
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "disease_id": "5e84ccb7-a8d8-54b2-af6c-2cfe635584e3",
+      "disease_name": "Autosomal Recessive Spastic Ataxia 9",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 26.647,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 19.405
+      },
+      "top_features": [
+        {
+          "label": "Progressive cognitive decline",
+          "class": "phenotype",
+          "corpus_frequency": 23,
+          "information_content": 4.963
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "disease_id": "62330293-a436-5f4a-9503-2341af81656f",
+      "disease_name": "Spinocerebellar Ataxia Type 2",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.877,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 18.635
+      },
+      "top_features": [
+        {
+          "label": "Progressive cerebellar ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 40,
+          "information_content": 4.409
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "disease_id": "46269793-da06-5a28-a9cf-c04548903d5b",
+      "disease_name": "Gerstmann-Straussler-Scheinker Syndrome",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.812,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 18.57
+      },
+      "top_features": [
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "disease_id": "f7d021c2-f70f-5eb3-b6dc-c70ea664807d",
+      "disease_name": "Autosomal Recessive Ataxia Due to Ubiquinone Deficiency",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.796,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 18.554
+      },
+      "top_features": [
+        {
+          "label": "Progressive cerebellar ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 40,
+          "information_content": 4.409
+        },
+        {
+          "label": "Myoclonus",
+          "class": "phenotype",
+          "corpus_frequency": 53,
+          "information_content": 4.128
+        },
+        {
+          "label": "Tremor",
+          "class": "phenotype",
+          "corpus_frequency": 80,
+          "information_content": 3.716
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "disease_id": "4ec824c4-6e98-539c-a2ff-c899b077c3f2",
+      "disease_name": "Spinocerebellar Ataxia Type 1",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.631,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 21.999
+      },
+      "top_features": [
+        {
+          "label": "Chorea at Onset",
+          "class": "phenotype",
+          "corpus_frequency": 36,
+          "information_content": 4.515
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "disease_id": "5e6543ad-ff4c-5aac-a0d6-ea22e4f4a1ce",
+      "disease_name": "Paraneoplastic Cerebellar Degeneration",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 25.18,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 17.938
+      },
+      "top_features": [
+        {
+          "label": "Progressive cerebellar ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 40,
+          "information_content": 4.409
+        },
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "disease_id": "95e09e8f-ecbe-5cb7-9073-9041a151b925",
+      "disease_name": "Spinocerebellar Ataxia Type 23",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 24.832,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 3.632,
+        "SHARED_PHENOTYPE": 21.2
+      },
+      "top_features": [
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Tremor",
+          "class": "phenotype",
+          "corpus_frequency": 80,
+          "information_content": 3.716
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "disease_id": "1784474d-01e7-5807-9d8b-9f2999823248",
+      "disease_name": "Autosomal Recessive Ataxia Beauce Type",
+      "axes": [
+        "SHARED_CELL_OR_TISSUE",
+        "SHARED_PHENOTYPE"
+      ],
+      "total_information": 24.726,
+      "per_axis": {
+        "SHARED_CELL_OR_TISSUE": 7.242,
+        "SHARED_PHENOTYPE": 17.484
+      },
+      "top_features": [
+        {
+          "label": "Gait ataxia",
+          "class": "phenotype",
+          "corpus_frequency": 50,
+          "information_content": 4.186
+        },
+        {
+          "label": "Hyperreflexia",
+          "class": "phenotype",
+          "corpus_frequency": 63,
+          "information_content": 3.955
+        },
+        {
+          "label": "Purkinje cell",
+          "class": "cell_tissue",
+          "corpus_frequency": 87,
+          "information_content": 3.632
+        },
+        {
+          "label": "cerebellum",
+          "class": "cell_tissue",
+          "corpus_frequency": 89,
+          "information_content": 3.61
+        },
+        {
+          "label": "Cerebellar atrophy",
+          "class": "phenotype",
+          "corpus_frequency": 134,
+          "information_content": 3.2
+        }
+      ]
+    }
+  ],
+  "evaluated": [
+    {
+      "rank": 1,
+      "pair": "Spinocerebellar Ataxia 48",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "CORRECT",
+      "anchored": true,
+      "evidence": 20,
+      "direct_primary": 6,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 2,
+      "pair": "Cerebellar Ataxia-Hypogonadism Syndrome",
+      "identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 20,
+      "direct_primary": 4,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 3,
+      "pair": "Autosomal Dominant Cerebellar Ataxia Type I",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "INSUFFICIENT_EVIDENCE",
+      "retrieval_validity": "UNRESOLVED",
+      "anchored": false,
+      "evidence": 20,
+      "direct_primary": 1,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 4,
+      "pair": "Peroxisome Biogenesis Disorder 5B",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": true,
+      "evidence": 1,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 5,
+      "pair": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": true,
+      "evidence": 11,
+      "direct_primary": 4,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 6,
+      "pair": "Lafora_Disease",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "anchored": false,
+      "evidence": 3,
+      "direct_primary": 2,
+      "independent_discovery": true,
+      "identity_excluded": false
+    },
+    {
+      "rank": 7,
+      "pair": "Friedreich Ataxia",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "SHARED_TISSUE_CONTEXT",
+      "retrieval_validity": "INCOMPLETE",
+      "anchored": false,
+      "evidence": 3,
+      "direct_primary": 0,
+      "independent_discovery": false,
+      "identity_excluded": false
+    },
+    {
+      "rank": 8,
+      "pair": "Fragile X-Associated Tremor Ataxia Syndrome",
+      "identity": "DISTINCT_DISEASE",
+      "relationship": "INSUFFICIENT_EVIDENCE",
+      "retrieval_validity": "UNRESOLVED",
+      "anchored": false,
+      "evidence": 15,
+      "direct_primary": 1,
+      "independent_discovery": false,
+      "identity_excluded": false
+    }
+  ]
+}

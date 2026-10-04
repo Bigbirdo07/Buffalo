@@ -372,6 +372,7 @@ def classify(
     comparison: DiseaseComparison,
     identity: IdentityRelation,
     evidence: tuple[MechanisticEvidence, ...],
+    bridge: MechanisticBridge | None = None,
 ) -> tuple[RelationshipClass, str, bool]:
     """Rule cascade from features and evidence to a relationship class.
 
@@ -413,6 +414,19 @@ def classify(
 
     # 3. Direct evidence of a molecular link is the only route to a mechanistic
     #    class. Annotation overlap never reaches here.
+    # A shared mechanism must be nameable. If the evidence cannot yield a
+    # mechanistic bridge, there is corroborated co-occurrence but nothing to
+    # call the mechanism, and asserting one would be a claim the system cannot
+    # state. Found when a pair reached SHARED_DOWNSTREAM_MECHANISM with no
+    # derivable bridge.
+    if len(primary_direct) >= MINIMUM_CORROBORATION and bridge is None:
+        return (
+            RelationshipClass.INSUFFICIENT_EVIDENCE,
+            f"{len(primary_direct)} primary findings co-occur, but no mechanistic "
+            "node could be read from them. A shared mechanism that cannot be "
+            "named is not reported as one.",
+            False,
+        )
     if len(primary_direct) >= MINIMUM_CORROBORATION:
         return (
             RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
@@ -659,9 +673,8 @@ def run_pipeline(
         + (", ".join(applying) or "none"),
     )
 
-    # 11. Bridge: what the evidence says connects them, before synthesis so the
-    # rationale can cite it. Derived from evidence text, never from the feature
-    # that retrieved the pair.
+    # 11. Bridge first: classification depends on whether a mechanism can be
+    # named at all, so it is derived before synthesis rather than after.
     bridge = derive_mechanistic_bridge(
         evidence,
         tuple(item.source_feature for item in retrieval_reasons),
@@ -675,7 +688,9 @@ def run_pipeline(
     )
 
     # 12. Synthesis.
-    final_class, rationale, actionable = classify(comparison, identity_relation, evidence)
+    final_class, rationale, actionable = classify(
+        comparison, identity_relation, evidence, bridge
+    )
     trace.final_relationship_class = final_class
     trace.final_rationale = rationale
     trace.actionable = actionable

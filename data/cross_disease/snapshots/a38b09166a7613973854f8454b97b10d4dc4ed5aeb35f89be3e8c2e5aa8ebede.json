@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3APPP2R2B%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:42.631658+00:00",
+  "sha256": "6e2b1f74dc9743726dd7e8c662609ff89d34779510b51d5d025a6af2d1cf3729"
+}

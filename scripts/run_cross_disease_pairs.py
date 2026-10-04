@@ -201,6 +201,18 @@ def assess_record(
     left_acronyms = acronyms_for(left, uniprot)
     right_acronyms = acronyms_for(right, uniprot)
 
+    def acronym_present(acronyms: list[str]) -> bool:
+        """Case-SENSITIVE acronym match.
+
+        A protein acronym and a laboratory method frequently differ only in
+        case -- the protein CHIP versus the assay ChIP -- and a method acronym
+        co-occurs with essentially every gene, so a case-insensitive match
+        confirmed unrelated method papers as mechanistic evidence for six of
+        eight candidate pairs. PubMed cannot search case-sensitively, so the
+        query stays broad and confirmation carries the discrimination.
+        """
+        return any(token in text for token in acronyms)
+
     left_sure, right_sure = present(left_strict), present(right_strict)
     # An ambiguous acronym may identify one side only when the other side is
     # confirmed unambiguously. A paper established to be about disease B that
@@ -208,8 +220,8 @@ def assess_record(
     # acronym in a paper with no confirmed link to either disease is noise.
     # This is disambiguation by context, and it is the only route by which an
     # acronym is ever allowed to count as evidence.
-    left_by_context = (not left_sure) and right_sure and present(left_acronyms)
-    right_by_context = (not right_sure) and left_sure and present(right_acronyms)
+    left_by_context = (not left_sure) and right_sure and acronym_present(left_acronyms)
+    right_by_context = (not right_sure) and left_sure and acronym_present(right_acronyms)
     both = (left_sure or left_by_context) and (right_sure or right_by_context)
     disambiguated = left_by_context or right_by_context
     direct = bool(both and DIRECT_LINK_MARKERS.search(text))
@@ -248,7 +260,11 @@ def assess_record(
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--anchor", required=True, help="query disease name")
-    parser.add_argument("--pairs", nargs="+", required=True, help="candidate disease names")
+    parser.add_argument("--pairs", nargs="*", default=[], help="candidate disease names")
+    parser.add_argument(
+        "--top", type=int, default=0,
+        help="instead of named pairs, take the top N retrieved candidates",
+    )
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--retmax", type=int, default=20)
     parser.add_argument("--out", type=Path, default=ROOT / "data/cross_disease")
@@ -269,10 +285,14 @@ def main() -> int:
     by_name = {r["disease_name"]: r for r in fingerprints}
 
     anchor = by_name[args.anchor]
-    candidates = {
-        item.disease_name: item
-        for item in generate_candidates(index, anchor["disease_id"], limit=60)
-    }
+    retrieved = generate_candidates(index, anchor["disease_id"], limit=60)
+    candidates = {item.disease_name: item for item in retrieved}
+    # Goal 1 starts from a disease, not from a chosen pair: the neighbours must
+    # emerge from retrieval rather than being supplied.
+    pair_names = args.pairs or [item.disease_name for item in retrieved[: args.top]]
+    if not pair_names:
+        raise SystemExit("supply --pairs or --top")
+    ranks = {item.disease_name: position + 1 for position, item in enumerate(retrieved)}
 
     snapshots = args.out / "snapshots"
     snapshots.mkdir(parents=True, exist_ok=True)
@@ -287,7 +307,7 @@ def main() -> int:
     rejected: list[dict] = []
     summary: list[dict] = []
 
-    for name in args.pairs:
+    for name in pair_names:
         candidate = candidates.get(name)
         if candidate is None:
             summary.append({"pair": name, "status": "NOT_RETRIEVED"})
@@ -407,6 +427,9 @@ def main() -> int:
 
         row = {
             "pair_id": pair_id,
+            "retrieval_rank": ranks.get(name),
+            "retrieval_axes": len(candidate.methods),
+            "retrieval_information": candidate.total_information,
             "disease_a_id": anchor["disease_id"],
             "disease_a": anchor["disease_name"],
             "disease_b_id": other["disease_id"],
@@ -455,6 +478,7 @@ def main() -> int:
 
         summary.append(
             {
+                "rank": ranks.get(name),
                 "pair": name,
                 "identity": identity.relation.value,
                 "relationship": trace.final_relationship_class.value,
@@ -476,6 +500,34 @@ def main() -> int:
 
     write_jsonl(args.out / "relationships.jsonl", relationships)
     write_jsonl(args.out / "rejected_candidates.jsonl", rejected)
+    (args.out / "goal1_candidates.json").write_text(
+        json.dumps({
+            "anchor": anchor["disease_name"],
+            "anchor_id": anchor["disease_id"],
+            "candidates_retrieved": len(retrieved),
+            "candidates_evaluated": len(pair_names),
+            "software_commit": software_commit,
+            "ranked": [
+                {
+                    "rank": position + 1,
+                    "disease_id": item.disease_id,
+                    "disease_name": item.disease_name,
+                    "axes": sorted(item.methods),
+                    "total_information": item.total_information,
+                    "per_axis": item.scores,
+                    "top_features": [
+                        {"label": feature.label, "class": feature.feature_class,
+                         "corpus_frequency": feature.corpus_frequency,
+                         "information_content": feature.information_content}
+                        for feature in item.top_features(5)
+                    ],
+                }
+                for position, item in enumerate(retrieved[:20])
+            ],
+            "evaluated": summary,
+        }, indent=2) + "\n",
+        encoding="utf-8",
+    )
     print(json.dumps({"pairs": summary, "relationships": len(relationships),
                       "rejected": len(rejected)}, indent=2))
     return 0

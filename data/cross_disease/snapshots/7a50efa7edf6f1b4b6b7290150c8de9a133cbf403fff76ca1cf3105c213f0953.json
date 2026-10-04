@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ATBP%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:25.569590+00:00",
+  "sha256": "52286ff83bebf58b95edf5cfc372f53c60492ec0fb2ef972d94021d84aa46c1d"
+}

@@ -1,7 +1,7 @@
 {
-  "pair_id": "46abfb23-533a8d87",
+  "pair_id": "46abfb23-5e9c01d1",
   "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
-  "disease_b": "Lafora_Disease",
+  "disease_b": "Fragile X-Associated Tremor Ataxia Syndrome",
   "stages": [
     {
       "stage": "DiseaseIdentityCheck",
@@ -10,12 +10,12 @@
     },
     {
       "stage": "RetrievalReasonInspection",
-      "finding": "SHARED_CELLULAR_PROCESS(protein ubiquitination), SHARED_CELL_TYPE(Purkinje cell), PHENOTYPE_SIMILARITY(Myoclonus)",
+      "finding": "SHARED_CELLULAR_PROCESS(ubiquitin-dependent protein catabolic process), SHARED_CELL_TYPE(Purkinje cell), PHENOTYPE_SIMILARITY(Gait ataxia)",
       "assessable": true
     },
     {
       "stage": "MolecularAnchorInspection",
-      "finding": "anchored=False [SHARED_CELLULAR_PROCESS=WEAK]",
+      "finding": "anchored=False [SHARED_CELLULAR_PROCESS=MODERATE]",
       "assessable": true
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "stage": "ProcessComparison",
-      "finding": "WEAK: protein ubiquitination",
+      "finding": "MODERATE: ubiquitin-dependent protein catabolic process",
       "assessable": true
     },
     {
@@ -35,37 +35,37 @@
     },
     {
       "stage": "PhenotypeComparison",
-      "finding": "STRONG: Myoclonus, Cerebellar atrophy, Dysarthria",
+      "finding": "MODERATE: Gait ataxia, Peripheral neuropathy",
       "assessable": true
     },
     {
       "stage": "EvidenceRetrieval",
-      "finding": "3 items retrieved",
+      "finding": "15 items retrieved",
       "assessable": true
     },
     {
       "stage": "EvidenceFitReview",
-      "finding": "2 primary findings establish a direct molecular link",
+      "finding": "1 primary findings establish a direct molecular link",
       "assessable": true
     },
     {
       "stage": "ContradictionSearch",
-      "finding": "0 contradicting, 1 qualifying",
+      "finding": "0 contradicting, 13 qualifying",
       "assessable": true
     },
     {
       "stage": "AlternativeExplanationGeneration",
-      "finding": "3 of 7 alternatives apply: GENERIC_PHENOTYPE_OVERLAP, SHARED_TISSUE_DIFFERENT_BIOLOGY, BROAD_ONTOLOGY_ANNOTATION",
+      "finding": "4 of 7 alternatives apply: GENERIC_PHENOTYPE_OVERLAP, SHARED_TISSUE_DIFFERENT_BIOLOGY, BROAD_ONTOLOGY_ANNOTATION, CURATION_DEPTH_ARTIFACT",
       "assessable": true
     },
     {
       "stage": "MechanisticBridgeDerivation",
-      "finding": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "finding": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: FMR1. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
       "assessable": true
     },
     {
       "stage": "MechanisticSynthesis",
-      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "finding": "INSUFFICIENT_EVIDENCE (retrieval UNRESOLVED): Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
       "assessable": true
     }
   ],
@@ -74,8 +74,8 @@
   "retrieval_reasons": [
     {
       "type": "SHARED_CELLULAR_PROCESS",
-      "feature": "protein ubiquitination",
-      "corpus_frequency": 43
+      "feature": "ubiquitin-dependent protein catabolic process",
+      "corpus_frequency": 17
     },
     {
       "type": "SHARED_CELL_TYPE",
@@ -84,21 +84,33 @@
     },
     {
       "type": "PHENOTYPE_SIMILARITY",
-      "feature": "Myoclonus",
-      "corpus_frequency": 53
+      "feature": "Gait ataxia",
+      "corpus_frequency": 50
     }
   ],
-  "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+  "retrieval_validity": "UNRESOLVED",
   "variant_compatibility": "UNKNOWN",
   "molecular_anchor_present": false,
-  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=WEAK",
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=MODERATE",
   "supporting_evidence_ids": [
-    "PMID:21652633",
-    "PMID:19892702"
+    "PMID:36997834",
+    "PMID:25268320"
   ],
   "contradicting_evidence_ids": [],
   "qualifying_evidence_ids": [
-    "PMID:30049290"
+    "PMID:30900173",
+    "PMID:28719003",
+    "PMID:23754224",
+    "PMID:32234480",
+    "PMID:26306647",
+    "PMID:16891414",
+    "PMID:42168661",
+    "PMID:15741991",
+    "PMID:24250222",
+    "PMID:33151065",
+    "PMID:26855684",
+    "PMID:42268897",
+    "PMID:42214628"
   ],
   "alternative_explanations": [
     {
@@ -133,39 +145,36 @@
     },
     {
       "code": "CURATION_DEPTH_ARTIFACT",
-      "applies": false,
+      "applies": true,
       "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
     }
   ],
   "mechanistic_bridge": {
-    "bridge_id": "bridge:46abfb23-533a8d87",
+    "bridge_id": "bridge:46abfb23-5e9c01d1",
     "terms": [
-      "chaperone",
-      "co-chaperone",
-      "ubiquitin ligase",
-      "CHIP"
+      "FMR1"
     ],
-    "statement": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "statement": "Evidence establishing a direct link describes a shared molecular axis. Regulators named across the evidence: FMR1. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
     "derived_from_evidence_ids": [
-      "PMID:21652633",
-      "PMID:19892702"
+      "PMID:36997834",
+      "PMID:25268320"
     ],
     "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
     "distinct_from_retrieval_features": [
-      "protein ubiquitination",
+      "ubiquitin-dependent protein catabolic process",
       "Purkinje cell",
-      "Myoclonus"
+      "Gait ataxia"
     ],
     "is_narrower_than_retrieval": true
   },
-  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
-  "final_rationale": "2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
-  "actionable": true,
+  "final_relationship_class": "INSUFFICIENT_EVIDENCE",
+  "final_rationale": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
+  "actionable": false,
   "search_coverage": {
-    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])",
+    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (FMR1[tiab] OR FMRP[tiab] OR \"Fragile X messenger ribonucleoprotein 1\"[tiab] OR \"Fragile X-Associated Tremor Ataxia Syndrome\"[tiab])",
     "status": "CHECKED",
-    "total_hits": 3,
-    "snapshot": "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
+    "total_hits": 15,
+    "snapshot": "6b7925bbf525d616e81928489f6de86181733a96777117a44e25dad98d1c32f4"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
   "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",

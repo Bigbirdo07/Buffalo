@@ -1,7 +1,7 @@
 {
-  "pair_id": "46abfb23-2cad1928",
+  "pair_id": "46abfb23-6b8e97d3",
   "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
-  "disease_b": "Peroxisome Biogenesis Disorder 5B",
+  "disease_b": "Neurodevelopmental Disorder With or Without Autism or Seizures",
   "stages": [
     {
       "stage": "DiseaseIdentityCheck",
@@ -10,12 +10,12 @@
     },
     {
       "stage": "RetrievalReasonInspection",
-      "finding": "SHARED_CELL_TYPE(Purkinje cell), SHARED_GO_TERM(ubiquitin-protein transferase activity), PHENOTYPE_SIMILARITY(Cerebellar atrophy)",
+      "finding": "SHARED_CELLULAR_PROCESS(protein ubiquitination), SHARED_GO_TERM(ubiquitin-protein transferase activity), PHENOTYPE_SIMILARITY(Delayed Gross Motor Development)",
       "assessable": true
     },
     {
       "stage": "MolecularAnchorInspection",
-      "finding": "anchored=True [SHARED_MOLECULAR_FUNCTION=MODERATE]",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=WEAK; SHARED_MOLECULAR_FUNCTION=MODERATE]",
       "assessable": true
     },
     {
@@ -25,47 +25,47 @@
     },
     {
       "stage": "ProcessComparison",
+      "finding": "WEAK: protein ubiquitination",
+      "assessable": true
+    },
+    {
+      "stage": "CellTypeTissueComparison",
       "finding": "no shared features on this axis",
       "assessable": false
     },
     {
-      "stage": "CellTypeTissueComparison",
-      "finding": "MODERATE: Purkinje cell, cerebellum",
-      "assessable": true
-    },
-    {
       "stage": "PhenotypeComparison",
-      "finding": "MODERATE: Cerebellar atrophy, Dysarthria, Nystagmus",
+      "finding": "MODERATE: Delayed Gross Motor Development, Tremor",
       "assessable": true
     },
     {
       "stage": "EvidenceRetrieval",
-      "finding": "1 items retrieved",
+      "finding": "11 items retrieved",
       "assessable": true
     },
     {
       "stage": "EvidenceFitReview",
-      "finding": "0 primary findings establish a direct molecular link",
+      "finding": "4 primary findings establish a direct molecular link",
       "assessable": true
     },
     {
       "stage": "ContradictionSearch",
-      "finding": "0 contradicting, 1 qualifying",
+      "finding": "0 contradicting, 7 qualifying",
       "assessable": true
     },
     {
       "stage": "AlternativeExplanationGeneration",
-      "finding": "0 of 7 alternatives apply: none",
+      "finding": "1 of 7 alternatives apply: BROAD_ONTOLOGY_ANNOTATION",
       "assessable": true
     },
     {
       "stage": "MechanisticBridgeDerivation",
-      "finding": "no direct evidence, so no bridge derived",
-      "assessable": false
+      "finding": "Evidence establishing a direct link describes autophagy, ubiquitin ligase, ubiquitination. Regulators named across the evidence: STUB1, CUL3, CUL1, KLHL20. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
     },
     {
       "stage": "MechanisticSynthesis",
-      "finding": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT (retrieval INCOMPLETE): The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed.",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 4 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
       "assessable": true
     }
   ],
@@ -73,9 +73,9 @@
   "scoped_identities": [],
   "retrieval_reasons": [
     {
-      "type": "SHARED_CELL_TYPE",
-      "feature": "Purkinje cell",
-      "corpus_frequency": 87
+      "type": "SHARED_CELLULAR_PROCESS",
+      "feature": "protein ubiquitination",
+      "corpus_frequency": 43
     },
     {
       "type": "SHARED_GO_TERM",
@@ -84,18 +84,29 @@
     },
     {
       "type": "PHENOTYPE_SIMILARITY",
-      "feature": "Cerebellar atrophy",
-      "corpus_frequency": 134
+      "feature": "Delayed Gross Motor Development",
+      "corpus_frequency": 22
     }
   ],
-  "retrieval_validity": "INCOMPLETE",
+  "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
   "variant_compatibility": "UNKNOWN",
   "molecular_anchor_present": true,
-  "molecular_anchor_description": "SHARED_MOLECULAR_FUNCTION=MODERATE",
-  "supporting_evidence_ids": [],
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=WEAK; SHARED_MOLECULAR_FUNCTION=MODERATE",
+  "supporting_evidence_ids": [
+    "PMID:32543267",
+    "PMID:24185832",
+    "PMID:35314173",
+    "PMID:39968753"
+  ],
   "contradicting_evidence_ids": [],
   "qualifying_evidence_ids": [
-    "PMID:42264716"
+    "PMID:39629137",
+    "PMID:28860350",
+    "PMID:30409900",
+    "PMID:27614073",
+    "PMID:36368157",
+    "PMID:40650665",
+    "PMID:42021323"
   ],
   "alternative_explanations": [
     {
@@ -110,7 +121,7 @@
     },
     {
       "code": "BROAD_ONTOLOGY_ANNOTATION",
-      "applies": false,
+      "applies": true,
       "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
     },
     {
@@ -134,15 +145,40 @@
       "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
     }
   ],
-  "mechanistic_bridge": null,
-  "final_relationship_class": "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT",
-  "final_rationale": "The diseases share a molecular or process-level annotation, but no evidence demonstrates that they disrupt it equivalently. Shared process is reported; shared mechanism is not claimed.",
-  "actionable": false,
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:46abfb23-6b8e97d3",
+    "terms": [
+      "autophagy",
+      "ubiquitin ligase",
+      "ubiquitination",
+      "STUB1",
+      "CUL3",
+      "CUL1",
+      "KLHL20"
+    ],
+    "statement": "Evidence establishing a direct link describes autophagy, ubiquitin ligase, ubiquitination. Regulators named across the evidence: STUB1, CUL3, CUL1, KLHL20. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:32543267",
+      "PMID:24185832",
+      "PMID:35314173",
+      "PMID:39968753"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "protein ubiquitination",
+      "ubiquitin-protein transferase activity",
+      "Delayed Gross Motor Development"
+    ],
+    "is_narrower_than_retrieval": true
+  },
+  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
+  "final_rationale": "4 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "actionable": true,
   "search_coverage": {
-    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (PEX2[tiab] OR \"Peroxisome biogenesis factor 2\"[tiab] OR \"35 kDa peroxisomal membrane protein\"[tiab] OR \"Peroxisome Biogenesis Disorder 5B\"[tiab])",
+    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (CUL3[tiab] OR CUL-3[tiab] OR Cullin-3[tiab] OR \"Neurodevelopmental Disorder With or Without Autism or Seizures\"[tiab])",
     "status": "CHECKED",
-    "total_hits": 1,
-    "snapshot": "f35afca388c51b28dba34182a312184d053170c59a984ff48b947af87f9d8f14"
+    "total_hits": 11,
+    "snapshot": "b4e5460bd4f388fa56624978f289ded58b6dad4a291fee67befc331ddc7b5056"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
   "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",

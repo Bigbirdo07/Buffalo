@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AFMR1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:47.710089+00:00",
+  "sha256": "5c149535b91c2bbd7a1d10e66541c49273a99731992f8ec65e3c0770322a4acb"
+}

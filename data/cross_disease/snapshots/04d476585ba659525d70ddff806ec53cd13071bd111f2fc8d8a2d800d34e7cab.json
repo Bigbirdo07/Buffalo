@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ATGM6%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:31.344508+00:00",
+  "sha256": "076104eb19692aecf2aa76de31f969244e6439eea4bceff3e3b6d0ad1c6be8fe"
+}

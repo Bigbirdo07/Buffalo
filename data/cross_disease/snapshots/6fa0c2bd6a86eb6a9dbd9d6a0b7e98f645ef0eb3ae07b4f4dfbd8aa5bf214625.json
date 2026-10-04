@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AAFG3L2%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:36.449998+00:00",
+  "sha256": "9e2d73e4ce0fdbbb44d563fde09a11339b0469b132d6e363fe4469ac60f9be84"
+}

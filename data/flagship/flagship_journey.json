@@ -1,8 +1,11 @@
 {
   "schema_version": "flagship-journey-v1",
-  "software_commit": "46771e2a93f2d5d6f168c81c1dbc6279d47794c6",
+  "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
   "flagship": {
     "pair_id": "46abfb23-533a8d87",
+    "retrieval_rank": 6,
+    "retrieval_axes": 3,
+    "retrieval_information": 18.398,
     "disease_a_id": "46abfb23-da23-5881-aa52-f0a4d48adf88",
     "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
     "disease_b_id": "533a8d87-3f78-5ee0-82eb-ceb01ce53927",
@@ -28,7 +31,16 @@
     "review_status": "AWAITING_EXPERT_SIGNOFF",
     "algorithm_version": "cross-disease-pipeline-v1",
     "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-    "software_commit": "f2561322748cf301cd8ccb9e417aacc0dbdc96cf"
+    "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
+    "flagship_rank": 2,
+    "selection_criterion": "Operator override. The automated criterion selected Neurodevelopmental Disorder With or Without Autism or Seizures; this pair was chosen for external validation reasons and the automated ranking is preserved above.",
+    "automated_selection_would_be": "Neurodevelopmental Disorder With or Without Autism or Seizures",
+    "runners_up": [
+      {
+        "disease": "Lafora_Disease",
+        "evidence_count": 2
+      }
+    ]
   },
   "retrieval_level_feature": "protein ubiquitination",
   "validated_mechanistic_bridge": {
@@ -102,7 +114,9 @@
       "protein ubiquitination",
       "Purkinje cell",
       "Myoclonus"
-    ]
+    ],
+    "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
+    "full_text_review_completed": false
   },
   "bridge_version": 2,
   "bridge_supersedes": "bridge:46abfb23-533a8d87",
@@ -128,7 +142,7 @@
           "queries": [
             "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])"
           ],
-          "checked_at": "2026-10-04T07:23:24.595123Z",
+          "checked_at": "2026-10-04T08:03:31.827225Z",
           "result_count": 3,
           "error": null,
           "pages_checked": 0,
@@ -159,7 +173,7 @@
           "estimated_cost": 0.0
         }
       ],
-      "search_started_at": "2026-10-04T07:23:24.595139Z",
+      "search_started_at": "2026-10-04T08:03:31.827286Z",
       "search_completed_at": null,
       "scope": "Cross-disease evidence for pair 46abfb23-533a8d87",
       "language_limitations": [
@@ -211,11 +225,11 @@
       "A positive control that perturbs the readout by a known route"
     ],
     "readouts": [
-      "Functional response of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+      "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
       "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
       "Recovery of the challenged cells after the stress is withdrawn"
     ],
-    "primary_readout": "Functional response of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+    "primary_readout": "Functional response of CHIP-dependent stress response to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
     "secondary_readouts": [
       "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout",
       "Recovery of the challenged cells after the stress is withdrawn"

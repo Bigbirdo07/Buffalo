@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3APNPT1%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:33.960682+00:00",
+  "sha256": "f89a83fd0988cb97ace0cc145201f3904f32e5f56931cc01d73de5f9b3a30f51"
+}

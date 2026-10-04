@@ -124,6 +124,22 @@ def select_flagship(rows: list[dict]) -> dict:
             "cross-disease pair and corroborated by two or more primary findings."
         )
     eligible.sort(key=lambda row: (-len(row["evidence_ids"]), row["disease_b"]))
+    # Record the runners-up and the criterion. Corroboration count is a
+    # defensible ordering but it is not a measure of quality: a pair with more
+    # co-occurring papers is not necessarily the better-understood relationship.
+    # Hiding the alternatives would present a ranking rule as a scientific
+    # judgement.
+    for position, row in enumerate(eligible):
+        row["flagship_rank"] = position + 1
+    eligible[0]["selection_criterion"] = (
+        "Most corroborating primary findings among independent cross-disease "
+        "pairs. This orders by evidence count, not by how well the mechanism is "
+        "understood, and expert review should confirm the choice."
+    )
+    eligible[0]["runners_up"] = [
+        {"disease": row["disease_b"], "evidence_count": len(row["evidence_ids"])}
+        for row in eligible[1:4]
+    ]
     return eligible[0]
 
 
@@ -133,10 +149,26 @@ def main() -> int:
                         default=ROOT / "data/cross_disease/relationships.jsonl")
     parser.add_argument("--out", type=Path, default=ROOT / "data/flagship")
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument(
+        "--pair", default=None,
+        help="override selection with a named disease (records the override)",
+    )
     args = parser.parse_args()
 
     rows = [json.loads(line) for line in args.relationships.read_text().splitlines() if line]
     flagship = select_flagship(rows)
+    if args.pair:
+        override = next((r for r in rows if r["disease_b"] == args.pair), None)
+        if override is None:
+            raise SystemExit(f"{args.pair} is not an eligible validated relationship")
+        override["selection_criterion"] = (
+            f"Operator override. The automated criterion selected "
+            f"{flagship['disease_b']}; this pair was chosen for external "
+            "validation reasons and the automated ranking is preserved above."
+        )
+        override["automated_selection_would_be"] = flagship["disease_b"]
+        override["runners_up"] = flagship.get("runners_up", [])
+        flagship = override
     trace = json.loads(
         (ROOT / f"data/cross_disease/traces/{flagship['decision_trace_id']}.json").read_text()
     )

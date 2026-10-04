@@ -1,7 +1,7 @@
 {
-  "pair_id": "46abfb23-d98465f3",
+  "pair_id": "46abfb23-b2859439",
   "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
-  "disease_b": "Cerebellar Ataxia-Hypogonadism Syndrome",
+  "disease_b": "Spinocerebellar Ataxia 48",
   "stages": [
     {
       "stage": "DiseaseIdentityCheck",
@@ -10,12 +10,12 @@
     },
     {
       "stage": "RetrievalReasonInspection",
-      "finding": "SHARED_CELLULAR_PROCESS(ubiquitin-dependent protein catabolic process), SHARED_CELL_TYPE(Purkinje cell), SAME_GENE(STUB1), PHENOTYPE_SIMILARITY(Hypogonadotropic hypogonadism)",
+      "finding": "SHARED_CELLULAR_PROCESS(protein quality control for misfolded or incompletely synthesized proteins), SHARED_CELL_TYPE(Purkinje cell), SAME_GENE(STUB1), SHARED_GO_TERM(Hsp70 protein binding), PHENOTYPE_SIMILARITY(Chorea at Onset)",
       "assessable": true
     },
     {
       "stage": "MolecularAnchorInspection",
-      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=MODERATE]",
+      "finding": "anchored=True [SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=STRONG]",
       "assessable": true
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "stage": "ProcessComparison",
-      "finding": "MODERATE: ubiquitin-dependent protein catabolic process, protein ubiquitination",
+      "finding": "STRONG: protein quality control for misfolded or incompletely synthesized proteins, mitophagy, protein ubiquitination",
       "assessable": true
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "stage": "PhenotypeComparison",
-      "finding": "STRONG: Hypogonadotropic hypogonadism, Chorea at Onset, Hyperreflexia, Cerebellar atrophy, Dysarthria",
+      "finding": "STRONG: Chorea at Onset, Tremor, Cerebellar atrophy, Peripheral neuropathy, Dysarthria",
       "assessable": true
     },
     {
@@ -45,27 +45,27 @@
     },
     {
       "stage": "EvidenceFitReview",
-      "finding": "4 primary findings establish a direct molecular link",
+      "finding": "6 primary findings establish a direct molecular link",
       "assessable": true
     },
     {
       "stage": "ContradictionSearch",
-      "finding": "0 contradicting, 16 qualifying",
+      "finding": "0 contradicting, 14 qualifying",
       "assessable": true
     },
     {
       "stage": "AlternativeExplanationGeneration",
-      "finding": "1 of 7 alternatives apply: BROAD_ONTOLOGY_ANNOTATION",
+      "finding": "0 of 7 alternatives apply: none",
       "assessable": true
     },
     {
       "stage": "MechanisticBridgeDerivation",
-      "finding": "Evidence establishing a direct link describes chaperone, autophagy, ubiquitin ligase, ubiquitination. Regulators named across the evidence: STUB1, GPX4. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "finding": "Evidence establishing a direct link describes proteostasis, chaperone, autophagy, ubiquitin-proteasome. Regulators named across the evidence: STUB1, TFEB, CHIP, HSP70. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
       "assessable": true
     },
     {
       "stage": "MechanisticSynthesis",
-      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 4 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval CORRECT): 6 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
       "assessable": true
     }
   ],
@@ -74,14 +74,14 @@
     {
       "scope": "HGNC:11427-associated presentation",
       "relation": "ALLELIC_SPECTRUM",
-      "rationale": "Restricted to HGNC:11427, the causal basis of Cerebellar Ataxia-Hypogonadism Syndrome is the same as that of Autosomal Recessive Spinocerebellar Ataxia 16, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
+      "rationale": "Restricted to HGNC:11427, the causal basis of Spinocerebellar Ataxia 48 is the same as that of Autosomal Recessive Spinocerebellar Ataxia 16, which has no other cause. Within this scope the two labels describe one entity, so a relationship between them is not an independent cross-disease discovery. The broader entity has additional causes and remains distinct outside this scope."
     }
   ],
   "retrieval_reasons": [
     {
       "type": "SHARED_CELLULAR_PROCESS",
-      "feature": "ubiquitin-dependent protein catabolic process",
-      "corpus_frequency": 17
+      "feature": "protein quality control for misfolded or incompletely synthesized proteins",
+      "corpus_frequency": 8
     },
     {
       "type": "SHARED_CELL_TYPE",
@@ -94,39 +94,44 @@
       "corpus_frequency": 3
     },
     {
+      "type": "SHARED_GO_TERM",
+      "feature": "Hsp70 protein binding",
+      "corpus_frequency": 2
+    },
+    {
       "type": "PHENOTYPE_SIMILARITY",
-      "feature": "Hypogonadotropic hypogonadism",
-      "corpus_frequency": 29
+      "feature": "Chorea at Onset",
+      "corpus_frequency": 36
     }
   ],
-  "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+  "retrieval_validity": "CORRECT",
   "variant_compatibility": "COMPATIBLE",
   "molecular_anchor_present": true,
-  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=MODERATE; SHARED_GENE_OR_PROTEIN=MODERATE",
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=STRONG; SHARED_GENE_OR_PROTEIN=MODERATE; SHARED_MOLECULAR_FUNCTION=STRONG",
   "supporting_evidence_ids": [
     "PMID:28754656",
-    "PMID:36854646",
     "PMID:38310161",
-    "PMID:39453812"
+    "PMID:36594740",
+    "PMID:32918866",
+    "PMID:39103353",
+    "PMID:38825640"
   ],
   "contradicting_evidence_ids": [],
   "qualifying_evidence_ids": [
-    "PMID:29717045",
     "PMID:29717046",
     "PMID:25448416",
-    "PMID:29027168",
-    "PMID:39352379",
-    "PMID:35158914",
-    "PMID:32994221",
-    "PMID:33315202",
-    "PMID:19098449",
+    "PMID:33420999",
+    "PMID:29717045",
     "PMID:30030442",
     "PMID:19763945",
-    "PMID:32260191",
+    "PMID:32994221",
+    "PMID:32399566",
+    "PMID:29848263",
     "PMID:32775533",
-    "PMID:36652671",
     "PMID:17581117",
-    "PMID:27854024"
+    "PMID:27854024",
+    "PMID:36454121",
+    "PMID:16938558"
   ],
   "alternative_explanations": [
     {
@@ -141,7 +146,7 @@
     },
     {
       "code": "BROAD_ONTOLOGY_ANNOTATION",
-      "applies": true,
+      "applies": false,
       "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
     },
     {
@@ -166,39 +171,44 @@
     }
   ],
   "mechanistic_bridge": {
-    "bridge_id": "bridge:46abfb23-d98465f3",
+    "bridge_id": "bridge:46abfb23-b2859439",
     "terms": [
+      "proteostasis",
       "chaperone",
       "autophagy",
-      "ubiquitin ligase",
-      "ubiquitination",
+      "ubiquitin-proteasome",
       "STUB1",
-      "GPX4"
+      "TFEB",
+      "CHIP",
+      "HSP70"
     ],
-    "statement": "Evidence establishing a direct link describes chaperone, autophagy, ubiquitin ligase, ubiquitination. Regulators named across the evidence: STUB1, GPX4. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "statement": "Evidence establishing a direct link describes proteostasis, chaperone, autophagy, ubiquitin-proteasome. Regulators named across the evidence: STUB1, TFEB, CHIP, HSP70. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
     "derived_from_evidence_ids": [
       "PMID:28754656",
-      "PMID:36854646",
       "PMID:38310161",
-      "PMID:39453812"
+      "PMID:36594740",
+      "PMID:32918866",
+      "PMID:39103353",
+      "PMID:38825640"
     ],
     "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
     "distinct_from_retrieval_features": [
-      "ubiquitin-dependent protein catabolic process",
+      "protein quality control for misfolded or incompletely synthesized proteins",
       "Purkinje cell",
       "STUB1",
-      "Hypogonadotropic hypogonadism"
+      "Hsp70 protein binding",
+      "Chorea at Onset"
     ],
     "is_narrower_than_retrieval": true
   },
   "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
-  "final_rationale": "4 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+  "final_rationale": "6 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
   "actionable": true,
   "search_coverage": {
-    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR PNPLA6[tiab] OR \"Patatin-like phospholipase domain-containing protein 6\"[tiab] OR \"Neuropathy target esterase\"[tiab] OR RNF216[tiab] OR \"E3 ubiquitin-protein ligase RNF216\"[tiab] OR \"RING finger protein 216\"[tiab] OR \"Cerebellar Ataxia-Hypogonadism Syndrome\"[tiab])",
+    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR TBP[tiab] OR \"TATA-box-binding protein\"[tiab] OR \"TATA sequence-binding protein\"[tiab] OR \"Spinocerebellar Ataxia 48\"[tiab])",
     "status": "CHECKED",
     "total_hits": 84796,
-    "snapshot": "0937383c816f025ed626a5c9c825d0cbb4fdd0295243cc4549e8e44507ae484a"
+    "snapshot": "201cb8674ec2ed5f0430a4c1c1f2cd00f756c6ab029683eca7e3e12ffa815559"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
   "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",

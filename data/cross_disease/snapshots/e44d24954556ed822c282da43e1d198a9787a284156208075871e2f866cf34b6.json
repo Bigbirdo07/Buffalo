@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3ACCDC88C%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T08:01:33.050822+00:00",
+  "sha256": "a7a18c6099f7c9529e20aa36bfd6ad51710a065a4781f9bad90b4b0e8411b7f8"
+}

@@ -1,7 +1,7 @@
 {
-  "pair_id": "46abfb23-533a8d87",
+  "pair_id": "46abfb23-a0810efd",
   "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
-  "disease_b": "Lafora_Disease",
+  "disease_b": "Autosomal Dominant Cerebellar Ataxia Type I",
   "stages": [
     {
       "stage": "DiseaseIdentityCheck",
@@ -10,12 +10,12 @@
     },
     {
       "stage": "RetrievalReasonInspection",
-      "finding": "SHARED_CELLULAR_PROCESS(protein ubiquitination), SHARED_CELL_TYPE(Purkinje cell), PHENOTYPE_SIMILARITY(Myoclonus)",
+      "finding": "SHARED_CELLULAR_PROCESS(protein quality control for misfolded or incompletely synthesized proteins), SHARED_CELL_TYPE(Purkinje cell), PHENOTYPE_SIMILARITY(Progressive cerebellar ataxia)",
       "assessable": true
     },
     {
       "stage": "MolecularAnchorInspection",
-      "finding": "anchored=False [SHARED_CELLULAR_PROCESS=WEAK]",
+      "finding": "anchored=False [SHARED_CELLULAR_PROCESS=MODERATE]",
       "assessable": true
     },
     {
@@ -25,32 +25,32 @@
     },
     {
       "stage": "ProcessComparison",
-      "finding": "WEAK: protein ubiquitination",
+      "finding": "MODERATE: protein quality control for misfolded or incompletely synthesized proteins",
       "assessable": true
     },
     {
       "stage": "CellTypeTissueComparison",
-      "finding": "WEAK: Purkinje cell",
+      "finding": "MODERATE: Purkinje cell, cerebellum",
       "assessable": true
     },
     {
       "stage": "PhenotypeComparison",
-      "finding": "STRONG: Myoclonus, Cerebellar atrophy, Dysarthria",
+      "finding": "STRONG: Progressive cerebellar ataxia, Peripheral neuropathy, Dysarthria",
       "assessable": true
     },
     {
       "stage": "EvidenceRetrieval",
-      "finding": "3 items retrieved",
+      "finding": "20 items retrieved",
       "assessable": true
     },
     {
       "stage": "EvidenceFitReview",
-      "finding": "2 primary findings establish a direct molecular link",
+      "finding": "1 primary findings establish a direct molecular link",
       "assessable": true
     },
     {
       "stage": "ContradictionSearch",
-      "finding": "0 contradicting, 1 qualifying",
+      "finding": "0 contradicting, 19 qualifying",
       "assessable": true
     },
     {
@@ -60,12 +60,12 @@
     },
     {
       "stage": "MechanisticBridgeDerivation",
-      "finding": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "finding": "Evidence establishing a direct link describes chaperone-mediated autophagy, integrated stress response, protein quality control, proteostasis. Regulators named across the evidence: SOD1, TAR, YAP1, TDP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
       "assessable": true
     },
     {
       "stage": "MechanisticSynthesis",
-      "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
+      "finding": "INSUFFICIENT_EVIDENCE (retrieval UNRESOLVED): Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
       "assessable": true
     }
   ],
@@ -74,8 +74,8 @@
   "retrieval_reasons": [
     {
       "type": "SHARED_CELLULAR_PROCESS",
-      "feature": "protein ubiquitination",
-      "corpus_frequency": 43
+      "feature": "protein quality control for misfolded or incompletely synthesized proteins",
+      "corpus_frequency": 8
     },
     {
       "type": "SHARED_CELL_TYPE",
@@ -84,21 +84,38 @@
     },
     {
       "type": "PHENOTYPE_SIMILARITY",
-      "feature": "Myoclonus",
-      "corpus_frequency": 53
+      "feature": "Progressive cerebellar ataxia",
+      "corpus_frequency": 40
     }
   ],
-  "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+  "retrieval_validity": "UNRESOLVED",
   "variant_compatibility": "UNKNOWN",
   "molecular_anchor_present": false,
-  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=WEAK",
+  "molecular_anchor_description": "SHARED_CELLULAR_PROCESS=MODERATE",
   "supporting_evidence_ids": [
-    "PMID:21652633",
-    "PMID:19892702"
+    "PMID:36594740"
   ],
   "contradicting_evidence_ids": [],
   "qualifying_evidence_ids": [
-    "PMID:30049290"
+    "PMID:29950142",
+    "PMID:20655353",
+    "PMID:32399566",
+    "PMID:31664040",
+    "PMID:33669344",
+    "PMID:31167905",
+    "PMID:39680235",
+    "PMID:22258509",
+    "PMID:33337856",
+    "PMID:32420379",
+    "PMID:24927817",
+    "PMID:27302019",
+    "PMID:20110263",
+    "PMID:29628310",
+    "PMID:29682595",
+    "PMID:38836496",
+    "PMID:17471507",
+    "PMID:12769853",
+    "PMID:35579393"
   ],
   "alternative_explanations": [
     {
@@ -138,34 +155,37 @@
     }
   ],
   "mechanistic_bridge": {
-    "bridge_id": "bridge:46abfb23-533a8d87",
+    "bridge_id": "bridge:46abfb23-a0810efd",
     "terms": [
-      "chaperone",
-      "co-chaperone",
-      "ubiquitin ligase",
-      "CHIP"
+      "chaperone-mediated autophagy",
+      "integrated stress response",
+      "protein quality control",
+      "proteostasis",
+      "SOD1",
+      "TAR",
+      "YAP1",
+      "TDP"
     ],
-    "statement": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "statement": "Evidence establishing a direct link describes chaperone-mediated autophagy, integrated stress response, protein quality control, proteostasis. Regulators named across the evidence: SOD1, TAR, YAP1, TDP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
     "derived_from_evidence_ids": [
-      "PMID:21652633",
-      "PMID:19892702"
+      "PMID:36594740"
     ],
     "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
     "distinct_from_retrieval_features": [
-      "protein ubiquitination",
+      "protein quality control for misfolded or incompletely synthesized proteins",
       "Purkinje cell",
-      "Myoclonus"
+      "Progressive cerebellar ataxia"
     ],
     "is_narrower_than_retrieval": true
   },
-  "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
-  "final_rationale": "2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
-  "actionable": true,
+  "final_relationship_class": "INSUFFICIENT_EVIDENCE",
+  "final_rationale": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
+  "actionable": false,
   "search_coverage": {
-    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])",
+    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (ATXN1[tiab] OR Ataxin-1[tiab] OR \"Spinocerebellar ataxia type 1 protein\"[tiab] OR ATXN2[tiab] OR Ataxin-2[tiab] OR \"Spinocerebellar ataxia type 2 protein\"[tiab] OR TBP[tiab] OR \"TATA-box-binding protein\"[tiab] OR \"TATA sequence-binding protein\"[tiab] OR \"Autosomal Dominant Cerebellar Ataxia Type I\"[tiab])",
     "status": "CHECKED",
-    "total_hits": 3,
-    "snapshot": "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
+    "total_hits": 135,
+    "snapshot": "a045ae8d949e58239721d0fd86a63a3ec06d7ea51bb21905cd2efb3160b8f5bf"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
   "software_commit": "97d46adf5018d61b5ccf87ada948e4883164c7e9",
