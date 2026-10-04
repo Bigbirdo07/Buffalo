@@ -526,3 +526,78 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
 .cases-link { border: 1px solid var(--line); border-radius: 20px; padding: 7px 13px; background: transparent; color: #46504b; font-size: 11px; white-space: nowrap; cursor: pointer; }
 .cases-link:hover { background: var(--sage); }
 .cases-link.active { border-color: var(--forest); color: var(--forest); background: var(--sage); font-weight: 700; }
+
+/* While a search is active the hero shrinks so results sit above the fold. A
+   results list below a 590px hero is a results list nobody scrolls to. */
+.search-screen.searching { padding-top: 28px; }
+.search-screen.searching .hero { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
+.search-screen.searching .hero-copy h1 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 10px; }
+.search-screen.searching .hero-copy > p { display: none; }
+.search-screen.searching .search-form { margin-top: 18px; }
+.search-screen.searching .hero-note { margin-top: 14px !important; }
+
+/* ===== Goal-structured disease view ==================================== */
+.goals-screen { padding-top: 34px; padding-bottom: 90px; }
+.goals-header { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end; padding-bottom: 26px; border-bottom: 2px solid var(--ink); }
+.goals-header h1 { margin: 6px 0 4px; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.04; letter-spacing: -.03em; }
+.goals-header > div > p { margin: 0; color: var(--muted); font-size: 14px; }
+.goals-header-actions { display: flex; flex-wrap: wrap; gap: 20px; }
+
+.goal-panel { padding: 34px 0; border-bottom: 1px solid var(--line); }
+.goal-panel > header { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 16px; margin-bottom: 22px; }
+.goal-number { color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+.goal-panel > header h2 { margin: 0; font-size: 23px; line-height: 1.25; }
+.goal-status { justify-self: end; border-radius: 20px; padding: 4px 11px; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.goal-status.ok { color: var(--forest); background: var(--sage); }
+.goal-status.pending { color: var(--amber); background: var(--amber-bg); }
+.goal-status.warn { color: var(--red); background: var(--red-bg); }
+
+.goal-counts { display: flex; flex-wrap: wrap; gap: 30px; margin: 0 0 22px; }
+.count b { display: block; font-family: Georgia, serif; font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+.count span { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+.count.ok b { color: var(--forest); }
+.count.warn b { color: var(--amber); }
+
+.goal-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.goal-table th { padding: 0 12px 8px 0; border-bottom: 1px solid var(--ink); color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-align: left; }
+.goal-table td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.goal-table tr.excluded td { opacity: .62; }
+.goal-table tr.survived td:first-child { box-shadow: inset 3px 0 0 var(--forest); padding-left: 10px; }
+.goal-table small { color: var(--muted); }
+.goal-table .muted { color: var(--muted); }
+.goal-table code { font-size: 11px; }
+.validity.ok { color: var(--forest); }
+.validity.notable { color: var(--amber); font-weight: 700; }
+.validity.plain { color: var(--muted); }
+
+.goal-note { max-width: 78ch; margin: 18px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.goal-empty { max-width: 78ch; margin: 0; padding: 18px 22px; background: var(--amber-bg); border-left: 3px solid var(--amber); font-size: 14px; line-height: 1.6; }
+.goal-details { margin-top: 18px; font-size: 13px; }
+.goal-details summary { cursor: pointer; color: var(--forest); font-weight: 700; }
+
+.bridge-block { margin-bottom: 20px; }
+.bridge-block h3 { margin: 5px 0 6px; font-size: 22px; }
+.bridge-block .muted { margin: 0; color: var(--muted); font-size: 12px; }
+.gap-question { margin: 0 0 22px; padding: 18px 24px; background: var(--sage); border-left: 3px solid var(--forest); font-family: Georgia, serif; font-size: 19px; line-height: 1.45; }
+
+.hypothesis-pair, .outcome-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 22px; }
+.hypothesis-pair article, .outcome-pair article { padding: 18px 20px; border: 1px solid var(--line); }
+.hypothesis-pair span, .outcome-pair span { display: block; margin-bottom: 7px; color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.hypothesis-pair p, .outcome-pair p { margin: 0; font-size: 13px; line-height: 1.6; }
+.outcome-pair .supports { background: var(--sage); border-color: #c3d6c8; }
+.outcome-pair .refutes { background: var(--red-bg); border-color: #e0c4bf; }
+.outcome-pair .refutes span { color: var(--red); }
+
+.goal-detail { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin: 0 0 22px; }
+.goal-detail dt { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.goal-detail dd { margin: 6px 0 0; font-size: 13px; line-height: 1.55; }
+
+.goals-footer { margin-top: 30px; color: var(--muted); font-size: 12px; }
+
+@media (max-width: 860px) {
+  .goal-panel > header { grid-template-columns: 1fr; gap: 8px; }
+  .goal-status { justify-self: start; }
+  .hypothesis-pair, .outcome-pair { grid-template-columns: minmax(0, 1fr); }
+  .goal-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .goal-counts { gap: 20px; }
+}

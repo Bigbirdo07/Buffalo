@@ -73,7 +73,7 @@ export function DiseaseScreen({ story, parent, mode, activeCase }: ScreenProps) 
           key={choice.case_id}
           className={`case-choice disease ${active ? "active" : ""}`}
           aria-pressed={active}
-          onClick={() => navigate(`/disease?case=${choice.case_id}`)}
+          onClick={() => navigate(`/atlas?case=${choice.case_id}`)}
         >
           <i className="entity-shape disease" />
           <span>

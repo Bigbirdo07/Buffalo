@@ -12,12 +12,14 @@ import {
   NextStepsScreen,
   UnknownScreen,
 } from "./screens";
+import { GoalsScreen } from "./goals";
 import { SearchScreen } from "./search";
 
 const contract = loadContracts();
 const cases = loadCases();
 const validRoutes = new Set([
   "/search",
+  "/atlas",
   "/disease",
   "/connections",
   "/evidence",
@@ -83,7 +85,7 @@ export default function App() {
   const activeCase = cases.ok ? selectCase(cases.cases, caseId) : null;
   const props = { story, goals, parent, mode, activeCase };
 
-  const journeyRoute = route !== "/search" && route !== "/cases";
+  const journeyRoute = route !== "/search" && route !== "/cases" && route !== "/atlas";
 
   return (
     <div className={`app mode-${mode}`}>
@@ -105,6 +107,7 @@ export default function App() {
         </div>
       </header>
       {route === "/search" && <SearchScreen mode={mode} />}
+      {route === "/atlas" && <GoalsScreen activeCase={activeCase} goals={goals} mode={mode} />}
       {route === "/cases" && <CasesScreen />}
       {route === "/disease" && <DiseaseScreen {...props} />}
       {route === "/connections" && <ConnectionsScreen {...props} />}

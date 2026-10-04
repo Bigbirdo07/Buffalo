@@ -22,6 +22,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
   const [query, setQuery] = useState("");
   const [submitted, setSubmitted] = useState("");
   const [selected, setSelected] = useState<BrowseDisease | null>(null);
+  const [emptyHint, setEmptyHint] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -49,10 +50,13 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
     setQuery(text);
     setSubmitted(text);
     setSelected(null);
+    setEmptyHint(text.trim().length === 0);
   }
 
+  const searching = submitted.trim().length > 0;
+
   return (
-    <section className="search-screen">
+    <section className={searching ? "search-screen searching" : "search-screen"}>
       <div className="hero">
         <div className="hero-copy">
           <h1>Which diseases share our biology?</h1>
@@ -83,6 +87,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
                   setQuery(event.target.value);
                   setSubmitted(event.target.value);
                   setSelected(null);
+                  setEmptyHint(false);
                 }}
               />
               <button type="submit" disabled={!index}>
@@ -90,6 +95,11 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
               </button>
             </div>
             {loadError ? <p className="form-message">{loadError}</p> : null}
+            {emptyHint && !loadError ? (
+              <p className="form-message">
+                Type a disease name or a gene symbol to search the corpus.
+              </p>
+            ) : null}
           </form>
 
           {examples.length > 0 && !submitted ? (
@@ -111,7 +121,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
           </p>
         </div>
 
-        <aside className="hero-figure">
+        <aside className="hero-figure" hidden={searching}>
           <span className="figure-index">What a result contains</span>
           <div>
             <b>1</b>
@@ -156,7 +166,7 @@ export function SearchScreen({ mode }: { mode: PresentationMode }) {
             query={submitted}
             results={results}
             onSelect={(disease) => {
-              if (disease.case_id) navigate(`/disease?case=${disease.case_id}`);
+              if (disease.case_id) navigate(`/atlas?case=${disease.case_id}`);
               else setSelected(disease);
             }}
           />
