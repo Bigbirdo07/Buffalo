@@ -1,0 +1,884 @@
+{
+  "schema_version": "eval-worksheet-v1",
+  "blinding": "Engine statuses, applied rules and per-evidence critic verdicts are excluded from this file and held in answer_key.json.",
+  "shuffle_seed": 20261003,
+  "status_options": [
+    "SUPPORTED",
+    "PARTIALLY_SUPPORTED",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "CONTRADICTED",
+    "UNREVIEWED"
+  ],
+  "items": [
+    {
+      "item_id": "SCAR20:ac1-lc3-flux-npc",
+      "disease": "SCAR20",
+      "gene": "SNX14",
+      "upstream_edge_claim": "SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.",
+      "atomic_claim": "SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.",
+      "scope": {
+        "variants": [
+          "biallelic SNX14 loss-of-function"
+        ],
+        "allele_class": "biallelic loss-of-function",
+        "cell_type_scope": [
+          "patient neural progenitor cells"
+        ],
+        "disease_scope": [
+          "SCAR20"
+        ],
+        "readout_family": [
+          "lc3_flux",
+          "lc3_ii_level",
+          "autophagosome_lysosome_fusion",
+          "autolysosome_formation",
+          "autophagic_cargo_degradation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "lc3_flux",
+          "lc3_ii_level"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "s01",
+          "source": "PMID:25848753",
+          "upstream_reference_form": "PMID:25848753",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "decreased",
+          "readout": "lc3_flux",
+          "species": "Homo sapiens",
+          "cell_types": [
+            "patient neural progenitor cells"
+          ],
+          "variants": [
+            "biallelic SNX14 loss-of-function"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR20",
+          "experimental_system": "patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block",
+          "span": "By LC3 flux analysis in nutrient deprived conditions, where LC3II ratios in the presence and absence of lysosomal inhibitors (Leupeptin and NH 4 Cl) were calculated 20 , we identified slower LC3 flux in patient cells compared to controls.",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Genuine flux measurement with lysosomal inhibitors, not inferred from steady-state LC3-II. This is the strongest support for the edge and it is specific to neural progenitors."
+        },
+        {
+          "observation_id": "s02",
+          "source": "PMID:25848753",
+          "upstream_reference_form": "PMID:25848753",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "decreased",
+          "readout": "lc3_ii_level",
+          "species": "Homo sapiens",
+          "cell_types": [
+            "patient neural progenitor cells"
+          ],
+          "variants": [
+            "biallelic SNX14 loss-of-function"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR20",
+          "experimental_system": "patient cells with genetic complementation by tagged SNX14",
+          "span": "Importantly, the increased LC3 II levels were recovered to basal rates by forced expression of tagged SNX14 into patient cells ( Fig. 4a ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Genetic complementation: re-expression of SNX14 normalised elevated LC3-II, establishing SNX14 dependence of the readout. Same publication as s01, so not an independent source."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR20:ac3-autolysosome-formation",
+      "disease": "SCAR20",
+      "gene": "SNX14",
+      "upstream_edge_claim": "SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.",
+      "atomic_claim": "SNX14 loss impairs autolysosome formation.",
+      "scope": {
+        "variants": [
+          "SNX14 knockout",
+          "biallelic SNX14 loss-of-function"
+        ],
+        "allele_class": "biallelic loss-of-function or knockout",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR20"
+        ],
+        "readout_family": [
+          "lc3_flux",
+          "lc3_ii_level",
+          "autophagosome_lysosome_fusion",
+          "autolysosome_formation",
+          "autophagic_cargo_degradation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "autolysosome_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "s04",
+          "source": "PMID:29635513",
+          "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "autolysosome_formation",
+          "species": "Homo sapiens",
+          "cell_types": [
+            "patient fibroblasts"
+          ],
+          "variants": [
+            "biallelic SNX14 loss-of-function"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR20",
+          "experimental_system": "SCAR20 patient fibroblasts, marker colocalisation and p62 degradation",
+          "span": "we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts",
+          "span_location": "upstream_curated_snippet",
+          "citation_status": "UPSTREAM_ATTESTED",
+          "full_text_available": false,
+          "extraction_note": "Preserved autolysosome formation in patient fibroblasts under the tested conditions. Patient cells, but a non-neural cell type. Full text is not open access."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR16:ac5-ubox-other-missense",
+      "disease": "SCAR16",
+      "gene": "STUB1",
+      "upstream_edge_claim": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+      "atomic_claim": "SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.",
+      "scope": {
+        "variants": [
+          "p.Ser236Thr",
+          "p.Met240Thr"
+        ],
+        "allele_class": "U-box missense",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "readout_family": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "o08",
+          "source": "PMID:28396517",
+          "upstream_reference_form": "PMID:28396517",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Glu28Lys",
+            "p.Lys145Gln",
+            "p.Met211Ile",
+            "p.Ser236Thr"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+          "span": "The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Four of six tested disease alleles retain bulk ligase activity in this assay. This is the upstream REFUTE pointer already curated on the SCAR16 node."
+        },
+        {
+          "observation_id": "o10",
+          "source": "PMID:29317501",
+          "upstream_reference_form": "PMID:29317501",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "partially_retained",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 mutant panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP assayed below the mutants' melting temperature",
+          "span": "Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants' melting temperature.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": false,
+          "extraction_note": "Temperature dependence: the same alleles score as defective or near-normal depending on assay temperature. Panel alleles are not enumerated in this sentence, so this is class-level."
+        },
+        {
+          "observation_id": "o11",
+          "source": "PMID:31619515",
+          "upstream_reference_form": "PMID:31619515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "abolished",
+          "readout": "hsp70_polyubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Met240Thr",
+            "p.Thr246Met"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP panel across SCAR16 alleles",
+          "span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Same sentence establishes the complement: every other tested SCAR16 allele retained some HSP70 polyubiquitination. Recorded separately as o12."
+        },
+        {
+          "observation_id": "o15",
+          "source": "PMID:42567515",
+          "upstream_reference_form": "PMID:42567515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "abolished",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "U-box missense",
+          "disease_entity": "SCA48",
+          "experimental_system": "recombinant protein biochemistry and cellular models, 13 variants",
+          "span": "Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Cross-entity (SCA48). Also reports temperature-sensitive defects across mutants."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR20:ac2-fusion-block",
+      "disease": "SCAR20",
+      "gene": "SNX14",
+      "upstream_edge_claim": "SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.",
+      "atomic_claim": "SNX14 loss blocks autophagosome-lysosome fusion.",
+      "scope": {
+        "variants": [
+          "SNX14 knockout",
+          "biallelic SNX14 loss-of-function"
+        ],
+        "allele_class": "biallelic loss-of-function or knockout",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR20"
+        ],
+        "readout_family": [
+          "lc3_flux",
+          "lc3_ii_level",
+          "autophagosome_lysosome_fusion",
+          "autolysosome_formation",
+          "autophagic_cargo_degradation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "autophagosome_lysosome_fusion"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "s03",
+          "source": "PMID:29635513",
+          "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "autophagosome_lysosome_fusion",
+          "species": "Homo sapiens",
+          "cell_types": [
+            "HEK293"
+          ],
+          "variants": [
+            "SNX14 knockout"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR20",
+          "experimental_system": "HEK293 SNX14 knockout, tandem fluorescent LC3 reporter",
+          "span": "indicating that loss of SNX14 did not impact autophagosome-lysosome fusion",
+          "span_location": "upstream_curated_snippet",
+          "citation_status": "UPSTREAM_ATTESTED",
+          "full_text_available": false,
+          "extraction_note": "Refutes a general fusion block. Measured in HEK293, a non-neural line, so it constrains the fusion sub-step rather than the neural-progenitor clearance finding. Full text is not open access, so the results-section span cannot be located."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR16:ac4-interdomain-missense",
+      "disease": "SCAR16",
+      "gene": "STUB1",
+      "upstream_edge_claim": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+      "atomic_claim": "SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "scope": {
+        "variants": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ],
+        "allele_class": "inter-domain/linker-region missense",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "readout_family": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "o04",
+          "source": "PMID:41851873",
+          "upstream_reference_form": "PMID:41851873",
+          "origin": "BACKGROUND_CITATION",
+          "effect_as_extracted": "decreased",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Lys145Gln"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "not tested in this paper; introduction sentence citing an earlier study",
+          "span": "In addition, the STUB1 missense mutation p.(Lys145Gln) has been found to impair the ubiquitin ligase activity of CHIP [ 9 ].",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Introduction sentence attributing the finding to its reference 9 (Kanack et al. 2018, PMID 29317501). Checked against that paper in o11."
+        },
+        {
+          "observation_id": "o08",
+          "source": "PMID:28396517",
+          "upstream_reference_form": "PMID:28396517",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Glu28Lys",
+            "p.Lys145Gln",
+            "p.Met211Ile",
+            "p.Ser236Thr"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+          "span": "The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Four of six tested disease alleles retain bulk ligase activity in this assay. This is the upstream REFUTE pointer already curated on the SCAR16 node."
+        },
+        {
+          "observation_id": "o10",
+          "source": "PMID:29317501",
+          "upstream_reference_form": "PMID:29317501",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "partially_retained",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 mutant panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP assayed below the mutants' melting temperature",
+          "span": "Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants' melting temperature.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": false,
+          "extraction_note": "Temperature dependence: the same alleles score as defective or near-normal depending on assay temperature. Panel alleles are not enumerated in this sentence, so this is class-level."
+        },
+        {
+          "observation_id": "o12",
+          "source": "PMID:31619515",
+          "upstream_reference_form": "PMID:31619515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "partially_retained",
+          "readout": "hsp70_polyubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 mutant panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP panel across SCAR16 alleles",
+          "span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Class-level complement of o11: non-U-box SCAR16 alleles retain measurable substrate polyubiquitination. Alleles are not named in this sentence."
+        },
+        {
+          "observation_id": "o13",
+          "source": "PMID:31619515",
+          "upstream_reference_form": "PMID:31619515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "polyubiquitin_chain_formation",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 non-U-box panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP panel, E2-dependent chain formation",
+          "span": "Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "TPR and coiled-coil alleles show no chain-formation defect under these conditions, while all U-box alleles do."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR16:ac2-pre-ubox-truncation",
+      "disease": "SCAR16",
+      "gene": "STUB1",
+      "upstream_edge_claim": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+      "atomic_claim": "The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.",
+      "scope": {
+        "variants": [
+          "p.Gln118*"
+        ],
+        "allele_class": "pre-U-box truncation",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "readout_family": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "o02",
+          "source": "PMID:41851873",
+          "upstream_reference_form": "PMID:41851873",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "decreased",
+          "readout": "hsc70_ubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Gln118*"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "HEK293T transient overexpression with immunoprecipitation",
+          "span": "The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": null
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR16:ac3-tpr-missense",
+      "disease": "SCAR16",
+      "gene": "STUB1",
+      "upstream_edge_claim": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+      "atomic_claim": "SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "scope": {
+        "variants": [
+          "p.Glu28Lys",
+          "p.Asn65Ser"
+        ],
+        "allele_class": "TPR-domain missense",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "readout_family": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "o07",
+          "source": "PMID:28396517",
+          "upstream_reference_form": "PMID:28396517",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "processivity_defect",
+          "readout": "hsc70_ubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Asn65Ser"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+          "span": "Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Hsc70 chain elongation is reduced to mono-ubiquitination while CHIP self-ubiquitination is retained. This is a processivity/readout-specific defect; the experiment does not compare multiple substrates and therefore does not establish substrate selectivity."
+        },
+        {
+          "observation_id": "o08",
+          "source": "PMID:28396517",
+          "upstream_reference_form": "PMID:28396517",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Glu28Lys",
+            "p.Lys145Gln",
+            "p.Met211Ile",
+            "p.Ser236Thr"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+          "span": "The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Four of six tested disease alleles retain bulk ligase activity in this assay. This is the upstream REFUTE pointer already curated on the SCAR16 node."
+        },
+        {
+          "observation_id": "o09",
+          "source": "PMID:25258038",
+          "upstream_reference_form": "PMID:25258038",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "processivity_defect",
+          "readout": "hsc70_ubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Asn65Ser"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "in vitro ubiquitination of HSC70",
+          "span": "We show that the p.Asn65Ser substitution impairs CHIP's ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Independent replication of impaired HSC70 ubiquitination with retained self-ubiquitination. These are distinct readouts; without a multi-substrate comparison this is coded as a processivity/readout-specific defect, not substrate selectivity."
+        },
+        {
+          "observation_id": "o10",
+          "source": "PMID:29317501",
+          "upstream_reference_form": "PMID:29317501",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "partially_retained",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 mutant panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP assayed below the mutants' melting temperature",
+          "span": "Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants' melting temperature.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": false,
+          "extraction_note": "Temperature dependence: the same alleles score as defective or near-normal depending on assay temperature. Panel alleles are not enumerated in this sentence, so this is class-level."
+        },
+        {
+          "observation_id": "o12",
+          "source": "PMID:31619515",
+          "upstream_reference_form": "PMID:31619515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "partially_retained",
+          "readout": "hsp70_polyubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 mutant panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP panel across SCAR16 alleles",
+          "span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Class-level complement of o11: non-U-box SCAR16 alleles retain measurable substrate polyubiquitination. Alleles are not named in this sentence."
+        },
+        {
+          "observation_id": "o13",
+          "source": "PMID:31619515",
+          "upstream_reference_form": "PMID:31619515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "polyubiquitin_chain_formation",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "SCAR16 non-U-box panel",
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant CHIP panel, E2-dependent chain formation",
+          "span": "Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "TPR and coiled-coil alleles show no chain-formation defect under these conditions, while all U-box alleles do."
+        },
+        {
+          "observation_id": "o14",
+          "source": "PMID:42567515",
+          "upstream_reference_form": "PMID:42567515",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "substrate_selective",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [],
+          "variant_class": "TPR-domain missense",
+          "disease_entity": "SCA48",
+          "experimental_system": "recombinant protein biochemistry and cellular models, 13 variants",
+          "span": "TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Allelic dominant disorder (SCA48), not SCAR16: cross-entity, so it qualifies rather than settles the SCAR16 claim. Separates intrinsic catalysis from substrate ubiquitination."
+        },
+        {
+          "observation_id": "o16",
+          "source": "PMID:35398354",
+          "upstream_reference_form": "PMID:35398354",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Ala52Gly"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCA48",
+          "experimental_system": "biophysical, biochemical and cellular assays; C. elegans model",
+          "span": "Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": "Cross-entity (SCA48) and an allele outside the SCAR16 claim scope: a TPR-domain allele that is pathogenic while retaining ligase activity."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR20:ac4-nonneural-clearance",
+      "disease": "SCAR20",
+      "gene": "SNX14",
+      "upstream_edge_claim": "SNX14 Loss of Function contributes to Impaired Autophagosome Clearance in Neural Progenitors.",
+      "atomic_claim": "SNX14 loss impairs autophagosome clearance in non-neural patient cells.",
+      "scope": {
+        "variants": [
+          "SNX14 knockout",
+          "biallelic SNX14 loss-of-function"
+        ],
+        "allele_class": "biallelic loss-of-function or knockout",
+        "cell_type_scope": [
+          "patient fibroblasts",
+          "HEK293"
+        ],
+        "disease_scope": [
+          "SCAR20"
+        ],
+        "readout_family": [
+          "lc3_flux",
+          "lc3_ii_level",
+          "autophagosome_lysosome_fusion",
+          "autolysosome_formation",
+          "autophagic_cargo_degradation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "autolysosome_formation",
+          "autophagic_cargo_degradation",
+          "autophagosome_lysosome_fusion"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "s04",
+          "source": "PMID:29635513",
+          "upstream_reference_form": "url:https://pmc.ncbi.nlm.nih.gov/articles/PMC5961352/",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "unchanged",
+          "readout": "autolysosome_formation",
+          "species": "Homo sapiens",
+          "cell_types": [
+            "patient fibroblasts"
+          ],
+          "variants": [
+            "biallelic SNX14 loss-of-function"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR20",
+          "experimental_system": "SCAR20 patient fibroblasts, marker colocalisation and p62 degradation",
+          "span": "we observe a very strong colocalization of autophagosome and lysosome associated markers indicating the efficient formation of autolysosomes in SCAR20 mutant fibroblasts",
+          "span_location": "upstream_curated_snippet",
+          "citation_status": "UPSTREAM_ATTESTED",
+          "full_text_available": false,
+          "extraction_note": "Preserved autolysosome formation in patient fibroblasts under the tested conditions. Patient cells, but a non-neural cell type. Full text is not open access."
+        }
+      ]
+    },
+    {
+      "item_id": "SCAR16:ac1-ubox-t246m",
+      "disease": "SCAR16",
+      "gene": "STUB1",
+      "upstream_edge_claim": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+      "atomic_claim": "STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.",
+      "scope": {
+        "variants": [
+          "p.Thr246Met"
+        ],
+        "allele_class": "U-box missense: p.Thr246Met",
+        "cell_type_scope": [],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "readout_family": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "readouts_bearing_on_this_claim": [
+          "e3_ligase_activity",
+          "hsc70_ubiquitination",
+          "hsp70_polyubiquitination",
+          "polyubiquitin_chain_formation"
+        ],
+        "expected_effect_if_true": [
+          "abolished",
+          "decreased"
+        ]
+      },
+      "evidence": [
+        {
+          "observation_id": "o01",
+          "source": "PMID:24113144",
+          "upstream_reference_form": "PMID:24113144",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "abolished",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Thr246Met"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "recombinant protein and cell culture models",
+          "span": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": false,
+          "extraction_note": "Family reported as Gordon Holmes syndrome; DisMech curates this presentation within SCAR16."
+        },
+        {
+          "observation_id": "o05",
+          "source": "PMID:30222779",
+          "upstream_reference_form": "PMID:30222779",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "abolished",
+          "readout": "e3_ligase_activity",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Thr246Met"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "biophysical and cellular assays; knock-in mouse and rat models in the same study",
+          "span": "CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.",
+          "span_location": "abstract",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": null
+        },
+        {
+          "observation_id": "o06",
+          "source": "PMID:28396517",
+          "upstream_reference_form": "PMID:28396517",
+          "origin": "PRIMARY_RESULT",
+          "effect_as_extracted": "abolished",
+          "readout": "hsc70_ubiquitination",
+          "species": "Homo sapiens",
+          "cell_types": [],
+          "variants": [
+            "p.Thr246Met"
+          ],
+          "variant_class": null,
+          "disease_entity": "SCAR16",
+          "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+          "span": "Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].",
+          "span_location": "full_text",
+          "citation_status": "VERIFIED",
+          "full_text_available": true,
+          "extraction_note": null
+        }
+      ]
+    }
+  ]
+}

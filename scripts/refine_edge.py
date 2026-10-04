@@ -221,6 +221,7 @@ def run(plan_dir: Path, *, offline: bool, output: Path) -> int:
             readout_family=tuple(plan["readout_family"]),
             expected_effect=(EffectDirection.ABOLISHED, EffectDirection.DECREASED),
             cell_type_scope=tuple(spec.get("cell_type_scope") or ()),
+            readout_scope=tuple(spec.get("readout_scope") or ()),
         )
         for spec in plan["atomic_claims"]
     }

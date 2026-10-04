@@ -1,0 +1,52 @@
+{
+  "schema_version": "eval-answer-key-v1",
+  "warning": "Do not read before adjudicating; this is the engine's output.",
+  "worksheet_sha256": "51dbb00f851fc32e6f2d04cedef90b116c23aac66ed0579e9d251d7aa46dacf6",
+  "answers": {
+    "SCAR16:ac1-ubox-t246m": {
+      "engine_status": "SUPPORTED",
+      "rule_applied": "A2",
+      "engine_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: b5d57810-53c8-5fe7-b0cd-963be4f91202#o01 (p.Thr246Met: e3_ligase_activity abolished (recombinant protein and cell culture models; SCAR16)); 4c919b05-7d4f-5a64-a25f-ab85643ca093#o05 (p.Thr246Met: e3_ligase_activity abolished (biophysical and cellular assays; knock-in mouse and rat models in the same study; SCAR16)); c325be09-0223-5168-a17b-8874c643986f#o06 (p.Thr246Met: hsc70_ubiquitination abolished (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+    },
+    "SCAR16:ac2-pre-ubox-truncation": {
+      "engine_status": "SUPPORTED",
+      "rule_applied": "A2",
+      "engine_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: c215671b-911e-548a-93d7-c2338562826a#o02 (p.Gln118*: hsc70_ubiquitination decreased (HEK293T transient overexpression with immunoprecipitation; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+    },
+    "SCAR16:ac3-tpr-missense": {
+      "engine_status": "CONTEXT_DEPENDENT",
+      "rule_applied": "A5",
+      "engine_rationale": "[categorical-synthesis-v1 rule A5] CONTEXT_DEPENDENT | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: c325be09-0223-5168-a17b-8874c643986f#o07 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)); 7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424#o09 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (in vitro ubiquitination of HSC70; SCAR16)) | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)); retrieved:PMID:42567515#o14 (TPR-domain missense: e3_ligase_activity substrate_selective (recombinant protein biochemistry and cellular models, 13 variants; SCA48)); retrieved:PMID:35398354#o16 (p.Ala52Gly: e3_ligase_activity unchanged (biophysical, biochemical and cellular assays; C. elegans model; SCA48)) | background only (does not set status): none"
+    },
+    "SCAR16:ac4-interdomain-missense": {
+      "engine_status": "INSUFFICIENT_EVIDENCE",
+      "rule_applied": "A6",
+      "engine_rationale": "[categorical-synthesis-v1 rule A6] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)) | background only (does not set status): c215671b-911e-548a-93d7-c2338562826a#o04 (p.Lys145Gln: e3_ligase_activity decreased (not tested in this paper; introduction sentence citing an earlier study; SCAR16))"
+    },
+    "SCAR16:ac5-ubox-other-missense": {
+      "engine_status": "CONTEXT_DEPENDENT",
+      "rule_applied": "A3",
+      "engine_rationale": "[categorical-synthesis-v1 rule A3] CONTEXT_DEPENDENT | direct support: retrieved:PMID:31619515#o11 (p.Met240Thr, p.Thr246Met: hsp70_polyubiquitination abolished (recombinant CHIP panel across SCAR16 alleles; SCAR16)) | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:42567515#o15 (U-box missense: e3_ligase_activity abolished (recombinant protein biochemistry and cellular models, 13 variants; SCA48)) | background only (does not set status): none"
+    },
+    "SCAR20:ac1-lc3-flux-npc": {
+      "engine_status": "SUPPORTED",
+      "rule_applied": "A2",
+      "engine_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function: lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function: lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+    },
+    "SCAR20:ac2-fusion-block": {
+      "engine_status": "PARTIALLY_SUPPORTED",
+      "rule_applied": "A7",
+      "engine_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
+    },
+    "SCAR20:ac3-autolysosome-formation": {
+      "engine_status": "PARTIALLY_SUPPORTED",
+      "rule_applied": "A7",
+      "engine_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
+    },
+    "SCAR20:ac4-nonneural-clearance": {
+      "engine_status": "PARTIALLY_SUPPORTED",
+      "rule_applied": "A7",
+      "engine_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none"
+    }
+  }
+}

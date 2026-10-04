@@ -34,9 +34,13 @@
       "variant_scope": [
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "patient-derived neural progenitor cells",
+      "scope_class": "biallelic loss-of-function",
       "cell_type_scope": [
         "patient neural progenitor cells"
+      ],
+      "readout_scope": [
+        "lc3_flux",
+        "lc3_ii_level"
       ]
     },
     {
@@ -46,8 +50,11 @@
         "SNX14 knockout",
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "autophagosome-lysosome fusion step",
-      "cell_type_scope": []
+      "scope_class": "biallelic loss-of-function or knockout",
+      "cell_type_scope": [],
+      "readout_scope": [
+        "autophagosome_lysosome_fusion"
+      ]
     },
     {
       "claim_id": "ac3-autolysosome-formation",
@@ -56,8 +63,11 @@
         "SNX14 knockout",
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "autolysosome formation step",
-      "cell_type_scope": []
+      "scope_class": "biallelic loss-of-function or knockout",
+      "cell_type_scope": [],
+      "readout_scope": [
+        "autolysosome_formation"
+      ]
     },
     {
       "claim_id": "ac4-nonneural-clearance",
@@ -66,10 +76,15 @@
         "SNX14 knockout",
         "biallelic SNX14 loss-of-function"
       ],
-      "scope_class": "non-neural cells",
+      "scope_class": "biallelic loss-of-function or knockout",
       "cell_type_scope": [
         "patient fibroblasts",
         "HEK293"
+      ],
+      "readout_scope": [
+        "autolysosome_formation",
+        "autophagic_cargo_degradation",
+        "autophagosome_lysosome_fusion"
       ]
     }
   ],

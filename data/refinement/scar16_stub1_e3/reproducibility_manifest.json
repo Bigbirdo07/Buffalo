@@ -373,19 +373,19 @@
     "backend/src/atlas/domain/gaps.py": "5357d258e4109b8cb6fec6c1f7ce362c546a694a59bc7b962576e5a607279a8f",
     "backend/src/atlas/domain/mechanism.py": "e4ecc1bbeb23ad9fb91c5447a562f14bc602ef04306faed20e32ca283018f11d",
     "backend/src/atlas/domain/provenance.py": "f90227a3e7ae9a03f3bbfdbeb1d5256d868f34a311e9c1cdc4ea79f52dd9e162",
-    "backend/src/atlas/domain/refinement.py": "09d4ac31bf1b975456f7affd5764e886d88a40ef5ec5568cbebb0540f8fda83f",
+    "backend/src/atlas/domain/refinement.py": "f20216675d5f91f7ad70694b19ddb5f5825a7456599fa1a993f8f111ae76ca29",
     "backend/src/atlas/graph/__init__.py": "412b610bba4733f113f2589e3ba45479a695d3afebbb6fdbdf88085d13aad612",
     "backend/src/atlas/graph/algorithms.py": "a46443165d55e6b6da33cfab45c611b7309fed70d99bf2bb9b5cdb5a864f407d",
     "backend/src/atlas/services/__init__.py": "038c74814161b6700694a4c5f4027dd96b1fbff04af0b171018c81d207b4307c",
     "backend/src/atlas/services/citation_validation.py": "0abd7d05980751141b9347c16db526f11c7daf0381c619e9f7ec09894dd849ee",
-    "backend/src/atlas/services/evidence_critic.py": "31cbb0a243645184cb387167f1d321b0d00e496d78bafde5dc3e2c14283b61f0",
+    "backend/src/atlas/services/evidence_critic.py": "dda86704dfe7cfa69d7b74284b4ce339554f93f980f3b39daa56c3eb52b4e5a8",
     "backend/src/atlas/services/extraction_build.py": "d51af82c1c5057cc6752637b23c94ccd3d1376cdeb43671d9f1b056630a52f1f",
     "backend/src/atlas/services/refinement.py": "59c7e40d736bed733dd3113db21a0894428cb8b4b7767b437f8dc205f95eeabd",
     "scripts/audit_corpus.py": "3db05e95618e3f91daf10728b85f181327d1848fc1a8a26f2374cb3dc4be0c8e",
     "scripts/build_fixtures.py": "bb70faa81b37d64256770bf755845b9f3d9467bea0c739ab0f56957e99076577",
     "scripts/build_gap_and_experiment.py": "d638f9de49e67f5d87f351adae044aa0d6f2f8f2b85d37ccb7d670ac9e795e7e",
     "scripts/build_phase3_assurance.py": "e67e0ee656e1959109c1be26c3462b36b3ef906d713e4d0695b3892a0249651a",
-    "scripts/refine_edge.py": "04ef741318f07cc3f8e1912136983b5888393b9ed9e9f7b14ae95ef7d3281f6a"
+    "scripts/refine_edge.py": "a9beab9f63cd25dde00955de14d42ada9d18fd551eed6d583618aedbfb081e38"
   },
   "offline_reproduction": {
     "canonicalization": {

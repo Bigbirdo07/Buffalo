@@ -22,7 +22,7 @@
     "source_claim_origin": "pathophysiology[1].downstream[0]",
     "extraction_method": "deterministic_dismech_edge_import",
     "derived_from_claim_ids": [],
-    "created_at": "2026-10-04T02:11:49.641765Z",
+    "created_at": "2026-10-04T02:43:59.639384Z",
     "last_reviewed_at": null,
     "refinement_status": "UNREVIEWED",
     "status_rationale": null,
@@ -34,7 +34,7 @@
       "source_object_path": "pathophysiology[1].downstream[0]",
       "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
       "extraction_method": "deterministic_dismech_adapter_v2",
-      "created_at": "2026-10-04T02:11:49.641760Z",
+      "created_at": "2026-10-04T02:43:59.639379Z",
       "source_payload": {
         "target": "Impaired Autophagosome Clearance in Neural Progenitors",
         "causal_link_type": "INDIRECT_UNKNOWN_INTERMEDIATES",
@@ -688,7 +688,7 @@
         "object": "88961d37-79ec-59c0-a483-62125c57103a",
         "normalized_statement": "SNX14 loss slows autophagic LC3 flux in patient-derived neural progenitor cells.",
         "original_statement": "SNX14 loss perturbs clearance in patient neural progenitors; intermediates and transfer to other cell types remain unresolved.",
-        "claim_scope": "Atomic decomposition, allele class: patient-derived neural progenitor cells",
+        "claim_scope": "Atomic decomposition, allele class: biallelic loss-of-function",
         "claim_type": "extracted",
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
@@ -696,7 +696,7 @@
           "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
-          "patient-derived neural progenitor cells"
+          "biallelic loss-of-function"
         ],
         "species": [
           "Homo sapiens"
@@ -709,8 +709,8 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T02:11:49.669347Z",
-        "last_reviewed_at": "2026-10-04T02:11:49.669343Z",
+        "created_at": "2026-10-04T02:43:59.667873Z",
+        "last_reviewed_at": "2026-10-04T02:43:59.667869Z",
         "refinement_status": "SUPPORTED",
         "status_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: 13cf8769-67f0-509f-8809-f0081a8d85a2#s01 (biallelic SNX14 loss-of-function: lc3_flux decreased (patient-derived neural progenitor cells, nutrient deprivation, leupeptin and ammonium chloride flux block; SCAR20)); fa5cd415-2cf7-5c0d-b34b-ff2cef3ceba1#s02 (biallelic SNX14 loss-of-function: lc3_ii_level decreased (patient cells with genetic complementation by tagged SNX14; SCAR20)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
@@ -724,7 +724,7 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T02:11:49.669326Z",
+          "created_at": "2026-10-04T02:43:59.667847Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
@@ -751,7 +751,7 @@
         "object": "88961d37-79ec-59c0-a483-62125c57103a",
         "normalized_statement": "SNX14 loss blocks autophagosome-lysosome fusion.",
         "original_statement": "SNX14 loss perturbs clearance in patient neural progenitors; intermediates and transfer to other cell types remain unresolved.",
-        "claim_scope": "Atomic decomposition, allele class: autophagosome-lysosome fusion step",
+        "claim_scope": "Atomic decomposition, allele class: biallelic loss-of-function or knockout",
         "claim_type": "extracted",
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
@@ -760,7 +760,7 @@
           "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
-          "autophagosome-lysosome fusion step"
+          "biallelic loss-of-function or knockout"
         ],
         "species": [
           "Homo sapiens"
@@ -773,8 +773,8 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T02:11:49.669380Z",
-        "last_reviewed_at": "2026-10-04T02:11:49.669378Z",
+        "created_at": "2026-10-04T02:43:59.667909Z",
+        "last_reviewed_at": "2026-10-04T02:43:59.667906Z",
         "refinement_status": "PARTIALLY_SUPPORTED",
         "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: c1fba935-7e5b-5b9f-b2cc-4126bfd4849f#s03 (SNX14 knockout: autophagosome_lysosome_fusion unchanged (HEK293 SNX14 knockout, tandem fluorescent LC3 reporter; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
@@ -787,7 +787,7 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T02:11:49.669326Z",
+          "created_at": "2026-10-04T02:43:59.667847Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
@@ -813,7 +813,7 @@
         "object": "88961d37-79ec-59c0-a483-62125c57103a",
         "normalized_statement": "SNX14 loss impairs autolysosome formation.",
         "original_statement": "SNX14 loss perturbs clearance in patient neural progenitors; intermediates and transfer to other cell types remain unresolved.",
-        "claim_scope": "Atomic decomposition, allele class: autolysosome formation step",
+        "claim_scope": "Atomic decomposition, allele class: biallelic loss-of-function or knockout",
         "claim_type": "extracted",
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
@@ -822,7 +822,7 @@
           "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
-          "autolysosome formation step"
+          "biallelic loss-of-function or knockout"
         ],
         "species": [
           "Homo sapiens"
@@ -835,8 +835,8 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T02:11:49.669395Z",
-        "last_reviewed_at": "2026-10-04T02:11:49.669393Z",
+        "created_at": "2026-10-04T02:43:59.667924Z",
+        "last_reviewed_at": "2026-10-04T02:43:59.667922Z",
         "refinement_status": "PARTIALLY_SUPPORTED",
         "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
@@ -849,7 +849,7 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T02:11:49.669326Z",
+          "created_at": "2026-10-04T02:43:59.667847Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
@@ -875,7 +875,7 @@
         "object": "88961d37-79ec-59c0-a483-62125c57103a",
         "normalized_statement": "SNX14 loss impairs autophagosome clearance in non-neural patient cells.",
         "original_statement": "SNX14 loss perturbs clearance in patient neural progenitors; intermediates and transfer to other cell types remain unresolved.",
-        "claim_scope": "Atomic decomposition, allele class: non-neural cells",
+        "claim_scope": "Atomic decomposition, allele class: biallelic loss-of-function or knockout",
         "claim_type": "extracted",
         "disease_context": "6646c36e-8961-5533-9d33-01fcf1869963",
         "subtype_context": [],
@@ -884,7 +884,7 @@
           "biallelic SNX14 loss-of-function"
         ],
         "protein_domain_context": [
-          "non-neural cells"
+          "biallelic loss-of-function or knockout"
         ],
         "species": [
           "Homo sapiens"
@@ -897,8 +897,8 @@
         "derived_from_claim_ids": [
           "c100476f-c6b0-5aaf-82dd-e6ddd3736137"
         ],
-        "created_at": "2026-10-04T02:11:49.669407Z",
-        "last_reviewed_at": "2026-10-04T02:11:49.669405Z",
+        "created_at": "2026-10-04T02:43:59.667937Z",
+        "last_reviewed_at": "2026-10-04T02:43:59.667935Z",
         "refinement_status": "PARTIALLY_SUPPORTED",
         "status_rationale": "[categorical-synthesis-v1 rule A7] PARTIALLY_SUPPORTED | direct support: none | direct refutation: none | direct qualification: 96d0b3e0-3d44-553e-94eb-18b4b20d981c#s04 (biallelic SNX14 loss-of-function: autolysosome_formation unchanged (SCAR20 patient fibroblasts, marker colocalisation and p62 degradation; SCAR20)) | indirect (does not set status): none | background only (does not set status): none",
         "rationale_evidence_ids": [
@@ -911,7 +911,7 @@
           "source_object_path": "pathophysiology[1].downstream[0]",
           "source_snapshot_sha256": "69728361286e8455204980864d190b98438261bc62be7ddc10c3977fcce6f1c5",
           "extraction_method": "structured_decomposition_v1",
-          "created_at": "2026-10-04T02:11:49.669326Z",
+          "created_at": "2026-10-04T02:43:59.667847Z",
           "source_payload": {
             "edge_path": "pathophysiology[1].downstream[0]",
             "plan": "observation_plan.json"
@@ -943,7 +943,7 @@
         "queries": [
           "SNX14[tiab] AND (autophag*[tiab] OR LC3[tiab] OR lysosom*[tiab])"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 13,
         "error": null,
         "pages_checked": 0,
@@ -960,7 +960,7 @@
         "queries": [
           "SNX14[tiab] AND (SCAR20[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"cerebellar atrophy\"[tiab])"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 18,
         "error": null,
         "pages_checked": 0,
@@ -977,7 +977,7 @@
         "queries": [
           "SNX14[tiab] AND (\"did not\"[tiab] OR unaffected[tiab] OR preserved[tiab] OR normal[tiab] OR \"no change\"[tiab])"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 5,
         "error": null,
         "pages_checked": 0,
@@ -994,7 +994,7 @@
         "queries": [
           "SNX14[tiab] AND (fibroblast*[tiab] OR HEK293[tiab] OR \"neural progenitor\"[tiab] OR iPSC[tiab] OR mice[tiab] OR zebrafish[tiab])"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 11,
         "error": null,
         "pages_checked": 0,
@@ -1011,7 +1011,7 @@
         "queries": [
           "SNX14[tiab] AND (lipid[tiab] OR \"fatty acid\"[tiab] OR cholesterol[tiab] OR \"lipid droplet\"[tiab])"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 10,
         "error": null,
         "pages_checked": 0,
@@ -1028,7 +1028,7 @@
         "queries": [
           "per-PMID open-access full text retrieval"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 3,
         "error": null,
         "pages_checked": 0,
@@ -1045,7 +1045,7 @@
         "queries": [
           "https://rest.uniprot.org/uniprotkb/Q9Y5W7.json"
         ],
-        "checked_at": "2026-10-04T02:11:49.669420Z",
+        "checked_at": "2026-10-04T02:43:59.667950Z",
         "result_count": 27,
         "error": null,
         "pages_checked": 0,
@@ -1057,8 +1057,8 @@
         "estimated_cost": 0.0
       }
     ],
-    "search_started_at": "2026-10-04T02:11:49.671397Z",
-    "search_completed_at": "2026-10-04T02:11:49.669420Z",
+    "search_started_at": "2026-10-04T02:43:59.669993Z",
+    "search_completed_at": "2026-10-04T02:43:59.667950Z",
     "scope": "scientific_evidence",
     "language_limitations": [],
     "geographic_limitations": [],

@@ -32,7 +32,10 @@ CRITIC_VERSION = "deterministic-critic-v1"
 
 
 def _fit(claim: AtomicClaimSpec, observation: EvidenceObservation) -> EvidenceFit:
-    if observation.readout not in claim.readout_family:
+    # A claim's own readout scope wins when declared, so an observation about a
+    # different sub-step cannot be counted toward it even if a human assigned it.
+    in_scope = claim.readout_scope or claim.readout_family
+    if observation.readout not in in_scope:
         return EvidenceFit.UNRELATED
     expects_loss = bool(set(claim.expected_effect) & LOSS_EFFECTS)
     if observation.effect in claim.expected_effect:

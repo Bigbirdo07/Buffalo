@@ -1,0 +1,62 @@
+{
+  "schema_version": "eval-responses-v1",
+  "reviewer_name": "",
+  "reviewer_role": "",
+  "reviewed_on": "",
+  "responses": [
+    {
+      "item_id": "SCAR20:ac1-lc3-flux-npc",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR20:ac3-autolysosome-formation",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR16:ac5-ubox-other-missense",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR20:ac2-fusion-block",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR16:ac4-interdomain-missense",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR16:ac2-pre-ubox-truncation",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR16:ac3-tpr-missense",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR20:ac4-nonneural-clearance",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    },
+    {
+      "item_id": "SCAR16:ac1-ubox-t246m",
+      "reviewer_status": "",
+      "extraction_disputed": false,
+      "note": ""
+    }
+  ]
+}

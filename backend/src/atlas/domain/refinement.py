@@ -47,7 +47,13 @@ class AtomicClaimSpec(BaseModel):
     disease_scope: tuple[str, ...]
     variant_scope: tuple[str, ...]
     scope_class: str
+    # Readouts that count as this capability at all (plan-wide).
     readout_family: tuple[str, ...]
+    # Readouts that bear on *this* claim specifically. Sub-step claims ("fusion is
+    # blocked" versus "autolysosome formation is impaired") are otherwise separated
+    # only by how a human assigned observations to them, with nothing checkable.
+    # Empty falls back to readout_family.
+    readout_scope: tuple[str, ...] = ()
     expected_effect: tuple[EffectDirection, ...]
     species_scope: tuple[str, ...] = ("Homo sapiens",)
     # Cell type is a scoping axis in its own right, not part of the allele string.
