@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28STUB1%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+16%22%5Btiab%5D%29+AND+%28Rabies%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:45:32.168379+00:00",
+  "sha256": "9466565daa96480abb38a461b0e68c98450a64cf30c32f1e96b71fc25fb709ce"
+}

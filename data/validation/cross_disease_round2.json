@@ -1,0 +1,169 @@
+{
+  "schema_version": "cross-disease-round2-v1",
+  "round": "round-2",
+  "method": "Four candidate pairs run blind through the decision pipeline. Blindness enforced at runtime by a sys.addaudithook that aborts the process if the sealed round-1 verdict file is opened. Verdicts compared only after all four pairs completed.",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "software_commit": "549895c16b56d5bab8ef661858872e11a8a652be",
+  "agreement_summary": {
+    "agree": 2,
+    "partial": 2,
+    "disagree": 0,
+    "total": 4
+  },
+  "results": [
+    {
+      "pair": "SCAR16 x Peroxisome Biogenesis Disorder 5B",
+      "retrieval_reason": [
+        "SHARED_CELL_TYPE",
+        "SHARED_GO_TERM",
+        "PHENOTYPE_SIMILARITY"
+      ],
+      "retrieval_primary_feature": "Purkinje cell",
+      "pipeline_identity": "DISTINCT_DISEASE",
+      "pipeline_relationship": "INSUFFICIENT_EVIDENCE",
+      "retrieval_validity": "UNRESOLVED",
+      "reviewed_verdict": "SHARED_PROCESS_ONLY_SUPERFICIAL, shading to CONTRADICTED",
+      "agreement": "PARTIAL",
+      "biological_reason_assessment": "Pipeline returned INSUFFICIENT_EVIDENCE where the reviewer returned SHARED_PROCESS_ONLY_SUPERFICIAL. Both decline to assert a shared mechanism, so the actionable outcome matches, but the pipeline did not establish the reviewer's positive finding that the chemistry is near-opposite. It found none of the reviewer's citations.",
+      "pipeline_evidence": [
+        "PMID:42264716"
+      ],
+      "reviewed_citations": [
+        "PMID:22371489",
+        "PMID:38470934",
+        "PMID:27597759",
+        "PMID:12456682"
+      ],
+      "shared_citations": [],
+      "alternatives_applied": [],
+      "search_coverage": {
+        "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (PEX2[tiab] OR \"Peroxisome biogenesis factor 2\"[tiab] OR \"35 kDa peroxisomal membrane protein\"[tiab] OR \"Peroxisome Biogenesis Disorder 5B\"[tiab])",
+        "status": "CHECKED",
+        "total_hits": 1,
+        "snapshot": "f35afca388c51b28dba34182a312184d053170c59a984ff48b947af87f9d8f14"
+      },
+      "actionable": false
+    },
+    {
+      "pair": "SCAR16 x Lafora Disease",
+      "retrieval_reason": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_TYPE",
+        "PHENOTYPE_SIMILARITY"
+      ],
+      "retrieval_primary_feature": "protein ubiquitination",
+      "pipeline_identity": "DISTINCT_DISEASE",
+      "pipeline_relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "reviewed_verdict": "SHARED_MECHANISM_SUPPORTED",
+      "agreement": "AGREE",
+      "biological_reason_assessment": "Pipeline reached SHARED_DOWNSTREAM_MECHANISM and independently retrieved both of the two papers the reviewer identified as strongest. Biological reason also correct: it classified the retrieval explanation as INCORRECT_BUT_CONNECTION_REAL, matching the reviewer's finding that the GO term is not what makes the pair genuine.",
+      "pipeline_evidence": [
+        "PMID:21652633",
+        "PMID:19892702"
+      ],
+      "reviewed_citations": [
+        "PMID:19892702",
+        "PMID:21652633",
+        "PMID:19036738",
+        "PMID:20858601"
+      ],
+      "shared_citations": [
+        "PMID:19892702",
+        "PMID:21652633"
+      ],
+      "alternatives_applied": [
+        "GENERIC_PHENOTYPE_OVERLAP",
+        "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+        "BROAD_ONTOLOGY_ANNOTATION"
+      ],
+      "search_coverage": {
+        "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])",
+        "status": "CHECKED",
+        "total_hits": 3,
+        "snapshot": "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
+      },
+      "actionable": true
+    },
+    {
+      "pair": "SCAR16 x Cerebellar Ataxia-Hypogonadism Syndrome",
+      "retrieval_reason": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_TYPE",
+        "SAME_GENE",
+        "PHENOTYPE_SIMILARITY"
+      ],
+      "retrieval_primary_feature": "ubiquitin-dependent protein catabolic process",
+      "pipeline_identity": "PARTIALLY_OVERLAPPING_ENTITY",
+      "pipeline_relationship": "SHARED_DOWNSTREAM_MECHANISM",
+      "retrieval_validity": "INCORRECT_BUT_CONNECTION_REAL",
+      "reviewed_verdict": "SHARED_MECHANISM_SUPPORTED (same gene)",
+      "agreement": "PARTIAL",
+      "biological_reason_assessment": "Identity logic fired as intended (PARTIALLY_OVERLAPPING_ENTITY), but the reviewer places this inside one allelic spectrum. The pipeline is more conservative because upstream lists four causal genes for the broader entity against one for the narrow one. Evidence cited is disjoint from the reviewer's.",
+      "pipeline_evidence": [
+        "PMID:28754656",
+        "PMID:36854646",
+        "PMID:38310161",
+        "PMID:39453812"
+      ],
+      "reviewed_citations": [
+        "PMID:24312598",
+        "PMID:24113144",
+        "PMID:25258038",
+        "PMID:28193273",
+        "PMID:30381368"
+      ],
+      "shared_citations": [],
+      "alternatives_applied": [
+        "BROAD_ONTOLOGY_ANNOTATION"
+      ],
+      "search_coverage": {
+        "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR PNPLA6[tiab] OR \"Patatin-like phospholipase domain-containing protein 6\"[tiab] OR \"Neuropathy target esterase\"[tiab] OR RNF216[tiab] OR \"E3 ubiquitin-protein ligase RNF216\"[tiab] OR \"RING finger protein 216\"[tiab] OR \"Cerebellar Ataxia-Hypogonadism Syndrome\"[tiab])",
+        "status": "CHECKED",
+        "total_hits": 84796,
+        "snapshot": "0937383c816f025ed626a5c9c825d0cbb4fdd0295243cc4549e8e44507ae484a"
+      },
+      "actionable": true
+    },
+    {
+      "pair": "SCAR16 x Rabies",
+      "retrieval_reason": [
+        "SHARED_CELLULAR_PROCESS",
+        "SHARED_CELL_TYPE",
+        "PHENOTYPE_SIMILARITY"
+      ],
+      "retrieval_primary_feature": "mitophagy",
+      "pipeline_identity": "DISTINCT_DISEASE",
+      "pipeline_relationship": "SHARED_TISSUE_CONTEXT",
+      "retrieval_validity": "INCOMPLETE",
+      "reviewed_verdict": "SHARED_PROCESS_ONLY_SUPERFICIAL -- confirmed false positive",
+      "agreement": "AGREE",
+      "biological_reason_assessment": "Both reject. Pipeline returned SHARED_TISSUE_CONTEXT with zero direct-link evidence; reviewer called it a confirmed false positive. Biological reason correct: no molecular anchor, overlap confined to shared cell type.",
+      "pipeline_evidence": [],
+      "reviewed_citations": [
+        "PMID:28680102",
+        "PMID:25698500",
+        "PMID:39117117"
+      ],
+      "shared_citations": [],
+      "alternatives_applied": [
+        "GENERIC_PHENOTYPE_OVERLAP",
+        "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+        "BROAD_ONTOLOGY_ANNOTATION"
+      ],
+      "search_coverage": {
+        "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (Rabies[tiab])",
+        "status": "CHECKED",
+        "total_hits": 9,
+        "snapshot": "d653973349ecf23e27ed3e0e6ceb31fb9b455f688c43f10bd0460d944f0694f5"
+      },
+      "actionable": false
+    }
+  ],
+  "headline": "The flagship case succeeded blind: for SCAR16 x Lafora the pipeline independently retrieved PMID:19892702 and PMID:21652633 -- the two papers the reviewer named as strongest -- and classified the retrieval explanation as INCORRECT_BUT_CONNECTION_REAL, which is the exact state this architecture was rebuilt to represent.",
+  "known_weaknesses": [
+    "Evidence retrieval is co-mention search over titles and abstracts, so it cannot find a relationship discussed only in full text.",
+    "The pipeline reaches negative verdicts by absence of evidence rather than by the positive contrary reasoning a reviewer applies: it said INSUFFICIENT_EVIDENCE where the reviewer could show the chemistry is near-opposite.",
+    "Three of four pairs cite no literature in common with the reviewer, so agreement on a label does not imply the same reading of the field."
+  ]
+}

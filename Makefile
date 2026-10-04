@@ -1,4 +1,4 @@
-.PHONY: test lint typecheck check assurance
+.PHONY: test lint typecheck check assurance verify
 
 PYTHON ?= $(shell if [ -x .venv/bin/python ]; then echo .venv/bin/python; else command -v python3; fi)
 RUFF ?= $(shell if [ -x .venv/bin/ruff ]; then echo .venv/bin/ruff; else command -v ruff; fi)
@@ -20,3 +20,18 @@ assurance:
 	PYTHONPATH=backend/src $(PYTHON) scripts/build_phase4_assurance.py
 
 check: test lint typecheck
+
+# Single source of truth for pass/fail. Each stage's exit code is captured and
+# the target fails if any stage failed, so success cannot be misread from
+# filtered console output. Grepping test output for "passed" hid real failures
+# twice in this project's history, including a scientific-integrity regression.
+verify:
+	@fail=0; \
+	for stage in test lint typecheck; do \
+		printf '\n=== %s ===\n' "$$stage"; \
+		$(MAKE) --no-print-directory $$stage || { echo "FAILED: $$stage"; fail=1; }; \
+	done; \
+	printf '\n=== assurance (offline rebuild) ===\n'; \
+	$(MAKE) --no-print-directory assurance >/dev/null || { echo "FAILED: assurance"; fail=1; }; \
+	if [ $$fail -ne 0 ]; then echo "\nVERIFY: FAILED"; exit 1; fi; \
+	echo "\nVERIFY: ALL STAGES PASSED"

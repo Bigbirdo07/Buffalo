@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28STUB1%5Btiab%5D+OR+%22Antigen+NY-CO-7%22%5Btiab%5D+OR+%22CLL-associated+antigen+KW-8%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+16%22%5Btiab%5D%29+AND+%28NHLRC1%5Btiab%5D+OR+Malin%5Btiab%5D+OR+%22NHL+repeat-containing+protein+1%22%5Btiab%5D+OR+EPM2A%5Btiab%5D+OR+%22Laforin%2C+isoform+9%22%5Btiab%5D+OR+%22Lafora+Disease%22%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:47:31.871429+00:00",
+  "sha256": "e27418a6b380367ea5d1607d384e2fc328c5bcc04216578a18fbf638c7c1fe24"
+}

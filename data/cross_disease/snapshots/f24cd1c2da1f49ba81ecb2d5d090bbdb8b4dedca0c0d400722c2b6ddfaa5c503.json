@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28STUB1%5Btiab%5D+OR+CHIP%5Btiab%5D+OR+%22E3+ubiquitin-protein+ligase+CHIP%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+16%22%5Btiab%5D%29+AND+%28Rabies%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:48:29.833138+00:00",
+  "sha256": "d653973349ecf23e27ed3e0e6ceb31fb9b455f688c43f10bd0460d944f0694f5"
+}

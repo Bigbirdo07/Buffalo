@@ -1,0 +1,144 @@
+{
+  "pair_id": "46abfb23-2cad1928",
+  "disease_a": "Autosomal Recessive Spinocerebellar Ataxia 16",
+  "disease_b": "Peroxisome Biogenesis Disorder 5B",
+  "stages": [
+    {
+      "stage": "DiseaseIdentityCheck",
+      "finding": "DISTINCT_DISEASE: No shared causal gene, so these are independent disease entities and any relationship between them must be argued biologically.",
+      "assessable": true
+    },
+    {
+      "stage": "RetrievalReasonInspection",
+      "finding": "SHARED_CELL_TYPE(Purkinje cell), SHARED_GO_TERM(ubiquitin-protein transferase activity), PHENOTYPE_SIMILARITY(Cerebellar atrophy)",
+      "assessable": true
+    },
+    {
+      "stage": "MolecularAnchorInspection",
+      "finding": "anchored=True [SHARED_MOLECULAR_FUNCTION=MODERATE]",
+      "assessable": true
+    },
+    {
+      "stage": "VariantEffectCompatibility",
+      "finding": "NOT_ASSESSABLE: No shared gene, so variant effects describe different proteins and are not comparable. Any shared mechanism must be argued at the process level instead.",
+      "assessable": false
+    },
+    {
+      "stage": "ProcessComparison",
+      "finding": "no shared features on this axis",
+      "assessable": false
+    },
+    {
+      "stage": "CellTypeTissueComparison",
+      "finding": "MODERATE: Purkinje cell, cerebellum",
+      "assessable": true
+    },
+    {
+      "stage": "PhenotypeComparison",
+      "finding": "MODERATE: Cerebellar atrophy, Dysarthria, Nystagmus",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceRetrieval",
+      "finding": "1 items retrieved",
+      "assessable": true
+    },
+    {
+      "stage": "EvidenceFitReview",
+      "finding": "1 primary findings establish a direct molecular link",
+      "assessable": true
+    },
+    {
+      "stage": "ContradictionSearch",
+      "finding": "0 contradicting, 0 qualifying",
+      "assessable": true
+    },
+    {
+      "stage": "AlternativeExplanationGeneration",
+      "finding": "0 of 7 alternatives apply: none",
+      "assessable": true
+    },
+    {
+      "stage": "MechanisticSynthesis",
+      "finding": "INSUFFICIENT_EVIDENCE (retrieval UNRESOLVED): Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
+      "assessable": true
+    }
+  ],
+  "identity_relation": "DISTINCT_DISEASE",
+  "retrieval_reasons": [
+    {
+      "type": "SHARED_CELL_TYPE",
+      "feature": "Purkinje cell",
+      "corpus_frequency": 87
+    },
+    {
+      "type": "SHARED_GO_TERM",
+      "feature": "ubiquitin-protein transferase activity",
+      "corpus_frequency": 8
+    },
+    {
+      "type": "PHENOTYPE_SIMILARITY",
+      "feature": "Cerebellar atrophy",
+      "corpus_frequency": 134
+    }
+  ],
+  "retrieval_validity": "UNRESOLVED",
+  "variant_compatibility": "UNKNOWN",
+  "molecular_anchor_present": true,
+  "molecular_anchor_description": "SHARED_MOLECULAR_FUNCTION=MODERATE",
+  "supporting_evidence_ids": [
+    "PMID:42264716"
+  ],
+  "contradicting_evidence_ids": [],
+  "qualifying_evidence_ids": [],
+  "alternative_explanations": [
+    {
+      "code": "GENERIC_PHENOTYPE_OVERLAP",
+      "applies": false,
+      "description": "The diseases share symptoms without sharing a cause. Clinical overlap is common between disorders of the same organ."
+    },
+    {
+      "code": "SHARED_TISSUE_DIFFERENT_BIOLOGY",
+      "applies": false,
+      "description": "The same cell type or tissue is affected by unrelated processes. A vulnerable cell population appears in many unrelated disorders."
+    },
+    {
+      "code": "BROAD_ONTOLOGY_ANNOTATION",
+      "applies": false,
+      "description": "The shared process term is broad enough to cover mechanistically distinct branches, so the annotation matches while the biology does not."
+    },
+    {
+      "code": "SAME_ENTITY_TWO_LABELS",
+      "applies": false,
+      "description": "The two labels describe one disease or one allelic spectrum, so the apparent connection is nomenclature rather than biology."
+    },
+    {
+      "code": "OPPOSITE_DIRECTION",
+      "applies": false,
+      "description": "The shared feature is perturbed in opposite directions, which argues against functional equivalence."
+    },
+    {
+      "code": "HUB_GENE_EFFECT",
+      "applies": false,
+      "description": "The shared gene participates in many disorders, so sharing it describes a research area rather than a specific mechanism."
+    },
+    {
+      "code": "CURATION_DEPTH_ARTIFACT",
+      "applies": false,
+      "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
+    }
+  ],
+  "final_relationship_class": "INSUFFICIENT_EVIDENCE",
+  "final_rationale": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
+  "actionable": false,
+  "search_coverage": {
+    "query": "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (PEX2[tiab] OR \"Peroxisome biogenesis factor 2\"[tiab] OR \"35 kDa peroxisomal membrane protein\"[tiab] OR \"Peroxisome Biogenesis Disorder 5B\"[tiab])",
+    "status": "CHECKED",
+    "total_hits": 1,
+    "snapshot": "f35afca388c51b28dba34182a312184d053170c59a984ff48b947af87f9d8f14"
+  },
+  "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+  "software_commit": "549895c16b56d5bab8ef661858872e11a8a652be",
+  "pipeline_version": "cross-disease-pipeline-v1",
+  "review_status": "AWAITING_EXPERT_SIGNOFF"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42264716&retmode=xml",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:48:29.307134+00:00",
+  "sha256": "1bf141aab722f54dea17a08a7a45ace2b8498cde64e58fc1f26d3e1b9875023a"
+}

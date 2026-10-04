@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28STUB1%5Btiab%5D+OR+%22Antigen+NY-CO-7%22%5Btiab%5D+OR+%22CLL-associated+antigen+KW-8%22%5Btiab%5D+OR+%22Autosomal+Recessive+Spinocerebellar+Ataxia+16%22%5Btiab%5D%29+AND+%28Rabies%5Btiab%5D%29&retmode=json&retmax=20&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:47:32.941398+00:00",
+  "sha256": "14988422623a32a67a16773e240f33f911f3177fd7c3bd000d2a0d886c0bea4e"
+}

@@ -70,6 +70,13 @@ class IdentitySignals:
     def gene_sets_identical(self) -> bool:
         return bool(self.shared_genes) and not (self.only_genes_a or self.only_genes_b)
 
+    @property
+    def contained_gene_set(self) -> bool:
+        """One disease's whole gene set sits inside the other's, not vice versa."""
+        if not self.shared_genes or self.gene_sets_identical:
+            return False
+        return not self.only_genes_a or not self.only_genes_b
+
 
 def compute_signals(
     left: dict,
@@ -141,6 +148,21 @@ def classify_identity(signals: IdentitySignals) -> tuple[IdentityRelation, str]:
             f"{signals.phenotype_overlap:.0%} phenotype overlap. One gene can "
             "produce mechanistically distinct disorders, so this needs expert "
             "review rather than an automatic merge.",
+        )
+
+    # One disease's entire causal gene set contained in the other's is the
+    # signature of a genetic subtype inside a broader, genetically heterogeneous
+    # entity: the narrow label names one cause of the wide label. Treating that
+    # as two independent diseases would count a subtype relationship as a
+    # cross-disease discovery.
+    if signals.contained_gene_set and signals.phenotype_overlap >= MODERATE_PHENOTYPE_OVERLAP:
+        return (
+            IdentityRelation.PARTIALLY_OVERLAPPING_ENTITY,
+            f"One disease's complete causal gene set ({', '.join(signals.shared_genes)}) "
+            "is contained in the other's, which also has additional causes. The "
+            "narrower label is most likely a genetic subtype of the broader "
+            "entity rather than an independent disease, so a relationship "
+            "between them is not a cross-disease discovery without expert review.",
         )
 
     if signals.phenotype_overlap >= STRONG_PHENOTYPE_OVERLAP:

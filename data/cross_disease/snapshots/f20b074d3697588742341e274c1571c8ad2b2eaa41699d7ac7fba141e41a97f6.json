@@ -1,0 +1,6 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/search?query=%28gene_exact%3AOTUD4%29%20AND%20%28organism_id%3A9606%29%20AND%20%28reviewed%3Atrue%29&format=json&fields=accession,protein_name&size=1",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:49:29.269399+00:00",
+  "sha256": "770fa9e18701fe3384d1fe44db3d892d3c41ed1418a0f7474176f9f65e736fcd"
+}
