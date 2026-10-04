@@ -223,3 +223,76 @@ class TestFingerprintBuilder:
             item.feature_id for item in fingerprint.features
         ]
         assert again.source_sha256 == fingerprint.source_sha256
+
+
+@pytest.mark.skipif(not FINGERPRINTS.exists(), reason="fingerprints not generated")
+class TestCandidateRetrieval:
+    """Retrieval must be broad enough to find real neighbours and honest enough
+    to surface implausible ones for the refinement layer to reject."""
+
+    @staticmethod
+    @pytest.fixture(scope="class")
+    def index():
+        from atlas.services.candidate_generation import FeatureIndex
+
+        records = [json.loads(line) for line in FINGERPRINTS.read_text().splitlines()]
+        return FeatureIndex(records)
+
+    @staticmethod
+    def _query(index, name: str):
+        from atlas.services.candidate_generation import generate_candidates
+
+        disease_id = next(
+            record["disease_id"]
+            for record in index.fingerprints
+            if record["disease_name"] == name
+        )
+        return generate_candidates(index, disease_id, limit=25)
+
+    def test_non_discriminating_classes_are_excluded(self, index) -> None:
+        # "Both diseases have a mouse model" is true of 1,036 diseases.
+        for feature_id, feature_class in index.classes.items():
+            assert feature_class not in {"model_organism", "therapeutic"}, feature_id
+
+    def test_overly_common_features_are_not_retrieved_on(self, index) -> None:
+        # "neuron" (548 diseases) would otherwise fuse most of the corpus.
+        common = [key for key in index.postings if index.frequency(key) > 400]
+        assert common
+        assert all(not index.is_retrievable(key) for key in common)
+
+    def test_same_gene_disease_ranks_first(self, index) -> None:
+        # SCA48 is the dominant STUB1 disorder; SCAR16 is the recessive one.
+        candidates = self._query(index, "Autosomal Recessive Spinocerebellar Ataxia 16")
+        assert candidates[0].disease_name == "Spinocerebellar Ataxia 48"
+        genes = {
+            item.label
+            for item in candidates[0].methods.get("SHARED_GENE_OR_PROTEIN", [])
+        }
+        assert "STUB1" in genes
+
+    def test_method_scores_stay_separate(self, index) -> None:
+        # A gene match and a phenotype match are different biological claims.
+        candidates = self._query(index, "Autosomal Recessive Spinocerebellar Ataxia 16")
+        assert len(candidates[0].scores) >= 4
+        assert set(candidates[0].scores) == set(candidates[0].methods)
+
+    def test_implausible_neighbour_is_retrieved_not_filtered(self, index) -> None:
+        # Rabies shares Purkinje cell, mitophagy and myoclonus with SCAR16 while
+        # being an acute viral encephalitis. Retrieval deliberately surfaces it:
+        # suppressing it here would hide the case the refinement layer exists to
+        # reject, and would make the counterexample invisible.
+        candidates = self._query(index, "Autosomal Recessive Spinocerebellar Ataxia 16")
+        names = {item.disease_name for item in candidates}
+        assert "Rabies" in names
+        rabies = next(item for item in candidates if item.disease_name == "Rabies")
+        assert "SHARED_GENE_OR_PROTEIN" not in rabies.methods
+
+    def test_retrieval_is_deterministic(self, index) -> None:
+        first = self._query(index, "Autosomal Recessive Spinocerebellar Ataxia 16")
+        second = self._query(index, "Autosomal Recessive Spinocerebellar Ataxia 16")
+        assert [item.disease_id for item in first] == [item.disease_id for item in second]
+
+    def test_unknown_disease_returns_empty_rather_than_raising(self, index) -> None:
+        from atlas.services.candidate_generation import generate_candidates
+
+        assert generate_candidates(index, "no-such-disease") == []
