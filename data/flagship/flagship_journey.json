@@ -1,6 +1,6 @@
 {
   "schema_version": "flagship-journey-v1",
-  "software_commit": "d8b28500de29fd39746785eed7581004de3d3972",
+  "software_commit": "f2561322748cf301cd8ccb9e417aacc0dbdc96cf",
   "flagship": {
     "pair_id": "46abfb23-533a8d87",
     "disease_a_id": "46abfb23-da23-5881-aa52-f0a4d48adf88",
@@ -28,18 +28,39 @@
     "review_status": "AWAITING_EXPERT_SIGNOFF",
     "algorithm_version": "cross-disease-pipeline-v1",
     "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-    "software_commit": "d8b28500de29fd39746785eed7581004de3d3972"
+    "software_commit": "f2561322748cf301cd8ccb9e417aacc0dbdc96cf"
   },
-  "shared_process": "protein ubiquitination",
+  "retrieval_level_feature": "protein ubiquitination",
+  "validated_mechanistic_bridge": {
+    "bridge_id": "bridge:46abfb23-533a8d87",
+    "terms": [
+      "chaperone",
+      "co-chaperone",
+      "ubiquitin ligase",
+      "CHIP"
+    ],
+    "statement": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:21652633",
+      "PMID:19892702"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "protein ubiquitination",
+      "Purkinje cell",
+      "Myoclonus"
+    ],
+    "is_narrower_than_retrieval": true
+  },
   "knowledge_gap": {
-    "gap_id": "3888d7ae-2a43-5c44-9c8d-720048955f75",
-    "question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+    "gap_id": "e939ac76-8c21-51d4-932b-a2728723bd36",
+    "question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
     "gap_type": "missing_assay",
     "related_claims": [],
     "related_edges": [],
-    "scope": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease, restricted to protein ubiquitination. The question is equivalence of functional consequence, not whether either disease involves the process, which the cited evidence already supports.",
+    "scope": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease, restricted to chaperone, co-chaperone and ubiquitin ligase biology (CHIP). The pair was retrieved on 'protein ubiquitination', which is broader and is NOT what is being tested: the question follows the evidence, not the annotation. The question is equivalence of functional consequence, not whether either disease involves the process, which the cited evidence already supports.",
     "why_it_matters": "The two diseases are reported to converge on this biology, but no study has applied one assay to both. Until that is done, every downstream decision -- whether a model, assay or therapeutic strategy developed for one disease is informative for the other -- rests on an assumption rather than a measurement. A negative answer is as valuable as a positive one: it would stop effort being spent transferring tools across a boundary they do not cross.",
-    "current_evidence_summary": "2 corroborating primary findings (PMID:21652633, PMID:19892702) establish a direct molecular link. They do not establish that the downstream functional consequence is the same in both diseases.",
+    "current_evidence_summary": "2 corroborating primary findings (PMID:21652633, PMID:19892702) establish a direct molecular link. Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair. They do not establish that the downstream functional consequence is the same in both diseases, and the supporting reports are limited in number and experimental context.",
     "contradictory_evidence_summary": "No contradicting evidence was retrieved by the recorded searches.",
     "search_coverage": {
       "coverage_id": "coverage:46abfb23-533a8d87",
@@ -50,7 +71,7 @@
           "queries": [
             "(STUB1[tiab] OR CHIP[tiab] OR \"E3 ubiquitin-protein ligase CHIP\"[tiab] OR \"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab]) AND (NHLRC1[tiab] OR \"E3 ubiquitin-protein ligase NHLRC1\"[tiab] OR Malin[tiab] OR EPM2A[tiab] OR \"Laforin, isoform 9\"[tiab] OR \"Lafora Disease\"[tiab])"
           ],
-          "checked_at": "2026-10-04T07:03:08.943680Z",
+          "checked_at": "2026-10-04T07:13:00.036559Z",
           "result_count": 3,
           "error": null,
           "pages_checked": 0,
@@ -81,7 +102,7 @@
           "estimated_cost": 0.0
         }
       ],
-      "search_started_at": "2026-10-04T07:03:08.943705Z",
+      "search_started_at": "2026-10-04T07:13:00.036640Z",
       "search_completed_at": null,
       "scope": "Cross-disease evidence for pair 46abfb23-533a8d87",
       "language_limitations": [
@@ -96,7 +117,7 @@
     ],
     "required_context": [
       "Patient-derived or engineered cellular models of each disease in a shared genetic background",
-      "a readout capturing protein ubiquitination",
+      "a readout capturing chaperone, co-chaperone and ubiquitin ligase biology (CHIP)",
       "matched isogenic or otherwise background-comparable controls",
       "both diseases assayed in the same experiment"
     ],
@@ -114,18 +135,18 @@
     "status": "OPEN"
   },
   "experiment": {
-    "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
-    "knowledge_gap_id": "3888d7ae-2a43-5c44-9c8d-720048955f75",
-    "scientific_question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
-    "hypothesis": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt protein ubiquitination equivalently, so the same functional readout reports the same defect in both.",
-    "competing_hypothesis": "The two diseases engage the process through different branches, so the molecular link is real while the functional consequences differ in direction, magnitude or timing.",
+    "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
+    "knowledge_gap_id": "e939ac76-8c21-51d4-932b-a2728723bd36",
+    "scientific_question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
+    "hypothesis": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+    "competing_hypothesis": "The diseases share the molecular interaction the evidence describes, and a broad process annotation, while diverging functionally downstream. Under this hypothesis the link is real but the mechanisms are not equivalent, and tools should not be transferred between the diseases on the strength of it.",
     "model_system": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
     "sample_type": "Patient-derived or engineered models representing each disease, plus a shared control of the same genetic background.",
     "patient_stratification": [
       "Genotypes representative of each disease",
       "Neither arm represented solely by a variant of uncertain significance"
     ],
-    "perturbation": "None beyond disease genotype. The comparison is between disease states at baseline, so that any difference is attributable to genotype rather than to a treatment interacting with it.",
+    "perturbation": "A standardised cellular stress applied identically to every arm. The bridge describes stress-responsive biology, so a baseline-only comparison could miss a defect that appears only when the pathway is challenged, and a null result would then be uninterpretable.",
     "comparator": "A single shared control run in the same experiment as both disease arms. Separate per-disease controls would make the arms incomparable, which is the failure this design exists to avoid.",
     "controls": [
       "Isogenic or background-matched control",
@@ -133,12 +154,15 @@
       "A positive control that perturbs the readout by a known route"
     ],
     "readouts": [
-      "diGly assay reporting protein ubiquitination"
+      "Functional response of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) to the standardised stress, measured identically in every arm",
+      "diGly assay reporting protein ubiquitination as a supporting molecular profile, interpreted only alongside the primary functional readout"
     ],
-    "primary_endpoint": "Direction and magnitude of change in diGly assay reporting protein ubiquitination in each disease arm relative to the shared control.",
-    "secondary_endpoints": [],
-    "expected_result_if_supported": "Both disease models show disruption of protein ubiquitination in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
-    "expected_result_if_refuted": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of protein ubiquitination while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
+    "primary_endpoint": "Direction and magnitude of the chaperone, co-chaperone and ubiquitin ligase biology (CHIP) response to stress in each disease arm relative to the shared control.",
+    "secondary_endpoints": [
+      "Concordance between the functional response and the supporting molecular profile within each arm."
+    ],
+    "expected_result_if_supported": "Both disease models show disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in the same direction, of comparable magnitude, relative to the shared control. This supports functional equivalence at the measured step and makes tools developed for one disease worth testing in the other.",
+    "expected_result_if_refuted": "The two disease models differ in the direction of the effect, or one shows no detectable disruption of chaperone, co-chaperone and ubiquitin ligase biology (CHIP) while the other does, or the magnitudes differ beyond the range seen between replicate clones of a single genotype. Any of these weakens the shared-mechanism hypothesis: the diseases would touch the same process without disrupting it equivalently, and tools should not be transferred between them on this basis.",
     "confounders": [
       "Clone-to-clone variation can exceed the between-disease difference; the replicate-clone control exists to bound it.",
       "Differing model maturity or culture age between arms can produce a difference unrelated to genotype.",
@@ -156,9 +180,11 @@
       "Assay reagents for diGly assay reporting protein ubiquitination"
     ],
     "required_capabilities": [
-      "diGly assay reporting protein ubiquitination applied identically to both disease arms",
+      "Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "Cellular stress / heat-shock challenge applied identically across arms",
       "iPSC maintenance and differentiation to the disease-relevant cell type",
-      "Clone-aware statistical analysis establishing the within-genotype range"
+      "Clone-aware statistical analysis establishing the within-genotype range",
+      "diGly assay reporting protein ubiquitination for supporting molecular profiling"
     ],
     "safety_or_ethics_flags": [],
     "unjustified_interpretations": [
@@ -171,117 +197,183 @@
   },
   "required_capabilities": [
     {
-      "capability_id": "required-capability:239583eb-9322-5007-b62b-b26376bb125b",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
-      "canonical_name": "diGly enrichment proteomics",
-      "description": "diGly assay reporting protein ubiquitination applied identically to both disease arms",
-      "capability_category": "proteomics",
+      "capability_id": "required-capability:f26eaf1c-50ba-5da9-b93a-5896e4996e25",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
+      "canonical_name": "Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "description": "Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "capability_category": "other",
       "required_or_optional": "REQUIRED",
-      "reason_required": "The experiment explicitly requires: diGly assay reporting protein ubiquitination applied identically to both disease arms",
-      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt protein ubiquitination equivalently, so the same functional readout reports the same defect in both.",
-      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "reason_required": "The experiment explicitly requires: Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_capabilities[0]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_capabilities[0]",
       "generated_by": "deterministic-requirement-extractor:v1",
       "human_review_status": "PENDING"
     },
     {
-      "capability_id": "required-capability:a887d45c-e310-5865-ad8f-8365a9f324d8",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "capability_id": "required-capability:3bf006e1-bcc3-5d88-b4a6-eaf2d1b15f6b",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "canonical_name": "iPSC maintenance",
       "description": "iPSC maintenance and differentiation to the disease-relevant cell type",
       "capability_category": "cell_culture",
       "required_or_optional": "REQUIRED",
       "reason_required": "The experiment explicitly requires: iPSC maintenance and differentiation to the disease-relevant cell type",
-      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt protein ubiquitination equivalently, so the same functional readout reports the same defect in both.",
-      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_capabilities[1]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_capabilities[2]",
       "generated_by": "deterministic-requirement-extractor:v1",
       "human_review_status": "PENDING"
     },
     {
-      "capability_id": "required-capability:87901f26-ebf4-57de-9042-0374fd27b58b",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "capability_id": "required-capability:835e0ccc-6033-539a-81b8-d60902fa0ee9",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "canonical_name": "clone-aware statistical analysis",
       "description": "Clone-aware statistical analysis establishing the within-genotype range",
       "capability_category": "statistical_analysis",
       "required_or_optional": "REQUIRED",
       "reason_required": "The experiment explicitly requires: Clone-aware statistical analysis establishing the within-genotype range",
-      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt protein ubiquitination equivalently, so the same functional readout reports the same defect in both.",
-      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_capabilities[2]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_capabilities[3]",
+      "generated_by": "deterministic-requirement-extractor:v1",
+      "human_review_status": "PENDING"
+    },
+    {
+      "capability_id": "required-capability:d6edba38-91ab-5135-af5a-46d0bd9fda43",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
+      "canonical_name": "diGly enrichment proteomics",
+      "description": "diGly assay reporting protein ubiquitination for supporting molecular profiling",
+      "capability_category": "proteomics",
+      "required_or_optional": "REQUIRED",
+      "reason_required": "The experiment explicitly requires: diGly assay reporting protein ubiquitination for supporting molecular profiling",
+      "mechanism_context": "Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease disrupt chaperone, co-chaperone and ubiquitin ligase biology (CHIP) equivalently, so the same functional readout reports the same defect in both.",
+      "disease_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
+      "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_capabilities[4]",
       "generated_by": "deterministic-requirement-extractor:v1",
       "human_review_status": "PENDING"
     }
   ],
   "required_assets": [
     {
-      "required_asset_id": "required-asset:f6d77329-35f2-58e8-80b9-fa1aa4cd7f20",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "required_asset_id": "required-asset:a5c6951b-9ec9-535e-a5ef-d723cf2599eb",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "asset_type": "other",
       "description": "Cellular model of Autosomal Recessive Spinocerebellar Ataxia 16",
       "required_characteristics": [
         "Cellular model of Autosomal Recessive Spinocerebellar Ataxia 16"
       ],
-      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
       "reason_required": "The experiment explicitly lists this required asset: Cellular model of Autosomal Recessive Spinocerebellar Ataxia 16",
       "alternatives": [],
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_assets[0]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_assets[0]",
       "human_review_status": "PENDING"
     },
     {
-      "required_asset_id": "required-asset:21f471f5-b40c-5e30-bd32-2567ddbc6401",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "required_asset_id": "required-asset:06c9fe4a-cba9-5244-b781-9a3e7bb71bc7",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "asset_type": "other",
       "description": "Cellular model of Lafora Disease",
       "required_characteristics": [
         "Cellular model of Lafora Disease"
       ],
-      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
       "reason_required": "The experiment explicitly lists this required asset: Cellular model of Lafora Disease",
       "alternatives": [],
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_assets[1]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_assets[1]",
       "human_review_status": "PENDING"
     },
     {
-      "required_asset_id": "required-asset:4af57b8a-a54a-572d-a928-40f00404bffd",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "required_asset_id": "required-asset:926693a6-5cd4-5b08-b00c-e4412dd340b8",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "asset_type": "other",
       "description": "Background-matched control line shared by both arms",
       "required_characteristics": [
         "Background-matched control line shared by both arms"
       ],
-      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
       "reason_required": "The experiment explicitly lists this required asset: Background-matched control line shared by both arms",
       "alternatives": [],
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_assets[2]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_assets[2]",
       "human_review_status": "PENDING"
     },
     {
-      "required_asset_id": "required-asset:8b04cd92-ce39-5f34-a90f-e77f4d23d6f3",
-      "experiment_id": "b5613e70-c494-5593-b37f-7972b710b23a",
+      "required_asset_id": "required-asset:42c552a0-7b81-563c-a0e0-c1c5718827d4",
+      "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
       "asset_type": "assay",
       "description": "Assay reagents for diGly assay reporting protein ubiquitination",
       "required_characteristics": [
         "Assay reagents for diGly assay reporting protein ubiquitination"
       ],
-      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease produce equivalent functional disruption of protein ubiquitination in disease-relevant models, measured with a single shared readout?",
+      "biological_context": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone and ubiquitin ligase biology (CHIP) in disease-relevant models, measured with a single shared readout under matched conditions?",
       "variant_context": "Genotypes representative of each disease; Neither arm represented solely by a variant of uncertain significance",
       "model_context": "Patient-derived or engineered cellular models of each disease in a shared genetic background",
       "reason_required": "The experiment explicitly lists this required asset: Assay reagents for diGly assay reporting protein ubiquitination",
       "alternatives": [],
-      "evidence_source": "b5613e70-c494-5593-b37f-7972b710b23a#required_assets[3]",
+      "evidence_source": "d3261c4d-d77a-539a-b729-3fba698ddae1#required_assets[3]",
       "human_review_status": "PENDING"
     }
   ],
+  "capability_coverage_map": [
+    {
+      "required_capability": "Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "category": "other",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "iPSC maintenance",
+      "category": "cell_culture",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "clone-aware statistical analysis",
+      "category": "statistical_analysis",
+      "candidate_source": null,
+      "evidence_scope": "No candidate retrieved by the recorded searches.",
+      "status": "MISSING",
+      "missing_verification": "A group demonstrating this capability. Absence here means the searches found none, not that none exists."
+    },
+    {
+      "required_capability": "diGly enrichment proteomics",
+      "category": "proteomics",
+      "candidate_source": "Angelo Poletti (PMID:41664196, 2026)",
+      "evidence_scope": "Publication shows the technique was performed by this team at this date. Not current activity, availability or willingness.",
+      "status": "CANDIDATE_IDENTIFIED",
+      "missing_verification": "Confirm the group still runs this assay, and that it can be applied to models of both diseases."
+    }
+  ],
+  "collaboration_opportunity": {
+    "knowledge_gap_id": "e939ac76-8c21-51d4-932b-a2728723bd36",
+    "experiment_id": "d3261c4d-d77a-539a-b729-3fba698ddae1",
+    "required_capabilities": [
+      "Functional assay reporting chaperone, co-chaperone and ubiquitin ligase biology (CHIP) under standardised stress",
+      "iPSC maintenance",
+      "clone-aware statistical analysis",
+      "diGly enrichment proteomics"
+    ],
+    "capabilities_with_candidates": 1,
+    "capabilities_missing": 3,
+    "execution_topology": "MULTI_PARTY_EXECUTABLE",
+    "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+    "uncertainty": "Supporting evidence for the relationship is limited in number and experimental context. Expert review should establish whether it justifies the experiment before anyone is contacted.",
+    "suggested_first_step": "Approach a group with a demonstrated functional assay for chaperone, co-chaperone and ubiquitin ligase biology (CHIP) and ask whether it can be applied in parallel to models of Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease against a shared control.",
+    "review_status": "AWAITING_EXPERT_SIGNOFF"
+  },
   "discovery": {
     "queries": [
       {

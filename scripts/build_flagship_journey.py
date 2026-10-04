@@ -184,12 +184,32 @@ def main() -> int:
 
     from atlas.domain.cross_disease import ValidatedRelationship
 
+    bridge_raw = trace.get("mechanistic_bridge")
+    if not bridge_raw:
+        raise SystemExit(
+            "flagship has no mechanistic bridge: the gap would be built from the "
+            "retrieval annotation, which is the error this step exists to avoid."
+        )
+    from atlas.domain.cross_disease import MechanisticBridge
+
+    bridge = MechanisticBridge(
+        bridge_id=bridge_raw["bridge_id"],
+        terms=tuple(bridge_raw["terms"]),
+        derived_from_evidence_ids=tuple(bridge_raw["derived_from_evidence_ids"]),
+        statement=bridge_raw["statement"],
+        derivation_method=bridge_raw["derivation_method"],
+        distinct_from_retrieval_features=tuple(
+            bridge_raw["distinct_from_retrieval_features"]
+        ),
+    )
+
     relationship = ValidatedRelationship(
         relationship_id=f"relationship:{flagship['pair_id']}",
         disease_a=flagship["disease_a_id"], disease_b=flagship["disease_b_id"],
         relationship_class=RelationshipClass(flagship["final_relationship"]),
         mechanistic_statement=trace["final_rationale"],
         evidence_ids=tuple(flagship["evidence_ids"]),
+        mechanistic_bridge=bridge,
         differing_features=tuple(
             label for _i, label in comparison.phenotypes.distinctive_right[:5]
         ),
@@ -241,16 +261,87 @@ def main() -> int:
     )
     signals = candidate_signals(discovered, queries)
 
+    # Capability coverage map: what is covered, what is only indirectly
+    # supported, what is missing. Gaps are shown, never hidden -- a coverage map
+    # that only lists what was found is a marketing document.
+    by_category: dict[str, list] = {}
+    for item in discovered:
+        by_category.setdefault(item.capability_category, []).append(item)
+    coverage_map = []
+    for capability in capabilities:
+        category = capability.capability_category.value
+        matches = by_category.get(category, [])
+        if matches:
+            best = matches[0]
+            status = "CANDIDATE_IDENTIFIED"
+            source = f"{best.last_author} (PMID:{best.pmid}, {best.year})"
+            scope = (
+                "Publication shows the technique was performed by this team at "
+                "this date. Not current activity, availability or willingness."
+            )
+            missing = (
+                "Confirm the group still runs this assay, and that it can be "
+                "applied to models of both diseases."
+            )
+        else:
+            status = "MISSING"
+            source = None
+            scope = "No candidate retrieved by the recorded searches."
+            missing = (
+                "A group demonstrating this capability. Absence here means the "
+                "searches found none, not that none exists."
+            )
+        coverage_map.append({
+            "required_capability": capability.canonical_name,
+            "category": category,
+            "candidate_source": source,
+            "evidence_scope": scope,
+            "status": status,
+            "missing_verification": missing,
+        })
+
+    covered = sum(1 for row in coverage_map if row["status"] == "CANDIDATE_IDENTIFIED")
+    collaboration = {
+        "knowledge_gap_id": gap.gap_id,
+        "experiment_id": experiment.experiment_id,
+        "required_capabilities": [c.canonical_name for c in capabilities],
+        "capabilities_with_candidates": covered,
+        "capabilities_missing": len(coverage_map) - covered,
+        # Multi-party is a topology, not a failure: no single group is expected
+        # to hold a model of each disease plus the assay.
+        "execution_topology": (
+            "ONE_LAB_EXECUTABLE" if covered == len(coverage_map) and covered <= 1
+            else "MULTI_PARTY_EXECUTABLE" if covered > 0
+            else "MISSING_CAPABILITY"
+        ),
+        "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+        "uncertainty": (
+            "Supporting evidence for the relationship is limited in number and "
+            "experimental context. Expert review should establish whether it "
+            "justifies the experiment before anyone is contacted."
+        ),
+        "suggested_first_step": (
+            f"Approach a group with a demonstrated functional assay for "
+            f"{bridge.axis_label} and ask whether it can be applied in parallel "
+            f"to models of {flagship['disease_a']} and "
+            f"{flagship['disease_b'].replace('_', ' ')} against a shared control."
+        ),
+        "review_status": "AWAITING_EXPERT_SIGNOFF",
+    }
+
     args.out.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": "flagship-journey-v1",
         "software_commit": commit(),
         "flagship": flagship,
-        "shared_process": shared_process,
+        "retrieval_level_feature": shared_process,
+        "validated_mechanistic_bridge": bridge_raw,
         "knowledge_gap": gap.model_dump(mode="json"),
         "experiment": experiment.model_dump(mode="json"),
         "required_capabilities": [c.model_dump(mode="json") for c in capabilities],
         "required_assets": [a.model_dump(mode="json") for a in assets],
+        "capability_coverage_map": coverage_map,
+        "collaboration_opportunity": collaboration,
         "discovery": {
             "queries": [{"category": q.capability_category, "tier": q.tier.value,
                          "query": q.query} for q in queries],
@@ -274,11 +365,15 @@ def main() -> int:
         "flagship": f"{flagship['disease_a']} x {flagship['disease_b']}",
         "relationship": flagship["final_relationship"],
         "evidence": flagship["evidence_ids"],
-        "shared_process": shared_process,
+        "retrieval_feature": shared_process,
+        "bridge_terms": list(bridge.terms),
         "gap_id": gap.gap_id, "experiment_id": experiment.experiment_id,
         "capabilities": len(capabilities), "assets": len(assets),
         "queries_built": len(queries), "queries_skipped": len(skipped),
         "candidates": len(discovered),
+        "capabilities_covered": covered,
+        "capabilities_missing": len(coverage_map) - covered,
+        "topology": collaboration["execution_topology"],
     }, indent=2))
     return 0
 

@@ -59,12 +59,18 @@
       "assessable": true
     },
     {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes transcriptional activation. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
       "stage": "MechanisticSynthesis",
       "finding": "INSUFFICIENT_EVIDENCE (retrieval UNRESOLVED): Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
       "assessable": true
     }
   ],
   "identity_relation": "DISTINCT_DISEASE",
+  "scoped_identities": [],
   "retrieval_reasons": [
     {
       "type": "SHARED_CELL_TYPE",
@@ -128,6 +134,23 @@
       "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
     }
   ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:46abfb23-2cad1928",
+    "terms": [
+      "transcriptional activation"
+    ],
+    "statement": "Evidence establishing a direct link describes transcriptional activation. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:42264716"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "Purkinje cell",
+      "ubiquitin-protein transferase activity",
+      "Cerebellar atrophy"
+    ],
+    "is_narrower_than_retrieval": true
+  },
   "final_relationship_class": "INSUFFICIENT_EVIDENCE",
   "final_rationale": "Only 1 primary finding describes a direct link. Asserting a shared mechanism requires corroboration, the same standard this system applies before accepting that a claim is contradicted. A single report is a lead, not an established link.",
   "actionable": false,
@@ -138,7 +161,7 @@
     "snapshot": "f35afca388c51b28dba34182a312184d053170c59a984ff48b947af87f9d8f14"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-  "software_commit": "549895c16b56d5bab8ef661858872e11a8a652be",
+  "software_commit": "f2561322748cf301cd8ccb9e417aacc0dbdc96cf",
   "pipeline_version": "cross-disease-pipeline-v1",
   "review_status": "AWAITING_EXPERT_SIGNOFF"
 }

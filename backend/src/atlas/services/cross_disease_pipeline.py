@@ -20,12 +20,15 @@ Nothing here names a disease, gene, pathway or cell type.
 
 from __future__ import annotations
 
+import re
+from collections import Counter
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
 from atlas.domain.cross_disease import (
     CompatibilityVerdict,
     IdentityRelation,
+    MechanisticBridge,
     ReasonType,
     RelationshipClass,
     RetrievalReason,
@@ -49,6 +52,69 @@ PIPELINE_VERSION = "cross-disease-pipeline-v1"
 MINIMUM_CORROBORATION = 2
 
 
+# Mechanistic process vocabulary. Biology, not disease: these name cellular
+# processes and regulatory axes and contain no disease, gene or pathway specific
+# to any entry in the corpus. They exist so a bridge can be read out of what the
+# evidence says, rather than inherited from the annotation that retrieved it.
+#
+# Ordered most specific first, so a bridge prefers "chaperone-mediated
+# degradation" over "protein degradation" when both appear.
+MECHANISM_VOCABULARY: tuple[str, ...] = (
+    "chaperone-mediated autophagy",
+    "chaperone-assisted degradation",
+    "heat shock response",
+    "heat-shock response",
+    "unfolded protein response",
+    "integrated stress response",
+    "protein quality control",
+    "proteostasis",
+    "stress response",
+    "chaperone",
+    "co-chaperone",
+    "aggresome",
+    "protein aggregation",
+    "misfolded protein",
+    "autophagy",
+    "mitophagy",
+    "lysosomal degradation",
+    "proteasomal degradation",
+    "ubiquitin-proteasome",
+    "substrate recognition",
+    "substrate specificity",
+    "E3 ligase activity",
+    "ubiquitin ligase",
+    "polyubiquitination",
+    "monoubiquitination",
+    "ubiquitination",
+    "phosphorylation",
+    "nuclear translocation",
+    "transcriptional activation",
+    "protein stability",
+    "protein turnover",
+    "protein-protein interaction",
+    "complex formation",
+    "glycogen metabolism",
+    "calcium signaling",
+    "oxidative stress",
+    "mitochondrial dysfunction",
+    "DNA damage response",
+    "synaptic function",
+)
+
+# Regulators and axes named in evidence. Uppercase tokens that look like a
+# protein or factor name, which a process term alone would miss.
+_FACTOR = re.compile(r"\b([A-Z][A-Z0-9]{2,7})\b")
+# Tokens that are not biology. Journal and method noise that would otherwise be
+# mistaken for a regulator.
+_FACTOR_STOPWORDS = frozenset(
+    {
+        "DNA", "RNA", "PCR", "WES", "WGS", "MRI", "CSF", "ELISA", "SDS", "PBS",
+        "THE", "AND", "FOR", "WITH", "NOT", "WERE", "WAS", "HAS", "CAN", "MAY",
+        "USA", "UK", "EU", "NIH", "PMID", "DOI", "ATP", "GTP", "CNS", "IQ",
+    }
+)
+
+
 @dataclass(frozen=True)
 class MechanisticEvidence:
     """One retrieved, assessed piece of evidence bearing on a proposed link.
@@ -67,6 +133,9 @@ class MechanisticEvidence:
     is_primary_finding: bool
     # Free-text description of what the evidence shows, for the rationale.
     statement: str = ""
+    # Full retrieved text, used to read the mechanistic bridge out of what the
+    # evidence actually says.
+    text: str = ""
     caveats: tuple[str, ...] = ()
 
 
@@ -99,6 +168,7 @@ class DecisionTrace:
     retrieval_reasons: tuple[RetrievalReason, ...] = ()
     retrieval_validity: RetrievalValidity = RetrievalValidity.UNRESOLVED
     variant_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    mechanistic_bridge: MechanisticBridge | None = None
     molecular_anchor_present: bool = False
     molecular_anchor_description: str = ""
     supporting_evidence_ids: tuple[str, ...] = ()
@@ -133,8 +203,79 @@ REQUIRED_STAGES: tuple[str, ...] = (
     "EvidenceFitReview",
     "ContradictionSearch",
     "AlternativeExplanationGeneration",
+    "MechanisticBridgeDerivation",
     "MechanisticSynthesis",
 )
+
+
+def derive_mechanistic_bridge(
+    evidence: tuple[MechanisticEvidence, ...],
+    retrieval_features: tuple[str, ...],
+    pair_id: str,
+) -> MechanisticBridge | None:
+    """Read what connects two diseases out of the evidence that established it.
+
+    This is the correction that stops the system testing the wrong thing. A pair
+    retrieved on a broad process annotation can be supported by literature
+    describing a far narrower axis; building the experiment from the annotation
+    would then measure a process both diseases touch while missing the step
+    where they actually meet, and a null result would be uninterpretable.
+
+    Only evidence that establishes a direct link contributes, and a term must
+    appear in more than one such item unless only one exists. Terms are ranked
+    by specificity, since "protein quality control" is a more useful bridge than
+    "ubiquitination" when both are present.
+
+    Returns None when no direct evidence exists -- there is then no bridge, and
+    a caller must not invent one from the annotation.
+    """
+    direct = [item for item in evidence if item.establishes_direct_link]
+    if not direct:
+        return None
+
+    corpus = [f"{item.statement} {item.text}" for item in direct]
+    lowered = [text.casefold() for text in corpus]
+    threshold = 2 if len(direct) > 1 else 1
+
+    terms: list[str] = []
+    for term in MECHANISM_VOCABULARY:
+        hits = sum(1 for text in lowered if term.casefold() in text)
+        if hits >= threshold:
+            terms.append(term)
+
+    factors: Counter[str] = Counter()
+    for text in corpus:
+        for token in set(_FACTOR.findall(text)):
+            if token not in _FACTOR_STOPWORDS:
+                factors[token] += 1
+    named = [token for token, count in factors.most_common(6) if count >= threshold]
+
+    if not terms and not named:
+        return None
+
+    retrieval = {item.casefold() for item in retrieval_features}
+    specific = [term for term in terms if term.casefold() not in retrieval]
+    # Keep a broad term only if nothing more specific survived, so the bridge
+    # cannot silently reduce to the retrieval feature.
+    chosen = specific[:4] or terms[:2]
+    statement_terms = ", ".join(chosen) or "a shared molecular axis"
+    factor_note = (
+        f" Regulators named across the evidence: {', '.join(named[:4])}."
+        if named
+        else ""
+    )
+    return MechanisticBridge(
+        bridge_id=f"bridge:{pair_id}",
+        terms=tuple(chosen) + tuple(named[:4]),
+        derived_from_evidence_ids=tuple(item.evidence_id for item in direct),
+        statement=(
+            f"Evidence establishing a direct link describes {statement_terms}."
+            f"{factor_note} This is what the literature supports, and it is not "
+            "the same as the annotation that retrieved the pair."
+        ),
+        derivation_method="mechanism-vocabulary-over-direct-evidence-v1",
+        distinct_from_retrieval_features=retrieval_features,
+    )
 
 
 def generate_alternatives(
@@ -518,7 +659,22 @@ def run_pipeline(
         + (", ".join(applying) or "none"),
     )
 
-    # 11. Synthesis.
+    # 11. Bridge: what the evidence says connects them, before synthesis so the
+    # rationale can cite it. Derived from evidence text, never from the feature
+    # that retrieved the pair.
+    bridge = derive_mechanistic_bridge(
+        evidence,
+        tuple(item.source_feature for item in retrieval_reasons),
+        pair_id,
+    )
+    trace.mechanistic_bridge = bridge
+    trace.record(
+        "MechanisticBridgeDerivation",
+        bridge.statement if bridge else "no direct evidence, so no bridge derived",
+        assessable=bridge is not None,
+    )
+
+    # 12. Synthesis.
     final_class, rationale, actionable = classify(comparison, identity_relation, evidence)
     trace.final_relationship_class = final_class
     trace.final_rationale = rationale
@@ -537,6 +693,7 @@ def run_pipeline(
         mechanistic_statement=rationale,
         retrieval_reason_ids=tuple(i.retrieval_reason_id for i in retrieval_reasons),
         retrieval_validity=trace.retrieval_validity,
+        mechanistic_bridge=bridge,
         shared_features=tuple(
             label for axis in comparison.axes for label in axis.shared_labels[:3]
         ),

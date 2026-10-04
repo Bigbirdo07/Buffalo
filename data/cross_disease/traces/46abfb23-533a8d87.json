@@ -59,6 +59,11 @@
       "assessable": true
     },
     {
+      "stage": "MechanisticBridgeDerivation",
+      "finding": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+      "assessable": true
+    },
+    {
       "stage": "MechanisticSynthesis",
       "finding": "SHARED_DOWNSTREAM_MECHANISM (retrieval INCORRECT_BUT_CONNECTION_REAL): 2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
       "assessable": true
@@ -132,6 +137,27 @@
       "description": "One disease is far better annotated than the other, so apparent similarity or difference may reflect curation rather than biology."
     }
   ],
+  "mechanistic_bridge": {
+    "bridge_id": "bridge:46abfb23-533a8d87",
+    "terms": [
+      "chaperone",
+      "co-chaperone",
+      "ubiquitin ligase",
+      "CHIP"
+    ],
+    "statement": "Evidence establishing a direct link describes chaperone, co-chaperone, ubiquitin ligase. Regulators named across the evidence: CHIP. This is what the literature supports, and it is not the same as the annotation that retrieved the pair.",
+    "derived_from_evidence_ids": [
+      "PMID:21652633",
+      "PMID:19892702"
+    ],
+    "derivation_method": "mechanism-vocabulary-over-direct-evidence-v1",
+    "distinct_from_retrieval_features": [
+      "protein ubiquitination",
+      "Purkinje cell",
+      "Myoclonus"
+    ],
+    "is_narrower_than_retrieval": true
+  },
   "final_relationship_class": "SHARED_DOWNSTREAM_MECHANISM",
   "final_rationale": "2 independent primary findings establish a direct molecular link between the two diseases' proteins or processes, independent of the annotation that retrieved the pair.",
   "actionable": true,
@@ -142,7 +168,7 @@
     "snapshot": "be480c7a8384dd10dee8fad15512c6c08b757ab3033baf4b4df5ae2502203e9f"
   },
   "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
-  "software_commit": "d8b28500de29fd39746785eed7581004de3d3972",
+  "software_commit": "f2561322748cf301cd8ccb9e417aacc0dbdc96cf",
   "pipeline_version": "cross-disease-pipeline-v1",
   "review_status": "AWAITING_EXPERT_SIGNOFF"
 }

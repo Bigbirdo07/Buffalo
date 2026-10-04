@@ -240,6 +240,7 @@ def assess_record(
         establishes_direct_link=direct,
         is_primary_finding=primary,
         statement=record.title[:300],
+        text=text[:4000],
         caveats=tuple(caveats),
     )
 
@@ -372,6 +373,25 @@ def main() -> int:
                 {"code": a.code, "applies": a.applies, "description": a.description}
                 for a in trace.alternative_explanations
             ],
+            "mechanistic_bridge": (
+                {
+                    "bridge_id": trace.mechanistic_bridge.bridge_id,
+                    "terms": list(trace.mechanistic_bridge.terms),
+                    "statement": trace.mechanistic_bridge.statement,
+                    "derived_from_evidence_ids": list(
+                        trace.mechanistic_bridge.derived_from_evidence_ids
+                    ),
+                    "derivation_method": trace.mechanistic_bridge.derivation_method,
+                    "distinct_from_retrieval_features": list(
+                        trace.mechanistic_bridge.distinct_from_retrieval_features
+                    ),
+                    "is_narrower_than_retrieval": (
+                        trace.mechanistic_bridge.is_narrower_than_retrieval
+                    ),
+                }
+                if trace.mechanistic_bridge
+                else None
+            ),
             "final_relationship_class": trace.final_relationship_class.value,
             "final_rationale": trace.final_rationale,
             "actionable": trace.actionable,

@@ -62,7 +62,8 @@ class SynthesisInputs:
     comparison: DiseaseComparison
     disease_a_name: str
     disease_b_name: str
-    # The biology both diseases are reported to touch, in the source's own words.
+    # DEPRECATED as a question source: this is the retrieval feature, kept only
+    # for context. The gap is built from the bridge below.
     shared_process_label: str
     # Readout that could be applied identically to both, from required capabilities.
     shared_readout: str
@@ -97,11 +98,20 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
         )
     if not relationship.evidence_ids:
         raise ValueError("a cross-disease gap must rest on evidence, not annotation")
+    bridge = relationship.mechanistic_bridge
+    if bridge is None:
+        raise ValueError(
+            "a cross-disease gap must be built from the mechanistic bridge the "
+            "evidence supports. Without one there is only the retrieval "
+            "annotation, and testing that measures the wrong thing."
+        )
+    # The node to test: what the literature describes, not what surfaced the pair.
+    tested_node = bridge.axis_label
 
     question = (
-        f"Do {inputs.disease_a_name} and {inputs.disease_b_name} produce "
-        f"equivalent functional disruption of {inputs.shared_process_label} in "
-        "disease-relevant models, measured with a single shared readout?"
+        f"Do {inputs.disease_a_name} and {inputs.disease_b_name} converge on a "
+        f"shared functional defect in {tested_node} in disease-relevant models, "
+        "measured with a single shared readout under matched conditions?"
     )
 
     differences = ", ".join(relationship.differing_features[:4]) or "none recorded"
@@ -112,7 +122,12 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
     )
 
     return KnowledgeGap(
-        gap_id=_identity("cross-disease-gap", relationship.relationship_id),
+        # Identity includes the bridge: a different mechanistic explanation is
+        # a different question, and must not silently reuse the old gap id.
+        gap_id=_identity(
+            "cross-disease-gap", relationship.relationship_id, bridge.bridge_id,
+            "|".join(bridge.terms),
+        ),
         question=question,
         # The missing thing is a comparative measurement, so the controlled
         # vocabulary's "missing_assay" is the honest fit. Inventing a new
@@ -122,7 +137,10 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
         related_edges=(),
         scope=(
             f"{inputs.disease_a_name} and {inputs.disease_b_name}, restricted to "
-            f"{inputs.shared_process_label}. The question is equivalence of "
+            f"{tested_node}. The pair was retrieved on "
+            f"'{inputs.shared_process_label}', which is broader and is NOT what "
+            "is being tested: the question follows the evidence, not the "
+            "annotation. The question is equivalence of "
             "functional consequence, not whether either disease involves the "
             "process, which the cited evidence already supports."
         ),
@@ -138,8 +156,10 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
         current_evidence_summary=(
             f"{len(inputs.supporting_evidence)} corroborating primary findings "
             f"({', '.join(inputs.supporting_evidence)}) establish a direct "
-            "molecular link. They do not establish that the downstream functional "
-            "consequence is the same in both diseases."
+            f"molecular link. {bridge.statement} They do not establish that the "
+            "downstream functional consequence is the same in both diseases, and "
+            "the supporting reports are limited in number and experimental "
+            "context."
         ),
         contradictory_evidence_summary=contrary,
         search_coverage=inputs.coverage,
@@ -151,7 +171,7 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
         ),
         required_context=(
             inputs.model_system,
-            f"a readout capturing {inputs.shared_process_label}",
+            f"a readout capturing {tested_node}",
             "matched isogenic or otherwise background-comparable controls",
             "both diseases assayed in the same experiment",
         ),
@@ -205,6 +225,18 @@ def build_cross_disease_gap(inputs: SynthesisInputs) -> KnowledgeGap:
     )
 
 
+def tested_node_for(inputs: SynthesisInputs) -> str:
+    """The biology the experiment measures: the bridge, never the annotation."""
+    bridge = inputs.relationship.mechanistic_bridge
+    if bridge is None:
+        raise ValueError(
+            "no mechanistic bridge, so there is nothing evidence-supported to "
+            "test. Testing the retrieval annotation instead would measure a "
+            "process both diseases touch while missing where they meet."
+        )
+    return bridge.axis_label
+
+
 def build_cross_disease_experiment(
     gap: KnowledgeGap, inputs: SynthesisInputs
 ) -> ExperimentProposal:
@@ -214,15 +246,16 @@ def build_cross_disease_experiment(
     diseases' models, a shared control, one readout, one run. Adding arms would
     make it more informative and less likely to be done.
     """
+    tested_node = tested_node_for(inputs)
     supported = (
-        f"Both disease models show disruption of {inputs.shared_process_label} "
+        f"Both disease models show disruption of {tested_node} "
         "in the same direction, of comparable magnitude, relative to the shared "
         "control. This supports functional equivalence at the measured step and "
         "makes tools developed for one disease worth testing in the other."
     )
     refuted = (
         f"The two disease models differ in the direction of the effect, or one "
-        f"shows no detectable disruption of {inputs.shared_process_label} while "
+        f"shows no detectable disruption of {tested_node} while "
         "the other does, or the magnitudes differ beyond the range seen between "
         "replicate clones of a single genotype. Any of these weakens the "
         "shared-mechanism hypothesis: the diseases would touch the same process "
@@ -236,13 +269,15 @@ def build_cross_disease_experiment(
         scientific_question=gap.question,
         hypothesis=(
             f"{inputs.disease_a_name} and {inputs.disease_b_name} disrupt "
-            f"{inputs.shared_process_label} equivalently, so the same functional "
+            f"{tested_node} equivalently, so the same functional "
             "readout reports the same defect in both."
         ),
         competing_hypothesis=(
-            "The two diseases engage the process through different branches, so "
-            "the molecular link is real while the functional consequences differ "
-            "in direction, magnitude or timing."
+            "The diseases share the molecular interaction the evidence "
+            "describes, and a broad process annotation, while diverging "
+            "functionally downstream. Under this hypothesis the link is real but "
+            "the mechanisms are not equivalent, and tools should not be "
+            "transferred between the diseases on the strength of it."
         ),
         model_system=inputs.model_system,
         sample_type=(
@@ -254,9 +289,10 @@ def build_cross_disease_experiment(
             "Neither arm represented solely by a variant of uncertain significance",
         ),
         perturbation=(
-            "None beyond disease genotype. The comparison is between disease "
-            "states at baseline, so that any difference is attributable to "
-            "genotype rather than to a treatment interacting with it."
+            "A standardised cellular stress applied identically to every arm. "
+            "The bridge describes stress-responsive biology, so a baseline-only "
+            "comparison could miss a defect that appears only when the pathway "
+            "is challenged, and a null result would then be uninterpretable."
         ),
         comparator=(
             "A single shared control run in the same experiment as both disease "
@@ -269,12 +305,24 @@ def build_cross_disease_experiment(
             "range the between-disease comparison must exceed",
             "A positive control that perturbs the readout by a known route",
         ),
-        readouts=(inputs.shared_readout,),
+        readouts=(
+            # Primary: the functional behaviour of the bridged node itself.
+            f"Functional response of {tested_node} to the standardised stress, "
+            "measured identically in every arm",
+            # Supporting: molecular profiling. Retained because it is useful,
+            # demoted because it defines a broad process rather than the node
+            # the evidence actually supports.
+            f"{inputs.shared_readout} as a supporting molecular profile, "
+            "interpreted only alongside the primary functional readout",
+        ),
         primary_endpoint=(
-            f"Direction and magnitude of change in {inputs.shared_readout} in "
+            f"Direction and magnitude of the {tested_node} response to stress in "
             "each disease arm relative to the shared control."
         ),
-        secondary_endpoints=(),
+        secondary_endpoints=(
+            "Concordance between the functional response and the supporting "
+            "molecular profile within each arm.",
+        ),
         expected_result_if_supported=supported,
         expected_result_if_refuted=refuted,
         confounders=(
@@ -305,9 +353,11 @@ def build_cross_disease_experiment(
             f"Assay reagents for {inputs.shared_readout}",
         ),
         required_capabilities=(
-            f"{inputs.shared_readout} applied identically to both disease arms",
+            f"Functional assay reporting {tested_node} under standardised stress",
+            "Cellular stress / heat-shock challenge applied identically across arms",
             "iPSC maintenance and differentiation to the disease-relevant cell type",
             "Clone-aware statistical analysis establishing the within-genotype range",
+            f"{inputs.shared_readout} for supporting molecular profiling",
         ),
         safety_or_ethics_flags=(),
         unjustified_interpretations=(

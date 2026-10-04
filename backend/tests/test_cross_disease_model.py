@@ -6,6 +6,7 @@ that no disease, gene or pathway name appears in the application code.
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -331,13 +332,25 @@ class TestCrossDiseaseSynthesis:
 
     @staticmethod
     def _inputs(**overrides):
-        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.domain.cross_disease import (
+            MechanisticBridge,
+            RelationshipClass,
+            ValidatedRelationship,
+        )
         from atlas.services.cross_disease_synthesis import SynthesisInputs
 
         relationship = overrides.pop("relationship", None) or ValidatedRelationship(
             relationship_id="r:test", disease_a="a", disease_b="b",
             relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
             mechanistic_statement="linked", evidence_ids=("PMID:1", "PMID:2"),
+            # A gap now requires the evidence-derived bridge, so the fixture
+            # supplies one rather than the test being relaxed.
+            mechanistic_bridge=MechanisticBridge(
+                bridge_id="bridge:fixture", terms=("a specific axis",),
+                derived_from_evidence_ids=("PMID:1", "PMID:2"),
+                statement="derived from evidence", derivation_method="fixture",
+                distinct_from_retrieval_features=("a shared process",),
+            ),
             source_version="v1",
         )
         from datetime import UTC, datetime
@@ -499,3 +512,130 @@ class TestLayeredIdentity:
             name_core_match=True, same_mondo=False,
         )
         assert scoped_identities({"disease_name": "A"}, {"disease_name": "B"}, signals) == ()
+
+
+class TestGapDerivesFromBridgeNotRetrieval:
+    """The scientific-integrity rule this phase exists to enforce.
+
+    A knowledge gap must be built from the mechanistic explanation the evidence
+    supports, never from the annotation that happened to retrieve the pair.
+    Testing the retrieval feature measures a process both diseases touch while
+    missing the step where they actually meet, and a null result would then be
+    uninterpretable. The assertions are structural: no biology is named.
+    """
+
+    FLAGSHIP = ROOT / "data/flagship/flagship_journey.json"
+
+    @staticmethod
+    def _bridge(terms, evidence=("PMID:1", "PMID:2"), retrieval=("broad term",)):
+        from atlas.domain.cross_disease import MechanisticBridge
+
+        return MechanisticBridge(
+            bridge_id="bridge:test", terms=tuple(terms),
+            derived_from_evidence_ids=tuple(evidence),
+            statement="derived", derivation_method="test",
+            distinct_from_retrieval_features=tuple(retrieval),
+        )
+
+    def test_bridge_cannot_exist_without_evidence(self) -> None:
+        # A bridge with no evidence is a retrieval reason wearing another name.
+        with pytest.raises(ValueError, match="derived from evidence"):
+            self._bridge(("some axis",), evidence=())
+
+    def test_gap_refuses_to_build_without_a_bridge(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import build_cross_disease_gap
+
+        relationship = ValidatedRelationship(
+            relationship_id="r:nobridge", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+            mechanistic_statement="linked", evidence_ids=("PMID:1",),
+            source_version="v1",
+        )
+        inputs = TestCrossDiseaseSynthesis._inputs(relationship=relationship)
+        with pytest.raises(ValueError, match="mechanistic bridge"):
+            build_cross_disease_gap(inputs)
+
+    def test_gap_question_uses_the_bridge_not_the_retrieval_feature(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import build_cross_disease_gap
+
+        relationship = ValidatedRelationship(
+            relationship_id="r:bridged", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+            mechanistic_statement="linked", evidence_ids=("PMID:1", "PMID:2"),
+            mechanistic_bridge=self._bridge(("narrow specific axis",)),
+            source_version="v1",
+        )
+        inputs = TestCrossDiseaseSynthesis._inputs(
+            relationship=relationship, shared_process_label="broad term"
+        )
+        gap = build_cross_disease_gap(inputs)
+        assert "narrow specific axis" in gap.question
+        # The retrieval feature may be mentioned as context, but the question
+        # must not be asked about it.
+        assert "broad term" not in gap.question
+
+    def test_experiment_measures_the_bridge(self) -> None:
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import (
+            build_cross_disease_experiment,
+            build_cross_disease_gap,
+        )
+
+        relationship = ValidatedRelationship(
+            relationship_id="r:measure", disease_a="a", disease_b="b",
+            relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+            mechanistic_statement="linked", evidence_ids=("PMID:1", "PMID:2"),
+            mechanistic_bridge=self._bridge(("narrow specific axis",)),
+            source_version="v1",
+        )
+        inputs = TestCrossDiseaseSynthesis._inputs(
+            relationship=relationship, shared_process_label="broad term"
+        )
+        experiment = build_cross_disease_experiment(
+            build_cross_disease_gap(inputs), inputs
+        )
+        assert "narrow specific axis" in experiment.readouts[0]
+        assert "narrow specific axis" in experiment.primary_endpoint
+
+    def test_a_different_bridge_is_a_different_gap(self) -> None:
+        # Reusing a gap id across different mechanistic explanations would hide
+        # that the question changed.
+        from atlas.domain.cross_disease import RelationshipClass, ValidatedRelationship
+        from atlas.services.cross_disease_synthesis import build_cross_disease_gap
+
+        def gap_for(terms):
+            relationship = ValidatedRelationship(
+                relationship_id="r:same", disease_a="a", disease_b="b",
+                relationship_class=RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+                mechanistic_statement="linked", evidence_ids=("PMID:1", "PMID:2"),
+                mechanistic_bridge=self._bridge(terms), source_version="v1",
+            )
+            return build_cross_disease_gap(
+                TestCrossDiseaseSynthesis._inputs(relationship=relationship)
+            )
+
+        assert gap_for(("axis one",)).gap_id != gap_for(("axis two",)).gap_id
+
+    @pytest.mark.skipif(not FLAGSHIP.exists(), reason="flagship not generated")
+    def test_flagship_gap_has_not_regressed_to_the_retrieval_feature(self) -> None:
+        # Regression guard on the real artifact: the published flagship question
+        # must be about the validated bridge, not the annotation that found it.
+        payload = json.loads(self.FLAGSHIP.read_text())
+        retrieval = payload["retrieval_level_feature"]
+        bridge = payload["validated_mechanistic_bridge"]
+        question = payload["knowledge_gap"]["question"]
+
+        assert bridge is not None, "flagship lost its mechanistic bridge"
+        assert bridge["derived_from_evidence_ids"], "bridge not evidence-derived"
+        assert bridge["is_narrower_than_retrieval"], (
+            "bridge collapsed to the retrieval feature"
+        )
+        assert retrieval.casefold() not in question.casefold(), (
+            f"flagship gap regressed to asking about the retrieval feature "
+            f"{retrieval!r}"
+        )
+        assert any(
+            term.casefold() in question.casefold() for term in bridge["terms"]
+        ), "flagship gap does not reference the validated bridge"

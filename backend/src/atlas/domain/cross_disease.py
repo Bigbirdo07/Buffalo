@@ -159,6 +159,73 @@ class ReviewStatus(StrEnum):
     REJECTED = "REJECTED"
 
 
+class MechanisticBridge(BaseModel):
+    """What the EVIDENCE says connects two diseases, in the evidence's own terms.
+
+    The third level, and the one that was missing. A pair has:
+
+      * a retrieval reason -- the annotation that surfaced it
+      * a mechanistic bridge -- what the retrieved literature actually describes
+      * an experimental hypothesis -- what a test would resolve
+
+    These are routinely different, and conflating the first two is the specific
+    error this object prevents. A pair found through a broad process annotation
+    whose literature describes a narrow molecular axis must be *tested* at the
+    narrow axis: testing the broad annotation measures the wrong thing and can
+    return a null result for a relationship that is real.
+
+    Terms are extracted from the supporting evidence rather than from the
+    annotation, so the bridge cannot inherit the retrieval feature's breadth.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    bridge_id: str
+    # Mechanistic vocabulary shared across the supporting evidence.
+    terms: tuple[str, ...]
+    # The evidence the bridge was read from. Never empty: a bridge with no
+    # evidence is a retrieval reason wearing a different name.
+    derived_from_evidence_ids: tuple[str, ...]
+    statement: str
+    derivation_method: str
+    # Retrieval features this bridge is distinct from, recorded so the
+    # separation is visible rather than asserted.
+    distinct_from_retrieval_features: tuple[str, ...] = ()
+
+    def model_post_init(self, _context: object) -> None:
+        if not self.derived_from_evidence_ids:
+            raise ValueError(
+                "a mechanistic bridge must be derived from evidence; without it "
+                "this is a retrieval reason under another name"
+            )
+
+    @property
+    def axis_label(self) -> str:
+        """The bridge as a readable biological phrase rather than a term list.
+
+        Process terms describe the axis; uppercase tokens are the regulators
+        named in the evidence and are shown in parentheses, because "chaperone
+        and co-chaperone biology (CHIP)" is a claim a reader can check while a
+        comma-separated list is not.
+        """
+        processes = [item for item in self.terms if not item.isupper()]
+        factors = [item for item in self.terms if item.isupper()]
+        if not processes:
+            return ", ".join(factors) or "an unnamed molecular axis"
+        if len(processes) == 1:
+            axis = processes[0]
+        else:
+            axis = f"{', '.join(processes[:-1])} and {processes[-1]}"
+        axis = f"{axis} biology"
+        return f"{axis} ({', '.join(factors[:3])})" if factors else axis
+
+    @property
+    def is_narrower_than_retrieval(self) -> bool:
+        """True when the bridge says something the retrieval feature did not."""
+        retrieval = {item.casefold() for item in self.distinct_from_retrieval_features}
+        return any(term.casefold() not in retrieval for term in self.terms)
+
+
 class RetrievalReason(BaseModel):
     """Why an algorithm surfaced a candidate pair.
 
@@ -311,6 +378,10 @@ class ValidatedRelationship(BaseModel):
     # be audited against the outcome.
     retrieval_reason_ids: tuple[str, ...] = ()
     retrieval_validity: RetrievalValidity = RetrievalValidity.UNRESOLVED
+    # What the evidence says connects these diseases, as distinct from what
+    # surfaced them. Downstream questions must be built from this, not from the
+    # retrieval feature.
+    mechanistic_bridge: MechanisticBridge | None = None
     shared_features: tuple[str, ...] = ()
     differing_features: tuple[str, ...] = ()
     evidence_ids: tuple[str, ...] = ()
