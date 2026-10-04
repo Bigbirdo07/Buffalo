@@ -246,19 +246,11 @@ class TestNoSpecialCaseLogic:
     prefixes, because a naive prefix check misses continuation lines.
     """
 
-    # Modules that still carry disease-specific logic, with the reason. These
-    # are Phase 4 action-engine code written for a single worked example and not
-    # yet generalised. Listing them makes the debt visible and bounded: a new
-    # module cannot quietly join this list without a deliberate edit.
-    KNOWN_DISEASE_SPECIFIC = {
-        "capability_discovery.py": (
-            "Phase 4 search queries written for one worked disease; generalising "
-            "them is the cross-disease action-engine task."
-        ),
-        "requirement_extraction.py": (
-            "One capability label carries a worked-example gene name."
-        ),
-    }
+    # Empty, and it must stay that way. Both Phase 4 action modules carried
+    # single-gene search literals until the queries were rebuilt from structured
+    # context. An entry here is a licence to be disease-specific, so adding one
+    # should take a deliberate edit and a reason.
+    KNOWN_DISEASE_SPECIFIC: dict[str, str] = {}
 
     BANNED = re.compile(
         r"\b(SCAR16|STUB1|CHIP|Lafora|malin|NHLRC1|Rabies|PEX\d+|TP53|"
@@ -313,6 +305,10 @@ class TestNoSpecialCaseLogic:
                 if self.BANNED.search(code):
                     offenders.append(f"{path.name}:{number}: {code[:80]}")
         assert not offenders, "disease-specific logic found:\n" + "\n".join(offenders)
+
+    def test_allowlist_is_empty(self) -> None:
+        # The generalisation goal: no module needs an exemption.
+        assert self.KNOWN_DISEASE_SPECIFIC == {}
 
     def test_known_disease_specific_modules_are_not_growing(self) -> None:
         # Guards the allowlist: a module that no longer needs an exemption

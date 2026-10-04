@@ -20,7 +20,7 @@ def _stable_id(prefix: str, experiment_id: str, value: str) -> str:
 
 CAPABILITY_RULES: tuple[tuple[tuple[str, ...], CapabilityCategory, str], ...] = (
     (("ipsc", "maintenance"), CapabilityCategory.CELL_CULTURE, "iPSC maintenance"),
-    (("crispr",), CapabilityCategory.CRISPR_EDITING, "STUB1 CRISPR editing"),
+    (("crispr",), CapabilityCategory.CRISPR_EDITING, "targeted CRISPR gene editing"),
     (("knock-in",), CapabilityCategory.ISOGENIC_LINE_GENERATION, "isogenic line generation"),
     (
         ("differentiation", "neuronal"),

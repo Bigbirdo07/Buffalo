@@ -1,21 +1,21 @@
 {
   "artifact_sha256": {
-    "capability_claims.json": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3",
+    "capability_claims.json": "b57504c248cea4ce15433ca5f6c298855e8f9bab7f93d793c7188b13619dba62",
     "clinical_studies.json": "be7194261c13e834e028afaddc34f5b43a0537a4e80f481274b08c10f6dcfe3e",
-    "collaboration_opportunity.json": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752",
-    "discovery_queries.json": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d",
+    "collaboration_opportunity.json": "0faa96ee6ceadd4fcba9d0907537387ca90730d70f0c12cfaa986f8151674e26",
+    "discovery_queries.json": "b0c1dc1ed5b27c47615f69eb7498757b919bf6c2f450e174f3b68b63fcd128c0",
     "entity_resolution.json": "04029b113d8144dfd0636519c7b9b41e77c7579e1944833205ae39d45e9a5aea",
     "grants.json": "e40476a8a80fbf9704f91229458df7a43d2de7cb184e73fd98871e453a120e30",
-    "laboratories.json": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0",
-    "lineage.json": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1",
+    "laboratories.json": "e9480ad93e703a827dd91c5605bc6ee2af717d372d1006fdc45eae7d67df99a5",
+    "lineage.json": "e40ce0626eff599d0540f02b8aa07728d33293a69b36d2eb6ebed920ec6a4853",
     "organizations.json": "c195f4566b9874bf697648564c27fee06eb6f1bec4ddd09699b9981242ee32b7",
     "patient_explanation.json": "ff49e98969110ab20019efb2053e50bcf5e0c3c53f284f5f484849ff8961a9e9",
     "required_assets.json": "54f2395bf7e83eaccc7f23d175c839c0c284fc105169f96842b1bfce0c44895d",
-    "required_capabilities.json": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9",
+    "required_capabilities.json": "0c3f162e9f36140048a9d4e3e3f7798e853a595e95297d8a3177583769e5bbb5",
     "research_assets.json": "84eed6752783299f8b0eb3bc34bff50592a8111235db40e4a67998f755c38426",
     "researchers.json": "8589943e71392d58cda5ad9c178c74aef1eb1e67e45991cedda6def8dbed3ba0",
-    "scientist_explanation.json": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16",
-    "search_coverage.json": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d"
+    "scientist_explanation.json": "364f59d43fd88825d8018506659d962dfc64ce71266d31978dd0d1287b9e1b9e",
+    "search_coverage.json": "078774bd06ed26e7a2ae96afa6031aeef88c2c6d2237822f9608e8949cc36045"
   },
   "as_of": "2026-10-04",
   "as_of_basis": "newest cached snapshot retrieval time; no execution clock is used",
@@ -244,19 +244,19 @@
     "backend/src/atlas/domain/discovery.py": "855b1fdfe6e15c454ff1c59835cb126b66fdb73c2e188a306315b1943a1d4028",
     "backend/src/atlas/domain/reviews.py": "ee92282bcf0cb9b5906b879a3fb7aa855466bdceab52b6a70dc421da166c8692",
     "backend/src/atlas/services/action_discovery.py": "a2a76643ca80a1bc4414303e93e8d4430372c2c38d5cb4346b1251eb554a0718",
-    "backend/src/atlas/services/requirement_extraction.py": "a766b592923a8afd44ead6ccb8543e195da83a7c4e50e0cebc49b1e95675bc8b",
-    "scripts/build_phase4_action.py": "5f4e77ec871dceba4483054bc74aa07add15e92db01cbc94a0fbf6c282a001de",
+    "backend/src/atlas/services/requirement_extraction.py": "5efe54db18f5138311f1ddb637d6740dffaf9abc5c46471d2e8dec1c9eab1ed2",
+    "scripts/build_phase4_action.py": "1aac52afd17103aca87cd82e8ce05cab0ad96c664ad2202e89ee150c30b52a79",
     "scripts/build_phase4_assurance.py": "2cd00bd01bca87dcf199fba39ce1cc7d6d5ed6f92f358958df36d934d8a6f606"
   },
-  "missing_capability_count": 2,
+  "missing_capability_count": 6,
   "offline_rebuild": {
     "canonicalization": "none; the bundle is byte-identical across runs",
     "network_required": false,
     "results": {
       "capability_claims.json": {
         "byte_identical": true,
-        "committed_sha256": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3",
-        "rebuilt_sha256": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3"
+        "committed_sha256": "b57504c248cea4ce15433ca5f6c298855e8f9bab7f93d793c7188b13619dba62",
+        "rebuilt_sha256": "b57504c248cea4ce15433ca5f6c298855e8f9bab7f93d793c7188b13619dba62"
       },
       "clinical_studies.json": {
         "byte_identical": true,
@@ -265,13 +265,13 @@
       },
       "collaboration_opportunity.json": {
         "byte_identical": true,
-        "committed_sha256": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752",
-        "rebuilt_sha256": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752"
+        "committed_sha256": "0faa96ee6ceadd4fcba9d0907537387ca90730d70f0c12cfaa986f8151674e26",
+        "rebuilt_sha256": "0faa96ee6ceadd4fcba9d0907537387ca90730d70f0c12cfaa986f8151674e26"
       },
       "discovery_queries.json": {
         "byte_identical": true,
-        "committed_sha256": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d",
-        "rebuilt_sha256": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d"
+        "committed_sha256": "b0c1dc1ed5b27c47615f69eb7498757b919bf6c2f450e174f3b68b63fcd128c0",
+        "rebuilt_sha256": "b0c1dc1ed5b27c47615f69eb7498757b919bf6c2f450e174f3b68b63fcd128c0"
       },
       "entity_resolution.json": {
         "byte_identical": true,
@@ -285,13 +285,13 @@
       },
       "laboratories.json": {
         "byte_identical": true,
-        "committed_sha256": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0",
-        "rebuilt_sha256": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0"
+        "committed_sha256": "e9480ad93e703a827dd91c5605bc6ee2af717d372d1006fdc45eae7d67df99a5",
+        "rebuilt_sha256": "e9480ad93e703a827dd91c5605bc6ee2af717d372d1006fdc45eae7d67df99a5"
       },
       "lineage.json": {
         "byte_identical": true,
-        "committed_sha256": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1",
-        "rebuilt_sha256": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1"
+        "committed_sha256": "e40ce0626eff599d0540f02b8aa07728d33293a69b36d2eb6ebed920ec6a4853",
+        "rebuilt_sha256": "e40ce0626eff599d0540f02b8aa07728d33293a69b36d2eb6ebed920ec6a4853"
       },
       "organizations.json": {
         "byte_identical": true,
@@ -310,8 +310,8 @@
       },
       "required_capabilities.json": {
         "byte_identical": true,
-        "committed_sha256": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9",
-        "rebuilt_sha256": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9"
+        "committed_sha256": "0c3f162e9f36140048a9d4e3e3f7798e853a595e95297d8a3177583769e5bbb5",
+        "rebuilt_sha256": "0c3f162e9f36140048a9d4e3e3f7798e853a595e95297d8a3177583769e5bbb5"
       },
       "research_assets.json": {
         "byte_identical": true,
@@ -325,13 +325,13 @@
       },
       "scientist_explanation.json": {
         "byte_identical": true,
-        "committed_sha256": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16",
-        "rebuilt_sha256": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16"
+        "committed_sha256": "364f59d43fd88825d8018506659d962dfc64ce71266d31978dd0d1287b9e1b9e",
+        "rebuilt_sha256": "364f59d43fd88825d8018506659d962dfc64ce71266d31978dd0d1287b9e1b9e"
       },
       "search_coverage.json": {
         "byte_identical": true,
-        "committed_sha256": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d",
-        "rebuilt_sha256": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d"
+        "committed_sha256": "078774bd06ed26e7a2ae96afa6031aeef88c2c6d2237822f9608e8949cc36045",
+        "rebuilt_sha256": "078774bd06ed26e7a2ae96afa6031aeef88c2c6d2237822f9608e8949cc36045"
       }
     },
     "status": "PASS"
@@ -364,8 +364,8 @@
       "status": "CHECKED"
     },
     {
-      "error": null,
-      "result_count": 254,
+      "error": "crispr_editing/A_disease_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=STUB1%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; crispr_editing/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28isogenic%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+knockin%5Btiab%5D+OR+%22base+editing%22%5Btiab%5D+OR+%22prime+editing%22%5Btiab%5D%29%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; isogenic_line_generation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=isogenic%5Btiab%5D+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28%22point+mutation%22%5Btiab%5D+OR+%22single+nucleotide%22%5Btiab%5D+OR+variant%2A%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; ipsc_neuronal_differentiation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; proteomics/A_disease_anchored: no assay term available in context; proteomics/B_capability_anchored: no assay term available in context",
+      "result_count": 0,
       "source": "PubMed (targeted capability queries)",
       "status": "CHECKED"
     },

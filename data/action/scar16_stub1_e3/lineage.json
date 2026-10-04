@@ -34,126 +34,6 @@
         "PMID:31619515",
         "PMID:42567515"
       ]
-    },
-    {
-      "lab_id": "capability-candidate:crispr_editing:PMID-41911331",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:41911331"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:crispr_editing:PMID-41963441",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:41963441"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:crispr_editing:PMID-42069601",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:42069601"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:39460936"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:40929244"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:38014483"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:39460936"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:39913247"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:40205044"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:proteomics:PMID-41208143",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:41208143"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:proteomics:PMID-39920137",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:39920137"
-      ]
-    },
-    {
-      "lab_id": "capability-candidate:proteomics:PMID-40480969",
-      "personnel": [],
-      "provenance_snapshots": [
-        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
-      ],
-      "publications": [
-        "PMID:40480969"
-      ]
     }
   ],
   "chain": [
@@ -507,38 +387,27 @@
       "satisfied": false
     },
     {
-      "canonical_name": "STUB1 CRISPR editing",
-      "capability_claim_ids": [
-        "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
-        "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
-        "capability-claim:capability-candidate:crispr_editing:PMID-42069601"
-      ],
-      "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "canonical_name": "targeted CRISPR gene editing",
+      "capability_claim_ids": [],
+      "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
-      "satisfied": true
+      "satisfied": false
     },
     {
       "canonical_name": "isogenic line generation",
-      "capability_claim_ids": [
-        "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
-        "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
-        "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044"
-      ],
+      "capability_claim_ids": [],
       "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
-      "satisfied": true
+      "satisfied": false
     },
     {
       "canonical_name": "iPSC neuronal differentiation",
       "capability_claim_ids": [
-        "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
-        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
-        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
-        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+        "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation"
       ],
       "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[1]",
-      "satisfied": true
+      "satisfied": false
     },
     {
       "canonical_name": "quantitative ubiquitination analysis",
@@ -551,14 +420,10 @@
     },
     {
       "canonical_name": "diGly enrichment proteomics",
-      "capability_claim_ids": [
-        "capability-claim:capability-candidate:proteomics:PMID-41208143",
-        "capability-claim:capability-candidate:proteomics:PMID-39920137",
-        "capability-claim:capability-candidate:proteomics:PMID-40480969"
-      ],
+      "capability_claim_ids": [],
       "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[2]",
-      "satisfied": true
+      "satisfied": false
     },
     {
       "canonical_name": "protein thermal-stability assay",

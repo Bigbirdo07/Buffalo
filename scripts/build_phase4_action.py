@@ -21,9 +21,12 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from collections import Counter
+from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
+from typing import Any
 
 from atlas.adapters.clinical_trials.client import ClinicalTrialsClient
 from atlas.adapters.literature.client import (
@@ -58,6 +61,8 @@ from atlas.services.action_discovery import (
     synthesize_collaboration,
 )
 from atlas.services.capability_discovery import (
+    DiscoveryContext,
+    build_targeted_queries,
     candidate_signals,
     coverage_note,
     derive_candidates,
@@ -422,16 +427,74 @@ def search_trials(
     )
 
 
+def build_discovery_context(
+    plan: dict, experiment: ExperimentProposal, capabilities: Sequence[Any]
+) -> DiscoveryContext:
+    """Derive search anchors from the run's own plan and experiment.
+
+    Every term comes from structured data: the observation plan states the gene
+    and disease scope, the experiment states its model system and readout, and
+    the extracted capabilities state what must be done. Nothing is a literal, so
+    the same code runs for any disease. A slot with no available term stays
+    empty and its dependent query is reported as skipped, never silently
+    broadened into a different question.
+    """
+    target = plan.get("target", {}) if isinstance(plan, dict) else {}
+    gene = target.get("gene")
+    genes = (str(gene),) if isinstance(gene, str) and gene else ()
+    diseases = tuple(
+        str(item)
+        for item in (target.get("disease_scope") or ())
+        if isinstance(item, str)
+    )
+
+    assays: list[str] = []
+    for capability in capabilities:
+        label = getattr(capability, "label", None)
+        if isinstance(label, str) and label:
+            assays.append(label)
+    for attribute in ("primary_readout", "readout"):
+        value = getattr(experiment, attribute, None)
+        if isinstance(value, str) and value:
+            assays.append(value)
+
+    models: list[str] = []
+    for attribute in ("model_system", "model"):
+        value = getattr(experiment, attribute, None)
+        if isinstance(value, str) and value:
+            models.append(value)
+
+    cells = [
+        item
+        for item in (plan.get("readout_family") or () if isinstance(plan, dict) else ())
+        if isinstance(item, str)
+    ]
+
+    def top(values: list[str], limit: int) -> tuple[str, ...]:
+        counts = Counter(value.strip() for value in values if value and value.strip())
+        return tuple(name for name, _n in counts.most_common(limit))
+
+    return DiscoveryContext(
+        gene_symbols=genes,
+        cell_type_terms=top(cells, 4),
+        assay_terms=top(assays, 4),
+        model_system_terms=top(models, 2),
+        disease_terms=diseases,
+    )
+
+
 def build(input_dir: Path, output_dir: Path, *, offline: bool) -> None:
     experiment = ExperimentProposal.model_validate_json(
         (input_dir / "experiment_proposal.json").read_text()
     )
     capabilities, required_assets = extract_experiment_requirements(experiment)
+    plan = json.loads((input_dir / "observation_plan.json").read_text())
+    plan_target = plan.get("target", {})
     queries = generate_discovery_queries(
         capabilities,
-        gene="STUB1",
-        disease="SCAR16",
-        mechanism_terms=("CHIP ubiquitin ligase", "STUB1 proteostasis"),
+        gene=str(plan_target.get("gene") or ""),
+        disease=next(iter(plan_target.get("disease_scope") or ("",)), ""),
+        mechanism_terms=tuple(plan.get("readout_family") or ()),
     )
 
     refinement_snapshots = input_dir / "snapshots"
@@ -451,9 +514,13 @@ def build(input_dir: Path, output_dir: Path, *, offline: bool) -> None:
 
     # Targeted capability discovery. Only the curated subset in TARGETED_QUERIES runs;
     # the full generated set is recorded in the bundle but deliberately not executed.
+    discovery_context = build_discovery_context(plan, experiment, capabilities)
+    targeted_queries, skipped_queries = build_targeted_queries(discovery_context)
     search_results, search_failures = run_searches(
-        PubMedClient(SnapshotFetcher(action_snapshots, offline=offline))
+        PubMedClient(SnapshotFetcher(action_snapshots, offline=offline)),
+        targeted_queries,
     )
+    search_failures = (*search_failures, *skipped_queries)
     discovered_pmids = tuple(
         dict.fromkeys(pmid for result in search_results for pmid in result.pmids)
     )
@@ -596,9 +663,12 @@ def build(input_dir: Path, output_dir: Path, *, offline: bool) -> None:
     # --- candidates for the unmet capabilities -----------------------------
     known_pmids = frozenset(pmid for team in TEAMS for pmid in team[2])
     candidates = derive_candidates(
-        search_results, discovered_records, exclude_pmids=known_pmids
+        search_results,
+        discovered_records,
+        exclude_pmids=known_pmids,
+        anchor_label=discovery_context.anchor_label,
     )
-    candidate_signal_map = candidate_signals(candidates)
+    candidate_signal_map = candidate_signals(candidates, targeted_queries)
     for candidate in candidates:
         requirement = capability_by_category.get(candidate.capability_category)
         if requirement is None:

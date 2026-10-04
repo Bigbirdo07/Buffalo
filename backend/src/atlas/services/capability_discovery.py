@@ -43,6 +43,42 @@ class QueryTier(StrEnum):
 
 
 @dataclass(frozen=True, slots=True)
+class DiscoveryContext:
+    """The scientific context a search is anchored to.
+
+    Derived from the active disease, experiment and required capabilities, never
+    written as literals. This is what makes the action engine reusable across
+    diseases instead of working only for the one it was first written for.
+    """
+
+    gene_symbols: tuple[str, ...] = ()
+    cell_type_terms: tuple[str, ...] = ()
+    assay_terms: tuple[str, ...] = ()
+    model_system_terms: tuple[str, ...] = ()
+    disease_terms: tuple[str, ...] = ()
+
+    @property
+    def anchor_label(self) -> str:
+        """How a disease-anchored hit should be described, in this run's terms."""
+        anchors = [*self.gene_symbols, *self.disease_terms]
+        return " or ".join(anchors) if anchors else "the disease or gene of interest"
+
+
+@dataclass(frozen=True, slots=True)
+class QueryTemplate:
+    """A capability-generic query with slots filled from DiscoveryContext."""
+
+    capability_category: str
+    tier: QueryTier
+    template: str
+    rationale: str
+    model_context: str
+    model_system_match: bool = True
+    # Slot names that must be non-empty for this template to be usable.
+    requires: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
 class TargetedQuery:
     capability_category: str
     tier: QueryTier
@@ -80,92 +116,148 @@ class CapabilitySearchResult:
     snapshot_sha256: str
 
 
-# The two decisive unmet capabilities get both tiers; the rest get one probe each.
-TARGETED_QUERIES: tuple[TargetedQuery, ...] = (
-    TargetedQuery(
+# Query templates. These are capability-generic: each describes a laboratory
+# skill, and disease specifics arrive through DiscoveryContext at call time.
+#
+# Previously this was a tuple of literal queries naming one gene and one cell
+# type, which meant the action engine only worked for the disease it was written
+# for. A template whose required slots cannot be filled is skipped rather than
+# emitted with an empty term, because a query missing its anchor silently
+# becomes a different, much broader question.
+QUERY_TEMPLATES: tuple[QueryTemplate, ...] = (
+    QueryTemplate(
         capability_category="crispr_editing",
         tier=QueryTier.DISEASE_ANCHORED,
-        query=(
-            '"STUB1"[tiab] AND ("knock-in"[tiab] OR "knockin"[tiab] OR isogenic[tiab] '
+        template=(
+            '{gene} AND ("knock-in"[tiab] OR "knockin"[tiab] OR isogenic[tiab] '
             'OR CRISPR[tiab]) AND (iPSC[tiab] OR "induced pluripotent"[tiab])'
         ),
-        rationale="Has anyone edited the STUB1 locus in an iPSC background?",
+        rationale="Has anyone edited this locus in an iPSC background?",
         model_context="human iPSC",
+        requires=("gene",),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="crispr_editing",
         tier=QueryTier.CAPABILITY_ANCHORED,
-        query=(
-            "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR "
+        template=(
+            '(isogenic[tiab] AND ("knock-in"[tiab] OR knockin[tiab] OR '
             '"base editing"[tiab] OR "prime editing"[tiab])) AND (iPSC[tiab] OR '
-            '"induced pluripotent"[tiab]) AND (neuron*[tiab] OR cerebell*[tiab])'
+            '"induced pluripotent"[tiab]) AND {cell}'
         ),
         rationale=(
-            "Who performs allele-specific endogenous editing in iPSC-derived neuronal "
-            "systems, irrespective of gene?"
+            "Who performs allele-specific endogenous editing in the relevant "
+            "cellular system, irrespective of gene?"
         ),
-        model_context="isogenic iPSC-derived neurons",
+        model_context="isogenic iPSC-derived cells",
+        requires=("cell",),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="isogenic_line_generation",
         tier=QueryTier.CAPABILITY_ANCHORED,
-        query=(
+        template=(
             'isogenic[tiab] AND (iPSC[tiab] OR "induced pluripotent"[tiab]) AND '
             '("point mutation"[tiab] OR "single nucleotide"[tiab] OR variant*[tiab]) '
-            "AND (neuron*[tiab] OR cerebell*[tiab])"
+            "AND {cell}"
         ),
-        rationale="Who generates isogenic variant panels in neuronal iPSC models?",
+        rationale="Who generates isogenic variant panels in the relevant cell type?",
         model_context="isogenic iPSC variant panels",
+        requires=("cell",),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="proteomics",
         tier=QueryTier.DISEASE_ANCHORED,
-        query=(
-            '"STUB1"[tiab] AND ("diGly"[tiab] OR "ubiquitinome"[tiab] OR '
-            '"ubiquitylome"[tiab])'
-        ),
-        rationale="Has a STUB1 substrate ubiquitinome ever been measured?",
+        template='{gene} AND {assay}',
+        rationale="Has the relevant molecular readout ever been measured for this gene?",
         model_context="any",
         model_system_match=False,
+        requires=("gene", "assay"),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="proteomics",
         tier=QueryTier.CAPABILITY_ANCHORED,
-        query=(
-            '("diGly"[tiab] OR "ubiquitinome"[tiab] OR "ubiquitylome"[tiab] OR '
-            '"ubiquitin remnant"[tiab]) AND (neuron*[tiab] OR iPSC[tiab] OR '
-            '"induced pluripotent"[tiab] OR cerebell*[tiab])'
-        ),
+        template='{assay} AND ({cell} OR iPSC[tiab] OR "induced pluripotent"[tiab])',
         rationale=(
-            "Who runs diGly-enriched ubiquitinome proteomics on neuronal material, "
+            "Who runs this molecular readout on disease-relevant material, "
             "irrespective of gene?"
         ),
-        model_context="neuronal diGly ubiquitinome",
+        model_context="assay in relevant material",
+        requires=("assay", "cell"),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="ipsc_neuronal_differentiation",
         tier=QueryTier.CAPABILITY_ANCHORED,
-        query=(
-            '(iPSC[tiab] OR "induced pluripotent"[tiab]) AND (Purkinje[tiab] OR '
-            "cerebellar[tiab]) AND (differentiat*[tiab] OR organoid[tiab])"
+        template=(
+            '(iPSC[tiab] OR "induced pluripotent"[tiab]) AND {cell} AND '
+            "(differentiat*[tiab] OR organoid[tiab])"
         ),
-        rationale=(
-            "Who differentiates iPSC to cerebellar or Purkinje-like neurons, the "
-            "disease-relevant cell type?"
-        ),
-        model_context="cerebellar iPSC differentiation",
+        rationale="Who differentiates iPSC to the disease-relevant cell type?",
+        model_context="targeted iPSC differentiation",
+        requires=("cell",),
     ),
-    TargetedQuery(
+    QueryTemplate(
         capability_category="statistical_analysis",
         tier=QueryTier.CAPABILITY_ANCHORED,
-        query=(
+        template=(
             '(iPSC[tiab] OR "induced pluripotent"[tiab]) AND (clone*[tiab] AND '
             '("mixed model"[tiab] OR "random effect*"[tiab] OR "variance component*"[tiab]))'
         ),
         rationale="Who applies clone-aware statistical models to iPSC experiments?",
         model_context="clone-level random-effects analysis",
+        requires=(),
     ),
 )
+
+
+def _or_group(terms: Sequence[str], field: str = "tiab") -> str:
+    """Build a PubMed OR group, quoting multi-word terms."""
+    parts = []
+    for term in terms:
+        cleaned = term.strip()
+        if not cleaned:
+            continue
+        quoted = f'"{cleaned}"' if " " in cleaned or "-" in cleaned else cleaned
+        parts.append(f"{quoted}[{field}]")
+    if not parts:
+        return ""
+    return parts[0] if len(parts) == 1 else "(" + " OR ".join(parts) + ")"
+
+
+def build_targeted_queries(
+    context: DiscoveryContext,
+    templates: Sequence[QueryTemplate] = QUERY_TEMPLATES,
+) -> tuple[tuple[TargetedQuery, ...], tuple[str, ...]]:
+    """Fill templates from the active scientific context.
+
+    Returns the usable queries plus a note for every template that could not be
+    filled, so a missing search is visible as missing rather than absent.
+    """
+    slots = {
+        "gene": _or_group(context.gene_symbols),
+        "cell": _or_group(context.cell_type_terms),
+        "assay": _or_group(context.assay_terms),
+        "model": _or_group(context.model_system_terms),
+    }
+    built: list[TargetedQuery] = []
+    skipped: list[str] = []
+    for template in templates:
+        missing = [name for name in template.requires if not slots.get(name)]
+        if missing:
+            skipped.append(
+                f"{template.capability_category}/{template.tier.value}: no "
+                f"{', '.join(missing)} term available in context"
+            )
+            continue
+        built.append(
+            TargetedQuery(
+                capability_category=template.capability_category,
+                tier=template.tier,
+                query=template.template.format(**slots),
+                rationale=template.rationale,
+                model_context=template.model_context,
+                model_system_match=template.model_system_match,
+            )
+        )
+    return tuple(built), tuple(skipped)
 
 
 def _affiliation(record: PubMedRecord) -> str | None:
@@ -183,7 +275,7 @@ def _candidate_id(pmid: str, capability_category: str) -> str:
 
 def run_searches(
     client: PubMedClient,
-    queries: Sequence[TargetedQuery] = TARGETED_QUERIES,
+    queries: Sequence[TargetedQuery],
     *,
     retmax: int = 15,
 ) -> tuple[tuple[CapabilitySearchResult, ...], tuple[str, ...]]:
@@ -213,6 +305,7 @@ def derive_candidates(
     *,
     per_capability: int = 3,
     exclude_pmids: frozenset[str] = frozenset(),
+    anchor_label: str = "the disease or gene of interest",
 ) -> tuple[CapabilityCandidate, ...]:
     """Derive candidate groups, newest first, capped per capability.
 
@@ -233,9 +326,9 @@ def derive_candidates(
                 continue
             seen.add(key)
             disease = (
-                "STUB1 or SCAR16 named in the title or abstract"
+                f"{anchor_label} named in the title or abstract"
                 if result.query.tier is QueryTier.DISEASE_ANCHORED
-                else "no STUB1 or SCAR16 involvement established by this search"
+                else f"no {anchor_label} involvement established by this search"
             )
             limitation = (
                 "Technique demonstrated in a comparable model system. This is not "
@@ -273,7 +366,7 @@ def derive_candidates(
 
 def candidate_signals(
     candidates: Sequence[CapabilityCandidate],
-    queries: Sequence[TargetedQuery] = TARGETED_QUERIES,
+    queries: Sequence[TargetedQuery],
 ) -> dict[str, tuple[CapabilityEvidenceSignal, ...]]:
     """Build capability signals per candidate, keyed by candidate id.
 

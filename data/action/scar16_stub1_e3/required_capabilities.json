@@ -15,9 +15,9 @@
     "required_or_optional": "REQUIRED"
   },
   {
-    "canonical_name": "STUB1 CRISPR editing",
+    "canonical_name": "targeted CRISPR gene editing",
     "capability_category": "crispr_editing",
-    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
     "description": "iPSC maintenance and CRISPR knock-in at the STUB1 locus",
     "disease_context": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
     "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
