@@ -34,6 +34,96 @@
         "PMID:31619515",
         "PMID:42567515"
       ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-41699918",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:41699918"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-40027688",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:40027688"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-35675767",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:35675767"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:40498018"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:41236144"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:38757586"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-41687537",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:41687537"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-41820949",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:41820949"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-42533362",
+      "personnel": [],
+      "provenance_snapshots": [
+        "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d"
+      ],
+      "publications": [
+        "PMID:42533362"
+      ]
     }
   ],
   "chain": [
@@ -388,10 +478,14 @@
     },
     {
       "canonical_name": "targeted CRISPR gene editing",
-      "capability_claim_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:crispr_editing:PMID-41699918",
+        "capability-claim:capability-candidate:crispr_editing:PMID-40027688",
+        "capability-claim:capability-candidate:crispr_editing:PMID-35675767"
+      ],
       "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
-      "satisfied": false
+      "satisfied": true
     },
     {
       "canonical_name": "isogenic line generation",
@@ -403,11 +497,14 @@
     {
       "canonical_name": "iPSC neuronal differentiation",
       "capability_claim_ids": [
-        "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation"
+        "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38757586"
       ],
       "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[1]",
-      "satisfied": false
+      "satisfied": true
     },
     {
       "canonical_name": "quantitative ubiquitination analysis",
@@ -420,7 +517,11 @@
     },
     {
       "canonical_name": "diGly enrichment proteomics",
-      "capability_claim_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:proteomics:PMID-41687537",
+        "capability-claim:capability-candidate:proteomics:PMID-41820949",
+        "capability-claim:capability-candidate:proteomics:PMID-42533362"
+      ],
       "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
       "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[2]",
       "satisfied": false

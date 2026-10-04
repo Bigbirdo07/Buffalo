@@ -151,9 +151,20 @@ def assess_capability(
         directness = CapabilityDirectness.DIRECT
     elif "lab" in scopes or "team" in scopes:
         directness = CapabilityDirectness.TEAM_LEVEL
-    elif scopes == {"institution"} or (not relevant and signals):
+    elif scopes == {"institution"} or (
+        not relevant and signals and {item.subject_scope for item in signals} == {"institution"}
+    ):
+        # Genuinely institutional evidence, such as a core-facility page. The
+        # label is kept precisely so the capability is NOT transferred to a
+        # person or team: the reader sees that the evidence describes an
+        # institution.
         directness = CapabilityDirectness.INSTITUTION_LEVEL
     else:
+        # Signals exist but none bear on this capability and they are not
+        # institutional. That is indirect evidence: a publication identifies a
+        # team, and no paper can establish that an institution holds a
+        # capability. The earlier rule sent this case to INSTITUTION_LEVEL,
+        # which asserted the very inference this project refuses to make.
         directness = CapabilityDirectness.INDIRECT
 
     return CapabilityClaim(

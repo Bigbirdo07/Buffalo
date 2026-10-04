@@ -8,12 +8,12 @@
     "Only English-indexed PubMed, RePORTER and ClinicalTrials.gov records were searched; non-English institutional and organization sources were not."
   ],
   "scope": "collaborator_and_asset_discovery",
-  "search_completed_at": "2026-10-04T00:24:01.668616Z",
-  "search_started_at": "2026-10-04T00:24:01.668616Z",
+  "search_completed_at": "2026-10-04T06:32:32.356427Z",
+  "search_started_at": "2026-10-04T06:32:32.356427Z",
   "sources": [
     {
       "cache_hits": 1,
-      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "checked_at": "2026-10-04T06:32:32.356427Z",
       "error": null,
       "estimated_cost": 0.0,
       "geographic_regions": [
@@ -125,7 +125,7 @@
     },
     {
       "cache_hits": 4,
-      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "checked_at": "2026-10-04T06:32:32.356427Z",
       "error": null,
       "estimated_cost": 0.0,
       "geographic_regions": [
@@ -154,7 +154,7 @@
     },
     {
       "cache_hits": 3,
-      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "checked_at": "2026-10-04T06:32:32.356427Z",
       "error": null,
       "estimated_cost": 0.0,
       "geographic_regions": [
@@ -180,9 +180,9 @@
       "status": "CHECKED"
     },
     {
-      "cache_hits": 1,
-      "checked_at": "2026-10-04T00:24:01.668616Z",
-      "error": "crispr_editing/A_disease_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=STUB1%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; crispr_editing/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28isogenic%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+knockin%5Btiab%5D+OR+%22base+editing%22%5Btiab%5D+OR+%22prime+editing%22%5Btiab%5D%29%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; isogenic_line_generation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=isogenic%5Btiab%5D+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28%22point+mutation%22%5Btiab%5D+OR+%22single+nucleotide%22%5Btiab%5D+OR+variant%2A%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; ipsc_neuronal_differentiation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance; proteomics/A_disease_anchored: no assay term available in context; proteomics/B_capability_anchored: no assay term available in context",
+      "cache_hits": 7,
+      "checked_at": "2026-10-04T06:32:32.356427Z",
+      "error": null,
       "estimated_cost": 0.0,
       "geographic_regions": [
         "affiliation-derived; no geographic filter applied"
@@ -193,10 +193,22 @@
       "pages_checked": 1,
       "pagination_limit": null,
       "queries": [
+        "STUB1[tiab] AND (\"knock-in\"[tiab] OR \"knockin\"[tiab] OR isogenic[tiab] OR CRISPR[tiab]) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+        "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR \"base editing\"[tiab] OR \"prime editing\"[tiab])) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab])",
+        "isogenic[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"point mutation\"[tiab] OR \"single nucleotide\"[tiab] OR variant*[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab])",
+        "STUB1[tiab] AND (diGly[tiab] OR ubiquitinome[tiab] OR proteomics[tiab] OR immunoblot[tiab])",
+        "(diGly[tiab] OR ubiquitinome[tiab] OR proteomics[tiab] OR immunoblot[tiab]) AND ((\"Purkinje cell\"[tiab] OR cerebellum[tiab]) OR iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+        "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab]) AND (differentiat*[tiab] OR organoid[tiab])",
         "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (clone*[tiab] AND (\"mixed model\"[tiab] OR \"random effect*\"[tiab] OR \"variance component*\"[tiab]))"
       ],
-      "result_count": 0,
+      "result_count": 1049,
       "snapshot_references": [
+        "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a",
+        "8d4d65f659e2c60d7a7687762d340c643c365c1c458fd9eb66a6e8d4da8aa806",
+        "a98c57cecd5fd727390675d4b8b92cdd374a2d40d42e6655ef98b53e8d8c2db9",
+        "45395cd4b5604231f6a5b18f84aa093572902cf023bb3d33bd6634728a56e531",
+        "af6c2ad54efc26f5e407ba1362c6ba97ad7f4737e9464937c015d0565f06108f",
+        "a6c9580ab0f73ba22fc2562004f3aaa2bcabc779f93b301781b341a4bd17c8bc",
         "faa96c96266991109e98f521303252e23ef535383e0f90157485d74dfab70a7f"
       ],
       "source": "PubMed (targeted capability queries)",

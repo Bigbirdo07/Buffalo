@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=STUB1%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:32:28.695031+00:00",
+  "sha256": "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a"
+}

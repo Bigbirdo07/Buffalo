@@ -445,7 +445,16 @@ class TargetedDiscoveryTests(unittest.TestCase):
         for claim in _models("capability_claims.json", CapabilityClaim):
             if claim.subject_id.startswith("capability-candidate:"):
                 self.assertNotEqual(claim.status, CapabilityClaimStatus.VERIFIED)
-                self.assertEqual(claim.directness, CapabilityDirectness.TEAM_LEVEL)
+                # A candidate is derived from a publication, which identifies a
+                # team. It may never carry a claim stronger than that: DIRECT
+                # would assert an individual's capability, and INSTITUTION_LEVEL
+                # would infer capability from institutional infrastructure.
+                # INDIRECT is permitted because it is a weaker claim.
+                self.assertIn(
+                    claim.directness,
+                    {CapabilityDirectness.TEAM_LEVEL, CapabilityDirectness.INDIRECT},
+                    f"{claim.subject_id} overclaims at {claim.directness.value}",
+                )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28diGly%5Btiab%5D+OR+ubiquitinome%5Btiab%5D+OR+proteomics%5Btiab%5D+OR+immunoblot%5Btiab%5D%29+AND+%28%28%22Purkinje+cell%22%5Btiab%5D+OR+cerebellum%5Btiab%5D%29+OR+iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T06:32:31.030594+00:00",
+  "sha256": "af6c2ad54efc26f5e407ba1362c6ba97ad7f4737e9464937c015d0565f06108f"
+}

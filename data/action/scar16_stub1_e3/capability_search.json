@@ -1,6 +1,221 @@
 {
-  "candidates_selected": [],
+  "candidates_selected": [
+    {
+      "affiliation": "Department of Physiology and Cellular Biophysics, Columbia University Irving Medical Centre, New York, NY 10032, USA.",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-41699918",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Henry M Colecraft",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "41699918",
+      "tier": "B_capability_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "Laboratory of Molecular Biology, National Institute of Diabetes, Digestive, and Kidney Diseases, National Institutes of Health, Bethesda, MD 20892, USA.",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-40027688",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "STUB1 or SCAR16 named in the title or abstract",
+      "last_author": "Yihong Ye",
+      "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification.",
+      "pmid": "40027688",
+      "tier": "A_disease_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "MOE Key Laboratory for Cellular Dynamics, Hefei National Research Center for Physical Sciences at the Microscale, CAS Key Laboratory of Brain Function and Disease, School of Life Sciences, Division of Life Sciences and Medicine, University of Science and Technology of China, Hefei, China.",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-35675767",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "STUB1 or SCAR16 named in the title or abstract",
+      "last_author": "Xiaoyuan Song",
+      "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification.",
+      "pmid": "35675767",
+      "tier": "A_disease_anchored",
+      "year": 2022
+    },
+    {
+      "affiliation": "Division of Neurology, Nemours Children's Health, Wilmington, DE 19803, USA.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Sigrid A Langhans",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "40498018",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Nuffield Department of Clinical Neurosciences, University of Oxford, Oxford OX3 9DU, UK.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Esther B E Becker",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "41236144",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Department of Medicine, The University of Chicago, Chicago, Illinois, USA.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Federico Salas-Lucia",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "38757586",
+      "tier": "B_capability_anchored",
+      "year": 2024
+    },
+    {
+      "affiliation": "School of Life Sciences, Jilin University, Changchun City, Jilin 130012, China.",
+      "candidate_id": "capability-candidate:proteomics:PMID-41687537",
+      "capability_category": "proteomics",
+      "disease_involvement": "STUB1 or SCAR16 named in the title or abstract",
+      "last_author": "Jingji Jin",
+      "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification.",
+      "pmid": "41687537",
+      "tier": "A_disease_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "Department of Oncology, Research Center of Clinical Medicine, Affiliated Hospital of Nantong University, Medical School of Nantong University, Nantong, 226001, China. [email removed]",
+      "candidate_id": "capability-candidate:proteomics:PMID-41820949",
+      "capability_category": "proteomics",
+      "disease_involvement": "STUB1 or SCAR16 named in the title or abstract",
+      "last_author": "Wenjie Zheng",
+      "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification.",
+      "pmid": "41820949",
+      "tier": "A_disease_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "Department of Hematology, Tongji Hospital, Frontier Science Center for Stem Cell Research, Shanghai Key Laboratory of Signaling and Disease Research, School of Life Sciences and Technology, Tongji University, Shanghai, 200092, China. [email removed]",
+      "candidate_id": "capability-candidate:proteomics:PMID-42533362",
+      "capability_category": "proteomics",
+      "disease_involvement": "STUB1 or SCAR16 named in the title or abstract",
+      "last_author": "Jing Yang",
+      "limitation": "Disease-anchored hit; scope of the demonstrated technique still requires verification.",
+      "pmid": "42533362",
+      "tier": "A_disease_anchored",
+      "year": 2026
+    }
+  ],
   "executed": [
+    {
+      "capability_category": "crispr_editing",
+      "model_context": "human iPSC",
+      "query": "STUB1[tiab] AND (\"knock-in\"[tiab] OR \"knockin\"[tiab] OR isogenic[tiab] OR CRISPR[tiab]) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+      "rationale": "Has anyone edited this locus in an iPSC background?",
+      "retrieved_pmids": [
+        "35675767",
+        "30605842",
+        "33097556",
+        "40027688"
+      ],
+      "snapshot_sha256": "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a",
+      "tier": "A_disease_anchored",
+      "total_hits": 4
+    },
+    {
+      "capability_category": "crispr_editing",
+      "model_context": "isogenic iPSC-derived cells",
+      "query": "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR \"base editing\"[tiab] OR \"prime editing\"[tiab])) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab])",
+      "rationale": "Who performs allele-specific endogenous editing in the relevant cellular system, irrespective of gene?",
+      "retrieved_pmids": [
+        "41699918"
+      ],
+      "snapshot_sha256": "8d4d65f659e2c60d7a7687762d340c643c365c1c458fd9eb66a6e8d4da8aa806",
+      "tier": "B_capability_anchored",
+      "total_hits": 1
+    },
+    {
+      "capability_category": "isogenic_line_generation",
+      "model_context": "isogenic iPSC variant panels",
+      "query": "isogenic[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"point mutation\"[tiab] OR \"single nucleotide\"[tiab] OR variant*[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab])",
+      "rationale": "Who generates isogenic variant panels in the relevant cell type?",
+      "retrieved_pmids": [],
+      "snapshot_sha256": "a98c57cecd5fd727390675d4b8b92cdd374a2d40d42e6655ef98b53e8d8c2db9",
+      "tier": "B_capability_anchored",
+      "total_hits": 0
+    },
+    {
+      "capability_category": "proteomics",
+      "model_context": "any",
+      "query": "STUB1[tiab] AND (diGly[tiab] OR ubiquitinome[tiab] OR proteomics[tiab] OR immunoblot[tiab])",
+      "rationale": "Has the relevant molecular readout ever been measured for this gene?",
+      "retrieved_pmids": [
+        "24509416",
+        "29898993",
+        "41820949",
+        "41687537",
+        "24251647",
+        "35982220",
+        "38942760",
+        "42538903",
+        "28346425",
+        "35164882",
+        "40027688",
+        "39337505",
+        "42624205",
+        "42533362",
+        "42829132"
+      ],
+      "snapshot_sha256": "45395cd4b5604231f6a5b18f84aa093572902cf023bb3d33bd6634728a56e531",
+      "tier": "A_disease_anchored",
+      "total_hits": 15
+    },
+    {
+      "capability_category": "proteomics",
+      "model_context": "assay in relevant material",
+      "query": "(diGly[tiab] OR ubiquitinome[tiab] OR proteomics[tiab] OR immunoblot[tiab]) AND ((\"Purkinje cell\"[tiab] OR cerebellum[tiab]) OR iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+      "rationale": "Who runs this molecular readout on disease-relevant material, irrespective of gene?",
+      "retrieved_pmids": [
+        "41005309",
+        "36220098",
+        "36064647",
+        "28509388",
+        "27444749",
+        "34919811",
+        "39820750",
+        "39855627",
+        "40623183",
+        "26505250",
+        "37974165",
+        "26889602",
+        "37488208",
+        "40168994",
+        "35718601"
+      ],
+      "snapshot_sha256": "af6c2ad54efc26f5e407ba1362c6ba97ad7f4737e9464937c015d0565f06108f",
+      "tier": "B_capability_anchored",
+      "total_hits": 974
+    },
+    {
+      "capability_category": "ipsc_neuronal_differentiation",
+      "model_context": "targeted iPSC differentiation",
+      "query": "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"Purkinje cell\"[tiab] OR cerebellum[tiab]) AND (differentiat*[tiab] OR organoid[tiab])",
+      "rationale": "Who differentiates iPSC to the disease-relevant cell type?",
+      "retrieved_pmids": [
+        "40498018",
+        "37248391",
+        "30636067",
+        "41236144",
+        "36190246",
+        "34181916",
+        "38757586",
+        "35578085",
+        "35592499",
+        "32117945",
+        "39023738",
+        "26715324",
+        "25985846",
+        "15728842",
+        "36042179"
+      ],
+      "snapshot_sha256": "a6c9580ab0f73ba22fc2562004f3aaa2bcabc779f93b301781b341a4bd17c8bc",
+      "tier": "B_capability_anchored",
+      "total_hits": 55
+    },
     {
       "capability_category": "statistical_analysis",
       "model_context": "clone-level random-effects analysis",
@@ -12,14 +227,7 @@
       "total_hits": 0
     }
   ],
-  "failures": [
-    "crispr_editing/A_disease_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=STUB1%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
-    "crispr_editing/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28isogenic%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+knockin%5Btiab%5D+OR+%22base+editing%22%5Btiab%5D+OR+%22prime+editing%22%5Btiab%5D%29%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
-    "isogenic_line_generation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=isogenic%5Btiab%5D+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28%22point+mutation%22%5Btiab%5D+OR+%22single+nucleotide%22%5Btiab%5D+OR+variant%2A%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
-    "ipsc_neuronal_differentiation/B_capability_anchored: offline mode and no cached snapshot for https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28e3_ligase_activity%5Btiab%5D+OR+hsc70_ubiquitination%5Btiab%5D+OR+hsp70_polyubiquitination%5Btiab%5D+OR+polyubiquitin_chain_formation%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
-    "proteomics/A_disease_anchored: no assay term available in context",
-    "proteomics/B_capability_anchored: no assay term available in context"
-  ],
+  "failures": [],
   "note": "Full result of the executed targeted queries. The candidate list is a recency-capped selection; every retrieved PMID is recorded here so a reviewer can see leads that were not promoted.",
   "selection_rule": "newest first, capped at 3 per capability, excluding publications already represented by an existing candidate team",
   "tiers": {

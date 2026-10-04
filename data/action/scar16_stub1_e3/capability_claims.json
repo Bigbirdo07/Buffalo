@@ -82,5 +82,173 @@
     "status": "SUPPORTED",
     "subject_id": "team:chip-variant-biochemistry",
     "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-41699918",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:41699918"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Henry M Colecraft) demonstrated targeted CRISPR gene editing in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-41699918",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-40027688",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:40027688"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Yihong Ye) demonstrated targeted CRISPR gene editing in STUB1 or SCAR16 named in the title or abstract.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-40027688",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-35675767",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:35675767"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Xiaoyuan Song) demonstrated targeted CRISPR gene editing in STUB1 or SCAR16 named in the title or abstract.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-35675767",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:40498018"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Sigrid A Langhans) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:41236144"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Esther B E Becker) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:38757586"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Federico Salas-Lucia) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-41687537",
+    "corroboration_count": 0,
+    "directness": "INDIRECT",
+    "evidence_items": [],
+    "evidence_source_types": [],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Evidence exists, but its scope or experimental context does not directly match.",
+    "recency": "historical_or_unknown",
+    "statement": "Publication-derived group (last author Jingji Jin) demonstrated diGly enrichment proteomics in STUB1 or SCAR16 named in the title or abstract.",
+    "status": "PLAUSIBLE",
+    "subject_id": "capability-candidate:proteomics:PMID-41687537",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-41820949",
+    "corroboration_count": 0,
+    "directness": "INDIRECT",
+    "evidence_items": [],
+    "evidence_source_types": [],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Evidence exists, but its scope or experimental context does not directly match.",
+    "recency": "historical_or_unknown",
+    "statement": "Publication-derived group (last author Wenjie Zheng) demonstrated diGly enrichment proteomics in STUB1 or SCAR16 named in the title or abstract.",
+    "status": "PLAUSIBLE",
+    "subject_id": "capability-candidate:proteomics:PMID-41820949",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-42533362",
+    "corroboration_count": 0,
+    "directness": "INDIRECT",
+    "evidence_items": [],
+    "evidence_source_types": [],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Evidence exists, but its scope or experimental context does not directly match.",
+    "recency": "historical_or_unknown",
+    "statement": "Publication-derived group (last author Jing Yang) demonstrated diGly enrichment proteomics in STUB1 or SCAR16 named in the title or abstract.",
+    "status": "PLAUSIBLE",
+    "subject_id": "capability-candidate:proteomics:PMID-42533362",
+    "subject_type": "laboratory"
   }
 ]

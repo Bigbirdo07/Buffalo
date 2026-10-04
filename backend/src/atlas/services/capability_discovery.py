@@ -208,6 +208,36 @@ QUERY_TEMPLATES: tuple[QueryTemplate, ...] = (
 )
 
 
+# Laboratory technique vocabulary. This is methods vocabulary, not disease
+# vocabulary: it names ways of measuring things and contains no gene, disease,
+# pathway or cell type. Experiment readouts are written as prose for a reader,
+# so searching on a whole readout sentence matches nothing; these terms are what
+# a literature search can actually anchor on.
+METHOD_TERMS: tuple[str, ...] = (
+    "diGly", "ubiquitinome", "ubiquitylome", "ubiquitin remnant",
+    "mass spectrometry", "proteomics", "immunoblot", "western blot",
+    "co-immunoprecipitation", "immunoprecipitation", "pull-down",
+    "thermal stability", "thermal shift", "cycloheximide chase",
+    "pulse-chase", "turnover", "RNA-seq", "transcriptomic",
+    "single-cell", "flow cytometry", "immunofluorescence", "live imaging",
+    "electrophysiology", "patch clamp", "calcium imaging",
+    "enzyme assay", "activity assay", "reporter assay", "organoid",
+    "cryo-EM", "crystallography", "surface plasmon resonance",
+    "metabolomic", "lipidomic", "ChIP-seq", "ATAC-seq", "CUT&RUN",
+    "autophagic flux", "mitophagy assay", "seahorse", "respirometry",
+)
+
+
+def extract_method_terms(texts: Sequence[str]) -> tuple[str, ...]:
+    """Pull searchable technique terms out of prose readouts and capabilities.
+
+    Order follows METHOD_TERMS so results are deterministic rather than
+    dependent on how a curator phrased the sentence.
+    """
+    joined = " ".join(texts).lower()
+    return tuple(term for term in METHOD_TERMS if term.lower() in joined)
+
+
 def _or_group(terms: Sequence[str], field: str = "tiab") -> str:
     """Build a PubMed OR group, quoting multi-word terms."""
     parts = []

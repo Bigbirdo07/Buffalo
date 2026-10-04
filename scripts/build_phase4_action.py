@@ -66,6 +66,7 @@ from atlas.services.capability_discovery import (
     candidate_signals,
     coverage_note,
     derive_candidates,
+    extract_method_terms,
     run_searches,
 )
 from atlas.services.requirement_extraction import extract_experiment_requirements
@@ -430,14 +431,21 @@ def search_trials(
 def build_discovery_context(
     plan: dict, experiment: ExperimentProposal, capabilities: Sequence[Any]
 ) -> DiscoveryContext:
-    """Derive search anchors from the run's own plan and experiment.
+    """Derive search anchors from the run's own structured objects.
 
-    Every term comes from structured data: the observation plan states the gene
-    and disease scope, the experiment states its model system and readout, and
-    the extracted capabilities state what must be done. Nothing is a literal, so
-    the same code runs for any disease. A slot with no available term stays
-    empty and its dependent query is reported as skipped, never silently
-    broadened into a different question.
+    Sources, all structural rather than literal, so the same code runs for any
+    disease in the corpus:
+
+      gene / disease   the observation plan's target
+      assay terms      the extracted capabilities' canonical names and the
+                       experiment's readouts -- what must actually be measured
+      cell / tissue    the disease's own fingerprint, using the ontology labels
+                       the importer already normalised (CL and UBERON), ranked
+                       by how specific each term is in the corpus
+      model system     the experiment's declared model
+
+    A slot with no available term stays empty and its dependent query is
+    reported as skipped, never silently broadened into a different question.
     """
     target = plan.get("target", {}) if isinstance(plan, dict) else {}
     gene = target.get("gene")
@@ -448,27 +456,50 @@ def build_discovery_context(
         if isinstance(item, str)
     )
 
-    assays: list[str] = []
+    # What the experiment must measure. Readouts are prose written for a
+    # reader, so searchable technique terms are extracted from them rather than
+    # used whole: a whole readout sentence matches no publication.
+    prose: list[str] = []
     for capability in capabilities:
-        label = getattr(capability, "label", None)
-        if isinstance(label, str) and label:
-            assays.append(label)
-    for attribute in ("primary_readout", "readout"):
-        value = getattr(experiment, attribute, None)
-        if isinstance(value, str) and value:
-            assays.append(value)
+        for attribute in ("canonical_name", "description"):
+            value = getattr(capability, attribute, None)
+            if isinstance(value, str) and value:
+                prose.append(value)
+    for readout in getattr(experiment, "readouts", ()) or ():
+        text = readout if isinstance(readout, str) else getattr(readout, "name", None)
+        if isinstance(text, str) and text:
+            prose.append(text)
+    assays = list(extract_method_terms(prose))
 
-    models: list[str] = []
-    for attribute in ("model_system", "model"):
-        value = getattr(experiment, attribute, None)
-        if isinstance(value, str) and value:
-            models.append(value)
-
-    cells = [
-        item
-        for item in (plan.get("readout_family") or () if isinstance(plan, dict) else ())
-        if isinstance(item, str)
+    models = [
+        value
+        for value in (
+            getattr(experiment, "model_system", None),
+            getattr(experiment, "sample_type", None),
+        )
+        if isinstance(value, str) and value
     ]
+
+    # Cell and tissue context from the disease's own fingerprint, so the terms
+    # are ontology labels rather than words parsed out of prose.
+    cells: list[str] = []
+    disease_file = str(target.get("disease_file") or "")
+    fingerprints = ROOT / "data/fingerprints/fingerprints.jsonl"
+    if disease_file and fingerprints.exists():
+        wanted = Path(disease_file).name
+        with fingerprints.open(encoding="utf-8") as handle:
+            for line in handle:
+                record = json.loads(line)
+                if Path(record.get("source_file", "")).name != wanted:
+                    continue
+                scored = [
+                    (item["label"], item.get("evidence_count", 0))
+                    for item in record["features"]
+                    if item["feature_class"] == "cell_tissue" and item.get("label")
+                ]
+                scored.sort(key=lambda row: -row[1])
+                cells = [label for label, _ in scored]
+                break
 
     def top(values: list[str], limit: int) -> tuple[str, ...]:
         counts = Counter(value.strip() for value in values if value and value.strip())
@@ -476,8 +507,8 @@ def build_discovery_context(
 
     return DiscoveryContext(
         gene_symbols=genes,
-        cell_type_terms=top(cells, 4),
-        assay_terms=top(assays, 4),
+        cell_type_terms=tuple(dict.fromkeys(cells))[:4],
+        assay_terms=tuple(assays)[:4],
         model_system_terms=top(models, 2),
         disease_terms=diseases,
     )

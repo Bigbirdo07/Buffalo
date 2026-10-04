@@ -1,12 +1,18 @@
 {
   "collaboration_id": "collaboration:scar16-stub1-linker-action-v1",
-  "created_at": "2026-10-04T00:24:01.668616Z",
+  "created_at": "2026-10-04T06:32:32.356427Z",
   "duplication_risk": "NOT ASSESSED: no ResearchProgram records were built, because institutional, foundation and company program sources were not searched.",
   "evidence": [
     "PMID:31619515",
     "PMID:42567515",
     "PMID:31619515",
-    "PMID:42567515"
+    "PMID:42567515",
+    "PMID:41699918",
+    "PMID:40027688",
+    "PMID:35675767",
+    "PMID:40498018",
+    "PMID:41236144",
+    "PMID:38757586"
   ],
   "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
   "first_contact_target": null,
@@ -14,9 +20,7 @@
   "knowledge_gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
   "missing_capabilities": [
     "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
-    "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
     "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
-    "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
     "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
     "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b"
   ],
@@ -44,11 +48,101 @@
       "proposed_role": "advise on transferring CHIP functional assays to a substrate-resolved neuronal readout",
       "subject_id": "team:chip-variant-biochemistry",
       "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:crispr_editing:PMID-41699918"
+      ],
+      "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:crispr_editing:PMID-41699918",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:crispr_editing:PMID-40027688"
+      ],
+      "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:crispr_editing:PMID-40027688",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:crispr_editing:PMID-35675767"
+      ],
+      "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:crispr_editing:PMID-35675767",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40498018"
+      ],
+      "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-41236144"
+      ],
+      "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38757586"
+      ],
+      "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:proteomics:PMID-41687537"
+      ],
+      "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:proteomics:PMID-41687537",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:proteomics:PMID-41820949"
+      ],
+      "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:proteomics:PMID-41820949",
+      "subject_type": "laboratory"
+    },
+    {
+      "asset_ids": [],
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:proteomics:PMID-42533362"
+      ],
+      "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+      "subject_id": "capability-candidate:proteomics:PMID-42533362",
+      "subject_type": "laboratory"
     }
   ],
   "proposed_roles": [
     "confirm whether the published SCAR16 patient iPSC line and neuronal differentiation capability are currently available",
-    "advise on transferring CHIP functional assays to a substrate-resolved neuronal readout"
+    "advise on transferring CHIP functional assays to a substrate-resolved neuronal readout",
+    "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified",
+    "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
   ],
   "provided_assets": [
     "asset:stub1-patient-ipsc:pmid-29679845",
@@ -57,7 +151,9 @@
   ],
   "provided_capabilities": [
     "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
-    "required-capability:35242089-757e-5f78-b9b6-cf501e07f056"
+    "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "required-capability:58386edd-5459-5b2d-8c8d-6c2f86835ef9",
+    "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72"
   ],
   "rationale": "Two publication-derived author groups bear on different parts of the proposed experiment: one published a SCAR16 patient iPSC line and iPSC-derived neuronal models, the other published allele-resolved CHIP biochemistry. Neither has evidence for the full combination the experiment needs, and no evidence of current activity, current affiliation or willingness to collaborate was obtained.",
   "status": "MISSING_CAPABILITY",

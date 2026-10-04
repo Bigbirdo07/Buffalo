@@ -91,5 +91,275 @@
       "SCAR16"
     ],
     "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:41699918",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Physiology and Cellular Biophysics, Columbia University Irving Medical Centre, New York, NY 10032, USA.",
+    "lab_id": "capability-candidate:crispr_editing:PMID-41699918",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:41699918",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41699918/"
+      }
+    ],
+    "publications": [
+      "PMID:41699918"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:40027688",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Laboratory of Molecular Biology, National Institute of Diabetes, Digestive, and Kidney Diseases, National Institutes of Health, Bethesda, MD 20892, USA.",
+    "lab_id": "capability-candidate:crispr_editing:PMID-40027688",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:40027688",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40027688/"
+      }
+    ],
+    "publications": [
+      "PMID:40027688"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:35675767",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "MOE Key Laboratory for Cellular Dynamics, Hefei National Research Center for Physical Sciences at the Microscale, CAS Key Laboratory of Brain Function and Disease, School of Life Sciences, Division of Life Sciences and Medicine, University of Science and Technology of China, Hefei, China.",
+    "lab_id": "capability-candidate:crispr_editing:PMID-35675767",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:35675767",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/35675767/"
+      }
+    ],
+    "publications": [
+      "PMID:35675767"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:40498018",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Division of Neurology, Nemours Children's Health, Wilmington, DE 19803, USA.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40498018",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:40498018",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40498018/"
+      }
+    ],
+    "publications": [
+      "PMID:40498018"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:41236144",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Nuffield Department of Clinical Neurosciences, University of Oxford, Oxford OX3 9DU, UK.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-41236144",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:41236144",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41236144/"
+      }
+    ],
+    "publications": [
+      "PMID:41236144"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:38757586",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Medicine, The University of Chicago, Chicago, Illinois, USA.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38757586",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:38757586",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38757586/"
+      }
+    ],
+    "publications": [
+      "PMID:38757586"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:41687537",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "School of Life Sciences, Jilin University, Changchun City, Jilin 130012, China.",
+    "lab_id": "capability-candidate:proteomics:PMID-41687537",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:41687537",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41687537/"
+      }
+    ],
+    "publications": [
+      "PMID:41687537"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:41820949",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Oncology, Research Center of Clinical Medicine, Affiliated Hospital of Nantong University, Medical School of Nantong University, Nantong, 226001, China. [email removed]",
+    "lab_id": "capability-candidate:proteomics:PMID-41820949",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:41820949",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41820949/"
+      }
+    ],
+    "publications": [
+      "PMID:41820949"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:42533362",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Hematology, Tongji Hospital, Frontier Science Center for Stem Cell Research, Shanghai Key Laboratory of Signaling and Disease Research, School of Life Sciences and Technology, Tongji University, Shanghai, 200092, China. [email removed]",
+    "lab_id": "capability-candidate:proteomics:PMID-42533362",
+    "last_verified_at": "2026-10-04T06:32:32.356427Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T06:32:32.356427Z",
+        "snapshot_sha256": "f05d0facf28950258a32067353902bd597f939303b5d86b2ad47b11748797a4d",
+        "source_id": "PMID:42533362",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42533362/"
+      }
+    ],
+    "publications": [
+      "PMID:42533362"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
   }
 ]
