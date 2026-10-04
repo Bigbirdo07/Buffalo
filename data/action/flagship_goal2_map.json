@@ -1,0 +1,281 @@
+{
+  "schema_version": "flagship-goal2-map-v1",
+  "software_commit": "a100b591ac4562d939e8e54c90b5f920f15903d2",
+  "generated_at": "2026-10-04T07:34:49.778696+00:00",
+  "scientific_question": "Do Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared functional defect in chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) in disease-relevant models, measured by at least one identical primary functional readout applied to both disease models and matched controls under the same conditions?",
+  "frozen_bridge": {
+    "bridge_id": "bridge:46abfb23-533a8d87:v2",
+    "version": 2,
+    "terms": [
+      "chaperone",
+      "co-chaperone",
+      "ubiquitin ligase",
+      "CHIP",
+      "stress response",
+      "HSF1"
+    ],
+    "evidence_depth": null,
+    "full_text_review_completed": null
+  },
+  "primary_readout": "Functional response of chaperone, co-chaperone, ubiquitin ligase and stress response biology (CHIP, HSF1) to the standardised stress, measured with one identical assay, timing and analysis framework across both disease arms and the shared control",
+  "capability_coverage": [
+    {
+      "requirement_id": "cap:model-a",
+      "capability": "Autosomal Recessive Spinocerebellar Ataxia 16 disease-relevant cellular model",
+      "why_required": "The experiment needs one arm representing this disease.",
+      "search_terms": [
+        "Autosomal Recessive Spinocerebellar Ataxia 16"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(\"Autosomal Recessive Spinocerebellar Ataxia 16\"[tiab])",
+          "status": "CHECKED",
+          "total_hits": 3,
+          "snapshot": "d464e2e11773cdd77b17fdc819470abb4dd31baffc3d36edd3001ba09e75b1dc",
+          "note": null
+        }
+      ],
+      "candidate_teams": [
+        {
+          "name": "Bin Jiang",
+          "source": "PMID:41851873",
+          "year": 2026,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Antonio Feliciello",
+          "source": "PMID:31189917",
+          "year": 2019,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Sehime G Temel",
+          "source": "PMID:30058754",
+          "year": 2018,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        }
+      ],
+      "status": "COVERED_SUPPORTED",
+      "missing_verification": "Confirm the group still performs this and would consider applying it to both disease contexts."
+    },
+    {
+      "requirement_id": "cap:model-b",
+      "capability": "Lafora Disease disease-relevant cellular model",
+      "why_required": "The experiment needs the comparison arm.",
+      "search_terms": [
+        "Lafora Disease"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(\"Lafora Disease\"[tiab])",
+          "status": "CHECKED",
+          "total_hits": 650,
+          "snapshot": "c21e84c241be228c4bea4bad4e97905be9421b51fb84ac019056e3e5a9947d47",
+          "note": null
+        }
+      ],
+      "candidate_teams": [
+        {
+          "name": "Robert G Gilbert",
+          "source": "PMID:39245499",
+          "year": 2024,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Berge Minassian",
+          "source": "PMID:38397161",
+          "year": 2024,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "B A Minassian",
+          "source": "PMID:34301405",
+          "year": 2022,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        }
+      ],
+      "status": "COVERED_SUPPORTED",
+      "missing_verification": "Confirm the group still performs this and would consider applying it to both disease contexts."
+    },
+    {
+      "requirement_id": "cap:stress-challenge",
+      "capability": "Standardised cellular stress challenge",
+      "why_required": "The bridge describes stress-responsive biology, so the comparison is made under challenge rather than at baseline.",
+      "search_terms": [
+        "stress response",
+        "heat shock response"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(\"stress response\"[tiab] OR \"heat shock response\"[tiab]) AND (proteostasis[tiab] OR \"protein quality control\"[tiab] OR neuron[tiab])",
+          "status": "CHECKED",
+          "total_hits": 1719,
+          "snapshot": "152e34be5307d853599395c58c8c11808dbf851f3e66a228c2cca32d7ee52607",
+          "note": null
+        }
+      ],
+      "candidate_teams": [
+        {
+          "name": "Thomas Becker",
+          "source": "PMID:39843636",
+          "year": 2025,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Tim Clausen",
+          "source": "PMID:37137307",
+          "year": 2023,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Xi Chen",
+          "source": "PMID:37676964",
+          "year": 2023,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        }
+      ],
+      "status": "COVERED_SUPPORTED",
+      "missing_verification": "Confirm the group still performs this and would consider applying it to both disease contexts."
+    },
+    {
+      "requirement_id": "cap:primary-assay",
+      "capability": "Functional assay reporting chaperone",
+      "why_required": "This is the primary readout; it decides the hypothesis.",
+      "search_terms": [
+        "CHIP",
+        "HSF1",
+        "chaperone",
+        "co-chaperone"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [
+        {
+          "query": "(chaperone[tiab] OR \"co-chaperone\"[tiab]) AND (\"stress response\"[tiab] OR proteostasis[tiab])",
+          "status": "TOO_BROAD_TO_IDENTIFY",
+          "total_hits": 2888,
+          "snapshot": "e0ce5de3873d06337cbec6fe400ef74b5af64844cb9a5ea1d1d6fcdf8399dc2f",
+          "note": "2888 hits exceeds 2000: this query cannot identify a capability, so no candidate is drawn from it."
+        },
+        {
+          "query": "(CHIP[tiab] OR HSF1[tiab]) AND (chaperone[tiab] OR \"co-chaperone\"[tiab])",
+          "status": "CHECKED",
+          "total_hits": 784,
+          "snapshot": "bffe4ebf09628ee2435148add6804cd0e67b4136015e2c3f0fc56ca2ad0e67b6",
+          "note": null
+        }
+      ],
+      "candidate_teams": [
+        {
+          "name": "Claes Andr\u00e9asson",
+          "source": "PMID:38360885",
+          "year": 2024,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Adrienne L Edkins",
+          "source": "PMID:36520313",
+          "year": 2023,
+          "recency": "CURRENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": true,
+          "collaboration_willingness": "UNKNOWN"
+        },
+        {
+          "name": "Ruth Scherz-Shouval",
+          "source": "PMID:32297214",
+          "year": 2020,
+          "recency": "RECENT",
+          "evidence_scope": "TEAM_LEVEL",
+          "capability_verified": false,
+          "current_activity_supported": false,
+          "collaboration_willingness": "UNKNOWN"
+        }
+      ],
+      "status": "COVERED_SUPPORTED",
+      "missing_verification": "Confirm the group still performs this and would consider applying it to both disease contexts."
+    },
+    {
+      "requirement_id": "cap:secondary-profiling",
+      "capability": "Secondary molecular profiling",
+      "why_required": "Supporting context only. Cannot decide the hypothesis.",
+      "search_terms": [
+        "diGly",
+        "ubiquitinome",
+        "ubiquitylome"
+      ],
+      "source_types_searched": [
+        "PubMed"
+      ],
+      "searches": [],
+      "candidate_teams": [],
+      "status": "UNKNOWN",
+      "missing_verification": "No sufficiently specific query could be built from the experiment's terms, so this capability was not searched. Unknown, not absent."
+    }
+  ],
+  "research_assets": [],
+  "asset_status": "NO_RELEVANT_ASSET_IDENTIFIED",
+  "potential_coordination_opportunities": [],
+  "collaboration_topology": "MULTI_PARTY_EXECUTABLE",
+  "collaborator_status": "NO_VERIFIED_COLLABORATOR_IDENTIFIED",
+  "capabilities_total": 5,
+  "capabilities_covered": 4,
+  "capabilities_missing": 0,
+  "first_contact": {
+    "target": "Claes Andr\u00e9asson",
+    "basis": "PMID:PMID:38360885",
+    "question": "Your group has published work using the assay cited above. We are investigating whether Autosomal Recessive Spinocerebellar Ataxia 16 and Lafora Disease converge on a shared defect in chaperone, co-chaperone, ubiquitin ligase. Could your established assay be applied in parallel to both disease contexts under matched conditions, with a shared control?",
+    "caveat": "Capability is demonstrated by publication only. Willingness and current availability are unknown and must not be assumed."
+  }
+}

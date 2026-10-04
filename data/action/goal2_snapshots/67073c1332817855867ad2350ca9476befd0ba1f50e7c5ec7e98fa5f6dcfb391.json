@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22Autosomal+Recessive+Spinocerebellar+Ataxia+16%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T07:34:45.690714+00:00",
+  "sha256": "d464e2e11773cdd77b17fdc819470abb4dd31baffc3d36edd3001ba09e75b1dc"
+}

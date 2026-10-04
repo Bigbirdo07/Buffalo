@@ -215,6 +215,96 @@ def validate_display_label(label: str, terms: tuple[str, ...]) -> None:
         )
 
 
+class EvidenceDepth(StrEnum):
+    """How deeply the evidence behind a bridge was actually read.
+
+    Recorded on the bridge itself so the limitation travels with the claim. A
+    bridge built from abstracts is not wrong, but every downstream reader is
+    entitled to know that no one opened the papers.
+    """
+
+    FULL_TEXT_REVIEWED = "FULL_TEXT_REVIEWED"
+    ABSTRACT_OR_DERIVED_SOURCE = "ABSTRACT_OR_DERIVED_SOURCE"
+    TITLE_ONLY = "TITLE_ONLY"
+    UNKNOWN = "UNKNOWN"
+
+
+class CapabilityRecency(StrEnum):
+    """How recently a capability was demonstrated.
+
+    Historical evidence is not rejected: a team that ran an assay years ago may
+    still run it. The classification exists to say what must be checked, not to
+    discard a candidate.
+    """
+
+    CURRENT = "CURRENT"
+    RECENT = "RECENT"
+    HISTORICAL = "HISTORICAL"
+    UNKNOWN = "UNKNOWN"
+
+
+class ModelAvailability(StrEnum):
+    """Existence and availability are different facts about a research model.
+
+    A paper using a model proves it existed in that study. It proves nothing
+    about whether the model is deposited, shareable, or still maintained, and
+    conflating the two would send a patient organisation chasing material that
+    may no longer exist.
+    """
+
+    MODEL_DEMONSTRATED = "MODEL_DEMONSTRATED"
+    MODEL_REPOSITORY_VERIFIED = "MODEL_REPOSITORY_VERIFIED"
+    MODEL_CURRENT_AVAILABILITY_UNKNOWN = "MODEL_CURRENT_AVAILABILITY_UNKNOWN"
+    MODEL_NOT_LOCATED = "MODEL_NOT_LOCATED"
+
+
+class CoverageStatus2(StrEnum):
+    """Whether a required capability is covered, and how well."""
+
+    COVERED_VERIFIED = "COVERED_VERIFIED"
+    COVERED_SUPPORTED = "COVERED_SUPPORTED"
+    PARTIAL = "PARTIAL"
+    MISSING = "MISSING"
+    UNKNOWN = "UNKNOWN"
+
+
+class CollaborationTopology(StrEnum):
+    SINGLE_GROUP_EXECUTABLE = "SINGLE_GROUP_EXECUTABLE"
+    MULTI_PARTY_EXECUTABLE = "MULTI_PARTY_EXECUTABLE"
+    PARTIALLY_EXECUTABLE = "PARTIALLY_EXECUTABLE"
+    NOT_CURRENTLY_EXECUTABLE = "NOT_CURRENTLY_EXECUTABLE"
+
+
+class PotentialCoordinationOpportunity(BaseModel):
+    """Two groups whose work may overlap. A question, never an accusation.
+
+    Never asserts duplication. Two groups pursuing related work may be
+    collaborating, replicating deliberately, or approaching the same problem
+    differently, and a system that called that waste would be both wrong and
+    damaging.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    opportunity_id: str
+    group_a: str
+    group_b: str
+    overlapping_objective: str
+    overlapping_capability: str
+    evidence_ids: tuple[str, ...]
+    uncertainty: str
+    potential_benefit: str
+    verification_required: str
+    status: str = "POTENTIAL_COORDINATION_OPPORTUNITY"
+
+    def model_post_init(self, _context: object) -> None:
+        if not self.evidence_ids:
+            raise ValueError(
+                "a coordination opportunity needs evidence of actual overlap; "
+                "without it this is speculation about other people's work"
+            )
+
+
 class BridgeTermProvenance(BaseModel):
     """Where one bridge term came from and what kind of statement supported it."""
 
@@ -271,6 +361,10 @@ class MechanisticBridge(BaseModel):
     derived_from_evidence_ids: tuple[str, ...]
     statement: str
     derivation_method: str
+    # How deeply the supporting evidence was read. Frozen onto the bridge so the
+    # limitation cannot be lost downstream.
+    evidence_depth: EvidenceDepth = EvidenceDepth.UNKNOWN
+    full_text_review_completed: bool = False
     # Per-term provenance: which source, which span, what role that statement
     # played in its paper.
     term_provenance: tuple[BridgeTermProvenance, ...] = ()
@@ -287,6 +381,31 @@ class MechanisticBridge(BaseModel):
                 "a mechanistic bridge must be derived from evidence; without it "
                 "this is a retrieval reason under another name"
             )
+
+    @property
+    def functional_node(self) -> str:
+        """The smallest defensible thing an experiment can actually measure.
+
+        A bridge is a set of terms; an assay measures one node. Listing every
+        term as the readout describes a research area rather than a measurement,
+        so this picks the most specific functional claim available: a named
+        regulator paired with the process it acts in, preferring terms backed by
+        a primary finding over ones carried along from the retrieval level.
+
+        General by construction -- it reads whichever terms the evidence
+        produced and names nothing itself.
+        """
+        preferred = self.primary_terms or self.terms
+        regulators = [item for item in preferred if item.isupper()]
+        processes = [item for item in preferred if not item.isupper()]
+        # The most specific process term is the longest: "stress response" says
+        # more than "response", "protein quality control" more than "control".
+        process = max(processes, key=len) if processes else ""
+        if regulators and process:
+            return f"{regulators[0]}-dependent {process}"
+        if regulators:
+            return f"{regulators[0]} activity"
+        return process or "the bridged molecular node"
 
     @property
     def primary_terms(self) -> tuple[str, ...]:

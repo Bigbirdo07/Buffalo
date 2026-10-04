@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28diGly%5Btiab%5D+OR+ubiquitinome%5Btiab%5D+OR+ubiquitylome%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T07:33:54.741050+00:00",
+  "sha256": "c9f452b1aa16990d5e84b13fa1f3fb83e28bf6e6769909e7c5fa7c21c5ac976f"
+}

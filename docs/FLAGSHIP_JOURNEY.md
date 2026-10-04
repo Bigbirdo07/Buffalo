@@ -18,8 +18,13 @@ MechanisticBridge v2:   chaperone, co-chaperone, ubiquitin ligase, CHIP, stress 
         ↓
 KnowledgeGap → Experiment → primary readout (+2 secondary)
         ↓
-capabilities → coverage map → topology → next action
+capabilities → assets → candidate teams → coordination check
+        ↓
+coverage map → topology → next action
 ```
+
+Goal 2 detail: [`FLAGSHIP_GOAL2_REPORT.md`](FLAGSHIP_GOAL2_REPORT.md) ·
+plain language: [`FLAGSHIP_FOR_PATIENT_GROUPS.md`](FLAGSHIP_FOR_PATIENT_GROUPS.md)
 
 ## 1 · Three levels, never collapsed
 

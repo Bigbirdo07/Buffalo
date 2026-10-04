@@ -252,8 +252,14 @@ def build_cross_disease_experiment(
     # is supporting: a secondary measurement may add mechanistic context but may
     # not decide the hypothesis, because an experiment whose conclusion can rest
     # on any of several readouts has no single thing that could refute it.
+    # The primary readout measures ONE node, not the whole bridge. An assay
+    # cannot report a term list, and a readout that tries to is not a
+    # measurement anyone can run.
+    bridge = inputs.relationship.mechanistic_bridge
+    assert bridge is not None  # tested_node_for already guaranteed this
+    measured_node = bridge.functional_node
     primary_readout = (
-        f"Functional response of {tested_node} to the standardised stress, "
+        f"Functional response of {measured_node} to the standardised stress, "
         "measured with one identical assay, timing and analysis framework across "
         "both disease arms and the shared control"
     )

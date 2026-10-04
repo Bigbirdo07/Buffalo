@@ -760,3 +760,125 @@ class TestPrimaryReadoutRules:
             term.casefold() in (experiment.primary_readout or "").casefold()
             for term in bridge.terms
         )
+
+
+class TestGoal2EvidenceDiscipline:
+    """Capability discovery must not overclaim, and must not touch the science."""
+
+    MAP = ROOT / "data/action/flagship_goal2_map.json"
+
+    def test_coordination_opportunity_requires_evidence_of_overlap(self) -> None:
+        from atlas.domain.cross_disease import PotentialCoordinationOpportunity
+
+        with pytest.raises(ValueError, match="evidence of actual overlap"):
+            PotentialCoordinationOpportunity(
+                opportunity_id="c1", group_a="A", group_b="B",
+                overlapping_objective="similar topics", overlapping_capability="x",
+                evidence_ids=(), uncertainty="u", potential_benefit="b",
+                verification_required="v",
+            )
+
+    def test_coordination_is_never_asserted_as_duplication(self) -> None:
+        from atlas.domain.cross_disease import PotentialCoordinationOpportunity
+
+        item = PotentialCoordinationOpportunity(
+            opportunity_id="c2", group_a="A", group_b="B",
+            overlapping_objective="o", overlapping_capability="x",
+            evidence_ids=("PMID:1",), uncertainty="u", potential_benefit="b",
+            verification_required="v",
+        )
+        assert item.status == "POTENTIAL_COORDINATION_OPPORTUNITY"
+        assert "DUPLIC" not in item.status.upper()
+
+    def test_model_existence_and_availability_are_distinct_states(self) -> None:
+        from atlas.domain.cross_disease import ModelAvailability
+
+        # A paper using a model proves it existed in that study, nothing more.
+        assert ModelAvailability.MODEL_DEMONSTRATED != (
+            ModelAvailability.MODEL_REPOSITORY_VERIFIED
+        )
+        assert ModelAvailability.MODEL_CURRENT_AVAILABILITY_UNKNOWN.value.endswith(
+            "UNKNOWN"
+        )
+
+    def test_evidence_depth_travels_with_the_bridge(self) -> None:
+        from atlas.domain.cross_disease import EvidenceDepth, MechanisticBridge
+
+        bridge = MechanisticBridge(
+            bridge_id="b", terms=("axis",), derived_from_evidence_ids=("PMID:1",),
+            statement="s", derivation_method="m",
+            evidence_depth=EvidenceDepth.ABSTRACT_OR_DERIVED_SOURCE,
+        )
+        assert not bridge.full_text_review_completed
+        assert bridge.evidence_depth is EvidenceDepth.ABSTRACT_OR_DERIVED_SOURCE
+
+    def test_functional_node_is_one_measurable_thing(self) -> None:
+        # A readout measures a node, not a term list. A primary readout naming
+        # every bridge term is not a measurement anyone can run.
+        from atlas.domain.cross_disease import MechanisticBridge
+
+        bridge = MechanisticBridge(
+            bridge_id="b", terms=("chaperone", "stress response", "XYZ1"),
+            derived_from_evidence_ids=("PMID:1",), statement="s",
+            derivation_method="m",
+        )
+        node = bridge.functional_node
+        assert "XYZ1" in node
+        assert node.count(",") == 0
+
+    @pytest.mark.skipif(not MAP.exists(), reason="goal 2 map not generated")
+    def test_overbroad_searches_yield_no_candidates(self) -> None:
+        # The guard against the failure this phase found: a query returning tens
+        # of thousands of hits must not produce a candidate.
+        payload = json.loads(self.MAP.read_text())
+        for row in payload["capability_coverage"]:
+            broad = [
+                s for s in row["searches"]
+                if s.get("status") == "TOO_BROAD_TO_IDENTIFY"
+            ]
+            for search in broad:
+                assert search["total_hits"] > 2000
+                assert search["note"]
+            if broad and not [
+                s for s in row["searches"] if s.get("status") == "CHECKED"
+            ]:
+                assert row["status"] == "UNKNOWN", (
+                    f"{row['requirement_id']} drew a status from broad searches only"
+                )
+
+    @pytest.mark.skipif(not MAP.exists(), reason="goal 2 map not generated")
+    def test_willingness_is_never_inferred(self) -> None:
+        payload = json.loads(self.MAP.read_text())
+        for row in payload["capability_coverage"]:
+            for team in row["candidate_teams"]:
+                assert team["collaboration_willingness"] == "UNKNOWN"
+                assert team["capability_verified"] is False
+                assert team["evidence_scope"] != "DIRECT"
+
+    @pytest.mark.skipif(not MAP.exists(), reason="goal 2 map not generated")
+    def test_missing_capabilities_remain_visible(self) -> None:
+        payload = json.loads(self.MAP.read_text())
+        statuses = {row["status"] for row in payload["capability_coverage"]}
+        # Whatever the mix, every row must state one of the controlled statuses
+        # and none may be silently dropped from the map.
+        assert statuses <= {
+            "COVERED_VERIFIED", "COVERED_SUPPORTED", "PARTIAL", "MISSING", "UNKNOWN",
+        }
+        assert len(payload["capability_coverage"]) == payload["capabilities_total"]
+
+    @pytest.mark.skipif(not MAP.exists(), reason="goal 2 map not generated")
+    def test_goal2_did_not_alter_the_frozen_science(self) -> None:
+        # Action search must not feed back into the scientific claim.
+        payload = json.loads(self.MAP.read_text())
+        journey = json.loads((ROOT / "data/flagship/flagship_journey.json").read_text())
+        assert payload["frozen_bridge"]["terms"] == journey[
+            "validated_mechanistic_bridge"
+        ]["terms"]
+        assert payload["scientific_question"] == journey["knowledge_gap"]["question"]
+
+    @pytest.mark.skipif(not MAP.exists(), reason="goal 2 map not generated")
+    def test_no_verified_collaborator_remains_an_allowed_outcome(self) -> None:
+        payload = json.loads(self.MAP.read_text())
+        assert payload["collaborator_status"] in {
+            "NO_VERIFIED_COLLABORATOR_IDENTIFIED", "VERIFIED_COLLABORATOR_IDENTIFIED",
+        }

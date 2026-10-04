@@ -133,6 +133,10 @@
       "protein ubiquitination",
       "Purkinje cell",
       "Myoclonus"
-    ]
-  }
+    ],
+    "evidence_depth": "ABSTRACT_OR_DERIVED_SOURCE",
+    "full_text_review_completed": false
+  },
+  "frozen_for_phase": true,
+  "freeze_note": "Frozen as the working bridge for the Goal 2 phase. Full text was not obtained for either supporting paper, so this bridge rests on abstract-level typed annotations. It may be versioned again after expert or full-text review; it must not be promoted beyond this evidence meanwhile."
 }
