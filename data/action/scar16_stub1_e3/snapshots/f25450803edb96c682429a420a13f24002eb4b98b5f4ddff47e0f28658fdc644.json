@@ -1,0 +1,6 @@
+{
+  "url": "https://clinicaltrials.gov/api/v2/studies?query.term=STUB1&pageSize=20&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T22:26:09.576394+00:00",
+  "sha256": "2d7b747797f70df8a807407d88d75acfc7e387c1be454569269f6b353b748a98"
+}

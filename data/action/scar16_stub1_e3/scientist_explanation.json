@@ -1,0 +1,39 @@
+{
+  "asset_ids": [
+    "asset:stub1-patient-ipsc:pmid-29679845",
+    "asset:chip-functional-assay:publication-method",
+    "asset:registry:NCT01793168"
+  ],
+  "audience": "scientist",
+  "capability_claim_ids": [
+    "capability-claim:scar16-patient-ipsc:cell_culture",
+    "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+    "capability-claim:chip-variant-biochemistry:ubiquitination_assay",
+    "capability-claim:chip-variant-biochemistry:protein_biochemistry",
+    "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
+    "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
+    "capability-claim:capability-candidate:crispr_editing:PMID-42069601",
+    "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+    "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+    "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+    "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
+    "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
+    "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044",
+    "capability-claim:capability-candidate:proteomics:PMID-41208143",
+    "capability-claim:capability-candidate:proteomics:PMID-39920137",
+    "capability-claim:capability-candidate:proteomics:PMID-40480969"
+  ],
+  "collaboration_id": "collaboration:scar16-stub1-linker-action-v1",
+  "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "knowledge_gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "missing_capabilities": [
+    "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b"
+  ],
+  "missing_capability_names": [
+    "iPSC maintenance",
+    "clone-aware statistical analysis"
+  ],
+  "status": "MISSING_CAPABILITY",
+  "text": "Candidate subjects are publication-derived author groups, not verified laboratories: names and affiliation strings are read from cached PubMed author records (first and last author per publication) and reflect affiliation at publication time only. All capability evidence is therefore team-level at best; no personal capability is asserted.\n\nCapability claims: 16. The patient-iPSC signals (PMID:29679845, 2018; PMID:33097556, 2020) fall outside the five-year recency window relative to the cache date and are classified accordingly. The CHIP biochemistry signals (PMID:31619515, 2019; PMID:42567515, 2026) include a current publication but a single source type, so they cannot reach VERIFIED, which requires two independent source types.\n\nNIH RePORTER: 'STUB1 ataxia' returned no awards. Text matches on 'CHIP' are largely false positives from the ambiguous token; the only topically relevant award (CHIP co-chaperone, UNC) ended in 2011 and is treated as institution-scope, non-neuronal evidence. ClinicalTrials.gov: NCT01793168 lists STUB1-deficiency cerebellar ataxia among its conditions and is RECRUITING, which evidences registry infrastructure only.\n\nUnmet requirements are STUB1 allele-specific endogenous editing, isogenic line generation, diGly ubiquitinome proteomics and clone-aware analysis. The opportunity is therefore MISSING_CAPABILITY and is not presented as actionable. Criticism and synthesis here are deterministic rule output, not expert review."
+}

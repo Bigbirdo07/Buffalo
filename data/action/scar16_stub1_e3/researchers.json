@@ -1,0 +1,248 @@
+[
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "Jonathan C Schisler",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599 [email removed]",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:31619515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31619515/"
+      },
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:42567515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42567515/"
+      }
+    ],
+    "publications": [
+      "PMID:31619515",
+      "PMID:42567515"
+    ],
+    "researcher_id": "researcher:jonathan-c-schisler",
+    "role": "last author on PMID:31619515; last author on PMID:42567515. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "L Schöls",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of Tübingen, 72076 Tübingen, Germany [email removed] [email removed]",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:33097556",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33097556/"
+      }
+    ],
+    "publications": [
+      "PMID:33097556"
+    ],
+    "researcher_id": "researcher:l-schols",
+    "role": "last author on PMID:33097556. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "S Schuster",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of Tübingen, 72076 Tübingen, Germany.",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:33097556",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33097556/"
+      }
+    ],
+    "publications": [
+      "PMID:33097556"
+    ],
+    "researcher_id": "researcher:s-schuster",
+    "role": "first author on PMID:33097556. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "Sabrina C Madrigal",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599.",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:31619515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31619515/"
+      }
+    ],
+    "publications": [
+      "PMID:31619515"
+    ],
+    "researcher_id": "researcher:sabrina-c-madrigal",
+    "role": "first author on PMID:31619515. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "Selin Altinok",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "The McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA; Department of Pharmacology, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA.",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:42567515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42567515/"
+      }
+    ],
+    "publications": [
+      "PMID:42567515"
+    ],
+    "researcher_id": "researcher:selin-altinok",
+    "role": "first author on PMID:42567515. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "Stefan Hauser",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "German Center for Neurodegenerative Diseases (DZNE), Tübingen, Germany.",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:29679845",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29679845/"
+      }
+    ],
+    "publications": [
+      "PMID:29679845"
+    ],
+    "researcher_id": "researcher:stefan-hauser",
+    "role": "last author on PMID:29679845. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  },
+  {
+    "aliases": [],
+    "assets": [],
+    "canonical_name": "Stefanie Schuster",
+    "capabilities": [],
+    "country": null,
+    "department": null,
+    "diseases": [],
+    "email": null,
+    "email_source": null,
+    "grants": [],
+    "institution": "Hertie Institute for Clinical Brain Research, University of Tübingen, Tübingen, Germany; German Center for Neurodegenerative Diseases (DZNE), Tübingen, Germany; Graduate School of Cellular and Molecular Neuroscience, University of Tübingen, Tübingen, Germany.",
+    "laboratory": null,
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_profile_url": null,
+    "orcid": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:29679845",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29679845/"
+      }
+    ],
+    "publications": [
+      "PMID:29679845"
+    ],
+    "researcher_id": "researcher:stefanie-schuster",
+    "role": "first author on PMID:29679845. Publication authorship only: current role, employment and willingness to collaborate are unverified.",
+    "source_updated_at": null,
+    "trials": []
+  }
+]

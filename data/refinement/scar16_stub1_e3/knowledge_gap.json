@@ -1,0 +1,171 @@
+{
+  "gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "question": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+  "gap_type": "untested_variant_class",
+  "related_claims": [
+    "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+    "ac4-interdomain-missense"
+  ],
+  "related_edges": [
+    "59b75e11-a1e4-5dbb-8de6-4530b898c7d5"
+  ],
+  "scope": "Applies to the inter-domain/linker-region SCAR16 missense alleles p.Lys145Gln and p.Met211Ile. It does not apply to p.Thr246Met or to U-box-truncating alleles, for which loss of ligase activity is SUPPORTED by this run (STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.; The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.).",
+  "why_it_matters": "This transition is the first molecular step of the upstream SCAR16 mechanism, and every downstream node in the imported pathograph depends on it. Four of the six alleles assayed in PMID:28396517 were not overtly different from wild type, so the upstream edge as worded does not hold allele-wide. Whether these patients' disease runs through reduced ligase output at all determines (a) whether the edge wording can be retained, (b) whether bulk ubiquitination is a valid assay for allele interpretation, and (c) whether strategies aimed at restoring ligase activity are even addressed at the right defect for these genotypes.",
+  "current_evidence_summary": "No direct support. Direct refutation (c325be09-0223-5168-a17b-8874c643986f#o08): in purified recombinant CHIP with E1/E2/ubiquitin at 37 C for 1 h, p.Glu28Lys, p.Lys145Gln, p.Met211Ile and p.Ser236Thr showed ubiquitination activity not overtly different from wild type. Indirect only (70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10, retrieved:PMID:31619515#o12, retrieved:PMID:31619515#o13): class-level panels report that SCAR16 mutants recover activity below their melting temperature, that all tested mutants except the U-box alleles p.Met240Thr and p.Thr246Met retain some HSP70 polyubiquitination, and that paper-described TPR and CC allele groups are not defective in E2-dependent chain formation. These panel statements do not name the alleles in scope, so they cannot settle an allele-level claim.",
+  "contradictory_evidence_summary": "One background-only citation (c215671b-911e-548a-93d7-c2338562826a#o04) states that p.Lys145Gln impairs CHIP ligase activity, but it is an introduction sentence in PMID:41851873 attributing the finding to an earlier study; that paper's own ligase result is reported for p.Gln118* only. The critic therefore classified it BACKGROUND_ONLY with causal support NONE, and it does not contribute to status. The sibling TPR claim is CONTEXT_DEPENDENT: p.Asn65Ser impairs HSC70 polyubiquitin-chain elongation while retaining self-ubiquitination. Those are distinct readouts; the experiment shows a processivity/readout-specific defect but does not establish substrate selectivity. Cross-entity SCA48 work reports TPR variants retaining intrinsic ligase activity with impaired substrate ubiquitination. Those are qualifying, not contradicting: different allele class, or different disease entity.",
+  "search_coverage": {
+    "coverage_id": "coverage:59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+    "sources": [
+      {
+        "source": "PubMed (pm_allele)",
+        "status": "CHECKED",
+        "queries": [
+          "(STUB1[tiab] OR CHIP[tiab]) AND (E28K[tiab] OR K145Q[tiab] OR M211I[tiab] OR S236T[tiab] OR N65S[tiab] OR T246M[tiab] OR Lys145Gln[tiab] OR Met211Ile[tiab] OR Glu28Lys[tiab] OR Ser236Thr[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 7,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_function)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND (SCAR16[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"Gordon Holmes\"[tiab]) AND (ubiquitin*[tiab] OR \"E3 ligase\"[tiab] OR \"ligase activity\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 22,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_sca48)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND (SCA48[tiab] OR \"spinocerebellar ataxia 48\"[tiab] OR \"spinocerebellar ataxia type 48\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 34,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_models)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND ataxia[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab] OR neurons[tiab] OR fibroblasts[tiab] OR mice[tiab] OR rats[tiab] OR zebrafish[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 8,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_negative)",
+        "status": "CHECKED",
+        "queries": [
+          "(STUB1[tiab] OR CHIP[tiab]) AND (SCAR16[tiab] OR SCA48[tiab]) AND (\"retain*\"[tiab] OR \"preserved\"[tiab] OR \"not affect*\"[tiab] OR \"dominant negative\"[tiab] OR \"gain of function\"[tiab] OR \"toxic\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 4,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "Europe PMC full text",
+        "status": "CHECKED",
+        "queries": [
+          "per-PMID open-access full text retrieval"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 7,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "UniProt Q9UNE7 (domain boundaries)",
+        "status": "CHECKED",
+        "queries": [
+          "https://rest.uniprot.org/uniprotkb/Q9UNE7.json"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 48,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      }
+    ],
+    "search_started_at": "2026-10-04T00:20:50.385808Z",
+    "search_completed_at": "2026-10-04T00:20:50.383594Z",
+    "scope": "scientific_evidence",
+    "language_limitations": [],
+    "geographic_limitations": [],
+    "interpretation_caveat": "Absence in this search is not proof that relevant evidence does not exist."
+  },
+  "missing_evidence_type": [
+    "Substrate-resolved ubiquitination measurement (e.g. diGly ubiquitinome or a defined CHIP client panel) for these specific alleles, rather than bulk HSC70/self-ubiquitination.",
+    "Measurement at endogenous expression level in a human neuronal cell type, rather than purified protein or overexpression.",
+    "Assays spanning physiological and proteotoxic-stress conditions, given the reported temperature dependence of SCAR16 mutant activity.",
+    "Measurement in the patients' actual compound-heterozygous configuration, not only homozygous single-allele constructs."
+  ],
+  "required_context": [
+    "human cerebellar or cortical neuronal cell type",
+    "endogenous STUB1 dosage",
+    "compound-heterozygous allele configuration as found in patients",
+    "physiological 37 C and proteotoxic-stress conditions",
+    "substrate identity (which CHIP clients, not bulk activity)"
+  ],
+  "priority_reason": {
+    "causal_centrality": "First molecular step of the imported SCAR16 mechanism; the edge is the parent of the pathograph's downstream chain.",
+    "downstream_dependence": "All downstream nodes in the imported entry descend from this transition.",
+    "evidence_conflict": "A recombinant primary result reports no bulk defect for these alleles while a secondary citation asserts impairment; the assertion traces to a study whose own data concern different alleles.",
+    "translational_relevance": "Determines whether residual-ligase-activity modulation is a coherent target for these genotypes. No clinical claim is made here.",
+    "experimental_tractability": "Addressable with existing iPSC, CRISPR knock-in and ubiquitinome proteomics methods; a SCAR16 patient iPSC line is already reported (PMID:29679845).",
+    "available_assets": "Published SCAR16/Gordon Holmes patient iPSC line; recombinant CHIP expression and in vitro ubiquitination protocols published in PMID:28396517 and PMID:31619515.",
+    "discriminates_competing_hypotheses": "A substrate-resolved, condition-controlled design separates substrate-selective ligase failure from conditional destabilization and from non-ligase (co-chaperone) dysfunction."
+  },
+  "resolvability": "Experimentally resolvable. The discriminating measurement is substrate-level ubiquitination in isogenic human neurons carrying these alleles at endogenous dosage, assayed at 37 C and under proteotoxic stress.",
+  "proposed_discriminating_test": "Substrate-resolved ubiquitinome comparison of isogenic neurons carrying p.Lys145Gln or p.Met211Ile against isogenic wild type, with p.Thr246Met as a bulk-loss comparator, at 37 C and after heat stress.",
+  "status": "OPEN"
+}

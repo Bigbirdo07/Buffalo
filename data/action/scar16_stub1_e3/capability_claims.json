@@ -1,0 +1,326 @@
+[
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "claim_id": "capability-claim:scar16-patient-ipsc:cell_culture",
+    "corroboration_count": 0,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:29679845",
+      "PMID:33097556"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Only historical evidence older than five years was identified.",
+    "recency": "historical_or_unknown",
+    "statement": "SCAR16 patient-derived iPSC and neuronal-model author group: published work bearing on iPSC maintenance.",
+    "status": "OUTDATED",
+    "subject_id": "team:scar16-patient-ipsc",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+    "corroboration_count": 0,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:29679845",
+      "PMID:33097556"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Only historical evidence older than five years was identified.",
+    "recency": "historical_or_unknown",
+    "statement": "SCAR16 patient-derived iPSC and neuronal-model author group: published work bearing on iPSC neuronal differentiation.",
+    "status": "OUTDATED",
+    "subject_id": "team:scar16-patient-ipsc",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "claim_id": "capability-claim:chip-variant-biochemistry:ubiquitination_assay",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:31619515",
+      "PMID:42567515"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "CHIP variant biochemistry author group: published work bearing on quantitative ubiquitination analysis.",
+    "status": "SUPPORTED",
+    "subject_id": "team:chip-variant-biochemistry",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "claim_id": "capability-claim:chip-variant-biochemistry:protein_biochemistry",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:31619515",
+      "PMID:42567515"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "CHIP variant biochemistry author group: published work bearing on protein thermal-stability assay.",
+    "status": "SUPPORTED",
+    "subject_id": "team:chip-variant-biochemistry",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:41911331"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Derek P Narendra) demonstrated STUB1 CRISPR editing in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-41911331",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:41963441"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Jacque Pak Kan Ip) demonstrated STUB1 CRISPR editing in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-41963441",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "claim_id": "capability-claim:capability-candidate:crispr_editing:PMID-42069601",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:42069601"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Lezanne Ooi) demonstrated STUB1 CRISPR editing in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:crispr_editing:PMID-42069601",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:39460936"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Hans van Bokhoven) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:40929244"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Jan Hoeber) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "claim_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:38014483"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Wan-Jin Chen) demonstrated iPSC neuronal differentiation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "claim_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:39460936"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Hans van Bokhoven) demonstrated isogenic line generation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "claim_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:39913247"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Cláudia Saraiva) demonstrated isogenic line generation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "claim_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:40205044"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Kristen J Brennand) demonstrated isogenic line generation in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-41208143",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:41208143"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Jiang-Feng Liu) demonstrated diGly enrichment proteomics in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:proteomics:PMID-41208143",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-39920137",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:39920137"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Yaoyang Zhang) demonstrated diGly enrichment proteomics in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:proteomics:PMID-39920137",
+    "subject_type": "laboratory"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "claim_id": "capability-claim:capability-candidate:proteomics:PMID-40480969",
+    "corroboration_count": 1,
+    "directness": "TEAM_LEVEL",
+    "evidence_items": [
+      "PMID:40480969"
+    ],
+    "evidence_source_types": [
+      "publication"
+    ],
+    "human_review_status": "PENDING",
+    "last_checked": "2026-10-04",
+    "rationale": "Current direct evidence supports the capability but lacks cross-source corroboration.",
+    "recency": "current",
+    "statement": "Publication-derived group (last author Alessandro Ori) demonstrated diGly enrichment proteomics in no STUB1 or SCAR16 involvement established by this search.",
+    "status": "SUPPORTED",
+    "subject_id": "capability-candidate:proteomics:PMID-40480969",
+    "subject_type": "laboratory"
+  }
+]

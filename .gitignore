@@ -1,0 +1,31 @@
+# Environments and caches
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Local database file; Postgres is the canonical store.
+data/atlas.sqlite3
+
+# Transient fetch cache.
+data/cache/*
+!data/cache/.gitkeep
+
+# The upstream DisMech sparse clone (~295MB) is NOT tracked: it is reproducible
+# from the pinned commit recorded in every manifest.
+#   git clone --depth 1 --filter=blob:none --sparse \
+#     https://github.com/monarch-initiative/dismech.git data/upstream/dismech-checkout
+#   git -C data/upstream/dismech-checkout sparse-checkout set kb/disorders src/dismech/schema
+#   git -C data/upstream/dismech-checkout checkout b923d18f1c962eeaecf9f1f908305b21a8f26904
+data/upstream/dismech-checkout/
+
+# Deliberately tracked, despite size:
+#   data/*/snapshots/        hash-verified source snapshots; offline replay needs them
+#   data/fixtures/real/      regression fixtures derived from real upstream entries
+#   data/audit/*.json        generated audit evidence pinned by the manifests

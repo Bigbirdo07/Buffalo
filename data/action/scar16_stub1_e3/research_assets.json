@@ -1,0 +1,102 @@
+[
+  {
+    "access_requirements": [
+      "consent provenance review",
+      "material transfer agreement"
+    ],
+    "asset_id": "asset:stub1-patient-ipsc:pmid-29679845",
+    "asset_type": "ipsc_line",
+    "availability": "Unknown: no repository deposit or availability statement was located",
+    "canonical_name": "Establishment of STUB1/CHIP mutant induced pluripotent stem cells (iPSCs) from a patient with Gordon Holmes syndrome/SCAR16.",
+    "creator": "team:scar16-patient-ipsc",
+    "disease_context": [
+      "Gordon Holmes syndrome",
+      "SCAR16"
+    ],
+    "evidence": [
+      "PMID:29679845",
+      "PMID:33097556"
+    ],
+    "human_review_status": "PENDING",
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanism_context": [
+      "STUB1/CHIP dysfunction"
+    ],
+    "model_context": [
+      "patient-derived iPSC"
+    ],
+    "organization": null,
+    "owner": null,
+    "repository": null,
+    "reuse_status": "REQUIRES_VALIDATION",
+    "source_updated_at": null,
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/29679845/",
+    "variant_context": [
+      "patient genotype as published; not the K145Q or M211I alleles the experiment requires"
+    ]
+  },
+  {
+    "access_requirements": [
+      "confirm assay materials",
+      "adapt readout to neuronal diGly ubiquitinome"
+    ],
+    "asset_id": "asset:chip-functional-assay:publication-method",
+    "asset_type": "assay",
+    "availability": "Methods published; materials, transferability and neuronal applicability unverified",
+    "canonical_name": "Published CHIP variant functional-assay methods",
+    "creator": "team:chip-variant-biochemistry",
+    "disease_context": [
+      "SCAR16",
+      "SCA48"
+    ],
+    "evidence": [
+      "PMID:31619515",
+      "PMID:42567515"
+    ],
+    "human_review_status": "PENDING",
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanism_context": [
+      "CHIP E3 ubiquitin ligase and co-chaperone function"
+    ],
+    "model_context": [
+      "purified recombinant protein and cellular assays"
+    ],
+    "organization": null,
+    "owner": null,
+    "repository": null,
+    "reuse_status": "REQUIRES_VALIDATION",
+    "source_updated_at": null,
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/42567515/",
+    "variant_context": []
+  },
+  {
+    "access_requirements": [
+      "contact registry coordinator",
+      "institutional data-use approval"
+    ],
+    "asset_id": "asset:registry:NCT01793168",
+    "asset_type": "registry",
+    "availability": "Registry status RECRUITING as recorded in the cached ClinicalTrials.gov record; enrolment terms not verified",
+    "canonical_name": "Rare Disease Patient Registry & Natural History Study - Coordination of Rare Diseases at Sanford",
+    "creator": null,
+    "disease_context": [
+      "Autosomal Recessive Cerebellar Ataxia Due to STUB1 Deficiency"
+    ],
+    "evidence": [
+      "NCT01793168"
+    ],
+    "human_review_status": "PENDING",
+    "last_verified_at": "2026-10-03T22:26:09.576394Z",
+    "mechanism_context": [],
+    "model_context": [
+      "human participant registry and natural-history data"
+    ],
+    "organization": "Sanford Health",
+    "owner": null,
+    "repository": null,
+    "reuse_status": "REQUIRES_VALIDATION",
+    "source_updated_at": null,
+    "source_url": "https://clinicaltrials.gov/study/NCT01793168",
+    "variant_context": []
+  }
+]

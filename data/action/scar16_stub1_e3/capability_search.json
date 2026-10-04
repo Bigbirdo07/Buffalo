@@ -1,0 +1,282 @@
+{
+  "candidates_selected": [
+    {
+      "affiliation": "National Institute of Neurological Disorders and Stroke, National Institutes of Health, Bethesda, MD 20892, USA.",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-41911331",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Derek P Narendra",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "41911331",
+      "tier": "B_capability_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "School of Biomedical Sciences, The Chinese University of Hong Kong, Hong Kong, SAR, China. [email removed]",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-41963441",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Jacque Pak Kan Ip",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "41963441",
+      "tier": "B_capability_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "School of Science and Molecular Horizons, University of Wollongong, Wollongong, NSW, Australia. [email removed]",
+      "candidate_id": "capability-candidate:crispr_editing:PMID-42069601",
+      "capability_category": "crispr_editing",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Lezanne Ooi",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "42069601",
+      "tier": "B_capability_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Hans van Bokhoven",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "39460936",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Roche Pharma Research and Early Development, Pharmaceutical Sciences, Roche Innovation Center Basel, F. Hoffmann-La Roche Ltd., 4070 Basel, Switzerland.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Jan Hoeber",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "40929244",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Department of Neurology, Department of Rare Diseases, Institute of Neurology of First Affiliated Hospital, Institute of Neuroscience, and Fujian Key Laboratory of Molecular Neurology, Fujian Medical University, Fuzhou, China.",
+      "candidate_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+      "capability_category": "ipsc_neuronal_differentiation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Wan-Jin Chen",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "38014483",
+      "tier": "B_capability_anchored",
+      "year": 2024
+    },
+    {
+      "affiliation": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands.",
+      "candidate_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
+      "capability_category": "isogenic_line_generation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Hans van Bokhoven",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "39460936",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg, L-4362 Esch-sur-Alzette, Luxembourg.",
+      "candidate_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
+      "capability_category": "isogenic_line_generation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Cláudia Saraiva",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "39913247",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Nash Family Department of Neuroscience, Icahn School of Medicine at Mount Sinai, New York, NY, USA. [email removed]",
+      "candidate_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
+      "capability_category": "isogenic_line_generation",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Kristen J Brennand",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "40205044",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "State Key Laboratory of Common Mechanism Research for Major Diseases, Department of Biochemistry and Molecular Biology, Institute of Basic Medical Sciences Chinese Academy of Medical Sciences, School of Basic Medicine Peking Union Medical College, Beijing, China.",
+      "candidate_id": "capability-candidate:proteomics:PMID-41208143",
+      "capability_category": "proteomics",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Jiang-Feng Liu",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "41208143",
+      "tier": "B_capability_anchored",
+      "year": 2026
+    },
+    {
+      "affiliation": "Interdisciplinary Research Center on Biology and Chemistry, Shanghai Institute of Organic Chemistry, Chinese Academy of Sciences, 100 Haike Rd., Shanghai, China. [email removed]",
+      "candidate_id": "capability-candidate:proteomics:PMID-39920137",
+      "capability_category": "proteomics",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Yaoyang Zhang",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "39920137",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    },
+    {
+      "affiliation": "Leibniz Institute on Aging-Fritz Lipmann Institute (FLI), Jena, Germany. [email removed]",
+      "candidate_id": "capability-candidate:proteomics:PMID-40480969",
+      "capability_category": "proteomics",
+      "disease_involvement": "no STUB1 or SCAR16 involvement established by this search",
+      "last_author": "Alessandro Ori",
+      "limitation": "Technique demonstrated in a comparable model system. This is not evidence of disease involvement, current activity, availability or willingness to collaborate.",
+      "pmid": "40480969",
+      "tier": "B_capability_anchored",
+      "year": 2025
+    }
+  ],
+  "executed": [
+    {
+      "capability_category": "crispr_editing",
+      "model_context": "human iPSC",
+      "query": "\"STUB1\"[tiab] AND (\"knock-in\"[tiab] OR \"knockin\"[tiab] OR isogenic[tiab] OR CRISPR[tiab]) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+      "rationale": "Has anyone edited the STUB1 locus in an iPSC background?",
+      "retrieved_pmids": [
+        "35675767",
+        "30605842",
+        "33097556",
+        "40027688"
+      ],
+      "snapshot_sha256": "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a",
+      "tier": "A_disease_anchored",
+      "total_hits": 4
+    },
+    {
+      "capability_category": "crispr_editing",
+      "model_context": "isogenic iPSC-derived neurons",
+      "query": "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR \"base editing\"[tiab] OR \"prime editing\"[tiab])) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (neuron*[tiab] OR cerebell*[tiab])",
+      "rationale": "Who performs allele-specific endogenous editing in iPSC-derived neuronal systems, irrespective of gene?",
+      "retrieved_pmids": [
+        "39913247",
+        "39500314",
+        "28170165",
+        "37517100",
+        "33658519",
+        "35965317",
+        "41040684",
+        "32178712",
+        "41963441",
+        "41911331",
+        "34551822",
+        "31416668",
+        "28826027",
+        "32499675",
+        "42069601"
+      ],
+      "snapshot_sha256": "7a15ed14e7e5b872c146db0c5eb71ce17f5141017a0ff7605d19a7e2738712d6",
+      "tier": "B_capability_anchored",
+      "total_hits": 22
+    },
+    {
+      "capability_category": "isogenic_line_generation",
+      "model_context": "isogenic iPSC variant panels",
+      "query": "isogenic[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"point mutation\"[tiab] OR \"single nucleotide\"[tiab] OR variant*[tiab]) AND (neuron*[tiab] OR cerebell*[tiab])",
+      "rationale": "Who generates isogenic variant panels in neuronal iPSC models?",
+      "retrieved_pmids": [
+        "29861287",
+        "38135757",
+        "39419027",
+        "31750563",
+        "40205044",
+        "31548722",
+        "33837271",
+        "40319306",
+        "38293651",
+        "39913247",
+        "39612244",
+        "41171761",
+        "39460936",
+        "32712198",
+        "37935051"
+      ],
+      "snapshot_sha256": "f874297502306829bef25038d47607ee63218e8d201828b52ea1ceab986edd36",
+      "tier": "B_capability_anchored",
+      "total_hits": 131
+    },
+    {
+      "capability_category": "proteomics",
+      "model_context": "any",
+      "query": "\"STUB1\"[tiab] AND (\"diGly\"[tiab] OR \"ubiquitinome\"[tiab] OR \"ubiquitylome\"[tiab])",
+      "rationale": "Has a STUB1 substrate ubiquitinome ever been measured?",
+      "retrieved_pmids": [
+        "39337505"
+      ],
+      "snapshot_sha256": "06df782700a1a922e5184f9f32c78dcd695cdabdbd2ca02b958be7e7c273bf8a",
+      "tier": "A_disease_anchored",
+      "total_hits": 1
+    },
+    {
+      "capability_category": "proteomics",
+      "model_context": "neuronal diGly ubiquitinome",
+      "query": "(\"diGly\"[tiab] OR \"ubiquitinome\"[tiab] OR \"ubiquitylome\"[tiab] OR \"ubiquitin remnant\"[tiab]) AND (neuron*[tiab] OR iPSC[tiab] OR \"induced pluripotent\"[tiab] OR cerebell*[tiab])",
+      "rationale": "Who runs diGly-enriched ubiquitinome proteomics on neuronal material, irrespective of gene?",
+      "retrieved_pmids": [
+        "32142685",
+        "30763678",
+        "36114006",
+        "33274322",
+        "35516420",
+        "28546288",
+        "37568787",
+        "39920137",
+        "34767452",
+        "41208143",
+        "40480969"
+      ],
+      "snapshot_sha256": "001efbdfedf4e06b72fe7b965956f8943bbcd6b5cdf480ac1dda1862ee247943",
+      "tier": "B_capability_anchored",
+      "total_hits": 11
+    },
+    {
+      "capability_category": "ipsc_neuronal_differentiation",
+      "model_context": "cerebellar iPSC differentiation",
+      "query": "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (Purkinje[tiab] OR cerebellar[tiab]) AND (differentiat*[tiab] OR organoid[tiab])",
+      "rationale": "Who differentiates iPSC to cerebellar or Purkinje-like neurons, the disease-relevant cell type?",
+      "retrieved_pmids": [
+        "32075691",
+        "27328712",
+        "38014483",
+        "33347831",
+        "33896374",
+        "39460936",
+        "25623948",
+        "31917972",
+        "34181916",
+        "30636067",
+        "29196977",
+        "25985846",
+        "40929244",
+        "28281409",
+        "25000412"
+      ],
+      "snapshot_sha256": "c2274399eded8109371331694dd9b27ba38c730ffac71ba786f8149118ce7de5",
+      "tier": "B_capability_anchored",
+      "total_hits": 85
+    },
+    {
+      "capability_category": "statistical_analysis",
+      "model_context": "clone-level random-effects analysis",
+      "query": "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (clone*[tiab] AND (\"mixed model\"[tiab] OR \"random effect*\"[tiab] OR \"variance component*\"[tiab]))",
+      "rationale": "Who applies clone-aware statistical models to iPSC experiments?",
+      "retrieved_pmids": [],
+      "snapshot_sha256": "faa96c96266991109e98f521303252e23ef535383e0f90157485d74dfab70a7f",
+      "tier": "B_capability_anchored",
+      "total_hits": 0
+    }
+  ],
+  "failures": [],
+  "note": "Full result of the executed targeted queries. The candidate list is a recency-capped selection; every retrieved PMID is recorded here so a reviewer can see leads that were not promoted.",
+  "selection_rule": "newest first, capped at 3 per capability, excluding publications already represented by an existing candidate team",
+  "tiers": {
+    "A_disease_anchored": "gene or disease plus capability; high precision, near-zero recall for an unmet requirement",
+    "B_capability_anchored": "capability plus model context without the gene; finds groups who could do the work but have no established disease involvement"
+  }
+}

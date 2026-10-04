@@ -1,0 +1,27 @@
+{
+  "url": "https://api.reporter.nih.gov/v2/projects/search",
+  "post_json": {
+    "criteria": {
+      "advanced_text_search": {
+        "operator": "and",
+        "search_field": "all",
+        "search_text": "STUB1 CHIP ubiquitin ligase"
+      }
+    },
+    "include_fields": [
+      "ProjectNum",
+      "ProjectTitle",
+      "PrincipalInvestigators",
+      "Organization",
+      "AbstractText",
+      "ProjectStartDate",
+      "ProjectEndDate"
+    ],
+    "offset": 0,
+    "limit": 25,
+    "sort_field": "project_start_date",
+    "sort_order": "desc"
+  },
+  "retrieved_at": "2026-10-03T22:26:07.964194+00:00",
+  "sha256": "217e901ff78cb7a32eef8a2d748d309cb99a7ed9e93e96aa76a27bbe339ce120"
+}

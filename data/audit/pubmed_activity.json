@@ -1,0 +1,62 @@
+{
+  "retrieved": "2026-10-03",
+  "db": "PubMed via NCBI ESearch",
+  "cache": "data/audit/pubmed_snapshots",
+  "counts": {
+    "Autosomal Recessive Spinocerebellar Ataxia 16": {
+      "query": "(STUB1[tiab] OR \"CHIP\"[ti]) AND (SCAR16[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"Gordon Holmes\"[tiab])",
+      "total": 62,
+      "since_2021": 37
+    },
+    "Autosomal Recessive Spinocerebellar Ataxia 20": {
+      "query": "SNX14[tiab] OR SCAR20[tiab]",
+      "total": 45,
+      "since_2021": 20
+    },
+    "Bachmann-Bupp Syndrome": {
+      "query": "\"Bachmann-Bupp\"[tiab] OR (ODC1[tiab] AND (neurodevelopmental[tiab] OR alopecia[tiab]))",
+      "total": 20,
+      "since_2021": 17
+    },
+    "USP9X Female-Restricted Syndromic Intellectual Disability": {
+      "query": "USP9X[tiab] AND (intellectual disability[tiab] OR neurodevelopmental[tiab])",
+      "total": 39,
+      "since_2021": 18
+    },
+    "BRPF1-Related Intellectual Disability": {
+      "query": "BRPF1[tiab]",
+      "total": 121,
+      "since_2021": 62
+    },
+    "Wilson Disease": {
+      "query": "\"Wilson disease\"[tiab] OR \"Wilson's disease\"[tiab]",
+      "total": 7660,
+      "since_2021": 1636
+    },
+    "Tangier_Disease": {
+      "query": "\"Tangier disease\"[tiab]",
+      "total": 602,
+      "since_2021": 57
+    },
+    "Apert Syndrome": {
+      "query": "\"Apert syndrome\"[tiab]",
+      "total": 1166,
+      "since_2021": 212
+    },
+    "Microcephaly, Short Stature, and Impaired Glucose Metabolism 1": {
+      "query": "IER3IP1[tiab] OR MEDS syndrome[tiab]",
+      "total": 124,
+      "since_2021": 59
+    },
+    "Neuronopathy, Distal Hereditary Motor, Autosomal Recessive 7": {
+      "query": "VRK1[tiab] AND (motor neuron[tiab] OR neuronopathy[tiab] OR ataxia[tiab])",
+      "total": 24,
+      "since_2021": 11
+    },
+    "BCKDK Deficiency": {
+      "query": "BCKDK[tiab]",
+      "total": 136,
+      "since_2021": 105
+    }
+  }
+}

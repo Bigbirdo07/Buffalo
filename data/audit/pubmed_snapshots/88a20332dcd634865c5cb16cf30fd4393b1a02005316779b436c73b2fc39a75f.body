@@ -1,0 +1,1 @@
+{"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":"17","retmax":"0","retstart":"0","idlist":[],"translationset":[],"querytranslation":"(\"Bachmann-Bupp\"[Title/Abstract] OR (\"ODC1\"[Title/Abstract] AND (\"neurodevelopmental\"[Title/Abstract] OR \"alopecia\"[Title/Abstract]))) AND 2021/01/01:2026/12/31[Date - Publication]"}}

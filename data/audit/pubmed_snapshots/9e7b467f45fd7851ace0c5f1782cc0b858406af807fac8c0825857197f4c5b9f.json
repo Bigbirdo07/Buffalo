@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tangier+disease%22%5Btiab%5D&retmode=json&retmax=0&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T21:31:25.172739+00:00",
+  "sha256": "3312659de77b74391623dd19479af79ac0e543f477c750c9d0474c76c48bf72c"
+}

@@ -1,0 +1,1954 @@
+{
+  "nodes": [
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1F30EY039130-01",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+        "project_end": "2029-03-31",
+        "title": "Elucidation the Epigenetic and Transcriptional Landscape of Spinocerebellar Type 7 Retinal Degeneration"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1F31NS139599-01A1",
+      "properties": {
+        "active": true,
+        "organization": "EMORY UNIVERSITY",
+        "project_end": "2027-11-30",
+        "title": "Molecular and Functional Mechanisms Underlying Cortical Activity in CACNA1A Epilepsy"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1F31NS141619-01",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CHICAGO",
+        "project_end": "2026-12-31",
+        "title": "Targeting transcription and translation of the antisense CCCCGG repeat expansion in C9ORF72 ALS/FTD"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1F32AG038061-01A1",
+      "properties": {
+        "active": false,
+        "organization": "UNIV OF NORTH CAROLINA CHAPEL HILL",
+        "project_end": "2011-11-30",
+        "title": "The Role of the Cochaperone/E3 Ubiquitin Ligase CHIP in Nuclear Stress Response"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1F32HL112558-01",
+      "properties": {
+        "active": false,
+        "organization": "CINCINNATI CHILDRENS HOSP MED CTR",
+        "project_end": "2014-01-10",
+        "title": "Impaired Protein Degradation Pathways in Cardiac Proteinopathy"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1K08NS133300-01A1",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+        "project_end": "2029-06-30",
+        "title": "Unraveling the role of the molecular co-chaperone DNAJC7 in protein homeostasis and neurodegeneration"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01CA244667-01A1",
+      "properties": {
+        "active": false,
+        "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+        "project_end": "2025-05-31",
+        "title": "Role of JMJD1A modifications in castration resistance of prostate cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01NS132538-01A1",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF FLORIDA",
+        "project_end": "2028-11-30",
+        "title": "Smarter gene therapies: alternative splicing cassettes for tissue-and self-regulated cargo expression"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01NS135162-01",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+        "project_end": "2028-11-30",
+        "title": "Microgial contribution and therapeutic potential in Friedreich's ataxia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01NS135254-01",
+      "properties": {
+        "active": true,
+        "organization": "STATE UNIVERSITY OF NEW YORK AT ALBANY",
+        "project_end": "2028-11-30",
+        "title": "Alternative Splicing and Development of Small Molecule Therapeutics in CAG Expansion Spinocerebellar Ataxias"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01NS137233-01",
+      "properties": {
+        "active": true,
+        "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+        "project_end": "2029-07-31",
+        "title": "PASK-regulated genes and proteins as therapeutic targets for ALS and FTD"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R01NS150687-01",
+      "properties": {
+        "active": true,
+        "organization": "UT SOUTHWESTERN MEDICAL CENTER",
+        "project_end": "2031-05-31",
+        "title": "Somatic instability of GAA repeats in pathogenesis of Friedreich\u2019s ataxia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R21NS145030-01A1",
+      "properties": {
+        "active": true,
+        "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+        "project_end": "2028-05-31",
+        "title": "Pathogenic mechanisms of expanded ZFHX3 in SCA4 cerebellar organoids"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R21NS145182-01",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF MINNESOTA",
+        "project_end": "2027-06-30",
+        "title": "Understanding SCA1 pathogenesis in human cerebellar organoids"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R21NS145545-01",
+      "properties": {
+        "active": true,
+        "organization": "EMORY UNIVERSITY",
+        "project_end": "2027-06-30",
+        "title": "Mechanisms of altered RNA transport dynamics by Kif1C mutations in heterospastic paraplegia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1R61NS149087-01",
+      "properties": {
+        "active": true,
+        "organization": "JOHNS HOPKINS UNIVERSITY",
+        "project_end": "2028-02-29",
+        "title": "CRISPR/Cas9-Mediated Therapeutic Targeting of CAG Repeats in Spinocerebellar Ataxia Type 12"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1RM1NS143850-01",
+      "properties": {
+        "active": true,
+        "organization": "FLORIDA INTERNATIONAL UNIVERSITY",
+        "project_end": "2030-12-31",
+        "title": "CRISPR/dCas9-Targeted Histone Demethylation Interplays with DNA Repair to Contract GAA Repeats in Friedreich's Ataxia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1ZIABC011496-06",
+      "properties": {
+        "active": false,
+        "organization": "DIVISION OF BASIC SCIENCES - NCI",
+        "title": "p53, Aging, and Cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "1ZIABC011496-08",
+      "properties": {
+        "active": false,
+        "organization": "DIVISION OF BASIC SCIENCES - NCI",
+        "title": "p53, Aging, and Cancer"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:30222779"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5F31NS139599-02",
+      "properties": {
+        "active": true,
+        "organization": "EMORY UNIVERSITY",
+        "project_end": "2027-11-30",
+        "title": "Molecular and Functional Mechanisms Underlying Cortical Activity in CACNA1A Epilepsy"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5F31NS141619-02",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CHICAGO",
+        "project_end": "2026-12-31",
+        "title": "Targeting transcription and translation of the antisense CCCCGG repeat expansion in C9ORF72 ALS/FTD"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5F32HL112558-02",
+      "properties": {
+        "active": false,
+        "organization": "CINCINNATI CHILDRENS HOSP MED CTR",
+        "project_end": "2013-03-11",
+        "title": "Impaired Protein Degradation Pathways in Cardiac Proteinopathy"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5K08NS133300-02",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+        "project_end": "2029-06-30",
+        "title": "Unraveling the role of the molecular co-chaperone DNAJC7 in protein homeostasis and neurodegeneration"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5K08NS133300-03",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+        "project_end": "2029-06-30",
+        "title": "Unraveling the role of the molecular co-chaperone DNAJC7 in protein homeostasis and neurodegeneration"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01CA244667-02",
+      "properties": {
+        "active": false,
+        "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+        "project_end": "2025-05-31",
+        "title": "Role of JMJD1A modifications in castration resistance of prostate cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01CA244667-03",
+      "properties": {
+        "active": false,
+        "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+        "project_end": "2025-05-31",
+        "title": "Role of JMJD1A modifications in castration resistance of prostate cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01CA244667-04",
+      "properties": {
+        "active": false,
+        "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+        "project_end": "2025-05-31",
+        "title": "Role of JMJD1A modifications in castration resistance of prostate cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01CA244667-05",
+      "properties": {
+        "active": false,
+        "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+        "project_end": "2026-05-31",
+        "title": "Role of JMJD1A modifications in castration resistance of prostate cancer"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS132538-02",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF FLORIDA",
+        "project_end": "2028-11-30",
+        "title": "Smarter gene therapies: alternative splicing cassettes for tissue-and self-regulated cargo expression"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS132538-03",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF FLORIDA",
+        "project_end": "2028-11-30",
+        "title": "Smarter gene therapies: alternative splicing cassettes for tissue-and self-regulated cargo expression"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS135162-02",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+        "project_end": "2028-11-30",
+        "title": "Microgial contribution and therapeutic potential in Friedreich's ataxia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS135162-03",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+        "project_end": "2028-11-30",
+        "title": "Microgial contribution and therapeutic potential in Friedreich's ataxia"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS137233-02",
+      "properties": {
+        "active": true,
+        "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+        "project_end": "2029-07-31",
+        "title": "PASK-regulated genes and proteins as therapeutic targets for ALS and FTD"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R01NS137233-03",
+      "properties": {
+        "active": true,
+        "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+        "project_end": "2029-07-31",
+        "title": "PASK-regulated genes and proteins as therapeutic targets for ALS and FTD"
+      }
+    },
+    {
+      "labels": [
+        "Grant"
+      ],
+      "node_id": "5R21NS145182-02",
+      "properties": {
+        "active": true,
+        "organization": "UNIVERSITY OF MINNESOTA",
+        "project_end": "2027-06-30",
+        "title": "Understanding SCA1 pathogenesis in human cerebellar organoids"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:29317501"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:25258038"
+      }
+    },
+    {
+      "labels": [
+        "ClinicalStudy"
+      ],
+      "node_id": "NCT01793168",
+      "properties": {
+        "overall_status": "RECRUITING",
+        "title": "Rare Disease Patient Registry & Natural History Study - Coordination of Rare Diseases at Sanford"
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "ac1-ubox-t246m",
+      "properties": {
+        "kind": "EXTRACTED",
+        "refinement_status": "SUPPORTED",
+        "rule_applied": "A2",
+        "statement": "STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity."
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "ac2-pre-ubox-truncation",
+      "properties": {
+        "kind": "EXTRACTED",
+        "refinement_status": "SUPPORTED",
+        "rule_applied": "A2",
+        "statement": "The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity."
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "ac3-tpr-missense",
+      "properties": {
+        "kind": "EXTRACTED",
+        "refinement_status": "CONTEXT_DEPENDENT",
+        "rule_applied": "A5",
+        "statement": "SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity."
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "ac4-interdomain-missense",
+      "properties": {
+        "kind": "EXTRACTED",
+        "refinement_status": "INSUFFICIENT_EVIDENCE",
+        "rule_applied": "A6",
+        "statement": "SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity."
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "ac5-ubox-other-missense",
+      "properties": {
+        "kind": "EXTRACTED",
+        "refinement_status": "CONTEXT_DEPENDENT",
+        "rule_applied": "A3",
+        "statement": "SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity."
+      }
+    },
+    {
+      "labels": [
+        "ResearchAsset"
+      ],
+      "node_id": "asset:chip-functional-assay:publication-method",
+      "properties": {
+        "asset_type": "assay",
+        "availability": "Methods published; materials, transferability and neuronal applicability unverified",
+        "canonical_name": "Published CHIP variant functional-assay methods",
+        "reuse_status": "REQUIRES_VALIDATION"
+      }
+    },
+    {
+      "labels": [
+        "ResearchAsset"
+      ],
+      "node_id": "asset:registry:NCT01793168",
+      "properties": {
+        "asset_type": "registry",
+        "availability": "Registry status RECRUITING as recorded in the cached ClinicalTrials.gov record; enrolment terms not verified",
+        "canonical_name": "Rare Disease Patient Registry & Natural History Study - Coordination of Rare Diseases at Sanford",
+        "reuse_status": "REQUIRES_VALIDATION"
+      }
+    },
+    {
+      "labels": [
+        "ResearchAsset"
+      ],
+      "node_id": "asset:stub1-patient-ipsc:pmid-29679845",
+      "properties": {
+        "asset_type": "ipsc_line",
+        "availability": "Unknown: no repository deposit or availability statement was located",
+        "canonical_name": "Establishment of STUB1/CHIP mutant induced pluripotent stem cells (iPSCs) from a patient with Gordon Holmes syndrome/SCAR16.",
+        "reuse_status": "REQUIRES_VALIDATION"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:24113144"
+      }
+    },
+    {
+      "labels": [
+        "Claim"
+      ],
+      "node_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {
+        "kind": "CURATED",
+        "refinement_status": "UNREVIEWED",
+        "source_object_path": "pathophysiology[0].downstream[1]",
+        "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+        "statement": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity."
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "properties": {
+        "origin": "BACKGROUND_CITATION",
+        "source_identifier": "PMID:41851873"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:28396517"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:crispr_editing:PMID-41911331",
+      "properties": {
+        "canonical_name": "crispr_editing capability candidate: author group of PMID:41911331",
+        "institution": "National Institute of Neurological Disorders and Stroke, National Institutes of Health, Bethesda, MD 20892, USA."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:crispr_editing:PMID-41963441",
+      "properties": {
+        "canonical_name": "crispr_editing capability candidate: author group of PMID:41963441",
+        "institution": "School of Biomedical Sciences, The Chinese University of Hong Kong, Hong Kong, SAR, China. [email removed]"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:crispr_editing:PMID-42069601",
+      "properties": {
+        "canonical_name": "crispr_editing capability candidate: author group of PMID:42069601",
+        "institution": "School of Science and Molecular Horizons, University of Wollongong, Wollongong, NSW, Australia. [email removed]"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+      "properties": {
+        "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:38014483",
+        "institution": "Department of Neurology, Department of Rare Diseases, Institute of Neurology of First Affiliated Hospital, Institute of Neuroscience, and Fujian Key Laboratory of Molecular Neurology, Fujian Medical University, Fuzhou, China."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+      "properties": {
+        "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:39460936",
+        "institution": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+      "properties": {
+        "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:40929244",
+        "institution": "Roche Pharma Research and Early Development, Pharmaceutical Sciences, Roche Innovation Center Basel, F. Hoffmann-La Roche Ltd., 4070 Basel, Switzerland."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
+      "properties": {
+        "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:39460936",
+        "institution": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
+      "properties": {
+        "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:39913247",
+        "institution": "Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg, L-4362 Esch-sur-Alzette, Luxembourg."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
+      "properties": {
+        "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:40205044",
+        "institution": "Nash Family Department of Neuroscience, Icahn School of Medicine at Mount Sinai, New York, NY, USA. [email removed]"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:proteomics:PMID-39920137",
+      "properties": {
+        "canonical_name": "proteomics capability candidate: author group of PMID:39920137",
+        "institution": "Interdisciplinary Research Center on Biology and Chemistry, Shanghai Institute of Organic Chemistry, Chinese Academy of Sciences, 100 Haike Rd., Shanghai, China. [email removed]"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:proteomics:PMID-40480969",
+      "properties": {
+        "canonical_name": "proteomics capability candidate: author group of PMID:40480969",
+        "institution": "Leibniz Institute on Aging-Fritz Lipmann Institute (FLI), Jena, Germany. [email removed]"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "capability-candidate:proteomics:PMID-41208143",
+      "properties": {
+        "canonical_name": "proteomics capability candidate: author group of PMID:41208143",
+        "institution": "State Key Laboratory of Common Mechanism Research for Major Diseases, Department of Biochemistry and Molecular Biology, Institute of Basic Medical Sciences Chinese Academy of Medical Sciences, School of Basic Medicine Peking Union Medical College, Beijing, China."
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:crispr_editing:PMID-42069601",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:proteomics:PMID-39920137",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:proteomics:PMID-40480969",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:capability-candidate:proteomics:PMID-41208143",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:chip-variant-biochemistry:protein_biochemistry",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:chip-variant-biochemistry:ubiquitination_assay",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "current",
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:scar16-patient-ipsc:cell_culture",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "historical_or_unknown",
+        "status": "OUTDATED"
+      }
+    },
+    {
+      "labels": [
+        "CapabilityClaim"
+      ],
+      "node_id": "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+      "properties": {
+        "directness": "TEAM_LEVEL",
+        "human_review_status": "PENDING",
+        "recency": "historical_or_unknown",
+        "status": "OUTDATED"
+      }
+    },
+    {
+      "labels": [
+        "CollaborationOpportunity"
+      ],
+      "node_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "missing_capability_count": 2,
+        "status": "MISSING_CAPABILITY"
+      }
+    },
+    {
+      "labels": [
+        "Experiment"
+      ],
+      "node_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {
+        "human_review_required": true,
+        "label": "Research proposal requiring expert review.",
+        "question": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?"
+      }
+    },
+    {
+      "labels": [
+        "KnowledgeGap"
+      ],
+      "node_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {
+        "gap_type": "untested_variant_class",
+        "question": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+        "status": "OPEN"
+      }
+    },
+    {
+      "labels": [
+        "Organization"
+      ],
+      "node_id": "organization:national-ataxia-foundation",
+      "properties": {
+        "canonical_name": "National Ataxia Foundation",
+        "organization_type": "patient_organization"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "properties": {
+        "canonical_name": "isogenic line generation",
+        "capability_category": "isogenic_line_generation",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+      "properties": {
+        "canonical_name": "protein thermal-stability assay",
+        "capability_category": "protein_biochemistry",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+      "properties": {
+        "canonical_name": "iPSC maintenance",
+        "capability_category": "cell_culture",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+      "properties": {
+        "canonical_name": "quantitative ubiquitination analysis",
+        "capability_category": "ubiquitination_assay",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+      "properties": {
+        "canonical_name": "clone-aware statistical analysis",
+        "capability_category": "statistical_analysis",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {
+        "canonical_name": "iPSC neuronal differentiation",
+        "capability_category": "ipsc_neuronal_differentiation",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "properties": {
+        "canonical_name": "diGly enrichment proteomics",
+        "capability_category": "proteomics",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "RequiredCapability"
+      ],
+      "node_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "properties": {
+        "canonical_name": "STUB1 CRISPR editing",
+        "capability_category": "crispr_editing",
+        "human_review_status": "PENDING"
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:jonathan-c-schisler",
+      "properties": {
+        "canonical_name": "Jonathan C Schisler",
+        "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599 [email removed]",
+        "role": "last author on PMID:31619515; last author on PMID:42567515. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:l-schols",
+      "properties": {
+        "canonical_name": "L Sch\u00f6ls",
+        "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, 72076 T\u00fcbingen, Germany [email removed] [email removed]",
+        "role": "last author on PMID:33097556. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:s-schuster",
+      "properties": {
+        "canonical_name": "S Schuster",
+        "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, 72076 T\u00fcbingen, Germany.",
+        "role": "first author on PMID:33097556. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:sabrina-c-madrigal",
+      "properties": {
+        "canonical_name": "Sabrina C Madrigal",
+        "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599.",
+        "role": "first author on PMID:31619515. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:selin-altinok",
+      "properties": {
+        "canonical_name": "Selin Altinok",
+        "institution": "The McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA; Department of Pharmacology, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA.",
+        "role": "first author on PMID:42567515. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:stefan-hauser",
+      "properties": {
+        "canonical_name": "Stefan Hauser",
+        "institution": "German Center for Neurodegenerative Diseases (DZNE), T\u00fcbingen, Germany.",
+        "role": "last author on PMID:29679845. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Researcher"
+      ],
+      "node_id": "researcher:stefanie-schuster",
+      "properties": {
+        "canonical_name": "Stefanie Schuster",
+        "institution": "Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, T\u00fcbingen, Germany; German Center for Neurodegenerative Diseases (DZNE), T\u00fcbingen, Germany; Graduate School of Cellular and Molecular Neuroscience, University of T\u00fcbingen, T\u00fcbingen, Germany.",
+        "role": "first author on PMID:29679845. Publication authorship only: current role, employment and willingness to collaborate are unverified."
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "retrieved:PMID:31619515",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:31619515"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "retrieved:PMID:35398354",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:35398354"
+      }
+    },
+    {
+      "labels": [
+        "Evidence"
+      ],
+      "node_id": "retrieved:PMID:42567515",
+      "properties": {
+        "origin": "PRIMARY_RESULT",
+        "source_identifier": "PMID:42567515"
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "team:chip-variant-biochemistry",
+      "properties": {
+        "canonical_name": "CHIP variant biochemistry author group",
+        "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599 [email removed] | McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599. | The McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA; Department of Pharmacology, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA."
+      }
+    },
+    {
+      "labels": [
+        "Laboratory"
+      ],
+      "node_id": "team:scar16-patient-ipsc",
+      "properties": {
+        "canonical_name": "SCAR16 patient-derived iPSC and neuronal-model author group",
+        "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, 72076 T\u00fcbingen, Germany [email removed] [email removed] | Department of Neurology and Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, 72076 T\u00fcbingen, Germany. | German Center for Neurodegenerative Diseases (DZNE), T\u00fcbingen, Germany. | Hertie Institute for Clinical Brain Research, University of T\u00fcbingen, T\u00fcbingen, Germany; German Center for Neurodegenerative Diseases (DZNE), T\u00fcbingen, Germany; Graduate School of Cellular and Molecular Neuroscience, University of T\u00fcbingen, T\u00fcbingen, Germany."
+      }
+    }
+  ],
+  "projection_version": "atlas-projection-v1",
+  "relationships": [
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "GENERATED_FROM",
+      "start_id": "ac1-ubox-t246m"
+    },
+    {
+      "end_id": "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+      "properties": {
+        "evidence_role": "direct_supporting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac1-ubox-t246m"
+    },
+    {
+      "end_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "properties": {
+        "evidence_role": "direct_supporting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac1-ubox-t246m"
+    },
+    {
+      "end_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "evidence_role": "direct_supporting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac1-ubox-t246m"
+    },
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "GENERATED_FROM",
+      "start_id": "ac2-pre-ubox-truncation"
+    },
+    {
+      "end_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "properties": {
+        "evidence_role": "direct_supporting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac2-pre-ubox-truncation"
+    },
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "GENERATED_FROM",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+      "properties": {
+        "evidence_role": "direct_qualifying"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "evidence_role": "direct_refuting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "evidence_role": "direct_qualifying"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:31619515",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:35398354",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:42567515",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac3-tpr-missense"
+    },
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "GENERATED_FROM",
+      "start_id": "ac4-interdomain-missense"
+    },
+    {
+      "end_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac4-interdomain-missense"
+    },
+    {
+      "end_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "properties": {
+        "evidence_role": "background_only"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac4-interdomain-missense"
+    },
+    {
+      "end_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "evidence_role": "direct_refuting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac4-interdomain-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:31619515",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac4-interdomain-missense"
+    },
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "GENERATED_FROM",
+      "start_id": "ac5-ubox-other-missense"
+    },
+    {
+      "end_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac5-ubox-other-missense"
+    },
+    {
+      "end_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "properties": {
+        "evidence_role": "direct_refuting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac5-ubox-other-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:31619515",
+      "properties": {
+        "evidence_role": "direct_supporting"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac5-ubox-other-missense"
+    },
+    {
+      "end_id": "retrieved:PMID:42567515",
+      "properties": {
+        "evidence_role": "indirect"
+      },
+      "relationship": "STUDIES",
+      "start_id": "ac5-ubox-other-missense"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:crispr_editing:PMID-41911331"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-41911331"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-41911331"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:crispr_editing:PMID-41963441"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-41963441"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-41963441"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:crispr_editing:PMID-42069601",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:crispr_editing:PMID-42069601"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of crispr_editing; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-42069601"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:crispr_editing:PMID-42069601"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of ipsc_neuronal_differentiation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39460936"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of isogenic_line_generation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39460936"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39460936"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39913247"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of isogenic_line_generation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39913247"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-39913247"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-40205044"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of isogenic_line_generation; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-40205044"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:isogenic_line_generation:PMID-40205044"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:proteomics:PMID-39920137",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:proteomics:PMID-39920137"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-39920137"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-39920137"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:proteomics:PMID-40480969",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:proteomics:PMID-40480969"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-40480969"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-40480969"
+    },
+    {
+      "end_id": "capability-claim:capability-candidate:proteomics:PMID-41208143",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-candidate:proteomics:PMID-41208143"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "possible provider of proteomics; identified by technique alone, with no STUB1 or SCAR16 involvement established and no contact, availability or willingness verified"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-41208143"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "capability-candidate:proteomics:PMID-41208143"
+    },
+    {
+      "end_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:crispr_editing:PMID-41911331"
+    },
+    {
+      "end_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:crispr_editing:PMID-41963441"
+    },
+    {
+      "end_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:crispr_editing:PMID-42069601"
+    },
+    {
+      "end_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+    },
+    {
+      "end_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936"
+    },
+    {
+      "end_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244"
+    },
+    {
+      "end_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936"
+    },
+    {
+      "end_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247"
+    },
+    {
+      "end_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044"
+    },
+    {
+      "end_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:proteomics:PMID-39920137"
+    },
+    {
+      "end_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:proteomics:PMID-40480969"
+    },
+    {
+      "end_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:capability-candidate:proteomics:PMID-41208143"
+    },
+    {
+      "end_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:chip-variant-biochemistry:protein_biochemistry"
+    },
+    {
+      "end_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+      "properties": {
+        "status": "SUPPORTED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:chip-variant-biochemistry:ubiquitination_assay"
+    },
+    {
+      "end_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+      "properties": {
+        "status": "OUTDATED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:scar16-patient-ipsc:cell_culture"
+    },
+    {
+      "end_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {
+        "status": "OUTDATED"
+      },
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "collaboration:scar16-stub1-linker-action-v1"
+    },
+    {
+      "end_id": "asset:chip-functional-assay:publication-method",
+      "properties": {
+        "reuse_status": "REQUIRES_VALIDATION"
+      },
+      "relationship": "MAY_REUSE",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "asset:registry:NCT01793168",
+      "properties": {
+        "reuse_status": "REQUIRES_VALIDATION"
+      },
+      "relationship": "MAY_REUSE",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "asset:stub1-patient-ipsc:pmid-29679845",
+      "properties": {
+        "reuse_status": "REQUIRES_VALIDATION"
+      },
+      "relationship": "MAY_REUSE",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "properties": {},
+      "relationship": "REQUIRES",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "TESTS",
+      "start_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "COULD_RESOLVE",
+      "start_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "properties": {},
+      "relationship": "COULD_RESOLVE",
+      "start_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense"
+    },
+    {
+      "end_id": "asset:registry:NCT01793168",
+      "properties": {},
+      "relationship": "OPERATES",
+      "start_id": "organization:national-ataxia-foundation"
+    },
+    {
+      "end_id": "team:chip-variant-biochemistry",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:jonathan-c-schisler"
+    },
+    {
+      "end_id": "team:scar16-patient-ipsc",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:l-schols"
+    },
+    {
+      "end_id": "team:scar16-patient-ipsc",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:s-schuster"
+    },
+    {
+      "end_id": "researcher:stefanie-schuster",
+      "properties": {
+        "human_review_status": "PENDING",
+        "status": "POSSIBLE_DUPLICATE"
+      },
+      "relationship": "POSSIBLY_SAME_AS",
+      "start_id": "researcher:s-schuster"
+    },
+    {
+      "end_id": "team:chip-variant-biochemistry",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:sabrina-c-madrigal"
+    },
+    {
+      "end_id": "team:chip-variant-biochemistry",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:selin-altinok"
+    },
+    {
+      "end_id": "team:scar16-patient-ipsc",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:stefan-hauser"
+    },
+    {
+      "end_id": "team:scar16-patient-ipsc",
+      "properties": {
+        "basis": "co-authorship on the group's publications"
+      },
+      "relationship": "AUTHORED",
+      "start_id": "researcher:stefanie-schuster"
+    },
+    {
+      "end_id": "asset:chip-functional-assay:publication-method",
+      "properties": {},
+      "relationship": "HAS_ASSET",
+      "start_id": "team:chip-variant-biochemistry"
+    },
+    {
+      "end_id": "capability-claim:chip-variant-biochemistry:protein_biochemistry",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "team:chip-variant-biochemistry"
+    },
+    {
+      "end_id": "capability-claim:chip-variant-biochemistry:ubiquitination_assay",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "team:chip-variant-biochemistry"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "advise on transferring CHIP functional assays to a substrate-resolved neuronal readout"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "team:chip-variant-biochemistry"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "team:chip-variant-biochemistry"
+    },
+    {
+      "end_id": "asset:stub1-patient-ipsc:pmid-29679845",
+      "properties": {},
+      "relationship": "HAS_ASSET",
+      "start_id": "team:scar16-patient-ipsc"
+    },
+    {
+      "end_id": "capability-claim:scar16-patient-ipsc:cell_culture",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "team:scar16-patient-ipsc"
+    },
+    {
+      "end_id": "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+      "properties": {},
+      "relationship": "HAS_CAPABILITY",
+      "start_id": "team:scar16-patient-ipsc"
+    },
+    {
+      "end_id": "collaboration:scar16-stub1-linker-action-v1",
+      "properties": {
+        "proposed_role": "confirm whether the published SCAR16 patient iPSC line and neuronal differentiation capability are currently available"
+      },
+      "relationship": "MAY_ADDRESS",
+      "start_id": "team:scar16-patient-ipsc"
+    },
+    {
+      "end_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+      "properties": {},
+      "relationship": "MAY_ADDRESS",
+      "start_id": "team:scar16-patient-ipsc"
+    }
+  ]
+}

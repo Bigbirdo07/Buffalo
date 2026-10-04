@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D+OR+%22ubiquitin+remnant%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T00:21:33.720728+00:00",
+  "sha256": "047cb525014cb3967196c8151eaa09032b1d8dafe440b4e48c0a60aa6d7750d3"
+}

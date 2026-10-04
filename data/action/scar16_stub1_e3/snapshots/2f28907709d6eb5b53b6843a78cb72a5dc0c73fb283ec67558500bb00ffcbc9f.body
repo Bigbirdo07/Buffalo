@@ -1,0 +1,1 @@
+{"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":"2","retmax":"0","retstart":"0","idlist":[],"translationset":[],"querytranslation":"\"STUB1\"[Title/Abstract] AND (\"knock-in\"[Title/Abstract] OR \"knockin\"[Title/Abstract] OR \"isogenic\"[Title/Abstract]) AND (\"iPSC\"[Title/Abstract] OR \"induced pluripotent\"[Title/Abstract])"}}

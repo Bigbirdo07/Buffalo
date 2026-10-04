@@ -1,0 +1,27 @@
+{
+  "url": "https://api.reporter.nih.gov/v2/projects/search",
+  "post_json": {
+    "criteria": {
+      "advanced_text_search": {
+        "operator": "and",
+        "search_field": "all",
+        "search_text": "STUB1 ataxia"
+      }
+    },
+    "include_fields": [
+      "ProjectNum",
+      "ProjectTitle",
+      "PrincipalInvestigators",
+      "Organization",
+      "AbstractText",
+      "ProjectStartDate",
+      "ProjectEndDate"
+    ],
+    "offset": 0,
+    "limit": 25,
+    "sort_field": "project_start_date",
+    "sort_order": "desc"
+  },
+  "retrieved_at": "2026-10-03T22:26:07.420738+00:00",
+  "sha256": "8cc246d2ed92e22e311617b2e775be5bfcebfd9bdaa0a8a513302979f828424a"
+}

@@ -1,0 +1,219 @@
+{
+  "name": "Demonstration Domain-Dependent Neurogenetic Disorder",
+  "category": "Mendelian",
+  "updated_date": "2026-09-01",
+  "disease_term": {
+    "preferred_term": "demonstration disease",
+    "term": {
+      "id": "MONDO:0000001",
+      "label": "demonstration disease"
+    }
+  },
+  "mappings": {
+    "mondo_mappings": [
+      {
+        "term": {
+          "id": "MONDO:0000001",
+          "label": "demonstration disease"
+        },
+        "mapping_predicate": "skos:exactMatch",
+        "mapping_source": "fixture"
+      }
+    ]
+  },
+  "synonyms": [
+    "DDND"
+  ],
+  "genetic": [
+    {
+      "association": "Causative",
+      "variants": [
+        {
+          "name": "p.Gln100Ter",
+          "variant_type": "nonsense",
+          "clinical_significance": "PATHOGENIC",
+          "description": "Truncating allele in the first annotated domain.",
+          "functional_effects": [
+            {
+              "type": "LOSS_OF_FUNCTION",
+              "description": "Predicted loss of function."
+            }
+          ]
+        },
+        {
+          "name": "p.Gly300Arg",
+          "variant_type": "missense",
+          "clinical_significance": "PATHOGENIC",
+          "description": "Missense allele in the second annotated domain.",
+          "functional_effects": [
+            {
+              "type": "UNCERTAIN",
+              "description": "Effect not established."
+            }
+          ]
+        }
+      ],
+      "gene_term": {
+        "preferred_term": "GENE1",
+        "term": {
+          "id": "hgnc:1",
+          "label": "GENE1"
+        }
+      },
+      "name": "GENE1",
+      "relationship_type": "CAUSATIVE",
+      "variant_origin": "GERMLINE"
+    }
+  ],
+  "mechanistic_hypotheses": [
+    {
+      "hypothesis_group_id": "canonical_model",
+      "hypothesis_label": "Reduced complex activity model",
+      "status": "PROPOSED",
+      "description": "GENE1 dysfunction may reduce Complex Y activity in neurons."
+    }
+  ],
+  "pathophysiology": [
+    {
+      "name": "GENE1 dysfunction",
+      "description": "Patient-associated GENE1 variants alter protein function.",
+      "biological_scale": "Molecular",
+      "genes": [
+        {
+          "preferred_term": "GENE1"
+        }
+      ],
+      "evidence": [
+        {
+          "reference": "PMID:12345678",
+          "reference_title": "GENE1 variants and protein function",
+          "supports": "SUPPORT",
+          "directness": "DIRECT",
+          "quote_role": "PRIMARY_RESULT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "snippet": "Heterozygous variants in GENE1 were identified in affected individuals."
+        }
+      ],
+      "downstream": [
+        {
+          "target": "Reduced Complex Y activity",
+          "description": "GENE1 loss reduces Complex Y activity.",
+          "causal_link_type": "DIRECT",
+          "hypothesis_groups": [
+            "canonical_model"
+          ],
+          "evidence": [
+            {
+              "reference": "PMID:23456789",
+              "reference_title": "Complex Y in neuronal models",
+              "supports": "SUPPORT",
+              "directness": "DIRECT",
+              "quote_role": "PRIMARY_RESULT",
+              "evidence_source": "IN_VITRO",
+              "snippet": "Complex Y activity was reduced in GENE1-deficient neuronal cultures."
+            },
+            {
+              "reference": "DOI:10.1000/example.1",
+              "reference_title": "Domain-specific GENE1 effects",
+              "supports": "REFUTE",
+              "directness": "DIRECT",
+              "quote_role": "PRIMARY_RESULT",
+              "evidence_source": "IN_VITRO",
+              "snippet": "Domain B variants did not reduce Complex Y activity in fibroblasts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reduced Complex Y activity",
+      "description": "Reduced biochemical activity of Complex Y.",
+      "biological_scale": "Molecular",
+      "cell_types": [
+        {
+          "preferred_term": "Neuron"
+        }
+      ],
+      "downstream": [
+        {
+          "target": "Neuronal stress",
+          "causal_link_type": "INDIRECT_UNKNOWN_INTERMEDIATES",
+          "intermediate_mechanisms": [
+            "Metabolic imbalance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Neuronal stress",
+      "description": "A disease-relevant neuronal stress state.",
+      "biological_scale": "Cellular",
+      "downstream": [
+        {
+          "target": "Progressive motor impairment"
+        }
+      ]
+    }
+  ],
+  "phenotypes": [
+    {
+      "name": "Progressive motor impairment",
+      "phenotype_term": {
+        "preferred_term": "Motor delay",
+        "term": {
+          "id": "HP:0001270",
+          "label": "Motor delay"
+        }
+      },
+      "frequency": "FREQUENT",
+      "evidence": [
+        {
+          "reference": "PMID:34567890",
+          "reference_title": "Clinical spectrum of DDND",
+          "supports": "SUPPORT",
+          "quote_role": "PRIMARY_RESULT",
+          "evidence_source": "HUMAN_CLINICAL",
+          "snippet": "Motor impairment progressed in 18 of 24 affected participants."
+        }
+      ]
+    }
+  ],
+  "experimental_models": [
+    {
+      "name": "Gene1 knockout mouse",
+      "experimental_model_type": "animal model",
+      "organism": {
+        "preferred_term": "Mus musculus",
+        "term": {
+          "id": "NCBITaxon:10090",
+          "label": "Mus musculus"
+        }
+      },
+      "description": "Partial motor phenotype recapitulation."
+    }
+  ],
+  "discussions": [
+    {
+      "discussion_id": "gap_domain_b",
+      "prompt": "Do Domain B variants reduce Complex Y activity in disease-relevant neurons?",
+      "kind": "KNOWLEDGE_GAP",
+      "status": "OPEN",
+      "attaches_to": [
+        "GENE1 dysfunction",
+        "Reduced Complex Y activity"
+      ],
+      "rationale": "The answer determines whether the canonical mechanism applies across variant classes."
+    }
+  ],
+  "has_subtypes": [
+    {
+      "name": "Domain A-associated presentation",
+      "display_name": "Domain A-associated"
+    },
+    {
+      "name": "Domain B-associated presentation",
+      "display_name": "Domain B-associated"
+    }
+  ],
+  "creation_date": "2026-09-01"
+}

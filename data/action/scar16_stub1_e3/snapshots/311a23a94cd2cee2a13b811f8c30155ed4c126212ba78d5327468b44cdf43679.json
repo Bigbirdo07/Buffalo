@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=isogenic%5Btiab%5D+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28%22point+mutation%22%5Btiab%5D+OR+%22single+nucleotide%22%5Btiab%5D+OR+variant%2A%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-04T00:23:58.707413+00:00",
+  "sha256": "f874297502306829bef25038d47607ee63218e8d201828b52ea1ceab986edd36"
+}

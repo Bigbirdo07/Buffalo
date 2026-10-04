@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "note": "Each observation names a source, a locator (regex) and the classification the extractor assigns. build_extraction.py resolves every locator to the verbatim sentence in the cached snapshot and fails if a locator matches nothing or matches ambiguously. 'value' fields are normalized labels chosen by the extractor; 'locator' fields point at the source text that licenses them. Effect labels for o07/o09 follow reviewer decision review:scar16:n65s-effect-classification (processivity defect, not substrate selectivity).",
+  "observations": [
+    {
+      "id": "o01",
+      "source": "upstream:pathophysiology[0].downstream[1].evidence[0]",
+      "claims": [
+        "ac1-ubox-t246m"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant protein and cell culture models",
+      "location": "abstract",
+      "locator": "Introduction of the Thr246Met mutation",
+      "note": "Family reported as Gordon Holmes syndrome; DisMech curates this presentation within SCAR16.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Allele defined on human transcript STUB1 NM_005861; the abstract does not state the species of protein used in the assay."
+        },
+        {
+          "field": "subtype",
+          "value": "Gordon Holmes syndrome presentation",
+          "locator": "ataxia and hypogonadism and identified a homozygous|siblings afflicted with ataxia and hypogonadism"
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met, homozygous in patients",
+          "locator": "homozygous mutation in STUB1"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein and unspecified cell culture models",
+          "locator": "using recombinant proteins as well as in cell culture models"
+        },
+        {
+          "field": "intervention",
+          "value": "introduction of p.Thr246Met into CHIP",
+          "locator": "Introduction of the Thr246Met mutation"
+        },
+        {
+          "field": "readout",
+          "value": "ubiquitin ligase activity",
+          "locator": "loss of ubiquitin ligase activity"
+        }
+      ]
+    },
+    {
+      "id": "o02",
+      "source": "upstream:pathophysiology[0].downstream[1].evidence[1]",
+      "claims": [
+        "ac2-pre-ubox-truncation"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Gln118*"
+      ],
+      "readout": "hsc70_ubiquitination",
+      "effect": "decreased",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "HEK293T transient overexpression with immunoprecipitation",
+      "location": "full_text",
+      "locator": "truncation mutant exhibited significantly reduced",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "WT coding sequence of human STUB1"
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "locator": "autosomal recessive spinocerebellar ataxia type 16 in a Chinese patient"
+        },
+        {
+          "field": "variant",
+          "value": "p.Gln118*, in trans with p.Lys145Gln in the patient",
+          "locator": "compound heterozygote in STUB1 containing a novel nonsense variant"
+        },
+        {
+          "field": "cell_type",
+          "value": "HEK293T",
+          "locator": "HEK293T cells were co-transfected"
+        },
+        {
+          "field": "experimental_system",
+          "value": "transient overexpression, 48 h, immunoprecipitation",
+          "locator": "harvested 48 h post-transfection for immunoprecipitation"
+        },
+        {
+          "field": "intervention",
+          "value": "expression of Flag-tagged STUB1 p.Gln118* versus wild type",
+          "locator": "Flag-tagged STUB1 \\(WT or mutants\\)"
+        },
+        {
+          "field": "assay",
+          "value": "cell-based ubiquitination assay with HA-ubiquitin",
+          "locator": "HA-tagged ubiquitin \\(HA-Ub\\), and Hsc70"
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 polyubiquitination",
+          "locator": "decreased Hsc70 polyubiquitination"
+        }
+      ]
+    },
+    {
+      "id": "o03",
+      "source": "upstream:pathophysiology[0].downstream[1].evidence[1]",
+      "claims": [],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Lys145Gln"
+      ],
+      "readout": "chip_protein_abundance",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "SH-SY5Y transient overexpression",
+      "location": "full_text",
+      "locator": "protein levels of the WT and p.\\(Lys145Gln\\)",
+      "note": "Abundance, not ligase activity: reviewed against no E3 claim and retained as gap context. The same study co-transfected p.Lys145Gln in its ubiquitination assay but reports a ligase result in text only for p.Gln118*.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "WT coding sequence of human STUB1"
+        },
+        {
+          "field": "cell_type",
+          "value": "SH-SY5Y",
+          "locator": "SH-SY5Y cells were maintained"
+        },
+        {
+          "field": "readout",
+          "value": "STUB1 protein level by western blot",
+          "locator": "Western blot analysis of STUB1 protein expression"
+        }
+      ]
+    },
+    {
+      "id": "o04",
+      "source": "upstream:pathophysiology[0].downstream[1].evidence[1]",
+      "claims": [
+        "ac4-interdomain-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Lys145Gln"
+      ],
+      "readout": "e3_ligase_activity",
+      "effect": "decreased",
+      "origin": "BACKGROUND_CITATION",
+      "species": "Homo sapiens",
+      "system": "not tested in this paper; introduction sentence citing an earlier study",
+      "location": "full_text",
+      "locator": "has been found to impair the ubiquitin ligase activity",
+      "note": "Introduction sentence attributing the finding to its reference 9 (Kanack et al. 2018, PMID 29317501). Checked against that paper in o11.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "WT coding sequence of human STUB1"
+        }
+      ]
+    },
+    {
+      "id": "o05",
+      "source": "upstream:pathophysiology[5].evidence[0]",
+      "claims": [
+        "ac1-ubox-t246m"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "biophysical and cellular assays; knock-in mouse and rat models in the same study",
+      "location": "abstract",
+      "locator": "has no ligase activity",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human patient allele engineered into CHIP; the ligase sentence does not state the protein's species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "locator": "spinocerebellar autosomal recessive 16"
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met",
+          "locator": "missense mutation in the ubiquitin ligase domain of CHIP"
+        },
+        {
+          "field": "experimental_system",
+          "value": "multiple biophysical and cellular approaches",
+          "locator": "multiple biophysical and cellular approaches"
+        },
+        {
+          "field": "readout",
+          "value": "ligase activity and chaperone interaction",
+          "locator": "maintains interactions with chaperones"
+        }
+      ]
+    },
+    {
+      "id": "o06",
+      "source": "upstream:pathophysiology[5].evidence[1]",
+      "claims": [
+        "ac1-ubox-t246m"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "readout": "hsc70_ubiquitination",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "location": "full_text",
+      "locator": "no Hsc70-ubiquitination was detected for T246M",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "recombinant human His-HSPA8"
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met",
+          "locator": "T246M displayed impaired Hsc70-ubiquitination|N65S and T246M displayed impaired"
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "locator": "UbcH5c \\(E2\\)"
+        },
+        {
+          "field": "assay",
+          "value": "in vitro ubiquitination assay, 37 C for 1 h",
+          "locator": "incubated at 37"
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 ubiquitination by immunoblot",
+          "locator": "monitor CHIP self-ubiquitination or Hsc70 ubiquitination"
+        }
+      ]
+    },
+    {
+      "id": "o07",
+      "source": "upstream:pathophysiology[5].evidence[1]",
+      "claims": [
+        "ac3-tpr-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Asn65Ser"
+      ],
+      "readout": "hsc70_ubiquitination",
+      "effect": "processivity_defect",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "location": "full_text",
+      "locator": "mono-ubiquitinated by the N65S mutant",
+      "note": "Hsc70 chain elongation is reduced to mono-ubiquitination while CHIP self-ubiquitination is retained. This is a processivity/readout-specific defect; the experiment does not compare multiple substrates and therefore does not establish substrate selectivity.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "recombinant human His-HSPA8"
+        },
+        {
+          "field": "variant",
+          "value": "p.Asn65Ser",
+          "locator": "mono-ubiquitinated by the N65S mutant"
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "locator": "UbcH5c \\(E2\\)"
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 ubiquitination and CHIP self-ubiquitination",
+          "locator": "self-ubiquitination as the WT"
+        }
+      ]
+    },
+    {
+      "id": "o08",
+      "source": "upstream:pathophysiology[5].evidence[1]",
+      "claims": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Glu28Lys",
+        "p.Lys145Gln",
+        "p.Met211Ile",
+        "p.Ser236Thr"
+      ],
+      "readout": "e3_ligase_activity",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "location": "full_text",
+      "locator": "not overtly different from WT CHIP",
+      "note": "Four of six tested disease alleles retain bulk ligase activity in this assay. This is the upstream REFUTE pointer already curated on the SCAR16 node.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "recombinant human His-HSPA8"
+        },
+        {
+          "field": "variant",
+          "value": "p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr",
+          "locator": "ubiquitination activities of the other mutants"
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "locator": "UbcH5c \\(E2\\)"
+        },
+        {
+          "field": "assay",
+          "value": "in vitro ubiquitination assay, 37 C for 1 h",
+          "locator": "incubated at 37"
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 and self-ubiquitination by immunoblot",
+          "locator": "monitor CHIP self-ubiquitination or Hsc70 ubiquitination"
+        }
+      ]
+    },
+    {
+      "id": "o09",
+      "source": "upstream:pathophysiology[0].downstream[2].evidence[0]",
+      "claims": [
+        "ac3-tpr-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Asn65Ser"
+      ],
+      "readout": "hsc70_ubiquitination",
+      "effect": "processivity_defect",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "in vitro ubiquitination of HSC70",
+      "location": "abstract",
+      "locator": "impairs CHIP's ability to ubiquitinate HSC70",
+      "note": "Independent replication of impaired HSC70 ubiquitination with retained self-ubiquitination. These are distinct readouts; without a multi-substrate comparison this is coded as a processivity/readout-specific defect, not substrate selectivity.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human patient allele; the abstract states an in vitro assay without naming the protein source species."
+        },
+        {
+          "field": "subtype",
+          "value": "autosomal recessive ataxia with cognitive impairment",
+          "locator": "two families with ARCA and cognitive impairment"
+        },
+        {
+          "field": "variant",
+          "value": "p.Asn65Ser, homozygous in three siblings",
+          "locator": "homozygous missense variant"
+        },
+        {
+          "field": "experimental_system",
+          "value": "in vitro ubiquitination",
+          "locator": "ubiquitinate HSC70 in vitro"
+        },
+        {
+          "field": "readout",
+          "value": "HSC70 ubiquitination and self-ubiquitination",
+          "locator": "despite being able to self-ubiquitinate"
+        }
+      ]
+    },
+    {
+      "id": "o10",
+      "source": "upstream:pathophysiology[1].evidence[0]",
+      "claims": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 mutant panel",
+      "readout": "e3_ligase_activity",
+      "effect": "partially_retained",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant CHIP assayed below the mutants' melting temperature",
+      "location": "abstract",
+      "locator": "recovered activity when the assays were performed below",
+      "note": "Temperature dependence: the same alleles score as defective or near-normal depending on assay temperature. Panel alleles are not enumerated in this sentence, so this is class-level.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human SCAR16 alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "locator": "spinocerebellar ataxia autosomal recessive type 16"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP, assay temperature varied relative to melting temperature",
+          "locator": "below the mutants' melting temperature"
+        },
+        {
+          "field": "readout",
+          "value": "substrate ubiquitination, oligomer formation, chaperone interaction, cellular steady-state level",
+          "locator": "diminished substrate ubiquitination"
+        }
+      ]
+    },
+    {
+      "id": "o11",
+      "source": "retrieved:PMID:31619515",
+      "claims": [
+        "ac5-ubox-other-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Met240Thr",
+        "p.Thr246Met"
+      ],
+      "readout": "hsp70_polyubiquitination",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant CHIP panel across SCAR16 alleles",
+      "location": "full_text",
+      "locator": "maintained some capacity to polyubiquitinate HSP70 except",
+      "note": "Same sentence establishes the complement: every other tested SCAR16 allele retained some HSP70 polyubiquitination. Recorded separately as o12.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "ubiquitination of full-length HSP70"
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "locator": "Spinocerebellar ataxia autosomal recessive 16"
+        },
+        {
+          "field": "variant",
+          "value": "p.Met240Thr and p.Thr246Met",
+          "locator": "two Ubox mutants, M240T and T246M"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein panel",
+          "locator": "thermostability of recombinant protein"
+        },
+        {
+          "field": "readout",
+          "value": "HSP70 polyubiquitination and polyubiquitin chain formation",
+          "locator": "ubiquitination of full-length HSP70"
+        }
+      ]
+    },
+    {
+      "id": "o12",
+      "source": "retrieved:PMID:31619515",
+      "claims": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 mutant panel",
+      "readout": "hsp70_polyubiquitination",
+      "effect": "partially_retained",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant CHIP panel across SCAR16 alleles",
+      "location": "full_text",
+      "locator": "all mutant CHIP proteins maintained some capacity",
+      "note": "Class-level complement of o11: non-U-box SCAR16 alleles retain measurable substrate polyubiquitination. Alleles are not named in this sentence.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "ubiquitination of full-length HSP70"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein panel",
+          "locator": "thermostability of recombinant protein"
+        },
+        {
+          "field": "readout",
+          "value": "HSP70 polyubiquitination",
+          "locator": "ubiquitination of full-length HSP70"
+        }
+      ]
+    },
+    {
+      "id": "o13",
+      "source": "retrieved:PMID:31619515",
+      "claims": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 non-U-box panel",
+      "readout": "polyubiquitin_chain_formation",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant CHIP panel, E2-dependent chain formation",
+      "location": "full_text",
+      "locator": "whereas TPR and CC mutations were not defective",
+      "note": "TPR and coiled-coil alleles show no chain-formation defect under these conditions, while all U-box alleles do.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "locator": "ubiquitination of full-length HSP70"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP, E2-dependent polyubiquitin chain formation",
+          "locator": "altered interactions with E2 enzymes"
+        },
+        {
+          "field": "readout",
+          "value": "polyubiquitin chain formation",
+          "locator": "reduced capacity to form polyubiquitin chains"
+        }
+      ]
+    },
+    {
+      "id": "o14",
+      "source": "retrieved:PMID:42567515",
+      "claims": [
+        "ac3-tpr-missense"
+      ],
+      "disease_entity": "SCA48",
+      "variants": [],
+      "variant_class": "TPR-domain missense",
+      "readout": "e3_ligase_activity",
+      "effect": "substrate_selective",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant protein biochemistry and cellular models, 13 variants",
+      "location": "abstract",
+      "locator": "TPR variants retained intrinsic ligase activity",
+      "note": "Allelic dominant disorder (SCA48), not SCAR16: cross-entity, so it qualifies rather than settles the SCAR16 claim. Separates intrinsic catalysis from substrate ubiquitination.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human SCA48 patient alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "locator": "cause spinocerebellar ataxia type 48"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant protein biochemistry and cellular models",
+          "locator": "recombinant protein biochemistry and cellular models"
+        },
+        {
+          "field": "readout",
+          "value": "intrinsic ligase activity, HSP70 binding, substrate ubiquitination, stability",
+          "locator": "impaired substrate ubiquitination"
+        }
+      ]
+    },
+    {
+      "id": "o15",
+      "source": "retrieved:PMID:42567515",
+      "claims": [
+        "ac5-ubox-other-missense"
+      ],
+      "disease_entity": "SCA48",
+      "variants": [],
+      "variant_class": "U-box missense",
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "recombinant protein biochemistry and cellular models, 13 variants",
+      "location": "abstract",
+      "locator": "U-box variants abolished ligase function",
+      "note": "Cross-entity (SCA48). Also reports temperature-sensitive defects across mutants.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human SCA48 patient alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "locator": "cause spinocerebellar ataxia type 48"
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant protein biochemistry and cellular models",
+          "locator": "recombinant protein biochemistry and cellular models"
+        },
+        {
+          "field": "readout",
+          "value": "ligase function, oligomer formation, CHIP level, co-chaperone activity",
+          "locator": "partially impairing co-chaperone activity"
+        }
+      ]
+    },
+    {
+      "id": "o16",
+      "source": "retrieved:PMID:35398354",
+      "claims": [
+        "ac3-tpr-missense"
+      ],
+      "disease_entity": "SCA48",
+      "variants": [
+        "p.Ala52Gly"
+      ],
+      "readout": "e3_ligase_activity",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "system": "biophysical, biochemical and cellular assays; C. elegans model",
+      "location": "abstract",
+      "locator": "retains E3-ligase activity but has decreased affinity for chaperones",
+      "note": "Cross-entity (SCA48) and an allele outside the SCAR16 claim scope: a TPR-domain allele that is pathogenic while retaining ligase activity.",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "derivation": "Human SCA48 patient allele; the abstract does not state the assay protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "locator": "patient with SCA48"
+        },
+        {
+          "field": "variant",
+          "value": "p.Ala52Gly, de novo",
+          "locator": "A52G point mutation in the tetratricopeptide repeat domain"
+        },
+        {
+          "field": "experimental_system",
+          "value": "biophysical, biochemical and cellular assays",
+          "locator": "array of biophysical, biochemical, and cellular assays"
+        },
+        {
+          "field": "readout",
+          "value": "E3 ligase activity and chaperone affinity",
+          "locator": "decreased affinity for chaperones"
+        }
+      ]
+    }
+  ]
+}

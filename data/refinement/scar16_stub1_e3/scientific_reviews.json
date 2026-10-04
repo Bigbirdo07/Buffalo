@@ -1,0 +1,177 @@
+{
+  "accepted_interpretations": [
+    {
+      "accepted_value": {
+        "coiled_coil_terminology": "retained only as source-specific paper terminology, attributed to the publication that uses it",
+        "scope_class": "inter-domain/linker-region missense",
+        "uniprot_claim": "none; UniProt Q9UNE7 annotates no coiled-coil feature, so no UniProt-supported coiled-coil annotation may be asserted",
+        "variant_scope": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ]
+      },
+      "derived_at": "2026-10-04T00:28:11.208601Z",
+      "machine_value": {
+        "basis": "Coiled-coil terminology was taken from the source publications (PMID:31619515 describes CC mutations).",
+        "scope_class": "inter-domain missense",
+        "statement_scope_class_as_generated": "inter-domain (coiled-coil) missense",
+        "variant_scope": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ]
+      },
+      "review_id": "review:scar16:ac4-allele-class-naming",
+      "target_id": "ac4-interdomain-missense",
+      "target_type": "ATOMIC_CLAIM"
+    },
+    {
+      "accepted_value": {
+        "effect": "processivity_or_chain_elongation_defect",
+        "evidence_required_to_upgrade": "side-by-side ubiquitination of two or more defined CHIP clients under matched conditions",
+        "substrate_selectivity_claim": "not asserted; requires comparative substrate experiments that directly demonstrate selectivity between substrates"
+      },
+      "derived_at": "2026-10-04T00:28:11.208605Z",
+      "machine_value": {
+        "basis": "Hsc70 was mono-ubiquitinated while CHIP self-ubiquitination was retained (PMID:28396517, PMID:25258038).",
+        "effect": "substrate_selective",
+        "observation_ids": [
+          "o07",
+          "o09"
+        ],
+        "readout": "hsc70_ubiquitination",
+        "variant": "p.Asn65Ser"
+      },
+      "review_id": "review:scar16:n65s-effect-classification",
+      "target_id": "o07",
+      "target_type": "EVIDENCE_CLASSIFICATION"
+    },
+    {
+      "accepted_value": {
+        "affected_observations": [
+          "o14",
+          "o15",
+          "o16"
+        ],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "open_question": "DisMech describes SCAR16 and SCA48 as a clinical continuum and PMID:34070858 reports biochemically indistinguishable defects, which could argue for pooling the entities.",
+        "sca48_handling": "cross-entity; SUPPORTS/REFUTES downgraded to QUALIFIES and directness set to INDIRECT"
+      },
+      "derived_at": "2026-10-04T00:28:11.208608Z",
+      "machine_value": {
+        "affected_observations": [
+          "o14",
+          "o15",
+          "o16"
+        ],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "open_question": "DisMech describes SCAR16 and SCA48 as a clinical continuum and PMID:34070858 reports biochemically indistinguishable defects, which could argue for pooling the entities.",
+        "sca48_handling": "cross-entity; SUPPORTS/REFUTES downgraded to QUALIFIES and directness set to INDIRECT"
+      },
+      "review_id": "review:scar16:sca48-entity-separation",
+      "target_id": "disease-entity-scope:SCAR16-vs-SCA48",
+      "target_type": "EVIDENCE_CLASSIFICATION"
+    }
+  ],
+  "note": "Append-only review overlays. The machine-produced value is preserved in original_value; an accepted interpretation never overwrites it.",
+  "reviews": [
+    {
+      "comments": "Use inter-domain/linker-region as the canonical classification for p.Lys145Gln and p.Met211Ile.",
+      "created_at": "2026-10-04T00:28:11.208573Z",
+      "model_run_id": null,
+      "original_value": {
+        "basis": "Coiled-coil terminology was taken from the source publications (PMID:31619515 describes CC mutations).",
+        "scope_class": "inter-domain missense",
+        "statement_scope_class_as_generated": "inter-domain (coiled-coil) missense",
+        "variant_scope": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ]
+      },
+      "proposed_revision": {
+        "coiled_coil_terminology": "retained only as source-specific paper terminology, attributed to the publication that uses it",
+        "scope_class": "inter-domain/linker-region missense",
+        "uniprot_claim": "none; UniProt Q9UNE7 annotates no coiled-coil feature, so no UniProt-supported coiled-coil annotation may be asserted",
+        "variant_scope": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ]
+      },
+      "review_id": "review:scar16:ac4-allele-class-naming",
+      "reviewed_at": "2026-10-03T00:00:00Z",
+      "reviewer_id": null,
+      "reviewer_name": "project domain reviewer",
+      "reviewer_role": "biologist; rare-disease mechanism and evidence appraisal",
+      "scientific_rationale": "UniProt Q9UNE7 annotates TPR repeats at 26-127 and the U-box at 226-300 and carries no coiled-coil feature, so residues 145 and 211 fall in an unannotated linker region. Naming the class after a structural feature the reference proteome does not annotate would assert structure the evidence does not support. Paper terminology is preserved as attributed source wording.",
+      "software_version": "phase4-action-engine",
+      "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "status": "APPROVED_WITH_MODIFICATION",
+      "target_id": "ac4-interdomain-missense",
+      "target_type": "ATOMIC_CLAIM"
+    },
+    {
+      "comments": "Classify p.Asn65Ser as a processivity/chain-elongation defect rather than substrate_selective.",
+      "created_at": "2026-10-04T00:28:11.208589Z",
+      "model_run_id": null,
+      "original_value": {
+        "basis": "Hsc70 was mono-ubiquitinated while CHIP self-ubiquitination was retained (PMID:28396517, PMID:25258038).",
+        "effect": "substrate_selective",
+        "observation_ids": [
+          "o07",
+          "o09"
+        ],
+        "readout": "hsc70_ubiquitination",
+        "variant": "p.Asn65Ser"
+      },
+      "proposed_revision": {
+        "effect": "processivity_or_chain_elongation_defect",
+        "evidence_required_to_upgrade": "side-by-side ubiquitination of two or more defined CHIP clients under matched conditions",
+        "substrate_selectivity_claim": "not asserted; requires comparative substrate experiments that directly demonstrate selectivity between substrates"
+      },
+      "review_id": "review:scar16:n65s-effect-classification",
+      "reviewed_at": "2026-10-03T00:00:00Z",
+      "reviewer_id": null,
+      "reviewer_name": "project domain reviewer",
+      "reviewer_role": "biologist; rare-disease mechanism and evidence appraisal",
+      "scientific_rationale": "Mono-ubiquitination of Hsc70 with retained self-ubiquitination shows impaired polyubiquitin chain elongation on that substrate. It does not compare substrates against one another, so it cannot establish selectivity between substrates. Selectivity requires a comparative substrate experiment.",
+      "software_version": "phase4-action-engine",
+      "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "status": "APPROVED_WITH_MODIFICATION",
+      "target_id": "o07",
+      "target_type": "EVIDENCE_CLASSIFICATION"
+    },
+    {
+      "comments": "Retain SCA48 as a separate disease entity. Its evidence may qualify SCAR16 mechanism claims but remains INDIRECT/QUALIFIES.",
+      "created_at": "2026-10-04T00:28:11.208595Z",
+      "model_run_id": null,
+      "original_value": {
+        "affected_observations": [
+          "o14",
+          "o15",
+          "o16"
+        ],
+        "disease_scope": [
+          "SCAR16"
+        ],
+        "open_question": "DisMech describes SCAR16 and SCA48 as a clinical continuum and PMID:34070858 reports biochemically indistinguishable defects, which could argue for pooling the entities.",
+        "sca48_handling": "cross-entity; SUPPORTS/REFUTES downgraded to QUALIFIES and directness set to INDIRECT"
+      },
+      "proposed_revision": null,
+      "review_id": "review:scar16:sca48-entity-separation",
+      "reviewed_at": "2026-10-03T00:00:00Z",
+      "reviewer_id": null,
+      "reviewer_name": "project domain reviewer",
+      "reviewer_role": "biologist; rare-disease mechanism and evidence appraisal",
+      "scientific_rationale": "Shared STUB1 biology makes SCA48 evidence informative about the same protein, so it legitimately qualifies SCAR16 mechanism claims. It is not a test in the claimed entity, and the inheritance mode and allele spectrum differ, so it must not be promoted to direct SCAR16 evidence. The existing cross-entity downgrade is therefore correct as generated.",
+      "software_version": "phase4-action-engine",
+      "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "status": "APPROVED",
+      "target_id": "disease-entity-scope:SCAR16-vs-SCA48",
+      "target_type": "EVIDENCE_CLASSIFICATION"
+    }
+  ],
+  "schema_version": "scientific-reviews-v1"
+}

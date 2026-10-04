@@ -1,0 +1,66 @@
+[
+  {
+    "alternatives": [],
+    "asset_type": "neuronal_model",
+    "biological_context": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+    "description": "iPSC line with a well-characterized parental background permitting isogenic editing",
+    "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[0]",
+    "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "human_review_status": "PENDING",
+    "model_context": "Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)",
+    "reason_required": "The experiment explicitly lists this required asset: iPSC line with a well-characterized parental background permitting isogenic editing",
+    "required_asset_id": "required-asset:551a838b-b265-5aa9-b7de-14fb2db66b18",
+    "required_characteristics": [
+      "iPSC line with a well-characterized parental background permitting isogenic editing"
+    ],
+    "variant_context": "inter-domain missense alleles (p.Lys145Gln, p.Met211Ile); U-box missense comparator (p.Thr246Met); compound heterozygous missense / U-box-truncating configuration"
+  },
+  {
+    "alternatives": [],
+    "asset_type": "patient_derived_ipsc",
+    "biological_context": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+    "description": "SCAR16 patient-derived iPSC line (a STUB1/CHIP mutant line from a Gordon Holmes/SCAR16 patient is reported in PMID:29679845)",
+    "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[1]",
+    "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "human_review_status": "PENDING",
+    "model_context": "Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)",
+    "reason_required": "The experiment explicitly lists this required asset: SCAR16 patient-derived iPSC line (a STUB1/CHIP mutant line from a Gordon Holmes/SCAR16 patient is reported in PMID:29679845)",
+    "required_asset_id": "required-asset:a2b710eb-be1c-508f-bd36-594cab02ea4d",
+    "required_characteristics": [
+      "SCAR16 patient-derived iPSC line (a STUB1/CHIP mutant line from a Gordon Holmes/SCAR16 patient is reported in PMID:29679845)"
+    ],
+    "variant_context": "inter-domain missense alleles (p.Lys145Gln, p.Met211Ile); U-box missense comparator (p.Thr246Met); compound heterozygous missense / U-box-truncating configuration"
+  },
+  {
+    "alternatives": [],
+    "asset_type": "antibody",
+    "biological_context": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+    "description": "validated CHIP and ubiquitin antibodies for the targeted panel",
+    "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[2]",
+    "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "human_review_status": "PENDING",
+    "model_context": "Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)",
+    "reason_required": "The experiment explicitly lists this required asset: validated CHIP and ubiquitin antibodies for the targeted panel",
+    "required_asset_id": "required-asset:80a8f81e-283b-5994-b282-1bc34290804e",
+    "required_characteristics": [
+      "validated CHIP and ubiquitin antibodies for the targeted panel"
+    ],
+    "variant_context": "inter-domain missense alleles (p.Lys145Gln, p.Met211Ile); U-box missense comparator (p.Thr246Met); compound heterozygous missense / U-box-truncating configuration"
+  },
+  {
+    "alternatives": [],
+    "asset_type": "mass_spectrometry_access",
+    "biological_context": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+    "description": "mass spectrometry access with diGly enrichment capability",
+    "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[3]",
+    "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "human_review_status": "PENDING",
+    "model_context": "Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)",
+    "reason_required": "The experiment explicitly lists this required asset: mass spectrometry access with diGly enrichment capability",
+    "required_asset_id": "required-asset:5a730bdb-32f1-55d5-9edc-1abbfd95c98c",
+    "required_characteristics": [
+      "mass spectrometry access with diGly enrichment capability"
+    ],
+    "variant_context": "inter-domain missense alleles (p.Lys145Gln, p.Met211Ile); U-box missense comparator (p.Thr246Met); compound heterozygous missense / U-box-truncating configuration"
+  }
+]

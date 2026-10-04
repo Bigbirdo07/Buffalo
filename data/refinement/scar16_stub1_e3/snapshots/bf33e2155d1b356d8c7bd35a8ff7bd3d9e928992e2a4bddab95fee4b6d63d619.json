@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A24312598+AND+SRC%3AMED&resultType=lite&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T20:53:53.144306+00:00",
+  "sha256": "f768185b9fe8902235b5e2d4729e6c5cfa454c3c69e6b68e03ad989d96fcf7cc"
+}

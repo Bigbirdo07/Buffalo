@@ -1,0 +1,18 @@
+[
+  {
+    "conflicting_signals": [
+      "leading affiliation strings differ"
+    ],
+    "decision_id": "entity-resolution:researcher:s-schuster|researcher:stefanie-schuster",
+    "human_review_status": "PENDING",
+    "left_entity_id": "researcher:s-schuster",
+    "matching_signals": [
+      "identical surname",
+      "identical first initial",
+      "one record abbreviates the forename"
+    ],
+    "rationale": "Surname and first initial agree across records that share no publication. This may be one researcher recorded under an abbreviated forename, or two people. The records are deliberately not merged and no capability evidence is pooled across them.",
+    "right_entity_id": "researcher:stefanie-schuster",
+    "status": "POSSIBLE_DUPLICATE"
+  }
+]

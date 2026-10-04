@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "extractor": "claude-opus-5-5 (Claude Code session)",
+    "extraction_date": "2026-10-03",
+    "status": "EXTRACTED",
+    "human_verified": false,
+    "note": "Locators are short regular expressions. scripts/build_extraction.py copies the verbatim sentence containing each locator out of the cached snapshot, so no span is retyped by the extractor. Protein domains are never stated here; they are derived from residue numbers using the cached UniProt Q9UNE7 feature table.",
+    "reviewer_decisions": [
+      "review:scar16:ac4-allele-class-naming",
+      "review:scar16:n65s-effect-classification",
+      "review:scar16:sca48-entity-separation"
+    ]
+  },
+  "target": {
+    "disease_file": "data/upstream/dismech/kb/disorders/Autosomal_Recessive_Spinocerebellar_Ataxia_16.yaml",
+    "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "edge_path": "pathophysiology[0].downstream[1]",
+    "gene": "STUB1",
+    "uniprot": "Q9UNE7",
+    "disease_scope": [
+      "SCAR16"
+    ]
+  },
+  "readout_family": [
+    "e3_ligase_activity",
+    "hsc70_ubiquitination",
+    "hsp70_polyubiquitination",
+    "polyubiquitin_chain_formation"
+  ],
+  "atomic_claims": [
+    {
+      "claim_id": "ac1-ubox-t246m",
+      "statement": "STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.",
+      "variant_scope": [
+        "p.Thr246Met"
+      ],
+      "scope_class": "U-box missense: p.Thr246Met"
+    },
+    {
+      "claim_id": "ac2-pre-ubox-truncation",
+      "statement": "The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.",
+      "variant_scope": [
+        "p.Gln118*"
+      ],
+      "scope_class": "pre-U-box truncation"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "statement": "SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "variant_scope": [
+        "p.Glu28Lys",
+        "p.Asn65Ser"
+      ],
+      "scope_class": "TPR-domain missense"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "statement": "SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "variant_scope": [
+        "p.Lys145Gln",
+        "p.Met211Ile"
+      ],
+      "scope_class": "inter-domain/linker-region missense",
+      "source_terminology": {
+        "coiled-coil": "PMID:31619515 refers to these as CC (coiled-coil) mutations. Retained as source-specific paper terminology only: UniProt Q9UNE7 annotates no coiled-coil feature, so residues 145 and 211 lie in an unannotated linker."
+      }
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "statement": "SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.",
+      "variant_scope": [
+        "p.Ser236Thr",
+        "p.Met240Thr"
+      ],
+      "scope_class": "U-box missense"
+    }
+  ],
+  "sources": {
+    "upstream:pathophysiology[0].downstream[1].evidence[0]": {
+      "pmid": "24113144",
+      "pmcid": null
+    },
+    "upstream:pathophysiology[0].downstream[1].evidence[1]": {
+      "pmid": "41851873",
+      "pmcid": "PMC13123184"
+    },
+    "upstream:pathophysiology[5].evidence[0]": {
+      "pmid": "30222779",
+      "pmcid": "PMC6160236"
+    },
+    "upstream:pathophysiology[5].evidence[1]": {
+      "pmid": "28396517",
+      "pmcid": "PMC5408658"
+    },
+    "upstream:pathophysiology[0].downstream[2].evidence[0]": {
+      "pmid": "25258038",
+      "pmcid": "PMC4181732"
+    },
+    "upstream:pathophysiology[1].evidence[0]": {
+      "pmid": "29317501",
+      "pmcid": null
+    },
+    "retrieved:PMID:31619515": {
+      "pmid": "31619515",
+      "pmcid": "PMC6916485",
+      "found_by": "pm_function"
+    },
+    "retrieved:PMID:42567515": {
+      "pmid": "42567515",
+      "pmcid": "PMC13570301",
+      "found_by": "pm_negative"
+    },
+    "retrieved:PMID:35398354": {
+      "pmid": "35398354",
+      "pmcid": "PMC9097460",
+      "found_by": "pm_negative"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3900109&retmode=xml",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T20:55:00.403867+00:00",
+  "sha256": "8f8d2bc6d8fe35f410b9ae8b713919078f7b5f213b332ad140a16a0b421a82e0"
+}

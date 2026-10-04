@@ -1,0 +1,1262 @@
+[
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"iPSC\"",
+    "query_id": "discovery-query:4e477483-e168-5d25-a258-645cc98abe9c",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"iPSC\"",
+    "query_id": "discovery-query:c23137cf-8868-5fe9-b795-ea69a7a207bc",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"iPSC\"",
+    "query_id": "discovery-query:f28482c7-bec2-5a6f-b168-7e20a72f4688",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"iPSC\"",
+    "query_id": "discovery-query:3304f710-e9d6-583e-a0f4-3cd50b3f9415",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"iPSC\"",
+    "query_id": "discovery-query:d7565659-98f1-567f-abac-7d47663ab43a",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"iPSC\"",
+    "query_id": "discovery-query:02eb0596-372e-5646-9df5-47dc8a93962e",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC\"",
+    "query_id": "discovery-query:0ea39ac6-59a8-5790-a603-7570be2817d8",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC\"",
+    "query_id": "discovery-query:43503eab-0075-5bcb-88df-640d90f21c12",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC\"",
+    "query_id": "discovery-query:a3a1721b-bfd9-5f32-b459-4bbfde0ccc0a",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"iPSC\"",
+    "query_id": "discovery-query:0f09bdab-6239-50ce-9ec8-0e82bd5d76b3",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"iPSC\"",
+    "query_id": "discovery-query:f6451ed5-c433-59f3-9ce9-9ae6484d1632",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"iPSC\"",
+    "query_id": "discovery-query:91c42bde-02bd-5846-b803-f96d525fdfdd",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"patient-derived cells\"",
+    "query_id": "discovery-query:fd0ba9bc-1ce7-5e2e-a006-ce52926d3dcf",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"patient-derived cells\"",
+    "query_id": "discovery-query:158676f7-83ff-5d0c-8fa5-ae3f812ecdeb",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1\" \"patient-derived cells\"",
+    "query_id": "discovery-query:bcff695a-7b75-546d-b534-7daa39673173",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"patient-derived cells\"",
+    "query_id": "discovery-query:d6c0bbdb-38d2-55a0-a132-e43a3605fca7",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"patient-derived cells\"",
+    "query_id": "discovery-query:c49ca02d-b506-5dc9-b070-dfa35117bdca",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"SCAR16\" \"patient-derived cells\"",
+    "query_id": "discovery-query:7e087ac2-02ad-5c3d-81d0-3161269940cf",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"patient-derived cells\"",
+    "query_id": "discovery-query:8cc1a1e2-5227-54df-87e9-52b46bc98921",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"patient-derived cells\"",
+    "query_id": "discovery-query:b1a1ee7e-3164-595a-9627-003822d003de",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"CHIP ubiquitin ligase\" \"patient-derived cells\"",
+    "query_id": "discovery-query:33a86ae7-a4fc-5758-95c8-e736f61c958d",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"patient-derived cells\"",
+    "query_id": "discovery-query:2fdb14d3-3030-558b-afc6-6e6eff5f49ae",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"patient-derived cells\"",
+    "query_id": "discovery-query:fbbe0e39-3d00-5992-a19d-d96af0569b90",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+    "query": "\"STUB1 proteostasis\" \"patient-derived cells\"",
+    "query_id": "discovery-query:1df53fa2-6f97-5032-806f-ae25f92e1a8d",
+    "rationale": "Tests evidence for iPSC maintenance in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"CRISPR\"",
+    "query_id": "discovery-query:c0b69b7b-7c22-5d9c-9969-23453933551d",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"CRISPR\"",
+    "query_id": "discovery-query:bf0beb83-c167-5721-a70b-5f6e8fc9f8eb",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"CRISPR\"",
+    "query_id": "discovery-query:1d79dc28-27d7-57cb-95b3-6bf3519dff73",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"CRISPR\"",
+    "query_id": "discovery-query:9f331237-47bf-5698-8570-01f1995e8bcf",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"CRISPR\"",
+    "query_id": "discovery-query:ffb02e1e-0a8d-52b3-a317-5dfc6d727ffd",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"CRISPR\"",
+    "query_id": "discovery-query:e9577cc6-729e-50c1-885d-41b2980a5fb4",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"CRISPR\"",
+    "query_id": "discovery-query:42dbeb6a-c15d-501e-8e79-a3b42eb7c0ee",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"CRISPR\"",
+    "query_id": "discovery-query:3216a810-0b03-5817-be7b-c9a863b59c32",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"CRISPR\"",
+    "query_id": "discovery-query:bb8cccb5-0527-50ed-8c2e-baefeff939fd",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"CRISPR\"",
+    "query_id": "discovery-query:4d7bf1c2-784c-549d-9578-56100611074e",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"CRISPR\"",
+    "query_id": "discovery-query:1fd47bef-ff85-5aa1-92c4-9286401c02fd",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"CRISPR\"",
+    "query_id": "discovery-query:c92bd842-5c99-588c-8c35-77ddc0b3debb",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"genome editing\"",
+    "query_id": "discovery-query:6512da49-8919-5b8a-b268-dabe8af9df91",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"genome editing\"",
+    "query_id": "discovery-query:39cc3422-5995-527e-9a67-866246dc6e74",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1\" \"genome editing\"",
+    "query_id": "discovery-query:73b708b0-35cb-5b52-8b2e-114ea0512486",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"genome editing\"",
+    "query_id": "discovery-query:668c479b-70c8-5ceb-85fc-d8888b95c6ae",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"genome editing\"",
+    "query_id": "discovery-query:61f79d0c-b2cc-5880-84c6-aa6f263f9dad",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"SCAR16\" \"genome editing\"",
+    "query_id": "discovery-query:34dad58b-5465-55d5-a3e6-53c93d17a679",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"genome editing\"",
+    "query_id": "discovery-query:130da9df-32bc-52a1-9a6b-72089d98a7ff",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"genome editing\"",
+    "query_id": "discovery-query:19d14359-2cdd-526e-842a-4b42d138a234",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"CHIP ubiquitin ligase\" \"genome editing\"",
+    "query_id": "discovery-query:9eb3ec24-6cf2-5ce6-864e-801a39f81bfc",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"genome editing\"",
+    "query_id": "discovery-query:b8bdd45c-cb96-5af9-b659-d4bc9a265d6b",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"genome editing\"",
+    "query_id": "discovery-query:b87ae468-0c8b-5326-8576-2e111c6ecee0",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+    "query": "\"STUB1 proteostasis\" \"genome editing\"",
+    "query_id": "discovery-query:5b48d595-1070-59a6-a4a5-279d6bc75ac5",
+    "rationale": "Tests evidence for STUB1 CRISPR editing in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"isogenic\"",
+    "query_id": "discovery-query:7d56665e-70ca-54d4-a68c-73cde78e683b",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"isogenic\"",
+    "query_id": "discovery-query:46d18bf3-1bca-542a-bff6-0eb63c729ec3",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"isogenic\"",
+    "query_id": "discovery-query:2c6e8044-21bc-52ec-9a34-8a0fa8bdc3f8",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"isogenic\"",
+    "query_id": "discovery-query:0b9f9138-d5ec-53fe-bb72-63bc720c8651",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"isogenic\"",
+    "query_id": "discovery-query:badbfb78-916c-5cad-908e-6ccc9771ec45",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"isogenic\"",
+    "query_id": "discovery-query:0d70b7a9-87eb-54c8-80a8-a5d5bb617592",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"isogenic\"",
+    "query_id": "discovery-query:839ee564-148a-588c-8156-13c9ee62f1f3",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"isogenic\"",
+    "query_id": "discovery-query:2cb34c33-f405-59f5-8289-f824150807ed",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"isogenic\"",
+    "query_id": "discovery-query:f1f2c5d5-c396-5eb7-870d-e27afe1c004c",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"isogenic\"",
+    "query_id": "discovery-query:f58ba3b9-2169-5003-baac-1e52f23aa9df",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"isogenic\"",
+    "query_id": "discovery-query:251f2b24-cc74-5892-ac75-b526a74af6f6",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"isogenic\"",
+    "query_id": "discovery-query:2d5ce0ab-5ffd-5e06-bbeb-19264b696c44",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"knock-in\"",
+    "query_id": "discovery-query:7f44c297-f942-5eac-be12-1062ad734734",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"knock-in\"",
+    "query_id": "discovery-query:0f4f9a24-8ab1-5ced-8d85-0c6062c9388e",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1\" \"knock-in\"",
+    "query_id": "discovery-query:e3a1f546-fb40-55b1-900c-4075ba38271a",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"knock-in\"",
+    "query_id": "discovery-query:cfccac7d-274e-572b-bb29-c7bd700d6dd3",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"knock-in\"",
+    "query_id": "discovery-query:75fa0895-6e72-5f88-a9f5-e34af9ea94ce",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"SCAR16\" \"knock-in\"",
+    "query_id": "discovery-query:fb0e3ee1-04d8-5573-b152-f7927af71cd8",
+    "rationale": "Tests evidence for isogenic line generation in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"knock-in\"",
+    "query_id": "discovery-query:da4f2382-b19d-583a-ba9d-d50ced698e92",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"knock-in\"",
+    "query_id": "discovery-query:0a8c88ef-0fcc-50b7-8471-779f23ae6945",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"CHIP ubiquitin ligase\" \"knock-in\"",
+    "query_id": "discovery-query:3bd8c891-29fd-50fe-a23d-98747b83168d",
+    "rationale": "Tests evidence for isogenic line generation in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"knock-in\"",
+    "query_id": "discovery-query:9b65e717-3b11-5b8f-a5da-300a11fbb541",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"knock-in\"",
+    "query_id": "discovery-query:3d7ed724-05bd-536d-bc94-fb888cc5b551",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+    "query": "\"STUB1 proteostasis\" \"knock-in\"",
+    "query_id": "discovery-query:be7bb102-2718-5e02-9119-0dcfc5b14f09",
+    "rationale": "Tests evidence for isogenic line generation in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"iPSC neurons\"",
+    "query_id": "discovery-query:71f509bc-9321-5844-8f1f-1d6323eab33f",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"iPSC neurons\"",
+    "query_id": "discovery-query:5d68dce0-9e14-5db2-8ec7-fc1e5b0ca8ac",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"iPSC neurons\"",
+    "query_id": "discovery-query:9ffc8ffa-6fd2-52d7-996f-0d425291b145",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"iPSC neurons\"",
+    "query_id": "discovery-query:e068b2bc-a258-5000-a79d-73418f8d9861",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"iPSC neurons\"",
+    "query_id": "discovery-query:c7c341f2-ce10-5da8-b833-9f7eff390789",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"iPSC neurons\"",
+    "query_id": "discovery-query:5d3e289a-dfcc-5de9-b66f-d8257223705a",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC neurons\"",
+    "query_id": "discovery-query:cdb3baf6-2c1b-51f8-ae06-4f9434b2f41a",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC neurons\"",
+    "query_id": "discovery-query:ad03b926-76e5-52b4-b7fd-31544b24ef10",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"iPSC neurons\"",
+    "query_id": "discovery-query:62b7715b-f5c1-5aef-8d8b-0dea8e7fa766",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"iPSC neurons\"",
+    "query_id": "discovery-query:56eec84c-d2f0-57ce-babf-a4d55aa42e3c",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"iPSC neurons\"",
+    "query_id": "discovery-query:fd952bf8-a61d-58cf-829a-83f30aa41f96",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"iPSC neurons\"",
+    "query_id": "discovery-query:bea9286c-d9d9-58d7-9f66-7a7d76a984a6",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:191eefe8-f1a8-5cb4-a744-4d0a7164c590",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:fa15f7e7-5c1c-56cc-938b-7f54cf7a2201",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:06bcd9d5-da90-53de-b9ce-7e58844d3ed0",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:b24e9e8c-5fe9-59f8-bc5c-59afaacb79d0",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:78c98238-cff5-525d-bdc3-572eda1be25f",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"SCAR16\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:0040c942-c1c3-56af-9453-21c2e1b1627f",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:fbc1abd5-de7e-5f40-9e7f-30703d4e7aca",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:33daab98-6108-5274-a7be-1b203ab39346",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"CHIP ubiquitin ligase\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:659d29ed-ad2b-5d37-a5e2-ae962125a177",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:b2e36798-d541-5772-89a4-2b88b8f7d034",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:66832d62-5925-5cfb-b57b-44b836c00bb8",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+    "query": "\"STUB1 proteostasis\" \"cerebellar neuron model\"",
+    "query_id": "discovery-query:2717a7c7-7c3e-51c9-82ad-14d47fb6482d",
+    "rationale": "Tests evidence for iPSC neuronal differentiation in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:3662d1e4-89ab-5d11-b2ea-ae30b6a97b12",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:79e6f2ac-e1d0-5102-a14d-d246a93cb1aa",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:1f796f2b-1157-5e2e-9a70-1ceb49b73c7d",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:7ded4a81-83e9-542e-918b-17ad9a428493",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:51aafa6d-afff-5f05-8cef-1839e383d93f",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:2c8116b3-47f9-5326-b450-09b9ff36c6f6",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:1a0b6378-e990-5c32-856f-6a3d6267f81c",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:52aea665-425e-5807-b1e4-d0e99a131dd5",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:cbaecc8b-549a-5167-be9b-a8deffeaec0f",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:dbb31273-d1eb-5880-9b3b-8b695b61c00b",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:b9fe0633-0e9f-51d0-93ff-5eb3909ed079",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"ubiquitin ligase assay\"",
+    "query_id": "discovery-query:dffd63ec-ae00-5861-9b8d-d94849dba56c",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:85b82254-246f-545b-86d1-820416f8da51",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:1697dd81-8ca2-592f-8401-ddc14b85a5fe",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:9230b105-7d67-5433-b209-52111810b044",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:c7fae726-2813-5af9-8aa2-8dec6ee1cfda",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:f3818711-6240-5312-b4c1-a8e64f068968",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"SCAR16\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:1c2235a3-f9ae-505e-802d-76410b0d80fb",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:aa8d249c-f7d2-531a-ab24-e9e159389792",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:a9140db4-50be-5489-93ed-80cc5a01877f",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"CHIP ubiquitin ligase\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:5f99ca7d-83fc-5f5d-9a86-6f03ae843ab2",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:d01589a1-aaa1-55b9-8f52-5196b67a603e",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:801d1201-a223-54bf-be11-b95dca3cb221",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+    "query": "\"STUB1 proteostasis\" \"substrate ubiquitination\"",
+    "query_id": "discovery-query:bbc4afa5-02e7-59c9-9358-1f473a7093c2",
+    "rationale": "Tests evidence for quantitative ubiquitination analysis in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"diGly proteomics\"",
+    "query_id": "discovery-query:4381ddbd-d00d-5ee4-ab40-a5ffb2e3fc6a",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"diGly proteomics\"",
+    "query_id": "discovery-query:bc69db98-9d33-50af-adc2-4217b29cb701",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"diGly proteomics\"",
+    "query_id": "discovery-query:15791035-be96-5608-853d-f367291f0272",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"diGly proteomics\"",
+    "query_id": "discovery-query:5ffa0bc2-701b-5463-93c3-8693fdd47d6d",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"diGly proteomics\"",
+    "query_id": "discovery-query:568c0e50-d5f1-5c31-ab07-daad4002dc0a",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"diGly proteomics\"",
+    "query_id": "discovery-query:3279d5c9-ed32-5a58-8226-a9d680571ad1",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"diGly proteomics\"",
+    "query_id": "discovery-query:5f41ece2-a203-559d-bafd-a211650f0cc0",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"diGly proteomics\"",
+    "query_id": "discovery-query:a2a4e75c-a46f-50ea-834a-57dacc40bf36",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"diGly proteomics\"",
+    "query_id": "discovery-query:f42eb32c-1fe0-55e6-8651-8568adb8bf7a",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"diGly proteomics\"",
+    "query_id": "discovery-query:0dfb0522-e551-5540-a05d-3ca5b4cb202a",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"diGly proteomics\"",
+    "query_id": "discovery-query:bfa9a2c7-08d2-5949-916b-5dd02c9517a1",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"diGly proteomics\"",
+    "query_id": "discovery-query:f82cb910-4f39-5fa2-a810-16234203e353",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"ubiquitinome\"",
+    "query_id": "discovery-query:bdcbf785-e54e-5c50-9558-a2306fe36856",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"ubiquitinome\"",
+    "query_id": "discovery-query:b7ed635d-ad82-5578-afa3-be3dc969c4fc",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1\" \"ubiquitinome\"",
+    "query_id": "discovery-query:3e3f746d-3db4-5cc0-8b6e-382c971f4bfe",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"ubiquitinome\"",
+    "query_id": "discovery-query:bda57750-486e-5d32-9688-4c88ac0d1568",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"ubiquitinome\"",
+    "query_id": "discovery-query:364900da-0c81-56d1-9013-b1d1f467f359",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"SCAR16\" \"ubiquitinome\"",
+    "query_id": "discovery-query:0db3cb36-8337-59d6-9039-9275fb5af19d",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitinome\"",
+    "query_id": "discovery-query:7145f268-fc0f-5251-8186-dfbbe7e75e1c",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitinome\"",
+    "query_id": "discovery-query:0e9493de-1e88-5ace-bf01-3f8830b66e3e",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"CHIP ubiquitin ligase\" \"ubiquitinome\"",
+    "query_id": "discovery-query:d32293d1-ff46-5c12-a9ea-133881487845",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"ubiquitinome\"",
+    "query_id": "discovery-query:16da2f26-81bc-5cb4-945c-5e26d2fb03a5",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"ubiquitinome\"",
+    "query_id": "discovery-query:735652c9-7508-5beb-a502-d985bd051b0a",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+    "query": "\"STUB1 proteostasis\" \"ubiquitinome\"",
+    "query_id": "discovery-query:9e8dfcab-646e-51fd-9046-89d4cee66960",
+    "rationale": "Tests evidence for diGly enrichment proteomics in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"protein thermal stability\"",
+    "query_id": "discovery-query:bc3b6edb-071e-5ccd-a9e0-2505584b3ebd",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"protein thermal stability\"",
+    "query_id": "discovery-query:4f0d1c4a-dab6-5427-aae3-7f3c161dd477",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"protein thermal stability\"",
+    "query_id": "discovery-query:bd304de7-9c89-5804-ba69-0d207c28a961",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"protein thermal stability\"",
+    "query_id": "discovery-query:087252c5-32ab-5ba1-9623-f659b2780c05",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"protein thermal stability\"",
+    "query_id": "discovery-query:fc2ecab7-1fa8-5821-a89d-0646eb3d8fe7",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"protein thermal stability\"",
+    "query_id": "discovery-query:edfac094-2828-5e0d-aebb-a8eef89308ff",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"protein thermal stability\"",
+    "query_id": "discovery-query:c41997b7-4bf4-5ef2-8231-9b2cd5a37a0c",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"protein thermal stability\"",
+    "query_id": "discovery-query:7b41d109-48c9-5683-b682-6d70cdc33da5",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"protein thermal stability\"",
+    "query_id": "discovery-query:f3203c79-8b77-5c82-aff7-65a9740b0b66",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"protein thermal stability\"",
+    "query_id": "discovery-query:8ee9eb75-ff44-56b3-b5bb-9dce53a4206c",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"protein thermal stability\"",
+    "query_id": "discovery-query:6ef1b112-2f5e-59e7-91d3-56bad8d16d58",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"protein thermal stability\"",
+    "query_id": "discovery-query:e71acb91-71b7-509f-a9a7-a07a93c7fee3",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:eff62dd4-deef-52e1-ae01-b2c118636c92",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:ce6f2e5d-fc75-5fb0-b908-2e6fcb3a9d46",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:43fbcfce-8547-5b40-8b00-7a9270fd7885",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:e6cabb12-e0ad-5a20-850d-a13897f8feef",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:10ebf330-d3ea-55df-a63f-58c97e6137eb",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"SCAR16\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:b7371656-f1a9-5336-88a5-ecb21ad7e1ec",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:c2fb9861-8a8b-5b6a-8ea7-be2516c14ccd",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:635bf818-3b3c-52db-aeeb-9f5952639494",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"CHIP ubiquitin ligase\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:61646c2e-c037-52c8-a417-f834778fce3d",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:d372d322-e8ce-5b14-9280-af4442e9d006",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:68df58b0-ddcd-5284-a2a7-9c8342296452",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+    "query": "\"STUB1 proteostasis\" \"co-immunoprecipitation\"",
+    "query_id": "discovery-query:5b09a253-edc3-5de4-90bf-077c3a1a5e62",
+    "rationale": "Tests evidence for protein thermal-stability assay in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1\" \"clone-level random effects\"",
+    "query_id": "discovery-query:2043964f-e177-5cd0-9678-87e4975c70ed",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1\" \"clone-level random effects\"",
+    "query_id": "discovery-query:60beaae2-1846-5bff-a87c-10897dfd00d4",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1\" \"clone-level random effects\"",
+    "query_id": "discovery-query:86dc470d-61fd-5d37-a7d9-03e5acd653cc",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"SCAR16\" \"clone-level random effects\"",
+    "query_id": "discovery-query:68500b90-eb85-5a9e-a8b9-168137ad5eb9",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context SCAR16.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"SCAR16\" \"clone-level random effects\"",
+    "query_id": "discovery-query:9dedb8ed-69a4-5eea-822f-5d603584098a",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context SCAR16.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"SCAR16\" \"clone-level random effects\"",
+    "query_id": "discovery-query:f28fc695-5ba6-5020-a912-0eafe4af1b8d",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context SCAR16.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"CHIP ubiquitin ligase\" \"clone-level random effects\"",
+    "query_id": "discovery-query:2c993a6f-4cfe-53db-9932-be6e6732d8d6",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"CHIP ubiquitin ligase\" \"clone-level random effects\"",
+    "query_id": "discovery-query:aad93675-8b2c-5997-b45f-9186e35ae67c",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"CHIP ubiquitin ligase\" \"clone-level random effects\"",
+    "query_id": "discovery-query:801f202e-5567-519a-b25d-914fbd2b3152",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context CHIP ubiquitin ligase.",
+    "source": "institutional_web"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1 proteostasis\" \"clone-level random effects\"",
+    "query_id": "discovery-query:b3a0027c-5920-5e64-b1b3-90ab8956aef4",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1 proteostasis.",
+    "source": "PubMed"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1 proteostasis\" \"clone-level random effects\"",
+    "query_id": "discovery-query:f89e84b4-5f50-5c50-8959-a89579538210",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1 proteostasis.",
+    "source": "NIH RePORTER"
+  },
+  {
+    "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+    "query": "\"STUB1 proteostasis\" \"clone-level random effects\"",
+    "query_id": "discovery-query:46af7554-6a52-55db-b9fd-c6dbdbe3a4da",
+    "rationale": "Tests evidence for clone-aware statistical analysis in the specific context STUB1 proteostasis.",
+    "source": "institutional_web"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=SNX14%5Btiab%5D+OR+SCAR20%5Btiab%5D&retmode=json&retmax=0&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T21:31:19.151756+00:00",
+  "sha256": "9431cffb948ee6479f564eeb36315f894b2bec965d1ada5f106411f92bcf92cf"
+}

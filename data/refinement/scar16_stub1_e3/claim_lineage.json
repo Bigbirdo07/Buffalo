@@ -1,0 +1,560 @@
+{
+  "atomic_claims": [
+    {
+      "claim_id": "ac1-ubox-t246m",
+      "derived_from_claim_ids": [
+        "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+      ],
+      "evidence_by_role": {
+        "background_only": [],
+        "direct_qualifying": [],
+        "direct_refuting": [],
+        "direct_supporting": [
+          "b5d57810-53c8-5fe7-b0cd-963be4f91202#o01",
+          "4c919b05-7d4f-5a64-a25f-ab85643ca093#o05",
+          "c325be09-0223-5168-a17b-8874c643986f#o06"
+        ],
+        "indirect": []
+      },
+      "rule_applied": "A2",
+      "statement": "STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "ac2-pre-ubox-truncation",
+      "derived_from_claim_ids": [
+        "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+      ],
+      "evidence_by_role": {
+        "background_only": [],
+        "direct_qualifying": [],
+        "direct_refuting": [],
+        "direct_supporting": [
+          "c215671b-911e-548a-93d7-c2338562826a#o02"
+        ],
+        "indirect": []
+      },
+      "rule_applied": "A2",
+      "statement": "The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.",
+      "status": "SUPPORTED"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "derived_from_claim_ids": [
+        "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+      ],
+      "evidence_by_role": {
+        "background_only": [],
+        "direct_qualifying": [
+          "c325be09-0223-5168-a17b-8874c643986f#o07",
+          "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424#o09"
+        ],
+        "direct_refuting": [
+          "c325be09-0223-5168-a17b-8874c643986f#o08"
+        ],
+        "direct_supporting": [],
+        "indirect": [
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+          "retrieved:PMID:31619515#o12",
+          "retrieved:PMID:31619515#o13",
+          "retrieved:PMID:42567515#o14",
+          "retrieved:PMID:35398354#o16"
+        ]
+      },
+      "rule_applied": "A5",
+      "statement": "SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "status": "CONTEXT_DEPENDENT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "derived_from_claim_ids": [
+        "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+      ],
+      "evidence_by_role": {
+        "background_only": [
+          "c215671b-911e-548a-93d7-c2338562826a#o04"
+        ],
+        "direct_qualifying": [],
+        "direct_refuting": [
+          "c325be09-0223-5168-a17b-8874c643986f#o08"
+        ],
+        "direct_supporting": [],
+        "indirect": [
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+          "retrieved:PMID:31619515#o12",
+          "retrieved:PMID:31619515#o13"
+        ]
+      },
+      "rule_applied": "A6",
+      "statement": "SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "derived_from_claim_ids": [
+        "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+      ],
+      "evidence_by_role": {
+        "background_only": [],
+        "direct_qualifying": [],
+        "direct_refuting": [
+          "c325be09-0223-5168-a17b-8874c643986f#o08"
+        ],
+        "direct_supporting": [
+          "retrieved:PMID:31619515#o11"
+        ],
+        "indirect": [
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+          "retrieved:PMID:42567515#o15"
+        ]
+      },
+      "rule_applied": "A3",
+      "statement": "SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.",
+      "status": "CONTEXT_DEPENDENT"
+    }
+  ],
+  "experiment_proposal": {
+    "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "human_review_required": true,
+    "knowledge_gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "label": "Research proposal requiring expert review."
+  },
+  "human_review": {
+    "note": "Deterministic criticism and synthesis are not expert scientific review.",
+    "required": true,
+    "status": "PENDING"
+  },
+  "knowledge_gap": {
+    "gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+    "related_claims": [
+      "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+      "ac4-interdomain-missense"
+    ],
+    "related_edges": [
+      "59b75e11-a1e4-5dbb-8de6-4530b898c7d5"
+    ],
+    "status": "OPEN"
+  },
+  "lineage": [
+    "DisMech curated claim",
+    "atomic extracted claims",
+    "source observations",
+    "independent deterministic reviews",
+    "categorical synthesis",
+    "KnowledgeGap",
+    "ExperimentProposal"
+  ],
+  "observations": [
+    {
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "effect": "abolished",
+      "evidence_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "observation_id": "o01",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:24113144",
+      "source_snapshot_sha256": [
+        "c5634b9757657fee6d496935a4119ff103c87f48789b69975eb41494da157dab"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac2-pre-ubox-truncation"
+      ],
+      "effect": "decreased",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "observation_id": "o02",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsc70_ubiquitination",
+      "source_identifier": "PMID:41851873",
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ]
+    },
+    {
+      "claim_ids": [],
+      "effect": "unchanged",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "observation_id": "o03",
+      "origin": "PRIMARY_RESULT",
+      "readout": "chip_protein_abundance",
+      "source_identifier": "PMID:41851873",
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac4-interdomain-missense"
+      ],
+      "effect": "decreased",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "observation_id": "o04",
+      "origin": "BACKGROUND_CITATION",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:41851873",
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "effect": "abolished",
+      "evidence_id": "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+      "observation_id": "o05",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:30222779",
+      "source_snapshot_sha256": [
+        "0f6162e1f7f6edc083c5478c5a13b0f0883a28e6e5a40272eb4ec0cff372c309",
+        "9897429aa1d96c4b6ebbbd99f95fc744e59ab157773028478d06f87b43ad238b"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "effect": "abolished",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "observation_id": "o06",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsc70_ubiquitination",
+      "source_identifier": "PMID:28396517",
+      "source_snapshot_sha256": [
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "effect": "processivity_defect",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "observation_id": "o07",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsc70_ubiquitination",
+      "source_identifier": "PMID:28396517",
+      "source_snapshot_sha256": [
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "effect": "unchanged",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "observation_id": "o08",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:28396517",
+      "source_snapshot_sha256": [
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "effect": "processivity_defect",
+      "evidence_id": "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+      "observation_id": "o09",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsc70_ubiquitination",
+      "source_identifier": "PMID:25258038",
+      "source_snapshot_sha256": [
+        "d7b41ce8218a305c918a670e0c4ff54b71b4ea8e4bdcd247a7323a18e4f004d2",
+        "e2f4af43492b8eb1226abab071c96ad62410b9a76f1eef89b94bc57211da97eb"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "effect": "partially_retained",
+      "evidence_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "observation_id": "o10",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:29317501",
+      "source_snapshot_sha256": [
+        "2368e847923b03020b048b6471a0e211bbf5a93800a40795a067a1b581b4236c"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac5-ubox-other-missense"
+      ],
+      "effect": "abolished",
+      "evidence_id": "retrieved:PMID:31619515",
+      "observation_id": "o11",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsp70_polyubiquitination",
+      "source_identifier": "PMID:31619515",
+      "source_snapshot_sha256": [
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "effect": "partially_retained",
+      "evidence_id": "retrieved:PMID:31619515",
+      "observation_id": "o12",
+      "origin": "PRIMARY_RESULT",
+      "readout": "hsp70_polyubiquitination",
+      "source_identifier": "PMID:31619515",
+      "source_snapshot_sha256": [
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "effect": "unchanged",
+      "evidence_id": "retrieved:PMID:31619515",
+      "observation_id": "o13",
+      "origin": "PRIMARY_RESULT",
+      "readout": "polyubiquitin_chain_formation",
+      "source_identifier": "PMID:31619515",
+      "source_snapshot_sha256": [
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "effect": "substrate_selective",
+      "evidence_id": "retrieved:PMID:42567515",
+      "observation_id": "o14",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:42567515",
+      "source_snapshot_sha256": [
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "e3006ca4d0bd85c2a0535476921fe0c362d7d2333cea4178b78411c2b68edba2"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac5-ubox-other-missense"
+      ],
+      "effect": "abolished",
+      "evidence_id": "retrieved:PMID:42567515",
+      "observation_id": "o15",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:42567515",
+      "source_snapshot_sha256": [
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "e3006ca4d0bd85c2a0535476921fe0c362d7d2333cea4178b78411c2b68edba2"
+      ]
+    },
+    {
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "effect": "unchanged",
+      "evidence_id": "retrieved:PMID:35398354",
+      "observation_id": "o16",
+      "origin": "PRIMARY_RESULT",
+      "readout": "e3_ligase_activity",
+      "source_identifier": "PMID:35398354",
+      "source_snapshot_sha256": [
+        "13d83ac746858a7ed2d0a90be5c5604e430a7491448cbc01eab00e0a7e375ad6",
+        "96feb4571163e9c5d6cfe338e251376dc3fde24c1c10737ba7272faf822c99e9"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac1-ubox-t246m",
+      "directness": "DIRECT",
+      "fit": "SUPPORTS",
+      "observation_id": "o01"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac2-pre-ubox-truncation",
+      "directness": "DIRECT",
+      "fit": "SUPPORTS",
+      "observation_id": "o02"
+    },
+    {
+      "causal_support": "NONE",
+      "claim_id": "ac4-interdomain-missense",
+      "directness": "BACKGROUND_ONLY",
+      "fit": "SUPPORTS",
+      "observation_id": "o04"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac1-ubox-t246m",
+      "directness": "DIRECT",
+      "fit": "SUPPORTS",
+      "observation_id": "o05"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac1-ubox-t246m",
+      "directness": "DIRECT",
+      "fit": "SUPPORTS",
+      "observation_id": "o06"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "DIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o07"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "DIRECT",
+      "fit": "REFUTES",
+      "observation_id": "o08"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac4-interdomain-missense",
+      "directness": "DIRECT",
+      "fit": "REFUTES",
+      "observation_id": "o08"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac5-ubox-other-missense",
+      "directness": "DIRECT",
+      "fit": "REFUTES",
+      "observation_id": "o08"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "DIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o09"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o10"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac4-interdomain-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o10"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac5-ubox-other-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o10"
+    },
+    {
+      "causal_support": "CAUSAL",
+      "claim_id": "ac5-ubox-other-missense",
+      "directness": "DIRECT",
+      "fit": "SUPPORTS",
+      "observation_id": "o11"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o12"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac4-interdomain-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o12"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "INDIRECT",
+      "fit": "REFUTES",
+      "observation_id": "o13"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac4-interdomain-missense",
+      "directness": "INDIRECT",
+      "fit": "REFUTES",
+      "observation_id": "o13"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o14"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac5-ubox-other-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o15"
+    },
+    {
+      "causal_support": "ASSOCIATIONAL",
+      "claim_id": "ac3-tpr-missense",
+      "directness": "INDIRECT",
+      "fit": "QUALIFIES",
+      "observation_id": "o16"
+    }
+  ],
+  "run_id": "refine:59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+  "schema_version": "phase3-claim-lineage-v1",
+  "synthesis": {
+    "edge_rule_applied": "E2",
+    "edge_status": "CONTEXT_DEPENDENT",
+    "recommended_scope": "Licensed by the evidence: STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.; The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity. || Not licensed as stated: SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity. [CONTEXT_DEPENDENT]; SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity. [INSUFFICIENT_EVIDENCE]; SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity. [CONTEXT_DEPENDENT]"
+  },
+  "upstream": {
+    "claim_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+    "edge_id": "59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+    "evidence_ids": [
+      "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "c215671b-911e-548a-93d7-c2338562826a"
+    ],
+    "kind": "CURATED",
+    "source_locator": "pathophysiology[0].downstream[1]",
+    "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+    "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+    "statement": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity."
+  }
+}

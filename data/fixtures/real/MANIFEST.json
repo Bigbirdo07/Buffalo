@@ -1,0 +1,86 @@
+{
+  "generator": "scripts/build_fixtures.py",
+  "trim_rule": {
+    "sections_kept_whole": [
+      "pathophysiology",
+      "phenotypes",
+      "genetic",
+      "variants",
+      "mechanistic_hypotheses",
+      "discussions",
+      "has_subtypes",
+      "animal_models",
+      "experimental_models"
+    ],
+    "evidence_list_cap": 2,
+    "bulk_section_cap": 2,
+    "bulk_sections": [
+      "biochemical",
+      "clinical_trials",
+      "computational_models",
+      "datasets",
+      "definitions",
+      "diagnosis",
+      "differential_diagnoses",
+      "environmental",
+      "epidemiology",
+      "external_assertions",
+      "histopathology",
+      "imaging_findings",
+      "inheritance",
+      "prevalence",
+      "progression",
+      "references",
+      "stages",
+      "transmission",
+      "treatments"
+    ]
+  },
+  "notes": "Values are upstream verbatim; only list lengths are reduced. Graph-bearing sections are untrimmed so imported node/edge structure matches upstream. Regenerate with the recorded commit and compare fixture_sha256 to verify.",
+  "fixtures": [
+    {
+      "fixture": "acan_short_stature.yaml",
+      "upstream_file": "kb/disorders/ACAN-Related_Short_Stature_Spectrum.yaml",
+      "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "upstream_sha256": "f5c6cac69102f23fb85e107a280908b83e5b703fa288ff339bca2c59c3f50a08",
+      "upstream_bytes": 112299,
+      "fixture_sha256": "2b445f43763f8311358994b53833c44b5f0847ec744b77dbd3fc3f9443b28ebe",
+      "fixture_bytes": 83826,
+      "pathophysiology_nodes": 8,
+      "phenotypes": 11
+    },
+    {
+      "fixture": "sanfilippo.yaml",
+      "upstream_file": "kb/disorders/Sanfilippo_syndrome.yaml",
+      "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "upstream_sha256": "8bdc0f422783102abdfd05c9057563e58cba5420e1a05bb6e0272a715365ec15",
+      "upstream_bytes": 83568,
+      "fixture_sha256": "9c27ee72ee9917cc4e09de9f5348765455bbf21ecf3b2b43ec081826f9211c69",
+      "fixture_bytes": 72356,
+      "pathophysiology_nodes": 6,
+      "phenotypes": 18
+    },
+    {
+      "fixture": "scar16.yaml",
+      "upstream_file": "kb/disorders/Autosomal_Recessive_Spinocerebellar_Ataxia_16.yaml",
+      "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "upstream_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+      "upstream_bytes": 225252,
+      "fixture_sha256": "9480702a14e312b4bfc7e7d7468b28bc8fd28a30047b879c066ca35befce771f",
+      "fixture_bytes": 190570,
+      "pathophysiology_nodes": 21,
+      "phenotypes": 23
+    },
+    {
+      "fixture": "wilson_disease.yaml",
+      "upstream_file": "kb/disorders/Wilsons_Disease.yaml",
+      "dismech_commit": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "upstream_sha256": "f0e0a164b4b71cd67fd757175ba904fb1939cf493d5b0ddeed937d331a3cb7ac",
+      "upstream_bytes": 266048,
+      "fixture_sha256": "891a26f8c484abb0e1d97dc56b69e22a8f482069b412fafbb792deffa60a86eb",
+      "fixture_bytes": 218058,
+      "pathophysiology_nodes": 13,
+      "phenotypes": 73
+    }
+  ]
+}

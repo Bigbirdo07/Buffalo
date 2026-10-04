@@ -1,0 +1,603 @@
+{
+  "as_of": "2026-10-04",
+  "as_of_basis": "newest cached snapshot retrieval time; no execution clock is used",
+  "candidate_subjects": [
+    {
+      "lab_id": "team:scar16-patient-ipsc",
+      "personnel": [
+        "researcher:l-schols",
+        "researcher:s-schuster",
+        "researcher:stefan-hauser",
+        "researcher:stefanie-schuster"
+      ],
+      "provenance_snapshots": [
+        "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd"
+      ],
+      "publications": [
+        "PMID:29679845",
+        "PMID:33097556"
+      ]
+    },
+    {
+      "lab_id": "team:chip-variant-biochemistry",
+      "personnel": [
+        "researcher:jonathan-c-schisler",
+        "researcher:sabrina-c-madrigal",
+        "researcher:selin-altinok"
+      ],
+      "provenance_snapshots": [
+        "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd"
+      ],
+      "publications": [
+        "PMID:31619515",
+        "PMID:42567515"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-41911331",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:41911331"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-41963441",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:41963441"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:crispr_editing:PMID-42069601",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:42069601"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:39460936"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:40929244"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:38014483"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:39460936"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:39913247"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:40205044"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-41208143",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:41208143"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-39920137",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:39920137"
+      ]
+    },
+    {
+      "lab_id": "capability-candidate:proteomics:PMID-40480969",
+      "personnel": [],
+      "provenance_snapshots": [
+        "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2"
+      ],
+      "publications": [
+        "PMID:40480969"
+      ]
+    }
+  ],
+  "chain": [
+    "DisMech curated claim",
+    "refined atomic claims",
+    "KnowledgeGap",
+    "ExperimentProposal",
+    "RequiredCapability / RequiredAsset",
+    "discovery queries",
+    "cached source records",
+    "CapabilityEvidenceSignal",
+    "CapabilityClaim",
+    "Laboratory / Researcher / ResearchAsset / Organization",
+    "CollaborationOpportunity"
+  ],
+  "clinical_studies_considered": [
+    "NCT01793168"
+  ],
+  "collaboration_id": "collaboration:scar16-stub1-linker-action-v1",
+  "collaboration_status": "MISSING_CAPABILITY",
+  "entity_resolution": [
+    {
+      "decision_id": "entity-resolution:researcher:s-schuster|researcher:stefanie-schuster",
+      "left": "researcher:s-schuster",
+      "right": "researcher:stefanie-schuster",
+      "status": "POSSIBLE_DUPLICATE"
+    }
+  ],
+  "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "grants_considered": [
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1F30EY039130-01",
+      "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+      "project_end": "2029-03-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "1F31NS139599-01A1",
+      "organization": "EMORY UNIVERSITY",
+      "project_end": "2027-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1F31NS141619-01",
+      "organization": "UNIVERSITY OF CHICAGO",
+      "project_end": "2026-12-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "1F32AG038061-01A1",
+      "organization": "UNIV OF NORTH CAROLINA CHAPEL HILL",
+      "project_end": "2011-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "1F32HL112558-01",
+      "organization": "CINCINNATI CHILDRENS HOSP MED CTR",
+      "project_end": "2014-01-10",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1K08NS133300-01A1",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+      "project_end": "2029-06-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "1R01CA244667-01A1",
+      "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+      "project_end": "2025-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "1R01NS132538-01A1",
+      "organization": "UNIVERSITY OF FLORIDA",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R01NS135162-01",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R01NS135254-01",
+      "organization": "STATE UNIVERSITY OF NEW YORK AT ALBANY",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R01NS137233-01",
+      "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+      "project_end": "2029-07-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R01NS150687-01",
+      "organization": "UT SOUTHWESTERN MEDICAL CENTER",
+      "project_end": "2031-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R21NS145030-01A1",
+      "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+      "project_end": "2028-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R21NS145182-01",
+      "organization": "UNIVERSITY OF MINNESOTA",
+      "project_end": "2027-06-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "1R21NS145545-01",
+      "organization": "EMORY UNIVERSITY",
+      "project_end": "2027-06-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1R61NS149087-01",
+      "organization": "JOHNS HOPKINS UNIVERSITY",
+      "project_end": "2028-02-29",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "1RM1NS143850-01",
+      "organization": "FLORIDA INTERNATIONAL UNIVERSITY",
+      "project_end": "2030-12-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "1ZIABC011496-06",
+      "organization": "DIVISION OF BASIC SCIENCES - NCI",
+      "project_end": null,
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "1ZIABC011496-08",
+      "organization": "DIVISION OF BASIC SCIENCES - NCI",
+      "project_end": null,
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "5F31NS139599-02",
+      "organization": "EMORY UNIVERSITY",
+      "project_end": "2027-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5F31NS141619-02",
+      "organization": "UNIVERSITY OF CHICAGO",
+      "project_end": "2026-12-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "5F32HL112558-02",
+      "organization": "CINCINNATI CHILDRENS HOSP MED CTR",
+      "project_end": "2013-03-11",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5K08NS133300-02",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+      "project_end": "2029-06-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5K08NS133300-03",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+      "project_end": "2029-06-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "5R01CA244667-02",
+      "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+      "project_end": "2025-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "5R01CA244667-03",
+      "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+      "project_end": "2025-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "5R01CA244667-04",
+      "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+      "project_end": "2025-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": false,
+      "disposition": "CONTEXT_MISMATCH: mentions STUB1 but in another disease area, so it is not evidence of STUB1 ataxia capability",
+      "grant_id": "5R01CA244667-05",
+      "organization": "UNIVERSITY OF MARYLAND BALTIMORE",
+      "project_end": "2026-05-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "5R01NS132538-02",
+      "organization": "UNIVERSITY OF FLORIDA",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "RETRIEVED_BY_AMBIGUOUS_TOKEN: matched the query text without a whole-word STUB1 or disease context term, most often via ChIP/CHIP collision",
+      "grant_id": "5R01NS132538-03",
+      "organization": "UNIVERSITY OF FLORIDA",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5R01NS135162-02",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5R01NS135162-03",
+      "organization": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
+      "project_end": "2028-11-30",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5R01NS137233-02",
+      "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+      "project_end": "2029-07-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5R01NS137233-03",
+      "organization": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+      "project_end": "2029-07-31",
+      "used_as_capability_evidence": false
+    },
+    {
+      "active": true,
+      "disposition": "SUBJECT_MISMATCH: ataxia or cerebellar context but a different gene or protein; adjacent field intelligence only",
+      "grant_id": "5R21NS145182-02",
+      "organization": "UNIVERSITY OF MINNESOTA",
+      "project_end": "2027-06-30",
+      "used_as_capability_evidence": false
+    }
+  ],
+  "human_review": {
+    "note": "Deterministic extraction and rule-based verification are not expert scientific review.",
+    "required": true,
+    "status": "PENDING"
+  },
+  "knowledge_gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "organizations": [
+    "organization:national-ataxia-foundation"
+  ],
+  "required_assets": [
+    {
+      "asset_type": "neuronal_model",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[0]",
+      "required_asset_id": "required-asset:551a838b-b265-5aa9-b7de-14fb2db66b18"
+    },
+    {
+      "asset_type": "patient_derived_ipsc",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[1]",
+      "required_asset_id": "required-asset:a2b710eb-be1c-508f-bd36-594cab02ea4d"
+    },
+    {
+      "asset_type": "antibody",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[2]",
+      "required_asset_id": "required-asset:80a8f81e-283b-5994-b282-1bc34290804e"
+    },
+    {
+      "asset_type": "mass_spectrometry_access",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_assets[3]",
+      "required_asset_id": "required-asset:5a730bdb-32f1-55d5-9edc-1abbfd95c98c"
+    }
+  ],
+  "required_capabilities": [
+    {
+      "canonical_name": "iPSC maintenance",
+      "capability_claim_ids": [
+        "capability-claim:scar16-patient-ipsc:cell_culture"
+      ],
+      "capability_id": "required-capability:3672f9d3-aed0-552c-85fc-92d8ce427518",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
+      "satisfied": false
+    },
+    {
+      "canonical_name": "STUB1 CRISPR editing",
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:crispr_editing:PMID-41911331",
+        "capability-claim:capability-candidate:crispr_editing:PMID-41963441",
+        "capability-claim:capability-candidate:crispr_editing:PMID-42069601"
+      ],
+      "capability_id": "required-capability:8c8933e6-081a-5fb0-86c4-cf0e923bfd33",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "isogenic line generation",
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:isogenic_line_generation:PMID-39460936",
+        "capability-claim:capability-candidate:isogenic_line_generation:PMID-39913247",
+        "capability-claim:capability-candidate:isogenic_line_generation:PMID-40205044"
+      ],
+      "capability_id": "required-capability:24cddc62-cd64-58bd-93be-c2a1f4794e83",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[0]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "iPSC neuronal differentiation",
+      "capability_claim_ids": [
+        "capability-claim:scar16-patient-ipsc:ipsc_neuronal_differentiation",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+        "capability-claim:capability-candidate:ipsc_neuronal_differentiation:PMID-38014483"
+      ],
+      "capability_id": "required-capability:776e1173-736d-50fc-ac14-37e35cb90f72",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[1]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "quantitative ubiquitination analysis",
+      "capability_claim_ids": [
+        "capability-claim:chip-variant-biochemistry:ubiquitination_assay"
+      ],
+      "capability_id": "required-capability:5af889f3-39e4-5c1d-9ced-422bdedaa565",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[2]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "diGly enrichment proteomics",
+      "capability_claim_ids": [
+        "capability-claim:capability-candidate:proteomics:PMID-41208143",
+        "capability-claim:capability-candidate:proteomics:PMID-39920137",
+        "capability-claim:capability-candidate:proteomics:PMID-40480969"
+      ],
+      "capability_id": "required-capability:82f38cbc-4b94-537d-ad91-b604a0f83eeb",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[2]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "protein thermal-stability assay",
+      "capability_claim_ids": [
+        "capability-claim:chip-variant-biochemistry:protein_biochemistry"
+      ],
+      "capability_id": "required-capability:35242089-757e-5f78-b9b6-cf501e07f056",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[3]",
+      "satisfied": true
+    },
+    {
+      "canonical_name": "clone-aware statistical analysis",
+      "capability_claim_ids": [],
+      "capability_id": "required-capability:6bd0c032-8845-5350-80b4-711dea1d0f1b",
+      "evidence_source": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense#required_capabilities[4]",
+      "satisfied": false
+    }
+  ],
+  "research_assets": [
+    {
+      "asset_id": "asset:stub1-patient-ipsc:pmid-29679845",
+      "evidence": [
+        "PMID:29679845",
+        "PMID:33097556"
+      ]
+    },
+    {
+      "asset_id": "asset:chip-functional-assay:publication-method",
+      "evidence": [
+        "PMID:31619515",
+        "PMID:42567515"
+      ]
+    },
+    {
+      "asset_id": "asset:registry:NCT01793168",
+      "evidence": [
+        "NCT01793168"
+      ]
+    }
+  ],
+  "schema_version": "phase4-action-lineage-v1"
+}

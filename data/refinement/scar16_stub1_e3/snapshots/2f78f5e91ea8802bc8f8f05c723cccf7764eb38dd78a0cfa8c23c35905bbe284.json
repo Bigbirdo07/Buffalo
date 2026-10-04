@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28STUB1+OR+%22CHIP%22%29+AND+%28K145Q+OR+M211I+OR+E28K+OR+S236T%29+AND+%28ubiquitination+OR+%22ligase+activity%22%29&resultType=lite&format=json&pageSize=50",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T20:55:23.747571+00:00",
+  "sha256": "2bf84939db660d9302be9c9839c4ae57ebcc45fd6b94a2bf7b2bd3c6c902140e"
+}

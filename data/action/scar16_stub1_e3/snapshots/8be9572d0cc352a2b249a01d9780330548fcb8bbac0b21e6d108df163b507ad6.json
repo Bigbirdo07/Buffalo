@@ -1,0 +1,27 @@
+{
+  "url": "https://api.reporter.nih.gov/v2/projects/search",
+  "post_json": {
+    "criteria": {
+      "advanced_text_search": {
+        "operator": "and",
+        "search_field": "all",
+        "search_text": "CHIP ubiquitin ligase cochaperone"
+      }
+    },
+    "include_fields": [
+      "ProjectNum",
+      "ProjectTitle",
+      "PrincipalInvestigators",
+      "Organization",
+      "AbstractText",
+      "ProjectStartDate",
+      "ProjectEndDate"
+    ],
+    "offset": 0,
+    "limit": 25,
+    "sort_field": "project_start_date",
+    "sort_order": "desc"
+  },
+  "retrieved_at": "2026-10-03T22:26:09.065631+00:00",
+  "sha256": "eb40b4991488d2abc65c141e71fe58bd8a7a0cdcbc97a2dddf1a3ef4ab410b31"
+}

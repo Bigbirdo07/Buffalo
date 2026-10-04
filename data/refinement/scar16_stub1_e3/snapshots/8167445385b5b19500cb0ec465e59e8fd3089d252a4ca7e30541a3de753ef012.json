@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=STUB1%5Btiab%5D+AND+%28SCAR16%5Btiab%5D+OR+%22spinocerebellar+ataxia%22%5Btiab%5D+OR+%22Gordon+Holmes%22%5Btiab%5D%29+AND+%28ubiquitin%2A%5Btiab%5D+OR+%22E3+ligase%22%5Btiab%5D+OR+%22ligase+activity%22%5Btiab%5D%29&retmode=json&retmax=100&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T20:55:20.064570+00:00",
+  "sha256": "6a79b81ac72f03844680c3e83d472e80d35aaddd654f4727272ac7a315f9125c"
+}

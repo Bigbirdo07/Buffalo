@@ -1,0 +1,79 @@
+{
+  "experiment_id": "experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "knowledge_gap_id": "gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "scientific_question": "Do the SCAR16 alleles that retain bulk E3 ubiquitin ligase activity in purified recombinant assays (STUB1 p.Lys145Gln, p.Met211Ile) impair CHIP-dependent substrate ubiquitination in a substrate-selective or condition-dependent manner in disease-relevant human neurons, or do they cause SCAR16 through a mechanism other than reduced ligase output?",
+  "hypothesis": "STUB1 p.Lys145Gln and p.Met211Ile reduce CHIP-dependent ubiquitination of a restricted subset of CHIP client proteins in human neurons at endogenous dosage, and/or lose activity under proteotoxic stress, despite retaining bulk HSC70 and self-ubiquitination activity in purified recombinant assays.",
+  "competing_hypothesis": "These alleles do not measurably reduce CHIP-dependent substrate ubiquitination in neurons under any tested condition, and their pathogenicity arises from a non-ligase CHIP function (chaperone client handling or complex assembly) or from reduced protein stability in the compound-heterozygous state.",
+  "model_system": "Human iPSC-derived neurons (cerebellar Purkinje-like and cortical populations differentiated from the same donor background)",
+  "sample_type": "Isogenic iPSC lines: CRISPR knock-in STUB1 p.Lys145Gln and p.Met211Ile (homozygous, and in trans with a U-box-truncating allele to match patient configuration), p.Thr246Met as a bulk-loss comparator, STUB1 knockout as a null reference, and the unedited parental line as isogenic wild type; plus an available SCAR16 patient-derived line where genotype permits",
+  "patient_stratification": [
+    "inter-domain missense alleles (p.Lys145Gln, p.Met211Ile)",
+    "U-box missense comparator (p.Thr246Met)",
+    "compound heterozygous missense / U-box-truncating configuration"
+  ],
+  "perturbation": "Endogenous-locus allele knock-in rather than overexpression, assayed at 37 C and after a defined heat-shock and proteasome-stress challenge",
+  "comparator": "Isogenic unedited wild-type line differentiated in parallel",
+  "controls": [
+    "isogenic unedited parental line",
+    "STUB1 knockout line as a loss-of-function reference",
+    "p.Thr246Met knock-in as a characterized bulk-ligase-loss comparator",
+    "catalytically dead U-box control (e.g. H260Q) for assay direction",
+    "two or more independently derived clones per genotype to control clonal variation",
+    "parallel differentiation batches with blinded sample identity for the proteomics run"
+  ],
+  "readouts": [
+    "diGly-enriched ubiquitinome quantifying site-level ubiquitination across CHIP clients",
+    "targeted immunoblot panel of defined CHIP substrates",
+    "CHIP steady-state abundance and thermal stability at endogenous dosage",
+    "CHIP-HSP70/HSC70 co-immunoprecipitation to separate co-chaperone from ligase function",
+    "substrate turnover rate by cycloheximide chase"
+  ],
+  "primary_endpoint": "Difference in site-level ubiquitination of CHIP client proteins between each knock-in genotype and the isogenic wild type, at 37 C and after stress, with a pre-registered substrate-subset analysis",
+  "secondary_endpoints": [
+    "CHIP abundance and thermal stability per genotype",
+    "chaperone co-immunoprecipitation efficiency per genotype",
+    "substrate half-life per genotype"
+  ],
+  "expected_result_if_supported": "p.Lys145Gln and p.Met211Ile neurons show reduced ubiquitination of a defined client subset relative to isogenic wild type, or lose ubiquitination capacity under stress while matching wild type at 37 C, with a narrower affected-substrate profile than p.Thr246Met.",
+  "expected_result_if_refuted": "p.Lys145Gln and p.Met211Ile neurons are indistinguishable from isogenic wild type in site-level client ubiquitination, substrate turnover and stress response, while p.Thr246Met shows the expected deficit. That outcome refutes the substrate-selective ligase hypothesis and redirects the mechanism to non-ligase CHIP function or to allele-specific protein instability, and the upstream edge wording would need revision rather than narrowing.",
+  "confounders": [
+    "clonal variation between iPSC lines independent of genotype",
+    "differentiation efficiency and cell-type composition differences between batches",
+    "off-target CRISPR edits",
+    "nonsense-mediated decay differences in the compound-heterozygous lines",
+    "ubiquitinome coverage bias: unchanged sites may be unmeasured rather than unaffected",
+    "assay temperature and handling time, given reported temperature-dependent recovery of mutant activity",
+    "CHIP self-ubiquitination altering its own abundance and confounding per-cell activity normalization"
+  ],
+  "known_limitations": [
+    "iPSC-derived neurons are immature and may not reproduce adult Purkinje-cell biology; reported SCAR16 fibroblast-versus-neuron discordance in the heat shock response (PMID:33097556) is a direct precedent for cell-type-dependent results.",
+    "A negative ubiquitinome result cannot exclude a defect in an unmeasured substrate or compartment.",
+    "The design tests a molecular mechanism, not neurodegeneration, and cannot establish that any measured difference causes Purkinje-cell loss.",
+    "Allele coverage is limited to the two alleles in scope and does not generalize to untested SCAR16 variants."
+  ],
+  "required_assets": [
+    "iPSC line with a well-characterized parental background permitting isogenic editing",
+    "SCAR16 patient-derived iPSC line (a STUB1/CHIP mutant line from a Gordon Holmes/SCAR16 patient is reported in PMID:29679845)",
+    "validated CHIP and ubiquitin antibodies for the targeted panel",
+    "mass spectrometry access with diGly enrichment capability"
+  ],
+  "required_capabilities": [
+    "iPSC maintenance and CRISPR knock-in at the STUB1 locus",
+    "directed differentiation to cerebellar and cortical neuronal fates",
+    "quantitative ubiquitinome proteomics with diGly enrichment",
+    "protein thermal stability and co-immunoprecipitation assays",
+    "pre-registered statistical analysis with clone-level random effects"
+  ],
+  "safety_or_ethics_flags": [
+    "Human iPSC work requires consent provenance review and institutional approval for the patient-derived line."
+  ],
+  "unjustified_interpretations": [
+    "that a measured ubiquitination difference demonstrates the cause of Purkinje-cell degeneration",
+    "that an unchanged ubiquitinome proves these alleles are benign",
+    "that any result supports a therapeutic strategy or clinical decision",
+    "that results generalize to SCAR16 alleles not tested here",
+    "that results transfer to the allelic dominant disorder SCA48"
+  ],
+  "human_review_required": true,
+  "label": "Research proposal requiring expert review."
+}

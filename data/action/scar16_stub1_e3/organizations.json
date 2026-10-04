@@ -1,0 +1,33 @@
+[
+  {
+    "aliases": [],
+    "assets": [
+      "asset:registry:NCT01793168"
+    ],
+    "canonical_name": "National Ataxia Foundation",
+    "capabilities": [],
+    "contact_source": "listed as a collaborator on the cached ClinicalTrials.gov record; no direct contact route was verified",
+    "country": null,
+    "disease_focus": [
+      "ataxia"
+    ],
+    "grants": [],
+    "last_verified_at": "2026-10-03T22:26:09.576394Z",
+    "mechanism_focus": [],
+    "official_url": "https://clinicaltrials.gov/study/NCT01793168",
+    "organization_id": "organization:national-ataxia-foundation",
+    "organization_type": "patient_organization",
+    "patient_registry": "NCT01793168",
+    "programs": [],
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T22:26:09.576394Z",
+        "snapshot_sha256": "2d7b747797f70df8a807407d88d75acfc7e387c1be454569269f6b353b748a98",
+        "source_id": "NCT01793168",
+        "source_type": "ClinicalTrials.gov",
+        "source_url": "https://clinicaltrials.gov/study/NCT01793168"
+      }
+    ],
+    "source_updated_at": null
+  }
+]

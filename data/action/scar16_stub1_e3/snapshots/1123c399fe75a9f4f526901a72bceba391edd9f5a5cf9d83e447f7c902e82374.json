@@ -1,0 +1,6 @@
+{
+  "url": "https://clinicaltrials.gov/api/v2/studies?query.term=spinocerebellar+ataxia+16&pageSize=20&format=json",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T22:26:10.182403+00:00",
+  "sha256": "0c3bcc37be5a0edc41957d3707fa0614e9938480804327ded48c27ed568af933"
+}

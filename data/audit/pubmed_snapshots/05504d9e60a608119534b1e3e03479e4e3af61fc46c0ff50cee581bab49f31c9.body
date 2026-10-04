@@ -1,0 +1,1 @@
+{"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":"37","retmax":"0","retstart":"0","idlist":[],"translationset":[],"querytranslation":"(\"STUB1\"[Title/Abstract] OR \"CHIP\"[Title]) AND (\"SCAR16\"[Title/Abstract] OR \"spinocerebellar ataxia\"[Title/Abstract] OR \"Gordon Holmes\"[Title/Abstract]) AND 2021/01/01:2026/12/31[Date - Publication]"}}

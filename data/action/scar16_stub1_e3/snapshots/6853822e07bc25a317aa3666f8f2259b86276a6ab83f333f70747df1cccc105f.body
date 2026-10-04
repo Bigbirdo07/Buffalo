@@ -1,0 +1,1 @@
+{"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":"85","retmax":"0","retstart":"0","idlist":[],"translationset":[],"querytranslation":"(\"iPSC\"[Title/Abstract] OR \"induced pluripotent\"[Title/Abstract]) AND (\"Purkinje\"[Title/Abstract] OR \"cerebellar\"[Title/Abstract]) AND (\"differentiat*\"[Title/Abstract] OR \"organoid\"[Title/Abstract])"}}

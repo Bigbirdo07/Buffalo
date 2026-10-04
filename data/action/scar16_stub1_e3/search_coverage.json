@@ -1,0 +1,273 @@
+{
+  "coverage_id": "action-search:experiment:gap:59b75e11-a1e4-5dbb-8de6-4530b898c7d5:ac4-interdomain-missense",
+  "geographic_limitations": [
+    "NIH RePORTER covers US federal funding only, so non-US activity is systematically absent from the grant evidence."
+  ],
+  "interpretation_caveat": "No qualifying candidate was identified in the sources that were successfully searched. Several sources were not searched or failed; that is not evidence that no qualifying laboratory, asset or organization exists.",
+  "language_limitations": [
+    "Only English-indexed PubMed, RePORTER and ClinicalTrials.gov records were searched; non-English institutional and organization sources were not."
+  ],
+  "scope": "collaborator_and_asset_discovery",
+  "search_completed_at": "2026-10-04T00:24:01.668616Z",
+  "search_started_at": "2026-10-04T00:24:01.668616Z",
+  "sources": [
+    {
+      "cache_hits": 1,
+      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "affiliation-derived; no geographic filter applied"
+      ],
+      "languages": [
+        "English-indexed records"
+      ],
+      "pages_checked": 1,
+      "pagination_limit": null,
+      "queries": [
+        "\"STUB1\" \"iPSC\"",
+        "\"SCAR16\" \"iPSC\"",
+        "\"CHIP ubiquitin ligase\" \"iPSC\"",
+        "\"STUB1 proteostasis\" \"iPSC\"",
+        "\"STUB1\" \"patient-derived cells\"",
+        "\"SCAR16\" \"patient-derived cells\"",
+        "\"CHIP ubiquitin ligase\" \"patient-derived cells\"",
+        "\"STUB1 proteostasis\" \"patient-derived cells\"",
+        "\"STUB1\" \"CRISPR\"",
+        "\"SCAR16\" \"CRISPR\"",
+        "\"CHIP ubiquitin ligase\" \"CRISPR\"",
+        "\"STUB1 proteostasis\" \"CRISPR\"",
+        "\"STUB1\" \"genome editing\"",
+        "\"SCAR16\" \"genome editing\"",
+        "\"CHIP ubiquitin ligase\" \"genome editing\"",
+        "\"STUB1 proteostasis\" \"genome editing\"",
+        "\"STUB1\" \"isogenic\"",
+        "\"SCAR16\" \"isogenic\"",
+        "\"CHIP ubiquitin ligase\" \"isogenic\"",
+        "\"STUB1 proteostasis\" \"isogenic\"",
+        "\"STUB1\" \"knock-in\"",
+        "\"SCAR16\" \"knock-in\"",
+        "\"CHIP ubiquitin ligase\" \"knock-in\"",
+        "\"STUB1 proteostasis\" \"knock-in\"",
+        "\"STUB1\" \"iPSC neurons\"",
+        "\"SCAR16\" \"iPSC neurons\"",
+        "\"CHIP ubiquitin ligase\" \"iPSC neurons\"",
+        "\"STUB1 proteostasis\" \"iPSC neurons\"",
+        "\"STUB1\" \"cerebellar neuron model\"",
+        "\"SCAR16\" \"cerebellar neuron model\"",
+        "\"CHIP ubiquitin ligase\" \"cerebellar neuron model\"",
+        "\"STUB1 proteostasis\" \"cerebellar neuron model\"",
+        "\"STUB1\" \"ubiquitin ligase assay\"",
+        "\"SCAR16\" \"ubiquitin ligase assay\"",
+        "\"CHIP ubiquitin ligase\" \"ubiquitin ligase assay\"",
+        "\"STUB1 proteostasis\" \"ubiquitin ligase assay\"",
+        "\"STUB1\" \"substrate ubiquitination\"",
+        "\"SCAR16\" \"substrate ubiquitination\"",
+        "\"CHIP ubiquitin ligase\" \"substrate ubiquitination\"",
+        "\"STUB1 proteostasis\" \"substrate ubiquitination\"",
+        "\"STUB1\" \"diGly proteomics\"",
+        "\"SCAR16\" \"diGly proteomics\"",
+        "\"CHIP ubiquitin ligase\" \"diGly proteomics\"",
+        "\"STUB1 proteostasis\" \"diGly proteomics\"",
+        "\"STUB1\" \"ubiquitinome\"",
+        "\"SCAR16\" \"ubiquitinome\"",
+        "\"CHIP ubiquitin ligase\" \"ubiquitinome\"",
+        "\"STUB1 proteostasis\" \"ubiquitinome\"",
+        "\"STUB1\" \"protein thermal stability\"",
+        "\"SCAR16\" \"protein thermal stability\"",
+        "\"CHIP ubiquitin ligase\" \"protein thermal stability\"",
+        "\"STUB1 proteostasis\" \"protein thermal stability\"",
+        "\"STUB1\" \"co-immunoprecipitation\"",
+        "\"SCAR16\" \"co-immunoprecipitation\"",
+        "\"CHIP ubiquitin ligase\" \"co-immunoprecipitation\"",
+        "\"STUB1 proteostasis\" \"co-immunoprecipitation\"",
+        "\"STUB1\" \"clone-level random effects\"",
+        "\"SCAR16\" \"clone-level random effects\"",
+        "\"CHIP ubiquitin ligase\" \"clone-level random effects\"",
+        "\"STUB1 proteostasis\" \"clone-level random effects\""
+      ],
+      "result_count": 48,
+      "snapshot_references": [
+        "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd"
+      ],
+      "source": "PubMed",
+      "status": "CHECKED"
+    },
+    {
+      "cache_hits": 4,
+      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "affiliation-derived; no geographic filter applied"
+      ],
+      "languages": [
+        "English-indexed records"
+      ],
+      "pages_checked": 1,
+      "pagination_limit": null,
+      "queries": [
+        "STUB1 ataxia",
+        "STUB1 CHIP ubiquitin ligase",
+        "CHIP ubiquitin ligase cochaperone",
+        "spinocerebellar ataxia iPSC neurons"
+      ],
+      "result_count": 214,
+      "snapshot_references": [
+        "8cc246d2ed92e22e311617b2e775be5bfcebfd9bdaa0a8a513302979f828424a",
+        "217e901ff78cb7a32eef8a2d748d309cb99a7ed9e93e96aa76a27bbe339ce120",
+        "eb40b4991488d2abc65c141e71fe58bd8a7a0cdcbc97a2dddf1a3ef4ab410b31",
+        "28b7a5ebf38e212c15103b4f7b0e2db695b13ca2d0a1bbd2b41a260c3fefa67f"
+      ],
+      "source": "NIH RePORTER",
+      "status": "CHECKED"
+    },
+    {
+      "cache_hits": 3,
+      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "affiliation-derived; no geographic filter applied"
+      ],
+      "languages": [
+        "English-indexed records"
+      ],
+      "pages_checked": 1,
+      "pagination_limit": null,
+      "queries": [
+        "STUB1",
+        "spinocerebellar ataxia 16",
+        "Gordon Holmes syndrome"
+      ],
+      "result_count": 23,
+      "snapshot_references": [
+        "2d7b747797f70df8a807407d88d75acfc7e387c1be454569269f6b353b748a98",
+        "0c3bcc37be5a0edc41957d3707fa0614e9938480804327ded48c27ed568af933",
+        "a3f2ff5d16514fdf80d3af354b9789e35c34d0a9dbd968c3bbc34f4488e08812"
+      ],
+      "source": "ClinicalTrials.gov",
+      "status": "CHECKED"
+    },
+    {
+      "cache_hits": 7,
+      "checked_at": "2026-10-04T00:24:01.668616Z",
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "affiliation-derived; no geographic filter applied"
+      ],
+      "languages": [
+        "English-indexed records"
+      ],
+      "pages_checked": 1,
+      "pagination_limit": null,
+      "queries": [
+        "\"STUB1\"[tiab] AND (\"knock-in\"[tiab] OR \"knockin\"[tiab] OR isogenic[tiab] OR CRISPR[tiab]) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab])",
+        "(isogenic[tiab] AND (\"knock-in\"[tiab] OR knockin[tiab] OR \"base editing\"[tiab] OR \"prime editing\"[tiab])) AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (neuron*[tiab] OR cerebell*[tiab])",
+        "isogenic[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (\"point mutation\"[tiab] OR \"single nucleotide\"[tiab] OR variant*[tiab]) AND (neuron*[tiab] OR cerebell*[tiab])",
+        "\"STUB1\"[tiab] AND (\"diGly\"[tiab] OR \"ubiquitinome\"[tiab] OR \"ubiquitylome\"[tiab])",
+        "(\"diGly\"[tiab] OR \"ubiquitinome\"[tiab] OR \"ubiquitylome\"[tiab] OR \"ubiquitin remnant\"[tiab]) AND (neuron*[tiab] OR iPSC[tiab] OR \"induced pluripotent\"[tiab] OR cerebell*[tiab])",
+        "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (Purkinje[tiab] OR cerebellar[tiab]) AND (differentiat*[tiab] OR organoid[tiab])",
+        "(iPSC[tiab] OR \"induced pluripotent\"[tiab]) AND (clone*[tiab] AND (\"mixed model\"[tiab] OR \"random effect*\"[tiab] OR \"variance component*\"[tiab]))"
+      ],
+      "result_count": 254,
+      "snapshot_references": [
+        "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a",
+        "7a15ed14e7e5b872c146db0c5eb71ce17f5141017a0ff7605d19a7e2738712d6",
+        "f874297502306829bef25038d47607ee63218e8d201828b52ea1ceab986edd36",
+        "06df782700a1a922e5184f9f32c78dcd695cdabdbd2ca02b958be7e7c273bf8a",
+        "001efbdfedf4e06b72fe7b965956f8943bbcd6b5cdf480ac1dda1862ee247943",
+        "c2274399eded8109371331694dd9b27ba38c730ffac71ba786f8149118ce7de5",
+        "faa96c96266991109e98f521303252e23ef535383e0f90157485d74dfab70a7f"
+      ],
+      "source": "PubMed (targeted capability queries)",
+      "status": "CHECKED"
+    },
+    {
+      "cache_hits": 0,
+      "checked_at": null,
+      "error": "BRIGHTDATA_API_TOKEN and BRIGHTDATA_DATASET_ID are not configured.",
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "not assessed"
+      ],
+      "languages": [
+        "not assessed"
+      ],
+      "pages_checked": 0,
+      "pagination_limit": null,
+      "queries": [
+        "\"STUB1\" \"iPSC\"",
+        "\"SCAR16\" \"iPSC\"",
+        "\"CHIP ubiquitin ligase\" \"iPSC\"",
+        "\"STUB1 proteostasis\" \"iPSC\"",
+        "\"STUB1\" \"patient-derived cells\"",
+        "\"SCAR16\" \"patient-derived cells\"",
+        "\"CHIP ubiquitin ligase\" \"patient-derived cells\"",
+        "\"STUB1 proteostasis\" \"patient-derived cells\""
+      ],
+      "result_count": null,
+      "snapshot_references": [],
+      "source": "Bright Data",
+      "status": "FAILED"
+    },
+    {
+      "cache_hits": 0,
+      "checked_at": null,
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "not assessed"
+      ],
+      "languages": [
+        "not assessed"
+      ],
+      "pages_checked": 0,
+      "pagination_limit": null,
+      "queries": [],
+      "result_count": null,
+      "snapshot_references": [],
+      "source": "Institutional web pages",
+      "status": "NOT_STARTED"
+    },
+    {
+      "cache_hits": 0,
+      "checked_at": null,
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "not assessed"
+      ],
+      "languages": [
+        "not assessed"
+      ],
+      "pages_checked": 0,
+      "pagination_limit": null,
+      "queries": [],
+      "result_count": null,
+      "snapshot_references": [],
+      "source": "NORD / Global Genes / Orphanet",
+      "status": "NOT_STARTED"
+    },
+    {
+      "cache_hits": 0,
+      "checked_at": null,
+      "error": null,
+      "estimated_cost": 0.0,
+      "geographic_regions": [
+        "not assessed"
+      ],
+      "languages": [
+        "not assessed"
+      ],
+      "pages_checked": 0,
+      "pagination_limit": null,
+      "queries": [],
+      "result_count": null,
+      "snapshot_references": [],
+      "source": "Cell-line and plasmid repositories",
+      "status": "NOT_STARTED"
+    }
+  ]
+}

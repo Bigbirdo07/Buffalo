@@ -1,0 +1,455 @@
+[
+  {
+    "assets": [],
+    "canonical_name": "SCAR16 patient-derived iPSC and neuronal-model author group",
+    "capabilities": [],
+    "diseases": [
+      "SCAR16"
+    ],
+    "grants": [],
+    "institution": "Department of Neurology and Hertie Institute for Clinical Brain Research, University of Tübingen, 72076 Tübingen, Germany [email removed] [email removed] | Department of Neurology and Hertie Institute for Clinical Brain Research, University of Tübingen, 72076 Tübingen, Germany. | German Center for Neurodegenerative Diseases (DZNE), Tübingen, Germany. | Hertie Institute for Clinical Brain Research, University of Tübingen, Tübingen, Germany; German Center for Neurodegenerative Diseases (DZNE), Tübingen, Germany; Graduate School of Cellular and Molecular Neuroscience, University of Tübingen, Tübingen, Germany.",
+    "lab_id": "team:scar16-patient-ipsc",
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [
+      "researcher:l-schols",
+      "researcher:s-schuster",
+      "researcher:stefan-hauser",
+      "researcher:stefanie-schuster"
+    ],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:29679845",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/29679845/"
+      },
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:33097556",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33097556/"
+      }
+    ],
+    "publications": [
+      "PMID:29679845",
+      "PMID:33097556"
+    ],
+    "research_focus": [
+      "STUB1",
+      "CHIP",
+      "SCAR16"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "CHIP variant biochemistry author group",
+    "capabilities": [],
+    "diseases": [
+      "SCAR16"
+    ],
+    "grants": [],
+    "institution": "McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599 [email removed] | McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina 27599. | The McAllister Heart Institute, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA; Department of Pharmacology, The University of North Carolina at Chapel Hill, Chapel Hill, North Carolina, USA.",
+    "lab_id": "team:chip-variant-biochemistry",
+    "last_verified_at": "2026-10-03T20:55:22.841569Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [
+      "researcher:jonathan-c-schisler",
+      "researcher:sabrina-c-madrigal",
+      "researcher:selin-altinok"
+    ],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:31619515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/31619515/"
+      },
+      {
+        "retrieved_at": "2026-10-03T20:55:22.841569Z",
+        "snapshot_sha256": "29da70b3a97c7ffa04a05d82e98aa444c87e23fd310ae269dd7a82342bb952bd",
+        "source_id": "PMID:42567515",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42567515/"
+      }
+    ],
+    "publications": [
+      "PMID:31619515",
+      "PMID:42567515"
+    ],
+    "research_focus": [
+      "STUB1",
+      "CHIP",
+      "SCAR16"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:41911331",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "National Institute of Neurological Disorders and Stroke, National Institutes of Health, Bethesda, MD 20892, USA.",
+    "lab_id": "capability-candidate:crispr_editing:PMID-41911331",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:41911331",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41911331/"
+      }
+    ],
+    "publications": [
+      "PMID:41911331"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:41963441",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "School of Biomedical Sciences, The Chinese University of Hong Kong, Hong Kong, SAR, China. [email removed]",
+    "lab_id": "capability-candidate:crispr_editing:PMID-41963441",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:41963441",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41963441/"
+      }
+    ],
+    "publications": [
+      "PMID:41963441"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "crispr_editing capability candidate: author group of PMID:42069601",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "School of Science and Molecular Horizons, University of Wollongong, Wollongong, NSW, Australia. [email removed]",
+    "lab_id": "capability-candidate:crispr_editing:PMID-42069601",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:42069601",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42069601/"
+      }
+    ],
+    "publications": [
+      "PMID:42069601"
+    ],
+    "research_focus": [
+      "crispr_editing"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:39460936",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-39460936",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:39460936",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39460936/"
+      }
+    ],
+    "publications": [
+      "PMID:39460936"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:40929244",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Roche Pharma Research and Early Development, Pharmaceutical Sciences, Roche Innovation Center Basel, F. Hoffmann-La Roche Ltd., 4070 Basel, Switzerland.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-40929244",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:40929244",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40929244/"
+      }
+    ],
+    "publications": [
+      "PMID:40929244"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "ipsc_neuronal_differentiation capability candidate: author group of PMID:38014483",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Neurology, Department of Rare Diseases, Institute of Neurology of First Affiliated Hospital, Institute of Neuroscience, and Fujian Key Laboratory of Molecular Neurology, Fujian Medical University, Fuzhou, China.",
+    "lab_id": "capability-candidate:ipsc_neuronal_differentiation:PMID-38014483",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:38014483",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/38014483/"
+      }
+    ],
+    "publications": [
+      "PMID:38014483"
+    ],
+    "research_focus": [
+      "ipsc_neuronal_differentiation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:39460936",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Department of Human Genetics, Radboud University Medical Center, Donders Institute for Brain, Cognition, and Behaviour, Nijmegen 6500 HB, The Netherlands.",
+    "lab_id": "capability-candidate:isogenic_line_generation:PMID-39460936",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:39460936",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39460936/"
+      }
+    ],
+    "publications": [
+      "PMID:39460936"
+    ],
+    "research_focus": [
+      "isogenic_line_generation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:39913247",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg, L-4362 Esch-sur-Alzette, Luxembourg.",
+    "lab_id": "capability-candidate:isogenic_line_generation:PMID-39913247",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:39913247",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39913247/"
+      }
+    ],
+    "publications": [
+      "PMID:39913247"
+    ],
+    "research_focus": [
+      "isogenic_line_generation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "isogenic_line_generation capability candidate: author group of PMID:40205044",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Nash Family Department of Neuroscience, Icahn School of Medicine at Mount Sinai, New York, NY, USA. [email removed]",
+    "lab_id": "capability-candidate:isogenic_line_generation:PMID-40205044",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:40205044",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40205044/"
+      }
+    ],
+    "publications": [
+      "PMID:40205044"
+    ],
+    "research_focus": [
+      "isogenic_line_generation"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:41208143",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "State Key Laboratory of Common Mechanism Research for Major Diseases, Department of Biochemistry and Molecular Biology, Institute of Basic Medical Sciences Chinese Academy of Medical Sciences, School of Basic Medicine Peking Union Medical College, Beijing, China.",
+    "lab_id": "capability-candidate:proteomics:PMID-41208143",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:41208143",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/41208143/"
+      }
+    ],
+    "publications": [
+      "PMID:41208143"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:39920137",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Interdisciplinary Research Center on Biology and Chemistry, Shanghai Institute of Organic Chemistry, Chinese Academy of Sciences, 100 Haike Rd., Shanghai, China. [email removed]",
+    "lab_id": "capability-candidate:proteomics:PMID-39920137",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:39920137",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39920137/"
+      }
+    ],
+    "publications": [
+      "PMID:39920137"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
+  },
+  {
+    "assets": [],
+    "canonical_name": "proteomics capability candidate: author group of PMID:40480969",
+    "capabilities": [],
+    "diseases": [],
+    "grants": [],
+    "institution": "Leibniz Institute on Aging-Fritz Lipmann Institute (FLI), Jena, Germany. [email removed]",
+    "lab_id": "capability-candidate:proteomics:PMID-40480969",
+    "last_verified_at": "2026-10-04T00:24:01.668616Z",
+    "mechanisms": [],
+    "official_url": null,
+    "personnel": [],
+    "pi_researcher_id": null,
+    "provenance": [
+      {
+        "retrieved_at": "2026-10-04T00:24:01.668616Z",
+        "snapshot_sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "source_id": "PMID:40480969",
+        "source_type": "PubMed",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40480969/"
+      }
+    ],
+    "publications": [
+      "PMID:40480969"
+    ],
+    "research_focus": [
+      "proteomics"
+    ],
+    "source_updated_at": null
+  }
+]

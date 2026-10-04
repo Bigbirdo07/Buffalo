@@ -1,0 +1,402 @@
+{
+  "artifact_sha256": {
+    "capability_claims.json": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3",
+    "clinical_studies.json": "be7194261c13e834e028afaddc34f5b43a0537a4e80f481274b08c10f6dcfe3e",
+    "collaboration_opportunity.json": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752",
+    "discovery_queries.json": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d",
+    "entity_resolution.json": "04029b113d8144dfd0636519c7b9b41e77c7579e1944833205ae39d45e9a5aea",
+    "grants.json": "e40476a8a80fbf9704f91229458df7a43d2de7cb184e73fd98871e453a120e30",
+    "laboratories.json": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0",
+    "lineage.json": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1",
+    "organizations.json": "c195f4566b9874bf697648564c27fee06eb6f1bec4ddd09699b9981242ee32b7",
+    "patient_explanation.json": "ff49e98969110ab20019efb2053e50bcf5e0c3c53f284f5f484849ff8961a9e9",
+    "required_assets.json": "54f2395bf7e83eaccc7f23d175c839c0c284fc105169f96842b1bfce0c44895d",
+    "required_capabilities.json": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9",
+    "research_assets.json": "84eed6752783299f8b0eb3bc34bff50592a8111235db40e4a67998f755c38426",
+    "researchers.json": "8589943e71392d58cda5ad9c178c74aef1eb1e67e45991cedda6def8dbed3ba0",
+    "scientist_explanation.json": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16",
+    "search_coverage.json": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d"
+  },
+  "as_of": "2026-10-04",
+  "as_of_basis": "newest cached snapshot retrieval time; no execution clock is used",
+  "cached_snapshots": {
+    "action": [
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/00b567059f1a1eafeab68e2597c931c7972265dc35d042e86561b27d03e25387.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/00b567059f1a1eafeab68e2597c931c7972265dc35d042e86561b27d03e25387.json",
+        "sha256": "7a15ed14e7e5b872c146db0c5eb71ce17f5141017a0ff7605d19a7e2738712d6",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28isogenic%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+knockin%5Btiab%5D+OR+%22base+editing%22%5Btiab%5D+OR+%22prime+editing%22%5Btiab%5D%29%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/02ba32cc4e186e17de899687c4e2f5c1fa3a48b279255867d79024a1f428fb54.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/02ba32cc4e186e17de899687c4e2f5c1fa3a48b279255867d79024a1f428fb54.json",
+        "sha256": "28b7a5ebf38e212c15103b4f7b0e2db695b13ca2d0a1bbd2b41a260c3fefa67f",
+        "url": "https://api.reporter.nih.gov/v2/projects/search"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/04542d32ba124b441fb307a8a13dd955e8dbebd75fda06f8b25f55b81ff4efa1.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/04542d32ba124b441fb307a8a13dd955e8dbebd75fda06f8b25f55b81ff4efa1.json",
+        "sha256": "217e901ff78cb7a32eef8a2d748d309cb99a7ed9e93e96aa76a27bbe339ce120",
+        "url": "https://api.reporter.nih.gov/v2/projects/search"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/1123c399fe75a9f4f526901a72bceba391edd9f5a5cf9d83e447f7c902e82374.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/1123c399fe75a9f4f526901a72bceba391edd9f5a5cf9d83e447f7c902e82374.json",
+        "sha256": "0c3bcc37be5a0edc41957d3707fa0614e9938480804327ded48c27ed568af933",
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.term=spinocerebellar+ataxia+16&pageSize=20&format=json"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/12b4f53efc4fc0803b3c1410c8e1f08a3fa41f88562dfe56ef1dbf56d24ec066.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/12b4f53efc4fc0803b3c1410c8e1f08a3fa41f88562dfe56ef1dbf56d24ec066.json",
+        "sha256": "b3da21917fcf35c1ae196b3a6257addac80d1f431dad07faa39962984e3f75e6",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=30605842%2C33097556&retmode=xml"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/1ad5178a6c4baa3cc4afa5e04d66b7d4f3b3722b08d51de94e52962bc1635fcd.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/1ad5178a6c4baa3cc4afa5e04d66b7d4f3b3722b08d51de94e52962bc1635fcd.json",
+        "sha256": "4a1aa31ad7cb68c7654e020abecdb81e099c623f670aaa0e90748c7879146653",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22E3+ligase%22%5Btiab%5D+OR+%22ubiquitin+ligase%22%5Btiab%5D%29+AND+%28%22ubiquitinome%22%5Btiab%5D+OR+%22diGly%22%5Btiab%5D+OR+%22substrate+profiling%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+brain%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/1c75424986671842c18d5a6d7a174c586347415fc51f42f08276d061e1013353.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/1c75424986671842c18d5a6d7a174c586347415fc51f42f08276d061e1013353.json",
+        "sha256": "5d9b3383b1aae1d37548160178ad4f674d50f60d755f9e3a3cdaca299a16d5d6",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/1ccc75fee143228187a007e230b8b9c3d15d9bf0e6bee5108077cab094e1df62.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/1ccc75fee143228187a007e230b8b9c3d15d9bf0e6bee5108077cab094e1df62.json",
+        "sha256": "047cb525014cb3967196c8151eaa09032b1d8dafe440b4e48c0a60aa6d7750d3",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D+OR+%22ubiquitin+remnant%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/2326d54d933f553cc9c96af214e08e402ba840a129cf37b3bc67a72131c5a499.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/2326d54d933f553cc9c96af214e08e402ba840a129cf37b3bc67a72131c5a499.json",
+        "sha256": "061602d1f88feab117a7c46e0cdfa55fb3b633eaa5686e5f6adb1e28122919f2",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=35675767%2C30605842%2C33097556%2C40027688%2C39913247%2C39500314%2C28170165%2C37517100%2C33658519%2C35965317%2C41040684%2C32178712%2C41963441%2C41911331%2C34551822%2C31416668%2C28826027%2C32499675%2C42069601%2C29861287%2C38135757%2C39419027%2C31750563%2C40205044%2C31548722%2C33837271%2C40319306%2C38293651%2C39612244%2C41171761%2C39460936%2C32712198%2C37935051%2C39337505%2C32142685%2C30763678%2C36114006%2C33274322%2C35516420%2C28546288%2C37568787%2C39920137%2C34767452%2C41208143%2C40480969%2C32075691%2C27328712%2C38014483%2C33347831%2C33896374%2C25623948%2C31917972%2C34181916%2C30636067%2C29196977%2C25985846%2C40929244%2C28281409%2C25000412&retmode=xml"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/2f28907709d6eb5b53b6843a78cb72a5dc0c73fb283ec67558500bb00ffcbc9f.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/2f28907709d6eb5b53b6843a78cb72a5dc0c73fb283ec67558500bb00ffcbc9f.json",
+        "sha256": "db9c0a12fe4b7df3725d92cf8ad6a7be4ce208936c44dfcf3fbfc19abfbc5608",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/311a23a94cd2cee2a13b811f8c30155ed4c126212ba78d5327468b44cdf43679.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/311a23a94cd2cee2a13b811f8c30155ed4c126212ba78d5327468b44cdf43679.json",
+        "sha256": "f874297502306829bef25038d47607ee63218e8d201828b52ea1ceab986edd36",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=isogenic%5Btiab%5D+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28%22point+mutation%22%5Btiab%5D+OR+%22single+nucleotide%22%5Btiab%5D+OR+variant%2A%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/43001efe61476b3cef24530d2a7ca87134b8f757ad4db43df327b482f46237bb.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/43001efe61476b3cef24530d2a7ca87134b8f757ad4db43df327b482f46237bb.json",
+        "sha256": "165716bbc9aaa9d5e17f3225a3c8d49ce79916c6c231e20c2a8f98f80b59c5aa",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28isogenic%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+knockin%5Btiab%5D+OR+%22base+editing%22%5Btiab%5D+OR+%22prime+editing%22%5Btiab%5D%29%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/471dddf111a5ba809d8f48bea485825d8d16e47db6b618709c6b14318e91fb90.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/471dddf111a5ba809d8f48bea485825d8d16e47db6b618709c6b14318e91fb90.json",
+        "sha256": "8cc246d2ed92e22e311617b2e775be5bfcebfd9bdaa0a8a513302979f828424a",
+        "url": "https://api.reporter.nih.gov/v2/projects/search"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/6005eab4a44d6bd2f51e6683b341c0e16b6f4309e54d006185fc18f9a6bbf6cf.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/6005eab4a44d6bd2f51e6683b341c0e16b6f4309e54d006185fc18f9a6bbf6cf.json",
+        "sha256": "faa96c96266991109e98f521303252e23ef535383e0f90157485d74dfab70a7f",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28clone%2A%5Btiab%5D+AND+%28%22mixed+model%22%5Btiab%5D+OR+%22random+effect%2A%22%5Btiab%5D+OR+%22variance+component%2A%22%5Btiab%5D%29%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/6853822e07bc25a317aa3666f8f2259b86276a6ab83f333f70747df1cccc105f.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/6853822e07bc25a317aa3666f8f2259b86276a6ab83f333f70747df1cccc105f.json",
+        "sha256": "a3c9eaf999218da1eb3f18c760d8d74a232cf3df34cdd4dff582861aa163d002",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28Purkinje%5Btiab%5D+OR+cerebellar%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/8be9572d0cc352a2b249a01d9780330548fcb8bbac0b21e6d108df163b507ad6.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/8be9572d0cc352a2b249a01d9780330548fcb8bbac0b21e6d108df163b507ad6.json",
+        "sha256": "eb40b4991488d2abc65c141e71fe58bd8a7a0cdcbc97a2dddf1a3ef4ab410b31",
+        "url": "https://api.reporter.nih.gov/v2/projects/search"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/9e6b8345dd0882569ece2f4fc74fec216f8a9eac454fe12e4190e8ae58103e0d.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/9e6b8345dd0882569ece2f4fc74fec216f8a9eac454fe12e4190e8ae58103e0d.json",
+        "sha256": "cff75b61943a8952b54d9522190f0027f641a0d76f10431774e2e9aa6cf45092",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=39337505&retmode=xml"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/ab448452a603201c4f06890f0cab499f177e7527d3d21327a36ca5ad6d703fbf.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/ab448452a603201c4f06890f0cab499f177e7527d3d21327a36ca5ad6d703fbf.json",
+        "sha256": "a3f2ff5d16514fdf80d3af354b9789e35c34d0a9dbd968c3bbc34f4488e08812",
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Gordon+Holmes+syndrome&pageSize=20&format=json"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/b41b1f6c9d91d8edac9cb0a621ffe44f6db86d69cb28c306ed5b0df910500a0e.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/b41b1f6c9d91d8edac9cb0a621ffe44f6db86d69cb28c306ed5b0df910500a0e.json",
+        "sha256": "87e08ccc6f7cffe53a3d6fc99f011ca58e522383c6609b9daff0631f9f77a87a",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22knock-in%22%5Btiab%5D+OR+%22knockin%22%5Btiab%5D+OR+isogenic%5Btiab%5D+OR+CRISPR%5Btiab%5D%29+AND+%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/c76ef1f859bc5c7a25fc4f49a68b64bfafbfe5ec1735634c43f0f87c2f8aebe4.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/c76ef1f859bc5c7a25fc4f49a68b64bfafbfe5ec1735634c43f0f87c2f8aebe4.json",
+        "sha256": "d9f11011a47c7dc5569cb7df67ac0d3e3bc1d0ccda18be2e48862e5d3c2118e7",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=32142685%2C30763678%2C36114006%2C33274322%2C35516420%2C28546288%2C37568787%2C39920137%2C34767452%2C41208143%2C40480969&retmode=xml"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/c79c7169d6502245727f072c09dd922dae9f7c8e77a62dbd1f507020ed7c9a30.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/c79c7169d6502245727f072c09dd922dae9f7c8e77a62dbd1f507020ed7c9a30.json",
+        "sha256": "06df782700a1a922e5184f9f32c78dcd695cdabdbd2ca02b958be7e7c273bf8a",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/ca78558dfce0328ea50fa3344274b629657757befbaa78f815d01b1c3c1db7ea.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/ca78558dfce0328ea50fa3344274b629657757befbaa78f815d01b1c3c1db7ea.json",
+        "sha256": "001efbdfedf4e06b72fe7b965956f8943bbcd6b5cdf480ac1dda1862ee247943",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D+OR+%22ubiquitin+remnant%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/e62db65d6a7880c500dbad4a04941ef6f08d96a156a0738298ac8ae1a9f98e54.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/e62db65d6a7880c500dbad4a04941ef6f08d96a156a0738298ac8ae1a9f98e54.json",
+        "sha256": "da0662183f0eb72904e9a426ebf9a19e70a327e20d1f8d41607211bc447f27ad",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D%29&retmode=json&retmax=0&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/f25450803edb96c682429a420a13f24002eb4b98b5f4ddff47e0f28658fdc644.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/f25450803edb96c682429a420a13f24002eb4b98b5f4ddff47e0f28658fdc644.json",
+        "sha256": "2d7b747797f70df8a807407d88d75acfc7e387c1be454569269f6b353b748a98",
+        "url": "https://clinicaltrials.gov/api/v2/studies?query.term=STUB1&pageSize=20&format=json"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/f919e71e7098a77bcaa7ffd75350d3a64d33b221558cb007386e664cfb6ce895.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/f919e71e7098a77bcaa7ffd75350d3a64d33b221558cb007386e664cfb6ce895.json",
+        "sha256": "c2274399eded8109371331694dd9b27ba38c730ffac71ba786f8149118ce7de5",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D%29+AND+%28Purkinje%5Btiab%5D+OR+cerebellar%5Btiab%5D%29+AND+%28differentiat%2A%5Btiab%5D+OR+organoid%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/fbb1d818cc18ebaca38e95a14032b8aae3d7abdc63ac6129c4ea0954f1b2e048.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/fbb1d818cc18ebaca38e95a14032b8aae3d7abdc63ac6129c4ea0954f1b2e048.json",
+        "sha256": "06df782700a1a922e5184f9f32c78dcd695cdabdbd2ca02b958be7e7c273bf8a",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22STUB1%22%5Btiab%5D+AND+%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D%29&retmode=json&retmax=15&sort=relevance"
+      },
+      {
+        "body": "data/action/scar16_stub1_e3/snapshots/fc347f222ea960fa806e72d0695e25b7e791b9e70e4a3d5f1890b4342834e907.body",
+        "matches": true,
+        "metadata": "data/action/scar16_stub1_e3/snapshots/fc347f222ea960fa806e72d0695e25b7e791b9e70e4a3d5f1890b4342834e907.json",
+        "sha256": "001efbdfedf4e06b72fe7b965956f8943bbcd6b5cdf480ac1dda1862ee247943",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22diGly%22%5Btiab%5D+OR+%22ubiquitinome%22%5Btiab%5D+OR+%22ubiquitylome%22%5Btiab%5D+OR+%22ubiquitin+remnant%22%5Btiab%5D%29+AND+%28neuron%2A%5Btiab%5D+OR+iPSC%5Btiab%5D+OR+%22induced+pluripotent%22%5Btiab%5D+OR+cerebell%2A%5Btiab%5D%29&retmode=json&retmax=12&sort=relevance"
+      }
+    ],
+    "refinement_reused": 45
+  },
+  "collaboration_status": "MISSING_CAPABILITY",
+  "commands": [
+    "PYTHONPATH=backend/src .venv/bin/python scripts/build_phase4_action.py --offline",
+    "PYTHONPATH=backend/src .venv/bin/python scripts/build_phase4_assurance.py",
+    "make check"
+  ],
+  "environment": {
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "SQLAlchemy": "2.1.3",
+      "mypy": "2.4.0",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "ruff": "0.16.10"
+    },
+    "python": "3.14.5"
+  },
+  "human_review": {
+    "note": "Requirement extraction and rule-based capability verification are deterministic software outputs, not expert scientific review. No collaborator was contacted and no capability was confirmed with any person or institution.",
+    "required": true,
+    "status": "PENDING"
+  },
+  "implementation_sha256": {
+    "backend/src/atlas/adapters/clinical_trials/client.py": "45beec0e45b1384e322157fc547ea23b3ce3dce6d06d4952f2eca6e5f5cb1240",
+    "backend/src/atlas/adapters/literature/client.py": "966ceffb83a0981b4b8fad2b483e576b497d5a0dc528e9b0c27cf5e290202c68",
+    "backend/src/atlas/adapters/nih_reporter/client.py": "c0c4e29117c44ed63e6e5c3a925c72652ac084e8150679ce1512f2e6ef3947f6",
+    "backend/src/atlas/adapters/web_assets/brightdata.py": "9552edba1b4ba5a82de8ff452ed5f16f27af91a19f7cb9e802f34f0d5ba6ea11",
+    "backend/src/atlas/domain/action.py": "89daaa0adb6007bd9f0407e18a617ad1df3af761009fcb857274f194d66f678b",
+    "backend/src/atlas/domain/discovery.py": "855b1fdfe6e15c454ff1c59835cb126b66fdb73c2e188a306315b1943a1d4028",
+    "backend/src/atlas/domain/reviews.py": "ee92282bcf0cb9b5906b879a3fb7aa855466bdceab52b6a70dc421da166c8692",
+    "backend/src/atlas/services/action_discovery.py": "a2a76643ca80a1bc4414303e93e8d4430372c2c38d5cb4346b1251eb554a0718",
+    "backend/src/atlas/services/requirement_extraction.py": "a766b592923a8afd44ead6ccb8543e195da83a7c4e50e0cebc49b1e95675bc8b",
+    "scripts/build_phase4_action.py": "5f4e77ec871dceba4483054bc74aa07add15e92db01cbc94a0fbf6c282a001de",
+    "scripts/build_phase4_assurance.py": "2cd00bd01bca87dcf199fba39ce1cc7d6d5ed6f92f358958df36d934d8a6f606"
+  },
+  "missing_capability_count": 2,
+  "offline_rebuild": {
+    "canonicalization": "none; the bundle is byte-identical across runs",
+    "network_required": false,
+    "results": {
+      "capability_claims.json": {
+        "byte_identical": true,
+        "committed_sha256": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3",
+        "rebuilt_sha256": "3f5069f2add48ad7f781ffb82849593432f098a083cd4551db295aed25755ec3"
+      },
+      "clinical_studies.json": {
+        "byte_identical": true,
+        "committed_sha256": "be7194261c13e834e028afaddc34f5b43a0537a4e80f481274b08c10f6dcfe3e",
+        "rebuilt_sha256": "be7194261c13e834e028afaddc34f5b43a0537a4e80f481274b08c10f6dcfe3e"
+      },
+      "collaboration_opportunity.json": {
+        "byte_identical": true,
+        "committed_sha256": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752",
+        "rebuilt_sha256": "4a28c4e7f65628b4bbf8c174ab563345d13206733a61dc0fabc230525a505752"
+      },
+      "discovery_queries.json": {
+        "byte_identical": true,
+        "committed_sha256": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d",
+        "rebuilt_sha256": "970f49a2115d56318a5b9f889e05bc6445a4e4386e2ff7e9689e8cb04e3a2d8d"
+      },
+      "entity_resolution.json": {
+        "byte_identical": true,
+        "committed_sha256": "04029b113d8144dfd0636519c7b9b41e77c7579e1944833205ae39d45e9a5aea",
+        "rebuilt_sha256": "04029b113d8144dfd0636519c7b9b41e77c7579e1944833205ae39d45e9a5aea"
+      },
+      "grants.json": {
+        "byte_identical": true,
+        "committed_sha256": "e40476a8a80fbf9704f91229458df7a43d2de7cb184e73fd98871e453a120e30",
+        "rebuilt_sha256": "e40476a8a80fbf9704f91229458df7a43d2de7cb184e73fd98871e453a120e30"
+      },
+      "laboratories.json": {
+        "byte_identical": true,
+        "committed_sha256": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0",
+        "rebuilt_sha256": "308754102567c887f943a5af6034cf56d6d9eb532993ba3b6c932c323db206a0"
+      },
+      "lineage.json": {
+        "byte_identical": true,
+        "committed_sha256": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1",
+        "rebuilt_sha256": "4f566d89b46f7cb46bbc3eec0d90058ebb1c16087b2c9bd7cae3aa5268e144b1"
+      },
+      "organizations.json": {
+        "byte_identical": true,
+        "committed_sha256": "c195f4566b9874bf697648564c27fee06eb6f1bec4ddd09699b9981242ee32b7",
+        "rebuilt_sha256": "c195f4566b9874bf697648564c27fee06eb6f1bec4ddd09699b9981242ee32b7"
+      },
+      "patient_explanation.json": {
+        "byte_identical": true,
+        "committed_sha256": "ff49e98969110ab20019efb2053e50bcf5e0c3c53f284f5f484849ff8961a9e9",
+        "rebuilt_sha256": "ff49e98969110ab20019efb2053e50bcf5e0c3c53f284f5f484849ff8961a9e9"
+      },
+      "required_assets.json": {
+        "byte_identical": true,
+        "committed_sha256": "54f2395bf7e83eaccc7f23d175c839c0c284fc105169f96842b1bfce0c44895d",
+        "rebuilt_sha256": "54f2395bf7e83eaccc7f23d175c839c0c284fc105169f96842b1bfce0c44895d"
+      },
+      "required_capabilities.json": {
+        "byte_identical": true,
+        "committed_sha256": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9",
+        "rebuilt_sha256": "9329e3f9d299c91215765cf1e6542b58112440be1b2aa139e50b4f076fbc30e9"
+      },
+      "research_assets.json": {
+        "byte_identical": true,
+        "committed_sha256": "84eed6752783299f8b0eb3bc34bff50592a8111235db40e4a67998f755c38426",
+        "rebuilt_sha256": "84eed6752783299f8b0eb3bc34bff50592a8111235db40e4a67998f755c38426"
+      },
+      "researchers.json": {
+        "byte_identical": true,
+        "committed_sha256": "8589943e71392d58cda5ad9c178c74aef1eb1e67e45991cedda6def8dbed3ba0",
+        "rebuilt_sha256": "8589943e71392d58cda5ad9c178c74aef1eb1e67e45991cedda6def8dbed3ba0"
+      },
+      "scientist_explanation.json": {
+        "byte_identical": true,
+        "committed_sha256": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16",
+        "rebuilt_sha256": "436c7bd3c53838d6e234800ee437687954b3a14188a34cd69fc3257d76ee9a16"
+      },
+      "search_coverage.json": {
+        "byte_identical": true,
+        "committed_sha256": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d",
+        "rebuilt_sha256": "e7ede8970cb7d80bf62e5a7a93111b8c662e157507652d48598f7b356fe6d28d"
+      }
+    },
+    "status": "PASS"
+  },
+  "phase3_inputs_sha256": {
+    "claim_lineage.json": "14d5498bda1e807bc30ccac143f61dc25187ac14ad0c493a8b652b455b455f31",
+    "edge_refinement.json": "056c316123a05b3d15dba6e5bbe1ee152fabf38aae86b33b4757ed34547218c7",
+    "experiment_proposal.json": "8d8b0a616a2081be2382ed29f0b96a9a03f40dfe018b6987fac618ad4e11b640",
+    "knowledge_gap.json": "3c5ccd621f747d3e84f8e6162c48de8c9c129a64d9d37cb805d6283cd996c1eb",
+    "reproducibility_manifest.json": "b5e018e005046f5a00a265920ef73ae4f5957bffe506e17ea934f91454d7656c"
+  },
+  "schema_version": "phase4-reproducibility-v1",
+  "source_coverage_summary": [
+    {
+      "error": null,
+      "result_count": 48,
+      "source": "PubMed",
+      "status": "CHECKED"
+    },
+    {
+      "error": null,
+      "result_count": 214,
+      "source": "NIH RePORTER",
+      "status": "CHECKED"
+    },
+    {
+      "error": null,
+      "result_count": 23,
+      "source": "ClinicalTrials.gov",
+      "status": "CHECKED"
+    },
+    {
+      "error": null,
+      "result_count": 254,
+      "source": "PubMed (targeted capability queries)",
+      "status": "CHECKED"
+    },
+    {
+      "error": "BRIGHTDATA_API_TOKEN and BRIGHTDATA_DATASET_ID are not configured.",
+      "result_count": null,
+      "source": "Bright Data",
+      "status": "FAILED"
+    },
+    {
+      "error": null,
+      "result_count": null,
+      "source": "Institutional web pages",
+      "status": "NOT_STARTED"
+    },
+    {
+      "error": null,
+      "result_count": null,
+      "source": "NORD / Global Genes / Orphanet",
+      "status": "NOT_STARTED"
+    },
+    {
+      "error": null,
+      "result_count": null,
+      "source": "Cell-line and plasmid repositories",
+      "status": "NOT_STARTED"
+    }
+  ],
+  "workspace_revision": {
+    "compensating_control": "Per-file implementation hashes are recorded below.",
+    "git_commit": null,
+    "status": "NOT_A_GIT_WORKTREE"
+  }
+}

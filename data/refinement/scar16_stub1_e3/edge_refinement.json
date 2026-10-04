@@ -1,0 +1,2374 @@
+{
+  "run_id": "refine:59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+  "upstream_claim": {
+    "claim_id": "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0",
+    "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+    "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+    "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+    "normalized_statement": "Biallelic STUB1 Loss-of-Function Variants contributes to Loss of CHIP E3 Ubiquitin Ligase Activity.",
+    "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+    "claim_scope": "Imported explicit DisMech downstream edge",
+    "claim_type": "curated",
+    "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+    "subtype_context": [],
+    "variant_context": [],
+    "protein_domain_context": [],
+    "species": [
+      "Homo sapiens"
+    ],
+    "tissue": [],
+    "cell_type": [],
+    "experimental_context": [],
+    "source_claim_origin": "pathophysiology[0].downstream[1]",
+    "extraction_method": "deterministic_dismech_edge_import",
+    "derived_from_claim_ids": [],
+    "created_at": "2026-10-04T00:20:50.309109Z",
+    "last_reviewed_at": null,
+    "refinement_status": "UNREVIEWED",
+    "status_rationale": null,
+    "rationale_evidence_ids": [],
+    "provenance": {
+      "kind": "CURATED",
+      "source_name": "DisMech",
+      "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+      "source_object_path": "pathophysiology[0].downstream[1]",
+      "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+      "extraction_method": "deterministic_dismech_adapter_v2",
+      "created_at": "2026-10-04T00:20:50.309102Z",
+      "source_payload": {
+        "target": "Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "causal_link_type": "DIRECT",
+        "evidence": [
+          {
+            "reference": "PMID:24113144",
+            "reference_title": "Ataxia and hypogonadism caused by the loss of ubiquitin ligase activity of the U box protein CHIP.",
+            "supports": "SUPPORT",
+            "evidence_source": "IN_VITRO",
+            "snippet": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+            "explanation": "Introducing the index SCAR16 variant into CHIP abolishes ligase activity in recombinant protein and in cells, which is a direct variant-to-enzyme-defect causal claim."
+          },
+          {
+            "reference": "PMID:41851873",
+            "reference_title": "A novel STUB1 p.(Gln118*) nonsense variant in compound heterozygosity causes autosomal recessive spinocerebellar ataxia type 16 in a Chinese patient.",
+            "supports": "SUPPORT",
+            "evidence_source": "IN_VITRO",
+            "snippet": "We found that STUB1 p.(Gln118*) variant generated truncated proteins of the C-terminus of Hsc70-interacting protein and caused the loss function of ubiquitin ligase activity.",
+            "explanation": "A nonsense allele reaches the same endpoint by truncation, showing the edge holds across variant classes and not only for the index missense allele."
+          }
+        ]
+      }
+    }
+  },
+  "upstream_edge_id": "59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+  "upstream_evidence_ids": [
+    "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+    "c215671b-911e-548a-93d7-c2338562826a"
+  ],
+  "upstream_context_evidence_ids": [
+    "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+    "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+    "c325be09-0223-5168-a17b-8874c643986f",
+    "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424"
+  ],
+  "citation_checks": [
+    {
+      "evidence_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "identifier": "PMID:24113144",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "c5634b9757657fee6d496935a4119ff103c87f48789b69975eb41494da157dab",
+        "c5634b9757657fee6d496935a4119ff103c87f48789b69975eb41494da157dab"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "identifier": "PMID:41851873",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "identifier": "PMID:24113144",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "c5634b9757657fee6d496935a4119ff103c87f48789b69975eb41494da157dab",
+        "c5634b9757657fee6d496935a4119ff103c87f48789b69975eb41494da157dab"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "identifier": "PMID:41851873",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "identifier": "PMID:41851873",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "identifier": "PMID:41851873",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "472dea6aafbf92cb36f4b7de96ef80c08b5c439529bc80a3c28ddc411193f0f7",
+        "a45247203452324a515af72996db0b545d24960a26e6f2d2a71453b646e41189"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+      "identifier": "PMID:30222779",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "0f6162e1f7f6edc083c5478c5a13b0f0883a28e6e5a40272eb4ec0cff372c309",
+        "0f6162e1f7f6edc083c5478c5a13b0f0883a28e6e5a40272eb4ec0cff372c309",
+        "9897429aa1d96c4b6ebbbd99f95fc744e59ab157773028478d06f87b43ad238b"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "identifier": "PMID:28396517",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "identifier": "PMID:28396517",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "identifier": "PMID:28396517",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "e9e85f852221d38f7a774b020beeb54589c190092361e39fd4b98eb004c3eb1a",
+        "7b900aa6fa70c4012932f7b0ff75959bcab18348f0799a5bc420bec75e79203a"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+      "identifier": "PMID:25258038",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e2f4af43492b8eb1226abab071c96ad62410b9a76f1eef89b94bc57211da97eb",
+        "e2f4af43492b8eb1226abab071c96ad62410b9a76f1eef89b94bc57211da97eb",
+        "d7b41ce8218a305c918a670e0c4ff54b71b4ea8e4bdcd247a7323a18e4f004d2"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "identifier": "PMID:29317501",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract"
+      ],
+      "source_snapshot_sha256": [
+        "2368e847923b03020b048b6471a0e211bbf5a93800a40795a067a1b581b4236c",
+        "2368e847923b03020b048b6471a0e211bbf5a93800a40795a067a1b581b4236c"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "retrieved:PMID:31619515",
+      "identifier": "PMID:31619515",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "retrieved:PMID:31619515",
+      "identifier": "PMID:31619515",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "retrieved:PMID:31619515",
+      "identifier": "PMID:31619515",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "full_text",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e96146226493bb41bdf55b15162cd63792c3b8dbc4dfd353b270444ee330e816",
+        "e4d111dd2f2d145c0a4fdcc427461b36e5085e14e5a5008f14e19831221fb7da"
+      ],
+      "note": "Span located verbatim (normalized) in full_text."
+    },
+    {
+      "evidence_id": "retrieved:PMID:42567515",
+      "identifier": "PMID:42567515",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "e3006ca4d0bd85c2a0535476921fe0c362d7d2333cea4178b78411c2b68edba2"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "retrieved:PMID:42567515",
+      "identifier": "PMID:42567515",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "633f56d52cdaa0f51991f691257df7cff1ea67803b28ab0104bd128d15856522",
+        "e3006ca4d0bd85c2a0535476921fe0c362d7d2333cea4178b78411c2b68edba2"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    },
+    {
+      "evidence_id": "retrieved:PMID:35398354",
+      "identifier": "PMID:35398354",
+      "status": "VERIFIED",
+      "identifier_resolved": true,
+      "title_matches": true,
+      "span_location": "abstract",
+      "texts_checked": [
+        "title",
+        "abstract",
+        "full_text"
+      ],
+      "source_snapshot_sha256": [
+        "13d83ac746858a7ed2d0a90be5c5604e430a7491448cbc01eab00e0a7e375ad6",
+        "13d83ac746858a7ed2d0a90be5c5604e430a7491448cbc01eab00e0a7e375ad6",
+        "96feb4571163e9c5d6cfe338e251376dc3fde24c1c10737ba7272faf822c99e9"
+      ],
+      "note": "Span located verbatim (normalized) in abstract."
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "o01",
+      "evidence_id": "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+      "source_identifier": "PMID:24113144",
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "variant_class": null,
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant protein and cell culture models",
+      "support_span": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Allele defined on human transcript STUB1 NM_005861; the abstract does not state the species of protein used in the assay."
+        },
+        {
+          "field": "subtype",
+          "value": "Gordon Holmes syndrome presentation",
+          "basis": "STATED",
+          "support_span": "We performed exome sequencing in a family with two of three siblings afflicted with ataxia and hypogonadism and identified a homozygous mutation in STUB1 (NM_005861) c.737C→T, p.Thr246Met, a gene that encodes the protein CHIP (C-terminus of HSC70-interacting protein).",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met, homozygous in patients",
+          "basis": "STATED",
+          "support_span": "We performed exome sequencing in a family with two of three siblings afflicted with ataxia and hypogonadism and identified a homozygous mutation in STUB1 (NM_005861) c.737C→T, p.Thr246Met, a gene that encodes the protein CHIP (C-terminus of HSC70-interacting protein).",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein and unspecified cell culture models",
+          "basis": "STATED",
+          "support_span": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "intervention",
+          "value": "introduction of p.Thr246Met into CHIP",
+          "basis": "STATED",
+          "support_span": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "ubiquitin ligase activity",
+          "basis": "STATED",
+          "support_span": "Introduction of the Thr246Met mutation into CHIP results in a loss of ubiquitin ligase activity measured directly using recombinant proteins as well as in cell culture models.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Thr246Met: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 246 parsed from 'p.Thr246Met' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Family reported as Gordon Holmes syndrome; DisMech curates this presentation within SCAR16."
+    },
+    {
+      "observation_id": "o02",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "source_identifier": "PMID:41851873",
+      "claim_ids": [
+        "ac2-pre-ubox-truncation"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Gln118*"
+      ],
+      "variant_class": null,
+      "readout": "hsc70_ubiquitination",
+      "effect": "decreased",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "HEK293T transient overexpression with immunoprecipitation",
+      "support_span": "The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "Plasmids, cell culture, and transfection The WT coding sequence of human STUB1 ( NM_005861.2 ) was cloned into the pCDH-CMV-MCS-EF1-copGFP vector.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "basis": "STATED",
+          "support_span": "48 bmcneul BMC Neurology BMC Neurol BMC PMC13123184 13123184 13123184 41851873 10.1186/s12883-026-04815-7 A novel STUB1 p.(Gln118*) nonsense variant in compound heterozygosity causes autosomal recessive spinocerebellar ataxia type 16 in a Chinese patient Zheng Kun-Mu 1 2 3 # Tang Ming-Kun 1 4 # Li Jian-Peng 1 2 3 # Liu Qi 1 2 3 Bi Min 1 2 3 Wan Hui-Juan 1 2 3 Jiang Hui-Wen 5 Yu Zi-Wen 1 2 3 Wang Jing 1 2 3 Xu Chu-Chuan 1 2 3 Wu Jing-Xun 1 6 ✉ Xiao Nai-An 1 7 ✉ Jiang Bin 1 2 3 ✉ 1 The School of Clinical Medicine, Fujian Medical University, Fuzhou, China 2 Department of Neurology, Department of Neuroscience, School of Medicine, The First Affiliated Hospital of Xiamen University, Xiamen University, Xiamen, China 3 Xiamen Medical Quality Control Center for Neurology, Xiamen, China 4 Health Management Center, School of Medicine, The First Affiliated Hospital of Xiamen University, Xiamen University, Xiamen, China 5 Department of Neurology, Longyan People Hospital of Fujian, Longyan, China 6 Department of Medical Oncology, School of Medicine, The First Affiliated Hospital of Xiamen University, Xiamen University, Xiamen, China 7 Department of Neurology, The Third Hospital of Xiamen, Xiamen, China ✉ Corresponding author. # Contributed equally. 19 3 2026 26 283 283 29 4 2026 © The Author(s) 2026 Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Gln118*, in trans with p.Lys145Gln in the patient",
+          "basis": "STATED",
+          "support_span": "Results We identified a compound heterozygote in STUB1 containing a novel nonsense variant, NM_005861.4 :c.352 C > T, p.(Gln118*), and a pathogenic missense variant, NM_005861.4 :c.433 A > C, p.(Lys145Gln), in a Chinese SCAR16 patient.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "cell_type",
+          "value": "HEK293T",
+          "basis": "STATED",
+          "support_span": "For the in vitro ubiquitination assay, HEK293T cells were co-transfected with plasmids encoding Flag-tagged STUB1 (WT or mutants), HA-tagged ubiquitin (HA-Ub), and Hsc70.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "transient overexpression, 48 h, immunoprecipitation",
+          "basis": "STATED",
+          "support_span": "Cells were harvested 48 h post-transfection for immunoprecipitation.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "intervention",
+          "value": "expression of Flag-tagged STUB1 p.Gln118* versus wild type",
+          "basis": "STATED",
+          "support_span": "For the in vitro ubiquitination assay, HEK293T cells were co-transfected with plasmids encoding Flag-tagged STUB1 (WT or mutants), HA-tagged ubiquitin (HA-Ub), and Hsc70.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "assay",
+          "value": "cell-based ubiquitination assay with HA-ubiquitin",
+          "basis": "STATED",
+          "support_span": "For the in vitro ubiquitination assay, HEK293T cells were co-transfected with plasmids encoding Flag-tagged STUB1 (WT or mutants), HA-tagged ubiquitin (HA-Ub), and Hsc70.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 polyubiquitination",
+          "basis": "STATED",
+          "support_span": "The results demonstrated that this truncation mutant exhibited significantly reduced ubiquitination activity toward Hsc70, with markedly decreased Hsc70 polyubiquitination compared to that of wild-type STUB1 (Fig. 3 C-E).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Gln118*: TPR 3 (95-127)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 118 parsed from 'p.Gln118*' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": null
+    },
+    {
+      "observation_id": "o03",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "source_identifier": "PMID:41851873",
+      "claim_ids": [],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Lys145Gln"
+      ],
+      "variant_class": null,
+      "readout": "chip_protein_abundance",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "SH-SY5Y transient overexpression",
+      "support_span": "Furthermore, the protein levels of the WT and p.(Lys145Gln) variants were not significantly different; however, the p.(Gln118*) and p.(Lys144*) variants generated truncated proteins (Fig. 3 B).",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "Plasmids, cell culture, and transfection The WT coding sequence of human STUB1 ( NM_005861.2 ) was cloned into the pCDH-CMV-MCS-EF1-copGFP vector.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "cell_type",
+          "value": "SH-SY5Y",
+          "basis": "STATED",
+          "support_span": "SH-SY5Y cells were maintained in Dulbecco’s modified Eagle’s medium (DMEM) (Gibco) supplemented with 10% fetal bovine serum (FBS) (Gibco) at 37 °C in 5% CO 2 .",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "STUB1 protein level by western blot",
+          "basis": "STATED",
+          "support_span": "B Western blot analysis of STUB1 protein expression.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Lys145Gln: no annotated domain at this residue",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 145 parsed from 'p.Lys145Gln' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Abundance, not ligase activity: reviewed against no E3 claim and retained as gap context. The same study co-transfected p.Lys145Gln in its ubiquitination assay but reports a ligase result in text only for p.Gln118*."
+    },
+    {
+      "observation_id": "o04",
+      "evidence_id": "c215671b-911e-548a-93d7-c2338562826a",
+      "source_identifier": "PMID:41851873",
+      "claim_ids": [
+        "ac4-interdomain-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Lys145Gln"
+      ],
+      "variant_class": null,
+      "readout": "e3_ligase_activity",
+      "effect": "decreased",
+      "origin": "BACKGROUND_CITATION",
+      "species": "Homo sapiens",
+      "experimental_system": "not tested in this paper; introduction sentence citing an earlier study",
+      "support_span": "In addition, the STUB1 missense mutation p.(Lys145Gln) has been found to impair the ubiquitin ligase activity of CHIP [ 9 ].",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "Plasmids, cell culture, and transfection The WT coding sequence of human STUB1 ( NM_005861.2 ) was cloned into the pCDH-CMV-MCS-EF1-copGFP vector.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Lys145Gln: no annotated domain at this residue",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 145 parsed from 'p.Lys145Gln' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Introduction sentence attributing the finding to its reference 9 (Kanack et al. 2018, PMID 29317501). Checked against that paper in o11."
+    },
+    {
+      "observation_id": "o05",
+      "evidence_id": "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+      "source_identifier": "PMID:30222779",
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "variant_class": null,
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "biophysical and cellular assays; knock-in mouse and rat models in the same study",
+      "support_span": "CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human patient allele engineered into CHIP; the ligase sentence does not state the protein's species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "basis": "STATED",
+          "support_span": "We discovered a genetic disease, now known as spinocerebellar autosomal recessive 16 (SCAR16), resulting from a coding mutation that caused a loss of CHIP ubiquitin ligase function.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met",
+          "basis": "STATED",
+          "support_span": "The initial mutation describing SCAR16 was a missense mutation in the ubiquitin ligase domain of CHIP (p.T246M).",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "multiple biophysical and cellular approaches",
+          "basis": "STATED",
+          "support_span": "Using multiple biophysical and cellular approaches, we demonstrated that T246M mutation results in structural disorganization and misfolding of the CHIP U-box domain, promoting oligomerization, and increased proteasome-dependent turnover.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "ligase activity and chaperone interaction",
+          "basis": "STATED",
+          "support_span": "CHIP-T246M has no ligase activity, but maintains interactions with chaperones and chaperone-related functions.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Thr246Met: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 246 parsed from 'p.Thr246Met' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": null
+    },
+    {
+      "observation_id": "o06",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "source_identifier": "PMID:28396517",
+      "claim_ids": [
+        "ac1-ubox-t246m"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Thr246Met"
+      ],
+      "variant_class": null,
+      "readout": "hsc70_ubiquitination",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "support_span": "Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Thr246Met",
+          "basis": "STATED",
+          "support_span": "As seen from Figure 3 (A) and (C), N65S and T246M displayed impaired Hsc70-ubiquitination activity for both MBP-fusion and MBP-free forms.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "assay",
+          "value": "in vitro ubiquitination assay, 37 C for 1 h",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 ubiquitination by immunoblot",
+          "basis": "STATED",
+          "support_span": "Protein samples were analyzed by SDS/PAGE and immunoblotting using either anti-CHIP (LS-C137950, LifeSpan Bioscience) or anti-Hsc70 (ADI-SPA-815-F, Enzo Life Sciences) to monitor CHIP self-ubiquitination or Hsc70 ubiquitination respectively.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Thr246Met: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 246 parsed from 'p.Thr246Met' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": null
+    },
+    {
+      "observation_id": "o07",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "source_identifier": "PMID:28396517",
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Asn65Ser"
+      ],
+      "variant_class": null,
+      "readout": "hsc70_ubiquitination",
+      "effect": "processivity_defect",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "support_span": "Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Asn65Ser",
+          "basis": "STATED",
+          "support_span": "Hsc70 seemed to be mono-ubiquitinated by the N65S mutant, while no Hsc70-ubiquitination was detected for T246M, confirming previous findings on these two variants [ 3 , 9 ].",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 ubiquitination and CHIP self-ubiquitination",
+          "basis": "STATED",
+          "support_span": "Furthermore, T246M was unable to self-ubiquitinate both as MBP-fusion and cleaved proteins, while the N65S mutant showed similar level of self-ubiquitination as the WT ( Figure 3 B and D).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Asn65Ser: TPR 2 (60-93)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 65 parsed from 'p.Asn65Ser' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Hsc70 chain elongation is reduced to mono-ubiquitination while CHIP self-ubiquitination is retained. This is a processivity/readout-specific defect; the experiment does not compare multiple substrates and therefore does not establish substrate selectivity."
+    },
+    {
+      "observation_id": "o08",
+      "evidence_id": "c325be09-0223-5168-a17b-8874c643986f",
+      "source_identifier": "PMID:28396517",
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Glu28Lys",
+        "p.Lys145Gln",
+        "p.Met211Ile",
+        "p.Ser236Thr"
+      ],
+      "variant_class": null,
+      "readout": "e3_ligase_activity",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h",
+      "support_span": "The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr",
+          "basis": "STATED",
+          "support_span": "The ubiquitination activities of the other mutants (E28K, K145Q, M211I, and S236T) were not overtly different from WT CHIP.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "purified recombinant MBP-CHIP, E1/E2/ubiquitin reconstitution",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "assay",
+          "value": "in vitro ubiquitination assay, 37 C for 1 h",
+          "basis": "STATED",
+          "support_span": "The reactions were prepared in a total volume of 20 μl, containing 2.5 μM (MBP)-CHIP (E3), 2.5 μM UbcH5c (E2) (Boston Biochem), 0.05 μM Ube1 (E1) (Boston Biochem), 250 μM ubiquitin (Boston Biochem), and 0.8 μM recombinant human His-HSPA8 (HSC71) (CHIP substrate) (Life Technologies AS, Thermo Fisher Scientific) in an ubiquitination buffer (50 mM Tris HCl, pH 7.5, 0.6 mM DTT, 2.5 mM Mg-ATP) and incubated at 37°C for 1 h.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "Hsc70 and self-ubiquitination by immunoblot",
+          "basis": "STATED",
+          "support_span": "Protein samples were analyzed by SDS/PAGE and immunoblotting using either anti-CHIP (LS-C137950, LifeSpan Bioscience) or anti-Hsc70 (ADI-SPA-815-F, Enzo Life Sciences) to monitor CHIP self-ubiquitination or Hsc70 ubiquitination respectively.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Glu28Lys: TPR 1 (26-59)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 28 parsed from 'p.Glu28Lys' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Lys145Gln: no annotated domain at this residue",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 145 parsed from 'p.Lys145Gln' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Met211Ile: no annotated domain at this residue",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 211 parsed from 'p.Met211Ile' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Ser236Thr: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 236 parsed from 'p.Ser236Thr' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Four of six tested disease alleles retain bulk ligase activity in this assay. This is the upstream REFUTE pointer already curated on the SCAR16 node."
+    },
+    {
+      "observation_id": "o09",
+      "evidence_id": "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+      "source_identifier": "PMID:25258038",
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Asn65Ser"
+      ],
+      "variant_class": null,
+      "readout": "hsc70_ubiquitination",
+      "effect": "processivity_defect",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "in vitro ubiquitination of HSC70",
+      "support_span": "We show that the p.Asn65Ser substitution impairs CHIP's ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human patient allele; the abstract states an in vitro assay without naming the protein source species."
+        },
+        {
+          "field": "subtype",
+          "value": "autosomal recessive ataxia with cognitive impairment",
+          "basis": "STATED",
+          "support_span": "METHODS AND RESULTS: With a combination of homozygozity mapping and exome sequencing, we identified three mutations in STUB1 in two families with ARCA and cognitive impairment; a homozygous missense variant (c.194A > G, p.Asn65Ser) that segregated in three affected siblings, and a missense change (c.82G > A, p.Glu28Lys) which was inherited in trans with a nonsense mutation (c.430A > T, p.Lys144Ter) in another patient.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Asn65Ser, homozygous in three siblings",
+          "basis": "STATED",
+          "support_span": "METHODS AND RESULTS: With a combination of homozygozity mapping and exome sequencing, we identified three mutations in STUB1 in two families with ARCA and cognitive impairment; a homozygous missense variant (c.194A > G, p.Asn65Ser) that segregated in three affected siblings, and a missense change (c.82G > A, p.Glu28Lys) which was inherited in trans with a nonsense mutation (c.430A > T, p.Lys144Ter) in another patient.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "in vitro ubiquitination",
+          "basis": "STATED",
+          "support_span": "We show that the p.Asn65Ser substitution impairs CHIP's ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "HSC70 ubiquitination and self-ubiquitination",
+          "basis": "STATED",
+          "support_span": "We show that the p.Asn65Ser substitution impairs CHIP's ability to ubiquitinate HSC70 in vitro, despite being able to self-ubiquitinate.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Asn65Ser: TPR 2 (60-93)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 65 parsed from 'p.Asn65Ser' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Independent replication of impaired HSC70 ubiquitination with retained self-ubiquitination. These are distinct readouts; without a multi-substrate comparison this is coded as a processivity/readout-specific defect, not substrate selectivity."
+    },
+    {
+      "observation_id": "o10",
+      "evidence_id": "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+      "source_identifier": "PMID:29317501",
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense",
+        "ac5-ubox-other-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 mutant panel",
+      "readout": "e3_ligase_activity",
+      "effect": "partially_retained",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant CHIP assayed below the mutants' melting temperature",
+      "support_span": "Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants' melting temperature.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human SCAR16 alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "basis": "STATED",
+          "support_span": "CHIP plays a protective role in mouse models of neurodegenerative disease, and in humans, mutations in CHIP cause spinocerebellar ataxia autosomal recessive type 16 (SCAR16), a fatal neurodegenerative disease characterized by truncal and limb ataxia that results in gait instability.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP, assay temperature varied relative to melting temperature",
+          "basis": "STATED",
+          "support_span": "Consistent with decreased CHIP stability promoting its dysfunction in SCAR16, most mutant proteins recovered activity when the assays were performed below the mutants' melting temperature.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "substrate ubiquitination, oligomer formation, chaperone interaction, cellular steady-state level",
+          "basis": "STATED",
+          "support_span": "This destabilization caused mutation-specific defects in CHIP activity, including increased formation of soluble oligomers, decreased interactions with chaperones, diminished substrate ubiquitination, and reduced steady-state levels in cells.",
+          "source_location": "abstract",
+          "derivation": null
+        }
+      ],
+      "extraction_note": "Temperature dependence: the same alleles score as defective or near-normal depending on assay temperature. Panel alleles are not enumerated in this sentence, so this is class-level."
+    },
+    {
+      "observation_id": "o11",
+      "evidence_id": "retrieved:PMID:31619515",
+      "source_identifier": "PMID:31619515",
+      "claim_ids": [
+        "ac5-ubox-other-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [
+        "p.Met240Thr",
+        "p.Thr246Met"
+      ],
+      "variant_class": null,
+      "readout": "hsp70_polyubiquitination",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant CHIP panel across SCAR16 alleles",
+      "support_span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The second measurement of Ubox function was the ubiquitination of full-length HSP70 (%HSP70 Ub), requiring intact E2–CHIP–substrate interactions.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "subtype",
+          "value": "SCAR16",
+          "basis": "STATED",
+          "support_span": "Spinocerebellar ataxia autosomal recessive 16 (SCAR16) is caused by coding mutations in STUB1, a gene that encodes the multifunctional enzyme CHIP (C terminus of HSC70-interacting protein).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Met240Thr and p.Thr246Met",
+          "basis": "STATED",
+          "support_span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein panel",
+          "basis": "STATED",
+          "support_span": "Intrinsic effects of the SCAR16 mutations on CHIP properties included the thermostability of recombinant protein (melting temperature ( T m )), the oligomeric form of CHIP protein, and the relative protein stability of CHIP when introduced into a human cell line (% E ).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "HSP70 polyubiquitination and polyubiquitin chain formation",
+          "basis": "STATED",
+          "support_span": "The second measurement of Ubox function was the ubiquitination of full-length HSP70 (%HSP70 Ub), requiring intact E2–CHIP–substrate interactions.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Met240Thr: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 240 parsed from 'p.Met240Thr' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Thr246Met: U-box (226-300)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 246 parsed from 'p.Thr246Met' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Same sentence establishes the complement: every other tested SCAR16 allele retained some HSP70 polyubiquitination. Recorded separately as o12."
+    },
+    {
+      "observation_id": "o12",
+      "evidence_id": "retrieved:PMID:31619515",
+      "source_identifier": "PMID:31619515",
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 mutant panel",
+      "readout": "hsp70_polyubiquitination",
+      "effect": "partially_retained",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant CHIP panel across SCAR16 alleles",
+      "support_span": "Second, all mutant CHIP proteins maintained some capacity to polyubiquitinate HSP70 except for two Ubox mutants, M240T and T246M ( Fig. 3 E ).",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The second measurement of Ubox function was the ubiquitination of full-length HSP70 (%HSP70 Ub), requiring intact E2–CHIP–substrate interactions.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP protein panel",
+          "basis": "STATED",
+          "support_span": "Intrinsic effects of the SCAR16 mutations on CHIP properties included the thermostability of recombinant protein (melting temperature ( T m )), the oligomeric form of CHIP protein, and the relative protein stability of CHIP when introduced into a human cell line (% E ).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "HSP70 polyubiquitination",
+          "basis": "STATED",
+          "support_span": "The second measurement of Ubox function was the ubiquitination of full-length HSP70 (%HSP70 Ub), requiring intact E2–CHIP–substrate interactions.",
+          "source_location": "full_text",
+          "derivation": null
+        }
+      ],
+      "extraction_note": "Class-level complement of o11: non-U-box SCAR16 alleles retain measurable substrate polyubiquitination. Alleles are not named in this sentence."
+    },
+    {
+      "observation_id": "o13",
+      "evidence_id": "retrieved:PMID:31619515",
+      "source_identifier": "PMID:31619515",
+      "claim_ids": [
+        "ac3-tpr-missense",
+        "ac4-interdomain-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCAR16",
+      "variants": [],
+      "variant_class": "SCAR16 non-U-box panel",
+      "readout": "polyubiquitin_chain_formation",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant CHIP panel, E2-dependent chain formation",
+      "support_span": "Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).",
+      "source_location": "full_text",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "STATED",
+          "support_span": "The second measurement of Ubox function was the ubiquitination of full-length HSP70 (%HSP70 Ub), requiring intact E2–CHIP–substrate interactions.",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant CHIP, E2-dependent polyubiquitin chain formation",
+          "basis": "STATED",
+          "support_span": "Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).",
+          "source_location": "full_text",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "polyubiquitin chain formation",
+          "basis": "STATED",
+          "support_span": "Third, all Ubox mutants had a reduced capacity to form polyubiquitin chains, perhaps due to altered interactions with E2 enzymes, whereas TPR and CC mutations were not defective in these same conditions ( Fig. 3 F ).",
+          "source_location": "full_text",
+          "derivation": null
+        }
+      ],
+      "extraction_note": "TPR and coiled-coil alleles show no chain-formation defect under these conditions, while all U-box alleles do."
+    },
+    {
+      "observation_id": "o14",
+      "evidence_id": "retrieved:PMID:42567515",
+      "source_identifier": "PMID:42567515",
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCA48",
+      "variants": [],
+      "variant_class": "TPR-domain missense",
+      "readout": "e3_ligase_activity",
+      "effect": "substrate_selective",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant protein biochemistry and cellular models, 13 variants",
+      "support_span": "TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human SCA48 patient alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "basis": "STATED",
+          "support_span": "Heterozygous mutations in STUB1 cause spinocerebellar ataxia type 48 (SCA48), a progressive cerebellar ataxia with variable extrapyramidal and cognitive features.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant protein biochemistry and cellular models",
+          "basis": "STATED",
+          "support_span": "To understand the molecular basis of this variability, we systematically analyzed 13 SCA48-associated variants spanning the TPR and U-box domains through recombinant protein biochemistry and cellular models.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "intrinsic ligase activity, HSP70 binding, substrate ubiquitination, stability",
+          "basis": "STATED",
+          "support_span": "TPR variants retained intrinsic ligase activity but showed significantly reduced HSP70 binding, impaired substrate ubiquitination, and decreased stability.",
+          "source_location": "abstract",
+          "derivation": null
+        }
+      ],
+      "extraction_note": "Allelic dominant disorder (SCA48), not SCAR16: cross-entity, so it qualifies rather than settles the SCAR16 claim. Separates intrinsic catalysis from substrate ubiquitination."
+    },
+    {
+      "observation_id": "o15",
+      "evidence_id": "retrieved:PMID:42567515",
+      "source_identifier": "PMID:42567515",
+      "claim_ids": [
+        "ac5-ubox-other-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCA48",
+      "variants": [],
+      "variant_class": "U-box missense",
+      "readout": "e3_ligase_activity",
+      "effect": "abolished",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "recombinant protein biochemistry and cellular models, 13 variants",
+      "support_span": "Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human SCA48 patient alleles; the abstract does not state the recombinant protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "basis": "STATED",
+          "support_span": "Heterozygous mutations in STUB1 cause spinocerebellar ataxia type 48 (SCA48), a progressive cerebellar ataxia with variable extrapyramidal and cognitive features.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "recombinant protein biochemistry and cellular models",
+          "basis": "STATED",
+          "support_span": "To understand the molecular basis of this variability, we systematically analyzed 13 SCA48-associated variants spanning the TPR and U-box domains through recombinant protein biochemistry and cellular models.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "ligase function, oligomer formation, CHIP level, co-chaperone activity",
+          "basis": "STATED",
+          "support_span": "Conversely, U-box variants abolished ligase function, promoted the formation of high-molecular-weight oligomers, and often increased CHIP levels while only partially impairing co-chaperone activity.",
+          "source_location": "abstract",
+          "derivation": null
+        }
+      ],
+      "extraction_note": "Cross-entity (SCA48). Also reports temperature-sensitive defects across mutants."
+    },
+    {
+      "observation_id": "o16",
+      "evidence_id": "retrieved:PMID:35398354",
+      "source_identifier": "PMID:35398354",
+      "claim_ids": [
+        "ac3-tpr-missense"
+      ],
+      "gene": "STUB1",
+      "disease_entity": "SCA48",
+      "variants": [
+        "p.Ala52Gly"
+      ],
+      "variant_class": null,
+      "readout": "e3_ligase_activity",
+      "effect": "unchanged",
+      "origin": "PRIMARY_RESULT",
+      "species": "Homo sapiens",
+      "experimental_system": "biophysical, biochemical and cellular assays; C. elegans model",
+      "support_span": "Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.",
+      "source_location": "abstract",
+      "context": [
+        {
+          "field": "species",
+          "value": "Homo sapiens",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Human SCA48 patient allele; the abstract does not state the assay protein's source species."
+        },
+        {
+          "field": "subtype",
+          "value": "SCA48 (dominant STUB1 disorder)",
+          "basis": "STATED",
+          "support_span": "Here we have identified a novel, de novo mutation in STUB1 in a patient with SCA48 encoding for an A52G point mutation in the tetratricopeptide repeat domain of CHIP.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "variant",
+          "value": "p.Ala52Gly, de novo",
+          "basis": "STATED",
+          "support_span": "Here we have identified a novel, de novo mutation in STUB1 in a patient with SCA48 encoding for an A52G point mutation in the tetratricopeptide repeat domain of CHIP.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "experimental_system",
+          "value": "biophysical, biochemical and cellular assays",
+          "basis": "STATED",
+          "support_span": "Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "readout",
+          "value": "E3 ligase activity and chaperone affinity",
+          "basis": "STATED",
+          "support_span": "Utilizing an array of biophysical, biochemical, and cellular assays, we demonstrate that the CHIPA52G point mutant retains E3-ligase activity but has decreased affinity for chaperones.",
+          "source_location": "abstract",
+          "derivation": null
+        },
+        {
+          "field": "protein_domain",
+          "value": "p.Ala52Gly: TPR 1 (26-59)",
+          "basis": "DERIVED",
+          "support_span": null,
+          "source_location": null,
+          "derivation": "Residue 52 parsed from 'p.Ala52Gly' and intersected with UniProt Q9UNE7 Domain/Repeat/Coiled-coil features from the cached snapshot."
+        }
+      ],
+      "extraction_note": "Cross-entity (SCA48) and an allele outside the SCAR16 claim scope: a TPR-domain allele that is pathogenic while retaining ligase activity."
+    }
+  ],
+  "reviews": [
+    {
+      "claim_id": "ac1-ubox-t246m",
+      "source_id": "o01",
+      "supports": "SUPPORTS",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Thr246Met: e3_ligase_activity abolished (recombinant protein and cell culture models; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=abolished -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac2-pre-ubox-truncation",
+      "source_id": "o02",
+      "supports": "SUPPORTS",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Gln118*: hsc70_ubiquitination decreased (HEK293T transient overexpression with immunoprecipitation; SCAR16)",
+      "limitations": [
+        "Overexpression system; endogenous dosage and cell type not modeled."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsc70_ubiquitination' effect=decreased -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "source_id": "o04",
+      "supports": "SUPPORTS",
+      "directness": "BACKGROUND_ONLY",
+      "paper_generated_finding": false,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "NONE",
+      "recommended_claim_scope": "p.Lys145Gln: e3_ligase_activity decreased (not tested in this paper; introduction sentence citing an earlier study; SCAR16)",
+      "limitations": [],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=decreased -> SUPPORTS; text attributes the finding to earlier work -> BACKGROUND_ONLY"
+    },
+    {
+      "claim_id": "ac1-ubox-t246m",
+      "source_id": "o05",
+      "supports": "SUPPORTS",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Thr246Met: e3_ligase_activity abolished (biophysical and cellular assays; knock-in mouse and rat models in the same study; SCAR16)",
+      "limitations": [],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=abolished -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac1-ubox-t246m",
+      "source_id": "o06",
+      "supports": "SUPPORTS",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Thr246Met: hsc70_ubiquitination abolished (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsc70_ubiquitination' effect=abolished -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o07",
+      "supports": "QUALIFIES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Asn65Ser: hsc70_ubiquitination processivity_defect (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsc70_ubiquitination' effect=processivity_defect -> QUALIFIES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o08",
+      "supports": "REFUTES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=unchanged -> REFUTES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "source_id": "o08",
+      "supports": "REFUTES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=unchanged -> REFUTES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "source_id": "o08",
+      "supports": "REFUTES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=unchanged -> REFUTES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o09",
+      "supports": "QUALIFIES",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Asn65Ser: hsc70_ubiquitination processivity_defect (in vitro ubiquitination of HSC70; SCAR16)",
+      "limitations": [],
+      "rationale": "[deterministic-critic-v1] readout='hsc70_ubiquitination' effect=processivity_defect -> QUALIFIES; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o10",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=partially_retained -> QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "source_id": "o10",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=partially_retained -> QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "source_id": "o10",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=partially_retained -> QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "source_id": "o11",
+      "supports": "SUPPORTS",
+      "directness": "DIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": true,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "CAUSAL",
+      "recommended_claim_scope": "p.Met240Thr, p.Thr246Met: hsp70_polyubiquitination abolished (recombinant CHIP panel across SCAR16 alleles; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsp70_polyubiquitination' effect=abolished -> SUPPORTS; paper-generated, in-disease, in-scope allele/class, readout -> DIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o12",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsp70_polyubiquitination' effect=partially_retained -> QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "source_id": "o12",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='hsp70_polyubiquitination' effect=partially_retained -> QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o13",
+      "supports": "REFUTES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='polyubiquitin_chain_formation' effect=unchanged -> REFUTES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac4-interdomain-missense",
+      "source_id": "o13",
+      "supports": "REFUTES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": true,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": null,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)",
+      "limitations": [
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='polyubiquitin_chain_formation' effect=unchanged -> REFUTES; not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o14",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": false,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "TPR-domain missense: e3_ligase_activity substrate_selective (recombinant protein biochemistry and cellular models, 13 variants; SCA48)",
+      "limitations": [
+        "Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease.",
+        "Class-level statement; individual alleles not named in the text.",
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=substrate_selective -> QUALIFIES; disease 'SCA48' outside scope ('SCAR16',); class-level finding for 'TPR-domain missense' (alleles not named in text); not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac5-ubox-other-missense",
+      "source_id": "o15",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": false,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": true,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "U-box missense: e3_ligase_activity abolished (recombinant protein biochemistry and cellular models, 13 variants; SCA48)",
+      "limitations": [
+        "Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease.",
+        "Class-level statement; individual alleles not named in the text.",
+        "Purified recombinant protein; cellular abundance and context absent."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=abolished -> SUPPORTS; disease 'SCA48' outside scope ('SCAR16',); cross-entity SUPPORTS/REFUTES downgraded to QUALIFIES; class-level finding for 'U-box missense' (alleles not named in text); not all DIRECT conditions met -> INDIRECT"
+    },
+    {
+      "claim_id": "ac3-tpr-missense",
+      "source_id": "o16",
+      "supports": "QUALIFIES",
+      "directness": "INDIRECT",
+      "paper_generated_finding": true,
+      "disease_match": false,
+      "gene_match": true,
+      "direction_match": false,
+      "species_match": true,
+      "tissue_match": null,
+      "cell_type_match": null,
+      "variant_match": false,
+      "causal_support": "ASSOCIATIONAL",
+      "recommended_claim_scope": "p.Ala52Gly: e3_ligase_activity unchanged (biophysical, biochemical and cellular assays; C. elegans model; SCA48)",
+      "limitations": [
+        "Cross-entity evidence (SCA48); informative about the same protein but not a test in the claimed disease."
+      ],
+      "rationale": "[deterministic-critic-v1] readout='e3_ligase_activity' effect=unchanged -> REFUTES; disease 'SCA48' outside scope ('SCAR16',); cross-entity SUPPORTS/REFUTES downgraded to QUALIFIES; not all DIRECT conditions met -> INDIRECT"
+    }
+  ],
+  "atomic": [
+    {
+      "claim": {
+        "claim_id": "ac1-ubox-t246m",
+        "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+        "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+        "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+        "normalized_statement": "STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.",
+        "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "claim_scope": "Atomic decomposition, allele class: U-box missense: p.Thr246Met",
+        "claim_type": "extracted",
+        "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+        "subtype_context": [],
+        "variant_context": [
+          "p.Thr246Met"
+        ],
+        "protein_domain_context": [
+          "U-box missense: p.Thr246Met"
+        ],
+        "species": [
+          "Homo sapiens"
+        ],
+        "tissue": [],
+        "cell_type": [],
+        "experimental_context": [],
+        "source_claim_origin": "pathophysiology[0].downstream[1]",
+        "extraction_method": "structured_decomposition_v1",
+        "derived_from_claim_ids": [
+          "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+        ],
+        "created_at": "2026-10-04T00:20:50.383453Z",
+        "last_reviewed_at": "2026-10-04T00:20:50.383448Z",
+        "refinement_status": "SUPPORTED",
+        "status_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: b5d57810-53c8-5fe7-b0cd-963be4f91202#o01 (p.Thr246Met: e3_ligase_activity abolished (recombinant protein and cell culture models; SCAR16)); 4c919b05-7d4f-5a64-a25f-ab85643ca093#o05 (p.Thr246Met: e3_ligase_activity abolished (biophysical and cellular assays; knock-in mouse and rat models in the same study; SCAR16)); c325be09-0223-5168-a17b-8874c643986f#o06 (p.Thr246Met: hsc70_ubiquitination abolished (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none",
+        "rationale_evidence_ids": [
+          "b5d57810-53c8-5fe7-b0cd-963be4f91202",
+          "4c919b05-7d4f-5a64-a25f-ab85643ca093",
+          "c325be09-0223-5168-a17b-8874c643986f"
+        ],
+        "provenance": {
+          "kind": "EXTRACTED",
+          "source_name": "atlas-refinement",
+          "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+          "source_object_path": "pathophysiology[0].downstream[1]",
+          "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+          "extraction_method": "structured_decomposition_v1",
+          "created_at": "2026-10-04T00:20:50.383428Z",
+          "source_payload": {
+            "edge_path": "pathophysiology[0].downstream[1]",
+            "plan": "observation_plan.json"
+          }
+        }
+      },
+      "status": "SUPPORTED",
+      "direct_supporting": [
+        "b5d57810-53c8-5fe7-b0cd-963be4f91202#o01",
+        "4c919b05-7d4f-5a64-a25f-ab85643ca093#o05",
+        "c325be09-0223-5168-a17b-8874c643986f#o06"
+      ],
+      "direct_refuting": [],
+      "direct_qualifying": [],
+      "indirect": [],
+      "background_only": [],
+      "rule_applied": "A2",
+      "rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: b5d57810-53c8-5fe7-b0cd-963be4f91202#o01 (p.Thr246Met: e3_ligase_activity abolished (recombinant protein and cell culture models; SCAR16)); 4c919b05-7d4f-5a64-a25f-ab85643ca093#o05 (p.Thr246Met: e3_ligase_activity abolished (biophysical and cellular assays; knock-in mouse and rat models in the same study; SCAR16)); c325be09-0223-5168-a17b-8874c643986f#o06 (p.Thr246Met: hsc70_ubiquitination abolished (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+    },
+    {
+      "claim": {
+        "claim_id": "ac2-pre-ubox-truncation",
+        "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+        "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+        "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+        "normalized_statement": "The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity.",
+        "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "claim_scope": "Atomic decomposition, allele class: pre-U-box truncation",
+        "claim_type": "extracted",
+        "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+        "subtype_context": [],
+        "variant_context": [
+          "p.Gln118*"
+        ],
+        "protein_domain_context": [
+          "pre-U-box truncation"
+        ],
+        "species": [
+          "Homo sapiens"
+        ],
+        "tissue": [],
+        "cell_type": [],
+        "experimental_context": [],
+        "source_claim_origin": "pathophysiology[0].downstream[1]",
+        "extraction_method": "structured_decomposition_v1",
+        "derived_from_claim_ids": [
+          "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+        ],
+        "created_at": "2026-10-04T00:20:50.383514Z",
+        "last_reviewed_at": "2026-10-04T00:20:50.383512Z",
+        "refinement_status": "SUPPORTED",
+        "status_rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: c215671b-911e-548a-93d7-c2338562826a#o02 (p.Gln118*: hsc70_ubiquitination decreased (HEK293T transient overexpression with immunoprecipitation; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none",
+        "rationale_evidence_ids": [
+          "c215671b-911e-548a-93d7-c2338562826a"
+        ],
+        "provenance": {
+          "kind": "EXTRACTED",
+          "source_name": "atlas-refinement",
+          "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+          "source_object_path": "pathophysiology[0].downstream[1]",
+          "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+          "extraction_method": "structured_decomposition_v1",
+          "created_at": "2026-10-04T00:20:50.383428Z",
+          "source_payload": {
+            "edge_path": "pathophysiology[0].downstream[1]",
+            "plan": "observation_plan.json"
+          }
+        }
+      },
+      "status": "SUPPORTED",
+      "direct_supporting": [
+        "c215671b-911e-548a-93d7-c2338562826a#o02"
+      ],
+      "direct_refuting": [],
+      "direct_qualifying": [],
+      "indirect": [],
+      "background_only": [],
+      "rule_applied": "A2",
+      "rationale": "[categorical-synthesis-v1 rule A2] SUPPORTED | direct support: c215671b-911e-548a-93d7-c2338562826a#o02 (p.Gln118*: hsc70_ubiquitination decreased (HEK293T transient overexpression with immunoprecipitation; SCAR16)) | direct refutation: none | direct qualification: none | indirect (does not set status): none | background only (does not set status): none"
+    },
+    {
+      "claim": {
+        "claim_id": "ac3-tpr-missense",
+        "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+        "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+        "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+        "normalized_statement": "SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+        "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "claim_scope": "Atomic decomposition, allele class: TPR-domain missense",
+        "claim_type": "extracted",
+        "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+        "subtype_context": [],
+        "variant_context": [
+          "p.Glu28Lys",
+          "p.Asn65Ser"
+        ],
+        "protein_domain_context": [
+          "TPR-domain missense"
+        ],
+        "species": [
+          "Homo sapiens"
+        ],
+        "tissue": [],
+        "cell_type": [],
+        "experimental_context": [],
+        "source_claim_origin": "pathophysiology[0].downstream[1]",
+        "extraction_method": "structured_decomposition_v1",
+        "derived_from_claim_ids": [
+          "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+        ],
+        "created_at": "2026-10-04T00:20:50.383538Z",
+        "last_reviewed_at": "2026-10-04T00:20:50.383536Z",
+        "refinement_status": "CONTEXT_DEPENDENT",
+        "status_rationale": "[categorical-synthesis-v1 rule A5] CONTEXT_DEPENDENT | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: c325be09-0223-5168-a17b-8874c643986f#o07 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)); 7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424#o09 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (in vitro ubiquitination of HSC70; SCAR16)) | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)); retrieved:PMID:42567515#o14 (TPR-domain missense: e3_ligase_activity substrate_selective (recombinant protein biochemistry and cellular models, 13 variants; SCA48)); retrieved:PMID:35398354#o16 (p.Ala52Gly: e3_ligase_activity unchanged (biophysical, biochemical and cellular assays; C. elegans model; SCA48)) | background only (does not set status): none",
+        "rationale_evidence_ids": [
+          "c325be09-0223-5168-a17b-8874c643986f",
+          "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424",
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+          "retrieved:PMID:31619515",
+          "retrieved:PMID:42567515",
+          "retrieved:PMID:35398354"
+        ],
+        "provenance": {
+          "kind": "EXTRACTED",
+          "source_name": "atlas-refinement",
+          "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+          "source_object_path": "pathophysiology[0].downstream[1]",
+          "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+          "extraction_method": "structured_decomposition_v1",
+          "created_at": "2026-10-04T00:20:50.383428Z",
+          "source_payload": {
+            "edge_path": "pathophysiology[0].downstream[1]",
+            "plan": "observation_plan.json"
+          }
+        }
+      },
+      "status": "CONTEXT_DEPENDENT",
+      "direct_supporting": [],
+      "direct_refuting": [
+        "c325be09-0223-5168-a17b-8874c643986f#o08"
+      ],
+      "direct_qualifying": [
+        "c325be09-0223-5168-a17b-8874c643986f#o07",
+        "7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424#o09"
+      ],
+      "indirect": [
+        "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+        "retrieved:PMID:31619515#o12",
+        "retrieved:PMID:31619515#o13",
+        "retrieved:PMID:42567515#o14",
+        "retrieved:PMID:35398354#o16"
+      ],
+      "background_only": [],
+      "rule_applied": "A5",
+      "rationale": "[categorical-synthesis-v1 rule A5] CONTEXT_DEPENDENT | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: c325be09-0223-5168-a17b-8874c643986f#o07 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)); 7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424#o09 (p.Asn65Ser: hsc70_ubiquitination processivity_defect (in vitro ubiquitination of HSC70; SCAR16)) | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)); retrieved:PMID:42567515#o14 (TPR-domain missense: e3_ligase_activity substrate_selective (recombinant protein biochemistry and cellular models, 13 variants; SCA48)); retrieved:PMID:35398354#o16 (p.Ala52Gly: e3_ligase_activity unchanged (biophysical, biochemical and cellular assays; C. elegans model; SCA48)) | background only (does not set status): none"
+    },
+    {
+      "claim": {
+        "claim_id": "ac4-interdomain-missense",
+        "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+        "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+        "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+        "normalized_statement": "SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity.",
+        "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "claim_scope": "Atomic decomposition, allele class: inter-domain/linker-region missense",
+        "claim_type": "extracted",
+        "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+        "subtype_context": [],
+        "variant_context": [
+          "p.Lys145Gln",
+          "p.Met211Ile"
+        ],
+        "protein_domain_context": [
+          "inter-domain/linker-region missense"
+        ],
+        "species": [
+          "Homo sapiens"
+        ],
+        "tissue": [],
+        "cell_type": [],
+        "experimental_context": [],
+        "source_claim_origin": "pathophysiology[0].downstream[1]",
+        "extraction_method": "structured_decomposition_v1",
+        "derived_from_claim_ids": [
+          "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+        ],
+        "created_at": "2026-10-04T00:20:50.383560Z",
+        "last_reviewed_at": "2026-10-04T00:20:50.383558Z",
+        "refinement_status": "INSUFFICIENT_EVIDENCE",
+        "status_rationale": "[categorical-synthesis-v1 rule A6] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)) | background only (does not set status): c215671b-911e-548a-93d7-c2338562826a#o04 (p.Lys145Gln: e3_ligase_activity decreased (not tested in this paper; introduction sentence citing an earlier study; SCAR16))",
+        "rationale_evidence_ids": [
+          "c325be09-0223-5168-a17b-8874c643986f",
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+          "retrieved:PMID:31619515",
+          "c215671b-911e-548a-93d7-c2338562826a"
+        ],
+        "provenance": {
+          "kind": "EXTRACTED",
+          "source_name": "atlas-refinement",
+          "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+          "source_object_path": "pathophysiology[0].downstream[1]",
+          "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+          "extraction_method": "structured_decomposition_v1",
+          "created_at": "2026-10-04T00:20:50.383428Z",
+          "source_payload": {
+            "edge_path": "pathophysiology[0].downstream[1]",
+            "plan": "observation_plan.json"
+          }
+        }
+      },
+      "status": "INSUFFICIENT_EVIDENCE",
+      "direct_supporting": [],
+      "direct_refuting": [
+        "c325be09-0223-5168-a17b-8874c643986f#o08"
+      ],
+      "direct_qualifying": [],
+      "indirect": [
+        "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+        "retrieved:PMID:31619515#o12",
+        "retrieved:PMID:31619515#o13"
+      ],
+      "background_only": [
+        "c215671b-911e-548a-93d7-c2338562826a#o04"
+      ],
+      "rule_applied": "A6",
+      "rationale": "[categorical-synthesis-v1 rule A6] INSUFFICIENT_EVIDENCE | direct support: none | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:31619515#o12 (SCAR16 mutant panel: hsp70_polyubiquitination partially_retained (recombinant CHIP panel across SCAR16 alleles; SCAR16)); retrieved:PMID:31619515#o13 (SCAR16 non-U-box panel: polyubiquitin_chain_formation unchanged (recombinant CHIP panel, E2-dependent chain formation; SCAR16)) | background only (does not set status): c215671b-911e-548a-93d7-c2338562826a#o04 (p.Lys145Gln: e3_ligase_activity decreased (not tested in this paper; introduction sentence citing an earlier study; SCAR16))"
+    },
+    {
+      "claim": {
+        "claim_id": "ac5-ubox-other-missense",
+        "subject": "7b8d0951-ad70-5e4c-b9a1-6cf9248a295b",
+        "predicate": "CAUSES_OR_CONTRIBUTES_TO",
+        "object": "3f69897f-f572-5f15-83fc-299934aaaa34",
+        "normalized_statement": "SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity.",
+        "original_statement": "Biallelic STUB1 Loss-of-Function Variants leads downstream to Loss of CHIP E3 Ubiquitin Ligase Activity",
+        "claim_scope": "Atomic decomposition, allele class: U-box missense",
+        "claim_type": "extracted",
+        "disease_context": "46abfb23-da23-5881-aa52-f0a4d48adf88",
+        "subtype_context": [],
+        "variant_context": [
+          "p.Ser236Thr",
+          "p.Met240Thr"
+        ],
+        "protein_domain_context": [
+          "U-box missense"
+        ],
+        "species": [
+          "Homo sapiens"
+        ],
+        "tissue": [],
+        "cell_type": [],
+        "experimental_context": [],
+        "source_claim_origin": "pathophysiology[0].downstream[1]",
+        "extraction_method": "structured_decomposition_v1",
+        "derived_from_claim_ids": [
+          "bfb7f71b-ca0d-5900-ad1e-76700fbd77f0"
+        ],
+        "created_at": "2026-10-04T00:20:50.383579Z",
+        "last_reviewed_at": "2026-10-04T00:20:50.383577Z",
+        "refinement_status": "CONTEXT_DEPENDENT",
+        "status_rationale": "[categorical-synthesis-v1 rule A3] CONTEXT_DEPENDENT | direct support: retrieved:PMID:31619515#o11 (p.Met240Thr, p.Thr246Met: hsp70_polyubiquitination abolished (recombinant CHIP panel across SCAR16 alleles; SCAR16)) | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:42567515#o15 (U-box missense: e3_ligase_activity abolished (recombinant protein biochemistry and cellular models, 13 variants; SCA48)) | background only (does not set status): none",
+        "rationale_evidence_ids": [
+          "c325be09-0223-5168-a17b-8874c643986f",
+          "retrieved:PMID:31619515",
+          "70e4caad-fa06-5900-b67c-9b4b32ef7e93",
+          "retrieved:PMID:42567515"
+        ],
+        "provenance": {
+          "kind": "EXTRACTED",
+          "source_name": "atlas-refinement",
+          "source_version": "b923d18f1c962eeaecf9f1f908305b21a8f26904",
+          "source_object_path": "pathophysiology[0].downstream[1]",
+          "source_snapshot_sha256": "034ccf003e36be04a5e3b87094cc704437c1577799267df60037664da2080942",
+          "extraction_method": "structured_decomposition_v1",
+          "created_at": "2026-10-04T00:20:50.383428Z",
+          "source_payload": {
+            "edge_path": "pathophysiology[0].downstream[1]",
+            "plan": "observation_plan.json"
+          }
+        }
+      },
+      "status": "CONTEXT_DEPENDENT",
+      "direct_supporting": [
+        "retrieved:PMID:31619515#o11"
+      ],
+      "direct_refuting": [
+        "c325be09-0223-5168-a17b-8874c643986f#o08"
+      ],
+      "direct_qualifying": [],
+      "indirect": [
+        "70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10",
+        "retrieved:PMID:42567515#o15"
+      ],
+      "background_only": [],
+      "rule_applied": "A3",
+      "rationale": "[categorical-synthesis-v1 rule A3] CONTEXT_DEPENDENT | direct support: retrieved:PMID:31619515#o11 (p.Met240Thr, p.Thr246Met: hsp70_polyubiquitination abolished (recombinant CHIP panel across SCAR16 alleles; SCAR16)) | direct refutation: c325be09-0223-5168-a17b-8874c643986f#o08 (p.Glu28Lys, p.Lys145Gln, p.Met211Ile, p.Ser236Thr: e3_ligase_activity unchanged (purified recombinant CHIP, in vitro ubiquitination, 37 C, 1 h; SCAR16)) | direct qualification: none | indirect (does not set status): 70e4caad-fa06-5900-b67c-9b4b32ef7e93#o10 (SCAR16 mutant panel: e3_ligase_activity partially_retained (recombinant CHIP assayed below the mutants' melting temperature; SCAR16)); retrieved:PMID:42567515#o15 (U-box missense: e3_ligase_activity abolished (recombinant protein biochemistry and cellular models, 13 variants; SCA48)) | background only (does not set status): none"
+    }
+  ],
+  "edge_status": "CONTEXT_DEPENDENT",
+  "edge_rule_applied": "E2",
+  "edge_rationale": "[categorical-synthesis-v1 rule E2] CONTEXT_DEPENDENT: STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity. -> SUPPORTED (rule A2; evidence b5d57810-53c8-5fe7-b0cd-963be4f91202, 4c919b05-7d4f-5a64-a25f-ab85643ca093, c325be09-0223-5168-a17b-8874c643986f); The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity. -> SUPPORTED (rule A2; evidence c215671b-911e-548a-93d7-c2338562826a); SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity. -> CONTEXT_DEPENDENT (rule A5; evidence c325be09-0223-5168-a17b-8874c643986f, 7fe75fee-a6f0-5b1f-b0dc-0e3cb3411424, 70e4caad-fa06-5900-b67c-9b4b32ef7e93, retrieved:PMID:31619515, retrieved:PMID:42567515, retrieved:PMID:35398354); SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity. -> INSUFFICIENT_EVIDENCE (rule A6; evidence c325be09-0223-5168-a17b-8874c643986f, 70e4caad-fa06-5900-b67c-9b4b32ef7e93, retrieved:PMID:31619515, c215671b-911e-548a-93d7-c2338562826a); SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity. -> CONTEXT_DEPENDENT (rule A3; evidence c325be09-0223-5168-a17b-8874c643986f, retrieved:PMID:31619515, 70e4caad-fa06-5900-b67c-9b4b32ef7e93, retrieved:PMID:42567515)",
+  "recommended_scope": "Licensed by the evidence: STUB1 p.Thr246Met causes loss of CHIP E3 ubiquitin ligase activity.; The truncating STUB1 allele p.Gln118*, which removes the U-box, causes loss of CHIP E3 ubiquitin ligase activity. || Not licensed as stated: SCAR16 TPR-domain missense alleles cause loss of CHIP E3 ubiquitin ligase activity. [CONTEXT_DEPENDENT]; SCAR16 inter-domain/linker-region missense alleles cause loss of CHIP E3 ubiquitin ligase activity. [INSUFFICIENT_EVIDENCE]; SCAR16 U-box missense alleles other than p.Thr246Met cause loss of CHIP E3 ubiquitin ligase activity. [CONTEXT_DEPENDENT]",
+  "search_coverage": {
+    "coverage_id": "coverage:59b75e11-a1e4-5dbb-8de6-4530b898c7d5",
+    "sources": [
+      {
+        "source": "PubMed (pm_allele)",
+        "status": "CHECKED",
+        "queries": [
+          "(STUB1[tiab] OR CHIP[tiab]) AND (E28K[tiab] OR K145Q[tiab] OR M211I[tiab] OR S236T[tiab] OR N65S[tiab] OR T246M[tiab] OR Lys145Gln[tiab] OR Met211Ile[tiab] OR Glu28Lys[tiab] OR Ser236Thr[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 7,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_function)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND (SCAR16[tiab] OR \"spinocerebellar ataxia\"[tiab] OR \"Gordon Holmes\"[tiab]) AND (ubiquitin*[tiab] OR \"E3 ligase\"[tiab] OR \"ligase activity\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 22,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_sca48)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND (SCA48[tiab] OR \"spinocerebellar ataxia 48\"[tiab] OR \"spinocerebellar ataxia type 48\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 34,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_models)",
+        "status": "CHECKED",
+        "queries": [
+          "STUB1[tiab] AND ataxia[tiab] AND (iPSC[tiab] OR \"induced pluripotent\"[tiab] OR neurons[tiab] OR fibroblasts[tiab] OR mice[tiab] OR rats[tiab] OR zebrafish[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 8,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "PubMed (pm_negative)",
+        "status": "CHECKED",
+        "queries": [
+          "(STUB1[tiab] OR CHIP[tiab]) AND (SCAR16[tiab] OR SCA48[tiab]) AND (\"retain*\"[tiab] OR \"preserved\"[tiab] OR \"not affect*\"[tiab] OR \"dominant negative\"[tiab] OR \"gain of function\"[tiab] OR \"toxic\"[tiab])"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 4,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "Europe PMC full text",
+        "status": "CHECKED",
+        "queries": [
+          "per-PMID open-access full text retrieval"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 7,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      },
+      {
+        "source": "UniProt Q9UNE7 (domain boundaries)",
+        "status": "CHECKED",
+        "queries": [
+          "https://rest.uniprot.org/uniprotkb/Q9UNE7.json"
+        ],
+        "checked_at": "2026-10-04T00:20:50.383594Z",
+        "result_count": 48,
+        "error": null,
+        "pages_checked": 0,
+        "pagination_limit": null,
+        "languages": [],
+        "geographic_regions": [],
+        "cache_hits": 0,
+        "snapshot_references": [],
+        "estimated_cost": 0.0
+      }
+    ],
+    "search_started_at": "2026-10-04T00:20:50.385808Z",
+    "search_completed_at": "2026-10-04T00:20:50.383594Z",
+    "scope": "scientific_evidence",
+    "language_limitations": [],
+    "geographic_limitations": [],
+    "interpretation_caveat": "Absence in this search is not proof that relevant evidence does not exist."
+  }
+}

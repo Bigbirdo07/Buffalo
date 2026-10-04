@@ -1,0 +1,27 @@
+{
+  "url": "https://api.reporter.nih.gov/v2/projects/search",
+  "post_json": {
+    "criteria": {
+      "advanced_text_search": {
+        "operator": "and",
+        "search_field": "all",
+        "search_text": "spinocerebellar ataxia iPSC neurons"
+      }
+    },
+    "include_fields": [
+      "ProjectNum",
+      "ProjectTitle",
+      "PrincipalInvestigators",
+      "Organization",
+      "AbstractText",
+      "ProjectStartDate",
+      "ProjectEndDate"
+    ],
+    "offset": 0,
+    "limit": 25,
+    "sort_field": "project_start_date",
+    "sort_order": "desc"
+  },
+  "retrieved_at": "2026-10-03T22:26:08.553652+00:00",
+  "sha256": "28b7a5ebf38e212c15103b4f7b0e2db695b13ca2d0a1bbd2b41a260c3fefa67f"
+}

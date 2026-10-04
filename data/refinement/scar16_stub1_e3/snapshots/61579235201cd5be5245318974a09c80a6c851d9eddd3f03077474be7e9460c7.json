@@ -1,0 +1,6 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28STUB1%5Btiab%5D+OR+CHIP%5Btiab%5D%29+AND+%28SCAR16%5Btiab%5D+OR+SCA48%5Btiab%5D%29+AND+%28%22retain%2A%22%5Btiab%5D+OR+%22preserved%22%5Btiab%5D+OR+%22not+affect%2A%22%5Btiab%5D+OR+%22dominant+negative%22%5Btiab%5D+OR+%22gain+of+function%22%5Btiab%5D+OR+%22toxic%22%5Btiab%5D%29&retmode=json&retmax=100&sort=relevance",
+  "post_json": null,
+  "retrieved_at": "2026-10-03T20:55:21.683879+00:00",
+  "sha256": "96adde69070c5f02b102e41bca019115cf63fe8e54c5fdb4c0ff6c48587b2c0a"
+}
