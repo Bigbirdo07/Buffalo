@@ -1,0 +1,363 @@
+"""Cross-disease relationships, with retrieval kept strictly apart from evidence.
+
+This module exists because of a measured failure in this system, not a
+hypothetical one. Lafora disease was retrieved as a neighbour of SCAR16 on a
+shared "protein ubiquitination" annotation. The pair turned out to be real --
+CHIP physically binds and stabilises malin, and the two sit in one heat-shock
+complex -- but *not for the annotated reason*: malin ubiquitinates glycogen
+enzymes while CHIP triages chaperone clients. The system had found its best lead
+through a term that does not explain it, and its own ranking called that lead
+unanchored.
+
+Two conclusions are built into the types here.
+
+**A retrieval reason is not evidence.** `RetrievalReason` records why an
+algorithm surfaced a pair. It carries no evidence ids and no biological claim,
+and no code path turns one into a `ValidatedRelationship`. The second is produced
+only by the refinement engine reading literature.
+
+**The two can disagree, and that disagreement is information.** A pair can be
+retrieved for a wrong reason and still be real; retrieved for a right reason and
+still be spurious. `RetrievalValidity` records which happened, so the atlas can
+say "we found these because they share an annotation, but the real connection is
+different" -- and so the retrieval algorithm can be audited against outcomes
+rather than trusted.
+
+Nothing here is specific to any disease, gene or pathway. The cases above are
+regression fixtures, never rules.
+"""
+
+from __future__ import annotations
+
+from datetime import UTC, datetime
+from enum import StrEnum
+from uuid import NAMESPACE_URL, uuid5
+
+from pydantic import BaseModel, ConfigDict, Field
+
+RELATIONSHIP_ONTOLOGY_VERSION = "cross-disease-relationship-v1"
+
+
+def _identity(*parts: str) -> str:
+    return str(uuid5(NAMESPACE_URL, "|".join(parts)))
+
+
+class ReasonType(StrEnum):
+    """Why an algorithm surfaced a pair. A computational fact, not a claim."""
+
+    SAME_GENE = "SAME_GENE"
+    GENE_FAMILY = "GENE_FAMILY"
+    SHARED_PROTEIN_COMPLEX = "SHARED_PROTEIN_COMPLEX"
+    SHARED_PATHWAY = "SHARED_PATHWAY"
+    SHARED_GO_TERM = "SHARED_GO_TERM"
+    SHARED_CELLULAR_PROCESS = "SHARED_CELLULAR_PROCESS"
+    SHARED_CELL_TYPE = "SHARED_CELL_TYPE"
+    SHARED_TISSUE = "SHARED_TISSUE"
+    PHENOTYPE_SIMILARITY = "PHENOTYPE_SIMILARITY"
+    HPO_SEMANTIC_SIMILARITY = "HPO_SEMANTIC_SIMILARITY"
+    ORTHOLOG_PHENOTYPE_SIMILARITY = "ORTHOLOG_PHENOTYPE_SIMILARITY"
+    EMBEDDING_SIMILARITY = "EMBEDDING_SIMILARITY"
+    GRAPH_NEIGHBORHOOD = "GRAPH_NEIGHBORHOOD"
+    THERAPEUTIC_MODALITY_OVERLAP = "THERAPEUTIC_MODALITY_OVERLAP"
+    LITERATURE_SEMANTIC_MATCH = "LITERATURE_SEMANTIC_MATCH"
+    OTHER = "OTHER"
+
+
+class RelationshipClass(StrEnum):
+    """What the evidence says the relationship actually is."""
+
+    SAME_DISEASE_ENTITY = "SAME_DISEASE_ENTITY"
+    SAME_ALLELIC_SPECTRUM = "SAME_ALLELIC_SPECTRUM"
+    OVERLAPPING_PHENOTYPIC_SPECTRUM = "OVERLAPPING_PHENOTYPIC_SPECTRUM"
+    SHARED_CAUSAL_MECHANISM = "SHARED_CAUSAL_MECHANISM"
+    SHARED_DOWNSTREAM_MECHANISM = "SHARED_DOWNSTREAM_MECHANISM"
+    SHARED_PROTEIN_COMPLEX = "SHARED_PROTEIN_COMPLEX"
+    SHARED_PATHWAY = "SHARED_PATHWAY"
+    SHARED_CELLULAR_PROCESS_NON_EQUIVALENT = "SHARED_CELLULAR_PROCESS_NON_EQUIVALENT"
+    SHARED_CELL_STATE = "SHARED_CELL_STATE"
+    SHARED_TISSUE_CONTEXT = "SHARED_TISSUE_CONTEXT"
+    SHARED_PHENOTYPE_ONLY = "SHARED_PHENOTYPE_ONLY"
+    MODEL_ORGANISM_ANALOG = "MODEL_ORGANISM_ANALOG"
+    POTENTIAL_THERAPEUTIC_ANALOG = "POTENTIAL_THERAPEUTIC_ANALOG"
+    INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+    CONTEXT_DEPENDENT = "CONTEXT_DEPENDENT"
+    CONTRADICTED = "CONTRADICTED"
+    RETRIEVAL_ARTIFACT = "RETRIEVAL_ARTIFACT"
+    UNKNOWN = "UNKNOWN"
+
+
+# Classes asserting that two diseases share biology at a mechanistic level.
+# Reaching one of these requires evidence beyond annotation overlap.
+MECHANISTIC_CLASSES = frozenset(
+    {
+        RelationshipClass.SHARED_CAUSAL_MECHANISM,
+        RelationshipClass.SHARED_DOWNSTREAM_MECHANISM,
+        RelationshipClass.SHARED_PROTEIN_COMPLEX,
+        RelationshipClass.SHARED_PATHWAY,
+    }
+)
+# Classes meaning "these are not two independent diseases".
+IDENTITY_CLASSES = frozenset(
+    {
+        RelationshipClass.SAME_DISEASE_ENTITY,
+        RelationshipClass.SAME_ALLELIC_SPECTRUM,
+        RelationshipClass.OVERLAPPING_PHENOTYPIC_SPECTRUM,
+    }
+)
+# Classes that are a negative result. Preserved, never deleted: a rejected edge
+# is evidence that similar phenotype does not imply shared mechanism.
+NEGATIVE_CLASSES = frozenset(
+    {
+        RelationshipClass.SHARED_PHENOTYPE_ONLY,
+        RelationshipClass.SHARED_CELLULAR_PROCESS_NON_EQUIVALENT,
+        RelationshipClass.CONTRADICTED,
+        RelationshipClass.RETRIEVAL_ARTIFACT,
+    }
+)
+
+
+class RetrievalValidity(StrEnum):
+    """Whether the algorithm's stated reason survived contact with evidence.
+
+    INCORRECT_BUT_CONNECTION_REAL is the value that motivated this module: the
+    pair is genuine and the explanation is wrong. Collapsing it into either
+    "correct" or "false positive" destroys the signal needed to improve
+    retrieval, and lets a wrong explanation travel as if it were the finding.
+    """
+
+    CORRECT = "CORRECT"
+    PARTIALLY_CORRECT = "PARTIALLY_CORRECT"
+    INCOMPLETE = "INCOMPLETE"
+    INCORRECT_BUT_CONNECTION_REAL = "INCORRECT_BUT_CONNECTION_REAL"
+    INCORRECT_AND_CONNECTION_FALSE = "INCORRECT_AND_CONNECTION_FALSE"
+    UNRESOLVED = "UNRESOLVED"
+
+
+class CompatibilityVerdict(StrEnum):
+    COMPATIBLE = "COMPATIBLE"
+    PARTIALLY_COMPATIBLE = "PARTIALLY_COMPATIBLE"
+    INCOMPATIBLE = "INCOMPATIBLE"
+    UNKNOWN = "UNKNOWN"
+
+
+class IdentityRelation(StrEnum):
+    """Whether two labels denote independent diseases at all."""
+
+    SAME_DISEASE = "SAME_DISEASE"
+    ALLELIC_SPECTRUM = "ALLELIC_SPECTRUM"
+    PHENOTYPIC_SUBTYPE = "PHENOTYPIC_SUBTYPE"
+    HISTORICAL_SYNONYM = "HISTORICAL_SYNONYM"
+    PARTIALLY_OVERLAPPING_ENTITY = "PARTIALLY_OVERLAPPING_ENTITY"
+    DISTINCT_DISEASE = "DISTINCT_DISEASE"
+
+
+class ReviewStatus(StrEnum):
+    NOT_REVIEWED = "NOT_REVIEWED"
+    AWAITING_EXPERT_SIGNOFF = "AWAITING_EXPERT_SIGNOFF"
+    ACCEPTED = "ACCEPTED"
+    AMENDED = "AMENDED"
+    REJECTED = "REJECTED"
+
+
+class RetrievalReason(BaseModel):
+    """Why an algorithm surfaced a candidate pair.
+
+    Deliberately carries no evidence ids and no biological assertion. It is an
+    explanation of a computation, and is never sufficient grounds for any
+    relationship class.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    retrieval_reason_id: str
+    disease_a: str
+    disease_b: str
+    reason_type: ReasonType
+    source_feature: str
+    source_identifier: str | None = None
+    # How specific the matched feature is in this corpus. A feature shared by
+    # hundreds of diseases explains a research area, not a relationship.
+    corpus_frequency: int | None = None
+    information_content: float | None = None
+    similarity_component: float | None = None
+    generating_algorithm: str
+    algorithm_version: str
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+    @classmethod
+    def create(
+        cls,
+        *,
+        disease_a: str,
+        disease_b: str,
+        reason_type: ReasonType,
+        source_feature: str,
+        generating_algorithm: str,
+        algorithm_version: str,
+        **extra: object,
+    ) -> RetrievalReason:
+        left, right = sorted((disease_a, disease_b))
+        return cls(
+            retrieval_reason_id=_identity(
+                "retrieval", left, right, reason_type.value, source_feature,
+                algorithm_version,
+            ),
+            disease_a=left,
+            disease_b=right,
+            reason_type=reason_type,
+            source_feature=source_feature,
+            generating_algorithm=generating_algorithm,
+            algorithm_version=algorithm_version,
+            **extra,  # type: ignore[arg-type]
+        )
+
+    @property
+    def is_biological_evidence(self) -> bool:
+        """Always False. Present so the distinction is executable, not advisory."""
+        return False
+
+
+class DiseaseIdentityRelationship(BaseModel):
+    """Whether two disease labels are independent entities.
+
+    Checked before any cross-disease claim, because two labels for one allelic
+    spectrum are a data-model question, not a discovery. Counting them as
+    cross-disease findings inflates novelty.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    identity_id: str
+    disease_a: str
+    disease_b: str
+    relation: IdentityRelation
+    shared_gene_ids: tuple[str, ...] = ()
+    rationale: str
+    evidence_ids: tuple[str, ...] = ()
+    review_status: ReviewStatus = ReviewStatus.NOT_REVIEWED
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+    @property
+    def is_independent_pair(self) -> bool:
+        return self.relation in {
+            IdentityRelation.DISTINCT_DISEASE,
+            IdentityRelation.PARTIALLY_OVERLAPPING_ENTITY,
+        }
+
+
+class ValidatedRelationship(BaseModel):
+    """What the evidence says, produced only by the refinement engine.
+
+    A mechanistic class requires evidence ids: the model refuses to construct
+    one without them, so "shared mechanism" cannot be asserted on annotation
+    overlap through any code path.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    relationship_id: str
+    disease_a: str
+    disease_b: str
+    relationship_class: RelationshipClass
+    # Plain statement of what is shared. Empty when nothing is.
+    mechanistic_statement: str
+    # The retrieval reasons that surfaced this pair, kept so the explanation can
+    # be audited against the outcome.
+    retrieval_reason_ids: tuple[str, ...] = ()
+    retrieval_validity: RetrievalValidity = RetrievalValidity.UNRESOLVED
+    shared_features: tuple[str, ...] = ()
+    differing_features: tuple[str, ...] = ()
+    evidence_ids: tuple[str, ...] = ()
+    contradictory_evidence_ids: tuple[str, ...] = ()
+    variant_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    cell_type_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    tissue_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    directionality_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    model_compatibility: CompatibilityVerdict = CompatibilityVerdict.UNKNOWN
+    identity_relation: IdentityRelation | None = None
+    caveats: tuple[str, ...] = ()
+    alternative_explanations: tuple[str, ...] = ()
+    deterministic_status: str | None = None
+    critic_status: str | None = None
+    critic_model: str | None = None
+    critic_prompt_version: str | None = None
+    human_review_status: ReviewStatus = ReviewStatus.NOT_REVIEWED
+    # Provenance sufficient to reproduce the relationship.
+    source_version: str
+    ontology_versions: dict[str, str] = Field(default_factory=dict)
+    algorithm_version: str = RELATIONSHIP_ONTOLOGY_VERSION
+    # Prior classifications, never overwritten silently.
+    superseded_classes: tuple[str, ...] = ()
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    last_reviewed_at: datetime | None = None
+
+    def model_post_init(self, _context: object) -> None:
+        if self.relationship_class in MECHANISTIC_CLASSES and not self.evidence_ids:
+            raise ValueError(
+                f"{self.relationship_class.value} asserts shared biology and "
+                "requires evidence_ids. Annotation overlap alone is a retrieval "
+                "reason, not evidence."
+            )
+
+    @property
+    def asserts_shared_mechanism(self) -> bool:
+        return self.relationship_class in MECHANISTIC_CLASSES
+
+    @property
+    def is_independent_discovery(self) -> bool:
+        """True only for a genuine relationship between two distinct diseases."""
+        return (
+            self.relationship_class in MECHANISTIC_CLASSES
+            and self.relationship_class not in IDENTITY_CLASSES
+            and self.identity_relation
+            not in {
+                IdentityRelation.SAME_DISEASE,
+                IdentityRelation.ALLELIC_SPECTRUM,
+                IdentityRelation.HISTORICAL_SYNONYM,
+                IdentityRelation.PHENOTYPIC_SUBTYPE,
+            }
+        )
+
+    @property
+    def retrieval_explanation_was_wrong(self) -> bool:
+        return self.retrieval_validity in {
+            RetrievalValidity.INCORRECT_BUT_CONNECTION_REAL,
+            RetrievalValidity.INCORRECT_AND_CONNECTION_FALSE,
+        }
+
+    def supersede(
+        self, new_class: RelationshipClass, **changes: object
+    ) -> ValidatedRelationship:
+        """Reclassify while keeping the prior class on the record."""
+        payload = self.model_dump()
+        payload.update(changes)
+        payload["relationship_class"] = new_class
+        payload["superseded_classes"] = (
+            *self.superseded_classes,
+            self.relationship_class.value,
+        )
+        payload["last_reviewed_at"] = datetime.now(UTC)
+        return ValidatedRelationship(**payload)
+
+
+class RejectedCrossDiseaseCandidate(BaseModel):
+    """A candidate the evidence did not support.
+
+    Kept rather than discarded. A rejected edge is a benchmark case and a
+    demonstration that similar phenotype does not imply shared mechanism; a
+    system that only stores its successes cannot measure its own precision.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    rejection_id: str
+    disease_a: str
+    disease_b: str
+    retrieval_reason_ids: tuple[str, ...]
+    rejected_class: RelationshipClass
+    retrieval_validity: RetrievalValidity
+    reason: str
+    evidence_ids: tuple[str, ...] = ()
+    null_searches: tuple[str, ...] = ()
+    review_status: ReviewStatus = ReviewStatus.NOT_REVIEWED
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
